@@ -1,0 +1,172 @@
+﻿namespace AdminClient.BaseForm
+{
+    partial class FormSearchTemp
+    {
+        /// <summary>
+        /// 필수 디자이너 변수입니다.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// 사용 중인 모든 리소스를 정리합니다.
+        /// </summary>
+        /// <param name="disposing">관리되는 리소스를 삭제해야 하면 true이고, 그렇지 않으면 false입니다.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form 디자이너에서 생성한 코드
+
+        /// <summary>
+        /// 디자이너 지원에 필요한 메서드입니다. 
+        /// 이 메서드의 내용을 코드 편집기로 수정하지 마세요.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_delete = new System.Windows.Forms.Button();
+            this.btn_insert = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.pnl_Main.SuspendLayout();
+            this.gb_Sherch.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nu_limit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Form_close)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Form_maximise)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.From_minimize)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // splitContainer2
+            // 
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.panel2);
+            this.splitContainer2.Size = new System.Drawing.Size(871, 655);
+            this.splitContainer2.SplitterDistance = 375;
+            // 
+            // btn_add
+            // 
+            this.btn_add.Location = new System.Drawing.Point(1070, 9);
+            this.btn_add.Visible = false;
+            // 
+            // btn_Xls
+            // 
+            this.btn_Xls.Location = new System.Drawing.Point(1151, 9);
+            this.btn_Xls.Visible = false;
+            // 
+            // btn_Update
+            // 
+            this.btn_Update.Location = new System.Drawing.Point(988, 9);
+            this.btn_Update.Visible = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Size = new System.Drawing.Size(1236, 64);
+            // 
+            // pnl_Main
+            // 
+            this.pnl_Main.Size = new System.Drawing.Size(1254, 736);
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Size = new System.Drawing.Size(1254, 655);
+            this.splitContainer1.SplitterDistance = 346;
+            // 
+            // btn_folding
+            // 
+            this.btn_folding.Location = new System.Drawing.Point(0, 284);
+            // 
+            // splitter1
+            // 
+            this.splitter1.Size = new System.Drawing.Size(33, 655);
+            // 
+            // Form_close
+            // 
+            this.Form_close.Location = new System.Drawing.Point(1233, 8);
+            // 
+            // Form_maximise
+            // 
+            this.Form_maximise.Location = new System.Drawing.Point(1194, 9);
+            // 
+            // From_minimize
+            // 
+            this.From_minimize.Location = new System.Drawing.Point(1158, 8);
+            // 
+            // TitleColor
+            // 
+            this.TitleColor.Size = new System.Drawing.Size(1344, 7);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btn_delete);
+            this.panel2.Controls.Add(this.btn_insert);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 332);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(871, 43);
+            this.panel2.TabIndex = 0;
+            // 
+            // btn_delete
+            // 
+            this.btn_delete.Location = new System.Drawing.Point(507, 0);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(88, 42);
+            this.btn_delete.TabIndex = 1;
+            this.btn_delete.Text = "삭제";
+            this.btn_delete.UseVisualStyleBackColor = true;
+            // 
+            // btn_insert
+            // 
+            this.btn_insert.Location = new System.Drawing.Point(197, 0);
+            this.btn_insert.Name = "btn_insert";
+            this.btn_insert.Size = new System.Drawing.Size(81, 42);
+            this.btn_insert.TabIndex = 0;
+            this.btn_insert.Text = "추가";
+            this.btn_insert.UseVisualStyleBackColor = true;
+            // 
+            // FormSearchBase
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
+            this.ClientSize = new System.Drawing.Size(1265, 836);
+            this.Name = "FormSearchBase";
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.pnl_Main.ResumeLayout(false);
+            this.gb_Sherch.ResumeLayout(false);
+            this.gb_Sherch.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nu_limit)).EndInit();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Form_close)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Form_maximise)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.From_minimize)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Panel panel2;
+        protected System.Windows.Forms.Button btn_delete;
+        protected System.Windows.Forms.Button btn_insert;
+    }
+}
