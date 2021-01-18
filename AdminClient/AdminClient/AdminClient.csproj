@@ -148,6 +148,18 @@
     <Compile Include="Forms\EmpInfo.Designer.cs">
       <DependentUpon>EmpInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FacilityGroupInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FacilityGroupInfo.Designer.cs">
+      <DependentUpon>FacilityGroupInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FacilityInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FacilityInfo.Designer.cs">
+      <DependentUpon>FacilityInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,6 +226,24 @@
     <Compile Include="PopUp\EmpPopUp.Designer.cs">
       <DependentUpon>EmpPopUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopUp\FacilityDetailPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\FacilityDetailPopUp.Designer.cs">
+      <DependentUpon>FacilityDetailPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\FacilityGroupPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\FacilityGroupPopUp.Designer.cs">
+      <DependentUpon>FacilityGroupPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\FacilityPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\FacilityPopUp.Designer.cs">
+      <DependentUpon>FacilityPopUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="PopUp\ProductCheckPopUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,6 +263,18 @@
     </Compile>
     <Compile Include="Serch\CompanySearch.Designer.cs">
       <DependentUpon>CompanySearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Serch\FacilityGroupSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Serch\FacilityGroupSearch.Designer.cs">
+      <DependentUpon>FacilityGroupSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Serch\FacilitySearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Serch\FacilitySearch.Designer.cs">
+      <DependentUpon>FacilitySearch.cs</DependentUpon>
     </Compile>
     <Compile Include="Serch\ProductSearch.cs">
       <SubType>Form</SubType>
@@ -288,6 +330,12 @@
     <EmbeddedResource Include="Forms\EmpInfo.resx">
       <DependentUpon>EmpInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FacilityGroupInfo.resx">
+      <DependentUpon>FacilityGroupInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FacilityInfo.resx">
+      <DependentUpon>FacilityInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormInfo.resx">
       <DependentUpon>FormInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -321,6 +369,15 @@
     <EmbeddedResource Include="PopUp\EmpPopUp.resx">
       <DependentUpon>EmpPopUp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\FacilityDetailPopUp.resx">
+      <DependentUpon>FacilityDetailPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\FacilityGroupPopUp.resx">
+      <DependentUpon>FacilityGroupPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\FacilityPopUp.resx">
+      <DependentUpon>FacilityPopUp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PopUp\ProductCheckPopUp.resx">
       <DependentUpon>ProductCheckPopUp.cs</DependentUpon>
     </EmbeddedResource>
@@ -334,6 +391,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Serch\CompanySearch.resx">
       <DependentUpon>CompanySearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Serch\FacilityGroupSearch.resx">
+      <DependentUpon>FacilityGroupSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Serch\FacilitySearch.resx">
+      <DependentUpon>FacilitySearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Serch\ProductSearch.resx">
       <DependentUpon>ProductSearch.cs</DependentUpon>
