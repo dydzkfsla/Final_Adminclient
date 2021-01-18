@@ -88,11 +88,11 @@
     <Compile Include="BaseForm\FormSerchListThreeSplitTemp.Designer.cs">
       <DependentUpon>FormSerchListThreeSplitTemp.cs</DependentUpon>
     </Compile>
-    <Compile Include="BaseForm\EmpFormPopUpTemp.cs">
+    <Compile Include="BaseForm\EmpFormNoSerchTemp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BaseForm\EmpFormPopUpTemp.Designer.cs">
-      <DependentUpon>EmpFormPopUpTemp.cs</DependentUpon>
+    <Compile Include="BaseForm\EmpFormNoSerchTemp.Designer.cs">
+      <DependentUpon>EmpFormNoSerchTemp.cs</DependentUpon>
     </Compile>
     <Compile Include="BaseForm\FormSearchTemp.cs">
       <SubType>Form</SubType>
@@ -136,6 +136,12 @@
     <Compile Include="Forms\CompanyInfo.Designer.cs">
       <DependentUpon>CompanyInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ContractInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ContractInfo.Designer.cs">
+      <DependentUpon>ContractInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\EmpInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +166,12 @@
     <Compile Include="Forms\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ProductCheckInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProductCheckInfo.Designer.cs">
+      <DependentUpon>ProductCheckInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ProductInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,12 +183,6 @@
     </Compile>
     <Compile Include="Forms\TempInfo.Designer.cs">
       <DependentUpon>TempInfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\test.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\test.Designer.cs">
-      <DependentUpon>test.cs</DependentUpon>
     </Compile>
     <Compile Include="PopUp\BOMPopUp.cs">
       <SubType>Form</SubType>
@@ -196,11 +202,23 @@
     <Compile Include="PopUp\CompanyPopUp.Designer.cs">
       <DependentUpon>CompanyPopUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopUp\ContractPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\ContractPopUp.Designer.cs">
+      <DependentUpon>ContractPopUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="PopUp\EmpPopUp.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PopUp\EmpPopUp.Designer.cs">
       <DependentUpon>EmpPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\ProductCheckPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\ProductCheckPopUp.Designer.cs">
+      <DependentUpon>ProductCheckPopUp.cs</DependentUpon>
     </Compile>
     <Compile Include="PopUp\ProductPopUp.cs">
       <SubType>Form</SubType>
@@ -210,6 +228,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Serch\CompanySearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Serch\CompanySearch.Designer.cs">
+      <DependentUpon>CompanySearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="Serch\ProductSearch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -240,8 +264,8 @@
     <EmbeddedResource Include="BaseForm\FormSerchListThreeSplitTemp.resx">
       <DependentUpon>FormSerchListThreeSplitTemp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BaseForm\EmpFormPopUpTemp.resx">
-      <DependentUpon>EmpFormPopUpTemp.cs</DependentUpon>
+    <EmbeddedResource Include="BaseForm\EmpFormNoSerchTemp.resx">
+      <DependentUpon>EmpFormNoSerchTemp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaseForm\FormSearchTemp.resx">
       <DependentUpon>FormSearchTemp.cs</DependentUpon>
@@ -258,6 +282,9 @@
     <EmbeddedResource Include="Forms\CompanyInfo.resx">
       <DependentUpon>CompanyInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ContractInfo.resx">
+      <DependentUpon>ContractInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmpInfo.resx">
       <DependentUpon>EmpInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -269,6 +296,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProductCheckInfo.resx">
+      <DependentUpon>ProductCheckInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProductInfo.resx">
       <DependentUpon>ProductInfo.cs</DependentUpon>
@@ -285,8 +315,14 @@
     <EmbeddedResource Include="PopUp\CompanyPopUp.resx">
       <DependentUpon>CompanyPopUp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\ContractPopUp.resx">
+      <DependentUpon>ContractPopUp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PopUp\EmpPopUp.resx">
       <DependentUpon>EmpPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\ProductCheckPopUp.resx">
+      <DependentUpon>ProductCheckPopUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUp\ProductPopUp.resx">
       <DependentUpon>ProductPopUp.cs</DependentUpon>
@@ -295,6 +331,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Serch\CompanySearch.resx">
+      <DependentUpon>CompanySearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Serch\ProductSearch.resx">
       <DependentUpon>ProductSearch.cs</DependentUpon>

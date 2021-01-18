@@ -134,8 +134,8 @@
             this.splitContainer3.Panel2.Controls.Add(this.label14);
             this.splitContainer3.Panel2.Controls.Add(this.label13);
             this.splitContainer3.Panel2.Controls.Add(this.label12);
-            this.splitContainer3.Size = new System.Drawing.Size(1025, 357);
-            this.splitContainer3.SplitterDistance = 678;
+            this.splitContainer3.Size = new System.Drawing.Size(1025, 358);
+            this.splitContainer3.SplitterDistance = 649;
             this.splitContainer3.SplitterWidth = 8;
             // 
             // splitContainer2
@@ -145,7 +145,7 @@
             // 
             this.splitContainer2.Panel1.Controls.Add(this.customDataGridView1);
             this.splitContainer2.Size = new System.Drawing.Size(1025, 706);
-            this.splitContainer2.SplitterDistance = 343;
+            this.splitContainer2.SplitterDistance = 342;
             // 
             // btn_add
             // 
@@ -281,7 +281,7 @@
             this.customDataGridView1.RowHeadersVisible = false;
             this.customDataGridView1.RowTemplate.Height = 23;
             this.customDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.customDataGridView1.Size = new System.Drawing.Size(1025, 343);
+            this.customDataGridView1.Size = new System.Drawing.Size(1025, 342);
             this.customDataGridView1.TabIndex = 3;
             // 
             // Column1
@@ -322,7 +322,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 41);
+            this.label3.Location = new System.Drawing.Point(9, 48);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 17);
             this.label3.TabIndex = 10;
@@ -605,7 +605,7 @@
             this.customDataGridView2.Name = "customDataGridView2";
             this.customDataGridView2.RowHeadersVisible = false;
             this.customDataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.customDataGridView2.Size = new System.Drawing.Size(678, 357);
+            this.customDataGridView2.Size = new System.Drawing.Size(649, 358);
             this.customDataGridView2.TabIndex = 0;
             // 
             // Column8

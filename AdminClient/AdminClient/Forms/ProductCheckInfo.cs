@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace AdminClient.Forms
 {
-    public partial class BOM : AdminClient.BaseForm.EmpFormNoSerchTemp
+    public partial class ProductCheckInfo : AdminClient.BaseForm.FormSerchListTemp
     {
-        public BOM()
+        public ProductCheckInfo()
         {
             InitializeComponent();
         }

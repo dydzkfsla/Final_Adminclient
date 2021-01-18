@@ -1,6 +1,6 @@
 ﻿namespace AdminClient.BaseForm
 {
-    partial class EmpFormPopUpTemp
+    partial class EmpFormNoSerchTemp
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -42,6 +42,23 @@
             // pnl_Main
             // 
             this.pnl_Main.Controls.Add(this.panel1);
+            this.pnl_Main.Size = new System.Drawing.Size(781, 597);
+            // 
+            // Form_close
+            // 
+            this.Form_close.Location = new System.Drawing.Point(756, 10);
+            // 
+            // Form_maximise
+            // 
+            this.Form_maximise.Location = new System.Drawing.Point(720, 11);
+            // 
+            // From_minimize
+            // 
+            this.From_minimize.Location = new System.Drawing.Point(684, 11);
+            // 
+            // TitleColor
+            // 
+            this.TitleColor.Size = new System.Drawing.Size(817, 7);
             // 
             // panel1
             // 
@@ -53,7 +70,7 @@
             this.panel1.Controls.Add(this.btn_add);
             this.panel1.Location = new System.Drawing.Point(10, 13);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(835, 65);
+            this.panel1.Size = new System.Drawing.Size(759, 65);
             this.panel1.TabIndex = 5;
             // 
             // btn_Update
@@ -62,7 +79,7 @@
             this.btn_Update.BackColor = System.Drawing.Color.White;
             this.btn_Update.Image = global::AdminClient.Properties.Resources.ClearTableStyle_32x32;
             this.btn_Update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Update.Location = new System.Drawing.Point(585, 9);
+            this.btn_Update.Location = new System.Drawing.Point(509, 9);
             this.btn_Update.Margin = new System.Windows.Forms.Padding(0);
             this.btn_Update.Name = "btn_Update";
             this.btn_Update.Size = new System.Drawing.Size(82, 47);
@@ -77,7 +94,7 @@
             this.btn_Xls.BackColor = System.Drawing.Color.White;
             this.btn_Xls.Image = global::AdminClient.Properties.Resources.ExportToXLS_32x32;
             this.btn_Xls.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Xls.Location = new System.Drawing.Point(750, 9);
+            this.btn_Xls.Location = new System.Drawing.Point(674, 9);
             this.btn_Xls.Margin = new System.Windows.Forms.Padding(0);
             this.btn_Xls.Name = "btn_Xls";
             this.btn_Xls.Size = new System.Drawing.Size(82, 47);
@@ -92,7 +109,7 @@
             this.btn_add.BackColor = System.Drawing.Color.White;
             this.btn_add.Image = global::AdminClient.Properties.Resources.EditName_32x32;
             this.btn_add.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_add.Location = new System.Drawing.Point(667, 9);
+            this.btn_add.Location = new System.Drawing.Point(591, 9);
             this.btn_add.Margin = new System.Windows.Forms.Padding(0);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(82, 47);
@@ -101,11 +118,11 @@
             this.btn_add.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_add.UseVisualStyleBackColor = false;
             // 
-            // FormBase6
+            // EmpFormPopUpTemp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
-            this.ClientSize = new System.Drawing.Size(863, 673);
-            this.Name = "FormBase6";
+            this.ClientSize = new System.Drawing.Size(799, 673);
+            this.Name = "EmpFormPopUpTemp";
             this.pnl_Main.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Form_maximise)).EndInit();

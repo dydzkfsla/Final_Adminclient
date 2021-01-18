@@ -6,11 +6,11 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace AdminClient.BaseForm
+namespace AdminClient.PopUp
 {
-    public partial class EmpFormPopUpTemp : AdminClient.BaseForm.EmpFormTemp
+    public partial class ContractPopUp : AdminClient.BaseForm.EmpFormTemp
     {
-        public EmpFormPopUpTemp()
+        public ContractPopUp()
         {
             InitializeComponent();
         }

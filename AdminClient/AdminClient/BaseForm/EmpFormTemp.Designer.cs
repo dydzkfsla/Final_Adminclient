@@ -30,26 +30,28 @@
         {
             this.pnl_Main = new System.Windows.Forms.Panel();
             this.lbl_Title = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Form_maximise)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.From_minimize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Form_close
             // 
-            this.Form_close.Location = new System.Drawing.Point(827, 8);
+            this.Form_close.Location = new System.Drawing.Point(601, 8);
             // 
             // Form_maximise
             // 
-            this.Form_maximise.Location = new System.Drawing.Point(791, 9);
+            this.Form_maximise.Location = new System.Drawing.Point(565, 9);
             // 
             // From_minimize
             // 
-            this.From_minimize.Location = new System.Drawing.Point(755, 9);
+            this.From_minimize.Location = new System.Drawing.Point(529, 9);
             // 
             // TitleColor
             // 
-            this.TitleColor.Size = new System.Drawing.Size(875, 7);
+            this.TitleColor.Size = new System.Drawing.Size(649, 7);
             // 
             // pnl_Main
             // 
@@ -59,7 +61,7 @@
             this.pnl_Main.BackColor = System.Drawing.Color.White;
             this.pnl_Main.Location = new System.Drawing.Point(6, 55);
             this.pnl_Main.Name = "pnl_Main";
-            this.pnl_Main.Size = new System.Drawing.Size(853, 615);
+            this.pnl_Main.Size = new System.Drawing.Size(627, 438);
             this.pnl_Main.TabIndex = 4;
             // 
             // lbl_Title
@@ -68,7 +70,7 @@
             this.lbl_Title.BackColor = System.Drawing.Color.White;
             this.lbl_Title.Font = new System.Drawing.Font("나눔고딕", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbl_Title.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbl_Title.Location = new System.Drawing.Point(8, 9);
+            this.lbl_Title.Location = new System.Drawing.Point(79, 9);
             this.lbl_Title.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Title.Name = "lbl_Title";
             this.lbl_Title.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -77,22 +79,36 @@
             this.lbl_Title.Text = "label1";
             this.lbl_Title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // FormBase1
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.BackgroundImage = global::AdminClient.Properties.Resources.cowboy_2028626_1280;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(68, 44);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
+            // EmpFormTemp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
-            this.ClientSize = new System.Drawing.Size(863, 673);
+            this.ClientSize = new System.Drawing.Size(637, 496);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbl_Title);
             this.Controls.Add(this.pnl_Main);
-            this.Name = "FormBase1";
+            this.Name = "EmpFormTemp";
             this.Controls.SetChildIndex(this.Form_close, 0);
             this.Controls.SetChildIndex(this.TitleColor, 0);
             this.Controls.SetChildIndex(this.Form_maximise, 0);
             this.Controls.SetChildIndex(this.From_minimize, 0);
             this.Controls.SetChildIndex(this.pnl_Main, 0);
             this.Controls.SetChildIndex(this.lbl_Title, 0);
+            this.Controls.SetChildIndex(this.pictureBox1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Form_maximise)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.From_minimize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,5 +118,6 @@
 
         protected System.Windows.Forms.Panel pnl_Main;
         protected System.Windows.Forms.Label lbl_Title;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

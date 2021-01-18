@@ -60,7 +60,6 @@
             // btn_add
             // 
             this.btn_add.Location = new System.Drawing.Point(1070, 9);
-            this.btn_add.Visible = false;
             // 
             // btn_Xls
             // 
@@ -137,11 +136,11 @@
             this.btn_insert.Text = "추가";
             this.btn_insert.UseVisualStyleBackColor = true;
             // 
-            // FormSearchBase
+            // FormSearchTemp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.ClientSize = new System.Drawing.Size(1265, 836);
-            this.Name = "FormSearchBase";
+            this.Name = "FormSearchTemp";
             this.splitContainer2.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);

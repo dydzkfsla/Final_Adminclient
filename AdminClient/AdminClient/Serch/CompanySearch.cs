@@ -3,16 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AdminClient.Forms
+namespace AdminClient.Serch
 {
-    public partial class test : Form
+    public partial class CompanySearch : AdminClient.BaseForm.FormSearchTemp
     {
-        public test()
+        public CompanySearch()
         {
             InitializeComponent();
         }

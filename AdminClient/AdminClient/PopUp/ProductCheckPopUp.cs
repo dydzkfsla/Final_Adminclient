@@ -6,11 +6,11 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace AdminClient.Forms
+namespace AdminClient.PopUp
 {
-    public partial class BOM : AdminClient.BaseForm.EmpFormNoSerchTemp
+    public partial class ProductCheckPopUp : AdminClient.BaseForm.EmpFormTemp
     {
-        public BOM()
+        public ProductCheckPopUp()
         {
             InitializeComponent();
         }

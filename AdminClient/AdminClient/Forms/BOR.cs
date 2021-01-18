@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace AdminClient.Forms
 {
-    public partial class BOR : AdminClient.BaseForm.EmpFormPopUpTemp
+    public partial class BOR : AdminClient.BaseForm.EmpFormNoSerchTemp
     {
         public BOR()
         {
