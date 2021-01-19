@@ -208,6 +208,12 @@
     <Compile Include="Forms\WareHouseInfo.Designer.cs">
       <DependentUpon>WareHouseInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\WorkOrderInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WorkOrderInfo.Designer.cs">
+      <DependentUpon>WorkOrderInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\WorkPlanInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -413,6 +419,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WareHouseInfo.resx">
       <DependentUpon>WareHouseInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WorkOrderInfo.resx">
+      <DependentUpon>WorkOrderInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WorkPlanInfo.resx">
       <DependentUpon>WorkPlanInfo.cs</DependentUpon>

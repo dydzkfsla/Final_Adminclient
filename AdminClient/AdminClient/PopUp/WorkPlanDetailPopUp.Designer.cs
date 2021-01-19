@@ -61,7 +61,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
@@ -70,6 +69,7 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pnl_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Form_maximise)).BeginInit();
@@ -79,6 +79,7 @@
             // 
             // pnl_Main
             // 
+            this.pnl_Main.Controls.Add(this.comboBox1);
             this.pnl_Main.Controls.Add(this.button6);
             this.pnl_Main.Controls.Add(this.button7);
             this.pnl_Main.Controls.Add(this.button8);
@@ -90,7 +91,6 @@
             this.pnl_Main.Controls.Add(this.label17);
             this.pnl_Main.Controls.Add(this.panel1);
             this.pnl_Main.Controls.Add(this.label18);
-            this.pnl_Main.Controls.Add(this.textBox6);
             this.pnl_Main.Size = new System.Drawing.Size(459, 551);
             // 
             // Form_close
@@ -479,20 +479,13 @@
             this.label18.TabIndex = 80;
             this.label18.Text = "다음공정";
             // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(168, 302);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(188, 25);
-            this.textBox6.TabIndex = 79;
-            // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(362, 302);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(74, 25);
             this.button4.TabIndex = 82;
-            this.button4.Text = "물품코드";
+            this.button4.Text = "공정코드";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // button5
@@ -501,7 +494,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(74, 25);
             this.button5.TabIndex = 86;
-            this.button5.Text = "물품코드";
+            this.button5.Text = "창고코드";
             this.button5.UseVisualStyleBackColor = true;
             // 
             // label21
@@ -562,6 +555,14 @@
             this.button8.Text = "추가";
             this.button8.UseVisualStyleBackColor = true;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(168, 303);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(188, 25);
+            this.comboBox1.TabIndex = 90;
+            // 
             // WorkPlanDetailPopUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
@@ -619,9 +620,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
