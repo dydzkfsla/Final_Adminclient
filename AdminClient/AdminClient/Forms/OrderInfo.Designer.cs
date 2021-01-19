@@ -103,7 +103,7 @@
             this.splitContainer3.Panel2.Controls.Add(this.label7);
             this.splitContainer3.Panel2.Controls.Add(this.label6);
             this.splitContainer3.Panel2.Controls.Add(this.label1);
-            this.splitContainer3.Size = new System.Drawing.Size(880, 275);
+            this.splitContainer3.Size = new System.Drawing.Size(880, 263);
             this.splitContainer3.SplitterDistance = 597;
             // 
             // splitContainer2
@@ -112,12 +112,12 @@
             // splitContainer2.Panel1
             // 
             this.splitContainer2.Panel1.Controls.Add(this.customDataGridView1);
-            this.splitContainer2.Size = new System.Drawing.Size(880, 801);
-            this.splitContainer2.SplitterDistance = 520;
+            this.splitContainer2.Size = new System.Drawing.Size(880, 725);
+            this.splitContainer2.SplitterDistance = 456;
             // 
             // pnl_Main
             // 
-            this.pnl_Main.Size = new System.Drawing.Size(1267, 882);
+            this.pnl_Main.Size = new System.Drawing.Size(1267, 807);
             // 
             // gb_Sherch
             // 
@@ -152,15 +152,15 @@
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Size = new System.Drawing.Size(1267, 801);
+            this.splitContainer1.Size = new System.Drawing.Size(1267, 726);
             // 
             // btn_folding
             // 
-            this.btn_folding.Location = new System.Drawing.Point(0, 357);
+            this.btn_folding.Location = new System.Drawing.Point(0, 409);
             // 
             // splitter1
             // 
-            this.splitter1.Size = new System.Drawing.Size(33, 801);
+            this.splitter1.Size = new System.Drawing.Size(33, 726);
             // 
             // button1
             // 
@@ -336,7 +336,7 @@
             this.customDataGridView1.RowHeadersVisible = false;
             this.customDataGridView1.RowTemplate.Height = 23;
             this.customDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.customDataGridView1.Size = new System.Drawing.Size(880, 520);
+            this.customDataGridView1.Size = new System.Drawing.Size(880, 456);
             this.customDataGridView1.TabIndex = 0;
             // 
             // customDataGridView2
@@ -348,7 +348,7 @@
             this.customDataGridView2.Name = "customDataGridView2";
             this.customDataGridView2.RowHeadersVisible = false;
             this.customDataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.customDataGridView2.Size = new System.Drawing.Size(597, 275);
+            this.customDataGridView2.Size = new System.Drawing.Size(597, 263);
             this.customDataGridView2.TabIndex = 0;
             // 
             // label1
@@ -445,7 +445,7 @@
             // OrderInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
-            this.ClientSize = new System.Drawing.Size(1278, 966);
+            this.ClientSize = new System.Drawing.Size(1278, 891);
             this.Name = "OrderInfo";
             this.splitContainer3.Panel1.ResumeLayout(false);
             this.splitContainer3.Panel2.ResumeLayout(false);
