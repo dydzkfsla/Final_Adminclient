@@ -178,6 +178,12 @@
     <Compile Include="Forms\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\OrderInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OrderInfo.Designer.cs">
+      <DependentUpon>OrderInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ProductCheckInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,6 +201,12 @@
     </Compile>
     <Compile Include="Forms\TempInfo.Designer.cs">
       <DependentUpon>TempInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WareHouseInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WareHouseInfo.Designer.cs">
+      <DependentUpon>WareHouseInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="PopUp\BOMPopUp.cs">
       <SubType>Form</SubType>
@@ -244,6 +256,12 @@
     <Compile Include="PopUp\FacilityPopUp.Designer.cs">
       <DependentUpon>FacilityPopUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopUp\OrderPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\OrderPopUp.Designer.cs">
+      <DependentUpon>OrderPopUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="PopUp\ProductCheckPopUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -255,6 +273,12 @@
     </Compile>
     <Compile Include="PopUp\ProductPopUp.Designer.cs">
       <DependentUpon>ProductPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\WareHousePopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\WareHousePopUp.Designer.cs">
+      <DependentUpon>WareHousePopUp.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -281,6 +305,12 @@
     </Compile>
     <Compile Include="Serch\ProductSearch.Designer.cs">
       <DependentUpon>ProductSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Serch\WareHouseSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Serch\WareHouseSearch.Designer.cs">
+      <DependentUpon>WareHouseSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\CommonUtil.cs" />
     <Compile Include="Utils\CuttedGroup.cs" />
@@ -345,6 +375,9 @@
     <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OrderInfo.resx">
+      <DependentUpon>OrderInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProductCheckInfo.resx">
       <DependentUpon>ProductCheckInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -353,6 +386,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TempInfo.resx">
       <DependentUpon>TempInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WareHouseInfo.resx">
+      <DependentUpon>WareHouseInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUp\BOMPopUp.resx">
       <DependentUpon>BOMPopUp.cs</DependentUpon>
@@ -378,11 +414,17 @@
     <EmbeddedResource Include="PopUp\FacilityPopUp.resx">
       <DependentUpon>FacilityPopUp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\OrderPopUp.resx">
+      <DependentUpon>OrderPopUp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PopUp\ProductCheckPopUp.resx">
       <DependentUpon>ProductCheckPopUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUp\ProductPopUp.resx">
       <DependentUpon>ProductPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\WareHousePopUp.resx">
+      <DependentUpon>WareHousePopUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -400,6 +442,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Serch\ProductSearch.resx">
       <DependentUpon>ProductSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Serch\WareHouseSearch.resx">
+      <DependentUpon>WareHouseSearch.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

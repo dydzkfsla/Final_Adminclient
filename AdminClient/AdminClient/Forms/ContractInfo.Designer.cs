@@ -70,6 +70,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
@@ -104,6 +106,8 @@
             // 
             // splitContainer3.Panel2
             // 
+            this.splitContainer3.Panel2.Controls.Add(this.button6);
+            this.splitContainer3.Panel2.Controls.Add(this.button5);
             this.splitContainer3.Panel2.Controls.Add(this.button4);
             this.splitContainer3.Panel2.Controls.Add(this.textBox6);
             this.splitContainer3.Panel2.Controls.Add(this.label11);
@@ -116,7 +120,7 @@
             this.splitContainer3.Panel2.Controls.Add(this.textBox2);
             this.splitContainer3.Panel2.Controls.Add(this.label7);
             this.splitContainer3.Size = new System.Drawing.Size(911, 348);
-            this.splitContainer3.SplitterDistance = 630;
+            this.splitContainer3.SplitterDistance = 308;
             // 
             // splitContainer2
             // 
@@ -457,7 +461,7 @@
             this.customDataGridView2.Name = "customDataGridView2";
             this.customDataGridView2.RowHeadersVisible = false;
             this.customDataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.customDataGridView2.Size = new System.Drawing.Size(630, 348);
+            this.customDataGridView2.Size = new System.Drawing.Size(308, 348);
             this.customDataGridView2.TabIndex = 0;
             // 
             // label7
@@ -473,14 +477,14 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(82, 19);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(148, 25);
+            this.textBox2.Size = new System.Drawing.Size(197, 25);
             this.textBox2.TabIndex = 1;
             // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(82, 50);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(148, 25);
+            this.textBox3.Size = new System.Drawing.Size(197, 25);
             this.textBox3.TabIndex = 3;
             // 
             // label8
@@ -496,7 +500,7 @@
             // 
             this.textBox4.Location = new System.Drawing.Point(82, 81);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(148, 25);
+            this.textBox4.Size = new System.Drawing.Size(197, 25);
             this.textBox4.TabIndex = 5;
             // 
             // label9
@@ -512,7 +516,7 @@
             // 
             this.textBox5.Location = new System.Drawing.Point(82, 112);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(148, 25);
+            this.textBox5.Size = new System.Drawing.Size(197, 25);
             this.textBox5.TabIndex = 7;
             // 
             // label10
@@ -528,7 +532,7 @@
             // 
             this.textBox6.Location = new System.Drawing.Point(82, 143);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(148, 25);
+            this.textBox6.Size = new System.Drawing.Size(197, 25);
             this.textBox6.TabIndex = 9;
             // 
             // label11
@@ -621,6 +625,24 @@
             this.label15.TabIndex = 18;
             this.label15.Text = "납기일";
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(195, 184);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(84, 29);
+            this.button6.TabIndex = 15;
+            this.button6.Text = "삭제";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(105, 184);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(84, 29);
+            this.button5.TabIndex = 14;
+            this.button5.Text = "수정";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
             // ContractInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
@@ -703,5 +725,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button5;
     }
 }
