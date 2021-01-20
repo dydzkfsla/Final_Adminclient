@@ -6,11 +6,11 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace AdminClient.Forms
+namespace AdminClient.Serch
 {
-	public partial class FacilityGroupInfo : AdminClient.BaseForm.FormSerchListTemp
+	public partial class WorkPlanDetailSearch : AdminClient.BaseForm.FormSearchTemp
 	{
-		public FacilityGroupInfo()
+		public WorkPlanDetailSearch()
 		{
 			InitializeComponent();
 		}

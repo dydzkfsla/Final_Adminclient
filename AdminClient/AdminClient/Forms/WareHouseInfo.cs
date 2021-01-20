@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace AdminClient.Forms
 {
-	public partial class FacilityGroupInfo : AdminClient.BaseForm.FormSerchListTemp
+	public partial class WareHouseInfo : AdminClient.BaseForm.FormSerchListThreeSplitTemp
 	{
-		public FacilityGroupInfo()
+		public WareHouseInfo()
 		{
 			InitializeComponent();
 		}

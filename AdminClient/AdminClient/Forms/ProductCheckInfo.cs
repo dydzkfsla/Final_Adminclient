@@ -8,11 +8,11 @@ using System.Windows.Forms;
 
 namespace AdminClient.Forms
 {
-    public partial class ProductCheckInfo : AdminClient.BaseForm.FormSerchListTemp
-    {
-        public ProductCheckInfo()
-        {
-            InitializeComponent();
-        }
-    }
+	public partial class ProductCheckInfo : AdminClient.BaseForm.FormSerchListTemp
+	{
+		public ProductCheckInfo()
+		{
+			InitializeComponent();
+		}
+	}
 }

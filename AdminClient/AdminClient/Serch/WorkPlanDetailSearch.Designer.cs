@@ -1,6 +1,6 @@
-﻿namespace AdminClient.Forms
+﻿namespace AdminClient.Serch
 {
-	partial class FacilityGroupInfo
+	partial class WorkPlanDetailSearch
 	{
 	        /// <summary>
 	        /// 필수 디자이너 변수입니다.
