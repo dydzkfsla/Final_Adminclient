@@ -178,11 +178,23 @@
     <Compile Include="Forms\GroupInfo.Designer.cs">
       <DependentUpon>GroupInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\InOutInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InOutInfo.Designer.cs">
+      <DependentUpon>InOutInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OrderInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OrderInfo.Designer.cs">
+      <DependentUpon>OrderInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\OutSourcingPlan.cs">
       <SubType>Form</SubType>
@@ -208,17 +220,47 @@
     <Compile Include="Forms\ProductionPlan.Designer.cs">
       <DependentUpon>ProductionPlan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ProgressInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProgressInfo.Designer.cs">
+      <DependentUpon>ProgressInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProgressMoveInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProgressMoveInfo.Designer.cs">
+      <DependentUpon>ProgressMoveInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StockInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StockInfo.Designer.cs">
+      <DependentUpon>StockInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TempInfo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\TempInfo.Designer.cs">
       <DependentUpon>TempInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\WorkPlan.cs">
+    <Compile Include="Forms\WareHouseInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\WorkPlan.Designer.cs">
-      <DependentUpon>WorkPlan.cs</DependentUpon>
+    <Compile Include="Forms\WareHouseInfo.Designer.cs">
+      <DependentUpon>WareHouseInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WorkOrderInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WorkOrderInfo.Designer.cs">
+      <DependentUpon>WorkOrderInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WorkPlanInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WorkPlanInfo.Designer.cs">
+      <DependentUpon>WorkPlanInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="PopUp\BOMPopUp.cs">
       <SubType>Form</SubType>
@@ -268,6 +310,12 @@
     <Compile Include="PopUp\FacilityPopUp.Designer.cs">
       <DependentUpon>FacilityPopUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopUp\OrderPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\OrderPopUp.Designer.cs">
+      <DependentUpon>OrderPopUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="PopUp\ProductCheckPopUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -280,11 +328,35 @@
     <Compile Include="PopUp\ProductPopUp.Designer.cs">
       <DependentUpon>ProductPopUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopUp\ProgressPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\ProgressPopUp.Designer.cs">
+      <DependentUpon>ProgressPopUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="PopUp\SalesMasterPopUp.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PopUp\SalesMasterPopUp.Designer.cs">
       <DependentUpon>SalesMasterPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\WareHousePopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\WareHousePopUp.Designer.cs">
+      <DependentUpon>WareHousePopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\WorkPlanDetailPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\WorkPlanDetailPopUp.Designer.cs">
+      <DependentUpon>WorkPlanDetailPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\WorkPlanPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\WorkPlanPopUp.Designer.cs">
+      <DependentUpon>WorkPlanPopUp.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -317,6 +389,18 @@
     </Compile>
     <Compile Include="Serch\SalesMasterSearch.Designer.cs">
       <DependentUpon>SalesMasterSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Serch\WareHouseSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Serch\WareHouseSearch.Designer.cs">
+      <DependentUpon>WareHouseSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Serch\WorkPlanDetailSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Serch\WorkPlanDetailSearch.Designer.cs">
+      <DependentUpon>WorkPlanDetailSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\CommonUtil.cs" />
     <Compile Include="Utils\CuttedGroup.cs" />
@@ -381,8 +465,14 @@
     <EmbeddedResource Include="Forms\GroupInfo.resx">
       <DependentUpon>GroupInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InOutInfo.resx">
+      <DependentUpon>InOutInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OrderInfo.resx">
+      <DependentUpon>OrderInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OutSourcingPlan.resx">
       <DependentUpon>OutSourcingPlan.cs</DependentUpon>
@@ -396,11 +486,26 @@
     <EmbeddedResource Include="Forms\ProductionPlan.resx">
       <DependentUpon>ProductionPlan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProgressInfo.resx">
+      <DependentUpon>ProgressInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProgressMoveInfo.resx">
+      <DependentUpon>ProgressMoveInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StockInfo.resx">
+      <DependentUpon>StockInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\TempInfo.resx">
       <DependentUpon>TempInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\WorkPlan.resx">
-      <DependentUpon>WorkPlan.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\WareHouseInfo.resx">
+      <DependentUpon>WareHouseInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WorkOrderInfo.resx">
+      <DependentUpon>WorkOrderInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WorkPlanInfo.resx">
+      <DependentUpon>WorkPlanInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUp\BOMPopUp.resx">
       <DependentUpon>BOMPopUp.cs</DependentUpon>
@@ -426,14 +531,29 @@
     <EmbeddedResource Include="PopUp\FacilityPopUp.resx">
       <DependentUpon>FacilityPopUp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\OrderPopUp.resx">
+      <DependentUpon>OrderPopUp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PopUp\ProductCheckPopUp.resx">
       <DependentUpon>ProductCheckPopUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUp\ProductPopUp.resx">
       <DependentUpon>ProductPopUp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\ProgressPopUp.resx">
+      <DependentUpon>ProgressPopUp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PopUp\SalesMasterPopUp.resx">
       <DependentUpon>SalesMasterPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\WareHousePopUp.resx">
+      <DependentUpon>WareHousePopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\WorkPlanDetailPopUp.resx">
+      <DependentUpon>WorkPlanDetailPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\WorkPlanPopUp.resx">
+      <DependentUpon>WorkPlanPopUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -454,6 +574,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Serch\SalesMasterSearch.resx">
       <DependentUpon>SalesMasterSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Serch\WareHouseSearch.resx">
+      <DependentUpon>WareHouseSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Serch\WorkPlanDetailSearch.resx">
+      <DependentUpon>WorkPlanDetailSearch.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
