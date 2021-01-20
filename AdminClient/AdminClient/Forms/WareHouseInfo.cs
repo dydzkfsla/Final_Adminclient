@@ -8,11 +8,11 @@ using System.Windows.Forms;
 
 namespace AdminClient.Forms
 {
-    public partial class WareHouseInfo : AdminClient.BaseForm.FormSerchListThreeSplitTemp
-    {
-        public WareHouseInfo()
-        {
-            InitializeComponent();
-        }
-    }
+	public partial class WareHouseInfo : AdminClient.BaseForm.FormSerchListThreeSplitTemp
+	{
+		public WareHouseInfo()
+		{
+			InitializeComponent();
+		}
+	}
 }

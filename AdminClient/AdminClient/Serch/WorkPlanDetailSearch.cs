@@ -8,11 +8,11 @@ using System.Windows.Forms;
 
 namespace AdminClient.Serch
 {
-    public partial class WorkPlanDetailSearch : AdminClient.BaseForm.FormSearchTemp
-    {
-        public WorkPlanDetailSearch()
-        {
-            InitializeComponent();
-        }
-    }
+	public partial class WorkPlanDetailSearch : AdminClient.BaseForm.FormSearchTemp
+	{
+		public WorkPlanDetailSearch()
+		{
+			InitializeComponent();
+		}
+	}
 }
