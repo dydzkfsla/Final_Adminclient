@@ -77,8 +77,6 @@
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Form_maximise)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.From_minimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customDataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -183,14 +181,6 @@
             // Form_close
             // 
             this.Form_close.Location = new System.Drawing.Point(1321, 8);
-            // 
-            // Form_maximise
-            // 
-            this.Form_maximise.Location = new System.Drawing.Point(1282, 9);
-            // 
-            // From_minimize
-            // 
-            this.From_minimize.Location = new System.Drawing.Point(1246, 8);
             // 
             // TitleColor
             // 
@@ -503,8 +493,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Form_maximise)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.From_minimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customDataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customDataGridView2)).EndInit();
             this.ResumeLayout(false);

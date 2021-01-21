@@ -86,11 +86,11 @@ namespace AdminClient
             frm.Show();
         }
 
-        public static void OpenCreateForm(this Form Parent, Form Fm, Type type, bool IsParentMDI = false)
+        public static void OpenCreateForm(this Form Parent, Form Fm, bool IsParentMDI = false)
         {
             foreach (Form form in Application.OpenForms)
             {
-                if (form.GetType() == type)
+                if (form.GetType() == Fm.GetType())
                 {
                     form.Activate();
                     return;

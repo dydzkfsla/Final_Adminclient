@@ -89,6 +89,7 @@ namespace AdminClient.BaseForm
                     }
                     return;
             }
+
             base.WndProc(ref m);
         }
 
@@ -101,7 +102,6 @@ namespace AdminClient.BaseForm
                 return cp;
             }
         }
-
 
 
 

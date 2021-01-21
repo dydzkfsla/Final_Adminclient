@@ -34,21 +34,11 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Form_maximise)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.From_minimize)).BeginInit();
             this.SuspendLayout();
             // 
             // Form_close
             // 
             this.Form_close.Location = new System.Drawing.Point(326, 8);
-            // 
-            // Form_maximise
-            // 
-            this.Form_maximise.Location = new System.Drawing.Point(290, 8);
-            // 
-            // From_minimize
-            // 
-            this.From_minimize.Location = new System.Drawing.Point(255, 8);
             // 
             // TitleColor
             // 
@@ -114,16 +104,12 @@
             this.Name = "Login";
             this.Controls.SetChildIndex(this.Form_close, 0);
             this.Controls.SetChildIndex(this.TitleColor, 0);
-            this.Controls.SetChildIndex(this.Form_maximise, 0);
-            this.Controls.SetChildIndex(this.From_minimize, 0);
             this.Controls.SetChildIndex(this.로그인, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.textBox1, 0);
             this.Controls.SetChildIndex(this.textBox2, 0);
             this.Controls.SetChildIndex(this.button1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Form_maximise)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.From_minimize)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

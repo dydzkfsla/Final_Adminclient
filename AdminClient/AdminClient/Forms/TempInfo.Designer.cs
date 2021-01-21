@@ -46,8 +46,6 @@
             this.button4 = new System.Windows.Forms.Button();
             this.pnl_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Form_maximise)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.From_minimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customDataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customDataGridView3)).BeginInit();
@@ -70,14 +68,6 @@
             // Form_close
             // 
             this.Form_close.Location = new System.Drawing.Point(726, 8);
-            // 
-            // Form_maximise
-            // 
-            this.Form_maximise.Location = new System.Drawing.Point(690, 9);
-            // 
-            // From_minimize
-            // 
-            this.From_minimize.Location = new System.Drawing.Point(654, 9);
             // 
             // TitleColor
             // 
@@ -247,8 +237,6 @@
             this.pnl_Main.ResumeLayout(false);
             this.pnl_Main.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Form_maximise)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.From_minimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customDataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customDataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customDataGridView3)).EndInit();

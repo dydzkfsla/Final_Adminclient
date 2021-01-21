@@ -104,8 +104,6 @@
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Form_maximise)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.From_minimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customDataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -135,7 +133,7 @@
             this.splitContainer3.Panel2.Controls.Add(this.label13);
             this.splitContainer3.Panel2.Controls.Add(this.label12);
             this.splitContainer3.Size = new System.Drawing.Size(1025, 358);
-            this.splitContainer3.SplitterDistance = 649;
+            this.splitContainer3.SplitterDistance = 755;
             this.splitContainer3.SplitterWidth = 8;
             // 
             // splitContainer2
@@ -249,14 +247,6 @@
             // Form_close
             // 
             this.Form_close.Location = new System.Drawing.Point(1460, 8);
-            // 
-            // Form_maximise
-            // 
-            this.Form_maximise.Location = new System.Drawing.Point(1421, 9);
-            // 
-            // From_minimize
-            // 
-            this.From_minimize.Location = new System.Drawing.Point(1385, 8);
             // 
             // TitleColor
             // 
@@ -605,7 +595,7 @@
             this.customDataGridView2.Name = "customDataGridView2";
             this.customDataGridView2.RowHeadersVisible = false;
             this.customDataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.customDataGridView2.Size = new System.Drawing.Size(649, 358);
+            this.customDataGridView2.Size = new System.Drawing.Size(755, 358);
             this.customDataGridView2.TabIndex = 0;
             // 
             // Column8
@@ -761,6 +751,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.ClientSize = new System.Drawing.Size(1492, 874);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "CompanyInfo";
             this.splitContainer3.Panel1.ResumeLayout(false);
             this.splitContainer3.Panel2.ResumeLayout(false);
@@ -784,8 +776,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Form_maximise)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.From_minimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customDataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customDataGridView2)).EndInit();
             this.ResumeLayout(false);
