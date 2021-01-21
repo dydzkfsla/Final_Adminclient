@@ -28,110 +28,119 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.panel1.SuspendLayout();
-            this.pnl_Main.SuspendLayout();
-            this.gb_Sherch.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nu_limit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Form_close)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Form_maximise)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.From_minimize)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.SuspendLayout();
-            this.SuspendLayout();
-            // 
-            // btn_add
-            // 
-            this.btn_add.Location = new System.Drawing.Point(983, 9);
-            // 
-            // btn_Xls
-            // 
-            this.btn_Xls.Location = new System.Drawing.Point(1066, 9);
-            // 
-            // btn_Update
-            // 
-            this.btn_Update.Location = new System.Drawing.Point(901, 9);
-            // 
-            // panel1
-            // 
-            this.panel1.Size = new System.Drawing.Size(1151, 64);
-            // 
-            // pnl_Main
-            // 
-            this.pnl_Main.Size = new System.Drawing.Size(1169, 663);
-            // 
-            // splitContainer1
-            // 
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1169, 582);
-            this.splitContainer1.SplitterDistance = 323;
-            // 
-            // btn_folding
-            // 
-            this.btn_folding.Location = new System.Drawing.Point(0, 248);
-            // 
-            // splitter1
-            // 
-            this.splitter1.Size = new System.Drawing.Size(33, 582);
-            // 
-            // Form_close
-            // 
-            this.Form_close.Location = new System.Drawing.Point(1148, 8);
-            // 
-            // Form_maximise
-            // 
-            this.Form_maximise.Location = new System.Drawing.Point(1109, 9);
-            // 
-            // From_minimize
-            // 
-            this.From_minimize.Location = new System.Drawing.Point(1073, 8);
-            // 
-            // TitleColor
-            // 
-            this.TitleColor.Size = new System.Drawing.Size(1259, 7);
-            // 
-            // splitContainer2
-            // 
-            this.splitContainer2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+			this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+			this.panel1.SuspendLayout();
+			this.pnl_Main.SuspendLayout();
+			this.gb_Sherch.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.nu_limit)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+			this.splitContainer1.Panel1.SuspendLayout();
+			this.splitContainer1.Panel2.SuspendLayout();
+			this.splitContainer1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.Form_close)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.Form_maximise)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.From_minimize)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+			this.splitContainer2.SuspendLayout();
+			this.SuspendLayout();
+			// 
+			// btn_add
+			// 
+			this.btn_add.Location = new System.Drawing.Point(1379, 9);
+			// 
+			// btn_Xls
+			// 
+			this.btn_Xls.Location = new System.Drawing.Point(1462, 9);
+			// 
+			// btn_Update
+			// 
+			this.btn_Update.Location = new System.Drawing.Point(1297, 9);
+			// 
+			// panel1
+			// 
+			this.panel1.Size = new System.Drawing.Size(1547, 64);
+			// 
+			// pnl_Main
+			// 
+			this.pnl_Main.Size = new System.Drawing.Size(1565, 790);
+			// 
+			// gb_Sherch
+			// 
+			this.gb_Sherch.Size = new System.Drawing.Size(295, 315);
+			// 
+			// gb_detail
+			// 
+			this.gb_detail.Location = new System.Drawing.Point(11, 321);
+			this.gb_detail.Size = new System.Drawing.Size(295, 381);
+			// 
+			// splitContainer1
+			// 
+			// 
+			// splitContainer1.Panel2
+			// 
+			this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
+			this.splitContainer1.Size = new System.Drawing.Size(1565, 709);
+			this.splitContainer1.SplitterDistance = 317;
+			// 
+			// btn_folding
+			// 
+			this.btn_folding.Location = new System.Drawing.Point(0, 311);
+			// 
+			// splitter1
+			// 
+			this.splitter1.Size = new System.Drawing.Size(33, 709);
+			// 
+			// Form_close
+			// 
+			this.Form_close.Location = new System.Drawing.Point(1544, 8);
+			// 
+			// Form_maximise
+			// 
+			this.Form_maximise.Location = new System.Drawing.Point(1505, 9);
+			// 
+			// From_minimize
+			// 
+			this.From_minimize.Location = new System.Drawing.Point(1469, 8);
+			// 
+			// TitleColor
+			// 
+			this.TitleColor.Size = new System.Drawing.Size(1655, 7);
+			// 
+			// splitContainer2
+			// 
+			this.splitContainer2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitContainer2.Location = new System.Drawing.Point(33, 0);
-            this.splitContainer2.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.splitContainer2.Name = "splitContainer2";
-            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.splitContainer2.Size = new System.Drawing.Size(809, 582);
-            this.splitContainer2.SplitterDistance = 403;
-            this.splitContainer2.SplitterWidth = 8;
-            this.splitContainer2.TabIndex = 3;
-            // 
-            // FormBase4
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
-            this.ClientSize = new System.Drawing.Size(1180, 763);
-            this.Name = "FormBase4";
-            this.panel1.ResumeLayout(false);
-            this.pnl_Main.ResumeLayout(false);
-            this.gb_Sherch.ResumeLayout(false);
-            this.gb_Sherch.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nu_limit)).EndInit();
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Form_close)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Form_maximise)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.From_minimize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
-            this.splitContainer2.ResumeLayout(false);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+			this.splitContainer2.Location = new System.Drawing.Point(33, 0);
+			this.splitContainer2.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+			this.splitContainer2.Name = "splitContainer2";
+			this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+			this.splitContainer2.Size = new System.Drawing.Size(1211, 709);
+			this.splitContainer2.SplitterDistance = 266;
+			this.splitContainer2.SplitterWidth = 8;
+			this.splitContainer2.TabIndex = 3;
+			// 
+			// FormSerchListSplitTemp
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
+			this.ClientSize = new System.Drawing.Size(1576, 890);
+			this.Name = "FormSerchListSplitTemp";
+			this.panel1.ResumeLayout(false);
+			this.pnl_Main.ResumeLayout(false);
+			this.gb_Sherch.ResumeLayout(false);
+			this.gb_Sherch.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.nu_limit)).EndInit();
+			this.splitContainer1.Panel1.ResumeLayout(false);
+			this.splitContainer1.Panel2.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+			this.splitContainer1.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.Form_close)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.Form_maximise)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.From_minimize)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+			this.splitContainer2.ResumeLayout(false);
+			this.ResumeLayout(false);
+			this.PerformLayout();
 
         }
 
