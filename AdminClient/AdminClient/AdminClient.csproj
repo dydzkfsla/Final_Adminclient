@@ -238,6 +238,30 @@
     <Compile Include="Forms\ProgressMoveInfo.Designer.cs">
       <DependentUpon>ProgressMoveInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SalesByCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SalesByCompany.Designer.cs">
+      <DependentUpon>SalesByCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SalesDeadLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SalesDeadLine.Designer.cs">
+      <DependentUpon>SalesDeadLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Shipment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Shipment.Designer.cs">
+      <DependentUpon>Shipment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StockByOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StockByOrder.Designer.cs">
+      <DependentUpon>StockByOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\StockInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -503,6 +527,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProgressMoveInfo.resx">
       <DependentUpon>ProgressMoveInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SalesByCompany.resx">
+      <DependentUpon>SalesByCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SalesDeadLine.resx">
+      <DependentUpon>SalesDeadLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Shipment.resx">
+      <DependentUpon>Shipment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StockByOrder.resx">
+      <DependentUpon>StockByOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StockInfo.resx">
       <DependentUpon>StockInfo.cs</DependentUpon>
