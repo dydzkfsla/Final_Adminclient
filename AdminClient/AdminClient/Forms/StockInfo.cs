@@ -8,11 +8,11 @@ using System.Windows.Forms;
 
 namespace AdminClient.Forms
 {
-    public partial class StockInfo : AdminClient.BaseForm.FormListTemp
-    {
-        public StockInfo()
-        {
-            InitializeComponent();
-        }
-    }
+	public partial class StockInfo : AdminClient.BaseForm.FormListTemp
+	{
+		public StockInfo()
+		{
+			InitializeComponent();
+		}
+	}
 }
