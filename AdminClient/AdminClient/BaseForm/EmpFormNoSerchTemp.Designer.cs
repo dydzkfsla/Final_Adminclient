@@ -34,8 +34,6 @@
             this.btn_add = new System.Windows.Forms.Button();
             this.pnl_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Form_maximise)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.From_minimize)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,15 +45,6 @@
             // Form_close
             // 
             this.Form_close.Location = new System.Drawing.Point(756, 10);
-            // 
-            // Form_maximise
-            // 
-            this.Form_maximise.Location = new System.Drawing.Point(720, 11);
-            // 
-            // From_minimize
-            // 
-            this.From_minimize.Location = new System.Drawing.Point(684, 11);
-            // 
             // TitleColor
             // 
             this.TitleColor.Size = new System.Drawing.Size(817, 7);
@@ -125,8 +114,6 @@
             this.Name = "EmpFormPopUpTemp";
             this.pnl_Main.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Form_maximise)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.From_minimize)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

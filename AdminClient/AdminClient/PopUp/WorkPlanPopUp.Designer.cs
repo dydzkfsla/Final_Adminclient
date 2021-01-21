@@ -50,8 +50,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.pnl_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Form_maximise)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.From_minimize)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,14 +67,6 @@
             // Form_close
             // 
             this.Form_close.Location = new System.Drawing.Point(438, 8);
-            // 
-            // Form_maximise
-            // 
-            this.Form_maximise.Location = new System.Drawing.Point(402, 9);
-            // 
-            // From_minimize
-            // 
-            this.From_minimize.Location = new System.Drawing.Point(366, 9);
             // 
             // TitleColor
             // 
@@ -301,8 +291,6 @@
             this.pnl_Main.ResumeLayout(false);
             this.pnl_Main.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Form_maximise)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.From_minimize)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

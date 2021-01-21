@@ -39,8 +39,6 @@
             this.btn_folding = new System.Windows.Forms.Button();
             this.splitter1 = new System.Windows.Forms.Splitter();
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Form_maximise)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.From_minimize)).BeginInit();
             this.pnl_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -53,14 +51,6 @@
             // Form_close
             // 
             this.Form_close.Location = new System.Drawing.Point(1191, 8);
-            // 
-            // Form_maximise
-            // 
-            this.Form_maximise.Location = new System.Drawing.Point(1152, 9);
-            // 
-            // From_minimize
-            // 
-            this.From_minimize.Location = new System.Drawing.Point(1116, 8);
             // 
             // TitleColor
             // 
@@ -211,11 +201,7 @@
             this.Controls.SetChildIndex(this.pnl_Main, 0);
             this.Controls.SetChildIndex(this.Form_close, 0);
             this.Controls.SetChildIndex(this.TitleColor, 0);
-            this.Controls.SetChildIndex(this.Form_maximise, 0);
-            this.Controls.SetChildIndex(this.From_minimize, 0);
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Form_maximise)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.From_minimize)).EndInit();
             this.pnl_Main.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);

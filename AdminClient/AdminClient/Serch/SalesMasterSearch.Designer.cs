@@ -80,8 +80,6 @@ namespace AdminClient.Search
 			this.splitContainer1.Panel2.SuspendLayout();
 			this.splitContainer1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.Form_close)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.Form_maximise)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.From_minimize)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.customDataGridView1)).BeginInit();
 			this.SuspendLayout();
@@ -189,14 +187,6 @@ namespace AdminClient.Search
 			// Form_close
 			// 
 			this.Form_close.Location = new System.Drawing.Point(1544, 8);
-			// 
-			// Form_maximise
-			// 
-			this.Form_maximise.Location = new System.Drawing.Point(1505, 9);
-			// 
-			// From_minimize
-			// 
-			this.From_minimize.Location = new System.Drawing.Point(1469, 8);
 			// 
 			// TitleColor
 			// 
@@ -572,8 +562,6 @@ namespace AdminClient.Search
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
 			this.splitContainer1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.Form_close)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.Form_maximise)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.From_minimize)).EndInit();
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.customDataGridView1)).EndInit();

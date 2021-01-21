@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using AdminClient.BaseForm;
 using AdminClient.Forms;
 using AdminClient.Serch;
+using AdminClient.MDI;
 
 namespace AdminClient
 {
@@ -19,7 +20,7 @@ namespace AdminClient
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ProductSearch());
+            Application.Run(new AdminClient.MDI.MDI());
         }
     }
 }

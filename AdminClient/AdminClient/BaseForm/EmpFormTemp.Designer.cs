@@ -32,22 +32,12 @@
             this.lbl_Title = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Form_maximise)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.From_minimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Form_close
             // 
             this.Form_close.Location = new System.Drawing.Point(601, 8);
-            // 
-            // Form_maximise
-            // 
-            this.Form_maximise.Location = new System.Drawing.Point(565, 9);
-            // 
-            // From_minimize
-            // 
-            this.From_minimize.Location = new System.Drawing.Point(529, 9);
             // 
             // TitleColor
             // 
@@ -100,14 +90,10 @@
             this.Name = "EmpFormTemp";
             this.Controls.SetChildIndex(this.Form_close, 0);
             this.Controls.SetChildIndex(this.TitleColor, 0);
-            this.Controls.SetChildIndex(this.Form_maximise, 0);
-            this.Controls.SetChildIndex(this.From_minimize, 0);
             this.Controls.SetChildIndex(this.pnl_Main, 0);
             this.Controls.SetChildIndex(this.lbl_Title, 0);
             this.Controls.SetChildIndex(this.pictureBox1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Form_maximise)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.From_minimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
