@@ -718,5 +718,8 @@
   <ItemGroup>
     <None Include="Resources\close-red.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Service\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
