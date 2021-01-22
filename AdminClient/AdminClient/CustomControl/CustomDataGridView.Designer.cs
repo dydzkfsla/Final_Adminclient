@@ -28,7 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // CustomDataGridView
+            // 
+            this.RowTemplate.Height = 23;
+            this.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.CustomDataGridView_CellPainting);
+            this.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.CustomDataGridView_ColumnAdded);
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion

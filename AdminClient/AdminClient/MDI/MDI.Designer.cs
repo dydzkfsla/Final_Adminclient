@@ -43,27 +43,27 @@
             treeNode6});
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.테스트1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.테스트2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.테스트3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.treeView1 = new System.Windows.Forms.TreeView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.메뉴관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.그룹관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.직원관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.테스트2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.테스트3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.즐겨찾기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.추가ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.삭제ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.treeView1 = new System.Windows.Forms.TreeView();
             this.ucTabControl1 = new AdminClient.ucTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel5.SuspendLayout();
             this.ucTabControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -90,75 +90,6 @@
             this.테스트1ToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.테스트1ToolStripMenuItem.Text = "직원메뉴";
             // 
-            // 테스트2ToolStripMenuItem
-            // 
-            this.테스트2ToolStripMenuItem.Name = "테스트2ToolStripMenuItem";
-            this.테스트2ToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
-            this.테스트2ToolStripMenuItem.Text = "물품확인";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.panel5);
-            this.panel1.Controls.Add(this.treeView1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 24);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(213, 686);
-            this.panel1.TabIndex = 5;
-            // 
-            // 테스트3ToolStripMenuItem
-            // 
-            this.테스트3ToolStripMenuItem.Name = "테스트3ToolStripMenuItem";
-            this.테스트3ToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
-            this.테스트3ToolStripMenuItem.Text = "고객사";
-            // 
-            // treeView1
-            // 
-            this.treeView1.BackColor = System.Drawing.SystemColors.Window;
-            this.treeView1.Location = new System.Drawing.Point(0, 184);
-            this.treeView1.Margin = new System.Windows.Forms.Padding(0);
-            this.treeView1.Name = "treeView1";
-            treeNode1.Name = "노드4";
-            treeNode1.Text = "메뉴관리";
-            treeNode2.Name = "노드6";
-            treeNode2.Text = "그룹관리";
-            treeNode3.Name = "노드7";
-            treeNode3.Text = "직원관리";
-            treeNode4.Name = "노드1";
-            treeNode4.Text = "직원메뉴";
-            treeNode5.Name = "노드2";
-            treeNode5.Text = "물품확인";
-            treeNode6.Name = "노드3";
-            treeNode6.Text = "고객사";
-            treeNode7.Name = "노드0";
-            treeNode7.Text = "즐겨찾기 목록";
-            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode7});
-            this.treeView1.Size = new System.Drawing.Size(183, 187);
-            this.treeView1.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(0, 347);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 60);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "<<";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // panel5
-            // 
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.button1);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(182, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(31, 686);
-            this.panel5.TabIndex = 8;
-            // 
             // 메뉴관리ToolStripMenuItem
             // 
             this.메뉴관리ToolStripMenuItem.Name = "메뉴관리ToolStripMenuItem";
@@ -176,6 +107,18 @@
             this.직원관리ToolStripMenuItem.Name = "직원관리ToolStripMenuItem";
             this.직원관리ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.직원관리ToolStripMenuItem.Text = "직원관리";
+            // 
+            // 테스트2ToolStripMenuItem
+            // 
+            this.테스트2ToolStripMenuItem.Name = "테스트2ToolStripMenuItem";
+            this.테스트2ToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.테스트2ToolStripMenuItem.Text = "물품확인";
+            // 
+            // 테스트3ToolStripMenuItem
+            // 
+            this.테스트3ToolStripMenuItem.Name = "테스트3ToolStripMenuItem";
+            this.테스트3ToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.테스트3ToolStripMenuItem.Text = "고객사";
             // 
             // 즐겨찾기ToolStripMenuItem
             // 
@@ -198,6 +141,73 @@
             this.삭제ToolStripMenuItem.Name = "삭제ToolStripMenuItem";
             this.삭제ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.삭제ToolStripMenuItem.Text = "삭제";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.panel5);
+            this.panel1.Controls.Add(this.treeView1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 24);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(213, 686);
+            this.panel1.TabIndex = 5;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::AdminClient.Properties.Resources.cowboy_2028626_1280;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(183, 176);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel5
+            // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.button1);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel5.Location = new System.Drawing.Point(182, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(31, 686);
+            this.panel5.TabIndex = 8;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(0, 347);
+            this.button1.Margin = new System.Windows.Forms.Padding(0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(30, 60);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "<<";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // treeView1
+            // 
+            this.treeView1.BackColor = System.Drawing.SystemColors.Window;
+            this.treeView1.Location = new System.Drawing.Point(0, 179);
+            this.treeView1.Margin = new System.Windows.Forms.Padding(0);
+            this.treeView1.Name = "treeView1";
+            treeNode1.Name = "노드4";
+            treeNode1.Text = "메뉴관리";
+            treeNode2.Name = "노드6";
+            treeNode2.Text = "그룹관리";
+            treeNode3.Name = "노드7";
+            treeNode3.Text = "직원관리";
+            treeNode4.Name = "노드1";
+            treeNode4.Text = "직원메뉴";
+            treeNode5.Name = "노드2";
+            treeNode5.Text = "물품확인";
+            treeNode6.Name = "노드3";
+            treeNode6.Text = "고객사";
+            treeNode7.Name = "노드0";
+            treeNode7.Text = "즐겨찾기 목록";
+            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode7});
+            this.treeView1.Size = new System.Drawing.Size(183, 187);
+            this.treeView1.TabIndex = 0;
             // 
             // ucTabControl1
             // 
@@ -231,16 +241,6 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::AdminClient.Properties.Resources.cowboy_2028626_1280;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(183, 181);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
-            // 
             // MDI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -256,9 +256,9 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel5.ResumeLayout(false);
             this.ucTabControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
