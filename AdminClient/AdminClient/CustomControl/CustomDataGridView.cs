@@ -12,11 +12,17 @@ namespace AdminClient
 {
     public partial class CustomDataGridView : DataGridView
     {
+        public bool IsChkVisible { get; set; }
         public CustomDataGridView()
         {
             InitializeComponent();
             this.DataBindingComplete += dataGridView1_DataBindingComplete;
-            CommonUtil.SetInitGridView(this, false);
+            this.BackgroundColor = Color.White;
+            CommonUtil.AddGridTextColumn(this, "No", "No", 100);
+            CommonUtil.AddGridCheckColumn(this, "Chk", "Chk", 80, IsChkVisible);
+            this.DefaultCellStyle.SelectionBackColor = Color.IndianRed;
+            this.DefaultCellStyle.SelectionForeColor = Color.White;
+            this.GridColor = Color.Black;
         }
 
         protected override void OnPaint(PaintEventArgs pe)
@@ -28,6 +34,8 @@ namespace AdminClient
         {
             foreach (DataGridViewRow row in this.Rows)
             {
+                
+                row.Cells["No"].Value = row.Index.ToString();
                 if (row.Index % 2 == 0)
                     row.DefaultCellStyle.BackColor = Color.AliceBlue;
             }
