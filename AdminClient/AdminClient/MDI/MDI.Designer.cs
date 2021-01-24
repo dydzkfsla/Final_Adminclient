@@ -76,7 +76,8 @@
             this.즐겨찾기ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(953, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 3, 0, 3);
+            this.menuStrip1.Size = new System.Drawing.Size(1084, 25);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -87,7 +88,7 @@
             this.그룹관리ToolStripMenuItem,
             this.직원관리ToolStripMenuItem});
             this.테스트1ToolStripMenuItem.Name = "테스트1ToolStripMenuItem";
-            this.테스트1ToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.테스트1ToolStripMenuItem.Size = new System.Drawing.Size(67, 19);
             this.테스트1ToolStripMenuItem.Text = "직원메뉴";
             // 
             // 메뉴관리ToolStripMenuItem
@@ -111,13 +112,13 @@
             // 테스트2ToolStripMenuItem
             // 
             this.테스트2ToolStripMenuItem.Name = "테스트2ToolStripMenuItem";
-            this.테스트2ToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.테스트2ToolStripMenuItem.Size = new System.Drawing.Size(67, 19);
             this.테스트2ToolStripMenuItem.Text = "물품확인";
             // 
             // 테스트3ToolStripMenuItem
             // 
             this.테스트3ToolStripMenuItem.Name = "테스트3ToolStripMenuItem";
-            this.테스트3ToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.테스트3ToolStripMenuItem.Size = new System.Drawing.Size(55, 19);
             this.테스트3ToolStripMenuItem.Text = "고객사";
             // 
             // 즐겨찾기ToolStripMenuItem
@@ -127,7 +128,7 @@
             this.추가ToolStripMenuItem,
             this.삭제ToolStripMenuItem});
             this.즐겨찾기ToolStripMenuItem.Name = "즐겨찾기ToolStripMenuItem";
-            this.즐겨찾기ToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.즐겨찾기ToolStripMenuItem.Size = new System.Drawing.Size(67, 19);
             this.즐겨찾기ToolStripMenuItem.Text = "즐겨찾기";
             // 
             // 추가ToolStripMenuItem
@@ -149,17 +150,19 @@
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.treeView1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 24);
+            this.panel1.Location = new System.Drawing.Point(0, 25);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(213, 686);
+            this.panel1.Size = new System.Drawing.Size(274, 555);
             this.panel1.TabIndex = 5;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::AdminClient.Properties.Resources.cowboy_2028626_1280;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(183, 176);
+            this.pictureBox1.Size = new System.Drawing.Size(235, 250);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
@@ -169,17 +172,18 @@
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.button1);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(182, 0);
+            this.panel5.Location = new System.Drawing.Point(235, 0);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(31, 686);
+            this.panel5.Size = new System.Drawing.Size(39, 555);
             this.panel5.TabIndex = 8;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(0, 347);
+            this.button1.Location = new System.Drawing.Point(-2, 294);
             this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 60);
+            this.button1.Size = new System.Drawing.Size(39, 85);
             this.button1.TabIndex = 2;
             this.button1.Text = "<<";
             this.button1.UseVisualStyleBackColor = true;
@@ -187,7 +191,7 @@
             // treeView1
             // 
             this.treeView1.BackColor = System.Drawing.SystemColors.Window;
-            this.treeView1.Location = new System.Drawing.Point(0, 179);
+            this.treeView1.Location = new System.Drawing.Point(0, 253);
             this.treeView1.Margin = new System.Windows.Forms.Padding(0);
             this.treeView1.Name = "treeView1";
             treeNode1.Name = "노드4";
@@ -206,7 +210,7 @@
             treeNode7.Text = "즐겨찾기 목록";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode7});
-            this.treeView1.Size = new System.Drawing.Size(183, 187);
+            this.treeView1.Size = new System.Drawing.Size(234, 263);
             this.treeView1.TabIndex = 0;
             // 
             // ucTabControl1
@@ -215,41 +219,46 @@
             this.ucTabControl1.Controls.Add(this.tabPage2);
             this.ucTabControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ucTabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.ucTabControl1.Location = new System.Drawing.Point(213, 24);
+            this.ucTabControl1.Location = new System.Drawing.Point(274, 25);
+            this.ucTabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ucTabControl1.Name = "ucTabControl1";
             this.ucTabControl1.SelectedIndex = 0;
-            this.ucTabControl1.Size = new System.Drawing.Size(740, 20);
+            this.ucTabControl1.Size = new System.Drawing.Size(810, 29);
             this.ucTabControl1.TabIndex = 6;
             // 
             // tabPage1
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 26);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(732, 0);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Size = new System.Drawing.Size(802, 0);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 28);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(732, 0);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Size = new System.Drawing.Size(803, 0);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // MDI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(953, 710);
+            this.ClientSize = new System.Drawing.Size(1084, 580);
             this.Controls.Add(this.ucTabControl1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
+            this.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MDI";
             this.Text = "MDI";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
