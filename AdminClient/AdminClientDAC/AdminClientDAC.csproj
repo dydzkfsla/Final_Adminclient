@@ -52,9 +52,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="CommonDAC.cs" />
     <Compile Include="ConnDB.cs" />
     <Compile Include="Global\Connstring.cs" />
     <Compile Include="Helper.cs" />
+    <Compile Include="ProductDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

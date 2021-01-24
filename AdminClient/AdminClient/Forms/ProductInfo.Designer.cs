@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbo_Category = new System.Windows.Forms.ComboBox();
+            this.cbo_Unit = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.cbo_State = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.rd_descending = new System.Windows.Forms.RadioButton();
             this.rd_ascending = new System.Windows.Forms.RadioButton();
@@ -53,23 +54,17 @@
             this.label8 = new System.Windows.Forms.Label();
             this.comboBox11 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.customDataGridView1 = new AdminClient.CustomDataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.dgv_ProdList = new AdminClient.CustomDataGridView();
+            this.txt_Wh = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txt_Cate = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txt_Name = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_Code = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.btn_Clear = new System.Windows.Forms.Button();
+            this.btn_Delete = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnl_Main.SuspendLayout();
             this.gb_Sherch.SuspendLayout();
@@ -80,12 +75,13 @@
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ProdList)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_add
             // 
             this.btn_add.Location = new System.Drawing.Point(1358, 9);
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // btn_Xls
             // 
@@ -94,29 +90,34 @@
             // btn_Update
             // 
             this.btn_Update.Location = new System.Drawing.Point(1276, 9);
+            this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Controls.Add(this.btn_Delete);
+            this.panel1.Controls.Add(this.btn_Clear);
+            this.panel1.Controls.Add(this.txt_Wh);
             this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.txt_Cate);
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.txt_Name);
             this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.txt_Code);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Size = new System.Drawing.Size(1526, 64);
             this.panel1.Controls.SetChildIndex(this.btn_add, 0);
             this.panel1.Controls.SetChildIndex(this.btn_Xls, 0);
             this.panel1.Controls.SetChildIndex(this.btn_Update, 0);
             this.panel1.Controls.SetChildIndex(this.label13, 0);
-            this.panel1.Controls.SetChildIndex(this.textBox2, 0);
+            this.panel1.Controls.SetChildIndex(this.txt_Code, 0);
             this.panel1.Controls.SetChildIndex(this.label12, 0);
-            this.panel1.Controls.SetChildIndex(this.textBox3, 0);
+            this.panel1.Controls.SetChildIndex(this.txt_Name, 0);
             this.panel1.Controls.SetChildIndex(this.label10, 0);
-            this.panel1.Controls.SetChildIndex(this.textBox4, 0);
+            this.panel1.Controls.SetChildIndex(this.txt_Cate, 0);
             this.panel1.Controls.SetChildIndex(this.label11, 0);
-            this.panel1.Controls.SetChildIndex(this.textBox5, 0);
+            this.panel1.Controls.SetChildIndex(this.txt_Wh, 0);
+            this.panel1.Controls.SetChildIndex(this.btn_Clear, 0);
+            this.panel1.Controls.SetChildIndex(this.btn_Delete, 0);
             // 
             // pnl_Main
             // 
@@ -124,26 +125,26 @@
             // 
             // gb_Sherch
             // 
-            this.gb_Sherch.Controls.Add(this.comboBox4);
+            this.gb_Sherch.Controls.Add(this.cbo_State);
             this.gb_Sherch.Controls.Add(this.label4);
             this.gb_Sherch.Controls.Add(this.comboBox3);
             this.gb_Sherch.Controls.Add(this.label3);
-            this.gb_Sherch.Controls.Add(this.comboBox2);
+            this.gb_Sherch.Controls.Add(this.cbo_Unit);
             this.gb_Sherch.Controls.Add(this.label2);
-            this.gb_Sherch.Controls.Add(this.comboBox1);
+            this.gb_Sherch.Controls.Add(this.cbo_Category);
             this.gb_Sherch.Controls.Add(this.label1);
             this.gb_Sherch.Size = new System.Drawing.Size(376, 242);
             this.gb_Sherch.Controls.SetChildIndex(this.chk_limit, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.nu_limit, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.button1, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.label1, 0);
-            this.gb_Sherch.Controls.SetChildIndex(this.comboBox1, 0);
+            this.gb_Sherch.Controls.SetChildIndex(this.cbo_Category, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.label2, 0);
-            this.gb_Sherch.Controls.SetChildIndex(this.comboBox2, 0);
+            this.gb_Sherch.Controls.SetChildIndex(this.cbo_Unit, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.label3, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.comboBox3, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.label4, 0);
-            this.gb_Sherch.Controls.SetChildIndex(this.comboBox4, 0);
+            this.gb_Sherch.Controls.SetChildIndex(this.cbo_State, 0);
             // 
             // gb_detail
             // 
@@ -171,12 +172,16 @@
             // 
             this.nu_limit.Size = new System.Drawing.Size(138, 25);
             // 
+            // chk_limit
+            // 
+            this.chk_limit.CheckedChanged += new System.EventHandler(this.chk_limit_CheckedChanged);
+            // 
             // splitContainer1
             // 
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.customDataGridView1);
+            this.splitContainer1.Panel2.Controls.Add(this.dgv_ProdList);
             this.splitContainer1.Size = new System.Drawing.Size(1544, 675);
             this.splitContainer1.SplitterDistance = 427;
             // 
@@ -191,6 +196,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(297, 18);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form_close
             // 
@@ -209,21 +215,23 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "카테고리";
             // 
-            // comboBox1
+            // cbo_Category
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 61);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(225, 25);
-            this.comboBox1.TabIndex = 4;
+            this.cbo_Category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_Category.FormattingEnabled = true;
+            this.cbo_Category.Location = new System.Drawing.Point(12, 61);
+            this.cbo_Category.Name = "cbo_Category";
+            this.cbo_Category.Size = new System.Drawing.Size(225, 25);
+            this.cbo_Category.TabIndex = 4;
             // 
-            // comboBox2
+            // cbo_Unit
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(12, 109);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(225, 25);
-            this.comboBox2.TabIndex = 6;
+            this.cbo_Unit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_Unit.FormattingEnabled = true;
+            this.cbo_Unit.Location = new System.Drawing.Point(12, 109);
+            this.cbo_Unit.Name = "cbo_Unit";
+            this.cbo_Unit.Size = new System.Drawing.Size(225, 25);
+            this.cbo_Unit.TabIndex = 6;
             // 
             // label2
             // 
@@ -236,6 +244,7 @@
             // 
             // comboBox3
             // 
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(12, 157);
             this.comboBox3.Name = "comboBox3";
@@ -251,13 +260,14 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "검사여부";
             // 
-            // comboBox4
+            // cbo_State
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(12, 205);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(225, 25);
-            this.comboBox4.TabIndex = 10;
+            this.cbo_State.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_State.FormattingEnabled = true;
+            this.cbo_State.Location = new System.Drawing.Point(12, 205);
+            this.cbo_State.Name = "cbo_State";
+            this.cbo_State.Size = new System.Drawing.Size(225, 25);
+            this.cbo_State.TabIndex = 10;
             // 
             // label4
             // 
@@ -425,77 +435,40 @@
             this.label9.TabIndex = 11;
             this.label9.Text = "카테고리";
             // 
-            // customDataGridView1
+            // dgv_ProdList
             // 
-            this.customDataGridView1.AllowUserToAddRows = false;
-            this.customDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgv_ProdList.AllowUserToAddRows = false;
+            this.dgv_ProdList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.customDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.customDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column4,
-            this.Column3,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8});
-            this.customDataGridView1.Location = new System.Drawing.Point(33, 0);
-            this.customDataGridView1.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.customDataGridView1.Name = "customDataGridView1";
-            this.customDataGridView1.RowHeadersVisible = false;
-            this.customDataGridView1.RowTemplate.Height = 23;
-            this.customDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.customDataGridView1.Size = new System.Drawing.Size(1079, 675);
-            this.customDataGridView1.TabIndex = 3;
+            this.dgv_ProdList.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_ProdList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_ProdList.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_ProdList.GridColor = System.Drawing.Color.Black;
+            this.dgv_ProdList.IsChkVisible = false;
+            this.dgv_ProdList.Location = new System.Drawing.Point(33, 0);
+            this.dgv_ProdList.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.dgv_ProdList.Name = "dgv_ProdList";
+            this.dgv_ProdList.RowHeadersVisible = false;
+            this.dgv_ProdList.RowTemplate.Height = 23;
+            this.dgv_ProdList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_ProdList.Size = new System.Drawing.Size(1079, 675);
+            this.dgv_ProdList.TabIndex = 3;
+            this.dgv_ProdList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ProdList_CellClick);
             // 
-            // Column1
+            // txt_Wh
             // 
-            this.Column1.HeaderText = "물품코드";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "물품이름";
-            this.Column2.Name = "Column2";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "구분";
-            this.Column4.Name = "Column4";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "단위기준";
-            this.Column3.Name = "Column3";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "검사여부";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "단종여부";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "창고";
-            this.Column7.Name = "Column7";
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "안전재고";
-            this.Column8.Name = "Column8";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(1113, 21);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(145, 25);
-            this.textBox5.TabIndex = 21;
+            this.txt_Wh.Location = new System.Drawing.Point(1113, 21);
+            this.txt_Wh.Name = "txt_Wh";
+            this.txt_Wh.Size = new System.Drawing.Size(145, 25);
+            this.txt_Wh.TabIndex = 21;
             // 
             // label11
             // 
@@ -508,12 +481,12 @@
             this.label11.TabIndex = 20;
             this.label11.Text = "창고";
             // 
-            // textBox4
+            // txt_Cate
             // 
-            this.textBox4.Location = new System.Drawing.Point(883, 21);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(145, 25);
-            this.textBox4.TabIndex = 19;
+            this.txt_Cate.Location = new System.Drawing.Point(883, 21);
+            this.txt_Cate.Name = "txt_Cate";
+            this.txt_Cate.Size = new System.Drawing.Size(145, 25);
+            this.txt_Cate.TabIndex = 19;
             // 
             // label10
             // 
@@ -526,12 +499,12 @@
             this.label10.TabIndex = 18;
             this.label10.Text = "구분";
             // 
-            // textBox3
+            // txt_Name
             // 
-            this.textBox3.Location = new System.Drawing.Point(641, 21);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(145, 25);
-            this.textBox3.TabIndex = 17;
+            this.txt_Name.Location = new System.Drawing.Point(641, 21);
+            this.txt_Name.Name = "txt_Name";
+            this.txt_Name.Size = new System.Drawing.Size(145, 25);
+            this.txt_Name.TabIndex = 17;
             // 
             // label12
             // 
@@ -544,12 +517,12 @@
             this.label12.TabIndex = 16;
             this.label12.Text = "물품이름";
             // 
-            // textBox2
+            // txt_Code
             // 
-            this.textBox2.Location = new System.Drawing.Point(404, 21);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(145, 25);
-            this.textBox2.TabIndex = 15;
+            this.txt_Code.Location = new System.Drawing.Point(404, 21);
+            this.txt_Code.Name = "txt_Code";
+            this.txt_Code.Size = new System.Drawing.Size(145, 25);
+            this.txt_Code.TabIndex = 15;
             // 
             // label13
             // 
@@ -562,11 +535,32 @@
             this.label13.TabIndex = 14;
             this.label13.Text = "물품코드";
             // 
+            // btn_Clear
+            // 
+            this.btn_Clear.Location = new System.Drawing.Point(149, 24);
+            this.btn_Clear.Name = "btn_Clear";
+            this.btn_Clear.Size = new System.Drawing.Size(75, 23);
+            this.btn_Clear.TabIndex = 22;
+            this.btn_Clear.Text = "초기화";
+            this.btn_Clear.UseVisualStyleBackColor = true;
+            this.btn_Clear.Click += new System.EventHandler(this.btn_Clear_Click);
+            // 
+            // btn_Delete
+            // 
+            this.btn_Delete.Location = new System.Drawing.Point(38, 29);
+            this.btn_Delete.Name = "btn_Delete";
+            this.btn_Delete.Size = new System.Drawing.Size(75, 23);
+            this.btn_Delete.TabIndex = 23;
+            this.btn_Delete.Text = "삭제";
+            this.btn_Delete.UseVisualStyleBackColor = true;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
+            // 
             // ProductInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.ClientSize = new System.Drawing.Size(1555, 856);
             this.Name = "ProductInfo";
+            this.Load += new System.EventHandler(this.ProductInfo_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.pnl_Main.ResumeLayout(false);
@@ -580,7 +574,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ProdList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -588,13 +582,13 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox cbo_State;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbo_Unit;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbo_Category;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RadioButton rd_descending;
         private System.Windows.Forms.RadioButton rd_ascending;
@@ -613,22 +607,16 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox comboBox11;
         private System.Windows.Forms.Label label9;
-        private CustomDataGridView customDataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.TextBox textBox5;
+        private CustomDataGridView dgv_ProdList;
+        private System.Windows.Forms.TextBox txt_Wh;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txt_Cate;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txt_Name;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_Code;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button btn_Clear;
+        private System.Windows.Forms.Button btn_Delete;
     }
 }
