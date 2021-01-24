@@ -439,7 +439,9 @@
     <Compile Include="Serch\WorkPlanDetailSearch.Designer.cs">
       <DependentUpon>WorkPlanDetailSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="Service\CommonService.cs" />
     <Compile Include="Service\FormInfoService.cs" />
+    <Compile Include="Service\ProductService.cs" />
     <Compile Include="UseControl\SearchControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -683,7 +685,7 @@
       <Name>AdminClientDAC</Name>
     </ProjectReference>
     <ProjectReference Include="..\AdminClientVO\AdminClientVO.csproj">
-      <Project>{ab68e800-4ff6-46de-9d0e-0248f41abb45}</Project>
+      <Project>{AB68E800-4FF6-46DE-9D0E-0248F41ABB45}</Project>
       <Name>AdminClientVO</Name>
     </ProjectReference>
   </ItemGroup>

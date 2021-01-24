@@ -52,11 +52,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="CommonDAC.cs" />
     <Compile Include="ConnDB.cs" />
     <Compile Include="FormInfoDAC.cs" />
     <Compile Include="Global\Connstring.cs" />
     <Compile Include="Global\Global.cs" />
     <Compile Include="Helper.cs" />
+    <Compile Include="ProductDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -70,7 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AdminClientVO\AdminClientVO.csproj">
-      <Project>{ab68e800-4ff6-46de-9d0e-0248f41abb45}</Project>
+      <Project>{AB68E800-4FF6-46DE-9D0E-0248F41ABB45}</Project>
       <Name>AdminClientVO</Name>
     </ProjectReference>
   </ItemGroup>

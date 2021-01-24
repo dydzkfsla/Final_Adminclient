@@ -289,7 +289,7 @@
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Location = new System.Drawing.Point(10, 328);
+            this.groupBox1.Location = new System.Drawing.Point(6, 346);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(296, 110);
             this.groupBox1.TabIndex = 12;
@@ -330,7 +330,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(324, 443);
+            this.button6.Location = new System.Drawing.Point(320, 461);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(93, 43);
             this.button6.TabIndex = 2;
@@ -339,7 +339,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(324, 394);
+            this.button5.Location = new System.Drawing.Point(320, 412);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(93, 43);
             this.button5.TabIndex = 1;
@@ -348,7 +348,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(324, 345);
+            this.button4.Location = new System.Drawing.Point(320, 363);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(93, 43);
             this.button4.TabIndex = 0;
