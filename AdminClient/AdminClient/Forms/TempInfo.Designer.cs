@@ -28,11 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
-            this.customDataGridView1 = new AdminClient.CustomDataGridView();
-            this.customDataGridView2 = new AdminClient.CustomDataGridView();
+            this.dgv_Temp = new AdminClient.CustomDataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.gdv_addGroup = new AdminClient.CustomDataGridView();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
-            this.customDataGridView3 = new AdminClient.CustomDataGridView();
+            this.dgv_Group = new AdminClient.CustomDataGridView();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -46,9 +65,9 @@
             this.button4 = new System.Windows.Forms.Button();
             this.pnl_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Temp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gdv_addGroup)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Group)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,11 +76,11 @@
             this.pnl_Main.Controls.Add(this.groupBox1);
             this.pnl_Main.Controls.Add(this.button2);
             this.pnl_Main.Controls.Add(this.button1);
-            this.pnl_Main.Controls.Add(this.customDataGridView3);
+            this.pnl_Main.Controls.Add(this.dgv_Group);
             this.pnl_Main.Controls.Add(this.label3);
-            this.pnl_Main.Controls.Add(this.customDataGridView2);
+            this.pnl_Main.Controls.Add(this.gdv_addGroup);
             this.pnl_Main.Controls.Add(this.label2);
-            this.pnl_Main.Controls.Add(this.customDataGridView1);
+            this.pnl_Main.Controls.Add(this.dgv_Temp);
             this.pnl_Main.Controls.Add(this.label1);
             this.pnl_Main.Size = new System.Drawing.Size(752, 534);
             // 
@@ -82,29 +101,87 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "팀이름";
             // 
-            // customDataGridView1
+            // dgv_Temp
             // 
-            this.customDataGridView1.AllowUserToAddRows = false;
-            this.customDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.customDataGridView1.Location = new System.Drawing.Point(10, 39);
-            this.customDataGridView1.Name = "customDataGridView1";
-            this.customDataGridView1.RowHeadersVisible = false;
-            this.customDataGridView1.RowTemplate.Height = 23;
-            this.customDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.customDataGridView1.Size = new System.Drawing.Size(203, 283);
-            this.customDataGridView1.TabIndex = 1;
+            this.dgv_Temp.AllowUserToAddRows = false;
+            this.dgv_Temp.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_Temp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Temp.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_Temp.GridColor = System.Drawing.Color.Black;
+            this.dgv_Temp.IsChkVisible = true;
+            this.dgv_Temp.Location = new System.Drawing.Point(10, 39);
+            this.dgv_Temp.Name = "dgv_Temp";
+            this.dgv_Temp.RowHeadersVisible = false;
+            this.dgv_Temp.RowTemplate.Height = 23;
+            this.dgv_Temp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_Temp.Size = new System.Drawing.Size(203, 283);
+            this.dgv_Temp.TabIndex = 1;
             // 
-            // customDataGridView2
+            // dataGridViewTextBoxColumn1
             // 
-            this.customDataGridView2.AllowUserToAddRows = false;
-            this.customDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.customDataGridView2.Location = new System.Drawing.Point(246, 39);
-            this.customDataGridView2.Name = "customDataGridView2";
-            this.customDataGridView2.RowHeadersVisible = false;
-            this.customDataGridView2.RowTemplate.Height = 23;
-            this.customDataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.customDataGridView2.Size = new System.Drawing.Size(206, 283);
-            this.customDataGridView2.TabIndex = 3;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "No";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridViewTextBoxColumn1.HeaderText = "No";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.NullValue = false;
+            this.dataGridViewCheckBoxColumn1.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridViewCheckBoxColumn1.HeaderText = "";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.Width = 20;
+            // 
+            // gdv_addGroup
+            // 
+            this.gdv_addGroup.AllowUserToAddRows = false;
+            this.gdv_addGroup.BackgroundColor = System.Drawing.Color.White;
+            this.gdv_addGroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gdv_addGroup.DefaultCellStyle = dataGridViewCellStyle2;
+            this.gdv_addGroup.GridColor = System.Drawing.Color.Black;
+            this.gdv_addGroup.IsChkVisible = true;
+            this.gdv_addGroup.Location = new System.Drawing.Point(246, 39);
+            this.gdv_addGroup.Name = "gdv_addGroup";
+            this.gdv_addGroup.RowHeadersVisible = false;
+            this.gdv_addGroup.RowTemplate.Height = 23;
+            this.gdv_addGroup.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gdv_addGroup.Size = new System.Drawing.Size(206, 283);
+            this.gdv_addGroup.TabIndex = 3;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "No";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridViewTextBoxColumn2.HeaderText = "No";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewCheckBoxColumn2
+            // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.NullValue = false;
+            this.dataGridViewCheckBoxColumn2.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridViewCheckBoxColumn2.HeaderText = "";
+            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
+            this.dataGridViewCheckBoxColumn2.Width = 20;
             // 
             // label2
             // 
@@ -115,17 +192,66 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "등록 그룹목록";
             // 
-            // customDataGridView3
+            // dgv_Group
             // 
-            this.customDataGridView3.AllowUserToAddRows = false;
-            this.customDataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.customDataGridView3.Location = new System.Drawing.Point(530, 39);
-            this.customDataGridView3.Name = "customDataGridView3";
-            this.customDataGridView3.RowHeadersVisible = false;
-            this.customDataGridView3.RowTemplate.Height = 23;
-            this.customDataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.customDataGridView3.Size = new System.Drawing.Size(206, 283);
-            this.customDataGridView3.TabIndex = 5;
+            this.dgv_Group.AllowUserToAddRows = false;
+            this.dgv_Group.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_Group.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Group.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_Group.GridColor = System.Drawing.Color.Black;
+            this.dgv_Group.IsChkVisible = false;
+            this.dgv_Group.Location = new System.Drawing.Point(530, 39);
+            this.dgv_Group.Name = "dgv_Group";
+            this.dgv_Group.RowHeadersVisible = false;
+            this.dgv_Group.RowTemplate.Height = 23;
+            this.dgv_Group.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_Group.Size = new System.Drawing.Size(206, 283);
+            this.dgv_Group.TabIndex = 5;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "No";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridViewTextBoxColumn5.HeaderText = "No";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewCheckBoxColumn5
+            // 
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.NullValue = false;
+            this.dataGridViewCheckBoxColumn5.DefaultCellStyle = dataGridViewCellStyle9;
+            this.dataGridViewCheckBoxColumn5.HeaderText = "";
+            this.dataGridViewCheckBoxColumn5.Name = "dataGridViewCheckBoxColumn5";
+            this.dataGridViewCheckBoxColumn5.Visible = false;
+            this.dataGridViewCheckBoxColumn5.Width = 20;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "No";
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle10;
+            this.dataGridViewTextBoxColumn3.HeaderText = "No";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewCheckBoxColumn3
+            // 
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.NullValue = false;
+            this.dataGridViewCheckBoxColumn3.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dataGridViewCheckBoxColumn3.HeaderText = "";
+            this.dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
+            this.dataGridViewCheckBoxColumn3.Visible = false;
+            this.dataGridViewCheckBoxColumn3.Width = 20;
             // 
             // label3
             // 
@@ -237,9 +363,9 @@
             this.pnl_Main.ResumeLayout(false);
             this.pnl_Main.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Temp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gdv_addGroup)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Group)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -249,11 +375,11 @@
 
         #endregion
 
-        private CustomDataGridView customDataGridView2;
+        private CustomDataGridView gdv_addGroup;
         private System.Windows.Forms.Label label2;
-        private CustomDataGridView customDataGridView1;
+        private CustomDataGridView dgv_Temp;
         private System.Windows.Forms.Label label1;
-        private CustomDataGridView customDataGridView3;
+        private CustomDataGridView dgv_Group;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
@@ -265,5 +391,13 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
     }
 }

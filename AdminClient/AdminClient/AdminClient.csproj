@@ -438,8 +438,6 @@
     <Compile Include="Serch\WorkPlanDetailSearch.Designer.cs">
       <DependentUpon>WorkPlanDetailSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="Service\CommonService.cs" />
-    <Compile Include="Service\ProductService.cs" />
     <Compile Include="Utils\CommonUtil.cs" />
     <Compile Include="Utils\CuttedGroup.cs" />
     <Compile Include="Utils\Email.cs" />
@@ -469,6 +467,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaseForm\FormSearchTemp.resx">
       <DependentUpon>FormSearchTemp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControl\CustomDataGridView.resx">
+      <DependentUpon>CustomDataGridView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BOM.resx">
       <DependentUpon>BOM.cs</DependentUpon>
@@ -633,6 +634,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Serch\WorkPlanDetailSearch.resx">
       <DependentUpon>WorkPlanDetailSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UseControl\SearchControl.resx">
+      <DependentUpon>SearchControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
