@@ -12,6 +12,11 @@ namespace AdminClientVO
         public string Common_Name { get; set; }
         public string Common_Category { get; set; }
         public string Common_Pcode { get; set; }
+    }
 
+    public class ComboCommonVO // 폼로드시 기본 바인딩될 목록
+    {
+        public string Common_Category { get; set; }
+        public string Common_Name { get; set; }
     }
 }
