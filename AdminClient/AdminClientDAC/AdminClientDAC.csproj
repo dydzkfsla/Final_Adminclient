@@ -53,7 +53,9 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="ConnDB.cs" />
+    <Compile Include="FormInfoDAC.cs" />
     <Compile Include="Global\Connstring.cs" />
+    <Compile Include="Global\Global.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

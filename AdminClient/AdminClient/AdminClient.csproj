@@ -292,6 +292,7 @@
     <Compile Include="Forms\WorkPlanInfo.Designer.cs">
       <DependentUpon>WorkPlanInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Global\Global.cs" />
     <Compile Include="MDI\MDI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -438,6 +439,7 @@
     <Compile Include="Serch\WorkPlanDetailSearch.Designer.cs">
       <DependentUpon>WorkPlanDetailSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="Service\FormInfoService.cs" />
     <Compile Include="UseControl\SearchControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -730,8 +732,6 @@
   <ItemGroup>
     <None Include="Resources\close-red.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Service\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
