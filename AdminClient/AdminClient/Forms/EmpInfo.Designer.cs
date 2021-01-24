@@ -28,7 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.customDataGridView1 = new AdminClient.CustomDataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.dgv_Emp = new AdminClient.CustomDataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,6 +76,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.pnl_Main.SuspendLayout();
             this.gb_Sherch.SuspendLayout();
@@ -81,7 +87,7 @@
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Emp)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -139,6 +145,7 @@
             // 
             // gb_Sherch
             // 
+            this.gb_Sherch.Controls.Add(this.checkBox1);
             this.gb_Sherch.Controls.Add(this.label3);
             this.gb_Sherch.Controls.Add(this.comboBox1);
             this.gb_Sherch.Controls.Add(this.groupBox2);
@@ -151,6 +158,7 @@
             this.gb_Sherch.Controls.SetChildIndex(this.groupBox2, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.comboBox1, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.label3, 0);
+            this.gb_Sherch.Controls.SetChildIndex(this.checkBox1, 0);
             // 
             // gb_detail
             // 
@@ -174,7 +182,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.customDataGridView1);
+            this.splitContainer1.Panel2.Controls.Add(this.dgv_Emp);
             this.splitContainer1.Size = new System.Drawing.Size(1366, 647);
             this.splitContainer1.SplitterDistance = 383;
             // 
@@ -198,14 +206,17 @@
             // 
             this.TitleColor.Size = new System.Drawing.Size(1456, 7);
             // 
-            // customDataGridView1
+            // dgv_Emp
             // 
-            this.customDataGridView1.AllowUserToAddRows = false;
-            this.customDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgv_Emp.AllowUserToAddRows = false;
+            this.dgv_Emp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.customDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.customDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgv_Emp.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_Emp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Emp.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewCheckBoxColumn1,
             this.Column1,
             this.Column2,
             this.Column3,
@@ -213,14 +224,42 @@
             this.Column5,
             this.Column6,
             this.Column7});
-            this.customDataGridView1.Location = new System.Drawing.Point(33, 0);
-            this.customDataGridView1.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.customDataGridView1.Name = "customDataGridView1";
-            this.customDataGridView1.RowHeadersVisible = false;
-            this.customDataGridView1.RowTemplate.Height = 23;
-            this.customDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.customDataGridView1.Size = new System.Drawing.Size(946, 647);
-            this.customDataGridView1.TabIndex = 3;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Emp.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_Emp.GridColor = System.Drawing.Color.Black;
+            this.dgv_Emp.IsChkVisible = false;
+            this.dgv_Emp.Location = new System.Drawing.Point(33, 0);
+            this.dgv_Emp.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.dgv_Emp.Name = "dgv_Emp";
+            this.dgv_Emp.RowHeadersVisible = false;
+            this.dgv_Emp.RowTemplate.Height = 23;
+            this.dgv_Emp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_Emp.Size = new System.Drawing.Size(946, 647);
+            this.dgv_Emp.TabIndex = 3;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "No";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewTextBoxColumn1.HeaderText = "No";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.NullValue = false;
+            this.dataGridViewCheckBoxColumn1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewCheckBoxColumn1.HeaderText = "";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.Width = 20;
             // 
             // Column1
             // 
@@ -278,7 +317,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.dateTimePicker2);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Location = new System.Drawing.Point(8, 178);
+            this.groupBox1.Location = new System.Drawing.Point(8, 167);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(255, 64);
             this.groupBox1.TabIndex = 5;
@@ -299,7 +338,7 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.dateTimePicker3);
             this.groupBox2.Controls.Add(this.dateTimePicker4);
-            this.groupBox2.Location = new System.Drawing.Point(8, 108);
+            this.groupBox2.Location = new System.Drawing.Point(8, 97);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(255, 64);
             this.groupBox2.TabIndex = 6;
@@ -582,11 +621,22 @@
             this.label13.TabIndex = 17;
             this.label13.Text = "전화번호";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(268, 97);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(101, 21);
+            this.checkBox1.TabIndex = 9;
+            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // EmpInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.ClientSize = new System.Drawing.Size(1377, 868);
             this.Name = "EmpInfo";
+            this.Load += new System.EventHandler(this.EmpInfo_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.pnl_Main.ResumeLayout(false);
@@ -600,7 +650,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Emp)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -612,7 +662,7 @@
 
         #endregion
 
-        private CustomDataGridView customDataGridView1;
+        private CustomDataGridView dgv_Emp;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label3;
@@ -655,5 +705,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
     }
 }

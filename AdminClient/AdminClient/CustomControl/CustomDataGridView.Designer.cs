@@ -35,7 +35,6 @@
             // 
             this.RowTemplate.Height = 23;
             this.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.CustomDataGridView_CellPainting);
-            this.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.CustomDataGridView_ColumnAdded);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 

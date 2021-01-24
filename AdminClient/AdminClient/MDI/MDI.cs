@@ -17,7 +17,7 @@ namespace AdminClient.MDI
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
-            DemandPlan form1 = new DemandPlan();
+            EmpInfo form1 = new EmpInfo();
             this.OpenCreateForm(form1, true);
             form1.Dock = DockStyle.Fill;
         }

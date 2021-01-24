@@ -13,6 +13,8 @@ namespace AdminClient.Forms
         public TempInfo()
         {
             InitializeComponent();
+
+            dgv_Temp.SetGridColumn();
         }
     }
 }

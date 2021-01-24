@@ -13,6 +13,7 @@ namespace AdminClient
     public partial class CustomDataGridView : DataGridView
     {
         CheckBox cb = new CheckBox();
+
         event EventHandler Chk_CheckedChanged
         {
             add
@@ -25,11 +26,21 @@ namespace AdminClient
             }
         }
 
-        public bool IsChkVisible { get; set; }
 
+        private bool isChkVisible = false;
+        public bool IsChkVisible
+        {
+            get => isChkVisible;
+            set
+            {
+                isChkVisible = value;
+                if (this.Columns.Count > 0)
+                {
+                    this.Columns[1].Visible = isChkVisible;
+                }
+            }
+        }
         bool IsADDChk = false;
-        bool IsChk = true;
-        bool IsNo = true;
 
         public CustomDataGridView()
         {
@@ -38,21 +49,8 @@ namespace AdminClient
             cb.CheckedChanged += ChkCheckedChanged;
             this.BackgroundColor = Color.White;
 
-            foreach (Control row in this.Rows)
-            {
-                if (row.Name == "No")
-                {
-                    IsNo = false;
-                }
-                if (row.Name == "Chk")
-                {
-                    IsChk = false;
-                }
-            }
-            if (IsNo)
-                CommonUtil.AddGridTextColumn(this, "No", "No", 100);
-            if (IsChk)
-                CommonUtil.AddGridCheckColumn(this, "", "Chk", 20, true);
+
+
             this.DefaultCellStyle.SelectionBackColor = Color.IndianRed;
             this.DefaultCellStyle.SelectionForeColor = Color.White;
             this.GridColor = Color.Black;
@@ -66,7 +64,6 @@ namespace AdminClient
                 r.Cells["Chk"].Value = ((CheckBox)sender).Checked;
             }
         }
-
 
         protected override void OnPaint(PaintEventArgs pe)
         {
@@ -127,9 +124,11 @@ namespace AdminClient
             }
         }
 
-        private void CustomDataGridView_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
+        public void SetGridColumn()
         {
-
+            CommonUtil.SetInitGridView(this, false);
+            CommonUtil.AddGridTextColumn(this, "No", "No", 100);
+            CommonUtil.AddGridCheckColumn(this, "", "Chk", 20);
         }
     }
 }

@@ -14,5 +14,15 @@ namespace AdminClient.Forms
         {
             InitializeComponent();
         }
+
+        private void EmpInfo_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DgvColumSet()
+        {
+            CommonUtil.SetInitGridView(dgv_Emp, false);
+        }
     }
 }
