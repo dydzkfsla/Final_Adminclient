@@ -438,6 +438,14 @@
     <Compile Include="Serch\WorkPlanDetailSearch.Designer.cs">
       <DependentUpon>WorkPlanDetailSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="Service\CommonService.cs" />
+    <Compile Include="Service\ProductService.cs" />
+    <Compile Include="UseControl\SearchControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UseControl\SearchControl.Designer.cs">
+      <DependentUpon>SearchControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utils\CommonUtil.cs" />
     <Compile Include="Utils\CuttedGroup.cs" />
     <Compile Include="Utils\Email.cs" />

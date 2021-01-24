@@ -59,7 +59,8 @@ namespace AdminClient.Forms
             cbo_State.ValueMember = "State";
             cbo_State.DisplayMember = "State";
             #endregion
-
+            dgv_ProdList.SetGridColumn(); //설명 // 커몬유틸의 셋그리드뷰 사용x
+            CommonUtil.AddGridTextColumn(dgv_ProdList, "최소", "Prod_SafetyStock");
 
             #endregion
         }
@@ -73,6 +74,8 @@ namespace AdminClient.Forms
         {
             string cate, unit, state, limit;
             cate = unit = state = limit = string.Empty;
+
+
 
             //유효성
             if (chk_limit.Checked)
@@ -91,6 +94,11 @@ namespace AdminClient.Forms
             pdList = service.GetProdList(cate, unit, state, limit);
 
             dgv_ProdList.DataSource = pdList;
+
+            searchControl1.Getdata(dgv_ProdList); // 설명
+
+
+
 
         }
 
