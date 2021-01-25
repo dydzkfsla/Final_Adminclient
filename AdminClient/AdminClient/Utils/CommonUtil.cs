@@ -91,16 +91,20 @@ namespace AdminClient
                                 DataGridView dgv,
                                 string headerText,
                                 string dataPropertyName,
+                                Image image = null,
                                 int colWidth = 100,
                                 bool visibility = true,
-                                DataGridViewContentAlignment textAlign = DataGridViewContentAlignment.MiddleLeft)
+                                DataGridViewContentAlignment textAlign = DataGridViewContentAlignment.MiddleCenter)
         {
             DataGridViewImageColumn col = new DataGridViewImageColumn();
             col.Name = dataPropertyName;
             col.HeaderText = headerText;
-            col.ImageLayout = DataGridViewImageCellLayout.Stretch;
+            col.Image = image;
+            col.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            //col.DefaultCellStyle.SelectionBackColor = Color.Transparent;
             col.DataPropertyName = dataPropertyName;
             col.DefaultCellStyle.Alignment = textAlign;
+            //col.DefaultCellStyle.BackColor = Color.Transparent;
             col.Visible = visibility;
             dgv.Columns.Add(col);
         }

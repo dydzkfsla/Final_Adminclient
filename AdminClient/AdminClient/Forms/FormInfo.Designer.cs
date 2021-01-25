@@ -181,7 +181,8 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvNonSelectForm.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvNonSelectForm.GridColor = System.Drawing.Color.Black;
-            this.dgvNonSelectForm.IsChkVisible = false;
+            this.dgvNonSelectForm.IsChkVisible = true;
+            this.dgvNonSelectForm.IsEditVisible = true;
             this.dgvNonSelectForm.Location = new System.Drawing.Point(10, 36);
             this.dgvNonSelectForm.Name = "dgvNonSelectForm";
             this.dgvNonSelectForm.RowTemplate.Height = 23;
@@ -202,6 +203,7 @@
             this.dgvdeleted.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvdeleted.GridColor = System.Drawing.Color.Black;
             this.dgvdeleted.IsChkVisible = false;
+            this.dgvdeleted.IsEditVisible = false;
             this.dgvdeleted.Location = new System.Drawing.Point(355, 36);
             this.dgvdeleted.Name = "dgvdeleted";
             this.dgvdeleted.RowTemplate.Height = 23;
@@ -222,6 +224,7 @@
             this.dgvSelectForm.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvSelectForm.GridColor = System.Drawing.Color.Black;
             this.dgvSelectForm.IsChkVisible = false;
+            this.dgvSelectForm.IsEditVisible = false;
             this.dgvSelectForm.Location = new System.Drawing.Point(710, 36);
             this.dgvSelectForm.Name = "dgvSelectForm";
             this.dgvSelectForm.RowTemplate.Height = 23;
