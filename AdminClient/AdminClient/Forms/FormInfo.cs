@@ -49,12 +49,12 @@ namespace AdminClient.Forms
         {
             CommonUtil.SetInitGridView(dgvSelectForm);
             CommonUtil.AddGridTextColumn(dgvSelectForm, "폼이름", "Form_Name", 150);
-            CommonUtil.AddGridTextColumn(dgvSelectForm, "메뉴이름", "Menu_Name");
+            CommonUtil.AddGridTextColumn(dgvSelectForm, "메뉴이름", "Form_Menu");
             CommonUtil.SetInitGridView(dgvNonSelectForm);
             CommonUtil.AddGridTextColumn(dgvNonSelectForm, "폼이름", "Form_Name", 150);
             CommonUtil.SetInitGridView(dgvdeleted);
             CommonUtil.AddGridTextColumn(dgvdeleted, "폼이름", "Form_Name", 150);
-            CommonUtil.AddGridTextColumn(dgvdeleted, "메뉴이름", "Menu_Name", visibility: false);
+            CommonUtil.AddGridTextColumn(dgvdeleted, "메뉴이름", "Form_Menu", visibility: false);
         }
 
         private void Inited()
@@ -125,7 +125,30 @@ namespace AdminClient.Forms
             btn_delete.Enabled = true;
 
             txt_formName.Text = dgvSelectForm["Form_Name", e.RowIndex].Value.ToString();
-            txt_ManuName.Text = dgvSelectForm["Menu_Name", e.RowIndex].Value.ToString();
+            txt_ManuName.Text = dgvSelectForm["Form_Menu", e.RowIndex].Value.ToString();
+        }
+
+        private void dgvNonSelectForm_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+            btn_add.Enabled = true;
+            btn_delete.Enabled = false;
+            btn_Update.Enabled = false;
+
+            txt_formName.Text = dgvNonSelectForm["Form_Name", e.RowIndex].Value.ToString();
+            txt_ManuName.Text = string.Empty;
+        }
+
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+            FormInfoService service = new FormInfoService();
+            if (string.IsNullOrEmpty(txt_ManuName.Text))
+                return;
+            if (service.InsertFormInfo(txt_formName.Text, txt_ManuName.Text))
+            {
+                Inited();
+            }
         }
     }
 }

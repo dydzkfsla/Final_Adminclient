@@ -196,13 +196,13 @@ namespace AdminClient
             {
                 BaindingKey item = (BaindingKey)cbo_key.SelectedItem;
 
-                if (item.type == typeof(int))
+                if (item.type == typeof(int) || item.type == typeof(decimal))
                 {
                     pnl_DateTime.Visible = false;
                     pnl_int.Visible = true;
                     pnl_string.Visible = false;
                 }
-                else if (item.type == typeof(string))
+                else if (item.type == typeof(string) )
                 {
 
                     pnl_DateTime.Visible = false;

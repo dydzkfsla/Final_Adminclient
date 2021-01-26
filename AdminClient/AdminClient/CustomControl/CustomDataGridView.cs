@@ -34,11 +34,13 @@ namespace AdminClient
             set
             {
                 isChkVisible = value;
-                if (this.Columns.Count > 0)
-                {
-                    this.Columns[1].Visible = isChkVisible;
-                }
             }
+        }
+
+        private bool isEditVisible = false;
+        public bool IsEditVisible
+        {
+            get;set;
         }
         bool IsADDChk = false;
 
@@ -75,7 +77,7 @@ namespace AdminClient
 
             foreach (DataGridViewRow row in this.Rows)
             {
-                row.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                row.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 row.HeaderCell.Style.Font = new Font("맑은 고딕", 11.0F, FontStyle.Bold);
                 row.HeaderCell.Value = String.Format("{0}", row.Index + 1);
 
@@ -136,6 +138,7 @@ namespace AdminClient
             this.RowHeadersWidth = 80;
             CommonUtil.SetInitGridView(this);
             CommonUtil.AddGridCheckColumn(this, "", "Chk", 20, isChkVisible);
+            CommonUtil.AddGridImageColumn(this, "Edit", "Edit", global::AdminClient.Properties.Resources.Edit_32x32, 16, IsEditVisible);
         }
     }
 }

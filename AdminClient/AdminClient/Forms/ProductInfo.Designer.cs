@@ -41,10 +41,6 @@
             this.rd_ascending = new System.Windows.Forms.RadioButton();
             this.comboBox9 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -65,6 +61,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.btn_Clear = new System.Windows.Forms.Button();
             this.btn_Delete = new System.Windows.Forms.Button();
+            this.searchControl1 = new AdminClient.SearchControl();
             this.panel1.SuspendLayout();
             this.pnl_Main.SuspendLayout();
             this.gb_Sherch.SuspendLayout();
@@ -121,7 +118,7 @@
             // 
             // pnl_Main
             // 
-            this.pnl_Main.Size = new System.Drawing.Size(1544, 756);
+            this.pnl_Main.Size = new System.Drawing.Size(1544, 922);
             // 
             // gb_Sherch
             // 
@@ -148,6 +145,7 @@
             // 
             // gb_detail
             // 
+            this.gb_detail.Controls.Add(this.searchControl1);
             this.gb_detail.Controls.Add(this.comboBox6);
             this.gb_detail.Controls.Add(this.rd_descending);
             this.gb_detail.Controls.Add(this.label5);
@@ -157,16 +155,12 @@
             this.gb_detail.Controls.Add(this.label6);
             this.gb_detail.Controls.Add(this.button2);
             this.gb_detail.Controls.Add(this.comboBox10);
-            this.gb_detail.Controls.Add(this.button3);
             this.gb_detail.Controls.Add(this.label8);
-            this.gb_detail.Controls.Add(this.comboBox5);
             this.gb_detail.Controls.Add(this.comboBox11);
-            this.gb_detail.Controls.Add(this.comboBox7);
             this.gb_detail.Controls.Add(this.label9);
-            this.gb_detail.Controls.Add(this.textBox1);
             this.gb_detail.Controls.Add(this.label7);
             this.gb_detail.Location = new System.Drawing.Point(11, 248);
-            this.gb_detail.Size = new System.Drawing.Size(397, 425);
+            this.gb_detail.Size = new System.Drawing.Size(397, 575);
             // 
             // nu_limit
             // 
@@ -182,16 +176,16 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgv_ProdList);
-            this.splitContainer1.Size = new System.Drawing.Size(1544, 675);
+            this.splitContainer1.Size = new System.Drawing.Size(1544, 841);
             this.splitContainer1.SplitterDistance = 427;
             // 
             // btn_folding
             // 
-            this.btn_folding.Location = new System.Drawing.Point(0, 294);
+            this.btn_folding.Location = new System.Drawing.Point(0, 377);
             // 
             // splitter1
             // 
-            this.splitter1.Size = new System.Drawing.Size(33, 675);
+            this.splitter1.Size = new System.Drawing.Size(33, 841);
             // 
             // button1
             // 
@@ -281,7 +275,7 @@
             // rd_descending
             // 
             this.rd_descending.AutoSize = true;
-            this.rd_descending.Location = new System.Drawing.Point(112, 353);
+            this.rd_descending.Location = new System.Drawing.Point(112, 317);
             this.rd_descending.Name = "rd_descending";
             this.rd_descending.Size = new System.Drawing.Size(106, 21);
             this.rd_descending.TabIndex = 46;
@@ -292,7 +286,7 @@
             // rd_ascending
             // 
             this.rd_ascending.AutoSize = true;
-            this.rd_ascending.Location = new System.Drawing.Point(8, 353);
+            this.rd_ascending.Location = new System.Drawing.Point(8, 317);
             this.rd_ascending.Name = "rd_ascending";
             this.rd_ascending.Size = new System.Drawing.Size(98, 21);
             this.rd_ascending.TabIndex = 45;
@@ -303,7 +297,7 @@
             // comboBox9
             // 
             this.comboBox9.FormattingEnabled = true;
-            this.comboBox9.Location = new System.Drawing.Point(8, 380);
+            this.comboBox9.Location = new System.Drawing.Point(8, 344);
             this.comboBox9.Name = "comboBox9";
             this.comboBox9.Size = new System.Drawing.Size(225, 25);
             this.comboBox9.TabIndex = 44;
@@ -313,50 +307,13 @@
             this.button2.BackColor = System.Drawing.Color.White;
             this.button2.Image = global::AdminClient.Properties.Resources.SortAsc_32x32;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(287, 341);
+            this.button2.Location = new System.Drawing.Point(249, 305);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(84, 64);
             this.button2.TabIndex = 43;
             this.button2.Text = "정렬";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.Image = global::AdminClient.Properties.Resources.BelowAverage_32x32;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(292, 33);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(79, 56);
-            this.button3.TabIndex = 42;
-            this.button3.Text = "조건\r\n적용";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(8, 81);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(125, 25);
-            this.comboBox5.TabIndex = 41;
-            // 
-            // comboBox7
-            // 
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(8, 50);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(225, 25);
-            this.comboBox7.TabIndex = 40;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(8, 112);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(225, 25);
-            this.textBox1.TabIndex = 39;
             // 
             // label7
             // 
@@ -370,7 +327,7 @@
             // comboBox6
             // 
             this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(8, 304);
+            this.comboBox6.Location = new System.Drawing.Point(12, 285);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(225, 25);
             this.comboBox6.TabIndex = 18;
@@ -378,7 +335,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(5, 284);
+            this.label5.Location = new System.Drawing.Point(9, 265);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 17);
             this.label5.TabIndex = 17;
@@ -387,7 +344,7 @@
             // comboBox8
             // 
             this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(8, 256);
+            this.comboBox8.Location = new System.Drawing.Point(12, 237);
             this.comboBox8.Name = "comboBox8";
             this.comboBox8.Size = new System.Drawing.Size(225, 25);
             this.comboBox8.TabIndex = 16;
@@ -395,7 +352,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(5, 236);
+            this.label6.Location = new System.Drawing.Point(9, 217);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(64, 17);
             this.label6.TabIndex = 15;
@@ -404,7 +361,7 @@
             // comboBox10
             // 
             this.comboBox10.FormattingEnabled = true;
-            this.comboBox10.Location = new System.Drawing.Point(8, 208);
+            this.comboBox10.Location = new System.Drawing.Point(12, 189);
             this.comboBox10.Name = "comboBox10";
             this.comboBox10.Size = new System.Drawing.Size(225, 25);
             this.comboBox10.TabIndex = 14;
@@ -412,7 +369,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(5, 188);
+            this.label8.Location = new System.Drawing.Point(9, 169);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(36, 17);
             this.label8.TabIndex = 13;
@@ -421,7 +378,7 @@
             // comboBox11
             // 
             this.comboBox11.FormattingEnabled = true;
-            this.comboBox11.Location = new System.Drawing.Point(8, 160);
+            this.comboBox11.Location = new System.Drawing.Point(12, 141);
             this.comboBox11.Name = "comboBox11";
             this.comboBox11.Size = new System.Drawing.Size(225, 25);
             this.comboBox11.TabIndex = 12;
@@ -429,7 +386,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(5, 140);
+            this.label9.Location = new System.Drawing.Point(9, 121);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(64, 17);
             this.label9.TabIndex = 11;
@@ -459,7 +416,7 @@
             this.dgv_ProdList.RowHeadersVisible = false;
             this.dgv_ProdList.RowTemplate.Height = 23;
             this.dgv_ProdList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_ProdList.Size = new System.Drawing.Size(1079, 675);
+            this.dgv_ProdList.Size = new System.Drawing.Size(1079, 841);
             this.dgv_ProdList.TabIndex = 3;
             this.dgv_ProdList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ProdList_CellClick);
             // 
@@ -555,10 +512,19 @@
             this.btn_Delete.UseVisualStyleBackColor = true;
             this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
+            // searchControl1
+            // 
+            this.searchControl1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.searchControl1.Location = new System.Drawing.Point(8, 48);
+            this.searchControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.searchControl1.Name = "searchControl1";
+            this.searchControl1.Size = new System.Drawing.Size(325, 69);
+            this.searchControl1.TabIndex = 47;
+            // 
             // ProductInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
-            this.ClientSize = new System.Drawing.Size(1555, 856);
+            this.ClientSize = new System.Drawing.Size(1555, 1022);
             this.Name = "ProductInfo";
             this.Load += new System.EventHandler(this.ProductInfo_Load);
             this.panel1.ResumeLayout(false);
@@ -594,10 +560,6 @@
         private System.Windows.Forms.RadioButton rd_ascending;
         private System.Windows.Forms.ComboBox comboBox9;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox7;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comboBox6;
         private System.Windows.Forms.Label label5;
@@ -618,5 +580,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button btn_Clear;
         private System.Windows.Forms.Button btn_Delete;
+        private SearchControl searchControl1;
     }
 }

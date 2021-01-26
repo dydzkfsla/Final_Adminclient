@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
@@ -101,7 +103,7 @@
             this.splitContainer3.Panel2.Controls.Add(this.label7);
             this.splitContainer3.Panel2.Controls.Add(this.label6);
             this.splitContainer3.Panel2.Controls.Add(this.label1);
-            this.splitContainer3.Size = new System.Drawing.Size(880, 346);
+            this.splitContainer3.Size = new System.Drawing.Size(880, 359);
             this.splitContainer3.SplitterDistance = 597;
             // 
             // splitContainer2
@@ -110,8 +112,8 @@
             // splitContainer2.Panel1
             // 
             this.splitContainer2.Panel1.Controls.Add(this.customDataGridView1);
-            this.splitContainer2.Size = new System.Drawing.Size(880, 752);
-            this.splitContainer2.SplitterDistance = 400;
+            this.splitContainer2.Size = new System.Drawing.Size(880, 779);
+            this.splitContainer2.SplitterDistance = 414;
             // 
             // pnl_Main
             // 
@@ -171,7 +173,7 @@
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Location = new System.Drawing.Point(12, 99);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(277, 64);
+            this.groupBox1.Size = new System.Drawing.Size(262, 64);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "납기일";
@@ -327,26 +329,48 @@
             // customDataGridView1
             // 
             this.customDataGridView1.AllowUserToAddRows = false;
+            this.customDataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.customDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.customDataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.customDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.customDataGridView1.GridColor = System.Drawing.Color.Black;
+            this.customDataGridView1.IsChkVisible = false;
             this.customDataGridView1.Location = new System.Drawing.Point(0, 0);
             this.customDataGridView1.Name = "customDataGridView1";
             this.customDataGridView1.RowHeadersVisible = false;
             this.customDataGridView1.RowTemplate.Height = 23;
             this.customDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.customDataGridView1.Size = new System.Drawing.Size(880, 400);
+            this.customDataGridView1.Size = new System.Drawing.Size(880, 414);
             this.customDataGridView1.TabIndex = 0;
             // 
             // customDataGridView2
             // 
             this.customDataGridView2.AllowUserToAddRows = false;
+            this.customDataGridView2.BackgroundColor = System.Drawing.Color.White;
             this.customDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.customDataGridView2.DefaultCellStyle = dataGridViewCellStyle1;
             this.customDataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.customDataGridView2.GridColor = System.Drawing.Color.Black;
+            this.customDataGridView2.IsChkVisible = false;
             this.customDataGridView2.Location = new System.Drawing.Point(0, 0);
             this.customDataGridView2.Name = "customDataGridView2";
             this.customDataGridView2.RowHeadersVisible = false;
             this.customDataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.customDataGridView2.Size = new System.Drawing.Size(597, 346);
+            this.customDataGridView2.Size = new System.Drawing.Size(597, 359);
             this.customDataGridView2.TabIndex = 0;
             // 
             // label1

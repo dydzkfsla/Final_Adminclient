@@ -118,7 +118,8 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_Temp.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_Temp.GridColor = System.Drawing.Color.Black;
-            this.dgv_Temp.IsChkVisible = false;
+            this.dgv_Temp.IsChkVisible = true;
+            this.dgv_Temp.IsEditVisible = true;
             this.dgv_Temp.Location = new System.Drawing.Point(6, 39);
             this.dgv_Temp.Name = "dgv_Temp";
             this.dgv_Temp.RowHeadersVisible = false;
@@ -160,6 +161,7 @@
             this.dgv_addGroup.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_addGroup.GridColor = System.Drawing.Color.Black;
             this.dgv_addGroup.IsChkVisible = false;
+            this.dgv_addGroup.IsEditVisible = false;
             this.dgv_addGroup.Location = new System.Drawing.Point(324, 39);
             this.dgv_addGroup.Name = "dgv_addGroup";
             this.dgv_addGroup.RowHeadersVisible = false;
@@ -210,6 +212,7 @@
             this.dgv_Group.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_Group.GridColor = System.Drawing.Color.Black;
             this.dgv_Group.IsChkVisible = false;
+            this.dgv_Group.IsEditVisible = false;
             this.dgv_Group.Location = new System.Drawing.Point(675, 39);
             this.dgv_Group.Name = "dgv_Group";
             this.dgv_Group.RowHeadersVisible = false;
