@@ -59,8 +59,11 @@ namespace AdminClient.Forms
             cbo_State.ValueMember = "State";
             cbo_State.DisplayMember = "State";
             #endregion
+
             dgv_ProdList.SetGridColumn(); //설명 // 커몬유틸의 셋그리드뷰 사용x
             CommonUtil.AddGridTextColumn(dgv_ProdList, "최소", "Prod_SafetyStock");
+
+            gb_detail.Enabled = false;
 
             #endregion
         }
@@ -95,10 +98,8 @@ namespace AdminClient.Forms
 
             dgv_ProdList.DataSource = pdList;
 
-            searchControl1.Getdata(dgv_ProdList); // 설명
-
-
-
+            if(dgv_ProdList.DataSource != null)
+                searchControl1.Getdata(dgv_ProdList); // 설명
 
         }
 

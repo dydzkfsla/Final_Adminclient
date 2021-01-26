@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="CommonDAC.cs" />
+    <Compile Include="CompanyDAC.cs" />
     <Compile Include="ConnDB.cs" />
     <Compile Include="FacilityDAC.cs" />
     <Compile Include="FormInfoDAC.cs" />

@@ -30,40 +30,40 @@
         {
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.txt_CEO = new System.Windows.Forms.TextBox();
+            this.btn_Delete = new System.Windows.Forms.Button();
+            this.btn_Update = new System.Windows.Forms.Button();
+            this.btn_Add = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_Name = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txt_Code = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.cbo_Auto = new System.Windows.Forms.ComboBox();
+            this.pnl_Info = new System.Windows.Forms.Panel();
+            this.cbo_State = new System.Windows.Forms.ComboBox();
+            this.cbo_Type = new System.Windows.Forms.ComboBox();
             this.pnl_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.pnl_Info.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_Main
             // 
-            this.pnl_Main.Controls.Add(this.button6);
-            this.pnl_Main.Controls.Add(this.button5);
-            this.pnl_Main.Controls.Add(this.button4);
-            this.pnl_Main.Controls.Add(this.textBox2);
+            this.pnl_Main.Controls.Add(this.btn_Delete);
+            this.pnl_Main.Controls.Add(this.btn_Update);
+            this.pnl_Main.Controls.Add(this.btn_Add);
+            this.pnl_Main.Controls.Add(this.txt_CEO);
             this.pnl_Main.Controls.Add(this.label9);
             this.pnl_Main.Controls.Add(this.label10);
-            this.pnl_Main.Controls.Add(this.panel1);
+            this.pnl_Main.Controls.Add(this.pnl_Info);
             this.pnl_Main.Size = new System.Drawing.Size(345, 316);
             // 
             // Form_close
@@ -98,39 +98,41 @@
             this.label10.TabIndex = 43;
             this.label10.Text = "◆";
             // 
-            // textBox2
+            // txt_CEO
             // 
-            this.textBox2.Location = new System.Drawing.Point(132, 174);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(188, 25);
-            this.textBox2.TabIndex = 43;
+            this.txt_CEO.Location = new System.Drawing.Point(132, 174);
+            this.txt_CEO.Name = "txt_CEO";
+            this.txt_CEO.Size = new System.Drawing.Size(188, 25);
+            this.txt_CEO.TabIndex = 43;
             // 
-            // button6
+            // btn_Delete
             // 
-            this.button6.Location = new System.Drawing.Point(171, 223);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(74, 53);
-            this.button6.TabIndex = 47;
-            this.button6.Text = "삭제";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btn_Delete.Location = new System.Drawing.Point(171, 223);
+            this.btn_Delete.Name = "btn_Delete";
+            this.btn_Delete.Size = new System.Drawing.Size(74, 53);
+            this.btn_Delete.TabIndex = 47;
+            this.btn_Delete.Text = "삭제";
+            this.btn_Delete.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btn_Update
             // 
-            this.button5.Location = new System.Drawing.Point(98, 223);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(67, 53);
-            this.button5.TabIndex = 46;
-            this.button5.Text = "수정";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btn_Update.Location = new System.Drawing.Point(98, 223);
+            this.btn_Update.Name = "btn_Update";
+            this.btn_Update.Size = new System.Drawing.Size(67, 53);
+            this.btn_Update.TabIndex = 46;
+            this.btn_Update.Text = "수정";
+            this.btn_Update.UseVisualStyleBackColor = true;
+            this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
             // 
-            // button4
+            // btn_Add
             // 
-            this.button4.Location = new System.Drawing.Point(16, 223);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(76, 53);
-            this.button4.TabIndex = 45;
-            this.button4.Text = "추가";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn_Add.Location = new System.Drawing.Point(16, 223);
+            this.btn_Add.Name = "btn_Add";
+            this.btn_Add.Size = new System.Drawing.Size(76, 53);
+            this.btn_Add.TabIndex = 45;
+            this.btn_Add.Text = "추가";
+            this.btn_Add.UseVisualStyleBackColor = true;
+            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
             // label1
             // 
@@ -144,12 +146,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "업체명";
             // 
-            // textBox1
+            // txt_Name
             // 
-            this.textBox1.Location = new System.Drawing.Point(122, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(188, 25);
-            this.textBox1.TabIndex = 2;
+            this.txt_Name.Location = new System.Drawing.Point(122, 33);
+            this.txt_Name.Name = "txt_Name";
+            this.txt_Name.Size = new System.Drawing.Size(188, 25);
+            this.txt_Name.TabIndex = 2;
             // 
             // label3
             // 
@@ -175,12 +177,12 @@
             this.label20.TabIndex = 30;
             this.label20.Text = "업체코드";
             // 
-            // textBox8
+            // txt_Code
             // 
-            this.textBox8.Location = new System.Drawing.Point(122, 2);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(188, 25);
-            this.textBox8.TabIndex = 31;
+            this.txt_Code.Location = new System.Drawing.Point(122, 2);
+            this.txt_Code.Name = "txt_Code";
+            this.txt_Code.Size = new System.Drawing.Size(188, 25);
+            this.txt_Code.TabIndex = 31;
             // 
             // label19
             // 
@@ -218,14 +220,6 @@
             this.label5.TabIndex = 35;
             this.label5.Text = "◆";
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(122, 66);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(188, 25);
-            this.comboBox1.TabIndex = 36;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -248,15 +242,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(38, 17);
             this.label7.TabIndex = 38;
-            this.label7.Text = "업종";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(122, 99);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(188, 25);
-            this.comboBox2.TabIndex = 39;
+            this.label7.Text = "상태";
             // 
             // label8
             // 
@@ -282,73 +268,93 @@
             this.label2.TabIndex = 41;
             this.label2.Text = "자동출하";
             // 
-            // comboBox3
+            // cbo_Auto
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(122, 129);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(188, 25);
-            this.comboBox3.TabIndex = 42;
+            this.cbo_Auto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_Auto.FormattingEnabled = true;
+            this.cbo_Auto.Location = new System.Drawing.Point(122, 129);
+            this.cbo_Auto.Name = "cbo_Auto";
+            this.cbo_Auto.Size = new System.Drawing.Size(188, 25);
+            this.cbo_Auto.TabIndex = 42;
             // 
-            // panel1
+            // pnl_Info
             // 
-            this.panel1.Controls.Add(this.comboBox3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.comboBox2);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label19);
-            this.panel1.Controls.Add(this.textBox8);
-            this.panel1.Controls.Add(this.label20);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(10, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(319, 159);
-            this.panel1.TabIndex = 34;
+            this.pnl_Info.Controls.Add(this.cbo_State);
+            this.pnl_Info.Controls.Add(this.cbo_Auto);
+            this.pnl_Info.Controls.Add(this.label2);
+            this.pnl_Info.Controls.Add(this.label8);
+            this.pnl_Info.Controls.Add(this.label7);
+            this.pnl_Info.Controls.Add(this.label6);
+            this.pnl_Info.Controls.Add(this.cbo_Type);
+            this.pnl_Info.Controls.Add(this.label5);
+            this.pnl_Info.Controls.Add(this.label4);
+            this.pnl_Info.Controls.Add(this.label19);
+            this.pnl_Info.Controls.Add(this.txt_Code);
+            this.pnl_Info.Controls.Add(this.label20);
+            this.pnl_Info.Controls.Add(this.label3);
+            this.pnl_Info.Controls.Add(this.txt_Name);
+            this.pnl_Info.Controls.Add(this.label1);
+            this.pnl_Info.Location = new System.Drawing.Point(10, 12);
+            this.pnl_Info.Name = "pnl_Info";
+            this.pnl_Info.Size = new System.Drawing.Size(319, 159);
+            this.pnl_Info.TabIndex = 34;
+            // 
+            // cbo_State
+            // 
+            this.cbo_State.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_State.FormattingEnabled = true;
+            this.cbo_State.Location = new System.Drawing.Point(122, 97);
+            this.cbo_State.Name = "cbo_State";
+            this.cbo_State.Size = new System.Drawing.Size(188, 25);
+            this.cbo_State.TabIndex = 43;
+            // 
+            // cbo_Type
+            // 
+            this.cbo_Type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_Type.FormattingEnabled = true;
+            this.cbo_Type.Location = new System.Drawing.Point(122, 66);
+            this.cbo_Type.Name = "cbo_Type";
+            this.cbo_Type.Size = new System.Drawing.Size(188, 25);
+            this.cbo_Type.TabIndex = 36;
             // 
             // CompanyPopUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.ClientSize = new System.Drawing.Size(355, 374);
             this.Name = "CompanyPopUp";
+            this.Load += new System.EventHandler(this.CompanyPopUp_Load);
             this.pnl_Main.ResumeLayout(false);
             this.pnl_Main.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnl_Info.ResumeLayout(false);
+            this.pnl_Info.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_CEO;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Button btn_Delete;
+        private System.Windows.Forms.Button btn_Update;
+        private System.Windows.Forms.Button btn_Add;
+        private System.Windows.Forms.Panel pnl_Info;
+        private System.Windows.Forms.ComboBox cbo_Auto;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txt_Code;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_Name;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbo_Type;
+        private System.Windows.Forms.ComboBox cbo_State;
     }
 }
