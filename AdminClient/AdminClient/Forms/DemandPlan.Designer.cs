@@ -113,7 +113,7 @@ namespace AdminClient.Forms
             // 
             // pnl_Main
             // 
-            this.pnl_Main.Size = new System.Drawing.Size(1565, 638);
+            this.pnl_Main.Size = new System.Drawing.Size(1565, 689);
             // 
             // gb_Sherch
             // 
@@ -148,7 +148,7 @@ namespace AdminClient.Forms
             this.gb_detail.Controls.Add(this.textBox4);
             this.gb_detail.Controls.Add(this.label11);
             this.gb_detail.Location = new System.Drawing.Point(11, 234);
-            this.gb_detail.Size = new System.Drawing.Size(295, 319);
+            this.gb_detail.Size = new System.Drawing.Size(295, 351);
             // 
             // splitContainer1
             // 
@@ -157,16 +157,16 @@ namespace AdminClient.Forms
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.customDataGridView1);
-            this.splitContainer1.Size = new System.Drawing.Size(1565, 557);
+            this.splitContainer1.Size = new System.Drawing.Size(1565, 608);
             this.splitContainer1.SplitterDistance = 317;
             // 
             // btn_folding
             // 
-            this.btn_folding.Location = new System.Drawing.Point(0, 235);
+            this.btn_folding.Location = new System.Drawing.Point(0, 261);
             // 
             // splitter1
             // 
-            this.splitter1.Size = new System.Drawing.Size(33, 557);
+            this.splitter1.Size = new System.Drawing.Size(33, 608);
             // 
             // Form_close
             // 
@@ -439,7 +439,7 @@ namespace AdminClient.Forms
             this.customDataGridView1.RowHeadersVisible = false;
             this.customDataGridView1.RowTemplate.Height = 23;
             this.customDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.customDataGridView1.Size = new System.Drawing.Size(1198, 551);
+            this.customDataGridView1.Size = new System.Drawing.Size(1198, 602);
             this.customDataGridView1.TabIndex = 3;
             // 
             // Column4
@@ -501,7 +501,7 @@ namespace AdminClient.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1576, 738);
+            this.ClientSize = new System.Drawing.Size(1576, 789);
             this.Name = "DemandPlan";
             this.Text = "DemandPlan";
             this.panel1.ResumeLayout(false);

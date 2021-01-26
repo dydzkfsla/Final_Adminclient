@@ -72,10 +72,17 @@ namespace AdminClient
 
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
+
             foreach (DataGridViewRow row in this.Rows)
             {
-                row.Cells["No"].Value = row.Index.ToString();
-                row.Cells["Chk"].Value = false;
+                row.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+                row.HeaderCell.Style.Font = new Font("맑은 고딕", 11.0F, FontStyle.Bold);
+                row.HeaderCell.Value = String.Format("{0}", row.Index + 1);
+
+                //if (this.Columns.Contains("No"))
+                //    row.Cells["No"].Value = row.Index.ToString();
+                if (this.Columns.Contains("Chk"))
+                    row.Cells["Chk"].Value = false;
                 if (row.Index % 2 == 0)
                     row.DefaultCellStyle.BackColor = Color.AliceBlue;
             }
@@ -83,7 +90,7 @@ namespace AdminClient
 
         private void CustomDataGridView_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            if (e.ColumnIndex == 1 && e.RowIndex == -1)
+            if (e.ColumnIndex == 0 && e.RowIndex == -1 && this.Columns[e.ColumnIndex].Name == "Chk")
             {
                 e.PaintBackground(e.ClipBounds, false);
 
@@ -104,7 +111,7 @@ namespace AdminClient
 
                 int whith = this.Location.X;
 
-                if (e.CellBounds.X >= 100)
+                if (e.CellBounds.X >= 80)
                 {
                     if (!IsADDChk)
                     {
@@ -126,9 +133,9 @@ namespace AdminClient
 
         public void SetGridColumn()
         {
-            CommonUtil.SetInitGridView(this, false);
-            CommonUtil.AddGridTextColumn(this, "No", "No", 100);
-            CommonUtil.AddGridCheckColumn(this, "", "Chk", 20);
+            this.RowHeadersWidth = 80;
+            CommonUtil.SetInitGridView(this);
+            CommonUtil.AddGridCheckColumn(this, "", "Chk", 20, isChkVisible);
         }
     }
 }

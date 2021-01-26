@@ -15,6 +15,8 @@ namespace AdminClient.Forms
             InitializeComponent();
 
             dgv_Temp.SetGridColumn();
+            dgv_addGroup.SetGridColumn();
+            dgv_Group.SetGridColumn();
         }
     }
 }

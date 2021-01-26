@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommonVO.cs" />
+    <Compile Include="EmployeesVO.cs" />
+    <Compile Include="FormInfoVO.cs" />
     <Compile Include="ProductVO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
