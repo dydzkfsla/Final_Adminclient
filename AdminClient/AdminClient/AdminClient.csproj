@@ -440,6 +440,7 @@
       <DependentUpon>WorkPlanDetailSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="Service\CommonService.cs" />
+    <Compile Include="Service\EmployeeService.cs" />
     <Compile Include="Service\FormInfoService.cs" />
     <Compile Include="Service\ProductService.cs" />
     <Compile Include="UseControl\SearchControl.cs">

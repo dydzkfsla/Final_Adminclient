@@ -23,7 +23,7 @@ namespace AdminClient.Forms
             #region 초기셋팅
             nu_limit.Enabled = false;
 
-            CommonUtil.SetInitGridView(dgv_CommList);
+            dgv_CommList.SetGridColumn();
             CommonUtil.AddGridTextColumn(dgv_CommList, "코드", "Common_Code", 150);
             CommonUtil.AddGridTextColumn(dgv_CommList, "이름", "Common_Name", 150);
             CommonUtil.AddGridTextColumn(dgv_CommList, "카테고리", "Common_Category", 150);
@@ -51,6 +51,7 @@ namespace AdminClient.Forms
         {
             string limit = null, category = null;
 
+
             if (chk_limit.Checked)
                 limit = nu_limit.Value.ToString();
 
@@ -61,6 +62,8 @@ namespace AdminClient.Forms
             commList = service.GetCommonList(limit, category);
 
             dgv_CommList.DataSource = commList;
+
+            searchControl1.Getdata(dgv_CommList);
 
         }
 

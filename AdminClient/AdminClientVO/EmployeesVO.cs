@@ -18,5 +18,9 @@ namespace AdminClientVO
         public string Emp_Addr { get; set; }
         public string Emp_AddrDetail { get; set; }
         public string Emp_Pwd { get; set; }
+        public string Fst_Writer { get; set; }
+        public DateTime Fst_WriteDate { get; set; }
+        public string Lst_Writer { get; set; }
+        public DateTime Lst_WriteDate { get; set; }
     }
 }
