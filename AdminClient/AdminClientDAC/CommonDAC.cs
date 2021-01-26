@@ -17,7 +17,7 @@ namespace AdminClientDAC
         {
             conn = new SqlConnection(Connstring.conn);
             conn.Open();
-            logging = new LoggingUtility("CommonDAC", Level.All, 30, "C:\\FP\\Log\\CommonDAC");
+            //logging = new LoggingUtility("CommonDAC", Level.All, 30, "C:\\FP\\Log\\CommonDAC");
         }
         public void Dispose()
         {
