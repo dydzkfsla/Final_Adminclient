@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -32,9 +33,16 @@ namespace AdminClient
         public static void RefreshGridView(this DataGridView dgv)
         {
             if (dgv.DataSource != null) {
-                object data  = dgv.DataSource;
+                dynamic data  = dgv.DataSource;
                 dgv.DataSource = null;
-                dgv.DataSource = data;
+                Type t = data.GetType();
+                dynamic temp = Activator.CreateInstance(t);
+                foreach(dynamic dc in data)
+                {
+                    temp.Add(dc);
+                }
+                dgv.DataSource = temp;
+                data = temp;
             }
         }
         #endregion
