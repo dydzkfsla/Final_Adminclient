@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.customDataGridView1 = new AdminClient.CustomDataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,6 +55,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.schCtrl = new AdminClient.SearchControl();
             this.pnl_Main.SuspendLayout();
             this.gb_Sherch.SuspendLayout();
             this.gb_detail.SuspendLayout();
@@ -87,6 +89,7 @@
             // 
             // gb_detail
             // 
+            this.gb_detail.Controls.Add(this.schCtrl);
             this.gb_detail.Controls.Add(this.comboBox3);
             this.gb_detail.Controls.Add(this.rd_descending);
             this.gb_detail.Controls.Add(this.label3);
@@ -101,7 +104,7 @@
             this.gb_detail.Controls.Add(this.textBox1);
             this.gb_detail.Controls.Add(this.label4);
             this.gb_detail.Location = new System.Drawing.Point(2, 255);
-            this.gb_detail.Size = new System.Drawing.Size(339, 345);
+            this.gb_detail.Size = new System.Drawing.Size(339, 495);
             // 
             // nu_limit
             // 
@@ -139,6 +142,7 @@
             // customDataGridView1
             // 
             this.customDataGridView1.AllowUserToAddRows = false;
+            this.customDataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.customDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.customDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -149,6 +153,17 @@
             this.Column6,
             this.Column7,
             this.Column8});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.customDataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.customDataGridView1.GridColor = System.Drawing.Color.Black;
+            this.customDataGridView1.IsChkVisible = false;
+            this.customDataGridView1.IsEditVisible = false;
             this.customDataGridView1.Location = new System.Drawing.Point(36, 0);
             this.customDataGridView1.Name = "customDataGridView1";
             this.customDataGridView1.RowHeadersVisible = false;
@@ -234,7 +249,7 @@
             // rd_descending
             // 
             this.rd_descending.AutoSize = true;
-            this.rd_descending.Location = new System.Drawing.Point(120, 259);
+            this.rd_descending.Location = new System.Drawing.Point(120, 426);
             this.rd_descending.Name = "rd_descending";
             this.rd_descending.Size = new System.Drawing.Size(106, 21);
             this.rd_descending.TabIndex = 46;
@@ -245,7 +260,7 @@
             // rd_ascending
             // 
             this.rd_ascending.AutoSize = true;
-            this.rd_ascending.Location = new System.Drawing.Point(22, 259);
+            this.rd_ascending.Location = new System.Drawing.Point(22, 426);
             this.rd_ascending.Name = "rd_ascending";
             this.rd_ascending.Size = new System.Drawing.Size(98, 21);
             this.rd_ascending.TabIndex = 45;
@@ -256,7 +271,7 @@
             // comboBox9
             // 
             this.comboBox9.FormattingEnabled = true;
-            this.comboBox9.Location = new System.Drawing.Point(15, 298);
+            this.comboBox9.Location = new System.Drawing.Point(15, 465);
             this.comboBox9.Name = "comboBox9";
             this.comboBox9.Size = new System.Drawing.Size(211, 25);
             this.comboBox9.TabIndex = 44;
@@ -266,7 +281,7 @@
             this.button2.BackColor = System.Drawing.Color.White;
             this.button2.Image = global::AdminClient.Properties.Resources.SortAsc_32x32;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(250, 259);
+            this.button2.Location = new System.Drawing.Point(250, 426);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(84, 64);
             this.button2.TabIndex = 43;
@@ -279,7 +294,7 @@
             this.button3.BackColor = System.Drawing.Color.White;
             this.button3.Image = global::AdminClient.Properties.Resources.BelowAverage_32x32;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(250, 54);
+            this.button3.Location = new System.Drawing.Point(250, 221);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(84, 87);
             this.button3.TabIndex = 42;
@@ -291,7 +306,7 @@
             // 
             this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(8, 85);
+            this.comboBox4.Location = new System.Drawing.Point(8, 252);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(108, 25);
             this.comboBox4.TabIndex = 41;
@@ -299,14 +314,14 @@
             // comboBox6
             // 
             this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(8, 54);
+            this.comboBox6.Location = new System.Drawing.Point(8, 221);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(214, 25);
             this.comboBox6.TabIndex = 40;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(8, 116);
+            this.textBox1.Location = new System.Drawing.Point(8, 283);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(214, 25);
             this.textBox1.TabIndex = 39;
@@ -314,7 +329,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(5, 31);
+            this.label4.Location = new System.Drawing.Point(5, 198);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 17);
             this.label4.TabIndex = 38;
@@ -323,7 +338,7 @@
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(13, 211);
+            this.comboBox3.Location = new System.Drawing.Point(13, 378);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(241, 25);
             this.comboBox3.TabIndex = 10;
@@ -331,7 +346,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 191);
+            this.label3.Location = new System.Drawing.Point(10, 358);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 17);
             this.label3.TabIndex = 9;
@@ -340,7 +355,7 @@
             // comboBox5
             // 
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(13, 164);
+            this.comboBox5.Location = new System.Drawing.Point(13, 331);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(241, 25);
             this.comboBox5.TabIndex = 8;
@@ -348,17 +363,27 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(10, 144);
+            this.label5.Location = new System.Drawing.Point(10, 311);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 17);
             this.label5.TabIndex = 7;
             this.label5.Text = "품목타입";
+            // 
+            // schCtrl
+            // 
+            this.schCtrl.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.schCtrl.Location = new System.Drawing.Point(9, 24);
+            this.schCtrl.Margin = new System.Windows.Forms.Padding(4);
+            this.schCtrl.Name = "schCtrl";
+            this.schCtrl.Size = new System.Drawing.Size(325, 77);
+            this.schCtrl.TabIndex = 47;
             // 
             // StockInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.ClientSize = new System.Drawing.Size(1254, 864);
             this.Name = "StockInfo";
+            this.Load += new System.EventHandler(this.StockInfo_Load);
             this.pnl_Main.ResumeLayout(false);
             this.gb_Sherch.ResumeLayout(false);
             this.gb_Sherch.PerformLayout();
@@ -404,5 +429,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private SearchControl schCtrl;
     }
 }

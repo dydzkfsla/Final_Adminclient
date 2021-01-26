@@ -14,5 +14,10 @@ namespace AdminClient.Forms
 		{
 			InitializeComponent();
 		}
-	}
+
+        private void StockInfo_Load(object sender, EventArgs e)
+        {
+			gb_detail.Enabled = false;
+        }
+    }
 }
