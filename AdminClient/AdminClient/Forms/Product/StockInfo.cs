@@ -8,11 +8,16 @@ using System.Windows.Forms;
 
 namespace AdminClient.Forms
 {
-	public partial class WareHouseInfo : AdminClient.BaseForm.FormSerchListThreeSplitTemp
+	public partial class StockInfo : AdminClient.BaseForm.FormListTemp
 	{
-		public WareHouseInfo()
+		public StockInfo()
 		{
 			InitializeComponent();
 		}
-	}
+
+        private void StockInfo_Load(object sender, EventArgs e)
+        {
+			gb_detail.Enabled = false;
+        }
+    }
 }

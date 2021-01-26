@@ -1,4 +1,5 @@
 ﻿using AdminClientVO;
+using log4net.Core;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -10,13 +11,13 @@ namespace AdminClientDAC
 {
     public class CommonDAC : IDisposable
     {
-        string strConn;
         SqlConnection conn;
+        LoggingUtility logging;
         public CommonDAC()
         {
-            strConn = "Server=whyfi8888.ddns.net,11433;Database=TEAM4;Uid=team4;Pwd=team4"; //나중에 암호화 복호화로 변경
-            conn = new SqlConnection(strConn);
+            conn = new SqlConnection(Connstring.conn);
             conn.Open();
+            logging = new LoggingUtility("CommonDAC", Level.All, 30, "C:\\FP\\Log\\CommonDAC");
         }
         public void Dispose()
         {
@@ -39,6 +40,7 @@ namespace AdminClientDAC
             }
             catch(Exception err)
             {
+                logging.WriteError($"실행자:{Global.employees.Emp_Name} 커몬코드폼 첫 콤보박스 바인딩 목록 불러오는중 오류 :" + err.Message, err);
                 return null;
             }
         }
@@ -68,7 +70,7 @@ namespace AdminClientDAC
             }
             catch(Exception err)
             {
-                string errmsg = err.Message;
+                logging.WriteError($"실행자:{Global.employees.Emp_Name} 커몬코드 추가중 오류 :" + err.Message, err);
                 return false;
             }
         }
@@ -95,6 +97,7 @@ namespace AdminClientDAC
             }
             catch(Exception err)
             {
+                logging.WriteError($"실행자:{Global.employees.Emp_Name} 커몬코드 삭제중 오류 :" + err.Message, err);
                 return false;
             }
         }
@@ -125,6 +128,7 @@ namespace AdminClientDAC
             }
             catch(Exception err)
             {
+                logging.WriteError($"실행자:{Global.employees.Emp_Name} 커몬코드 수정중 오류 :" + err.Message, err);
                 return false;
             }
             
@@ -151,6 +155,7 @@ namespace AdminClientDAC
             }
             catch(Exception err)
             {
+                logging.WriteError($"실행자:{Global.employees.Emp_Name} 커몬코드 목록 불러오는 중 오류 :" + err.Message, err);
                 return null;
             }
         }

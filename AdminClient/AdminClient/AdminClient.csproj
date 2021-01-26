@@ -118,16 +118,16 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\BOM.cs">
+    <Compile Include="Forms\Product\BOM.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\BOM.Designer.cs">
+    <Compile Include="Forms\Product\BOM.Designer.cs">
       <DependentUpon>BOM.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\BOR.cs">
+    <Compile Include="Forms\Facility\BOR.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\BOR.Designer.cs">
+    <Compile Include="Forms\Facility\BOR.Designer.cs">
       <DependentUpon>BOR.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\CommonCode.cs">
@@ -136,58 +136,58 @@
     <Compile Include="Forms\CommonCode.Designer.cs">
       <DependentUpon>CommonCode.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\CompanyInfo.cs">
+    <Compile Include="Forms\Production\CompanyInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\CompanyInfo.Designer.cs">
+    <Compile Include="Forms\Production\CompanyInfo.Designer.cs">
       <DependentUpon>CompanyInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ContractInfo.cs">
+    <Compile Include="Forms\Production\ContractInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ContractInfo.Designer.cs">
+    <Compile Include="Forms\Production\ContractInfo.Designer.cs">
       <DependentUpon>ContractInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DemandPlan.cs">
+    <Compile Include="Forms\Production\DemandPlan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\DemandPlan.Designer.cs">
+    <Compile Include="Forms\Production\DemandPlan.Designer.cs">
       <DependentUpon>DemandPlan.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EmpInfo.cs">
+    <Compile Include="Forms\EmpGroup\EmpInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\EmpInfo.Designer.cs">
+    <Compile Include="Forms\EmpGroup\EmpInfo.Designer.cs">
       <DependentUpon>EmpInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FacilityGroupInfo.cs">
+    <Compile Include="Forms\Facility\FacilityGroupInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FacilityGroupInfo.Designer.cs">
+    <Compile Include="Forms\Facility\FacilityGroupInfo.Designer.cs">
       <DependentUpon>FacilityGroupInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FacilityInfo.cs">
+    <Compile Include="Forms\Facility\FacilityInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FacilityInfo.Designer.cs">
+    <Compile Include="Forms\Facility\FacilityInfo.Designer.cs">
       <DependentUpon>FacilityInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormInfo.cs">
+    <Compile Include="Forms\EmpGroup\FormInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormInfo.Designer.cs">
+    <Compile Include="Forms\EmpGroup\FormInfo.Designer.cs">
       <DependentUpon>FormInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\GroupInfo.cs">
+    <Compile Include="Forms\EmpGroup\GroupInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\GroupInfo.Designer.cs">
+    <Compile Include="Forms\EmpGroup\GroupInfo.Designer.cs">
       <DependentUpon>GroupInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\InOutInfo.cs">
+    <Compile Include="Forms\Product\InOutInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\InOutInfo.Designer.cs">
+    <Compile Include="Forms\Product\InOutInfo.Designer.cs">
       <DependentUpon>InOutInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Login.cs">
@@ -196,100 +196,100 @@
     <Compile Include="Forms\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\OrderInfo.cs">
+    <Compile Include="Forms\Production\OrderInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\OrderInfo.Designer.cs">
+    <Compile Include="Forms\Production\OrderInfo.Designer.cs">
       <DependentUpon>OrderInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\OutSourcingPlan.cs">
+    <Compile Include="Forms\Production\OutSourcingPlan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\OutSourcingPlan.Designer.cs">
+    <Compile Include="Forms\Production\OutSourcingPlan.Designer.cs">
       <DependentUpon>OutSourcingPlan.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ProductCheckInfo.cs">
+    <Compile Include="Forms\Product\ProductCheckInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ProductCheckInfo.Designer.cs">
+    <Compile Include="Forms\Product\ProductCheckInfo.Designer.cs">
       <DependentUpon>ProductCheckInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ProductInfo.cs">
+    <Compile Include="Forms\Product\ProductInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ProductInfo.Designer.cs">
+    <Compile Include="Forms\Product\ProductInfo.Designer.cs">
       <DependentUpon>ProductInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ProductionPlan.cs">
+    <Compile Include="Forms\Production\ProductionPlan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ProductionPlan.Designer.cs">
+    <Compile Include="Forms\Production\ProductionPlan.Designer.cs">
       <DependentUpon>ProductionPlan.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ProgressInfo.cs">
+    <Compile Include="Forms\Facility\ProgressInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ProgressInfo.Designer.cs">
+    <Compile Include="Forms\Facility\ProgressInfo.Designer.cs">
       <DependentUpon>ProgressInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ProgressMoveInfo.cs">
+    <Compile Include="Forms\Facility\ProgressMoveInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ProgressMoveInfo.Designer.cs">
+    <Compile Include="Forms\Facility\ProgressMoveInfo.Designer.cs">
       <DependentUpon>ProgressMoveInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SalesByCompany.cs">
+    <Compile Include="Forms\Sales\SalesByCompany.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SalesByCompany.Designer.cs">
+    <Compile Include="Forms\Sales\SalesByCompany.Designer.cs">
       <DependentUpon>SalesByCompany.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SalesDeadLine.cs">
+    <Compile Include="Forms\Sales\SalesDeadLine.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SalesDeadLine.Designer.cs">
+    <Compile Include="Forms\Sales\SalesDeadLine.Designer.cs">
       <DependentUpon>SalesDeadLine.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Shipment.cs">
+    <Compile Include="Forms\Sales\Shipment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Shipment.Designer.cs">
+    <Compile Include="Forms\Sales\Shipment.Designer.cs">
       <DependentUpon>Shipment.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\StockByOrder.cs">
+    <Compile Include="Forms\Sales\StockByOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\StockByOrder.Designer.cs">
+    <Compile Include="Forms\Sales\StockByOrder.Designer.cs">
       <DependentUpon>StockByOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\StockInfo.cs">
+    <Compile Include="Forms\Product\StockInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\StockInfo.Designer.cs">
+    <Compile Include="Forms\Product\StockInfo.Designer.cs">
       <DependentUpon>StockInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\TempInfo.cs">
+    <Compile Include="Forms\EmpGroup\TempInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\TempInfo.Designer.cs">
+    <Compile Include="Forms\EmpGroup\TempInfo.Designer.cs">
       <DependentUpon>TempInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\WareHouseInfo.cs">
+    <Compile Include="Forms\Product\WareHouseInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\WareHouseInfo.Designer.cs">
+    <Compile Include="Forms\Product\WareHouseInfo.Designer.cs">
       <DependentUpon>WareHouseInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\WorkOrderInfo.cs">
+    <Compile Include="Forms\Production\WorkOrderInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\WorkOrderInfo.Designer.cs">
+    <Compile Include="Forms\Production\WorkOrderInfo.Designer.cs">
       <DependentUpon>WorkOrderInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\WorkPlanInfo.cs">
+    <Compile Include="Forms\Production\WorkPlanInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\WorkPlanInfo.Designer.cs">
+    <Compile Include="Forms\Production\WorkPlanInfo.Designer.cs">
       <DependentUpon>WorkPlanInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Global\Global.cs" />
@@ -440,9 +440,11 @@
       <DependentUpon>WorkPlanDetailSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="Service\CommonService.cs" />
+    <Compile Include="Service\CompanyService.cs" />
     <Compile Include="Service\EmployeeService.cs" />
     <Compile Include="Service\FormInfoService.cs" />
     <Compile Include="Service\ProductService.cs" />
+    <Compile Include="Service\WareHouseService.cs" />
     <Compile Include="UseControl\SearchControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -488,91 +490,91 @@
     <EmbeddedResource Include="CustomControl\CustomDataGridView.resx">
       <DependentUpon>CustomDataGridView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\BOM.resx">
+    <EmbeddedResource Include="Forms\Product\BOM.resx">
       <DependentUpon>BOM.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\BOR.resx">
+    <EmbeddedResource Include="Forms\Facility\BOR.resx">
       <DependentUpon>BOR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CommonCode.resx">
       <DependentUpon>CommonCode.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CompanyInfo.resx">
+    <EmbeddedResource Include="Forms\Production\CompanyInfo.resx">
       <DependentUpon>CompanyInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ContractInfo.resx">
+    <EmbeddedResource Include="Forms\Production\ContractInfo.resx">
       <DependentUpon>ContractInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DemandPlan.resx">
+    <EmbeddedResource Include="Forms\Production\DemandPlan.resx">
       <DependentUpon>DemandPlan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EmpInfo.resx">
+    <EmbeddedResource Include="Forms\EmpGroup\EmpInfo.resx">
       <DependentUpon>EmpInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FacilityGroupInfo.resx">
+    <EmbeddedResource Include="Forms\Facility\FacilityGroupInfo.resx">
       <DependentUpon>FacilityGroupInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FacilityInfo.resx">
+    <EmbeddedResource Include="Forms\Facility\FacilityInfo.resx">
       <DependentUpon>FacilityInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormInfo.resx">
+    <EmbeddedResource Include="Forms\EmpGroup\FormInfo.resx">
       <DependentUpon>FormInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\GroupInfo.resx">
+    <EmbeddedResource Include="Forms\EmpGroup\GroupInfo.resx">
       <DependentUpon>GroupInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\InOutInfo.resx">
+    <EmbeddedResource Include="Forms\Product\InOutInfo.resx">
       <DependentUpon>InOutInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OrderInfo.resx">
+    <EmbeddedResource Include="Forms\Production\OrderInfo.resx">
       <DependentUpon>OrderInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\OutSourcingPlan.resx">
+    <EmbeddedResource Include="Forms\Production\OutSourcingPlan.resx">
       <DependentUpon>OutSourcingPlan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ProductCheckInfo.resx">
+    <EmbeddedResource Include="Forms\Product\ProductCheckInfo.resx">
       <DependentUpon>ProductCheckInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ProductInfo.resx">
+    <EmbeddedResource Include="Forms\Product\ProductInfo.resx">
       <DependentUpon>ProductInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ProductionPlan.resx">
+    <EmbeddedResource Include="Forms\Production\ProductionPlan.resx">
       <DependentUpon>ProductionPlan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ProgressInfo.resx">
+    <EmbeddedResource Include="Forms\Facility\ProgressInfo.resx">
       <DependentUpon>ProgressInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ProgressMoveInfo.resx">
+    <EmbeddedResource Include="Forms\Facility\ProgressMoveInfo.resx">
       <DependentUpon>ProgressMoveInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SalesByCompany.resx">
+    <EmbeddedResource Include="Forms\Sales\SalesByCompany.resx">
       <DependentUpon>SalesByCompany.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SalesDeadLine.resx">
+    <EmbeddedResource Include="Forms\Sales\SalesDeadLine.resx">
       <DependentUpon>SalesDeadLine.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Shipment.resx">
+    <EmbeddedResource Include="Forms\Sales\Shipment.resx">
       <DependentUpon>Shipment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StockByOrder.resx">
+    <EmbeddedResource Include="Forms\Sales\StockByOrder.resx">
       <DependentUpon>StockByOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StockInfo.resx">
+    <EmbeddedResource Include="Forms\Product\StockInfo.resx">
       <DependentUpon>StockInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TempInfo.resx">
+    <EmbeddedResource Include="Forms\EmpGroup\TempInfo.resx">
       <DependentUpon>TempInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\WareHouseInfo.resx">
+    <EmbeddedResource Include="Forms\Product\WareHouseInfo.resx">
       <DependentUpon>WareHouseInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\WorkOrderInfo.resx">
+    <EmbeddedResource Include="Forms\Production\WorkOrderInfo.resx">
       <DependentUpon>WorkOrderInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\WorkPlanInfo.resx">
+    <EmbeddedResource Include="Forms\Production\WorkPlanInfo.resx">
       <DependentUpon>WorkPlanInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MDI\MDI.resx">
@@ -743,6 +745,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\close-red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Edit_32x32.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

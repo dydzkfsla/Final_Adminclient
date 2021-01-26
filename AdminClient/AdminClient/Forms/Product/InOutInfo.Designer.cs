@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -76,6 +77,11 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customDataGridView1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // lbl_Title
+            // 
+            this.lbl_Title.Size = new System.Drawing.Size(124, 43);
+            this.lbl_Title.Text = "입출고";
             // 
             // pnl_Main
             // 
@@ -378,6 +384,7 @@
             this.customDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.customDataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.customDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.customDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -389,6 +396,17 @@
             this.Column7,
             this.Column8,
             this.Column9});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.customDataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.customDataGridView1.GridColor = System.Drawing.Color.Black;
+            this.customDataGridView1.IsChkVisible = false;
+            this.customDataGridView1.IsEditVisible = false;
             this.customDataGridView1.Location = new System.Drawing.Point(36, 3);
             this.customDataGridView1.Name = "customDataGridView1";
             this.customDataGridView1.RowHeadersVisible = false;
