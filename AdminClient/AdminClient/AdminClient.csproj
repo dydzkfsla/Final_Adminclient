@@ -691,7 +691,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AdminClientDAC\AdminClientDAC.csproj">
-      <Project>{bbfc4b89-ccd4-44ba-8aff-ed5442930a4c}</Project>
+      <Project>{BBFC4B89-CCD4-44BA-8AFF-ED5442930A4C}</Project>
       <Name>AdminClientDAC</Name>
     </ProjectReference>
     <ProjectReference Include="..\AdminClientVO\AdminClientVO.csproj">
