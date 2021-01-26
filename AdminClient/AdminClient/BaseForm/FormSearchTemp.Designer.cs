@@ -64,11 +64,6 @@
             this.btn_Xls.Location = new System.Drawing.Point(1151, 9);
             this.btn_Xls.Visible = false;
             // 
-            // btn_Update
-            // 
-            this.btn_Update.Location = new System.Drawing.Point(988, 9);
-            this.btn_Update.Visible = false;
-            // 
             // panel1
             // 
             this.panel1.Size = new System.Drawing.Size(1236, 64);

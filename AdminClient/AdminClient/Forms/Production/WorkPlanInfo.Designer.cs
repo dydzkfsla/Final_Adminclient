@@ -144,7 +144,6 @@
             this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.SetChildIndex(this.btn_add, 0);
             this.panel1.Controls.SetChildIndex(this.btn_Xls, 0);
-            this.panel1.Controls.SetChildIndex(this.btn_Update, 0);
             this.panel1.Controls.SetChildIndex(this.button7, 0);
             // 
             // pnl_Main

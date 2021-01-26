@@ -92,10 +92,6 @@ namespace AdminClient.Search
 			// 
 			this.btn_Xls.Location = new System.Drawing.Point(1461, 11);
 			// 
-			// btn_Update
-			// 
-			this.btn_Update.Location = new System.Drawing.Point(1296, 11);
-			// 
 			// panel1
 			// 
 			this.panel1.Controls.Add(this.button2);
@@ -115,7 +111,6 @@ namespace AdminClient.Search
 			this.panel1.Controls.SetChildIndex(this.textBox3, 0);
 			this.panel1.Controls.SetChildIndex(this.btn_add, 0);
 			this.panel1.Controls.SetChildIndex(this.btn_Xls, 0);
-			this.panel1.Controls.SetChildIndex(this.btn_Update, 0);
 			this.panel1.Controls.SetChildIndex(this.button2, 0);
 			// 
 			// lbl_Title

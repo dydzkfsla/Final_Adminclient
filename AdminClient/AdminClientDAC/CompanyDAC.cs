@@ -13,12 +13,10 @@ namespace AdminClientDAC
     public class CompanyDAC : IDisposable
     {
         SqlConnection conn;
-        LoggingUtility logging;
         public CompanyDAC()
         {
             conn = new SqlConnection(Connstring.conn);
             conn.Open();
-            logging = new LoggingUtility("CompanyDAC", Level.All, 30, "C:\\FP\\Log\\CompanyDAC");
         }
         public void Dispose()
         {
@@ -45,7 +43,6 @@ namespace AdminClientDAC
             }
             catch(Exception err)
             {
-                logging.WriteError($"실행자:{Global.employees.Emp_Name} 회사목록 첫 콤보박스 바인딩 목록 불러오는중 오류 :" + err.Message, err);
                 return null;
             }
         }
@@ -85,7 +82,6 @@ namespace AdminClientDAC
             }
             catch(Exception err)
             {
-                logging.WriteError($"실행자:{Global.employees.Emp_Name} 회사목록 불러오는중 오류 :" + err.Message, err);
                 return null;
             }
         }
@@ -118,7 +114,6 @@ namespace AdminClientDAC
             }
             catch(Exception err)
             {
-                logging.WriteError($"실행자:{Global.employees.Emp_Name} 회사의 디테일 정보 불러오는중 오류 :" + err.Message, err);
                 return null;
             }
         }
@@ -145,7 +140,6 @@ namespace AdminClientDAC
             }
             catch(Exception err)
             {
-                logging.WriteError($"실행자:{Global.employees.Emp_Name} 회사popup의 콤보박스 바인딩 목록 불러오는중 오류 :" + err.Message, err);
                 return null;
             } 
         }
@@ -184,7 +178,6 @@ namespace AdminClientDAC
             }
             catch(Exception err)
             {
-                logging.WriteError($"실행자:{Global.employees.Emp_Name} 새 회사정보 저장중 오류 :" + err.Message, err);
                 return false;
             }
         }
@@ -225,7 +218,6 @@ namespace AdminClientDAC
             }
             catch(Exception err)
             {
-                logging.WriteError($"실행자:{Global.employees.Emp_Name} 회사 정보 수정중 오류 :" + err.Message, err);
                 return false;
             }
         }

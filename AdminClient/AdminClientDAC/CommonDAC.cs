@@ -17,7 +17,7 @@ namespace AdminClientDAC
         {
             conn = new SqlConnection(Connstring.conn);
             conn.Open();
-            logging = new LoggingUtility("CommonDAC", Level.All, 30, "C:\\FP\\Log\\CommonDAC");
+            //logging = new LoggingUtility("CommonDAC", Level.All, 30, "C:\\FP\\Log\\CommonDAC");
         }
         public void Dispose()
         {
@@ -40,7 +40,7 @@ namespace AdminClientDAC
             }
             catch(Exception err)
             {
-                logging.WriteError($"실행자:{Global.employees.Emp_Name} 커몬코드폼 첫 콤보박스 바인딩 목록 불러오는중 오류 :" + err.Message, err);
+                //logging.WriteError($"실행자:{Global.employees.Emp_Name} 커몬코드폼 첫 콤보박스 바인딩 목록 불러오는중 오류 :" + err.Message, err);
                 return null;
             }
         }
@@ -70,7 +70,7 @@ namespace AdminClientDAC
             }
             catch(Exception err)
             {
-                logging.WriteError($"실행자:{Global.employees.Emp_Name} 커몬코드 추가중 오류 :" + err.Message, err);
+                //logging.WriteError($"실행자:{Global.employees.Emp_Name} 커몬코드 추가중 오류 :" + err.Message, err);
                 return false;
             }
         }
@@ -97,7 +97,7 @@ namespace AdminClientDAC
             }
             catch(Exception err)
             {
-                logging.WriteError($"실행자:{Global.employees.Emp_Name} 커몬코드 삭제중 오류 :" + err.Message, err);
+                //logging.WriteError($"실행자:{Global.employees.Emp_Name} 커몬코드 삭제중 오류 :" + err.Message, err);
                 return false;
             }
         }
@@ -128,7 +128,7 @@ namespace AdminClientDAC
             }
             catch(Exception err)
             {
-                logging.WriteError($"실행자:{Global.employees.Emp_Name} 커몬코드 수정중 오류 :" + err.Message, err);
+                //logging.WriteError($"실행자:{Global.employees.Emp_Name} 커몬코드 수정중 오류 :" + err.Message, err);
                 return false;
             }
             
@@ -155,7 +155,7 @@ namespace AdminClientDAC
             }
             catch(Exception err)
             {
-                logging.WriteError($"실행자:{Global.employees.Emp_Name} 커몬코드 목록 불러오는 중 오류 :" + err.Message, err);
+                //logging.WriteError($"실행자:{Global.employees.Emp_Name} 커몬코드 목록 불러오는 중 오류 :" + err.Message, err);
                 return null;
             }
         }

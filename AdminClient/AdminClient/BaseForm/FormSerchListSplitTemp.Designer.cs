@@ -50,10 +50,6 @@
             // 
             this.btn_Xls.Location = new System.Drawing.Point(1066, 9);
             // 
-            // btn_Update
-            // 
-            this.btn_Update.Location = new System.Drawing.Point(901, 9);
-            // 
             // panel1
             // 
             this.panel1.Size = new System.Drawing.Size(1151, 64);

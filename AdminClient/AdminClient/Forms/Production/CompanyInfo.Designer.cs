@@ -124,7 +124,7 @@
             this.splitContainer3.Panel2.Controls.Add(this.label13);
             this.splitContainer3.Panel2.Controls.Add(this.label12);
             this.splitContainer3.Size = new System.Drawing.Size(1025, 358);
-            this.splitContainer3.SplitterDistance = 713;
+            this.splitContainer3.SplitterDistance = 830;
             this.splitContainer3.SplitterWidth = 8;
             // 
             // splitContainer2
@@ -145,11 +145,6 @@
             // 
             this.btn_Xls.Location = new System.Drawing.Point(1378, 9);
             // 
-            // btn_Update
-            // 
-            this.btn_Update.Location = new System.Drawing.Point(1213, 9);
-            this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.txt_Type);
@@ -163,7 +158,6 @@
             this.panel1.Size = new System.Drawing.Size(1463, 64);
             this.panel1.Controls.SetChildIndex(this.btn_add, 0);
             this.panel1.Controls.SetChildIndex(this.btn_Xls, 0);
-            this.panel1.Controls.SetChildIndex(this.btn_Update, 0);
             this.panel1.Controls.SetChildIndex(this.label8, 0);
             this.panel1.Controls.SetChildIndex(this.txt_Code, 0);
             this.panel1.Controls.SetChildIndex(this.label9, 0);
@@ -540,12 +534,13 @@
             this.dgv_detail.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_detail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_detail.GridColor = System.Drawing.Color.Black;
-            this.dgv_detail.IsChkVisible = false;
+            this.dgv_detail.IsChkVisible = true;
+            this.dgv_detail.IsEditVisible = true;
             this.dgv_detail.Location = new System.Drawing.Point(0, 0);
             this.dgv_detail.Name = "dgv_detail";
             this.dgv_detail.RowHeadersVisible = false;
             this.dgv_detail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_detail.Size = new System.Drawing.Size(713, 358);
+            this.dgv_detail.Size = new System.Drawing.Size(830, 358);
             this.dgv_detail.TabIndex = 0;
             // 
             // label12
@@ -686,7 +681,8 @@
             this.dgv_CompList.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_CompList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_CompList.GridColor = System.Drawing.Color.Black;
-            this.dgv_CompList.IsChkVisible = false;
+            this.dgv_CompList.IsChkVisible = true;
+            this.dgv_CompList.IsEditVisible = true;
             this.dgv_CompList.Location = new System.Drawing.Point(0, 0);
             this.dgv_CompList.Name = "dgv_CompList";
             this.dgv_CompList.RowTemplate.Height = 23;

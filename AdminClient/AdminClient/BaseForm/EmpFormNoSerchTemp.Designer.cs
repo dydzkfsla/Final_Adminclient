@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_Update = new System.Windows.Forms.Button();
             this.btn_Xls = new System.Windows.Forms.Button();
             this.btn_add = new System.Windows.Forms.Button();
             this.pnl_Main.SuspendLayout();
@@ -45,6 +44,7 @@
             // Form_close
             // 
             this.Form_close.Location = new System.Drawing.Point(756, 10);
+            // 
             // TitleColor
             // 
             this.TitleColor.Size = new System.Drawing.Size(817, 7);
@@ -54,28 +54,12 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel1.Controls.Add(this.btn_Update);
             this.panel1.Controls.Add(this.btn_Xls);
             this.panel1.Controls.Add(this.btn_add);
             this.panel1.Location = new System.Drawing.Point(10, 13);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(759, 65);
             this.panel1.TabIndex = 5;
-            // 
-            // btn_Update
-            // 
-            this.btn_Update.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Update.BackColor = System.Drawing.Color.White;
-            this.btn_Update.Image = global::AdminClient.Properties.Resources.ClearTableStyle_32x32;
-            this.btn_Update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Update.Location = new System.Drawing.Point(509, 9);
-            this.btn_Update.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_Update.Name = "btn_Update";
-            this.btn_Update.Size = new System.Drawing.Size(82, 47);
-            this.btn_Update.TabIndex = 2;
-            this.btn_Update.Text = "수정";
-            this.btn_Update.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Update.UseVisualStyleBackColor = false;
             // 
             // btn_Xls
             // 
@@ -107,11 +91,11 @@
             this.btn_add.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_add.UseVisualStyleBackColor = false;
             // 
-            // EmpFormPopUpTemp
+            // EmpFormNoSerchTemp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.ClientSize = new System.Drawing.Size(799, 673);
-            this.Name = "EmpFormPopUpTemp";
+            this.Name = "EmpFormNoSerchTemp";
             this.pnl_Main.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -123,7 +107,6 @@
         #endregion
 
         protected System.Windows.Forms.Panel panel1;
-        protected System.Windows.Forms.Button btn_Update;
         protected System.Windows.Forms.Button btn_Xls;
         protected System.Windows.Forms.Button btn_add;
     }
