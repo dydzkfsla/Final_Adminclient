@@ -102,7 +102,6 @@
             // 
             // btn_Update
             // 
-            this.btn_Update.Location = new System.Drawing.Point(1093, 23);
             // 
             // panel1
             // 
@@ -123,7 +122,6 @@
             this.panel1.Size = new System.Drawing.Size(1348, 91);
             this.panel1.Controls.SetChildIndex(this.btn_add, 0);
             this.panel1.Controls.SetChildIndex(this.btn_Xls, 0);
-            this.panel1.Controls.SetChildIndex(this.btn_Update, 0);
             this.panel1.Controls.SetChildIndex(this.label6, 0);
             this.panel1.Controls.SetChildIndex(this.textBox2, 0);
             this.panel1.Controls.SetChildIndex(this.label7, 0);

@@ -22,14 +22,6 @@ namespace AdminClient.Forms
         public CompanyInfo()
         {
             InitializeComponent();
-            //temp.Add(("text", "text"));
-            //temp.Add(("text", "text"));
-            //temp.Add(("text", "text"));
-            //temp.Add(("text", "text"));
-            //temp.Add(("text", "text"));
-
-            //customDataGridView1.DataSource = temp;
-            //customDataGridView2.DataSource = temp;
         }
 
         private void CompanyInfo_Load(object sender, EventArgs e)
@@ -74,7 +66,7 @@ namespace AdminClient.Forms
             CommonUtil.AddGridTextColumn(dgv_CompList, "상태", "Comp_State");
             CommonUtil.AddGridTextColumn(dgv_CompList, "Type", "Comp_Type", visibility: false);
 
-            CommonUtil.SetInitGridView(dgv_detail);
+            dgv_detail.SetGridColumn();
             CommonUtil.AddGridTextColumn(dgv_detail, "Code", "Comp_Code", visibility: false);
             CommonUtil.AddGridTextColumn(dgv_detail, "ProdCode", "Prod_Code");
             CommonUtil.AddGridTextColumn(dgv_detail, "물품명", "Prod_Name");

@@ -61,7 +61,6 @@
             // 
             // btn_Update
             // 
-            this.btn_Update.Location = new System.Drawing.Point(738, 9);
             // 
             // panel1
             // 

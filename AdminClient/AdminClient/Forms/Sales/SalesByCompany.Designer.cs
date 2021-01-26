@@ -119,7 +119,6 @@ namespace AdminClient.Forms
 			// 
 			// btn_Update
 			// 
-			this.btn_Update.Location = new System.Drawing.Point(1350, 9);
 			// 
 			// panel1
 			// 

@@ -90,7 +90,6 @@ namespace AdminClient.Forms
             // 
             // btn_Update
             // 
-            this.btn_Update.Location = new System.Drawing.Point(1305, 9);
             // 
             // panel1
             // 
@@ -101,7 +100,6 @@ namespace AdminClient.Forms
             this.panel1.Size = new System.Drawing.Size(1555, 69);
             this.panel1.Controls.SetChildIndex(this.btn_add, 0);
             this.panel1.Controls.SetChildIndex(this.btn_Xls, 0);
-            this.panel1.Controls.SetChildIndex(this.btn_Update, 0);
             this.panel1.Controls.SetChildIndex(this.label4, 0);
             this.panel1.Controls.SetChildIndex(this.textBox2, 0);
             this.panel1.Controls.SetChildIndex(this.button2, 0);

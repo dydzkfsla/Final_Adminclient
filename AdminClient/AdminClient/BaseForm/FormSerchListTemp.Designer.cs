@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btn_add = new System.Windows.Forms.Button();
-            this.btn_Update = new System.Windows.Forms.Button();
             this.btn_Xls = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnl_Main.SuspendLayout();
@@ -99,21 +98,6 @@
             this.btn_add.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_add.UseVisualStyleBackColor = false;
             // 
-            // btn_Update
-            // 
-            this.btn_Update.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Update.BackColor = System.Drawing.Color.White;
-            this.btn_Update.Image = global::AdminClient.Properties.Resources.ClearTableStyle_32x32;
-            this.btn_Update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Update.Location = new System.Drawing.Point(970, 9);
-            this.btn_Update.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_Update.Name = "btn_Update";
-            this.btn_Update.Size = new System.Drawing.Size(82, 47);
-            this.btn_Update.TabIndex = 2;
-            this.btn_Update.Text = "수정";
-            this.btn_Update.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Update.UseVisualStyleBackColor = false;
-            // 
             // btn_Xls
             // 
             this.btn_Xls.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -134,7 +118,6 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel1.Controls.Add(this.btn_Update);
             this.panel1.Controls.Add(this.btn_Xls);
             this.panel1.Controls.Add(this.btn_add);
             this.panel1.Location = new System.Drawing.Point(12, 12);
@@ -142,11 +125,11 @@
             this.panel1.Size = new System.Drawing.Size(1220, 64);
             this.panel1.TabIndex = 4;
             // 
-            // FormBase3
+            // FormSerchListTemp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.ClientSize = new System.Drawing.Size(1249, 720);
-            this.Name = "FormBase3";
+            this.Name = "FormSerchListTemp";
             this.pnl_Main.ResumeLayout(false);
             this.gb_Sherch.ResumeLayout(false);
             this.gb_Sherch.PerformLayout();
@@ -166,7 +149,6 @@
 
         protected System.Windows.Forms.Button btn_add;
         protected System.Windows.Forms.Button btn_Xls;
-        protected System.Windows.Forms.Button btn_Update;
         protected System.Windows.Forms.Panel panel1;
     }
 }

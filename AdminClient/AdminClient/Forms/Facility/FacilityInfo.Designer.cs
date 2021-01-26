@@ -136,7 +136,6 @@
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.SetChildIndex(this.btn_add, 0);
             this.panel1.Controls.SetChildIndex(this.btn_Xls, 0);
-            this.panel1.Controls.SetChildIndex(this.btn_Update, 0);
             this.panel1.Controls.SetChildIndex(this.label13, 0);
             this.panel1.Controls.SetChildIndex(this.textBox9, 0);
             this.panel1.Controls.SetChildIndex(this.label12, 0);
