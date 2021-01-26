@@ -81,6 +81,11 @@
             this.splitContainer2.Panel1.Controls.Add(this.dgv_WhList);
             this.splitContainer2.SplitterDistance = 327;
             // 
+            // lbl_Title
+            // 
+            this.lbl_Title.Size = new System.Drawing.Size(159, 43);
+            this.lbl_Title.Text = "창고관리";
+            // 
             // gb_Sherch
             // 
             this.gb_Sherch.Controls.Add(this.cbo_State);
