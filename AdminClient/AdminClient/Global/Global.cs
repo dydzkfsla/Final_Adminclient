@@ -14,8 +14,8 @@ namespace AdminClient.Global
         public static EmployeesVO employees { get => employees1; 
             set
             {
-                employees = value;
-                AdminClientDAC.Global.employees = employees;
+                employees1 = value;
+                AdminClientDAC.Global.employees = value;
             }
         }
     }

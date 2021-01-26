@@ -13,12 +13,14 @@ namespace AdminClientDAC
     public class FormInfoDAC : IDisposable
     {
         SqlConnection conn;
-        LoggingUtility logging;
+        LoggingUtility Info;
         public FormInfoDAC()
         {
             conn = new SqlConnection(Connstring.conn);
             conn.Open();
-            logging = new LoggingUtility("FormInfoDac", Level.All, 30, "C:\\FP\\Log\\FormInfoDAC");
+            Info = new LoggingUtility("FormInfoDACInFo", "FormErorrDACInFo",  Level.All, 30);
+            Info.InfoFolder = "C:\\FP\\Log\\FormInfoDAC\\Info";
+            Info.ErrorFolder = "C:\\FP\\Log\\FormInfoDAC\\Error";
         }
 
 
@@ -53,7 +55,7 @@ namespace AdminClientDAC
 
                 if (Execut)
                 {
-                    logging.WriteInfo($"실행자:{Global.employees.Emp_Name} 폼 메뉴 입력 {FromName} : {txtMenuName}");
+                    Info.WriteInfo($"실행자:{Global.employees.Emp_Name} 폼 메뉴 입력 {FromName} : {txtMenuName}");
                 }
 
                 return Execut;
@@ -61,7 +63,7 @@ namespace AdminClientDAC
             catch (Exception err)
             {
                 Debug.WriteLine(err.Message);
-                logging.WriteError($"실행자:{Global.employees.Emp_Name} 폼 메뉴 입력중 오류 :" + err.Message, err);
+                Info.WriteError($"실행자:{Global.employees.Emp_Name} 폼 메뉴 입력중 오류 :" + err.Message, err);
                 return false;
             }
 

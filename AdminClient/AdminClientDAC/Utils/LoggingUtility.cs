@@ -19,11 +19,14 @@ namespace AdminClientDAC
         //private static LoggingUtility _loggingUtility = null;
         private ILog log;
         private RollingFileAppender roller;
-        private string logFileName = "service.log";
+        private string InfoFileName = "service.log";
+        private string ErorrFileName = "service.log";
         private int logSaveDays = 30;
         private bool runAsConsole = false;
-        private string logginFolder = @".\Logs";
-        public string LogginFolder { get => logginFolder; set => logginFolder = value; }
+        private string IofoinFolder = @".\Logs";
+        public string InfoFolder { get => IofoinFolder; set => IofoinFolder = value; }
+        private string ErrorinFolder = @".\Logs";
+        public string ErrorFolder { get => ErrorinFolder; set => ErrorinFolder = value; }
 
         //public static LoggingUtility GetLoggingUtility(string loggerName, Level logLevel, int saveDays)
         //{
@@ -35,12 +38,13 @@ namespace AdminClientDAC
         //    return _loggingUtility;
         //}
 
-        public LoggingUtility(string loggerName, Level logLevel, int saveDays, string logginFolder = @".\Logs")
+        public LoggingUtility(string InfoFileName, string ErorrFileName, Level logLevel, int saveDays)
         {
-            logFileName = $"{loggerName}.log";
+            this.InfoFileName = $"{InfoFileName}.log";
+            this.ErorrFileName = $"{ErorrFileName}.log";
             logSaveDays = saveDays;
-            this.logginFolder = logginFolder;
-            SetupLog4net(logLevel, loggerName);
+            SetupLog4net(logLevel, InfoFileName);
+            SetupLog4net(logLevel, ErorrFileName);
         }
 
         /// <summary>
@@ -103,7 +107,7 @@ namespace AdminClientDAC
             roller = new RollingDateAppender
             {
                 Name = loggerName + "FileAppender",
-                File = GetLoggingFilePath(),
+                File = GetIofoFilePath(),
                 LockingModel = new FileAppender.MinimalLock(),
                 AppendToFile = true,
                 RollingStyle = RollingFileAppender.RollingMode.Composite,
@@ -185,6 +189,9 @@ namespace AdminClientDAC
         /// <param name="ex"></param>
         public void WriteInfo(string message, Exception ex)
         {
+            roller.File = GetIofoFilePath();
+            roller.ActivateOptions();
+            BasicConfigurator.Configure(roller);
             if (!runAsConsole)
                 log.Info(message, ex);
         }
@@ -196,6 +203,9 @@ namespace AdminClientDAC
         /// <param name="message"></param>
         public void WriteInfo(string message)
         {
+            roller.File = GetIofoFilePath();
+            roller.ActivateOptions();
+            BasicConfigurator.Configure(roller);
             if (!runAsConsole)
                 log.Info(message);
         }
@@ -228,6 +238,9 @@ namespace AdminClientDAC
         /// <param name="ex"></param>
         public void WriteError(string message, Exception ex)
         {
+            roller.File = GetErrorFilePath();
+            roller.ActivateOptions();
+            BasicConfigurator.Configure(roller);
             if (!runAsConsole)
                 log.Error(message, ex);
         }
@@ -238,6 +251,9 @@ namespace AdminClientDAC
         /// <param name="message"></param>
         public void WriteError(string message)
         {
+            roller.File = GetErrorFilePath();
+            roller.ActivateOptions();
+            BasicConfigurator.Configure(roller);
             if (!runAsConsole)
                 log.Error(message);
         }
@@ -269,7 +285,14 @@ namespace AdminClientDAC
         /// </summary>
         private void CheckAndCreateLoggingFolder()
         {
-            string tempFolder = LogginFolder;
+            string tempFolder = InfoFolder;
+
+            if (!Directory.Exists(tempFolder))
+            {
+                Directory.CreateDirectory(tempFolder);
+            }
+
+            tempFolder = ErrorFolder;
 
             if (!Directory.Exists(tempFolder))
             {
@@ -282,9 +305,14 @@ namespace AdminClientDAC
         /// 로깅 파일의 위치를 구함
         /// </summary>
         /// <returns></returns>
-        private string GetLoggingFilePath()
+        private string GetIofoFilePath()
         {
-            return string.Format(@"{0}\{1}", LogginFolder, this.logFileName);
+            return string.Format(@"{0}\{1}", InfoFolder, this.InfoFileName);
+        }
+
+        private string GetErrorFilePath()
+        {
+            return string.Format(@"{0}\{1}", ErrorFolder, this.ErorrFileName);
         }
     }
 

@@ -85,15 +85,15 @@
             this.pnl_Main.Controls.Add(this.dgv_addGroup);
             this.pnl_Main.Controls.Add(this.label2);
             this.pnl_Main.Controls.Add(this.label1);
-            this.pnl_Main.Size = new System.Drawing.Size(1257, 800);
+            this.pnl_Main.Size = new System.Drawing.Size(1022, 537);
             // 
             // Form_close
             // 
-            this.Form_close.Location = new System.Drawing.Point(1231, 8);
+            this.Form_close.Location = new System.Drawing.Point(996, 8);
             // 
             // TitleColor
             // 
-            this.TitleColor.Size = new System.Drawing.Size(1279, 7);
+            this.TitleColor.Size = new System.Drawing.Size(1044, 7);
             // 
             // label1
             // 
@@ -361,7 +361,7 @@
             // TempInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
-            this.ClientSize = new System.Drawing.Size(1267, 858);
+            this.ClientSize = new System.Drawing.Size(1032, 595);
             this.Name = "TempInfo";
             this.pnl_Main.ResumeLayout(false);
             this.pnl_Main.PerformLayout();
