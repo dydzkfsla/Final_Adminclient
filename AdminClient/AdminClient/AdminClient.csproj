@@ -440,21 +440,14 @@
       <DependentUpon>WorkPlanDetailSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="Service\CommonService.cs" />
-    <Compile Include="Service\CompanyService.cs" />
+    <Compile Include="Service\EmployeeService.cs" />
     <Compile Include="Service\FormInfoService.cs" />
     <Compile Include="Service\ProductService.cs" />
-    <Compile Include="Service\WareHouseService.cs" />
     <Compile Include="UseControl\SearchControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UseControl\SearchControl.Designer.cs">
       <DependentUpon>SearchControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UseControl\SortControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UseControl\SortControl.Designer.cs">
-      <DependentUpon>SortControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\CommonUtil.cs" />
     <Compile Include="Utils\CuttedGroup.cs" />
@@ -656,9 +649,6 @@
     <EmbeddedResource Include="UseControl\SearchControl.resx">
       <DependentUpon>SearchControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UseControl\SortControl.resx">
-      <DependentUpon>SortControl.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -745,8 +735,6 @@
   <ItemGroup>
     <None Include="Resources\close-red.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resources\Edit_32x32.png" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
