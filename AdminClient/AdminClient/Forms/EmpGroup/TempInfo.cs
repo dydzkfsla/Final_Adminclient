@@ -51,14 +51,14 @@ namespace AdminClient.Forms
         }
         #endregion
 
-
         #region 텍스트 박스 이벤트 셋
         private void TextBoxSet()
         {
             txtCode.KeyPress += UtilEvent.tbx_Trim;
             txtName.KeyPress += UtilEvent.tbx_Trim;
             txtCode.KeyPress += UtilEvent.isAlphaAndDigit_KeyPress;
-            txtName.KeyPress += UtilEvent.isAlphaAndDigit_KeyPress;
+            txtName.KeyPress += UtilEvent.tbx_Trim;
+            txtChief.KeyPress += UtilEvent.isAlphaAndDigit_KeyPress;
         }
         #endregion
 
@@ -254,8 +254,6 @@ namespace AdminClient.Forms
             code = dgv_Temp["Team_Code", e.RowIndex].Value.ToString();
             SetAuthority(code);
 
-            string Chief = null;
-            string Part = null;
 
             txtCode.Text = code;
             txtName.Text = dgv_Temp["Team_Name", e.RowIndex].Value.ToString();

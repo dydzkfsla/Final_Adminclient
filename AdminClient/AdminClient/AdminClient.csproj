@@ -442,10 +442,12 @@
     <Compile Include="Service\CommonService.cs" />
     <Compile Include="Service\CompanyService.cs" />
     <Compile Include="Service\EmployeeService.cs" />
+    <Compile Include="Service\EmployeesService.cs" />
     <Compile Include="Service\FormInfoService.cs" />
     <Compile Include="Service\GroupFormConnService.cs" />
     <Compile Include="Service\GroupInfoService.cs" />
     <Compile Include="Service\ProductService.cs" />
+    <Compile Include="Service\StockInfoService.cs" />
     <Compile Include="Service\TeamGroupConnService.cs" />
     <Compile Include="Service\TeamInfoService.cs" />
     <Compile Include="Service\WareHouseService.cs" />
@@ -463,6 +465,7 @@
     </Compile>
     <Compile Include="Utils\CommonUtil.cs" />
     <Compile Include="Utils\CuttedGroup.cs" />
+    <Compile Include="Utils\DateTimeFormatter.cs" />
     <Compile Include="Utils\Email.cs" />
     <Compile Include="Utils\ExtenstionMethod.cs" />
     <Compile Include="Utils\UtileHelper.cs" />
