@@ -124,7 +124,6 @@ namespace AdminClient.Forms
             //해당 그룹 권한 폼 가져옴
             dgv_GroupMenu.DataSource = Deleteds;
         }
-
         #endregion
 
         #region 정렬

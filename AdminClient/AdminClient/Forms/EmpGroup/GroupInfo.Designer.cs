@@ -68,7 +68,7 @@
             this.pnl_Main.Controls.Add(this.label3);
             this.pnl_Main.Controls.Add(this.label2);
             this.pnl_Main.Controls.Add(this.label1);
-            this.pnl_Main.Size = new System.Drawing.Size(1264, 735);
+            this.pnl_Main.Size = new System.Drawing.Size(1179, 640);
             // 
             // lbl_Title
             // 
@@ -77,16 +77,16 @@
             // 
             // Form_close
             // 
-            this.Form_close.Location = new System.Drawing.Point(1238, 9);
+            this.Form_close.Location = new System.Drawing.Point(1153, 9);
             // 
             // TitleColor
             // 
-            this.TitleColor.Size = new System.Drawing.Size(1348, 7);
+            this.TitleColor.Size = new System.Drawing.Size(1263, 7);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 12);
+            this.label1.Location = new System.Drawing.Point(16, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 17);
             this.label1.TabIndex = 0;
@@ -95,7 +95,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(372, 12);
+            this.label2.Location = new System.Drawing.Point(305, 12);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 17);
             this.label2.TabIndex = 1;
@@ -104,7 +104,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(814, 12);
+            this.label3.Location = new System.Drawing.Point(766, 17);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 17);
             this.label3.TabIndex = 2;
@@ -114,7 +114,7 @@
             // 
             this.btn_MenuAdd.BackColor = System.Drawing.Color.White;
             this.btn_MenuAdd.Enabled = false;
-            this.btn_MenuAdd.Location = new System.Drawing.Point(730, 48);
+            this.btn_MenuAdd.Location = new System.Drawing.Point(687, 37);
             this.btn_MenuAdd.Name = "btn_MenuAdd";
             this.btn_MenuAdd.Size = new System.Drawing.Size(64, 38);
             this.btn_MenuAdd.TabIndex = 6;
@@ -126,7 +126,7 @@
             // 
             this.btn_MenuDelete.BackColor = System.Drawing.Color.White;
             this.btn_MenuDelete.Enabled = false;
-            this.btn_MenuDelete.Location = new System.Drawing.Point(730, 161);
+            this.btn_MenuDelete.Location = new System.Drawing.Point(687, 150);
             this.btn_MenuDelete.Name = "btn_MenuDelete";
             this.btn_MenuDelete.Size = new System.Drawing.Size(64, 38);
             this.btn_MenuDelete.TabIndex = 7;
@@ -137,7 +137,7 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(730, 264);
+            this.button3.Location = new System.Drawing.Point(687, 253);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(64, 59);
             this.button3.TabIndex = 8;
@@ -154,7 +154,7 @@
             this.groupBox1.Controls.Add(this.btn_Delete);
             this.groupBox1.Controls.Add(this.btn_Upadte);
             this.groupBox1.Controls.Add(this.btn_Add);
-            this.groupBox1.Location = new System.Drawing.Point(10, 376);
+            this.groupBox1.Location = new System.Drawing.Point(19, 372);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(528, 219);
             this.groupBox1.TabIndex = 9;
@@ -164,6 +164,7 @@
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(79, 80);
+            this.txtName.MaxLength = 30;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(218, 25);
             this.txtName.TabIndex = 6;
@@ -171,6 +172,7 @@
             // txtNo
             // 
             this.txtNo.Location = new System.Drawing.Point(79, 44);
+            this.txtNo.MaxLength = 8;
             this.txtNo.Name = "txtNo";
             this.txtNo.Size = new System.Drawing.Size(218, 25);
             this.txtNo.TabIndex = 5;
@@ -244,11 +246,11 @@
             this.dgv_Group.GridColor = System.Drawing.Color.Black;
             this.dgv_Group.IsChkVisible = false;
             this.dgv_Group.IsEditVisible = false;
-            this.dgv_Group.Location = new System.Drawing.Point(10, 32);
+            this.dgv_Group.Location = new System.Drawing.Point(19, 32);
             this.dgv_Group.Name = "dgv_Group";
             this.dgv_Group.RowHeadersVisible = false;
             this.dgv_Group.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Group.Size = new System.Drawing.Size(341, 303);
+            this.dgv_Group.Size = new System.Drawing.Size(267, 303);
             this.dgv_Group.TabIndex = 10;
             this.dgv_Group.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Group_CellDoubleClick);
             // 
@@ -268,11 +270,11 @@
             this.dgv_GroupMenu.GridColor = System.Drawing.Color.Black;
             this.dgv_GroupMenu.IsChkVisible = false;
             this.dgv_GroupMenu.IsEditVisible = false;
-            this.dgv_GroupMenu.Location = new System.Drawing.Point(375, 32);
+            this.dgv_GroupMenu.Location = new System.Drawing.Point(308, 32);
             this.dgv_GroupMenu.Name = "dgv_GroupMenu";
             this.dgv_GroupMenu.RowHeadersVisible = false;
             this.dgv_GroupMenu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_GroupMenu.Size = new System.Drawing.Size(337, 303);
+            this.dgv_GroupMenu.Size = new System.Drawing.Size(373, 303);
             this.dgv_GroupMenu.TabIndex = 11;
             // 
             // dgv_MenuInfo
@@ -291,17 +293,17 @@
             this.dgv_MenuInfo.GridColor = System.Drawing.Color.Black;
             this.dgv_MenuInfo.IsChkVisible = false;
             this.dgv_MenuInfo.IsEditVisible = false;
-            this.dgv_MenuInfo.Location = new System.Drawing.Point(817, 32);
+            this.dgv_MenuInfo.Location = new System.Drawing.Point(769, 37);
             this.dgv_MenuInfo.Name = "dgv_MenuInfo";
             this.dgv_MenuInfo.RowHeadersVisible = false;
             this.dgv_MenuInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_MenuInfo.Size = new System.Drawing.Size(420, 303);
+            this.dgv_MenuInfo.Size = new System.Drawing.Size(396, 303);
             this.dgv_MenuInfo.TabIndex = 12;
             // 
             // GroupInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
-            this.ClientSize = new System.Drawing.Size(1275, 792);
+            this.ClientSize = new System.Drawing.Size(1190, 697);
             this.Name = "GroupInfo";
             this.Load += new System.EventHandler(this.GroupInfo_Load);
             this.pnl_Main.ResumeLayout(false);

@@ -168,6 +168,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.pnl_DateTime);
             this.Controls.Add(this.pnl_int);
             this.Controls.Add(this.pnl_string);
@@ -176,7 +177,7 @@
             this.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SearchControl";
-            this.Size = new System.Drawing.Size(325, 77);
+            this.Size = new System.Drawing.Size(320, 75);
             this.pnl_string.ResumeLayout(false);
             this.pnl_string.PerformLayout();
             this.pnl_int.ResumeLayout(false);
