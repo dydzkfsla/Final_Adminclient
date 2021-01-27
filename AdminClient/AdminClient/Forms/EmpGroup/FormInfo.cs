@@ -150,5 +150,25 @@ namespace AdminClient.Forms
                 Inited();
             }
         }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            FormInfoService service = new FormInfoService();
+            if (service.DeleteFormInfo(txt_formName.Text))
+            {
+                Inited();
+            }
+        }
+
+        private void btn_Update_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_ManuName.Text))
+                return;
+            FormInfoService service = new FormInfoService();
+            if (service.UpdateFormInfo(txt_formName.Text, txt_ManuName.Text))
+            {
+                Inited();
+            }
+        }
     }
 }
