@@ -22,6 +22,14 @@ namespace AdminClient.Forms
         public CompanyInfo()
         {
             InitializeComponent();
+            //temp.Add(("text", "text"));
+            //temp.Add(("text", "text"));
+            //temp.Add(("text", "text"));
+            //temp.Add(("text", "text"));
+            //temp.Add(("text", "text"));
+
+            //customDataGridView1.DataSource = temp;
+            //customDataGridView2.DataSource = temp;
         }
 
         private void CompanyInfo_Load(object sender, EventArgs e)
@@ -66,7 +74,7 @@ namespace AdminClient.Forms
             CommonUtil.AddGridTextColumn(dgv_CompList, "상태", "Comp_State");
             CommonUtil.AddGridTextColumn(dgv_CompList, "Type", "Comp_Type", visibility: false);
 
-            dgv_detail.SetGridColumn();
+            CommonUtil.SetInitGridView(dgv_detail);
             CommonUtil.AddGridTextColumn(dgv_detail, "Code", "Comp_Code", visibility: false);
             CommonUtil.AddGridTextColumn(dgv_detail, "ProdCode", "Prod_Code");
             CommonUtil.AddGridTextColumn(dgv_detail, "물품명", "Prod_Name");
@@ -140,61 +148,19 @@ namespace AdminClient.Forms
             {
                 MessageBox.Show("추가에 성공하였습니다.");
                 vo = pop.VO;
+
+                if (compList.Count > 0)
+                {
+                    compList.Add(vo);
+
+                    dgv_CompList.DataSource = null;
+                    dgv_CompList.DataSource = compList;
+
+                }
             }
 
-            if(compList.Count > 0)
-            {
-                compList.Add(vo);
-
-                dgv_CompList.DataSource = null;
-                dgv_CompList.DataSource = compList;
-
-            }
         }
 
-        private void btn_Update_Click(object sender, EventArgs e)
-        {
-            if(txt_Code.Text.Length < 1)
-            {
-                MessageBox.Show("수정할 목록을 선택해주세요");
-                return;
-            }
-
-            string code = txt_Code.Text;
-
-            CompanyPopUp pop = new CompanyPopUp();
-            pop.ThisMode = CompanyPopUp.Mode.Old;
-            pop.StartPosition = FormStartPosition.CenterParent;
-            CompanyVO vo = null;
-
-            compList.ForEach((comp) =>
-            {
-                if (comp.Comp_Code == code)
-                {
-                    vo = comp;
-                }
-            });
-
-            pop.VO = vo; // 기존정보 전달
-
-            if(pop.ShowDialog() == DialogResult.OK)
-            {
-                MessageBox.Show("수정에 성공했습니다.");
-                vo = pop.VO; // 바뀐정보 받아옴
-            }
-
-            compList.ForEach((comp) =>
-            {
-                if (comp.Comp_Code == code)
-                {
-                    comp = vo;
-                }
-            });
-
-            dgv_CompList.DataSource = null;
-            dgv_CompList.DataSource = compList;
-
-        }
 
         private void dgv_CompList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -214,6 +180,52 @@ namespace AdminClient.Forms
 
                 dgv_detail.DataSource = detailList;
 
+            }
+        }
+
+        private void dgv_CompList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.ColumnIndex == 1)
+            {
+                if (txt_Code.Text.Length < 1)
+                {
+                    MessageBox.Show("수정할 목록을 선택해주세요");
+                    return;
+                }
+
+                string code = txt_Code.Text;
+
+                CompanyPopUp pop = new CompanyPopUp();
+                pop.ThisMode = CompanyPopUp.Mode.Old;
+                pop.StartPosition = FormStartPosition.CenterParent;
+                CompanyVO vo = null;
+
+                compList.ForEach((comp) =>
+                {
+                    if (comp.Comp_Code == code)
+                    {
+                        vo = comp;
+                    }
+                });
+
+                pop.VO = vo; // 기존정보 전달
+
+                if (pop.ShowDialog() == DialogResult.OK)
+                {
+                    MessageBox.Show("수정에 성공했습니다.");
+                    vo = pop.VO; // 바뀐정보 받아옴
+
+                    compList.ForEach((comp) =>
+                    {
+                        if (comp.Comp_Code == code)
+                        {
+                            comp = vo;
+                        }
+                    });
+
+                    dgv_CompList.DataSource = null;
+                    dgv_CompList.DataSource = compList;
+                }
             }
         }
     }

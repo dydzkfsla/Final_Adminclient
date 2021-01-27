@@ -116,7 +116,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(242, 17);
+            this.btn_search.Location = new System.Drawing.Point(242, 17);
             // 
             // Form_close
             // 

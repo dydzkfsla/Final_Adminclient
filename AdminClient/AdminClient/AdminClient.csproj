@@ -444,6 +444,7 @@
     <Compile Include="Service\EmployeeService.cs" />
     <Compile Include="Service\FormInfoService.cs" />
     <Compile Include="Service\ProductService.cs" />
+    <Compile Include="Service\StockInfoService.cs" />
     <Compile Include="Service\WareHouseService.cs" />
     <Compile Include="UseControl\SearchControl.cs">
       <SubType>UserControl</SubType>

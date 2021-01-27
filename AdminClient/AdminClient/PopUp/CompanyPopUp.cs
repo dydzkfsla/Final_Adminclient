@@ -188,5 +188,15 @@ namespace AdminClient.PopUp
             else
                 MessageBox.Show("주황색 표시는 필수 입력 사항입니다.");
         }
+
+        private void Form_close_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+        }
+
+        private void btn_Delete_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -69,6 +69,7 @@
             // Form_close
             // 
             this.Form_close.Location = new System.Drawing.Point(319, 8);
+            this.Form_close.Click += new System.EventHandler(this.Form_close_Click);
             // 
             // TitleColor
             // 
@@ -113,6 +114,7 @@
             this.btn_Delete.TabIndex = 47;
             this.btn_Delete.Text = "삭제";
             this.btn_Delete.UseVisualStyleBackColor = true;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // btn_Update
             // 

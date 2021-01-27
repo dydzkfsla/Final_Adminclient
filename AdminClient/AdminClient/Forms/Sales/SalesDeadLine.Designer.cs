@@ -131,7 +131,7 @@ namespace AdminClient.Forms
 			this.gb_Sherch.Size = new System.Drawing.Size(295, 315);
 			this.gb_Sherch.Controls.SetChildIndex(this.chk_limit, 0);
 			this.gb_Sherch.Controls.SetChildIndex(this.nu_limit, 0);
-			this.gb_Sherch.Controls.SetChildIndex(this.button1, 0);
+			this.gb_Sherch.Controls.SetChildIndex(this.btn_search, 0);
 			this.gb_Sherch.Controls.SetChildIndex(this.groupBox1, 0);
 			this.gb_Sherch.Controls.SetChildIndex(this.label8, 0);
 			this.gb_Sherch.Controls.SetChildIndex(this.label7, 0);

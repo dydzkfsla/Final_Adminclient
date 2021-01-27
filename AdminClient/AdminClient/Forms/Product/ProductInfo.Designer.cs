@@ -33,8 +33,6 @@
             this.cbo_Category = new System.Windows.Forms.ComboBox();
             this.cbo_Unit = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.cbo_State = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.rd_descending = new System.Windows.Forms.RadioButton();
@@ -84,9 +82,6 @@
             // 
             this.btn_Xls.Location = new System.Drawing.Point(1441, 9);
             // 
-            // btn_Update
-            // 
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btn_Delete);
@@ -121,22 +116,18 @@
             // 
             this.gb_Sherch.Controls.Add(this.cbo_State);
             this.gb_Sherch.Controls.Add(this.label4);
-            this.gb_Sherch.Controls.Add(this.comboBox3);
-            this.gb_Sherch.Controls.Add(this.label3);
             this.gb_Sherch.Controls.Add(this.cbo_Unit);
             this.gb_Sherch.Controls.Add(this.label2);
             this.gb_Sherch.Controls.Add(this.cbo_Category);
             this.gb_Sherch.Controls.Add(this.label1);
-            this.gb_Sherch.Size = new System.Drawing.Size(376, 242);
+            this.gb_Sherch.Size = new System.Drawing.Size(376, 213);
             this.gb_Sherch.Controls.SetChildIndex(this.chk_limit, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.nu_limit, 0);
-            this.gb_Sherch.Controls.SetChildIndex(this.button1, 0);
+            this.gb_Sherch.Controls.SetChildIndex(this.btn_search, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.label1, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.cbo_Category, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.label2, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.cbo_Unit, 0);
-            this.gb_Sherch.Controls.SetChildIndex(this.label3, 0);
-            this.gb_Sherch.Controls.SetChildIndex(this.comboBox3, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.label4, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.cbo_State, 0);
             // 
@@ -156,8 +147,8 @@
             this.gb_detail.Controls.Add(this.comboBox11);
             this.gb_detail.Controls.Add(this.label9);
             this.gb_detail.Controls.Add(this.label7);
-            this.gb_detail.Location = new System.Drawing.Point(11, 248);
-            this.gb_detail.Size = new System.Drawing.Size(397, 575);
+            this.gb_detail.Location = new System.Drawing.Point(12, 228);
+            this.gb_detail.Size = new System.Drawing.Size(375, 575);
             // 
             // nu_limit
             // 
@@ -174,7 +165,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgv_ProdList);
             this.splitContainer1.Size = new System.Drawing.Size(1544, 841);
-            this.splitContainer1.SplitterDistance = 427;
+            this.splitContainer1.SplitterDistance = 398;
             // 
             // btn_folding
             // 
@@ -184,10 +175,10 @@
             // 
             this.splitter1.Size = new System.Drawing.Size(33, 841);
             // 
-            // button1
+            // btn_search
             // 
-            this.button1.Location = new System.Drawing.Point(297, 18);
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_search.Location = new System.Drawing.Point(297, 18);
+            this.btn_search.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form_close
             // 
@@ -233,29 +224,11 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "단위";
             // 
-            // comboBox3
-            // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(12, 157);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(225, 25);
-            this.comboBox3.TabIndex = 8;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 137);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 17);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "검사여부";
-            // 
             // cbo_State
             // 
             this.cbo_State.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_State.FormattingEnabled = true;
-            this.cbo_State.Location = new System.Drawing.Point(12, 205);
+            this.cbo_State.Location = new System.Drawing.Point(12, 165);
             this.cbo_State.Name = "cbo_State";
             this.cbo_State.Size = new System.Drawing.Size(225, 25);
             this.cbo_State.TabIndex = 10;
@@ -263,7 +236,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 185);
+            this.label4.Location = new System.Drawing.Point(9, 145);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 17);
             this.label4.TabIndex = 9;
@@ -406,16 +379,18 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_ProdList.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_ProdList.GridColor = System.Drawing.Color.Black;
-            this.dgv_ProdList.IsChkVisible = false;
+            this.dgv_ProdList.IsChkVisible = true;
+            this.dgv_ProdList.IsEditVisible = true;
             this.dgv_ProdList.Location = new System.Drawing.Point(33, 0);
             this.dgv_ProdList.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.dgv_ProdList.Name = "dgv_ProdList";
             this.dgv_ProdList.RowHeadersVisible = false;
             this.dgv_ProdList.RowTemplate.Height = 23;
             this.dgv_ProdList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_ProdList.Size = new System.Drawing.Size(1079, 841);
+            this.dgv_ProdList.Size = new System.Drawing.Size(1108, 841);
             this.dgv_ProdList.TabIndex = 3;
             this.dgv_ProdList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ProdList_CellClick);
+            this.dgv_ProdList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ProdList_CellContentClick);
             // 
             // txt_Wh
             // 
@@ -497,7 +472,6 @@
             this.btn_Clear.TabIndex = 22;
             this.btn_Clear.Text = "초기화";
             this.btn_Clear.UseVisualStyleBackColor = true;
-            this.btn_Clear.Click += new System.EventHandler(this.btn_Clear_Click);
             // 
             // btn_Delete
             // 
@@ -507,7 +481,6 @@
             this.btn_Delete.TabIndex = 23;
             this.btn_Delete.Text = "삭제";
             this.btn_Delete.UseVisualStyleBackColor = true;
-            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // searchControl1
             // 
@@ -547,8 +520,6 @@
 
         private System.Windows.Forms.ComboBox cbo_State;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbo_Unit;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbo_Category;

@@ -20,7 +20,7 @@ namespace AdminClient
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AdminClient.Forms.CompanyInfo());
+            Application.Run(new AdminClient.Forms.ProductInfo());
         }
     }
 }

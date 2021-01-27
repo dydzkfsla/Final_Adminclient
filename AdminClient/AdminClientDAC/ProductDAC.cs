@@ -71,7 +71,7 @@ namespace AdminClientDAC
             }
         }
 
-        public bool UpdateProduct(string code, string name, string cate, string wh) // 로그인 완성시 변경자 이름 추가
+        public bool UpdateProduct(ProductVO vo) // 로그인 완성시 변경자 이름 추가
         {
             try
             {
@@ -79,13 +79,22 @@ namespace AdminClientDAC
                 {
                     cmd.Connection = conn;
                     cmd.CommandText = @"update Product 
-                                                                    set Prod_Name = @name, Prod_Category = @cate, Prod_WhCode = @wh 
+                                                                    set Prod_Name = @name, 
+                                                                           Prod_Category = @cate, 
+                                                                           Prod_WhCode = @wh, 
+                                                                           Prod_State = @state, 
+                                                                           Prod_SafetyStock = @stock, 
+                                                                           Lst_Writer = @id, 
+                                                                           Lst_WriteDate = getdate()
                                                                     where Prod_Code = @code";
 
-                    cmd.Parameters.AddWithValue("@code", code);
-                    cmd.Parameters.AddWithValue("@cate", cate);
-                    cmd.Parameters.AddWithValue("@name", name);
-                    cmd.Parameters.AddWithValue("@wh", wh);
+                    cmd.Parameters.AddWithValue("@code", vo.Prod_Code);
+                    cmd.Parameters.AddWithValue("@cate", vo.Prod_Category);
+                    cmd.Parameters.AddWithValue("@name", vo.Prod_Name);
+                    cmd.Parameters.AddWithValue("@wh", vo.Prod_WhCode);
+                    cmd.Parameters.AddWithValue("@state", vo.Prod_State);
+                    cmd.Parameters.AddWithValue("@stock", vo.Prod_SafetyStock);
+                    cmd.Parameters.AddWithValue("@id", Global.employees.Emp_Code);
 
                     int cnt = cmd.ExecuteNonQuery();
 

@@ -125,7 +125,7 @@
             this.gb_Sherch.Size = new System.Drawing.Size(326, 182);
             this.gb_Sherch.Controls.SetChildIndex(this.chk_limit, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.nu_limit, 0);
-            this.gb_Sherch.Controls.SetChildIndex(this.button1, 0);
+            this.gb_Sherch.Controls.SetChildIndex(this.btn_search, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.groupBox1, 0);
             // 
             // gb_detail
@@ -164,7 +164,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(238, 17);
+            this.btn_search.Location = new System.Drawing.Point(238, 17);
             // 
             // groupBox1
             // 

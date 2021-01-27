@@ -26,10 +26,10 @@ namespace AdminClient.Service
             return list;
         }
 
-        internal bool UpdateProduct(string code, string name, string cate, string wh)
+        internal bool UpdateProduct(ProductVO vo)
         {
             ProductDAC dac = new ProductDAC();
-            bool result = dac.UpdateProduct(code, name, cate, wh);
+            bool result = dac.UpdateProduct(vo);
             dac.Dispose();
             return result;
         }

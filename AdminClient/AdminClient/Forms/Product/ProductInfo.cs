@@ -1,4 +1,5 @@
-﻿using AdminClient.Service;
+﻿using AdminClient.PopUp;
+using AdminClient.Service;
 using AdminClientVO;
 using System;
 using System.Collections.Generic;
@@ -24,6 +25,10 @@ namespace AdminClient.Forms
         {
             #region 초기세팅
             nu_limit.Enabled = false;
+            txt_Code.KeyPress += NoneKeyPress;
+            txt_Cate.KeyPress += NoneKeyPress;
+            txt_Name.KeyPress += NoneKeyPress;
+            txt_Wh.KeyPress += NoneKeyPress;
 
             #region 콤보박스 바인딩
             ProductService service = new ProductService();
@@ -60,12 +65,25 @@ namespace AdminClient.Forms
             cbo_State.DisplayMember = "State";
             #endregion
 
+            #region dgv
             dgv_ProdList.SetGridColumn(); //설명 // 커몬유틸의 셋그리드뷰 사용x
+            CommonUtil.AddGridTextColumn(dgv_ProdList, "Code", "Prod_Code", visibility: false);
+            CommonUtil.AddGridTextColumn(dgv_ProdList, "Category", "Prod_Category", visibility: false);
+            CommonUtil.AddGridTextColumn(dgv_ProdList, "카테고리", "Common_Name");
+            CommonUtil.AddGridTextColumn(dgv_ProdList, "물품명", "Prod_Name");
+            CommonUtil.AddGridTextColumn(dgv_ProdList, "상태", "Prod_State");
+            CommonUtil.AddGridTextColumn(dgv_ProdList, "저장창고", "Prod_WhCode");
             CommonUtil.AddGridTextColumn(dgv_ProdList, "최소", "Prod_SafetyStock");
+            #endregion
 
             gb_detail.Enabled = false;
 
             #endregion
+        }
+
+        private void NoneKeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
         }
 
         private void chk_limit_CheckedChanged(object sender, EventArgs e)
@@ -107,8 +125,6 @@ namespace AdminClient.Forms
         {
             if(e.RowIndex > -1)
             {
-                txt_Code.Enabled = false;
-
                 txt_Code.Text = dgv_ProdList["Prod_Code", e.RowIndex].Value.ToString();
                 txt_Cate.Text = dgv_ProdList["Prod_Category", e.RowIndex].Value.ToString();
                 txt_Name.Text = dgv_ProdList["Prod_Name", e.RowIndex].Value.ToString();
@@ -116,84 +132,120 @@ namespace AdminClient.Forms
             }
         }
 
-        private void btn_Clear_Click(object sender, EventArgs e)
+        //private void btn_Update_Click(object sender, EventArgs e)
+        //{
+        //    if(txt_Code.Enabled)
+        //    {
+        //        if(txt_Cate.Text.Length < 1 || txt_Name.Text.Length < 1 || txt_Wh.Text.Length < 1)
+        //        {
+        //            MessageBox.Show("이름과 구분, 창고는 필수 입력사항입니다.");
+        //            return;
+        //        }
+
+        //        string code, name, cate, wh;
+        //        code = txt_Code.Text;
+        //        name = txt_Name.Text;
+        //        cate = txt_Cate.Text;
+        //        wh = txt_Wh.Text;
+
+        //        ProductService service = new ProductService();
+        //        bool result = service.UpdateProduct(code, name, cate, wh);
+
+        //        if(result)
+        //        {
+        //            MessageBox.Show("수정에 성공하였습니다.");
+
+        //            pdList.ForEach(item =>
+        //            {
+        //                if (item.Prod_Code == code)
+        //                {
+        //                    item.Prod_Category = cate;
+        //                    item.Prod_Name = name;
+        //                    item.Prod_WhCode = wh;
+        //                }
+        //            });
+
+        //            dgv_ProdList.DataSource = null;
+        //            dgv_ProdList.DataSource = pdList;
+
+        //            btn_Clear.PerformClick();
+
+        //        }
+        //        else
+        //            MessageBox.Show("수정중 오류가 발생했습니다.");
+        //    }
+        //    else
+        //        MessageBox.Show("목록중 선택해주세요");
+        //}
+
+        private void btn_add_Click(object sender, EventArgs e)
         {
-            txt_Code.Enabled = true;
-            txt_Code.Text = txt_Cate.Text = txt_Name.Text = txt_Wh.Text = "";
+
         }
 
-        private void btn_Update_Click(object sender, EventArgs e)
+        private void dgv_ProdList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(txt_Code.Enabled)
+            if(e.ColumnIndex == 1 && e.RowIndex > -1)
             {
-                if(txt_Cate.Text.Length < 1 || txt_Name.Text.Length < 1 || txt_Wh.Text.Length < 1)
+                ProductVO vo = null;
+
+                pdList.ForEach((prod) =>
                 {
-                    MessageBox.Show("이름과 구분, 창고는 필수 입력사항입니다.");
-                    return;
-                }
-
-                string code, name, cate, wh;
-                code = txt_Code.Text;
-                name = txt_Name.Text;
-                cate = txt_Cate.Text;
-                wh = txt_Wh.Text;
-
-                ProductService service = new ProductService();
-                bool result = service.UpdateProduct(code, name, cate, wh);
-
-                if(result)
-                {
-                    MessageBox.Show("수정에 성공하였습니다.");
-
-                    pdList.ForEach(item =>
+                    if (prod.Prod_Code == txt_Code.Text)
                     {
-                        if (item.Prod_Code == code)
+                        vo = prod;
+                    }
+                });
+
+                ProductPopUp pop = new ProductPopUp();
+                pop.VO = vo;
+                pop.StartPosition = FormStartPosition.CenterParent;
+                pop.CombVO = cbolist;
+                pop.ThisMode = ProductPopUp.Mode.Old;
+
+                DialogResult popbool = pop.ShowDialog();
+
+                if (popbool == DialogResult.OK)
+                {
+                    vo = pop.VO;
+
+                    pdList.ForEach((prod) =>
+                    {
+                        if (prod.Prod_Code == vo.Prod_Code)
                         {
-                            item.Prod_Category = cate;
-                            item.Prod_Name = name;
-                            item.Prod_WhCode = wh;
+                            prod.Prod_Name = vo.Prod_Name;
+                            prod.Prod_State = vo.Prod_State;
+                            prod.Prod_WhCode = vo.Prod_WhCode;
+                            prod.Prod_Category = vo.Common_Name;
+                            prod.Prod_Category = vo.Prod_Category;
+                            prod.Prod_SafetyStock = vo.Prod_SafetyStock;
                         }
                     });
 
                     dgv_ProdList.DataSource = null;
                     dgv_ProdList.DataSource = pdList;
-
-                    btn_Clear.PerformClick();
-
                 }
-                else
-                    MessageBox.Show("수정중 오류가 발생했습니다.");
+                else if(popbool == DialogResult.None)
+                {
+                    pdList.ForEach((prod) =>
+                    {
+                        if (prod.Prod_Code == pop.VO.Prod_Code)
+                        {
+                            vo = prod;
+                        }
+                    });
+
+                    pdList.Remove(vo);
+
+                    dgv_ProdList.DataSource = null;
+                    dgv_ProdList.DataSource = pdList;
+                }
+
             }
-            else
-                MessageBox.Show("목록중 선택해주세요");
         }
 
-        private void btn_add_Click(object sender, EventArgs e)
-        {
-            if(!txt_Code.Enabled)
-            {
-                if (txt_Code.Text.Length < 1 || txt_Cate.Text.Length < 1 || txt_Name.Text.Length < 1 || txt_Wh.Text.Length < 1)
-                {
-                    MessageBox.Show("모든 정보를 입력해 주세요");
-                    return;
-                }
-
-                
-            }
-            else
-            {
-                if(MessageBox.Show("선택한 목록이 있을 경우 등록작업을 실행할 수 없습니다. 등록모드로 변경하시겠습니까?", "확인메세지", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    txt_Code.Enabled = true;
-                    txt_Code.Text = "";
-                }
-            }
-                
-        }
-
-        private void btn_Delete_Click(object sender, EventArgs e)
-        {
-            if(!txt_Code.Enabled)
+        /* 삭제
+         * if(!txt_Code.Enabled)
             {
                 string code = txt_Code.Text;
 
@@ -202,6 +254,6 @@ namespace AdminClient.Forms
 
 
             }
-        }
+         */
     }
 }
