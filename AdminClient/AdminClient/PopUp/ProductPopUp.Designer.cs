@@ -50,6 +50,9 @@
             this.btn_Delete = new System.Windows.Forms.Button();
             this.btn_Update = new System.Windows.Forms.Button();
             this.btn_Add = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txt_Unit = new System.Windows.Forms.TextBox();
             this.pnl_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).BeginInit();
             this.panel1.SuspendLayout();
@@ -57,6 +60,9 @@
             // 
             // pnl_Main
             // 
+            this.pnl_Main.Controls.Add(this.txt_Unit);
+            this.pnl_Main.Controls.Add(this.label2);
+            this.pnl_Main.Controls.Add(this.label7);
             this.pnl_Main.Controls.Add(this.btn_Delete);
             this.pnl_Main.Controls.Add(this.btn_Update);
             this.pnl_Main.Controls.Add(this.btn_Add);
@@ -193,7 +199,7 @@
             // 
             // txt_Safety
             // 
-            this.txt_Safety.Location = new System.Drawing.Point(132, 201);
+            this.txt_Safety.Location = new System.Drawing.Point(132, 232);
             this.txt_Safety.Name = "txt_Safety";
             this.txt_Safety.Size = new System.Drawing.Size(188, 25);
             this.txt_Safety.TabIndex = 28;
@@ -204,7 +210,7 @@
             this.label18.BackColor = System.Drawing.Color.White;
             this.label18.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label18.ForeColor = System.Drawing.Color.Black;
-            this.label18.Location = new System.Drawing.Point(36, 206);
+            this.label18.Location = new System.Drawing.Point(36, 236);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(68, 17);
             this.label18.TabIndex = 27;
@@ -216,7 +222,7 @@
             this.label17.BackColor = System.Drawing.Color.White;
             this.label17.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(13, 206);
+            this.label17.Location = new System.Drawing.Point(13, 236);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(23, 17);
             this.label17.TabIndex = 29;
@@ -228,7 +234,7 @@
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label4.Location = new System.Drawing.Point(36, 139);
+            this.label4.Location = new System.Drawing.Point(36, 143);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 17);
             this.label4.TabIndex = 33;
@@ -240,7 +246,7 @@
             this.label8.BackColor = System.Drawing.Color.White;
             this.label8.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label8.Location = new System.Drawing.Point(13, 139);
+            this.label8.Location = new System.Drawing.Point(13, 143);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(23, 17);
             this.label8.TabIndex = 35;
@@ -270,7 +276,7 @@
             this.label9.BackColor = System.Drawing.Color.White;
             this.label9.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label9.Location = new System.Drawing.Point(36, 173);
+            this.label9.Location = new System.Drawing.Point(36, 174);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(68, 17);
             this.label9.TabIndex = 40;
@@ -282,7 +288,7 @@
             this.label10.BackColor = System.Drawing.Color.White;
             this.label10.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label10.Location = new System.Drawing.Point(13, 173);
+            this.label10.Location = new System.Drawing.Point(13, 174);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(23, 17);
             this.label10.TabIndex = 41;
@@ -316,6 +322,38 @@
             this.btn_Add.TabIndex = 44;
             this.btn_Add.Text = "추가";
             this.btn_Add.UseVisualStyleBackColor = true;
+            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label2.Location = new System.Drawing.Point(36, 205);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 17);
+            this.label2.TabIndex = 47;
+            this.label2.Text = "단위";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.White;
+            this.label7.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label7.Location = new System.Drawing.Point(13, 205);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(23, 17);
+            this.label7.TabIndex = 48;
+            this.label7.Text = "◆";
+            // 
+            // txt_Unit
+            // 
+            this.txt_Unit.Location = new System.Drawing.Point(132, 201);
+            this.txt_Unit.Name = "txt_Unit";
+            this.txt_Unit.Size = new System.Drawing.Size(188, 25);
+            this.txt_Unit.TabIndex = 49;
             // 
             // ProductPopUp
             // 
@@ -357,5 +395,8 @@
         private System.Windows.Forms.Button btn_Update;
         private System.Windows.Forms.Button btn_Add;
         private System.Windows.Forms.ComboBox cbo_WH;
+        private System.Windows.Forms.TextBox txt_Unit;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label7;
     }
 }

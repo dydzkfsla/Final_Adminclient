@@ -61,6 +61,7 @@
     <Compile Include="Global\Global.cs" />
     <Compile Include="GroupFormConnDAC.cs" />
     <Compile Include="GroupInfoDAC.cs" />
+    <Compile Include="StockInfoDAC.cs" />
     <Compile Include="Utils\Helper.cs" />
     <Compile Include="ProductDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="TeamGroupConnDAC.cs" />
     <Compile Include="TeamInfoDAC.cs" />
     <Compile Include="Utils\LoggingUtility.cs" />
+    <Compile Include="WareHouseDAC.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DB_XML.xml">

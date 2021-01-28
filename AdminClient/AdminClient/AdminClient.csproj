@@ -446,6 +446,7 @@
     <Compile Include="Service\GroupFormConnService.cs" />
     <Compile Include="Service\GroupInfoService.cs" />
     <Compile Include="Service\ProductService.cs" />
+    <Compile Include="Service\StockInfoService.cs" />
     <Compile Include="Service\TeamGroupConnService.cs" />
     <Compile Include="Service\TeamInfoService.cs" />
     <Compile Include="Service\WareHouseService.cs" />

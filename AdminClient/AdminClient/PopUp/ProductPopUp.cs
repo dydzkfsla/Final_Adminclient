@@ -30,8 +30,8 @@ namespace AdminClient.PopUp
 
         private void ProductPopUp_Load(object sender, EventArgs e)
         {
-            txt_Code.KeyPress += NoneKeyPress;
-            txt_Safety.KeyPress += UtilEvent.TextBoxIsDigitAndOneDot;
+            txt_Code.KeyPress += NoneKeyPress; // 키입력불가
+            txt_Safety.KeyPress += UtilEvent.TextBoxIsDigitAndOneDot; //숫자, 백스페이스 입력가능 . (점) 은 한개만
 
             var commList = (from item in cbolist
                             group item by new { item.Common_Code, item.Common_Name } into grp
@@ -48,7 +48,7 @@ namespace AdminClient.PopUp
 
             cbo_State.Items.Add("Y");
             cbo_State.Items.Add("N");
-
+            cbo_State.SelectedIndex = 0;
 
             WareHouseService service = new WareHouseService();
             whlist = service.GetWareHouseList(null, null, null);
@@ -64,15 +64,16 @@ namespace AdminClient.PopUp
                 txt_Code.Text = vo.Prod_Code;
                 txt_Name.Text = vo.Prod_Name;
                 txt_Safety.Text = vo.Prod_SafetyStock.ToString();
+                txt_Unit.Text = vo.Prod_Unit;
 
-                for(int i = 0; i<cbo_WH.Items.Count; i++)
+                for (int i = 0; i < cbo_WH.Items.Count; i++)
                 {
                     cbo_WH.SelectedIndex = i;
                     if (cbo_WH.Text == vo.Prod_WhCode)
                         break;
                 }
 
-                for(int i = 0; i<cbo_Cate.Items.Count; i++)
+                for (int i = 0; i < cbo_Cate.Items.Count; i++)
                 {
                     cbo_Cate.SelectedIndex = i;
                     if (cbo_Cate.SelectedValue.ToString() == vo.Prod_Category)
@@ -84,6 +85,12 @@ namespace AdminClient.PopUp
                 else
                     cbo_State.SelectedIndex = 1;
             }
+            else
+            {
+                btn_Update.Enabled = btn_Delete.Enabled = false;
+                txt_Code.Text = "자동입력";
+            }
+
         }
 
         private void NoneKeyPress(object sender, KeyPressEventArgs e)
@@ -93,6 +100,9 @@ namespace AdminClient.PopUp
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
+            if (txt_Safety.Text.Trim().Length < 1)
+                txt_Safety.Text = "0";
+
             vo = new ProductVO
             {
                 Prod_Code = txt_Code.Text,
@@ -101,7 +111,8 @@ namespace AdminClient.PopUp
                 Prod_State = cbo_State.SelectedItem.ToString(),
                 Prod_SafetyStock = decimal.Parse(txt_Safety.Text),
                 Prod_WhCode = cbo_WH.SelectedValue.ToString(),
-                Common_Name = cbo_Cate.Text
+                Common_Name = cbo_Cate.Text,
+                Prod_Unit = txt_Unit.Text
             };
 
             ProductService service = new ProductService();
@@ -131,6 +142,40 @@ namespace AdminClient.PopUp
             }
             else
                 MessageBox.Show("삭제중 오류 발생");
+        }
+
+        private void btn_Add_Click(object sender, EventArgs e)
+        {
+            if (txt_Safety.Text.Trim().Length < 1)
+                txt_Safety.Text = "0";
+
+            if(txt_Name.Text.Trim().Length < 1 || txt_Unit.Text.Trim().Length < 1)
+            {
+                MessageBox.Show("주황색 표시는 필수 입력 정보입니다.");
+                return;
+            }
+
+            vo = new ProductVO
+            {
+                Prod_Name = txt_Name.Text,
+                Prod_Category = cbo_Cate.SelectedValue.ToString(),
+                Prod_State = cbo_State.SelectedItem.ToString(),
+                Prod_SafetyStock = decimal.Parse(txt_Safety.Text),
+                Prod_WhCode = cbo_WH.SelectedValue.ToString(),
+                Common_Name = cbo_Cate.Text,
+                Prod_Unit = txt_Unit.Text
+            };
+
+            ProductService service = new ProductService();
+            string pdcode = service.AddProduct(vo);
+
+            if (pdcode.Length > 0)
+            {
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+                MessageBox.Show("추가중 오류 발생");
         }
     }
 }
