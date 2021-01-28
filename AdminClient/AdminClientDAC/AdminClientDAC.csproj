@@ -55,6 +55,7 @@
     <Compile Include="CommonDAC.cs" />
     <Compile Include="CompanyDAC.cs" />
     <Compile Include="ConnDB.cs" />
+    <Compile Include="EmployeesDAC.cs" />
     <Compile Include="FacilityDAC.cs" />
     <Compile Include="FormInfoDAC.cs" />
     <Compile Include="Global\Connstring.cs" />

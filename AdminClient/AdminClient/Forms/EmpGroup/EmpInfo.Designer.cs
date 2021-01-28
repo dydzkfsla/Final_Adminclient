@@ -38,7 +38,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dtp_RetireDateTo = new System.Windows.Forms.DateTimePicker();
             this.dtp_RetireDateFrom = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbo_Temp = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
@@ -120,15 +120,16 @@
             this.gb_Sherch.Controls.Add(this.chk_RetireDate);
             this.gb_Sherch.Controls.Add(this.chk_HireDate);
             this.gb_Sherch.Controls.Add(this.label3);
-            this.gb_Sherch.Controls.Add(this.comboBox1);
+            this.gb_Sherch.Controls.Add(this.cbo_Temp);
             this.gb_Sherch.Controls.Add(this.gb_RetireDate);
             this.gb_Sherch.Controls.Add(this.gb_HireDate);
             this.gb_Sherch.Size = new System.Drawing.Size(365, 251);
+            this.gb_Sherch.Controls.SetChildIndex(this.btn_search, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.chk_limit, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.nu_limit, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.gb_HireDate, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.gb_RetireDate, 0);
-            this.gb_Sherch.Controls.SetChildIndex(this.comboBox1, 0);
+            this.gb_Sherch.Controls.SetChildIndex(this.cbo_Temp, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.label3, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.chk_HireDate, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.chk_RetireDate, 0);
@@ -142,6 +143,20 @@
             this.gb_detail.Enabled = false;
             this.gb_detail.Location = new System.Drawing.Point(11, 257);
             this.gb_detail.Size = new System.Drawing.Size(365, 270);
+            // 
+            // nu_limit
+            // 
+            this.nu_limit.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nu_limit.Size = new System.Drawing.Size(164, 25);
+            this.nu_limit.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // splitContainer1
             // 
@@ -161,8 +176,10 @@
             // 
             this.splitter1.Size = new System.Drawing.Size(33, 647);
             // 
-            // button1
+            // btn_search
             // 
+            this.btn_search.Location = new System.Drawing.Point(274, 18);
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // Form_close
             // 
@@ -276,13 +293,13 @@
             this.dtp_RetireDateFrom.Size = new System.Drawing.Size(106, 25);
             this.dtp_RetireDateFrom.TabIndex = 3;
             // 
-            // comboBox1
+            // cbo_Temp
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(8, 66);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(255, 25);
-            this.comboBox1.TabIndex = 7;
+            this.cbo_Temp.FormattingEnabled = true;
+            this.cbo_Temp.Location = new System.Drawing.Point(8, 66);
+            this.cbo_Temp.Name = "cbo_Temp";
+            this.cbo_Temp.Size = new System.Drawing.Size(255, 25);
+            this.cbo_Temp.TabIndex = 7;
             // 
             // label3
             // 
@@ -494,7 +511,7 @@
         private System.Windows.Forms.DateTimePicker dtp_HireDateTo;
         private System.Windows.Forms.DateTimePicker dtp_HireDateFrom;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbo_Temp;
         private System.Windows.Forms.GroupBox gb_RetireDate;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtp_RetireDateTo;
