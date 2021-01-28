@@ -80,13 +80,14 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.dgv_AddList);
-            this.splitContainer2.Size = new System.Drawing.Size(909, 686);
+            this.splitContainer2.Size = new System.Drawing.Size(905, 686);
             this.splitContainer2.SplitterDistance = 361;
             this.splitContainer2.SplitterWidth = 6;
             // 
             // btn_add
             // 
             this.btn_add.Location = new System.Drawing.Point(1163, 9);
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // btn_Xls
             // 
@@ -140,6 +141,10 @@
             this.gb_detail.Location = new System.Drawing.Point(11, 266);
             this.gb_detail.Size = new System.Drawing.Size(356, 418);
             // 
+            // chk_limit
+            // 
+            this.chk_limit.CheckedChanged += new System.EventHandler(this.chk_limit_CheckedChanged);
+            // 
             // splitContainer1
             // 
             this.splitContainer1.Size = new System.Drawing.Size(1349, 686);
@@ -169,7 +174,9 @@
             // 
             // cbo_State
             // 
+            this.cbo_State.BackColor = System.Drawing.Color.WhiteSmoke;
             this.cbo_State.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_State.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbo_State.FormattingEnabled = true;
             this.cbo_State.Location = new System.Drawing.Point(12, 174);
             this.cbo_State.Name = "cbo_State";
@@ -187,7 +194,9 @@
             // 
             // cbo_Unit
             // 
+            this.cbo_Unit.BackColor = System.Drawing.Color.WhiteSmoke;
             this.cbo_Unit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_Unit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbo_Unit.FormattingEnabled = true;
             this.cbo_Unit.Location = new System.Drawing.Point(12, 120);
             this.cbo_Unit.Name = "cbo_Unit";
@@ -205,7 +214,9 @@
             // 
             // cbo_Category
             // 
+            this.cbo_Category.BackColor = System.Drawing.Color.WhiteSmoke;
             this.cbo_Category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_Category.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbo_Category.FormattingEnabled = true;
             this.cbo_Category.Location = new System.Drawing.Point(12, 72);
             this.cbo_Category.Name = "cbo_Category";
@@ -307,14 +318,14 @@
             this.dgv_ProdList.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_ProdList.GridColor = System.Drawing.Color.Black;
             this.dgv_ProdList.IsChkVisible = true;
-            this.dgv_ProdList.IsEditVisible = true;
+            this.dgv_ProdList.IsEditVisible = false;
             this.dgv_ProdList.Location = new System.Drawing.Point(0, 0);
             this.dgv_ProdList.Margin = new System.Windows.Forms.Padding(0);
             this.dgv_ProdList.Name = "dgv_ProdList";
             this.dgv_ProdList.RowHeadersVisible = false;
             this.dgv_ProdList.RowTemplate.Height = 23;
             this.dgv_ProdList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_ProdList.Size = new System.Drawing.Size(908, 315);
+            this.dgv_ProdList.Size = new System.Drawing.Size(904, 315);
             this.dgv_ProdList.TabIndex = 1;
             // 
             // dgv_AddList
@@ -333,13 +344,13 @@
             this.dgv_AddList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_AddList.GridColor = System.Drawing.Color.Black;
             this.dgv_AddList.IsChkVisible = true;
-            this.dgv_AddList.IsEditVisible = true;
+            this.dgv_AddList.IsEditVisible = false;
             this.dgv_AddList.Location = new System.Drawing.Point(0, 0);
             this.dgv_AddList.Name = "dgv_AddList";
             this.dgv_AddList.RowHeadersVisible = false;
             this.dgv_AddList.RowTemplate.Height = 23;
             this.dgv_AddList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_AddList.Size = new System.Drawing.Size(909, 319);
+            this.dgv_AddList.Size = new System.Drawing.Size(905, 319);
             this.dgv_AddList.TabIndex = 2;
             // 
             // schCtrl
