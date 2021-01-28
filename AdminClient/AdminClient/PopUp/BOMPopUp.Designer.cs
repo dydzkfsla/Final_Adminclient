@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -56,8 +58,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.pnl_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).BeginInit();
             this.panel1.SuspendLayout();
@@ -107,10 +107,28 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(10, 19);
+            this.panel1.Location = new System.Drawing.Point(10, 18);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(637, 128);
+            this.panel1.Size = new System.Drawing.Size(637, 129);
             this.panel1.TabIndex = 35;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(425, 5);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(80, 28);
+            this.button2.TabIndex = 50;
+            this.button2.Text = "상위 품목검색";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(332, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 27);
+            this.button1.TabIndex = 49;
+            this.button1.Text = "품목검색";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // dateTimePicker2
             // 
@@ -390,24 +408,6 @@
             this.label14.Size = new System.Drawing.Size(23, 17);
             this.label14.TabIndex = 49;
             this.label14.Text = "◆";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(332, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 27);
-            this.button1.TabIndex = 49;
-            this.button1.Text = "품목검색";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(425, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(80, 28);
-            this.button2.TabIndex = 50;
-            this.button2.Text = "상위 품목검색";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // BOMPopUp
             // 

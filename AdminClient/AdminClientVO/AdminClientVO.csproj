@@ -49,6 +49,7 @@
     <Compile Include="CommonVO.cs" />
     <Compile Include="CompanyVO.cs" />
     <Compile Include="EmployeesVO.cs" />
+    <Compile Include="EmpTeamConnVO.cs" />
     <Compile Include="FacilityVO.cs" />
     <Compile Include="FormInfoVO.cs" />
     <Compile Include="GroupFormConnVO.cs" />

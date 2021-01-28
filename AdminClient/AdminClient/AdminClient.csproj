@@ -443,6 +443,7 @@
     <Compile Include="Service\CompanyService.cs" />
     <Compile Include="Service\EmployeeService.cs" />
     <Compile Include="Service\EmployeesService.cs" />
+    <Compile Include="Service\EmpTeamConnService.cs" />
     <Compile Include="Service\FormInfoService.cs" />
     <Compile Include="Service\GroupFormConnService.cs" />
     <Compile Include="Service\GroupInfoService.cs" />

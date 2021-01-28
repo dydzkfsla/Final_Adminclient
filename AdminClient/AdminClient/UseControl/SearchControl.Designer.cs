@@ -62,6 +62,9 @@
             // 
             // cbo_key
             // 
+            this.cbo_key.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbo_key.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_key.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbo_key.FormattingEnabled = true;
             this.cbo_key.Location = new System.Drawing.Point(0, 3);
             this.cbo_key.Name = "cbo_key";
