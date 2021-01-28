@@ -41,5 +41,13 @@ namespace AdminClient.Service
             dac.Dispose();
             return result;
         }
+
+        internal string AddProduct(ProductVO vo)
+        {
+            ProductDAC dac = new ProductDAC();
+            string code = dac.AddProduct(vo);
+            dac.Dispose();
+            return code;
+        }
     }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace AdminClientVO
 {
+    #region ProductInfo Form
     public class ProductVO
     {
         public string Prod_Code { get; set; }
@@ -27,4 +28,9 @@ namespace AdminClientVO
         public string Prod_State { get; set; }
 
     }
+    #endregion
+
+    #region ProductSearch Form
+
+    #endregion
 }

@@ -116,9 +116,11 @@ namespace AdminClient.Forms
 
             dgv_ProdList.DataSource = pdList;
 
-            if(dgv_ProdList.DataSource != null)
-                searchControl1.Getdata(dgv_ProdList); // 설명
-
+            if(pdList.Count > 0)
+            {
+                schCtrl.Getdata(dgv_ProdList); // 설명
+                sortCtrl.Getdata(dgv_ProdList);
+            }
         }
 
         private void dgv_ProdList_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -132,55 +134,22 @@ namespace AdminClient.Forms
             }
         }
 
-        //private void btn_Update_Click(object sender, EventArgs e)
-        //{
-        //    if(txt_Code.Enabled)
-        //    {
-        //        if(txt_Cate.Text.Length < 1 || txt_Name.Text.Length < 1 || txt_Wh.Text.Length < 1)
-        //        {
-        //            MessageBox.Show("이름과 구분, 창고는 필수 입력사항입니다.");
-        //            return;
-        //        }
-
-        //        string code, name, cate, wh;
-        //        code = txt_Code.Text;
-        //        name = txt_Name.Text;
-        //        cate = txt_Cate.Text;
-        //        wh = txt_Wh.Text;
-
-        //        ProductService service = new ProductService();
-        //        bool result = service.UpdateProduct(code, name, cate, wh);
-
-        //        if(result)
-        //        {
-        //            MessageBox.Show("수정에 성공하였습니다.");
-
-        //            pdList.ForEach(item =>
-        //            {
-        //                if (item.Prod_Code == code)
-        //                {
-        //                    item.Prod_Category = cate;
-        //                    item.Prod_Name = name;
-        //                    item.Prod_WhCode = wh;
-        //                }
-        //            });
-
-        //            dgv_ProdList.DataSource = null;
-        //            dgv_ProdList.DataSource = pdList;
-
-        //            btn_Clear.PerformClick();
-
-        //        }
-        //        else
-        //            MessageBox.Show("수정중 오류가 발생했습니다.");
-        //    }
-        //    else
-        //        MessageBox.Show("목록중 선택해주세요");
-        //}
-
         private void btn_add_Click(object sender, EventArgs e)
         {
+            ProductPopUp pop = new ProductPopUp();
+            pop.StartPosition = FormStartPosition.CenterParent;
+            pop.CombVO = cbolist;
+            pop.ThisMode = ProductPopUp.Mode.New;
 
+            if(pop.ShowDialog() == DialogResult.OK)
+            {
+                ProductVO vo = pop.VO;
+
+                pdList.Add(vo);
+
+                dgv_ProdList.DataSource = null;
+                dgv_ProdList.DataSource = pdList;
+            }
         }
 
         private void dgv_ProdList_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -219,6 +188,7 @@ namespace AdminClient.Forms
                             prod.Prod_Category = vo.Common_Name;
                             prod.Prod_Category = vo.Prod_Category;
                             prod.Prod_SafetyStock = vo.Prod_SafetyStock;
+                            prod.Prod_Unit = vo.Prod_Unit;
                         }
                     });
 
@@ -231,11 +201,9 @@ namespace AdminClient.Forms
                     {
                         if (prod.Prod_Code == pop.VO.Prod_Code)
                         {
-                            vo = prod;
+                            prod.Prod_State = "N";
                         }
                     });
-
-                    pdList.Remove(vo);
 
                     dgv_ProdList.DataSource = null;
                     dgv_ProdList.DataSource = pdList;
@@ -243,17 +211,5 @@ namespace AdminClient.Forms
 
             }
         }
-
-        /* 삭제
-         * if(!txt_Code.Enabled)
-            {
-                string code = txt_Code.Text;
-
-                ProductService service = new ProductService();
-                bool result = service.DeleteProduct(code);
-
-
-            }
-         */
     }
 }
