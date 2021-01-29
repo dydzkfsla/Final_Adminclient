@@ -93,7 +93,7 @@
 			this.gb_Sherch.Size = new System.Drawing.Size(343, 118);
 			this.gb_Sherch.Controls.SetChildIndex(this.chk_limit, 0);
 			this.gb_Sherch.Controls.SetChildIndex(this.nu_limit, 0);
-			this.gb_Sherch.Controls.SetChildIndex(this.button1, 0);
+			this.gb_Sherch.Controls.SetChildIndex(this.btn_search, 0);
 			this.gb_Sherch.Controls.SetChildIndex(this.label1, 0);
 			this.gb_Sherch.Controls.SetChildIndex(this.cbo_Enable, 0);
 			// 
@@ -129,8 +129,8 @@
 			// 
 			// button1
 			// 
-			this.button1.Location = new System.Drawing.Point(254, 17);
-			this.button1.Click += new System.EventHandler(this.button1_Click);
+			this.btn_search.Location = new System.Drawing.Point(254, 17);
+			this.btn_search.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// Form_close
 			// 
