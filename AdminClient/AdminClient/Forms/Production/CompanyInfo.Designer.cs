@@ -124,7 +124,7 @@
             this.splitContainer3.Panel2.Controls.Add(this.label13);
             this.splitContainer3.Panel2.Controls.Add(this.label12);
             this.splitContainer3.Size = new System.Drawing.Size(1025, 358);
-            this.splitContainer3.SplitterDistance = 830;
+            this.splitContainer3.SplitterDistance = 854;
             this.splitContainer3.SplitterWidth = 8;
             // 
             // splitContainer2
@@ -182,7 +182,7 @@
             this.gb_Sherch.Size = new System.Drawing.Size(368, 211);
             this.gb_Sherch.Controls.SetChildIndex(this.chk_limit, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.nu_limit, 0);
-            this.gb_Sherch.Controls.SetChildIndex(this.button1, 0);
+            this.gb_Sherch.Controls.SetChildIndex(this.btn_search, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.cbo_Auto, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.label3, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.cbo_State, 0);
@@ -234,8 +234,8 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(289, 17);
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_search.Location = new System.Drawing.Point(289, 17);
+            this.btn_search.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form_close
             // 
@@ -540,7 +540,7 @@
             this.dgv_detail.Name = "dgv_detail";
             this.dgv_detail.RowHeadersVisible = false;
             this.dgv_detail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_detail.Size = new System.Drawing.Size(830, 358);
+            this.dgv_detail.Size = new System.Drawing.Size(854, 358);
             this.dgv_detail.TabIndex = 0;
             // 
             // label12
@@ -689,6 +689,7 @@
             this.dgv_CompList.Size = new System.Drawing.Size(1025, 342);
             this.dgv_CompList.TabIndex = 0;
             this.dgv_CompList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CompList_CellClick);
+            this.dgv_CompList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CompList_CellContentClick);
             // 
             // schCtrl
             // 

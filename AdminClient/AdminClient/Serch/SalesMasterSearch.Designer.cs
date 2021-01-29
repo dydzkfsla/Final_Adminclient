@@ -135,7 +135,7 @@ namespace AdminClient.Search
 			this.gb_Sherch.Controls.SetChildIndex(this.nu_limit, 0);
 			this.gb_Sherch.Controls.SetChildIndex(this.label7, 0);
 			this.gb_Sherch.Controls.SetChildIndex(this.comboBox1, 0);
-			this.gb_Sherch.Controls.SetChildIndex(this.button1, 0);
+			this.gb_Sherch.Controls.SetChildIndex(this.btn_search, 0);
 			this.gb_Sherch.Controls.SetChildIndex(this.groupBox1, 0);
 			this.gb_Sherch.Controls.SetChildIndex(this.comboBox2, 0);
 			// 
@@ -177,7 +177,7 @@ namespace AdminClient.Search
 			// 
 			// button1
 			// 
-			this.button1.Location = new System.Drawing.Point(212, 17);
+			this.btn_search.Location = new System.Drawing.Point(212, 17);
 			// 
 			// Form_close
 			// 

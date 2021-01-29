@@ -13,10 +13,15 @@ namespace AdminClientDAC
     public class CompanyDAC : IDisposable
     {
         SqlConnection conn;
+        LoggingUtility Info;
+
         public CompanyDAC()
         {
             conn = new SqlConnection(Connstring.conn);
             conn.Open();
+            Info = new LoggingUtility("CompanyDACInFo", "CompanyDACError", Level.All, 30);
+            Info.InfoFolder = "C:\\FP\\Log\\CompanyDAC\\Info";
+            Info.ErrorFolder = "C:\\FP\\Log\\CompanyDAC\\Error";
         }
         public void Dispose()
         {
@@ -43,6 +48,7 @@ namespace AdminClientDAC
             }
             catch(Exception err)
             {
+                Info.WriteError($"실행자:{Global.employees.Emp_Name} 콤보박스 바인딩 목록 불러오기 오류 :" + err.Message, err);
                 return null;
             }
         }
@@ -82,6 +88,7 @@ namespace AdminClientDAC
             }
             catch(Exception err)
             {
+                Info.WriteError($"실행자:{Global.employees.Emp_Name} 회사목록 불러오기 오류 :" + err.Message, err);
                 return null;
             }
         }
@@ -114,6 +121,7 @@ namespace AdminClientDAC
             }
             catch(Exception err)
             {
+                Info.WriteError($"실행자:{Global.employees.Emp_Name} 회사 디테일 목록 불러오기 오류 :" + err.Message, err);
                 return null;
             }
         }
@@ -140,6 +148,7 @@ namespace AdminClientDAC
             }
             catch(Exception err)
             {
+                Info.WriteError($"실행자:{Global.employees.Emp_Name} POP 콤보박스 바인딩 불러오기 오류 :" + err.Message, err);
                 return null;
             } 
         }
@@ -178,6 +187,7 @@ namespace AdminClientDAC
             }
             catch(Exception err)
             {
+                Info.WriteError($"실행자:{Global.employees.Emp_Name} 새 회사정보 입력중 오류 :" + err.Message, err);
                 return false;
             }
         }
@@ -218,6 +228,7 @@ namespace AdminClientDAC
             }
             catch(Exception err)
             {
+                Info.WriteError($"실행자:{Global.employees.Emp_Name} 회사정보 수정중 오류 :" + err.Message, err);
                 return false;
             }
         }

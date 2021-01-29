@@ -8,13 +8,27 @@ namespace AdminClientVO
 {
     public class WareHouseVO
     {
+        public string WH_Code { get; set; }
+        public string WH_Type { get; set; }
+        public string Common_Name { get; set; }
+        public string WH_State { get; set; }
+    }
+
+    public class WhDetailVO
+    {
+        public string WH_Code { get; set; }
+        public string Common_Name { get; set; }
+        public string Prod_Code { get; set; }
+        public string Prod_Name { get; set; }
+        public string Prod_Unit { get; set; }
+        public decimal WH_Count { get; set; }
+        public decimal Prod_SafetyStock { get; set; }
 
     }
 
     public class ComboWhVO 
     {
-        public string WH_Type { get; set; }
+        public string Common_Code { get; set; }
         public string Common_Name { get; set; }
-        public string WH_State { get; set; }
     }
 }

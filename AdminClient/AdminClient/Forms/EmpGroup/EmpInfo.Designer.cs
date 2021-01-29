@@ -28,55 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_Emp = new AdminClient.CustomDataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtp_HireDateFrom = new System.Windows.Forms.DateTimePicker();
+            this.dtp_HireDateTo = new System.Windows.Forms.DateTimePicker();
+            this.gb_HireDate = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gb_RetireDate = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dtp_RetireDateTo = new System.Windows.Forms.DateTimePicker();
+            this.dtp_RetireDateFrom = new System.Windows.Forms.DateTimePicker();
+            this.cbo_Temp = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.rd_descending = new System.Windows.Forms.RadioButton();
-            this.rd_ascending = new System.Windows.Forms.RadioButton();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.txt_EmpName = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.dtp_HireDate = new System.Windows.Forms.DateTimePicker();
+            this.txt_Email = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txt_PostCode = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txt_Phone = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.sortControl = new AdminClient.SortControl();
+            this.searchControl = new AdminClient.SearchControl();
+            this.chk_HireDate = new System.Windows.Forms.CheckBox();
+            this.chk_RetireDate = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.pnl_Main.SuspendLayout();
             this.gb_Sherch.SuspendLayout();
@@ -88,91 +65,88 @@
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Emp)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.gb_HireDate.SuspendLayout();
+            this.gb_RetireDate.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_add
             // 
-            this.btn_add.Location = new System.Drawing.Point(1175, 23);
+            this.btn_add.Location = new System.Drawing.Point(1518, 23);
             // 
             // btn_Xls
             // 
-            this.btn_Xls.Location = new System.Drawing.Point(1258, 23);
-            // 
-            // btn_Update
-            // 
+            this.btn_Xls.Location = new System.Drawing.Point(1601, 23);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox7);
+            this.panel1.Controls.Add(this.txt_Phone);
             this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Controls.Add(this.txt_PostCode);
             this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.txt_Email);
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.dateTimePicker6);
-            this.panel1.Controls.Add(this.dateTimePicker5);
-            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.dtp_HireDate);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.txt_EmpName);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Size = new System.Drawing.Size(1348, 91);
+            this.panel1.Size = new System.Drawing.Size(1691, 91);
             this.panel1.Controls.SetChildIndex(this.btn_add, 0);
             this.panel1.Controls.SetChildIndex(this.btn_Xls, 0);
             this.panel1.Controls.SetChildIndex(this.label6, 0);
-            this.panel1.Controls.SetChildIndex(this.textBox2, 0);
-            this.panel1.Controls.SetChildIndex(this.label7, 0);
-            this.panel1.Controls.SetChildIndex(this.textBox3, 0);
+            this.panel1.Controls.SetChildIndex(this.txt_EmpName, 0);
             this.panel1.Controls.SetChildIndex(this.label8, 0);
-            this.panel1.Controls.SetChildIndex(this.label9, 0);
-            this.panel1.Controls.SetChildIndex(this.dateTimePicker5, 0);
-            this.panel1.Controls.SetChildIndex(this.dateTimePicker6, 0);
+            this.panel1.Controls.SetChildIndex(this.dtp_HireDate, 0);
             this.panel1.Controls.SetChildIndex(this.label10, 0);
-            this.panel1.Controls.SetChildIndex(this.textBox4, 0);
+            this.panel1.Controls.SetChildIndex(this.txt_Email, 0);
             this.panel1.Controls.SetChildIndex(this.label11, 0);
-            this.panel1.Controls.SetChildIndex(this.textBox5, 0);
+            this.panel1.Controls.SetChildIndex(this.txt_PostCode, 0);
             this.panel1.Controls.SetChildIndex(this.label13, 0);
-            this.panel1.Controls.SetChildIndex(this.textBox7, 0);
+            this.panel1.Controls.SetChildIndex(this.txt_Phone, 0);
             // 
             // pnl_Main
             // 
-            this.pnl_Main.Size = new System.Drawing.Size(1366, 768);
+            this.pnl_Main.Size = new System.Drawing.Size(1709, 768);
             // 
             // gb_Sherch
             // 
-            this.gb_Sherch.Controls.Add(this.checkBox1);
+            this.gb_Sherch.Controls.Add(this.chk_RetireDate);
+            this.gb_Sherch.Controls.Add(this.chk_HireDate);
             this.gb_Sherch.Controls.Add(this.label3);
-            this.gb_Sherch.Controls.Add(this.comboBox1);
-            this.gb_Sherch.Controls.Add(this.groupBox2);
-            this.gb_Sherch.Controls.Add(this.groupBox1);
+            this.gb_Sherch.Controls.Add(this.cbo_Temp);
+            this.gb_Sherch.Controls.Add(this.gb_RetireDate);
+            this.gb_Sherch.Controls.Add(this.gb_HireDate);
             this.gb_Sherch.Size = new System.Drawing.Size(365, 251);
+            this.gb_Sherch.Controls.SetChildIndex(this.btn_search, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.chk_limit, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.nu_limit, 0);
-            this.gb_Sherch.Controls.SetChildIndex(this.button1, 0);
-            this.gb_Sherch.Controls.SetChildIndex(this.groupBox1, 0);
-            this.gb_Sherch.Controls.SetChildIndex(this.groupBox2, 0);
-            this.gb_Sherch.Controls.SetChildIndex(this.comboBox1, 0);
+            this.gb_Sherch.Controls.SetChildIndex(this.gb_HireDate, 0);
+            this.gb_Sherch.Controls.SetChildIndex(this.gb_RetireDate, 0);
+            this.gb_Sherch.Controls.SetChildIndex(this.cbo_Temp, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.label3, 0);
-            this.gb_Sherch.Controls.SetChildIndex(this.checkBox1, 0);
+            this.gb_Sherch.Controls.SetChildIndex(this.chk_HireDate, 0);
+            this.gb_Sherch.Controls.SetChildIndex(this.chk_RetireDate, 0);
             // 
             // gb_detail
             // 
-            this.gb_detail.Controls.Add(this.comboBox5);
-            this.gb_detail.Controls.Add(this.label5);
-            this.gb_detail.Controls.Add(this.button3);
-            this.gb_detail.Controls.Add(this.button2);
-            this.gb_detail.Controls.Add(this.rd_descending);
-            this.gb_detail.Controls.Add(this.rd_ascending);
-            this.gb_detail.Controls.Add(this.comboBox3);
-            this.gb_detail.Controls.Add(this.comboBox2);
-            this.gb_detail.Controls.Add(this.comboBox4);
-            this.gb_detail.Controls.Add(this.textBox1);
-            this.gb_detail.Controls.Add(this.label4);
+            this.gb_detail.Controls.Add(this.searchControl);
+            this.gb_detail.Controls.Add(this.sortControl);
+            this.gb_detail.Enabled = false;
             this.gb_detail.Location = new System.Drawing.Point(11, 257);
-            this.gb_detail.Size = new System.Drawing.Size(365, 270);
+            this.gb_detail.Size = new System.Drawing.Size(365, 192);
+            // 
+            // nu_limit
+            // 
+            this.nu_limit.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nu_limit.Size = new System.Drawing.Size(164, 25);
+            this.nu_limit.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // splitContainer1
             // 
@@ -181,7 +155,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgv_Emp);
-            this.splitContainer1.Size = new System.Drawing.Size(1366, 647);
+            this.splitContainer1.Size = new System.Drawing.Size(1709, 647);
             this.splitContainer1.SplitterDistance = 383;
             // 
             // btn_folding
@@ -192,17 +166,19 @@
             // 
             this.splitter1.Size = new System.Drawing.Size(33, 647);
             // 
-            // button1
+            // btn_search
             // 
-            this.button1.Location = new System.Drawing.Point(286, 17);
+            this.btn_search.Location = new System.Drawing.Point(286, 18);
+            this.btn_search.Size = new System.Drawing.Size(74, 73);
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // Form_close
             // 
-            this.Form_close.Location = new System.Drawing.Point(1345, 8);
+            this.Form_close.Location = new System.Drawing.Point(1688, 8);
             // 
             // TitleColor
             // 
-            this.TitleColor.Size = new System.Drawing.Size(1456, 7);
+            this.TitleColor.Size = new System.Drawing.Size(1799, 7);
             // 
             // dgv_Emp
             // 
@@ -212,115 +188,56 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_Emp.BackgroundColor = System.Drawing.Color.White;
             this.dgv_Emp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Emp.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewCheckBoxColumn1,
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Emp.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Emp.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_Emp.GridColor = System.Drawing.Color.Black;
-            this.dgv_Emp.IsChkVisible = false;
+            this.dgv_Emp.IsChkVisible = true;
+            this.dgv_Emp.IsEditVisible = true;
             this.dgv_Emp.Location = new System.Drawing.Point(33, 0);
             this.dgv_Emp.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.dgv_Emp.Name = "dgv_Emp";
             this.dgv_Emp.RowHeadersVisible = false;
             this.dgv_Emp.RowTemplate.Height = 23;
             this.dgv_Emp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Emp.Size = new System.Drawing.Size(946, 647);
+            this.dgv_Emp.Size = new System.Drawing.Size(1289, 647);
             this.dgv_Emp.TabIndex = 3;
+            this.dgv_Emp.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Emp_CellContentClick);
+            this.dgv_Emp.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Emp_CellDoubleClick);
             // 
-            // dataGridViewTextBoxColumn1
+            // dtp_HireDateFrom
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "No";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewTextBoxColumn1.HeaderText = "No";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dtp_HireDateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_HireDateFrom.Location = new System.Drawing.Point(3, 23);
+            this.dtp_HireDateFrom.Name = "dtp_HireDateFrom";
+            this.dtp_HireDateFrom.Size = new System.Drawing.Size(106, 25);
+            this.dtp_HireDateFrom.TabIndex = 3;
             // 
-            // dataGridViewCheckBoxColumn1
+            // dtp_HireDateTo
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.NullValue = false;
-            this.dataGridViewCheckBoxColumn1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewCheckBoxColumn1.HeaderText = "";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.Width = 20;
+            this.dtp_HireDateTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_HireDateTo.Location = new System.Drawing.Point(139, 24);
+            this.dtp_HireDateTo.Name = "dtp_HireDateTo";
+            this.dtp_HireDateTo.Size = new System.Drawing.Size(106, 25);
+            this.dtp_HireDateTo.TabIndex = 4;
             // 
-            // Column1
+            // gb_HireDate
             // 
-            this.Column1.HeaderText = "직원코드";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "직원이름";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "입사일";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "퇴사일";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "우편번호";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "주소";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "상세주소";
-            this.Column7.Name = "Column7";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(3, 23);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(106, 25);
-            this.dateTimePicker1.TabIndex = 3;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(139, 24);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(106, 25);
-            this.dateTimePicker2.TabIndex = 4;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Location = new System.Drawing.Point(8, 167);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(255, 64);
-            this.groupBox1.TabIndex = 5;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "입사일";
+            this.gb_HireDate.Controls.Add(this.label1);
+            this.gb_HireDate.Controls.Add(this.dtp_HireDateTo);
+            this.gb_HireDate.Controls.Add(this.dtp_HireDateFrom);
+            this.gb_HireDate.Enabled = false;
+            this.gb_HireDate.Location = new System.Drawing.Point(8, 97);
+            this.gb_HireDate.Name = "gb_HireDate";
+            this.gb_HireDate.Size = new System.Drawing.Size(255, 64);
+            this.gb_HireDate.TabIndex = 5;
+            this.gb_HireDate.TabStop = false;
+            this.gb_HireDate.Text = "입사일";
             // 
             // label1
             // 
@@ -331,17 +248,18 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "~";
             // 
-            // groupBox2
+            // gb_RetireDate
             // 
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.dateTimePicker3);
-            this.groupBox2.Controls.Add(this.dateTimePicker4);
-            this.groupBox2.Location = new System.Drawing.Point(8, 97);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(255, 64);
-            this.groupBox2.TabIndex = 6;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "퇴사일";
+            this.gb_RetireDate.Controls.Add(this.label2);
+            this.gb_RetireDate.Controls.Add(this.dtp_RetireDateTo);
+            this.gb_RetireDate.Controls.Add(this.dtp_RetireDateFrom);
+            this.gb_RetireDate.Enabled = false;
+            this.gb_RetireDate.Location = new System.Drawing.Point(8, 167);
+            this.gb_RetireDate.Name = "gb_RetireDate";
+            this.gb_RetireDate.Size = new System.Drawing.Size(255, 64);
+            this.gb_RetireDate.TabIndex = 6;
+            this.gb_RetireDate.TabStop = false;
+            this.gb_RetireDate.Text = "퇴사일";
             // 
             // label2
             // 
@@ -352,287 +270,175 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "~";
             // 
-            // dateTimePicker3
+            // dtp_RetireDateTo
             // 
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(139, 24);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(106, 25);
-            this.dateTimePicker3.TabIndex = 4;
+            this.dtp_RetireDateTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_RetireDateTo.Location = new System.Drawing.Point(139, 24);
+            this.dtp_RetireDateTo.Name = "dtp_RetireDateTo";
+            this.dtp_RetireDateTo.Size = new System.Drawing.Size(106, 25);
+            this.dtp_RetireDateTo.TabIndex = 4;
             // 
-            // dateTimePicker4
+            // dtp_RetireDateFrom
             // 
-            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker4.Location = new System.Drawing.Point(3, 23);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(106, 25);
-            this.dateTimePicker4.TabIndex = 3;
+            this.dtp_RetireDateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_RetireDateFrom.Location = new System.Drawing.Point(3, 23);
+            this.dtp_RetireDateFrom.Name = "dtp_RetireDateFrom";
+            this.dtp_RetireDateFrom.Size = new System.Drawing.Size(106, 25);
+            this.dtp_RetireDateFrom.TabIndex = 3;
             // 
-            // comboBox1
+            // cbo_Temp
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(8, 66);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(255, 25);
-            this.comboBox1.TabIndex = 7;
+            this.cbo_Temp.FormattingEnabled = true;
+            this.cbo_Temp.Location = new System.Drawing.Point(8, 66);
+            this.cbo_Temp.Name = "cbo_Temp";
+            this.cbo_Temp.Size = new System.Drawing.Size(255, 25);
+            this.cbo_Temp.TabIndex = 7;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(9, 41);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 17);
+            this.label3.Size = new System.Drawing.Size(54, 17);
             this.label3.TabIndex = 8;
-            this.label3.Text = "소속 그룹";
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.Image = global::AdminClient.Properties.Resources.BelowAverage_32x32;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(276, 43);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(84, 56);
-            this.button3.TabIndex = 20;
-            this.button3.Text = "조건\r\n적용";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.Image = global::AdminClient.Properties.Resources.SortAsc_32x32;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(276, 190);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(84, 64);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "정렬";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // rd_descending
-            // 
-            this.rd_descending.AutoSize = true;
-            this.rd_descending.Location = new System.Drawing.Point(113, 190);
-            this.rd_descending.Name = "rd_descending";
-            this.rd_descending.Size = new System.Drawing.Size(106, 21);
-            this.rd_descending.TabIndex = 18;
-            this.rd_descending.TabStop = true;
-            this.rd_descending.Text = "Descending";
-            this.rd_descending.UseVisualStyleBackColor = true;
-            // 
-            // rd_ascending
-            // 
-            this.rd_ascending.AutoSize = true;
-            this.rd_ascending.Location = new System.Drawing.Point(15, 190);
-            this.rd_ascending.Name = "rd_ascending";
-            this.rd_ascending.Size = new System.Drawing.Size(98, 21);
-            this.rd_ascending.TabIndex = 17;
-            this.rd_ascending.TabStop = true;
-            this.rd_ascending.Text = "Ascending";
-            this.rd_ascending.UseVisualStyleBackColor = true;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(8, 229);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(211, 25);
-            this.comboBox3.TabIndex = 16;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(5, 74);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(108, 25);
-            this.comboBox2.TabIndex = 15;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(5, 43);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(214, 25);
-            this.comboBox4.TabIndex = 14;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(5, 105);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(214, 25);
-            this.textBox1.TabIndex = 13;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(5, 23);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 17);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "검색조건";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 133);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 17);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "소속 그룹";
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(5, 153);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(214, 25);
-            this.comboBox5.TabIndex = 22;
+            this.label3.Text = "소속 팀";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(154, 23);
+            this.label6.Location = new System.Drawing.Point(45, 24);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(68, 17);
             this.label6.TabIndex = 4;
             this.label6.Text = "직원이름";
             // 
-            // textBox2
+            // txt_EmpName
             // 
-            this.textBox2.Location = new System.Drawing.Point(219, 20);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(145, 25);
-            this.textBox2.TabIndex = 5;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(219, 54);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(145, 25);
-            this.textBox3.TabIndex = 7;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(154, 57);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(68, 17);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "소속그룹";
+            this.txt_EmpName.Location = new System.Drawing.Point(110, 21);
+            this.txt_EmpName.Name = "txt_EmpName";
+            this.txt_EmpName.Size = new System.Drawing.Size(145, 25);
+            this.txt_EmpName.TabIndex = 5;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(385, 22);
+            this.label8.Location = new System.Drawing.Point(276, 23);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(53, 17);
             this.label8.TabIndex = 8;
             this.label8.Text = "입사일";
             // 
-            // label9
+            // dtp_HireDate
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(385, 57);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(53, 17);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "퇴사일";
+            this.dtp_HireDate.Enabled = false;
+            this.dtp_HireDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_HireDate.Location = new System.Drawing.Point(357, 18);
+            this.dtp_HireDate.Name = "dtp_HireDate";
+            this.dtp_HireDate.Size = new System.Drawing.Size(143, 25);
+            this.dtp_HireDate.TabIndex = 11;
             // 
-            // dateTimePicker5
+            // txt_Email
             // 
-            this.dateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker5.Location = new System.Drawing.Point(435, 16);
-            this.dateTimePicker5.Name = "dateTimePicker5";
-            this.dateTimePicker5.Size = new System.Drawing.Size(124, 25);
-            this.dateTimePicker5.TabIndex = 11;
-            // 
-            // dateTimePicker6
-            // 
-            this.dateTimePicker6.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker6.Location = new System.Drawing.Point(435, 54);
-            this.dateTimePicker6.Name = "dateTimePicker6";
-            this.dateTimePicker6.Size = new System.Drawing.Size(124, 25);
-            this.dateTimePicker6.TabIndex = 12;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(660, 21);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(145, 25);
-            this.textBox4.TabIndex = 14;
+            this.txt_Email.Location = new System.Drawing.Point(597, 16);
+            this.txt_Email.Name = "txt_Email";
+            this.txt_Email.Size = new System.Drawing.Size(145, 25);
+            this.txt_Email.TabIndex = 14;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(595, 24);
+            this.label10.Location = new System.Drawing.Point(532, 19);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(53, 17);
             this.label10.TabIndex = 13;
             this.label10.Text = "이메일";
             // 
-            // textBox5
+            // txt_PostCode
             // 
-            this.textBox5.Location = new System.Drawing.Point(660, 54);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(145, 25);
-            this.textBox5.TabIndex = 16;
+            this.txt_PostCode.Location = new System.Drawing.Point(357, 54);
+            this.txt_PostCode.Name = "txt_PostCode";
+            this.txt_PostCode.Size = new System.Drawing.Size(145, 25);
+            this.txt_PostCode.TabIndex = 16;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(580, 57);
+            this.label11.Location = new System.Drawing.Point(277, 57);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(68, 17);
             this.label11.TabIndex = 15;
             this.label11.Text = "우편번호";
             // 
-            // textBox7
+            // txt_Phone
             // 
-            this.textBox7.Location = new System.Drawing.Point(898, 24);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(145, 25);
-            this.textBox7.TabIndex = 18;
+            this.txt_Phone.Location = new System.Drawing.Point(597, 54);
+            this.txt_Phone.Name = "txt_Phone";
+            this.txt_Phone.Size = new System.Drawing.Size(145, 25);
+            this.txt_Phone.TabIndex = 18;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(824, 27);
+            this.label13.Location = new System.Drawing.Point(523, 57);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(68, 17);
             this.label13.TabIndex = 17;
             this.label13.Text = "전화번호";
             // 
-            // checkBox1
+            // sortControl
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(268, 97);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(101, 21);
-            this.checkBox1.TabIndex = 9;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.sortControl.BackColor = System.Drawing.Color.Transparent;
+            this.sortControl.Font = new System.Drawing.Font("나눔고딕", 11.25F);
+            this.sortControl.Location = new System.Drawing.Point(12, 104);
+            this.sortControl.Margin = new System.Windows.Forms.Padding(4);
+            this.sortControl.Name = "sortControl";
+            this.sortControl.Size = new System.Drawing.Size(329, 71);
+            this.sortControl.TabIndex = 23;
+            // 
+            // searchControl
+            // 
+            this.searchControl.BackColor = System.Drawing.Color.Transparent;
+            this.searchControl.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.searchControl.Location = new System.Drawing.Point(12, 23);
+            this.searchControl.Margin = new System.Windows.Forms.Padding(4);
+            this.searchControl.Name = "searchControl";
+            this.searchControl.Size = new System.Drawing.Size(325, 73);
+            this.searchControl.TabIndex = 24;
+            // 
+            // chk_HireDate
+            // 
+            this.chk_HireDate.AutoSize = true;
+            this.chk_HireDate.Location = new System.Drawing.Point(62, 100);
+            this.chk_HireDate.Name = "chk_HireDate";
+            this.chk_HireDate.Size = new System.Drawing.Size(15, 14);
+            this.chk_HireDate.TabIndex = 9;
+            this.chk_HireDate.UseVisualStyleBackColor = true;
+            this.chk_HireDate.CheckedChanged += new System.EventHandler(this.chk_HireDate_CheckedChanged);
+            // 
+            // chk_RetireDate
+            // 
+            this.chk_RetireDate.AutoSize = true;
+            this.chk_RetireDate.Location = new System.Drawing.Point(62, 170);
+            this.chk_RetireDate.Name = "chk_RetireDate";
+            this.chk_RetireDate.Size = new System.Drawing.Size(15, 14);
+            this.chk_RetireDate.TabIndex = 10;
+            this.chk_RetireDate.UseVisualStyleBackColor = true;
+            this.chk_RetireDate.CheckedChanged += new System.EventHandler(this.chk_RetireDate_CheckedChanged);
             // 
             // EmpInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
-            this.ClientSize = new System.Drawing.Size(1377, 868);
+            this.ClientSize = new System.Drawing.Size(1720, 868);
             this.Name = "EmpInfo";
             this.Load += new System.EventHandler(this.EmpInfo_Load);
             this.panel1.ResumeLayout(false);
@@ -641,7 +447,6 @@
             this.gb_Sherch.ResumeLayout(false);
             this.gb_Sherch.PerformLayout();
             this.gb_detail.ResumeLayout(false);
-            this.gb_detail.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nu_limit)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -649,10 +454,10 @@
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Emp)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.gb_HireDate.ResumeLayout(false);
+            this.gb_HireDate.PerformLayout();
+            this.gb_RetireDate.ResumeLayout(false);
+            this.gb_RetireDate.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -661,50 +466,29 @@
         #endregion
 
         private CustomDataGridView dgv_Emp;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtp_HireDateTo;
+        private System.Windows.Forms.DateTimePicker dtp_HireDateFrom;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ComboBox cbo_Temp;
+        private System.Windows.Forms.GroupBox gb_RetireDate;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker4;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DateTimePicker dtp_RetireDateTo;
+        private System.Windows.Forms.DateTimePicker dtp_RetireDateFrom;
+        private System.Windows.Forms.GroupBox gb_HireDate;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_EmpName;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.RadioButton rd_descending;
-        private System.Windows.Forms.RadioButton rd_ascending;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txt_Phone;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txt_PostCode;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txt_Email;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DateTimePicker dateTimePicker6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker5;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DateTimePicker dtp_HireDate;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private SearchControl searchControl;
+        private SortControl sortControl;
+        private System.Windows.Forms.CheckBox chk_RetireDate;
+        private System.Windows.Forms.CheckBox chk_HireDate;
     }
 }

@@ -55,13 +55,16 @@ namespace AdminClient
                             string dataPropertyName,
                             int colWidth = 100,
                             bool visibility = true,
-                            DataGridViewContentAlignment textAlign = DataGridViewContentAlignment.MiddleLeft)
+                            DataGridViewContentAlignment textAlign = DataGridViewContentAlignment.MiddleLeft,
+                            string Format = null)
         {
             DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
             col.Name = dataPropertyName;
             col.HeaderText = headerText;
             col.DataPropertyName = dataPropertyName;
+            //col.DefaultCellStyle.FormatProvider = format;
             col.Width = colWidth;
+            col.DefaultCellStyle.Format = Format;
             col.DefaultCellStyle.Alignment = textAlign;
             col.Visible = visibility;
             col.ReadOnly = true;
@@ -100,7 +103,8 @@ namespace AdminClient
             col.Name = dataPropertyName;
             col.HeaderText = headerText;
             col.Image = image;
-            col.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            col.Width = colWidth;
+            col.ImageLayout = DataGridViewImageCellLayout.Normal;
             //col.DefaultCellStyle.SelectionBackColor = Color.Transparent;
             col.DataPropertyName = dataPropertyName;
             col.DefaultCellStyle.Alignment = textAlign;

@@ -1,6 +1,8 @@
 ﻿using AdminClientVO;
+using log4net.Core;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -10,19 +12,26 @@ namespace AdminClientDAC
 {
     public class ProductDAC : IDisposable
     {
-        string strConn;
         SqlConnection conn;
-
+        LoggingUtility Info;
         public ProductDAC()
         {
-            strConn = "Server=whyfi8888.ddns.net,11433;Database=TEAM4;Uid=team4;Pwd=team4"; //나중에 암호화 복호화로 변경
-            conn = new SqlConnection(strConn);
+            conn = new SqlConnection(Connstring.conn);
             conn.Open();
+            Info = new LoggingUtility("ProductDACInFo", "ProductDACError", Level.All, 30);
+            Info.InfoFolder = "C:\\FP\\Log\\ProductDAC\\Info";
+            Info.ErrorFolder = "C:\\FP\\Log\\ProductDAC\\Error";
         }
+
         public void Dispose()
         {
             conn.Close();
         }
+
+        /// <summary>
+        /// 콤보바인딩용 데이터 불러오기
+        /// </summary>
+        /// <returns></returns>
         public List<ComboProductVO> GetComboBindingList()
         {
             try
@@ -41,6 +50,44 @@ namespace AdminClientDAC
             }
             catch(Exception err)
             {
+                Info.WriteError($"실행자:{Global.employees.Emp_Name} 콤보바인딩 목록 불러오는 중 오류 :" + err.Message, err);
+                return null;
+            }
+        }
+
+        public string AddProduct(ProductVO vo)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"SP_NewProductAdd";
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@cate", vo.Prod_Category);
+                    cmd.Parameters.AddWithValue("@state", vo.Prod_State);
+                    cmd.Parameters.AddWithValue("@safety", vo.Prod_SafetyStock);
+                    cmd.Parameters.AddWithValue("@whcode", vo.Prod_WhCode);
+                    cmd.Parameters.AddWithValue("@unit", vo.Prod_Unit);
+                    cmd.Parameters.AddWithValue("@name", vo.Prod_Name);
+                    cmd.Parameters.AddWithValue("@empcode", Global.employees.Emp_Code);
+                    SqlParameter outcode = new SqlParameter("@pdcode", SqlDbType.VarChar, 7);
+                    outcode.Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add(outcode);
+
+                    bool result = cmd.ExecuteNonQuery() > 0 ? true : false;
+                    string code = string.Empty;
+
+                    if (result)
+                        code = outcode.Value.ToString();
+
+                    return code;
+                }
+            }
+            catch(Exception err)
+            {
+                Info.WriteError($"실행자:{Global.employees.Emp_Name} 새 물품 정보 등록중 오류 :" + err.Message, err);
                 return null;
             }
         }
@@ -52,9 +99,14 @@ namespace AdminClientDAC
                 using(SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"update Product set Prod_State = 'N' where Prod_Code = @code";
+                    cmd.CommandText = @"update Product 
+                                                                        set Prod_State = 'N', 
+                                                                               Lst_Writer = @id, 
+                                                                               Lst_WriteDate = getdate()
+                                                                        where Prod_Code = @code";
 
                     cmd.Parameters.AddWithValue("@code", code);
+                    cmd.Parameters.AddWithValue("@id", Global.employees.Emp_Code);
 
                     int cnt = cmd.ExecuteNonQuery();
 
@@ -67,11 +119,12 @@ namespace AdminClientDAC
             }
             catch(Exception err)
             {
+                Info.WriteError($"실행자:{Global.employees.Emp_Name} 기존 물품 비활성화 중 오류 :" + err.Message, err);
                 return false;
             }
         }
 
-        public bool UpdateProduct(string code, string name, string cate, string wh) // 로그인 완성시 변경자 이름 추가
+        public bool UpdateProduct(ProductVO vo) // 로그인 완성시 변경자 이름 추가
         {
             try
             {
@@ -79,13 +132,22 @@ namespace AdminClientDAC
                 {
                     cmd.Connection = conn;
                     cmd.CommandText = @"update Product 
-                                                                    set Prod_Name = @name, Prod_Category = @cate, Prod_WhCode = @wh 
+                                                                    set Prod_Name = @name, 
+                                                                           Prod_Category = @cate, 
+                                                                           Prod_WhCode = @wh, 
+                                                                           Prod_State = @state, 
+                                                                           Prod_SafetyStock = @stock, 
+                                                                           Lst_Writer = @id, 
+                                                                           Lst_WriteDate = getdate()
                                                                     where Prod_Code = @code";
 
-                    cmd.Parameters.AddWithValue("@code", code);
-                    cmd.Parameters.AddWithValue("@cate", cate);
-                    cmd.Parameters.AddWithValue("@name", name);
-                    cmd.Parameters.AddWithValue("@wh", wh);
+                    cmd.Parameters.AddWithValue("@code", vo.Prod_Code);
+                    cmd.Parameters.AddWithValue("@cate", vo.Prod_Category);
+                    cmd.Parameters.AddWithValue("@name", vo.Prod_Name);
+                    cmd.Parameters.AddWithValue("@wh", vo.Prod_WhCode);
+                    cmd.Parameters.AddWithValue("@state", vo.Prod_State);
+                    cmd.Parameters.AddWithValue("@stock", vo.Prod_SafetyStock);
+                    cmd.Parameters.AddWithValue("@id", Global.employees.Emp_Code);
 
                     int cnt = cmd.ExecuteNonQuery();
 
@@ -97,6 +159,7 @@ namespace AdminClientDAC
             }
             catch(Exception err)
             {
+                Info.WriteError($"실행자:{Global.employees.Emp_Name} 기존 물품 정보 수정중 오류 :" + err.Message, err);
                 return false;
             }
         }
@@ -127,6 +190,7 @@ namespace AdminClientDAC
             }
             catch(Exception err)
             {
+                Info.WriteError($"실행자:{Global.employees.Emp_Name} 물품 정보 불러오는중 오류 :" + err.Message, err);
                 return null;
             }
         }

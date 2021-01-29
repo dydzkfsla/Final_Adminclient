@@ -33,7 +33,7 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.gb_detail = new System.Windows.Forms.GroupBox();
             this.gb_Sherch = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_search = new System.Windows.Forms.Button();
             this.nu_limit = new System.Windows.Forms.NumericUpDown();
             this.chk_limit = new System.Windows.Forms.CheckBox();
             this.btn_folding = new System.Windows.Forms.Button();
@@ -120,7 +120,7 @@
             // 
             // gb_Sherch
             // 
-            this.gb_Sherch.Controls.Add(this.button1);
+            this.gb_Sherch.Controls.Add(this.btn_search);
             this.gb_Sherch.Controls.Add(this.nu_limit);
             this.gb_Sherch.Controls.Add(this.chk_limit);
             this.gb_Sherch.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -133,18 +133,18 @@
             this.gb_Sherch.TabStop = false;
             this.gb_Sherch.Text = "검색조건";
             // 
-            // button1
+            // btn_search
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Image = global::AdminClient.Properties.Resources.Find_32x32;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(206, 17);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(74, 64);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "검색";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_search.BackColor = System.Drawing.Color.White;
+            this.btn_search.Image = global::AdminClient.Properties.Resources.Find_32x32;
+            this.btn_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_search.Location = new System.Drawing.Point(206, 17);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(74, 64);
+            this.btn_search.TabIndex = 2;
+            this.btn_search.Text = "검색";
+            this.btn_search.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_search.UseVisualStyleBackColor = false;
             // 
             // nu_limit
             // 
@@ -188,7 +188,7 @@
             this.splitter1.TabIndex = 1;
             this.splitter1.TabStop = false;
             // 
-            // FormBase2
+            // FormListTemp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.BackColor = System.Drawing.Color.Gainsboro;
@@ -196,7 +196,7 @@
             this.Controls.Add(this.pnl_Main);
             this.Controls.Add(this.lbl_Title);
             this.Margin = new System.Windows.Forms.Padding(3);
-            this.Name = "FormBase2";
+            this.Name = "FormListTemp";
             this.Controls.SetChildIndex(this.lbl_Title, 0);
             this.Controls.SetChildIndex(this.pnl_Main, 0);
             this.Controls.SetChildIndex(this.Form_close, 0);
@@ -225,6 +225,6 @@
         public System.Windows.Forms.SplitContainer splitContainer1;
         protected System.Windows.Forms.Button btn_folding;
         protected System.Windows.Forms.Splitter splitter1;
-        protected System.Windows.Forms.Button button1;
+        protected System.Windows.Forms.Button btn_search;
     }
 }

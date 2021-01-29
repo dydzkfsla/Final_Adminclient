@@ -58,6 +58,17 @@ namespace AdminClient
         dynamic temp;
         DataGridView dgv;
 
+        public event EventHandler SearchClick
+        { 
+            add 
+            {
+                btn_Search.Click += value;
+            }
+            remove
+            {
+                btn_Search.Click -= value;
+            }
+        }
 
         public SearchControl()
         {

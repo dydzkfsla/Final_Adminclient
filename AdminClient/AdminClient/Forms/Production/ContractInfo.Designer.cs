@@ -181,7 +181,7 @@
             this.gb_Sherch.Controls.SetChildIndex(this.comboBox2, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.chk_limit, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.nu_limit, 0);
-            this.gb_Sherch.Controls.SetChildIndex(this.button1, 0);
+            this.gb_Sherch.Controls.SetChildIndex(this.btn_search, 0);
             // 
             // gb_detail
             // 
@@ -224,7 +224,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(258, 16);
+            this.btn_search.Location = new System.Drawing.Point(258, 16);
             // 
             // Form_close
             // 

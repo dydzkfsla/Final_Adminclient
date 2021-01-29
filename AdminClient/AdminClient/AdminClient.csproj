@@ -33,10 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.Data.v20.2, Version=20.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Utils.v20.2, Version=20.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraEditors.v20.2, Version=20.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraWizard.v20.2, Version=20.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="log4net, Version=2.0.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.12\lib\net45\log4net.dll</HintPath>
     </Reference>
@@ -446,9 +442,15 @@
     <Compile Include="Service\CommonService.cs" />
     <Compile Include="Service\CompanyService.cs" />
     <Compile Include="Service\EmployeeService.cs" />
-    <Compile Include="Service\FacilityService.cs" />
+    <Compile Include="Service\EmployeesService.cs" />
+    <Compile Include="Service\EmpTeamConnService.cs" />
     <Compile Include="Service\FormInfoService.cs" />
+    <Compile Include="Service\GroupFormConnService.cs" />
+    <Compile Include="Service\GroupInfoService.cs" />
     <Compile Include="Service\ProductService.cs" />
+    <Compile Include="Service\StockInfoService.cs" />
+    <Compile Include="Service\TeamGroupConnService.cs" />
+    <Compile Include="Service\TeamInfoService.cs" />
     <Compile Include="Service\WareHouseService.cs" />
     <Compile Include="UseControl\SearchControl.cs">
       <SubType>UserControl</SubType>
@@ -464,6 +466,7 @@
     </Compile>
     <Compile Include="Utils\CommonUtil.cs" />
     <Compile Include="Utils\CuttedGroup.cs" />
+    <Compile Include="Utils\DateTimeFormatter.cs" />
     <Compile Include="Utils\Email.cs" />
     <Compile Include="Utils\ExtenstionMethod.cs" />
     <Compile Include="Utils\UtileHelper.cs" />
@@ -633,7 +636,6 @@
     <EmbeddedResource Include="PopUp\WorkPlanPopUp.resx">
       <DependentUpon>WorkPlanPopUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>

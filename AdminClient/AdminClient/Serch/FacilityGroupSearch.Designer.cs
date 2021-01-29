@@ -80,7 +80,7 @@
             this.gb_Sherch.Size = new System.Drawing.Size(308, 101);
             this.gb_Sherch.Controls.SetChildIndex(this.chk_limit, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.nu_limit, 0);
-            this.gb_Sherch.Controls.SetChildIndex(this.button1, 0);
+            this.gb_Sherch.Controls.SetChildIndex(this.btn_search, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.label1, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.comboBox1, 0);
             // 
@@ -110,7 +110,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(227, 17);
+            this.btn_search.Location = new System.Drawing.Point(227, 17);
             // 
             // comboBox1
             // 
