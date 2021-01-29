@@ -18,8 +18,8 @@ namespace AdminClient.PopUp
     public partial class EmpPopUp : AdminClient.BaseForm.EmpFormTemp
     {
 
-        List<EmployeesTeamVO> Employees = null;
-        List<TeamInfoVO>      Team = null;
+        public List<EmployeesTeamVO> Employees = null;
+        List<TeamInfoVO> Team = null;
         //List<EmpTeamConnVO>   EmpTeamConn = null;
 
         public EmpPopUp()
@@ -30,6 +30,8 @@ namespace AdminClient.PopUp
         public EmpPopUp(List<TeamInfoVO> team) : this()
         {
             Team = team;
+            btn_AllUpdate.Enabled = false;
+            btn_AllDelete.Enabled = false;
         }
 
         public EmpPopUp(List<TeamInfoVO> team,  List<EmployeesTeamVO> employees) : this(team)
@@ -47,6 +49,10 @@ namespace AdminClient.PopUp
             txt_empPassworad.Text = Employees[0].Emp_Pwd;
             dtp_RetireDate.Value = Employees[0].Emp_RetireDate;
             dtp_HireDate.Value = Employees[0].Emp_HireDate;
+
+
+            btn_AllUpdate.Enabled = true;
+            btn_AllDelete.Enabled = true;
         }
 
 
@@ -123,6 +129,7 @@ namespace AdminClient.PopUp
             SearchAddr();
         }
 
+        #region 주소검색 API
         private void SearchAddr()
         {
             UtilEvent.TextBoxIsNotNull(txt_Address, "주소를 입력해주세요.");
@@ -143,12 +150,20 @@ namespace AdminClient.PopUp
             else
                 MessageBox.Show(ds.Tables[0].Rows[0]["errorMessage"].ToString());
         }
+        #endregion
 
+        #region 텍스트 박스 입력 확인 
         private bool ChkTextBox()
         {
             bool ChkTextBox = true;
             CommonUtil.ControlAction<GroupBox, TextBox>(groupBox1, (x) =>
             {
+                if (x.Name.Contains("Code") )
+                {
+                    if (x.Text.Length != 7)
+                        ChkTextBox = false;
+                }
+
                 if (string.IsNullOrWhiteSpace(x.Text.Trim()))
                 {
                     ChkTextBox = false;
@@ -164,12 +179,14 @@ namespace AdminClient.PopUp
             });
             return ChkTextBox;
         }
+        #endregion
 
         private void pnl_Main_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
+        #region DGV ADD 이벤트
         private void dgv_AddrSearch_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0)
@@ -177,7 +194,9 @@ namespace AdminClient.PopUp
             txt_Post.Text = dgv_AddrSearch["zipNo", e.RowIndex].Value.ToString();
             txt_Address.Text = dgv_AddrSearch["jibunAddr", e.RowIndex].Value.ToString();
         }
+        #endregion
 
+        #region 권한추가 
         private void btn_add_Click(object sender, EventArgs e)
         {
             //선택한것이 없으면
@@ -192,24 +211,97 @@ namespace AdminClient.PopUp
             Employees.Add(temp);
             SetAuthority();
         }
+        #endregion
 
+        #region 권한삭제
         private void btn_Delet_Click(object sender, EventArgs e)
         {
-            if (dgv_Group.SelectedRows.Count == 0)
+            if (dgv_EmpGroup.SelectedRows.Count == 0)
                 return;
+            if(Employees.Count == 1) //모든권한이 빠지면
+            {
+                EmployeesTeamVO temp = UtileHelper.GetCopyObj<EmployeesTeamVO>(Employees[0]);
+                temp.Team_Code = null;
+                Employees.Add(temp);
+            }
 
-            int RowIndex = dgv_Group.SelectedRows[0].Index;
+            int RowIndex = dgv_EmpGroup.SelectedRows[0].Index;
             if (RowIndex < 0)
                 return;
-            string Team_Code = dgv_Group["Team_Code", RowIndex].Value.ToString();
+            string Team_Code = dgv_EmpGroup["Team_Code", RowIndex].Value.ToString();
             Employees = Employees.Where(x => x.Team_Code != Team_Code).ToList();
             SetAuthority();
         }
+        #endregion
 
         private void btn_Alladd_Click(object sender, EventArgs e)
         {
             if (!ChkTextBox())
                 return;
+
+            List<string> team = new List<string>();
+
+            EmployeesVO employees = new EmployeesVO
+            {
+                Emp_Code = txt_EmpCode.Text,
+                Emp_Email = txt_EmpEmail.Text,
+                Emp_Name = txt_EmpName.Text,
+                Emp_PostCode = int.Parse(txt_Post.Text),
+                Emp_Pwd = txt_empPassworad.Text,
+                Emp_Addr = txt_Address.Text,
+                Emp_AddrDetail = txt_AddressDetail.Text,
+                Emp_HireDate = dtp_HireDate.Value
+            };
+            if (dtp_RetireDate.Enabled)
+                employees.Emp_RetireDate = dtp_RetireDate.Value;
+            else
+                employees.Emp_RetireDate = new DateTime(9998,12,30);
+
+            if (!string.IsNullOrWhiteSpace(txt_Number.Text))
+                employees.Emp_Phone = txt_Number.Text;
+            else
+                employees.Emp_Phone = null;
+
+            Employees.ForEach( x =>
+            {
+                if (x.Team_Code != null) {
+                    team.Add(x.Team_Code);
+                }
+            });
+
+
+
+            EmployeesService service = new EmployeesService();
+            if(service.SP_InsertEmployees(employees, team))
+            {
+                this.DialogResult = DialogResult.Yes;
+                Employees.Clear();
+                team.ForEach(x => {
+                    Employees.Add(
+                        new EmployeesTeamVO
+                        {
+                            Emp_Code = txt_EmpCode.Text,
+                            Emp_Email = txt_EmpEmail.Text,
+                            Emp_Name = txt_EmpName.Text,
+                            Emp_PostCode = int.Parse(txt_Post.Text),
+                            Emp_Pwd = txt_empPassworad.Text,
+                            Emp_Addr = txt_Address.Text,
+                            Emp_AddrDetail = txt_AddressDetail.Text,
+                            Emp_HireDate = dtp_HireDate.Value,
+                            Emp_RetireDate = dtp_RetireDate.Enabled ? dtp_RetireDate.Value : new DateTime(9998, 12, 30),
+                            Emp_Phone = string.IsNullOrWhiteSpace(txt_Number.Text) ? null : txt_Number.Text,
+                            Team_Code = x
+                        });
+                });
+                
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("추가실패");
+                this.DialogResult = DialogResult.Cancel;
+                this.Close();
+            }
         }
 
         private void chk_cheal_CheckedChanged(object sender, EventArgs e)
@@ -222,7 +314,89 @@ namespace AdminClient.PopUp
             if (!ChkTextBox())
                 return;
 
+            List<string> team = new List<string>();
 
+            EmployeesVO employees = new EmployeesVO
+            {
+                Emp_Code = Employees[0].Emp_Code,
+                Emp_Email = txt_EmpEmail.Text,
+                Emp_Name = txt_EmpName.Text,
+                Emp_PostCode = int.Parse(txt_Post.Text),
+                Emp_Pwd = txt_empPassworad.Text,
+                Emp_Addr = txt_Address.Text,
+                Emp_AddrDetail = txt_AddressDetail.Text,
+                Emp_HireDate = dtp_HireDate.Value
+            };
+            if (dtp_RetireDate.Enabled)
+                employees.Emp_RetireDate = dtp_RetireDate.Value;
+            else
+                employees.Emp_RetireDate = new DateTime(9998, 12, 30);
+
+            if (!string.IsNullOrWhiteSpace(txt_Number.Text))
+                employees.Emp_Phone = txt_Number.Text;
+            else
+                employees.Emp_Phone = null;
+
+            Employees.ForEach(x =>
+            {
+                if (x.Team_Code != null)
+                {
+                    team.Add(x.Team_Code);
+                }
+            });
+
+
+
+            EmployeesService service = new EmployeesService();
+            if (service.UpdateEmployees(employees, team))
+            {
+                this.DialogResult = DialogResult.OK;
+                Employees.Clear();
+                team.ForEach(x => {
+                    Employees.Add(
+                        new EmployeesTeamVO
+                        {
+                            Emp_Code = txt_EmpCode.Text,
+                            Emp_Email = txt_EmpEmail.Text,
+                            Emp_Name = txt_EmpName.Text,
+                            Emp_PostCode = int.Parse(txt_Post.Text),
+                            Emp_Pwd = txt_empPassworad.Text,
+                            Emp_Addr = txt_Address.Text,
+                            Emp_AddrDetail = txt_AddressDetail.Text,
+                            Emp_HireDate = dtp_HireDate.Value,
+                            Emp_RetireDate = dtp_RetireDate.Enabled ? dtp_RetireDate.Value : new DateTime(9998, 12, 30),
+                            Emp_Phone = string.IsNullOrWhiteSpace(txt_Number.Text) ? null : txt_Number.Text,
+                            Team_Code = x
+                        });
+                });
+
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("추가실패");
+                this.DialogResult = DialogResult.Cancel;
+                this.Close();
+            }
+        }
+
+        private void btn_AllDelete_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("삭제", "삭제하시겠습니까?", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                EmployeesService service = new EmployeesService();
+                if (service.DeleteAllEmp(Employees[0].Emp_Code))
+                {
+                    this.DialogResult = DialogResult.No;
+                    this.Close();
+                }
+                else
+                {
+                    this.DialogResult = DialogResult.Cancel;
+                    this.Close();
+                }
+            }
         }
     }
 }

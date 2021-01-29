@@ -155,9 +155,31 @@ namespace AdminClient.Forms
                 string EmpCode = dgv_Emp["Emp_Code", e.RowIndex].Value.ToString();
                 EmpPopUp empPop = new EmpPopUp(Team, EmpTeam.Where(x => x.Emp_Code == EmpCode).ToList());
                 DialogResult result = empPop.ShowDialog();
-                if (result == DialogResult.OK)
+                if (result == DialogResult.Yes)
                 {
-
+                    var temp = (List<EmployeesTeamVO>)dgv_Emp.DataSource;
+                    EmpTeam.AddRange(empPop.Employees);
+                    temp.Add(empPop.Employees.First());
+                    dgv_Emp.DataSource = null;
+                    dgv_Emp.DataSource = temp;
+                }
+                else if(result == DialogResult.No)
+                {
+                    var temp = (List<EmployeesTeamVO>)dgv_Emp.DataSource;
+                    EmpTeam.RemoveAll(x => x.Emp_Code == EmpCode);
+                    temp.RemoveAll(x => x.Emp_Code == EmpCode);
+                    dgv_Emp.DataSource = null;
+                    dgv_Emp.DataSource = temp;
+                }
+                else if (result == DialogResult.OK)
+                {
+                    var temp = (List<EmployeesTeamVO>)dgv_Emp.DataSource;
+                    EmpTeam.RemoveAll(x => x.Emp_Code == empPop.Employees[0].Emp_Code);
+                    temp.RemoveAll(x => x.Emp_Code == empPop.Employees[0].Emp_Code);
+                    EmpTeam.AddRange(empPop.Employees);
+                    temp.Add(empPop.Employees.First());
+                    dgv_Emp.DataSource = null;
+                    dgv_Emp.DataSource = temp;
                 }
             }
         }
