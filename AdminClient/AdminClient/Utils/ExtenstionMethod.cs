@@ -94,11 +94,35 @@ namespace AdminClient
             frm.Show();
         }
 
+
+
+
         public static void OpenCreateForm(this Form Parent, Form Fm, bool IsParentMDI = false)
         {
             foreach (Form form in Application.OpenForms)
             {
                 if (form.GetType() == Fm.GetType())
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+            if (IsParentMDI)
+            {
+                Fm.MdiParent = Parent;
+            }
+            else
+            {
+                Fm.Owner = Parent;
+            }
+            Fm.Show();
+        }
+
+        public static void OpenCreateForm(this Form Parent, Form Fm, Type type, bool IsParentMDI = false)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == type)
                 {
                     form.Activate();
                     return;

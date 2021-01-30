@@ -51,14 +51,17 @@
     <Compile Include="EmployeesVO.cs" />
     <Compile Include="EmpTeamConnVO.cs" />
     <Compile Include="FacilityVO.cs" />
+    <Compile Include="FavoritesVO.cs" />
     <Compile Include="FormInfoVO.cs" />
     <Compile Include="GroupFormConnVO.cs" />
     <Compile Include="GroupInfoVO.cs" />
+    <Compile Include="ProductCheckVO.cs" />
     <Compile Include="ProductVO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StockInfoVO.cs" />
     <Compile Include="TeamGroupConnVO.cs" />
     <Compile Include="TeamInfoVO.cs" />
+    <Compile Include="ViewVO.cs" />
     <Compile Include="WareHouseVO.cs" />
   </ItemGroup>
   <ItemGroup>

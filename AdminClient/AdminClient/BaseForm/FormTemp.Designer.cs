@@ -78,6 +78,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "FormBase";
+            this.Load += new System.EventHandler(this.FormTemp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).EndInit();
             this.ResumeLayout(false);
 

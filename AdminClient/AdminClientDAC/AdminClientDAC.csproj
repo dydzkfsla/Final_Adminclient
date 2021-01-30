@@ -58,6 +58,7 @@
     <Compile Include="EmployeesDAC.cs" />
     <Compile Include="EmpTeamConnDAC.cs" />
     <Compile Include="FacilityDAC.cs" />
+    <Compile Include="FavoritesDAC.cs" />
     <Compile Include="FormInfoDAC.cs" />
     <Compile Include="Global\Connstring.cs" />
     <Compile Include="Global\Global.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="TeamGroupConnDAC.cs" />
     <Compile Include="TeamInfoDAC.cs" />
     <Compile Include="Utils\LoggingUtility.cs" />
+    <Compile Include="ViewDAC.cs" />
     <Compile Include="WareHouseDAC.cs" />
   </ItemGroup>
   <ItemGroup>

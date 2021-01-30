@@ -444,6 +444,7 @@
     <Compile Include="Service\EmployeeService.cs" />
     <Compile Include="Service\EmployeesService.cs" />
     <Compile Include="Service\EmpTeamConnService.cs" />
+    <Compile Include="Service\FavoritesService.cs" />
     <Compile Include="Service\FormInfoService.cs" />
     <Compile Include="Service\GroupFormConnService.cs" />
     <Compile Include="Service\GroupInfoService.cs" />
@@ -451,6 +452,7 @@
     <Compile Include="Service\StockInfoService.cs" />
     <Compile Include="Service\TeamGroupConnService.cs" />
     <Compile Include="Service\TeamInfoService.cs" />
+    <Compile Include="Service\ViewService.cs" />
     <Compile Include="Service\WareHouseService.cs" />
     <Compile Include="UseControl\SearchControl.cs">
       <SubType>UserControl</SubType>

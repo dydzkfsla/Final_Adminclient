@@ -103,7 +103,9 @@ namespace AdminClient.BaseForm
             }
         }
 
-
-
+        private void FormTemp_Load(object sender, EventArgs e)
+        {
+            foreach(var itme in this.Controls);
+        }
     }
 }
