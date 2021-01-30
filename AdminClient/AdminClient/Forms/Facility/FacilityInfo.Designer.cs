@@ -634,5 +634,6 @@
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label13;
         private CustomDataGridView customDataGridView2;
-    }
+		private SortControl sortControl1;
+	}
 }
