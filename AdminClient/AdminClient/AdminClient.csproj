@@ -439,6 +439,7 @@
     <Compile Include="Serch\WorkPlanDetailSearch.Designer.cs">
       <DependentUpon>WorkPlanDetailSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="Service\BOMService.cs" />
     <Compile Include="Service\CommonService.cs" />
     <Compile Include="Service\CompanyService.cs" />
     <Compile Include="Service\EmployeeService.cs" />
