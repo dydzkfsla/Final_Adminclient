@@ -20,5 +20,28 @@ namespace AdminClient.Service
             }
         }
 
+        public bool SP_InsertEmployees(EmployeesVO employees, List<string> team)
+        {
+            using (EmployeesDAC DAC = new EmployeesDAC())
+            {
+                return DAC.SP_InsertEmployees(employees, team);
+            }
+        }
+
+        public bool DeleteAllEmp(string EmpCode)
+        {
+            using (EmployeesDAC DAC = new EmployeesDAC())
+            {
+                return DAC.DeleteAllEmp(EmpCode);
+            }
+        }
+
+        public bool UpdateEmployees(EmployeesVO employees, List<string> team)
+        {
+            using (EmployeesDAC DAC = new EmployeesDAC())
+            {
+                return DAC.UpdateEmployees(employees, team);
+            }
+        }
     }
 }

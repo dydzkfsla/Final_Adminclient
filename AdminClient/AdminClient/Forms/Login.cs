@@ -38,6 +38,9 @@ namespace AdminClient.Forms
 			else
 			{
                 MessageBox.Show($"{Global.Global.employees.Emp_Name}님이 로그인 하셨습니다.");
+                FormInfoService Formservice = new FormInfoService();
+                this.OpenCreateForm<MDI.MDI>(() => { return new MDI.MDI(); });
+                this.Hide();
             }
 		}
 	}

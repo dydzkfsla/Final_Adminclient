@@ -8,10 +8,42 @@ namespace AdminClientVO
 {
 	public class FacilityGroupVO
 	{
-
+		public string FacGrp_Code { get; set; }
+		public string FacGrp_Name { get; set; }
+		public string FacGrp_Enable { get; set; }
+		public string FacGrp_Description { get; set; }
+		public string Fst_Writer { get; set; }
+		public DateTime Fst_WriteDate { get; set; }
+		public string Lst_Writer { get; set; }
+		public DateTime Lst_WriteDate { get; set; }
 	}
 
 	public class FacilityVO
 	{
+		public string FacGrp_Code { get; set; }
+		public string Fac_Code { get; set; }
+		public string Fac_Name { get; set; }
+		public string Fac_Enable { get; set; }
+		public string Fac_Outsourcing { get; set; }
+		public string Fac_Note { get; set; }
+		public string Fst_Writer { get; set; }
+		public DateTime Fst_WriteDate { get; set; }
+		public string Lst_Writer { get; set; }
+		public DateTime Lst_WriteDate { get; set; }
+	}
+
+	public class FacilityDetailVO
+	{
+		public string Fac_Code { get; set; }
+		public string FacD_Code { get; set; }
+		public string Prod_Code { get; set; }
+		public string FacD_MaterialWareHouse { get; set; }
+		public string FacD_GoodsWareHouse { get; set; }
+		public string FacD_FaultyWareHouse { get; set; }
+		public string Fst_Writer { get; set; }
+		public DateTime Fst_WriteDate { get; set; }
+		public string Lst_Writer { get; set; }
+		public DateTime Lst_WriteDate { get; set; }
+
 	}
 }

@@ -107,9 +107,9 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txt_ProdName);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(10, 19);
+            this.panel1.Location = new System.Drawing.Point(10, 18);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(637, 128);
+            this.panel1.Size = new System.Drawing.Size(637, 129);
             this.panel1.TabIndex = 35;
             // 
             // button2

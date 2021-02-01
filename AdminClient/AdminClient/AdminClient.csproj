@@ -444,6 +444,8 @@
     <Compile Include="Service\CompanyService.cs" />
     <Compile Include="Service\EmployeeService.cs" />
     <Compile Include="Service\EmployeesService.cs" />
+    <Compile Include="Service\EmpTeamConnService.cs" />
+    <Compile Include="Service\FacilityService.cs" />
     <Compile Include="Service\FormInfoService.cs" />
     <Compile Include="Service\GroupFormConnService.cs" />
     <Compile Include="Service\GroupInfoService.cs" />
@@ -636,6 +638,7 @@
     <EmbeddedResource Include="PopUp\WorkPlanPopUp.resx">
       <DependentUpon>WorkPlanPopUp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>

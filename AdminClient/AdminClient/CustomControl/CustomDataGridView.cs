@@ -140,5 +140,13 @@ namespace AdminClient
             CommonUtil.AddGridCheckColumn(this, "", "Chk", 20, isChkVisible);
             CommonUtil.AddGridImageColumn(this, "Edit", "Edit", global::AdminClient.Properties.Resources.Edit_32x32, 50, IsEditVisible);
         }
+
+        private void CustomDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (this.IsCurrentCellInEditMode)
+            {
+                this.EndEdit();
+            }
+        }
     }
 }

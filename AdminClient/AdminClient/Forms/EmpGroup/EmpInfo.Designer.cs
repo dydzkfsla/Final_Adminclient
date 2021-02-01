@@ -40,22 +40,18 @@
             this.dtp_RetireDateFrom = new System.Windows.Forms.DateTimePicker();
             this.cbo_Temp = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.txt_EmpName = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.dtp_HireDate = new System.Windows.Forms.DateTimePicker();
+            this.txt_Email = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txt_PostCode = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txt_Phone = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.sortControl1 = new AdminClient.SortControl();
-            this.searchControl1 = new AdminClient.SearchControl();
+            this.sortControl = new AdminClient.SortControl();
+            this.searchControl = new AdminClient.SearchControl();
             this.chk_HireDate = new System.Windows.Forms.CheckBox();
             this.chk_RetireDate = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
@@ -83,33 +79,29 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox7);
+            this.panel1.Controls.Add(this.txt_Phone);
             this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Controls.Add(this.txt_PostCode);
             this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.txt_Email);
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.dateTimePicker5);
+            this.panel1.Controls.Add(this.dtp_HireDate);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.txt_EmpName);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Size = new System.Drawing.Size(1691, 91);
             this.panel1.Controls.SetChildIndex(this.btn_add, 0);
             this.panel1.Controls.SetChildIndex(this.btn_Xls, 0);
             this.panel1.Controls.SetChildIndex(this.label6, 0);
-            this.panel1.Controls.SetChildIndex(this.textBox2, 0);
-            this.panel1.Controls.SetChildIndex(this.label7, 0);
-            this.panel1.Controls.SetChildIndex(this.textBox3, 0);
+            this.panel1.Controls.SetChildIndex(this.txt_EmpName, 0);
             this.panel1.Controls.SetChildIndex(this.label8, 0);
-            this.panel1.Controls.SetChildIndex(this.dateTimePicker5, 0);
+            this.panel1.Controls.SetChildIndex(this.dtp_HireDate, 0);
             this.panel1.Controls.SetChildIndex(this.label10, 0);
-            this.panel1.Controls.SetChildIndex(this.textBox4, 0);
+            this.panel1.Controls.SetChildIndex(this.txt_Email, 0);
             this.panel1.Controls.SetChildIndex(this.label11, 0);
-            this.panel1.Controls.SetChildIndex(this.textBox5, 0);
+            this.panel1.Controls.SetChildIndex(this.txt_PostCode, 0);
             this.panel1.Controls.SetChildIndex(this.label13, 0);
-            this.panel1.Controls.SetChildIndex(this.textBox7, 0);
+            this.panel1.Controls.SetChildIndex(this.txt_Phone, 0);
             // 
             // pnl_Main
             // 
@@ -136,13 +128,11 @@
             // 
             // gb_detail
             // 
-            this.gb_detail.Controls.Add(this.searchControl1);
-            this.gb_detail.Controls.Add(this.sortControl1);
-            this.gb_detail.Controls.Add(this.comboBox5);
-            this.gb_detail.Controls.Add(this.label5);
+            this.gb_detail.Controls.Add(this.searchControl);
+            this.gb_detail.Controls.Add(this.sortControl);
             this.gb_detail.Enabled = false;
             this.gb_detail.Location = new System.Drawing.Point(11, 257);
-            this.gb_detail.Size = new System.Drawing.Size(365, 270);
+            this.gb_detail.Size = new System.Drawing.Size(365, 192);
             // 
             // nu_limit
             // 
@@ -178,7 +168,8 @@
             // 
             // btn_search
             // 
-            this.btn_search.Location = new System.Drawing.Point(274, 18);
+            this.btn_search.Location = new System.Drawing.Point(286, 18);
+            this.btn_search.Size = new System.Drawing.Size(74, 73);
             this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // Form_close
@@ -216,6 +207,8 @@
             this.dgv_Emp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Emp.Size = new System.Drawing.Size(1289, 647);
             this.dgv_Emp.TabIndex = 3;
+            this.dgv_Emp.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Emp_CellContentClick);
+            this.dgv_Emp.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Emp_CellDoubleClick);
             // 
             // dtp_HireDateFrom
             // 
@@ -310,151 +303,117 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "소속 팀";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(14, 100);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 17);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "소속 팀";
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(11, 120);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(214, 25);
-            this.comboBox5.TabIndex = 22;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(39, 25);
+            this.label6.Location = new System.Drawing.Point(45, 24);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(68, 17);
             this.label6.TabIndex = 4;
             this.label6.Text = "직원이름";
             // 
-            // textBox2
+            // txt_EmpName
             // 
-            this.textBox2.Location = new System.Drawing.Point(104, 22);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(145, 25);
-            this.textBox2.TabIndex = 5;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(104, 52);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(145, 25);
-            this.textBox3.TabIndex = 7;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(39, 55);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(68, 17);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "소속그룹";
+            this.txt_EmpName.Location = new System.Drawing.Point(110, 21);
+            this.txt_EmpName.Name = "txt_EmpName";
+            this.txt_EmpName.Size = new System.Drawing.Size(145, 25);
+            this.txt_EmpName.TabIndex = 5;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(270, 24);
+            this.label8.Location = new System.Drawing.Point(276, 23);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(53, 17);
             this.label8.TabIndex = 8;
             this.label8.Text = "입사일";
             // 
-            // dateTimePicker5
+            // dtp_HireDate
             // 
-            this.dateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker5.Location = new System.Drawing.Point(351, 19);
-            this.dateTimePicker5.Name = "dateTimePicker5";
-            this.dateTimePicker5.Size = new System.Drawing.Size(143, 25);
-            this.dateTimePicker5.TabIndex = 11;
+            this.dtp_HireDate.Enabled = false;
+            this.dtp_HireDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_HireDate.Location = new System.Drawing.Point(357, 18);
+            this.dtp_HireDate.Name = "dtp_HireDate";
+            this.dtp_HireDate.Size = new System.Drawing.Size(143, 25);
+            this.dtp_HireDate.TabIndex = 11;
             // 
-            // textBox4
+            // txt_Email
             // 
-            this.textBox4.Location = new System.Drawing.Point(591, 17);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(145, 25);
-            this.textBox4.TabIndex = 14;
+            this.txt_Email.Location = new System.Drawing.Point(597, 16);
+            this.txt_Email.Name = "txt_Email";
+            this.txt_Email.Size = new System.Drawing.Size(145, 25);
+            this.txt_Email.TabIndex = 14;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(526, 20);
+            this.label10.Location = new System.Drawing.Point(532, 19);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(53, 17);
             this.label10.TabIndex = 13;
             this.label10.Text = "이메일";
             // 
-            // textBox5
+            // txt_PostCode
             // 
-            this.textBox5.Location = new System.Drawing.Point(351, 55);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(145, 25);
-            this.textBox5.TabIndex = 16;
+            this.txt_PostCode.Location = new System.Drawing.Point(357, 54);
+            this.txt_PostCode.Name = "txt_PostCode";
+            this.txt_PostCode.Size = new System.Drawing.Size(145, 25);
+            this.txt_PostCode.TabIndex = 16;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(271, 58);
+            this.label11.Location = new System.Drawing.Point(277, 57);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(68, 17);
             this.label11.TabIndex = 15;
             this.label11.Text = "우편번호";
             // 
-            // textBox7
+            // txt_Phone
             // 
-            this.textBox7.Location = new System.Drawing.Point(591, 55);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(145, 25);
-            this.textBox7.TabIndex = 18;
+            this.txt_Phone.Location = new System.Drawing.Point(597, 54);
+            this.txt_Phone.Name = "txt_Phone";
+            this.txt_Phone.Size = new System.Drawing.Size(145, 25);
+            this.txt_Phone.TabIndex = 18;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(517, 58);
+            this.label13.Location = new System.Drawing.Point(523, 57);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(68, 17);
             this.label13.TabIndex = 17;
             this.label13.Text = "전화번호";
             // 
-            // sortControl1
+            // sortControl
             // 
-            this.sortControl1.BackColor = System.Drawing.Color.Transparent;
-            this.sortControl1.Font = new System.Drawing.Font("나눔고딕", 11.25F);
-            this.sortControl1.Location = new System.Drawing.Point(8, 164);
-            this.sortControl1.Margin = new System.Windows.Forms.Padding(4);
-            this.sortControl1.Name = "sortControl1";
-            this.sortControl1.Size = new System.Drawing.Size(327, 71);
-            this.sortControl1.TabIndex = 23;
+            this.sortControl.BackColor = System.Drawing.Color.Transparent;
+            this.sortControl.Font = new System.Drawing.Font("나눔고딕", 11.25F);
+            this.sortControl.Location = new System.Drawing.Point(12, 104);
+            this.sortControl.Margin = new System.Windows.Forms.Padding(4);
+            this.sortControl.Name = "sortControl";
+            this.sortControl.Size = new System.Drawing.Size(329, 71);
+            this.sortControl.TabIndex = 23;
             // 
-            // searchControl1
+            // searchControl
             // 
-            this.searchControl1.BackColor = System.Drawing.Color.Transparent;
-            this.searchControl1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.searchControl1.Location = new System.Drawing.Point(10, 24);
-            this.searchControl1.Margin = new System.Windows.Forms.Padding(4);
-            this.searchControl1.Name = "searchControl1";
-            this.searchControl1.Size = new System.Drawing.Size(325, 77);
-            this.searchControl1.TabIndex = 24;
+            this.searchControl.BackColor = System.Drawing.Color.Transparent;
+            this.searchControl.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.searchControl.Location = new System.Drawing.Point(12, 23);
+            this.searchControl.Margin = new System.Windows.Forms.Padding(4);
+            this.searchControl.Name = "searchControl";
+            this.searchControl.Size = new System.Drawing.Size(325, 73);
+            this.searchControl.TabIndex = 24;
             // 
             // chk_HireDate
             // 
@@ -488,7 +447,6 @@
             this.gb_Sherch.ResumeLayout(false);
             this.gb_Sherch.PerformLayout();
             this.gb_detail.ResumeLayout(false);
-            this.gb_detail.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nu_limit)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -518,22 +476,18 @@
         private System.Windows.Forms.DateTimePicker dtp_RetireDateFrom;
         private System.Windows.Forms.GroupBox gb_HireDate;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_EmpName;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txt_Phone;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txt_PostCode;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txt_Email;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DateTimePicker dateTimePicker5;
+        private System.Windows.Forms.DateTimePicker dtp_HireDate;
         private System.Windows.Forms.Label label8;
-        private SearchControl searchControl1;
-        private SortControl sortControl1;
+        private SearchControl searchControl;
+        private SortControl sortControl;
         private System.Windows.Forms.CheckBox chk_RetireDate;
         private System.Windows.Forms.CheckBox chk_HireDate;
     }

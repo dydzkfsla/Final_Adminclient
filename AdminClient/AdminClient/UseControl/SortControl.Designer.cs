@@ -40,7 +40,7 @@
             this.btn_SortPrice.Image = global::AdminClient.Properties.Resources.SortAsc_32x32;
             this.btn_SortPrice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_SortPrice.Location = new System.Drawing.Point(235, 8);
-            this.btn_SortPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_SortPrice.Margin = new System.Windows.Forms.Padding(4);
             this.btn_SortPrice.Name = "btn_SortPrice";
             this.btn_SortPrice.Size = new System.Drawing.Size(81, 58);
             this.btn_SortPrice.TabIndex = 87;
@@ -51,9 +51,12 @@
             // 
             // cbo_Sortkey
             // 
+            this.cbo_Sortkey.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbo_Sortkey.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_Sortkey.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbo_Sortkey.FormattingEnabled = true;
             this.cbo_Sortkey.Location = new System.Drawing.Point(4, 37);
-            this.cbo_Sortkey.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbo_Sortkey.Margin = new System.Windows.Forms.Padding(4);
             this.cbo_Sortkey.Name = "cbo_Sortkey";
             this.cbo_Sortkey.Size = new System.Drawing.Size(223, 25);
             this.cbo_Sortkey.TabIndex = 84;
@@ -62,7 +65,7 @@
             // 
             this.rd_descending.AutoSize = true;
             this.rd_descending.Location = new System.Drawing.Point(121, 8);
-            this.rd_descending.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rd_descending.Margin = new System.Windows.Forms.Padding(4);
             this.rd_descending.Name = "rd_descending";
             this.rd_descending.Size = new System.Drawing.Size(106, 21);
             this.rd_descending.TabIndex = 86;
@@ -74,7 +77,7 @@
             // 
             this.rd_ascending.AutoSize = true;
             this.rd_ascending.Location = new System.Drawing.Point(6, 8);
-            this.rd_ascending.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rd_ascending.Margin = new System.Windows.Forms.Padding(4);
             this.rd_ascending.Name = "rd_ascending";
             this.rd_ascending.Size = new System.Drawing.Size(98, 21);
             this.rd_ascending.TabIndex = 85;
@@ -92,7 +95,7 @@
             this.Controls.Add(this.rd_descending);
             this.Controls.Add(this.rd_ascending);
             this.Font = new System.Drawing.Font("나눔고딕", 11.25F);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SortControl";
             this.Size = new System.Drawing.Size(325, 69);
             this.ResumeLayout(false);

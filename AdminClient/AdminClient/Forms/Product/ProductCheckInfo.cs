@@ -14,5 +14,15 @@ namespace AdminClient.Forms
 		{
 			InitializeComponent();
 		}
-	}
+
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ProductCheckInfo_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

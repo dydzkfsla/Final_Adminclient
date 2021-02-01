@@ -408,9 +408,9 @@ namespace AdminClient.Forms
             this.customDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.customDataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.customDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.customDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+			this.customDataGridView1.BackgroundColor = System.Drawing.Color.White;
+			this.customDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.customDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column4,
             this.Column5,
             this.Column6,
@@ -422,104 +422,105 @@ namespace AdminClient.Forms
             this.Column12,
             this.Column13,
             this.Column14});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.customDataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.customDataGridView1.GridColor = System.Drawing.Color.Black;
-            this.customDataGridView1.IsChkVisible = true;
-            this.customDataGridView1.Location = new System.Drawing.Point(36, 3);
-            this.customDataGridView1.Name = "customDataGridView1";
-            this.customDataGridView1.RowHeadersVisible = false;
-            this.customDataGridView1.RowTemplate.Height = 23;
-            this.customDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.customDataGridView1.Size = new System.Drawing.Size(1198, 602);
-            this.customDataGridView1.TabIndex = 3;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "수주코드";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "품목코드";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "품목명";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "01/19(Tue)";
-            this.Column7.Name = "Column7";
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "01/20(Wed)";
-            this.Column8.Name = "Column8";
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "01/21(Thu)";
-            this.Column9.Name = "Column9";
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "01/22(Fri)";
-            this.Column10.Name = "Column10";
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "01/23(Sat)";
-            this.Column11.Name = "Column11";
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "01/24(Sun)";
-            this.Column12.Name = "Column12";
-            // 
-            // Column13
-            // 
-            this.Column13.HeaderText = "01/25(Mon)";
-            this.Column13.Name = "Column13";
-            // 
-            // Column14
-            // 
-            this.Column14.HeaderText = "01/26(Tue)";
-            this.Column14.Name = "Column14";
-            // 
-            // DemandPlan
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1576, 789);
-            this.Name = "DemandPlan";
-            this.Text = "DemandPlan";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.pnl_Main.ResumeLayout(false);
-            this.gb_Sherch.ResumeLayout(false);
-            this.gb_Sherch.PerformLayout();
-            this.gb_detail.ResumeLayout(false);
-            this.gb_detail.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nu_limit)).EndInit();
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Form_close)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.IndianRed;
+			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.customDataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+			this.customDataGridView1.GridColor = System.Drawing.Color.Black;
+			this.customDataGridView1.IsChkVisible = true;
+			this.customDataGridView1.IsEditVisible = false;
+			this.customDataGridView1.Location = new System.Drawing.Point(36, 3);
+			this.customDataGridView1.Name = "customDataGridView1";
+			this.customDataGridView1.RowHeadersVisible = false;
+			this.customDataGridView1.RowTemplate.Height = 23;
+			this.customDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+			this.customDataGridView1.Size = new System.Drawing.Size(1198, 602);
+			this.customDataGridView1.TabIndex = 3;
+			// 
+			// Column4
+			// 
+			this.Column4.HeaderText = "수주코드";
+			this.Column4.Name = "Column4";
+			// 
+			// Column5
+			// 
+			this.Column5.HeaderText = "품목코드";
+			this.Column5.Name = "Column5";
+			// 
+			// Column6
+			// 
+			this.Column6.HeaderText = "품목명";
+			this.Column6.Name = "Column6";
+			// 
+			// Column7
+			// 
+			this.Column7.HeaderText = "01/19(Tue)";
+			this.Column7.Name = "Column7";
+			// 
+			// Column8
+			// 
+			this.Column8.HeaderText = "01/20(Wed)";
+			this.Column8.Name = "Column8";
+			// 
+			// Column9
+			// 
+			this.Column9.HeaderText = "01/21(Thu)";
+			this.Column9.Name = "Column9";
+			// 
+			// Column10
+			// 
+			this.Column10.HeaderText = "01/22(Fri)";
+			this.Column10.Name = "Column10";
+			// 
+			// Column11
+			// 
+			this.Column11.HeaderText = "01/23(Sat)";
+			this.Column11.Name = "Column11";
+			// 
+			// Column12
+			// 
+			this.Column12.HeaderText = "01/24(Sun)";
+			this.Column12.Name = "Column12";
+			// 
+			// Column13
+			// 
+			this.Column13.HeaderText = "01/25(Mon)";
+			this.Column13.Name = "Column13";
+			// 
+			// Column14
+			// 
+			this.Column14.HeaderText = "01/26(Tue)";
+			this.Column14.Name = "Column14";
+			// 
+			// DemandPlan
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.ClientSize = new System.Drawing.Size(1576, 789);
+			this.Name = "DemandPlan";
+			this.Text = "DemandPlan";
+			this.panel1.ResumeLayout(false);
+			this.panel1.PerformLayout();
+			this.pnl_Main.ResumeLayout(false);
+			this.gb_Sherch.ResumeLayout(false);
+			this.gb_Sherch.PerformLayout();
+			this.gb_detail.ResumeLayout(false);
+			this.gb_detail.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.nu_limit)).EndInit();
+			this.splitContainer1.Panel1.ResumeLayout(false);
+			this.splitContainer1.Panel2.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+			this.splitContainer1.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.Form_close)).EndInit();
+			this.groupBox1.ResumeLayout(false);
+			this.groupBox1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.customDataGridView1)).EndInit();
+			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
