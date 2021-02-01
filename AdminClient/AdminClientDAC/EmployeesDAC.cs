@@ -146,6 +146,9 @@ namespace AdminClientDAC
                 sql.Parameters.AddWithValue("@HireDate", employees.Emp_HireDate.ToString("yyyy-MM-dd"));
                 sql.Parameters.AddWithValue("@RetireDate", employees.Emp_RetireDate.Year == 1 ? DBNull.Value : (object)employees.Emp_RetireDate.ToString("yyyy-MM-dd"));
                 sql.Parameters.AddWithValue("@Fst_Writer", Global.employees.Emp_Code);
+                sql.Parameters.AddWithValue("@Emp_Addbutton", employees.Emp_Addbutton);
+                sql.Parameters.AddWithValue("@Emp_Updatebutton", employees.Emp_Updatebutton);
+                sql.Parameters.AddWithValue("@Emp_Deletebutton", employees.Emp_Deletebutton);
 
                 sql.ExecuteNonQuery();
 
@@ -194,6 +197,9 @@ namespace AdminClientDAC
                 sql.Parameters.AddWithValue("@HireDate", employees.Emp_HireDate.ToString("yyyy-MM-dd"));
                 sql.Parameters.AddWithValue("@RetireDate", employees.Emp_RetireDate.Year == 1 ? DBNull.Value : (object)employees.Emp_RetireDate.ToString("yyyy-MM-dd"));
                 sql.Parameters.AddWithValue("@Fst_Writer", Global.employees.Emp_Code);
+                sql.Parameters.AddWithValue("@Emp_Addbutton", employees.Emp_Addbutton);
+                sql.Parameters.AddWithValue("@Emp_Updatebutton", employees.Emp_Updatebutton);
+                sql.Parameters.AddWithValue("@Emp_Deletebutton", employees.Emp_Deletebutton);
 
                 sql.ExecuteNonQuery();
                 Info.WriteError($"실행자:{Global.employees.Emp_Name} 직원 정보 수정 : | UpdateEmployees " + employees.Emp_Code);

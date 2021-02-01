@@ -88,6 +88,7 @@
             this.Controls.Add(this.lbl_Title);
             this.Controls.Add(this.pnl_Main);
             this.Name = "EmpFormTemp";
+            this.Load += new System.EventHandler(this.EmpFormTemp_Load);
             this.Controls.SetChildIndex(this.Form_close, 0);
             this.Controls.SetChildIndex(this.TitleColor, 0);
             this.Controls.SetChildIndex(this.pnl_Main, 0);

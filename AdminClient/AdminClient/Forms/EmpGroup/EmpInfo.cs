@@ -183,5 +183,19 @@ namespace AdminClient.Forms
                 }
             }
         }
+
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+            EmpPopUp empPop = new EmpPopUp(Team);
+            DialogResult result = empPop.ShowDialog();
+            if (result == DialogResult.Yes)
+            {
+                var temp = (List<EmployeesTeamVO>)dgv_Emp.DataSource;
+                EmpTeam.AddRange(empPop.Employees);
+                temp.Add(empPop.Employees.First());
+                dgv_Emp.DataSource = null;
+                dgv_Emp.DataSource = temp;
+            }
+        }
     }
 }

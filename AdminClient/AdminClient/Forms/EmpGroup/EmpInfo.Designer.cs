@@ -72,6 +72,7 @@
             // btn_add
             // 
             this.btn_add.Location = new System.Drawing.Point(1518, 23);
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // btn_Xls
             // 

@@ -53,7 +53,7 @@ namespace AdminClientDAC
         #endregion
 
 
-        #region View_EmpForm
+        #region View_Favorites
         public List<View_FavoritesVO> View_Favorites(string Emp_Code)
         {
             try
@@ -70,6 +70,32 @@ namespace AdminClientDAC
                 using (SqlDataReader reader = sql.ExecuteReader())
                 {
                     return Helper.DataReaderMapToList<View_FavoritesVO>(reader);
+                }
+            }
+            catch (Exception err)
+            {
+                Debug.WriteLine(err.Message);
+                return null;
+            }
+        }
+        #endregion
+
+
+        #region View_EmpForm
+        public List<View_ProductNameAndCheckVO> View_ProductNameAndCheck(string Code)
+        {
+            try
+            {
+                SqlCommand sql = new SqlCommand
+                {
+                    Connection = conn,
+                    CommandText = $"select {Code} Prod_Code, Prod_Name, Check_Type, Check_System, Check_Point, Check_Item, Check_Standard from View_ProductNameAndCheck"
+                };
+
+
+                using (SqlDataReader reader = sql.ExecuteReader())
+                {
+                    return Helper.DataReaderMapToList<View_ProductNameAndCheckVO>(reader);
                 }
             }
             catch (Exception err)
