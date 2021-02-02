@@ -171,7 +171,6 @@ namespace AdminClient.Forms
                     dgv_CommList.DataSource = null;
                     dgv_CommList.DataSource = commList;
 
-                    btn_Clear.PerformClick();
                 }
                 else
                     MessageBox.Show("추가중 오류가 발생했습니다.");
@@ -213,7 +212,6 @@ namespace AdminClient.Forms
                     dgv_CommList.DataSource = null;
                     dgv_CommList.DataSource = commList;
 
-                    btn_Clear.PerformClick();
                 }
                 else
                     MessageBox.Show("삭제중 오류가 발생했습니다.");

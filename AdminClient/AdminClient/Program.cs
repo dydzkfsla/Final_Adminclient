@@ -20,7 +20,7 @@ namespace AdminClient
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new EmpInfo());
+            Application.Run(new MDI.MDI());
         }
     }
 }

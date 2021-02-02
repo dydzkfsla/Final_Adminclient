@@ -50,8 +50,8 @@ namespace AdminClient.MDI
                         Type type = Type.GetType("AdminClient.Forms." + vo.Form_Name);
                         Form instance = Activator.CreateInstance(type) as Form;
                         instance.Name = vo.Form_Name + vo.Grp_Name;
-                        this.OpenCreateForm(instance, type, true);
                         instance.Text = vo.Form_Menu;
+                        this.OpenCreateForm(instance, type, true);
                     });
                 }
             }

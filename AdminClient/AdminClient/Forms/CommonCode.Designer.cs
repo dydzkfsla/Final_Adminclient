@@ -44,8 +44,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txt_Pcode = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.btn_Clear = new System.Windows.Forms.Button();
-            this.btn_Delete = new System.Windows.Forms.Button();
             this.searchControl1 = new AdminClient.SearchControl();
             this.panel1.SuspendLayout();
             this.pnl_Main.SuspendLayout();
@@ -62,20 +60,15 @@
             // 
             // btn_add
             // 
-            this.btn_add.Location = new System.Drawing.Point(665, 25);
+            this.btn_add.Location = new System.Drawing.Point(1200, 25);
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // btn_Xls
             // 
-            this.btn_Xls.Location = new System.Drawing.Point(748, 25);
-            // 
-            // btn_Update
-            // 
+            this.btn_Xls.Location = new System.Drawing.Point(1283, 25);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btn_Delete);
-            this.panel1.Controls.Add(this.btn_Clear);
             this.panel1.Controls.Add(this.txt_Pcode);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.txt_Cate);
@@ -85,7 +78,7 @@
             this.panel1.Controls.Add(this.txt_Code);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(11, 14);
-            this.panel1.Size = new System.Drawing.Size(840, 111);
+            this.panel1.Size = new System.Drawing.Size(1375, 111);
             this.panel1.Controls.SetChildIndex(this.btn_add, 0);
             this.panel1.Controls.SetChildIndex(this.btn_Xls, 0);
             this.panel1.Controls.SetChildIndex(this.label3, 0);
@@ -96,8 +89,6 @@
             this.panel1.Controls.SetChildIndex(this.txt_Cate, 0);
             this.panel1.Controls.SetChildIndex(this.label6, 0);
             this.panel1.Controls.SetChildIndex(this.txt_Pcode, 0);
-            this.panel1.Controls.SetChildIndex(this.btn_Clear, 0);
-            this.panel1.Controls.SetChildIndex(this.btn_Delete, 0);
             // 
             // lbl_Title
             // 
@@ -107,7 +98,7 @@
             // pnl_Main
             // 
             this.pnl_Main.Margin = new System.Windows.Forms.Padding(1);
-            this.pnl_Main.Size = new System.Drawing.Size(856, 865);
+            this.pnl_Main.Size = new System.Drawing.Size(1391, 865);
             // 
             // gb_Sherch
             // 
@@ -128,7 +119,7 @@
             this.gb_detail.Controls.Add(this.rd_ascending);
             this.gb_detail.Controls.Add(this.comboBox3);
             this.gb_detail.Location = new System.Drawing.Point(10, 110);
-            this.gb_detail.Size = new System.Drawing.Size(348, 478);
+            this.gb_detail.Size = new System.Drawing.Size(348, 193);
             // 
             // nu_limit
             // 
@@ -145,8 +136,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgv_CommList);
-            this.splitContainer1.Size = new System.Drawing.Size(854, 733);
-            this.splitContainer1.SplitterDistance = 360;
+            this.splitContainer1.Size = new System.Drawing.Size(1389, 733);
+            this.splitContainer1.SplitterDistance = 371;
             // 
             // btn_folding
             // 
@@ -156,7 +147,7 @@
             // 
             this.splitter1.Size = new System.Drawing.Size(34, 733);
             // 
-            // button1
+            // btn_search
             // 
             this.btn_search.Location = new System.Drawing.Point(244, 18);
             this.btn_search.Size = new System.Drawing.Size(85, 74);
@@ -164,11 +155,11 @@
             // 
             // Form_close
             // 
-            this.Form_close.Location = new System.Drawing.Point(824, 9);
+            this.Form_close.Location = new System.Drawing.Point(1359, 9);
             // 
             // TitleColor
             // 
-            this.TitleColor.Size = new System.Drawing.Size(945, 7);
+            this.TitleColor.Size = new System.Drawing.Size(1480, 7);
             // 
             // dgv_CommList
             // 
@@ -188,11 +179,12 @@
             this.dgv_CommList.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_CommList.GridColor = System.Drawing.Color.Black;
             this.dgv_CommList.IsChkVisible = false;
+            this.dgv_CommList.IsEditVisible = false;
             this.dgv_CommList.Location = new System.Drawing.Point(36, 0);
             this.dgv_CommList.Name = "dgv_CommList";
             this.dgv_CommList.RowHeadersVisible = false;
             this.dgv_CommList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_CommList.Size = new System.Drawing.Size(451, 730);
+            this.dgv_CommList.Size = new System.Drawing.Size(975, 730);
             this.dgv_CommList.TabIndex = 3;
             this.dgv_CommList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CommList_CellClick);
             // 
@@ -217,7 +209,7 @@
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(9, 448);
+            this.comboBox3.Location = new System.Drawing.Point(19, 148);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(201, 25);
             this.comboBox3.TabIndex = 7;
@@ -225,7 +217,7 @@
             // rd_ascending
             // 
             this.rd_ascending.AutoSize = true;
-            this.rd_ascending.Location = new System.Drawing.Point(16, 409);
+            this.rd_ascending.Location = new System.Drawing.Point(26, 109);
             this.rd_ascending.Name = "rd_ascending";
             this.rd_ascending.Size = new System.Drawing.Size(98, 21);
             this.rd_ascending.TabIndex = 8;
@@ -236,7 +228,7 @@
             // rd_descending
             // 
             this.rd_descending.AutoSize = true;
-            this.rd_descending.Location = new System.Drawing.Point(114, 409);
+            this.rd_descending.Location = new System.Drawing.Point(124, 109);
             this.rd_descending.Name = "rd_descending";
             this.rd_descending.Size = new System.Drawing.Size(106, 21);
             this.rd_descending.TabIndex = 9;
@@ -249,7 +241,7 @@
             this.button2.BackColor = System.Drawing.Color.White;
             this.button2.Image = global::AdminClient.Properties.Resources.SortAsc_32x32;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(241, 409);
+            this.button2.Location = new System.Drawing.Point(251, 109);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(84, 64);
             this.button2.TabIndex = 10;
@@ -328,28 +320,9 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "부모코드";
             // 
-            // btn_Clear
-            // 
-            this.btn_Clear.Location = new System.Drawing.Point(389, 55);
-            this.btn_Clear.Name = "btn_Clear";
-            this.btn_Clear.Size = new System.Drawing.Size(75, 23);
-            this.btn_Clear.TabIndex = 12;
-            this.btn_Clear.Text = " 초기화";
-            this.btn_Clear.UseVisualStyleBackColor = true;
-            this.btn_Clear.Click += new System.EventHandler(this.btn_Clear_Click);
-            // 
-            // btn_Delete
-            // 
-            this.btn_Delete.Location = new System.Drawing.Point(482, 53);
-            this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Size = new System.Drawing.Size(75, 23);
-            this.btn_Delete.TabIndex = 13;
-            this.btn_Delete.Text = "삭제";
-            this.btn_Delete.UseVisualStyleBackColor = true;
-            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
-            // 
             // searchControl1
             // 
+            this.searchControl1.BackColor = System.Drawing.Color.Transparent;
             this.searchControl1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.searchControl1.Location = new System.Drawing.Point(13, 24);
             this.searchControl1.Margin = new System.Windows.Forms.Padding(4);
@@ -360,7 +333,7 @@
             // CommandCode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
-            this.ClientSize = new System.Drawing.Size(866, 964);
+            this.ClientSize = new System.Drawing.Size(1401, 964);
             this.Name = "CommandCode";
             this.Load += new System.EventHandler(this.CommandCode_Load);
             this.panel1.ResumeLayout(false);
@@ -399,8 +372,6 @@
         private System.Windows.Forms.TextBox txt_Name;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txt_Code;
-        private System.Windows.Forms.Button btn_Clear;
-        private System.Windows.Forms.Button btn_Delete;
         private SearchControl searchControl1;
     }
 }
