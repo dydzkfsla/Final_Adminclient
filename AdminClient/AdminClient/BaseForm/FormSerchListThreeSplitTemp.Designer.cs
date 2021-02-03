@@ -67,6 +67,10 @@
             // 
             this.panel1.Size = new System.Drawing.Size(1249, 64);
             // 
+            // lbl_Title
+            // 
+            this.lbl_Title.BackColor = System.Drawing.Color.Transparent;
+            // 
             // pnl_Main
             // 
             this.pnl_Main.Location = new System.Drawing.Point(0, 73);
@@ -103,11 +107,11 @@
             this.splitContainer3.SplitterWidth = 6;
             this.splitContainer3.TabIndex = 0;
             // 
-            // FormBase5
+            // FormSerchListThreeSplitTemp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.ClientSize = new System.Drawing.Size(1278, 864);
-            this.Name = "FormBase5";
+            this.Name = "FormSerchListThreeSplitTemp";
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);

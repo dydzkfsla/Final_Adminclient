@@ -26,10 +26,10 @@ namespace AdminClient
             return list;
         }
 
-        internal bool UpdateCommon(string code, string cate, string name, string pcode)
+        internal bool UpdateCommon(CommonVO vo)
         {
             CommonDAC dac = new CommonDAC();
-            bool result = dac.UpdateCommon(code, cate, name, pcode);
+            bool result = dac.UpdateCommon(vo);
             dac.Dispose();
             return result;
         }

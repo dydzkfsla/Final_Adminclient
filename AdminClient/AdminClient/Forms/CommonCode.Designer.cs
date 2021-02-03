@@ -28,14 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_CommList = new AdminClient.CustomDataGridView();
             this.cbo_catagory = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.rd_ascending = new System.Windows.Forms.RadioButton();
-            this.rd_descending = new System.Windows.Forms.RadioButton();
-            this.button2 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_Code = new System.Windows.Forms.TextBox();
             this.txt_Name = new System.Windows.Forms.TextBox();
@@ -44,7 +40,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txt_Pcode = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.searchControl1 = new AdminClient.SearchControl();
+            this.schCtrl = new AdminClient.SearchControl();
+            this.sortCtrl = new AdminClient.SortControl();
             this.panel1.SuspendLayout();
             this.pnl_Main.SuspendLayout();
             this.gb_Sherch.SuspendLayout();
@@ -60,12 +57,12 @@
             // 
             // btn_add
             // 
-            this.btn_add.Location = new System.Drawing.Point(1200, 25);
+            this.btn_add.Location = new System.Drawing.Point(1472, 30);
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // btn_Xls
             // 
-            this.btn_Xls.Location = new System.Drawing.Point(1283, 25);
+            this.btn_Xls.Location = new System.Drawing.Point(1555, 30);
             // 
             // panel1
             // 
@@ -78,7 +75,7 @@
             this.panel1.Controls.Add(this.txt_Code);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(11, 14);
-            this.panel1.Size = new System.Drawing.Size(1375, 111);
+            this.panel1.Size = new System.Drawing.Size(1653, 111);
             this.panel1.Controls.SetChildIndex(this.btn_add, 0);
             this.panel1.Controls.SetChildIndex(this.btn_Xls, 0);
             this.panel1.Controls.SetChildIndex(this.label3, 0);
@@ -98,7 +95,7 @@
             // pnl_Main
             // 
             this.pnl_Main.Margin = new System.Windows.Forms.Padding(1);
-            this.pnl_Main.Size = new System.Drawing.Size(1391, 865);
+            this.pnl_Main.Size = new System.Drawing.Size(1666, 865);
             // 
             // gb_Sherch
             // 
@@ -113,13 +110,10 @@
             // 
             // gb_detail
             // 
-            this.gb_detail.Controls.Add(this.searchControl1);
-            this.gb_detail.Controls.Add(this.button2);
-            this.gb_detail.Controls.Add(this.rd_descending);
-            this.gb_detail.Controls.Add(this.rd_ascending);
-            this.gb_detail.Controls.Add(this.comboBox3);
+            this.gb_detail.Controls.Add(this.sortCtrl);
+            this.gb_detail.Controls.Add(this.schCtrl);
             this.gb_detail.Location = new System.Drawing.Point(10, 110);
-            this.gb_detail.Size = new System.Drawing.Size(348, 193);
+            this.gb_detail.Size = new System.Drawing.Size(348, 478);
             // 
             // nu_limit
             // 
@@ -136,8 +130,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgv_CommList);
-            this.splitContainer1.Size = new System.Drawing.Size(1389, 733);
-            this.splitContainer1.SplitterDistance = 371;
+            this.splitContainer1.Size = new System.Drawing.Size(1324, 733);
+            this.splitContainer1.SplitterDistance = 364;
             // 
             // btn_folding
             // 
@@ -151,15 +145,15 @@
             // 
             this.btn_search.Location = new System.Drawing.Point(244, 18);
             this.btn_search.Size = new System.Drawing.Size(85, 74);
-            this.btn_search.Click += new System.EventHandler(this.button1_Click);
+            this.btn_search.Click += new System.EventHandler(this.btm_searchClick);
             // 
             // Form_close
             // 
-            this.Form_close.Location = new System.Drawing.Point(1359, 9);
+            this.Form_close.Location = new System.Drawing.Point(1634, 9);
             // 
             // TitleColor
             // 
-            this.TitleColor.Size = new System.Drawing.Size(1480, 7);
+            this.TitleColor.Size = new System.Drawing.Size(1755, 7);
             // 
             // dgv_CommList
             // 
@@ -169,24 +163,25 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_CommList.BackgroundColor = System.Drawing.Color.White;
             this.dgv_CommList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_CommList.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_CommList.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_CommList.GridColor = System.Drawing.Color.Black;
             this.dgv_CommList.IsChkVisible = false;
-            this.dgv_CommList.IsEditVisible = false;
-            this.dgv_CommList.Location = new System.Drawing.Point(36, 0);
+            this.dgv_CommList.IsEditVisible = true;
+            this.dgv_CommList.Location = new System.Drawing.Point(36, 20);
             this.dgv_CommList.Name = "dgv_CommList";
             this.dgv_CommList.RowHeadersVisible = false;
             this.dgv_CommList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_CommList.Size = new System.Drawing.Size(975, 730);
+            this.dgv_CommList.Size = new System.Drawing.Size(917, 727);
             this.dgv_CommList.TabIndex = 3;
             this.dgv_CommList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CommList_CellClick);
+            this.dgv_CommList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CommList_CellContentClick);
             // 
             // cbo_catagory
             // 
@@ -205,49 +200,6 @@
             this.label1.Size = new System.Drawing.Size(64, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "카테고리";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(19, 148);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(201, 25);
-            this.comboBox3.TabIndex = 7;
-            // 
-            // rd_ascending
-            // 
-            this.rd_ascending.AutoSize = true;
-            this.rd_ascending.Location = new System.Drawing.Point(26, 109);
-            this.rd_ascending.Name = "rd_ascending";
-            this.rd_ascending.Size = new System.Drawing.Size(98, 21);
-            this.rd_ascending.TabIndex = 8;
-            this.rd_ascending.TabStop = true;
-            this.rd_ascending.Text = "Ascending";
-            this.rd_ascending.UseVisualStyleBackColor = true;
-            // 
-            // rd_descending
-            // 
-            this.rd_descending.AutoSize = true;
-            this.rd_descending.Location = new System.Drawing.Point(124, 109);
-            this.rd_descending.Name = "rd_descending";
-            this.rd_descending.Size = new System.Drawing.Size(106, 21);
-            this.rd_descending.TabIndex = 9;
-            this.rd_descending.TabStop = true;
-            this.rd_descending.Text = "Descending";
-            this.rd_descending.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.Image = global::AdminClient.Properties.Resources.SortAsc_32x32;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(251, 109);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(84, 64);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "정렬";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = false;
             // 
             // label3
             // 
@@ -320,20 +272,30 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "부모코드";
             // 
-            // searchControl1
+            // schCtrl
             // 
-            this.searchControl1.BackColor = System.Drawing.Color.Transparent;
-            this.searchControl1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.searchControl1.Location = new System.Drawing.Point(13, 24);
-            this.searchControl1.Margin = new System.Windows.Forms.Padding(4);
-            this.searchControl1.Name = "searchControl1";
-            this.searchControl1.Size = new System.Drawing.Size(322, 78);
-            this.searchControl1.TabIndex = 11;
+            this.schCtrl.BackColor = System.Drawing.Color.Transparent;
+            this.schCtrl.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.schCtrl.Location = new System.Drawing.Point(13, 24);
+            this.schCtrl.Margin = new System.Windows.Forms.Padding(4);
+            this.schCtrl.Name = "schCtrl";
+            this.schCtrl.Size = new System.Drawing.Size(322, 78);
+            this.schCtrl.TabIndex = 11;
+            // 
+            // sortCtrl
+            // 
+            this.sortCtrl.BackColor = System.Drawing.Color.Transparent;
+            this.sortCtrl.Font = new System.Drawing.Font("나눔고딕", 11.25F);
+            this.sortCtrl.Location = new System.Drawing.Point(13, 110);
+            this.sortCtrl.Margin = new System.Windows.Forms.Padding(4);
+            this.sortCtrl.Name = "sortCtrl";
+            this.sortCtrl.Size = new System.Drawing.Size(325, 69);
+            this.sortCtrl.TabIndex = 12;
             // 
             // CommandCode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
-            this.ClientSize = new System.Drawing.Size(1401, 964);
+            this.ClientSize = new System.Drawing.Size(1676, 964);
             this.Name = "CommandCode";
             this.Load += new System.EventHandler(this.CommandCode_Load);
             this.panel1.ResumeLayout(false);
@@ -342,7 +304,6 @@
             this.gb_Sherch.ResumeLayout(false);
             this.gb_Sherch.PerformLayout();
             this.gb_detail.ResumeLayout(false);
-            this.gb_detail.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nu_limit)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -360,10 +321,6 @@
         private CustomDataGridView dgv_CommList;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbo_catagory;
-        private System.Windows.Forms.RadioButton rd_descending;
-        private System.Windows.Forms.RadioButton rd_ascending;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_Pcode;
         private System.Windows.Forms.Label label6;
@@ -372,6 +329,7 @@
         private System.Windows.Forms.TextBox txt_Name;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txt_Code;
-        private SearchControl searchControl1;
+        private SearchControl schCtrl;
+        private SortControl sortCtrl;
     }
 }

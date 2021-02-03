@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_UpItemSch = new System.Windows.Forms.Button();
             this.btn_ProdSearch = new System.Windows.Forms.Button();
             this.dtp_End = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
@@ -52,12 +52,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txt_ProdName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btn_Delete = new System.Windows.Forms.Button();
+            this.btn_Update = new System.Windows.Forms.Button();
             this.btn_Add = new System.Windows.Forms.Button();
             this.txt_Note = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.lbl_code = new System.Windows.Forms.Label();
             this.pnl_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).BeginInit();
             this.panel1.SuspendLayout();
@@ -65,8 +66,8 @@
             // 
             // pnl_Main
             // 
-            this.pnl_Main.Controls.Add(this.button6);
-            this.pnl_Main.Controls.Add(this.button5);
+            this.pnl_Main.Controls.Add(this.btn_Delete);
+            this.pnl_Main.Controls.Add(this.btn_Update);
             this.pnl_Main.Controls.Add(this.btn_Add);
             this.pnl_Main.Controls.Add(this.txt_Note);
             this.pnl_Main.Controls.Add(this.label13);
@@ -84,7 +85,8 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.lbl_code);
+            this.panel1.Controls.Add(this.btn_UpItemSch);
             this.panel1.Controls.Add(this.btn_ProdSearch);
             this.panel1.Controls.Add(this.dtp_End);
             this.panel1.Controls.Add(this.label11);
@@ -112,14 +114,15 @@
             this.panel1.Size = new System.Drawing.Size(637, 129);
             this.panel1.TabIndex = 35;
             // 
-            // button2
+            // btn_UpItemSch
             // 
-            this.button2.Location = new System.Drawing.Point(425, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(80, 28);
-            this.button2.TabIndex = 50;
-            this.button2.Text = "상위 품목검색";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_UpItemSch.Location = new System.Drawing.Point(323, 4);
+            this.btn_UpItemSch.Name = "btn_UpItemSch";
+            this.btn_UpItemSch.Size = new System.Drawing.Size(124, 28);
+            this.btn_UpItemSch.TabIndex = 50;
+            this.btn_UpItemSch.Text = "상위 품목 재검색";
+            this.btn_UpItemSch.UseVisualStyleBackColor = true;
+            this.btn_UpItemSch.Click += new System.EventHandler(this.btn_UpItemSch_Click);
             // 
             // btn_ProdSearch
             // 
@@ -360,23 +363,25 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "품목";
             // 
-            // button6
+            // btn_Delete
             // 
-            this.button6.Location = new System.Drawing.Point(183, 344);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(74, 53);
-            this.button6.TabIndex = 53;
-            this.button6.Text = "삭제";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btn_Delete.Location = new System.Drawing.Point(183, 344);
+            this.btn_Delete.Name = "btn_Delete";
+            this.btn_Delete.Size = new System.Drawing.Size(74, 53);
+            this.btn_Delete.TabIndex = 53;
+            this.btn_Delete.Text = "삭제";
+            this.btn_Delete.UseVisualStyleBackColor = true;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
-            // button5
+            // btn_Update
             // 
-            this.button5.Location = new System.Drawing.Point(110, 344);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(67, 53);
-            this.button5.TabIndex = 52;
-            this.button5.Text = "수정";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btn_Update.Location = new System.Drawing.Point(110, 344);
+            this.btn_Update.Name = "btn_Update";
+            this.btn_Update.Size = new System.Drawing.Size(67, 53);
+            this.btn_Update.TabIndex = 52;
+            this.btn_Update.Text = "수정";
+            this.btn_Update.UseVisualStyleBackColor = true;
+            this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
             // 
             // btn_Add
             // 
@@ -420,6 +425,14 @@
             this.label14.TabIndex = 49;
             this.label14.Text = "◆";
             // 
+            // lbl_code
+            // 
+            this.lbl_code.AutoSize = true;
+            this.lbl_code.Location = new System.Drawing.Point(462, 10);
+            this.lbl_code.Name = "lbl_code";
+            this.lbl_code.Size = new System.Drawing.Size(0, 17);
+            this.lbl_code.TabIndex = 7;
+            // 
             // BOMPopUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
@@ -460,13 +473,14 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_ProdName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btn_Delete;
+        private System.Windows.Forms.Button btn_Update;
         private System.Windows.Forms.Button btn_Add;
         private System.Windows.Forms.TextBox txt_Note;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_UpItemSch;
         private System.Windows.Forms.Button btn_ProdSearch;
+        private System.Windows.Forms.Label lbl_code;
     }
 }
