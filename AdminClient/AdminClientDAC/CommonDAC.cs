@@ -55,12 +55,13 @@ namespace AdminClientDAC
                 {
                     cmd.Connection = conn;
                     cmd.CommandText = @"insert into Common(Common_Code, Common_Name, Common_Category, Common_Pcode, Fst_Writer, Fst_WriteDate) 
-                                                                                        values(@code, @name, @cate, @pcode, 'a', getdate());";
+                                                                                        values(@code, @name, @cate, @pcode, @empcode, getdate());";
 
                     cmd.Parameters.AddWithValue("@code", vo.Common_Code);
                     cmd.Parameters.AddWithValue("@name", vo.Common_Name);
                     cmd.Parameters.AddWithValue("@cate", vo.Common_Category);
                     cmd.Parameters.AddWithValue("@pcode", string.IsNullOrEmpty(vo.Common_Pcode)? DBNull.Value : (object)vo.Common_Pcode);
+                    cmd.Parameters.AddWithValue("@empcode", Global.employees.Emp_Code);
 
                     int cnt = cmd.ExecuteNonQuery();
 
@@ -104,7 +105,7 @@ namespace AdminClientDAC
             }
         }
 
-        public bool UpdateCommon(string code, string cate, string name, string pcode) //Lst_Writer, Lst_WriteDate 로그인완료되면 추가
+        public bool UpdateCommon(CommonVO vo) //Lst_Writer, Lst_WriteDate 로그인완료되면 추가
         {
             try
             {
@@ -112,13 +113,14 @@ namespace AdminClientDAC
                 {
                     cmd.Connection = conn;
                     cmd.CommandText = @"update Common 
-                                                                    set Common_Name = @name, Common_Category = @cate, Common_Pcode = @pcode 
+                                                                    set Common_Name = @name, Common_Category = @cate, Common_Pcode = @pcode , Lst_Writer = @empcode, Lst_WriteDate = getdate()
                                                                     where Common_Code = @code";
 
-                    cmd.Parameters.AddWithValue("@name", name);
-                    cmd.Parameters.AddWithValue("@cate", cate);
-                    cmd.Parameters.AddWithValue("@pcode", string.IsNullOrEmpty(pcode) ? DBNull.Value : (object)pcode);
-                    cmd.Parameters.AddWithValue("@code", code);
+                    cmd.Parameters.AddWithValue("@name", vo.Common_Name);
+                    cmd.Parameters.AddWithValue("@cate", vo.Common_Category);
+                    cmd.Parameters.AddWithValue("@pcode", string.IsNullOrEmpty(vo.Common_Pcode) ? DBNull.Value : (object)vo.Common_Pcode);
+                    cmd.Parameters.AddWithValue("@code", vo.Common_Code);
+                    cmd.Parameters.AddWithValue("@empcode", Global.employees.Emp_Code);
 
                     int cnt = cmd.ExecuteNonQuery();
 

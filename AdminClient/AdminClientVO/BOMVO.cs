@@ -10,8 +10,10 @@ namespace AdminClientVO
     {
         public int BOM_Code { get; set; }
         public string BOM_ProdCode { get; set; }
+        public string childName { get; set; }
         public decimal BOM_Count { get; set; }
         public string BOM_P_ProdCode { get; set; }
+        public string parentName { get; set; }
         public DateTime BOM_StartDate { get; set; }
         public DateTime BOM_EndDate { get; set; }
         public string BOM_State { get; set; }
@@ -24,8 +26,6 @@ namespace AdminClientVO
         public string Prod_Code { get; set; }
         public string Prod_Name { get; set; }
     }
-
-    //child.Info, child.Common_Name, child.Prod_Code, child.Prod_Name, child.BOM_P_ProdCode, pd.Prod_Name, child.BOM_Count, child.level, child.sortOrder
 
     public class ForwardBOM
     {
@@ -43,6 +43,23 @@ namespace AdminClientVO
         public DateTime BOM_EndDate { get; set; }
         public string BOM_State { get; set; }
         public string BOM_AutoDecrease { get; set; }
+        public string BOM_Note { get; set; }
+    }
+
+    public class ReverseBOM
+    {
+        public int BOM_Code { get; set; }
+        public string childCode { get; set; }
+        public string childName { get; set; }
+        public string parentCode { get; set; }
+        public string parentName { get; set; }
+        public decimal BOM_Count { get; set; }
+        public DateTime BOM_StartDate { get; set; }
+        public DateTime BOM_EndDate { get; set; }
+        public string BOM_State { get; set; }
+        public string BOM_AutoDecrease { get; set; }
+        public string BOM_Note { get; set; }
+
     }
 
     public class BOMInfo

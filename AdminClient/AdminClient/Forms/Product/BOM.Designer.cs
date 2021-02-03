@@ -76,6 +76,7 @@
             // btn_add
             // 
             this.btn_add.Location = new System.Drawing.Point(1461, 9);
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // pnl_Main
             // 
@@ -115,13 +116,14 @@
             this.dgv_bom.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_bom.GridColor = System.Drawing.Color.Black;
             this.dgv_bom.IsChkVisible = false;
-            this.dgv_bom.IsEditVisible = false;
+            this.dgv_bom.IsEditVisible = true;
             this.dgv_bom.Location = new System.Drawing.Point(10, 87);
             this.dgv_bom.Name = "dgv_bom";
             this.dgv_bom.RowHeadersVisible = false;
             this.dgv_bom.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_bom.Size = new System.Drawing.Size(1625, 856);
             this.dgv_bom.TabIndex = 6;
+            this.dgv_bom.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_bom_CellContentClick);
             // 
             // label1
             // 
@@ -207,12 +209,17 @@
             // 
             // btn_Search
             // 
-            this.btn_Search.Location = new System.Drawing.Point(764, 8);
+            this.btn_Search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Search.BackColor = System.Drawing.Color.White;
+            this.btn_Search.Image = global::AdminClient.Properties.Resources.Find_32x32;
+            this.btn_Search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Search.Location = new System.Drawing.Point(1378, 9);
             this.btn_Search.Name = "btn_Search";
             this.btn_Search.Size = new System.Drawing.Size(80, 47);
             this.btn_Search.TabIndex = 15;
             this.btn_Search.Text = "조회";
-            this.btn_Search.UseVisualStyleBackColor = true;
+            this.btn_Search.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Search.UseVisualStyleBackColor = false;
             this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
             // 
             // BOM
