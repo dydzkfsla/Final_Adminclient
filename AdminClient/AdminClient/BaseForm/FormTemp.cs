@@ -105,7 +105,33 @@ namespace AdminClient.BaseForm
 
         private void FormTemp_Load(object sender, EventArgs e)
         {
-            foreach(var itme in this.Controls);
+            SerchButton(this.Controls);
+        }
+
+        private void SerchButton(Control.ControlCollection controls)
+        {
+            foreach(Control control in controls)
+            {
+                if(control is Button)
+                {
+                    if (control.Name.ToLower().Contains("add"))
+                    {
+                        ((Button)control).Enabled = Global.Global.employees.Emp_Addbutton;
+                    }
+                    if (control.Name.ToLower().Contains("update"))
+                    {
+                        ((Button)control).Enabled = Global.Global.employees.Emp_Updatebutton;
+                    }
+                    if (control.Name.ToLower().Contains("delete"))
+                    {
+                        ((Button)control).Enabled = Global.Global.employees.Emp_Deletebutton;
+                    }
+                }
+                if(control.Controls.Count > 0)
+                {
+                    SerchButton(control.Controls);
+                }
+            }
         }
     }
 }

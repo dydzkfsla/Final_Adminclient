@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_EmpName = new System.Windows.Forms.TextBox();
             this.txt_EmpEmail = new System.Windows.Forms.TextBox();
@@ -76,6 +76,9 @@
             this.dgv_AddrSearch = new AdminClient.CustomDataGridView();
             this.label23 = new System.Windows.Forms.Label();
             this.chk_cheal = new System.Windows.Forms.CheckBox();
+            this.chk_Add = new System.Windows.Forms.CheckBox();
+            this.chk_Update = new System.Windows.Forms.CheckBox();
+            this.chk_Delete = new System.Windows.Forms.CheckBox();
             this.pnl_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -87,6 +90,9 @@
             // 
             // pnl_Main
             // 
+            this.pnl_Main.Controls.Add(this.chk_Delete);
+            this.pnl_Main.Controls.Add(this.chk_Update);
+            this.pnl_Main.Controls.Add(this.chk_Add);
             this.pnl_Main.Controls.Add(this.dgv_AddrSearch);
             this.pnl_Main.Controls.Add(this.chk_cheal);
             this.pnl_Main.Controls.Add(this.label23);
@@ -108,7 +114,6 @@
             this.pnl_Main.Controls.Add(this.label9);
             this.pnl_Main.Controls.Add(this.label10);
             this.pnl_Main.Size = new System.Drawing.Size(1155, 933);
-            this.pnl_Main.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Main_Paint);
             // 
             // Form_close
             // 
@@ -393,7 +398,7 @@
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.groupBox1.Location = new System.Drawing.Point(6, 287);
+            this.groupBox1.Location = new System.Drawing.Point(7, 298);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(676, 123);
             this.groupBox1.TabIndex = 26;
@@ -496,13 +501,13 @@
             this.panel1.Controls.Add(this.label7);
             this.panel1.Location = new System.Drawing.Point(7, 26);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(351, 166);
+            this.panel1.Size = new System.Drawing.Size(328, 166);
             this.panel1.TabIndex = 33;
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(404, 6);
+            this.label21.Location = new System.Drawing.Point(446, 6);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(64, 17);
             this.label21.TabIndex = 37;
@@ -511,7 +516,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(778, 6);
+            this.label22.Location = new System.Drawing.Point(820, 6);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(64, 17);
             this.label22.TabIndex = 38;
@@ -520,7 +525,7 @@
             // btn_add
             // 
             this.btn_add.BackColor = System.Drawing.Color.White;
-            this.btn_add.Location = new System.Drawing.Point(736, 84);
+            this.btn_add.Location = new System.Drawing.Point(778, 84);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(39, 32);
             this.btn_add.TabIndex = 39;
@@ -531,7 +536,7 @@
             // btn_Delet
             // 
             this.btn_Delet.BackColor = System.Drawing.Color.White;
-            this.btn_Delet.Location = new System.Drawing.Point(736, 195);
+            this.btn_Delet.Location = new System.Drawing.Point(778, 195);
             this.btn_Delet.Name = "btn_Delet";
             this.btn_Delet.Size = new System.Drawing.Size(39, 31);
             this.btn_Delet.TabIndex = 40;
@@ -576,18 +581,18 @@
             // 
             this.dgv_EmpGroup.BackgroundColor = System.Drawing.Color.White;
             this.dgv_EmpGroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_EmpGroup.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_EmpGroup.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_EmpGroup.GridColor = System.Drawing.Color.Black;
             this.dgv_EmpGroup.IsChkVisible = false;
             this.dgv_EmpGroup.IsEditVisible = false;
-            this.dgv_EmpGroup.Location = new System.Drawing.Point(407, 31);
+            this.dgv_EmpGroup.Location = new System.Drawing.Point(449, 31);
             this.dgv_EmpGroup.Name = "dgv_EmpGroup";
             this.dgv_EmpGroup.RowTemplate.Height = 23;
             this.dgv_EmpGroup.Size = new System.Drawing.Size(323, 261);
@@ -597,18 +602,18 @@
             // 
             this.dgv_Group.BackgroundColor = System.Drawing.Color.White;
             this.dgv_Group.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Group.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Group.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_Group.GridColor = System.Drawing.Color.Black;
             this.dgv_Group.IsChkVisible = false;
             this.dgv_Group.IsEditVisible = false;
-            this.dgv_Group.Location = new System.Drawing.Point(781, 31);
+            this.dgv_Group.Location = new System.Drawing.Point(823, 31);
             this.dgv_Group.Name = "dgv_Group";
             this.dgv_Group.RowTemplate.Height = 23;
             this.dgv_Group.Size = new System.Drawing.Size(310, 261);
@@ -618,14 +623,14 @@
             // 
             this.dgv_AddrSearch.BackgroundColor = System.Drawing.Color.White;
             this.dgv_AddrSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_AddrSearch.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_AddrSearch.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_AddrSearch.GridColor = System.Drawing.Color.Black;
             this.dgv_AddrSearch.IsChkVisible = false;
             this.dgv_AddrSearch.IsEditVisible = false;
@@ -655,6 +660,37 @@
             this.chk_cheal.Text = "퇴사일지정";
             this.chk_cheal.UseVisualStyleBackColor = true;
             this.chk_cheal.CheckedChanged += new System.EventHandler(this.chk_cheal_CheckedChanged);
+            // 
+            // chk_Add
+            // 
+            this.chk_Add.AutoSize = true;
+            this.chk_Add.Location = new System.Drawing.Point(332, 209);
+            this.chk_Add.Name = "chk_Add";
+            this.chk_Add.Size = new System.Drawing.Size(83, 21);
+            this.chk_Add.TabIndex = 49;
+            this.chk_Add.Text = "추가권한";
+            this.chk_Add.UseVisualStyleBackColor = true;
+            // 
+            // chk_Update
+            // 
+            this.chk_Update.AutoSize = true;
+            this.chk_Update.Location = new System.Drawing.Point(332, 240);
+            this.chk_Update.Name = "chk_Update";
+            this.chk_Update.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.chk_Update.Size = new System.Drawing.Size(83, 21);
+            this.chk_Update.TabIndex = 50;
+            this.chk_Update.Text = "수정권한";
+            this.chk_Update.UseVisualStyleBackColor = true;
+            // 
+            // chk_Delete
+            // 
+            this.chk_Delete.AutoSize = true;
+            this.chk_Delete.Location = new System.Drawing.Point(332, 267);
+            this.chk_Delete.Name = "chk_Delete";
+            this.chk_Delete.Size = new System.Drawing.Size(83, 21);
+            this.chk_Delete.TabIndex = 51;
+            this.chk_Delete.Text = "삭제권한";
+            this.chk_Delete.UseVisualStyleBackColor = true;
             // 
             // EmpPopUp
             // 
@@ -724,5 +760,8 @@
         private CustomDataGridView dgv_AddrSearch;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.CheckBox chk_cheal;
+        private System.Windows.Forms.CheckBox chk_Delete;
+        private System.Windows.Forms.CheckBox chk_Update;
+        private System.Windows.Forms.CheckBox chk_Add;
     }
 }

@@ -20,4 +20,16 @@ namespace AdminClientVO
         public string Grp_Name { get; set; }
         public string Form_Menu { get; set; }
     }
+
+    public class View_ProductNameAndCheckVO
+    {
+        public string Prod_Code         { get; set; }
+        public string Prod_Name         { get; set; }
+        public string Check_Type        { get; set; }
+        public string Check_System      { get; set; }
+        public string Check_Point       { get; set; }
+        public string Check_Item        { get; set; }
+        public string Check_Standard    { get; set; }
+    }
+
 }

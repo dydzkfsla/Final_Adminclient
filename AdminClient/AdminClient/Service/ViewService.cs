@@ -25,5 +25,13 @@ namespace AdminClient.Service
                 return DAC.View_Favorites(Emp_Code);
             }
         }
+
+        public List<View_ProductNameAndCheckVO> View_ProductNameAndCheck(string Code)
+        {
+            using (ViewDAC DAC = new ViewDAC())
+            {
+                return DAC.View_ProductNameAndCheck(Code);
+            }
+        }
     }
 }

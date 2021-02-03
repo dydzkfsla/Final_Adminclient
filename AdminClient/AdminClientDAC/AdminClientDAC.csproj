@@ -66,6 +66,7 @@
     <Compile Include="Global\Global.cs" />
     <Compile Include="GroupFormConnDAC.cs" />
     <Compile Include="GroupInfoDAC.cs" />
+    <Compile Include="ProductCheckDAC.cs" />
     <Compile Include="StockInfoDAC.cs" />
     <Compile Include="Utils\Helper.cs" />
     <Compile Include="ProductDAC.cs" />

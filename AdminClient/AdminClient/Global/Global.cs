@@ -9,7 +9,7 @@ namespace AdminClient.Global
 {
     public static class Global
     {
-        private static EmployeesVO employees1 = new EmployeesVO { Emp_Code = "Emp0001", Emp_Name = "sa", Emp_Email = "sa"  };
+        private static EmployeesVO employees1 = new EmployeesVO { Emp_Code = "Emp0001", Emp_Name = "sa", Emp_Email = "sa", Emp_Addbutton = true, Emp_Updatebutton = true, Emp_Deletebutton = true };
 
         public static EmployeesVO employees { get => employees1; 
             set

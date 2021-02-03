@@ -28,11 +28,11 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.customDataGridView1 = new AdminClient.CustomDataGridView();
-            this.searchControl1 = new AdminClient.SearchControl();
-            this.sortControl1 = new AdminClient.SortControl();
+            this.searchControl = new AdminClient.SearchControl();
+            this.sortControl = new AdminClient.SortControl();
             this.dgv_Check = new AdminClient.CustomDataGridView();
             this.panel1.SuspendLayout();
             this.pnl_Main.SuspendLayout();
@@ -51,6 +51,7 @@
             // btn_add
             // 
             this.btn_add.Location = new System.Drawing.Point(1468, 9);
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // btn_Xls
             // 
@@ -75,9 +76,10 @@
             // 
             // gb_detail
             // 
-            this.gb_detail.Controls.Add(this.sortControl1);
-            this.gb_detail.Controls.Add(this.searchControl1);
-            this.gb_detail.Location = new System.Drawing.Point(11, 125);
+            this.gb_detail.Controls.Add(this.sortControl);
+            this.gb_detail.Controls.Add(this.searchControl);
+            this.gb_detail.Enabled = false;
+            this.gb_detail.Location = new System.Drawing.Point(12, 113);
             this.gb_detail.Size = new System.Drawing.Size(351, 211);
             // 
             // nu_limit
@@ -123,14 +125,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.customDataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.customDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.customDataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.customDataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
             this.customDataGridView1.GridColor = System.Drawing.Color.Black;
             this.customDataGridView1.IsChkVisible = false;
             this.customDataGridView1.IsEditVisible = false;
@@ -142,46 +144,47 @@
             this.customDataGridView1.Size = new System.Drawing.Size(1241, 856);
             this.customDataGridView1.TabIndex = 3;
             // 
-            // searchControl1
+            // searchControl
             // 
-            this.searchControl1.BackColor = System.Drawing.Color.Transparent;
-            this.searchControl1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.searchControl1.Location = new System.Drawing.Point(11, 33);
-            this.searchControl1.Margin = new System.Windows.Forms.Padding(4);
-            this.searchControl1.Name = "searchControl1";
-            this.searchControl1.Size = new System.Drawing.Size(326, 75);
-            this.searchControl1.TabIndex = 0;
+            this.searchControl.BackColor = System.Drawing.Color.Transparent;
+            this.searchControl.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.searchControl.Location = new System.Drawing.Point(11, 33);
+            this.searchControl.Margin = new System.Windows.Forms.Padding(4);
+            this.searchControl.Name = "searchControl";
+            this.searchControl.Size = new System.Drawing.Size(326, 75);
+            this.searchControl.TabIndex = 0;
             // 
-            // sortControl1
+            // sortControl
             // 
-            this.sortControl1.BackColor = System.Drawing.Color.Transparent;
-            this.sortControl1.Font = new System.Drawing.Font("나눔고딕", 11.25F);
-            this.sortControl1.Location = new System.Drawing.Point(12, 116);
-            this.sortControl1.Margin = new System.Windows.Forms.Padding(4);
-            this.sortControl1.Name = "sortControl1";
-            this.sortControl1.Size = new System.Drawing.Size(325, 69);
-            this.sortControl1.TabIndex = 1;
+            this.sortControl.BackColor = System.Drawing.Color.Transparent;
+            this.sortControl.Font = new System.Drawing.Font("나눔고딕", 11.25F);
+            this.sortControl.Location = new System.Drawing.Point(12, 116);
+            this.sortControl.Margin = new System.Windows.Forms.Padding(4);
+            this.sortControl.Name = "sortControl";
+            this.sortControl.Size = new System.Drawing.Size(325, 69);
+            this.sortControl.TabIndex = 1;
             // 
             // dgv_Check
             // 
             this.dgv_Check.BackgroundColor = System.Drawing.Color.White;
             this.dgv_Check.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Check.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Check.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_Check.GridColor = System.Drawing.Color.Black;
             this.dgv_Check.IsChkVisible = false;
-            this.dgv_Check.IsEditVisible = false;
+            this.dgv_Check.IsEditVisible = true;
             this.dgv_Check.Location = new System.Drawing.Point(36, 3);
             this.dgv_Check.Name = "dgv_Check";
             this.dgv_Check.RowTemplate.Height = 23;
             this.dgv_Check.Size = new System.Drawing.Size(1239, 854);
             this.dgv_Check.TabIndex = 4;
+            this.dgv_Check.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Check_CellContentClick);
             // 
             // ProductCheckInfo
             // 
@@ -209,8 +212,8 @@
 
         #endregion
         private CustomDataGridView customDataGridView1;
-        private SortControl sortControl1;
-        private SearchControl searchControl1;
+        private SortControl sortControl;
+        private SearchControl searchControl;
         private CustomDataGridView dgv_Check;
     }
 }

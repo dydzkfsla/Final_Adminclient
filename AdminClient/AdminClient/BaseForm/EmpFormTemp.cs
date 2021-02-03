@@ -14,5 +14,10 @@ namespace AdminClient.BaseForm
         {
             InitializeComponent();
         }
+
+        private void EmpFormTemp_Load(object sender, EventArgs e)
+        {
+            lbl_Title.Text = this.Text;
+        }
     }
 }

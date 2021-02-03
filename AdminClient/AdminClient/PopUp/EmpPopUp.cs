@@ -49,7 +49,9 @@ namespace AdminClient.PopUp
             txt_empPassworad.Text = Employees[0].Emp_Pwd;
             dtp_RetireDate.Value = Employees[0].Emp_RetireDate;
             dtp_HireDate.Value = Employees[0].Emp_HireDate;
-
+            chk_Add.Checked = Employees[0].Emp_Addbutton;
+            chk_Delete.Checked = Employees[0].Emp_Deletebutton;
+            chk_Update.Checked = Employees[0].Emp_Updatebutton;
 
             btn_AllUpdate.Enabled = true;
             btn_AllDelete.Enabled = true;
@@ -69,11 +71,6 @@ namespace AdminClient.PopUp
             CommonUtil.SetInitGridView(dgv_AddrSearch);
             CommonUtil.AddGridTextColumn(dgv_AddrSearch, "주소", "jibunAddr", 600);
             CommonUtil.AddGridTextColumn(dgv_AddrSearch, "주소", "zipNo", 100);
-
-            //if (Employees != null) {
-            //    EmpTeamConnService service = new EmpTeamConnService();
-            //    EmpTeamConn = service.GetEmpTeamConnVO(Employees[0].Emp_Code);
-            //}
             SetAuthority();
             TextBoxEventAdd();
         }
@@ -115,6 +112,7 @@ namespace AdminClient.PopUp
         }
         #endregion
 
+        #region 텍스트 박스 입력 제한
         private void TextBoxEventAdd()
         {
             txt_EmpCode.KeyPress += UtilEvent.isAlphaAndDigit_KeyPress;
@@ -123,11 +121,14 @@ namespace AdminClient.PopUp
             txt_Number.KeyPress += UtilEvent.TextBoxIsDigit;
             txt_Post.KeyPress += UtilEvent.TextBoxIsDigit;
         }
+        #endregion
 
+        #region 주소검색
         private void btn_SerchAddress_Click(object sender, EventArgs e)
         {
             SearchAddr();
         }
+        #endregion
 
         #region 주소검색 API
         private void SearchAddr()
@@ -181,11 +182,6 @@ namespace AdminClient.PopUp
         }
         #endregion
 
-        private void pnl_Main_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         #region DGV ADD 이벤트
         private void dgv_AddrSearch_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -206,8 +202,8 @@ namespace AdminClient.PopUp
             int RowIndex = dgv_Group.SelectedRows[0].Index;
             if (RowIndex < 0)
                 return;
-            EmployeesTeamVO temp = UtileHelper.GetCopyObj<EmployeesTeamVO>(Employees[0]);
-            temp.Team_Code = dgv_Group["Team_Code", RowIndex].Value.ToString();
+            EmployeesTeamVO temp = UtileHelper.GetCopyObj<EmployeesTeamVO>(Employees[0]); //딥복사
+            temp.Team_Code = dgv_Group["Team_Code", RowIndex].Value.ToString();  //딥복사
             Employees.Add(temp);
             SetAuthority();
         }
@@ -220,7 +216,7 @@ namespace AdminClient.PopUp
                 return;
             if(Employees.Count == 1) //모든권한이 빠지면
             {
-                EmployeesTeamVO temp = UtileHelper.GetCopyObj<EmployeesTeamVO>(Employees[0]);
+                EmployeesTeamVO temp = UtileHelper.GetCopyObj<EmployeesTeamVO>(Employees[0]); //딥복사
                 temp.Team_Code = null;
                 Employees.Add(temp);
             }
@@ -234,6 +230,7 @@ namespace AdminClient.PopUp
         }
         #endregion
 
+        #region  추가(Insert)
         private void btn_Alladd_Click(object sender, EventArgs e)
         {
             if (!ChkTextBox())
@@ -250,7 +247,10 @@ namespace AdminClient.PopUp
                 Emp_Pwd = txt_empPassworad.Text,
                 Emp_Addr = txt_Address.Text,
                 Emp_AddrDetail = txt_AddressDetail.Text,
-                Emp_HireDate = dtp_HireDate.Value
+                Emp_HireDate = dtp_HireDate.Value,
+                Emp_Addbutton = chk_Add.Checked,
+                Emp_Updatebutton = chk_Update.Checked,
+                Emp_Deletebutton = chk_Delete.Checked
             };
             if (dtp_RetireDate.Enabled)
                 employees.Emp_RetireDate = dtp_RetireDate.Value;
@@ -261,8 +261,8 @@ namespace AdminClient.PopUp
                 employees.Emp_Phone = txt_Number.Text;
             else
                 employees.Emp_Phone = null;
-
-            Employees.ForEach( x =>
+            //팀 권한 추가 
+            Employees.ForEach( x =>     
             {
                 if (x.Team_Code != null) {
                     team.Add(x.Team_Code);
@@ -272,7 +272,7 @@ namespace AdminClient.PopUp
 
 
             EmployeesService service = new EmployeesService();
-            if(service.SP_InsertEmployees(employees, team))
+            if(service.SP_InsertEmployees(employees, team))  //성공하면
             {
                 this.DialogResult = DialogResult.Yes;
                 Employees.Clear();
@@ -303,12 +303,16 @@ namespace AdminClient.PopUp
                 this.Close();
             }
         }
+        #endregion
 
+        #region  체크박스 체크 상태
         private void chk_cheal_CheckedChanged(object sender, EventArgs e)
         {
             dtp_RetireDate.Enabled = chk_cheal.Checked;
         }
+        #endregion
 
+        #region 수정
         private void btn_AllUpdate_Click(object sender, EventArgs e)
         {
             if (!ChkTextBox())
@@ -325,7 +329,10 @@ namespace AdminClient.PopUp
                 Emp_Pwd = txt_empPassworad.Text,
                 Emp_Addr = txt_Address.Text,
                 Emp_AddrDetail = txt_AddressDetail.Text,
-                Emp_HireDate = dtp_HireDate.Value
+                Emp_HireDate = dtp_HireDate.Value,
+                Emp_Addbutton = chk_Add.Checked,
+                Emp_Updatebutton = chk_Update.Checked,
+                Emp_Deletebutton = chk_Delete.Checked
             };
             if (dtp_RetireDate.Enabled)
                 employees.Emp_RetireDate = dtp_RetireDate.Value;
@@ -366,7 +373,10 @@ namespace AdminClient.PopUp
                             Emp_HireDate = dtp_HireDate.Value,
                             Emp_RetireDate = dtp_RetireDate.Enabled ? dtp_RetireDate.Value : new DateTime(9998, 12, 30),
                             Emp_Phone = string.IsNullOrWhiteSpace(txt_Number.Text) ? null : txt_Number.Text,
-                            Team_Code = x
+                            Team_Code = x,
+                            Emp_Addbutton = chk_Add.Checked,
+                            Emp_Updatebutton = chk_Update.Checked,
+                            Emp_Deletebutton = chk_Delete.Checked
                         });
                 });
 
@@ -379,7 +389,9 @@ namespace AdminClient.PopUp
                 this.Close();
             }
         }
+        #endregion
 
+        #region 삭제
         private void btn_AllDelete_Click(object sender, EventArgs e)
         {
             var result = MessageBox.Show("삭제", "삭제하시겠습니까?", MessageBoxButtons.YesNo);
@@ -398,5 +410,6 @@ namespace AdminClient.PopUp
                 }
             }
         }
+        #endregion
     }
 }

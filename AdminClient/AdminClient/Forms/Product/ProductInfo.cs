@@ -81,16 +81,21 @@ namespace AdminClient.Forms
             #endregion
         }
 
+        #region 물품 입력 불가
         private void NoneKeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
         }
+        #endregion
 
+        #region 갯수 제한 체크 
         private void chk_limit_CheckedChanged(object sender, EventArgs e)
         {
             nu_limit.Enabled = chk_limit.Checked;
         }
+        #endregion
 
+        #region 검색 버튼
         private void button1_Click(object sender, EventArgs e) // search
         {
             string cate, unit, state, limit;
@@ -116,12 +121,14 @@ namespace AdminClient.Forms
 
             dgv_ProdList.DataSource = pdList;
 
+            //하나라도 검색된것이 있으면
             if(pdList.Count > 0)
             {
                 schCtrl.Getdata(dgv_ProdList); // 설명
                 sortCtrl.Getdata(dgv_ProdList);
             }
         }
+        #endregion
 
         private void dgv_ProdList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
