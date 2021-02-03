@@ -166,6 +166,15 @@ namespace AdminClient.PopUp
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
+            CommonUtil.ControlAction<Panel, TextBox>(pnl_BORInfo, (txt) =>
+            {
+                if (txt.Text.Trim().Length < 1)
+                {
+                    MessageBox.Show("주황색 표시는 필수 입력 사항입니다.");
+                    return;
+                }
+            });
+
             vo = new BORVO
             {
                 BOR_Code = int.Parse(lbl_Code.Text), 
@@ -195,6 +204,14 @@ namespace AdminClient.PopUp
         {
             BORService service = new BORService();
             bool result = service.DeleteBOR(int.Parse(lbl_Code.Text));
+
+            if(result)
+            {
+                this.DialogResult = DialogResult.None;
+                this.Close();
+            }
+            else
+                MessageBox.Show("BOR비활성화중 오류가 발생했습니다.");
         }
     }
 }

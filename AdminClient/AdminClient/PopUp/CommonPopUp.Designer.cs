@@ -44,28 +44,27 @@ namespace AdminClient.PopUp
             this.btn_Delete = new System.Windows.Forms.Button();
             this.btn_Update = new System.Windows.Forms.Button();
             this.btn_Add = new System.Windows.Forms.Button();
+            this.pnl_common = new System.Windows.Forms.Panel();
             this.pnl_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).BeginInit();
+            this.pnl_common.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_Main
             // 
+            this.pnl_Main.Controls.Add(this.pnl_common);
             this.pnl_Main.Controls.Add(this.btn_Delete);
             this.pnl_Main.Controls.Add(this.btn_Update);
             this.pnl_Main.Controls.Add(this.btn_Add);
             this.pnl_Main.Controls.Add(this.label5);
             this.pnl_Main.Controls.Add(this.txt_Pcode);
             this.pnl_Main.Controls.Add(this.label6);
-            this.pnl_Main.Controls.Add(this.label3);
-            this.pnl_Main.Controls.Add(this.txt_Category);
-            this.pnl_Main.Controls.Add(this.label4);
-            this.pnl_Main.Controls.Add(this.label1);
-            this.pnl_Main.Controls.Add(this.txt_Name);
-            this.pnl_Main.Controls.Add(this.label2);
-            this.pnl_Main.Controls.Add(this.label19);
-            this.pnl_Main.Controls.Add(this.txt_Code);
-            this.pnl_Main.Controls.Add(this.label20);
             this.pnl_Main.Size = new System.Drawing.Size(396, 259);
+            // 
+            // lbl_Title
+            // 
+            this.lbl_Title.Size = new System.Drawing.Size(185, 43);
+            this.lbl_Title.Text = "FormBase";
             // 
             // Form_close
             // 
@@ -81,7 +80,7 @@ namespace AdminClient.PopUp
             this.label19.BackColor = System.Drawing.Color.White;
             this.label19.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label19.Location = new System.Drawing.Point(18, 20);
+            this.label19.Location = new System.Drawing.Point(12, 16);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(23, 17);
             this.label19.TabIndex = 36;
@@ -89,7 +88,7 @@ namespace AdminClient.PopUp
             // 
             // txt_Code
             // 
-            this.txt_Code.Location = new System.Drawing.Point(137, 17);
+            this.txt_Code.Location = new System.Drawing.Point(131, 13);
             this.txt_Code.MaxLength = 7;
             this.txt_Code.Name = "txt_Code";
             this.txt_Code.Size = new System.Drawing.Size(188, 25);
@@ -101,7 +100,7 @@ namespace AdminClient.PopUp
             this.label20.BackColor = System.Drawing.Color.White;
             this.label20.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label20.Location = new System.Drawing.Point(41, 20);
+            this.label20.Location = new System.Drawing.Point(35, 16);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(68, 17);
             this.label20.TabIndex = 34;
@@ -113,7 +112,7 @@ namespace AdminClient.PopUp
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(18, 52);
+            this.label1.Location = new System.Drawing.Point(12, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(23, 17);
             this.label1.TabIndex = 39;
@@ -121,7 +120,7 @@ namespace AdminClient.PopUp
             // 
             // txt_Name
             // 
-            this.txt_Name.Location = new System.Drawing.Point(137, 49);
+            this.txt_Name.Location = new System.Drawing.Point(131, 45);
             this.txt_Name.Name = "txt_Name";
             this.txt_Name.Size = new System.Drawing.Size(188, 25);
             this.txt_Name.TabIndex = 38;
@@ -132,7 +131,7 @@ namespace AdminClient.PopUp
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(41, 52);
+            this.label2.Location = new System.Drawing.Point(35, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 17);
             this.label2.TabIndex = 37;
@@ -144,7 +143,7 @@ namespace AdminClient.PopUp
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(18, 83);
+            this.label3.Location = new System.Drawing.Point(12, 79);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(23, 17);
             this.label3.TabIndex = 42;
@@ -152,7 +151,7 @@ namespace AdminClient.PopUp
             // 
             // txt_Category
             // 
-            this.txt_Category.Location = new System.Drawing.Point(137, 80);
+            this.txt_Category.Location = new System.Drawing.Point(131, 76);
             this.txt_Category.Name = "txt_Category";
             this.txt_Category.Size = new System.Drawing.Size(188, 25);
             this.txt_Category.TabIndex = 41;
@@ -163,7 +162,7 @@ namespace AdminClient.PopUp
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label4.Location = new System.Drawing.Point(41, 83);
+            this.label4.Location = new System.Drawing.Point(35, 79);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 17);
             this.label4.TabIndex = 40;
@@ -175,7 +174,7 @@ namespace AdminClient.PopUp
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(18, 114);
+            this.label5.Location = new System.Drawing.Point(18, 130);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(23, 17);
             this.label5.TabIndex = 45;
@@ -183,7 +182,7 @@ namespace AdminClient.PopUp
             // 
             // txt_Pcode
             // 
-            this.txt_Pcode.Location = new System.Drawing.Point(137, 111);
+            this.txt_Pcode.Location = new System.Drawing.Point(137, 127);
             this.txt_Pcode.MaxLength = 7;
             this.txt_Pcode.Name = "txt_Pcode";
             this.txt_Pcode.Size = new System.Drawing.Size(188, 25);
@@ -195,7 +194,7 @@ namespace AdminClient.PopUp
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(41, 114);
+            this.label6.Location = new System.Drawing.Point(41, 130);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(68, 17);
             this.label6.TabIndex = 43;
@@ -231,6 +230,22 @@ namespace AdminClient.PopUp
             this.btn_Add.UseVisualStyleBackColor = true;
             this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
+            // pnl_common
+            // 
+            this.pnl_common.Controls.Add(this.label19);
+            this.pnl_common.Controls.Add(this.label20);
+            this.pnl_common.Controls.Add(this.txt_Code);
+            this.pnl_common.Controls.Add(this.label2);
+            this.pnl_common.Controls.Add(this.txt_Name);
+            this.pnl_common.Controls.Add(this.label1);
+            this.pnl_common.Controls.Add(this.label4);
+            this.pnl_common.Controls.Add(this.label3);
+            this.pnl_common.Controls.Add(this.txt_Category);
+            this.pnl_common.Location = new System.Drawing.Point(6, 11);
+            this.pnl_common.Name = "pnl_common";
+            this.pnl_common.Size = new System.Drawing.Size(336, 110);
+            this.pnl_common.TabIndex = 74;
+            // 
             // CommonPopUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
@@ -240,6 +255,8 @@ namespace AdminClient.PopUp
             this.pnl_Main.ResumeLayout(false);
             this.pnl_Main.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).EndInit();
+            this.pnl_common.ResumeLayout(false);
+            this.pnl_common.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -262,5 +279,6 @@ namespace AdminClient.PopUp
         private System.Windows.Forms.Button btn_Delete;
         private System.Windows.Forms.Button btn_Update;
         private System.Windows.Forms.Button btn_Add;
+        private System.Windows.Forms.Panel pnl_common;
     }
 }

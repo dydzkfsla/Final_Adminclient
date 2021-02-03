@@ -50,6 +50,16 @@ namespace AdminClient.PopUp
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
+            CommonUtil.ControlAction<Panel, TextBox>(pnl_common, (txt) =>
+            {
+                if (txt.Text.Trim().Length < 0)
+                {
+                    MessageBox.Show("주황색은 필수 입력 사항입니다.");
+                    return;
+                }
+            });
+
+
             vo = new CommonVO
             {
                 Common_Code = txt_Code.Text,
@@ -72,6 +82,15 @@ namespace AdminClient.PopUp
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
+            CommonUtil.ControlAction<Panel, TextBox>(pnl_common, (txt) =>
+            {
+                if (txt.Text.Trim().Length < 0)
+                {
+                    MessageBox.Show("주황색은 필수 입력 사항입니다.");
+                    return;
+                }
+            });
+
             vo.Common_Code = txt_Code.Text;
             vo.Common_Name = txt_Name.Text;
             vo.Common_Category = txt_Category.Text;

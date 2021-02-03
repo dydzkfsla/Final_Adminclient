@@ -42,6 +42,10 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
+            // lbl_Title
+            // 
+            this.lbl_Title.BackColor = System.Drawing.Color.Transparent;
+            // 
             // pnl_Main
             // 
             this.pnl_Main.Controls.Add(this.panel1);

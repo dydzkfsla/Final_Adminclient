@@ -59,7 +59,7 @@
             // lbl_Title
             // 
             this.lbl_Title.AutoSize = true;
-            this.lbl_Title.BackColor = System.Drawing.Color.White;
+            this.lbl_Title.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Title.Font = new System.Drawing.Font("나눔고딕", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbl_Title.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lbl_Title.Location = new System.Drawing.Point(11, 28);

@@ -50,14 +50,13 @@ namespace AdminClient.PopUp
                 BOMService service = new BOMService();
                 List<UpLevelList> upItemList = service.GetUpLevelItemList(prodinfo);
 
-                if(upItemList.Count > 0)
-                {
-                    cbo_ProdP.DisplayMember = "Prod_Name";
-                    cbo_ProdP.ValueMember = "Prod_Code";
-                    cbo_ProdP.DataSource = upItemList;
-                    cbo_ProdP.Enabled = true;
+                if(upItemList.Count < 1)
+                    upItemList.Add(new UpLevelList { Prod_Code = "*", Prod_Name = "*" });
 
-                }
+                cbo_ProdP.DisplayMember = "Prod_Name";
+                cbo_ProdP.ValueMember = "Prod_Code";
+                cbo_ProdP.DataSource = upItemList;
+                cbo_ProdP.Enabled = true;
             }
 
             //변경필요
@@ -116,6 +115,25 @@ namespace AdminClient.PopUp
                 }
                 else
                 {
+                    lbl_code.Text = rvo.BOM_Code.ToString();
+                    txt_ProdName.Text = rvo.childName;
+                    txt_ProdName.Tag = rvo.childCode;
+
+                    txt_Count.Text = rvo.BOM_Count.ToString();
+
+                    cbo_ProdP.Items.Add(rvo.parentName);
+                    cbo_ProdP.Tag = rvo.parentCode;
+                    cbo_ProdP.SelectedIndex = 0;
+
+                    if (rvo.BOM_State == "Y")
+                        cbo_State.SelectedIndex = 0;
+                    else
+                        cbo_State.SelectedIndex = 1;
+
+                    if (rvo.BOM_AutoDecrease == "Y")
+                        cbo_AutoDecreaseState.SelectedIndex = 0;
+                    else
+                        cbo_AutoDecreaseState.SelectedIndex = 1;
 
                 }
 
@@ -151,9 +169,9 @@ namespace AdminClient.PopUp
                 return;
             }
 
-            if(cbo_ProdP.Text.Length < 1)
+            if (txt_Count.Text.Trim().Length < 1)
             {
-                MessageBox.Show("더이상 BOM을 설정할 수 없는 물품입니다.");
+                MessageBox.Show("소요량을 입력해주세요");
                 return;
             }
 
@@ -186,6 +204,18 @@ namespace AdminClient.PopUp
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
+            if (txt_ProdName.Text.Trim().Length < 1)
+            {
+                MessageBox.Show("물품을 선택해주세요");
+                return;
+            }
+
+            if(txt_Count.Text.Trim().Length < 1)
+            {
+                MessageBox.Show("소요량을 입력해주세요");
+                return;
+            }
+
             vo = new BOMVO
             {
                 BOM_Code = int.Parse(lbl_code.Text), 
@@ -245,14 +275,14 @@ namespace AdminClient.PopUp
 
             List<UpLevelList> upItemList = service.GetUpLevelItemList(vo);
 
-            if (upItemList.Count > 0)
-            {
-                cbo_ProdP.DisplayMember = "Prod_Name";
-                cbo_ProdP.ValueMember = "Prod_Code";
-                cbo_ProdP.DataSource = upItemList;
-                cbo_ProdP.Enabled = true;
+            if (upItemList.Count < 1)
+                upItemList.Add(new UpLevelList { Prod_Code = "*", Prod_Name = "*" });
 
-            }
+            cbo_ProdP.DisplayMember = "Prod_Name";
+            cbo_ProdP.ValueMember = "Prod_Code";
+            cbo_ProdP.DataSource = upItemList;
+            cbo_ProdP.Enabled = true;
+
         }
     }
 }
