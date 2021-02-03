@@ -68,6 +68,10 @@
             // 
             this.panel1.Size = new System.Drawing.Size(1236, 64);
             // 
+            // lbl_Title
+            // 
+            this.lbl_Title.BackColor = System.Drawing.Color.Transparent;
+            // 
             // pnl_Main
             // 
             this.pnl_Main.Size = new System.Drawing.Size(1254, 736);

@@ -59,7 +59,7 @@
             // lbl_Title
             // 
             this.lbl_Title.AutoSize = true;
-            this.lbl_Title.BackColor = System.Drawing.Color.White;
+            this.lbl_Title.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Title.Font = new System.Drawing.Font("나눔고딕", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbl_Title.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lbl_Title.Location = new System.Drawing.Point(11, 28);
@@ -197,6 +197,7 @@
             this.Controls.Add(this.lbl_Title);
             this.Margin = new System.Windows.Forms.Padding(3);
             this.Name = "FormListTemp";
+            this.Load += new System.EventHandler(this.FormListTemp_Load);
             this.Controls.SetChildIndex(this.lbl_Title, 0);
             this.Controls.SetChildIndex(this.pnl_Main, 0);
             this.Controls.SetChildIndex(this.Form_close, 0);

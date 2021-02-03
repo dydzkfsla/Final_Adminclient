@@ -317,6 +317,12 @@
     <Compile Include="PopUp\BORPopUp.Designer.cs">
       <DependentUpon>BORPopUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopUp\CommonPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\CommonPopUp.Designer.cs">
+      <DependentUpon>CommonPopUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="PopUp\CompanyPopUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -446,6 +452,7 @@
       <DependentUpon>WorkPlanDetailSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="Service\BOMService.cs" />
+    <Compile Include="Service\BORService.cs" />
     <Compile Include="Service\ComboBindingService.cs" />
     <Compile Include="Service\CommonService.cs" />
     <Compile Include="Service\CompanyService.cs" />
@@ -465,6 +472,12 @@
     <Compile Include="Service\TeamInfoService.cs" />
     <Compile Include="Service\ViewService.cs" />
     <Compile Include="Service\WareHouseService.cs" />
+    <Compile Include="UseControl\FavoritesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UseControl\FavoritesControl.Designer.cs">
+      <DependentUpon>FavoritesControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UseControl\SearchControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -610,6 +623,9 @@
     <EmbeddedResource Include="PopUp\BORPopUp.resx">
       <DependentUpon>BORPopUp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\CommonPopUp.resx">
+      <DependentUpon>CommonPopUp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PopUp\CompanyPopUp.resx">
       <DependentUpon>CompanyPopUp.cs</DependentUpon>
     </EmbeddedResource>
@@ -678,6 +694,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Serch\WorkPlanDetailSearch.resx">
       <DependentUpon>WorkPlanDetailSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UseControl\FavoritesControl.resx">
+      <DependentUpon>FavoritesControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UseControl\SearchControl.resx">
       <DependentUpon>SearchControl.cs</DependentUpon>

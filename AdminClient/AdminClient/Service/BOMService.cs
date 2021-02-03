@@ -18,12 +18,12 @@ namespace AdminClient.Service
             return list;
         }
 
-        internal bool AddBOM(BOMVO bom)
+        internal int AddBOM(BOMVO bom)
         {
             BOMDAC dac = new BOMDAC();
-            bool result = dac.AddBOM(bom);
+            int code = dac.AddBOM(bom);
             dac.Dispose();
-            return result;
+            return code;
         }
 
         internal List<ForwardBOM> GetForwardList(BOMInfo info)
@@ -32,6 +32,30 @@ namespace AdminClient.Service
             List<ForwardBOM> list = dac.GetForwardList(info);
             dac.Dispose();
             return list;
+        }
+
+        internal List<ReverseBOM> GetReverseList(BOMInfo info)
+        {
+            BOMDAC dac = new BOMDAC();
+            List<ReverseBOM> list = dac.GetReverseList(info);
+            dac.Dispose();
+            return list;
+        }
+
+        internal bool UpdateBOM(BOMVO vo)
+        {
+            BOMDAC dac = new BOMDAC();
+            bool result = dac.UpdateBOM(vo);
+            dac.Dispose();
+            return result;
+        }
+
+        internal bool DeleteBOM(int code)
+        {
+            BOMDAC dac = new BOMDAC();
+            bool result = dac.DeleteBOM(code);
+            dac.Dispose();
+            return result;
         }
     }
 }

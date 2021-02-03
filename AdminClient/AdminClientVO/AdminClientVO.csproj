@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BOMVO.cs" />
+    <Compile Include="BORVO.cs" />
     <Compile Include="ComboBindingVO.cs" />
     <Compile Include="CommonVO.cs" />
     <Compile Include="CompanyVO.cs" />
