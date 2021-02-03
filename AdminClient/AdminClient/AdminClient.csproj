@@ -457,6 +457,12 @@
     <Compile Include="Service\TeamInfoService.cs" />
     <Compile Include="Service\ViewService.cs" />
     <Compile Include="Service\WareHouseService.cs" />
+    <Compile Include="UseControl\FavoritesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UseControl\FavoritesControl.Designer.cs">
+      <DependentUpon>FavoritesControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UseControl\SearchControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -667,6 +673,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Serch\WorkPlanDetailSearch.resx">
       <DependentUpon>WorkPlanDetailSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UseControl\FavoritesControl.resx">
+      <DependentUpon>FavoritesControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UseControl\SearchControl.resx">
       <DependentUpon>SearchControl.cs</DependentUpon>

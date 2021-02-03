@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AdminClientVO;
+using AdminClient.UseControl;
 
 namespace AdminClient.MDI
 {
@@ -21,13 +22,13 @@ namespace AdminClient.MDI
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
-            lbl_Date.Text = DateTime.Now.ToString("G");
+            toolStripLabelTime.Text = DateTime.Now.ToString("G");
             timerTime.Start();
         }
 
         private void timerTime_Tick(object sender, EventArgs e)
         {
-            lbl_Date.Text = DateTime.Now.ToString("G");
+            toolStripLabelTime.Text = DateTime.Now.ToString("G");
         }
 
         private void MDI_Load(object sender, EventArgs e)
@@ -61,23 +62,62 @@ namespace AdminClient.MDI
             if (Favorites == null)
                 return;
             var favor = (from pa in Favorites
-                        group pa by pa.Grp_Name into data
-                        select new { Grp_Name = data.Key, vo = data }).ToList();
+                         group pa by pa.Grp_Name into data
+                         select new { Grp_Name = data.Key, vo = data }).ToList();
 
             foreach (var item in favor)
             {
-                treeView.Nodes[0].Nodes.Add(new TreeNode { Name = item.Grp_Name, Text = item.Grp_Name });
                 foreach (var vo in item.vo)
                 {
-                    treeView.Nodes[0].Nodes[item.Grp_Name].Nodes.Add(new TreeNode
-                    {
-                        Name = vo.Form_Name,
-                        Text = vo.Form_Menu,
-                        Tag = vo.Form_Menu+"|"+vo.Form_Name
-                    });
+                    AddFavorControl(vo.Form_Name, vo.Form_Menu);
                 }
             }
+
+            toolStripLabel_EmpName.Text = Global.Global.employees.Emp_Name;
+            toolStripLabel_Emp_code.Text = Global.Global.employees.Emp_Code;
+
+            if (Global.Global.employees.Emp_Addbutton)
+            {
+                toolStripLabel_Btn_add.Text = "추가권한 : 있음";
+            }
+            if (Global.Global.employees.Emp_Updatebutton)
+            {
+                toolStripLabel_Btn_Update.Text = "수정권한 : 있음";
+            }
+            if (Global.Global.employees.Emp_Addbutton)
+            {
+                toolStripLabel_Btn_Delete.Text = "삭제권한 : 있음";
+            }
+            btn_Down.Location = new Point(0, panel1.Height - btn_Down.Height);
         }
+
+
+        #region 카테고리 로케이션 다시 잡음
+        private void SetCatagorisLocation() //모든 로케이션 잡기
+        {
+            FavoritesControl temp = null;     //일종의 버퍼로 활용
+            int Count = 0;
+            CommonUtil.ControlAction<Panel, FavoritesControl>(panel1, (control) => //페널에서 모든컨트롤러 를 찾음
+            {
+                if (temp != null)   //첫번째가 아니라면
+                {
+                    //temp는 Controls의 전 컨트롤러'
+                    //temp의 높이와 로케이션을 가져와 그 값으로 사용
+                    control.Location = new Point(control.Location.X, temp.Location.Y + temp.Height);
+                }
+                temp = control; //첫번째라면
+            });
+            CommonUtil.ControlAction<Panel, FavoritesControl>(panel1, (control) => //페널에서 모든컨트롤러 를 찾음
+            {
+                Count++;
+            });
+
+            if (Count == 1) //컨트롤러가 1개하면
+            {
+                temp.Location = new Point(0, 45);
+            }
+        }
+        #endregion
 
         private void MDI_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -168,60 +208,77 @@ namespace AdminClient.MDI
         }
         #endregion
 
-        private void treeView_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
-        {
-            if(e.Node.Tag != null)
-            {
-                string[] vs = e.Node.Tag.ToString().Split('|'); //vo.Form_Menu+"|"+ vo.Form_Name
-                Type type = Type.GetType("AdminClient.Forms." + vs[1]);
-                Form instance = Activator.CreateInstance(type) as Form;
-                instance.Name = vs[1];
-                instance.Text = vs[0];
-                this.OpenCreateForm(instance, type, true);
-            }
-        }
-
+        #region 즐겨찾기 추가
         private void 추가ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (this.ActiveMdiChild == null)
                 return;
             FavoritesService service = new FavoritesService();
-            if(service.InserFavorites(Global.Global.employees.Emp_Code, this.ActiveMdiChild.GetType().Name))
+            if (service.InserFavorites(Global.Global.employees.Emp_Code, this.ActiveMdiChild.GetType().Name))
             {
                 var item = Forms.Find(x => x.Form_Name == this.ActiveMdiChild.GetType().Name);
 
-                //해당 그룹 노드가 없으면
-                if (!treeView.Nodes[0].Nodes.ContainsKey(item.Grp_Name))
-                {
-                    treeView.Nodes[0].Nodes.Add(new TreeNode { Name = item.Grp_Name, Text = item.Grp_Name });
-                }
-                //노드추가
-                treeView.Nodes[0].Nodes[item.Grp_Name].Nodes.Add(new TreeNode
-                {
-                    Name = item.Form_Name,
-                    Text = item.Form_Menu,
-                    Tag = item.Form_Menu + "|" + item.Form_Name
-                });
+                AddFavorControl(item.Form_Name, item.Form_Menu);
+
             }
         }
+        #endregion
 
+        #region 즐겨찾기 삭제
         private void 삭제ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (this.ActiveMdiChild == null)
                 return;
             FavoritesService service = new FavoritesService();
-            
             if (service.DeleteFavorites(Global.Global.employees.Emp_Code, this.ActiveMdiChild.GetType().Name))
             {
                 var item = Forms.Find(x => x.Form_Name == this.ActiveMdiChild.GetType().Name);
-                //노드 삭제
-                treeView.Nodes[0].Nodes[item.Grp_Name].Nodes[item.Form_Name].Remove();
-                //그룹 노드에 자식이 없으면
-                if(treeView.Nodes[0].Nodes[item.Grp_Name].Nodes.Count == 0)
-                { 
-                    //그룹 노드삭제
-                    treeView.Nodes[0].Nodes[item.Grp_Name].Remove();
+
+                if (panel1.Controls.ContainsKey(item.Form_Name))
+                {
+                    panel1.Controls.RemoveByKey(item.Form_Name);
+                    SetCatagorisLocation();
                 }
+            }
+        }
+
+        #endregion
+
+        #region 폼 이름 메뉴 이름 에 따른 추가
+        private void AddFavorControl(string FormName, string FormMenu)
+        {
+            if (!panel1.Controls.ContainsKey(FormName))
+            {
+                FavoritesControl favoritesControl = new FavoritesControl
+                {
+                    Name = FormName,
+                    Text = FormMenu,
+                    Location = new Point(0, 45),
+                    Size = new Size(235, 70)
+                };
+                panel1.Controls.Add(favoritesControl);
+                favoritesControl.FavoritesClick += (send, eve) =>
+                {
+                    Type type = Type.GetType("AdminClient.Forms." + FormName);
+                    Form instance = Activator.CreateInstance(type) as Form;
+                    instance.Name = FormName;
+                    instance.Text = FormMenu;
+                    this.OpenCreateForm(instance, type, true);
+                };
+                SetCatagorisLocation();
+            }
+        }
+        #endregion
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(panel1.Width == 40)
+            {
+                panel1.Width = 275;
+            }
+            else
+            {
+                panel1.Width = 40;
             }
         }
     }

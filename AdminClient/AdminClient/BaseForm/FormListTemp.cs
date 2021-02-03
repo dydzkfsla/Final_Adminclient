@@ -30,5 +30,10 @@ namespace AdminClient.BaseForm
                 btn_folding.Text = "<<";
             }
         }
+
+        private void FormListTemp_Load(object sender, EventArgs e)
+        {
+            lbl_Title.Text = this.Text;
+        }
     }
 }

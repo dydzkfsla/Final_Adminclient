@@ -41,6 +41,12 @@
             this.pnl_Main.Controls.Add(this.panel1);
             this.pnl_Main.Size = new System.Drawing.Size(781, 597);
             // 
+            // lbl_Title
+            // 
+            this.lbl_Title.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Title.Size = new System.Drawing.Size(185, 43);
+            this.lbl_Title.Text = "FormBase";
+            // 
             // Form_close
             // 
             this.Form_close.Location = new System.Drawing.Point(756, 10);
