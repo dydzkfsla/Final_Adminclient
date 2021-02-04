@@ -118,6 +118,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Production\ContractInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Production\ContractInfo.Designer.cs">
+      <DependentUpon>ContractInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Product\BOM.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,11 +148,11 @@
     <Compile Include="Forms\Production\CompanyInfo.Designer.cs">
       <DependentUpon>CompanyInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Production\ContractInfo.cs">
+    <Compile Include="Forms\Production\ContractInfo_old.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Production\ContractInfo.Designer.cs">
-      <DependentUpon>ContractInfo.cs</DependentUpon>
+    <Compile Include="Forms\Production\ContractInfo_old.Designer.cs">
+      <DependentUpon>ContractInfo_old.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Production\DemandPlan.cs">
       <SubType>Form</SubType>
@@ -447,8 +453,10 @@
     </Compile>
     <Compile Include="Service\BOMService.cs" />
     <Compile Include="Service\BORService.cs" />
+    <Compile Include="Service\ComboBindingService.cs" />
     <Compile Include="Service\CommonService.cs" />
     <Compile Include="Service\CompanyService.cs" />
+    <Compile Include="Service\ContractService.cs" />
     <Compile Include="Service\EmployeeService.cs" />
     <Compile Include="Service\EmployeesService.cs" />
     <Compile Include="Service\EmpTeamConnService.cs" />
@@ -465,6 +473,12 @@
     <Compile Include="Service\TeamInfoService.cs" />
     <Compile Include="Service\ViewService.cs" />
     <Compile Include="Service\WareHouseService.cs" />
+    <Compile Include="UseControl\FavoritesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UseControl\FavoritesControl.Designer.cs">
+      <DependentUpon>FavoritesControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UseControl\SearchControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -511,6 +525,9 @@
     <EmbeddedResource Include="CustomControl\CustomDataGridView.resx">
       <DependentUpon>CustomDataGridView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Production\ContractInfo.resx">
+      <DependentUpon>ContractInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Product\BOM.resx">
       <DependentUpon>BOM.cs</DependentUpon>
     </EmbeddedResource>
@@ -523,8 +540,8 @@
     <EmbeddedResource Include="Forms\Production\CompanyInfo.resx">
       <DependentUpon>CompanyInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Production\ContractInfo.resx">
-      <DependentUpon>ContractInfo.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Production\ContractInfo_old.resx">
+      <DependentUpon>ContractInfo_old.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Production\DemandPlan.resx">
       <DependentUpon>DemandPlan.cs</DependentUpon>
@@ -678,6 +695,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Serch\WorkPlanDetailSearch.resx">
       <DependentUpon>WorkPlanDetailSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UseControl\FavoritesControl.resx">
+      <DependentUpon>FavoritesControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UseControl\SearchControl.resx">
       <DependentUpon>SearchControl.cs</DependentUpon>

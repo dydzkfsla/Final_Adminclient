@@ -29,39 +29,41 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("즐겨찾기 목록");
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.테스트1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.메뉴관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.그룹관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.직원관리ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.테스트2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.테스트3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.즐겨찾기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.추가ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.삭제ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lbl_Date = new System.Windows.Forms.Label();
-            this.날짜 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_Down = new System.Windows.Forms.Button();
+            this.btn_Up = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.treeView = new System.Windows.Forms.TreeView();
             this.timerTime = new System.Windows.Forms.Timer(this.components);
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabelTime = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel_EmpName = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel_Emp_code = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel_Btn_add = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel_Btn_Update = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel_Btn_Delete = new System.Windows.Forms.ToolStripLabel();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.tabForms = new AdminClient.ucTabControl();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel5.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.테스트1ToolStripMenuItem,
-            this.테스트2ToolStripMenuItem,
-            this.테스트3ToolStripMenuItem,
             this.즐겨찾기ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -69,46 +71,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(1940, 25);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // 테스트1ToolStripMenuItem
-            // 
-            this.테스트1ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.메뉴관리ToolStripMenuItem,
-            this.그룹관리ToolStripMenuItem,
-            this.직원관리ToolStripMenuItem});
-            this.테스트1ToolStripMenuItem.Name = "테스트1ToolStripMenuItem";
-            this.테스트1ToolStripMenuItem.Size = new System.Drawing.Size(67, 19);
-            this.테스트1ToolStripMenuItem.Text = "직원메뉴";
-            // 
-            // 메뉴관리ToolStripMenuItem
-            // 
-            this.메뉴관리ToolStripMenuItem.Name = "메뉴관리ToolStripMenuItem";
-            this.메뉴관리ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.메뉴관리ToolStripMenuItem.Text = "메뉴관리";
-            // 
-            // 그룹관리ToolStripMenuItem
-            // 
-            this.그룹관리ToolStripMenuItem.Name = "그룹관리ToolStripMenuItem";
-            this.그룹관리ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.그룹관리ToolStripMenuItem.Text = "그룹관리";
-            // 
-            // 직원관리ToolStripMenuItem
-            // 
-            this.직원관리ToolStripMenuItem.Name = "직원관리ToolStripMenuItem";
-            this.직원관리ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.직원관리ToolStripMenuItem.Text = "직원관리";
-            // 
-            // 테스트2ToolStripMenuItem
-            // 
-            this.테스트2ToolStripMenuItem.Name = "테스트2ToolStripMenuItem";
-            this.테스트2ToolStripMenuItem.Size = new System.Drawing.Size(67, 19);
-            this.테스트2ToolStripMenuItem.Text = "물품확인";
-            // 
-            // 테스트3ToolStripMenuItem
-            // 
-            this.테스트3ToolStripMenuItem.Name = "테스트3ToolStripMenuItem";
-            this.테스트3ToolStripMenuItem.Size = new System.Drawing.Size(55, 19);
-            this.테스트3ToolStripMenuItem.Text = "고객사";
             // 
             // 즐겨찾기ToolStripMenuItem
             // 
@@ -123,60 +85,51 @@
             // 추가ToolStripMenuItem
             // 
             this.추가ToolStripMenuItem.Name = "추가ToolStripMenuItem";
-            this.추가ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.추가ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.추가ToolStripMenuItem.Text = "추가";
             this.추가ToolStripMenuItem.Click += new System.EventHandler(this.추가ToolStripMenuItem_Click);
             // 
             // 삭제ToolStripMenuItem
             // 
             this.삭제ToolStripMenuItem.Name = "삭제ToolStripMenuItem";
-            this.삭제ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.삭제ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.삭제ToolStripMenuItem.Text = "삭제";
             this.삭제ToolStripMenuItem.Click += new System.EventHandler(this.삭제ToolStripMenuItem_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.lbl_Date);
-            this.panel1.Controls.Add(this.날짜);
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.btn_Down);
+            this.panel1.Controls.Add(this.btn_Up);
             this.panel1.Controls.Add(this.panel5);
-            this.panel1.Controls.Add(this.treeView);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 25);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(275, 1016);
             this.panel1.TabIndex = 5;
             // 
-            // lbl_Date
+            // btn_Down
             // 
-            this.lbl_Date.AutoSize = true;
-            this.lbl_Date.Location = new System.Drawing.Point(3, 284);
-            this.lbl_Date.Name = "lbl_Date";
-            this.lbl_Date.Size = new System.Drawing.Size(50, 17);
-            this.lbl_Date.TabIndex = 11;
-            this.lbl_Date.Text = "label1";
+            this.btn_Down.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Down.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btn_Down.Location = new System.Drawing.Point(0, 934);
+            this.btn_Down.Name = "btn_Down";
+            this.btn_Down.Size = new System.Drawing.Size(235, 45);
+            this.btn_Down.TabIndex = 17;
+            this.btn_Down.Text = "∨\r\n∨";
+            this.btn_Down.UseVisualStyleBackColor = false;
             // 
-            // 날짜
+            // btn_Up
             // 
-            this.날짜.AutoSize = true;
-            this.날짜.Location = new System.Drawing.Point(3, 258);
-            this.날짜.Name = "날짜";
-            this.날짜.Size = new System.Drawing.Size(36, 17);
-            this.날짜.TabIndex = 10;
-            this.날짜.Text = "시간";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::AdminClient.Properties.Resources.cowboy_2028626_1280;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(234, 245);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
+            this.btn_Up.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Up.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btn_Up.Location = new System.Drawing.Point(0, 0);
+            this.btn_Up.Name = "btn_Up";
+            this.btn_Up.Size = new System.Drawing.Size(235, 45);
+            this.btn_Up.TabIndex = 16;
+            this.btn_Up.Text = "∧\r\n∧";
+            this.btn_Up.UseVisualStyleBackColor = false;
             // 
             // panel5
             // 
@@ -184,7 +137,7 @@
             this.panel5.Controls.Add(this.button1);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel5.Location = new System.Drawing.Point(235, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(0);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(40, 1016);
             this.panel5.TabIndex = 8;
@@ -198,25 +151,101 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "<<";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // treeView
-            // 
-            this.treeView.BackColor = System.Drawing.SystemColors.Window;
-            this.treeView.Location = new System.Drawing.Point(0, 610);
-            this.treeView.Margin = new System.Windows.Forms.Padding(0);
-            this.treeView.Name = "treeView";
-            treeNode2.Name = "노드0";
-            treeNode2.Text = "즐겨찾기 목록";
-            this.treeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode2});
-            this.treeView.Size = new System.Drawing.Size(234, 405);
-            this.treeView.TabIndex = 0;
-            this.treeView.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView_NodeMouseClick);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // timerTime
             // 
             this.timerTime.Interval = 1000;
             this.timerTime.Tick += new System.EventHandler(this.timerTime_Tick);
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabelTime,
+            this.toolStripSeparator4,
+            this.toolStripLabel_EmpName,
+            this.toolStripSeparator5,
+            this.toolStripLabel_Emp_code,
+            this.toolStripSeparator1,
+            this.toolStripLabel_Btn_add,
+            this.toolStripSeparator2,
+            this.toolStripLabel_Btn_Update,
+            this.toolStripSeparator3,
+            this.toolStripLabel_Btn_Delete,
+            this.toolStripSeparator6});
+            this.toolStrip1.Location = new System.Drawing.Point(275, 1016);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1665, 25);
+            this.toolStrip1.TabIndex = 2;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripLabelTime
+            // 
+            this.toolStripLabelTime.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripLabelTime.Name = "toolStripLabelTime";
+            this.toolStripLabelTime.Size = new System.Drawing.Size(88, 22);
+            this.toolStripLabelTime.Text = "toolStripLabel1";
+            // 
+            // toolStripLabel_EmpName
+            // 
+            this.toolStripLabel_EmpName.Name = "toolStripLabel_EmpName";
+            this.toolStripLabel_EmpName.Size = new System.Drawing.Size(88, 22);
+            this.toolStripLabel_EmpName.Text = "toolStripLabel1";
+            // 
+            // toolStripLabel_Emp_code
+            // 
+            this.toolStripLabel_Emp_code.Name = "toolStripLabel_Emp_code";
+            this.toolStripLabel_Emp_code.Size = new System.Drawing.Size(88, 22);
+            this.toolStripLabel_Emp_code.Text = "toolStripLabel1";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripLabel_Btn_add
+            // 
+            this.toolStripLabel_Btn_add.Name = "toolStripLabel_Btn_add";
+            this.toolStripLabel_Btn_add.Size = new System.Drawing.Size(90, 22);
+            this.toolStripLabel_Btn_add.Text = "추가권한 : 없음";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripLabel_Btn_Update
+            // 
+            this.toolStripLabel_Btn_Update.Name = "toolStripLabel_Btn_Update";
+            this.toolStripLabel_Btn_Update.Size = new System.Drawing.Size(90, 22);
+            this.toolStripLabel_Btn_Update.Text = "수정권한 : 없음";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripLabel_Btn_Delete
+            // 
+            this.toolStripLabel_Btn_Delete.Name = "toolStripLabel_Btn_Delete";
+            this.toolStripLabel_Btn_Delete.Size = new System.Drawing.Size(90, 22);
+            this.toolStripLabel_Btn_Delete.Text = "삭제권한 : 없음";
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 25);
             // 
             // tabForms
             // 
@@ -235,6 +264,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1940, 1041);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.tabForms);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
@@ -242,7 +272,6 @@
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MDI";
-            this.Text = "MDI";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MDI_FormClosing);
             this.Load += new System.EventHandler(this.MDI_Load);
@@ -250,9 +279,9 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel5.ResumeLayout(false);
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -261,23 +290,29 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem 테스트1ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 테스트2ToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ToolStripMenuItem 테스트3ToolStripMenuItem;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TreeView treeView;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.ToolStripMenuItem 메뉴관리ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 그룹관리ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 직원관리ToolStripMenuItem;
         private ucTabControl tabForms;
         private System.Windows.Forms.ToolStripMenuItem 즐겨찾기ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 추가ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 삭제ToolStripMenuItem;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lbl_Date;
-        private System.Windows.Forms.Label 날짜;
         private System.Windows.Forms.Timer timerTime;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabelTime;
+        private System.Windows.Forms.Button btn_Down;
+        private System.Windows.Forms.Button btn_Up;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel_EmpName;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel_Btn_add;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel_Btn_Update;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel_Btn_Delete;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel_Emp_code;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
     }
 }

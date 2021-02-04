@@ -48,8 +48,10 @@
   <ItemGroup>
     <Compile Include="BOMVO.cs" />
     <Compile Include="BORVO.cs" />
+    <Compile Include="ComboBindingVO.cs" />
     <Compile Include="CommonVO.cs" />
     <Compile Include="CompanyVO.cs" />
+    <Compile Include="ContractVO.cs" />
     <Compile Include="EmployeesVO.cs" />
     <Compile Include="EmpTeamConnVO.cs" />
     <Compile Include="FacilityVO.cs" />

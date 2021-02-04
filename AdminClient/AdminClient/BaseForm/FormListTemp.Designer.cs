@@ -197,6 +197,7 @@
             this.Controls.Add(this.lbl_Title);
             this.Margin = new System.Windows.Forms.Padding(3);
             this.Name = "FormListTemp";
+            this.Load += new System.EventHandler(this.FormListTemp_Load);
             this.Controls.SetChildIndex(this.lbl_Title, 0);
             this.Controls.SetChildIndex(this.pnl_Main, 0);
             this.Controls.SetChildIndex(this.Form_close, 0);
