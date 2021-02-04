@@ -465,6 +465,7 @@
     <Compile Include="Service\FormInfoService.cs" />
     <Compile Include="Service\GroupFormConnService.cs" />
     <Compile Include="Service\GroupInfoService.cs" />
+    <Compile Include="Service\OrderService.cs" />
     <Compile Include="Service\ProductCheckService.cs" />
     <Compile Include="Service\ProductService.cs" />
     <Compile Include="Service\StockInfoService.cs" />

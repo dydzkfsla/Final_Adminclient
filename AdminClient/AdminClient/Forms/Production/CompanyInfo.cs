@@ -1,13 +1,9 @@
 ﻿using AdminClient.PopUp;
+using AdminClient.Serch;
 using AdminClient.Service;
 using AdminClientVO;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace AdminClient.Forms
@@ -18,6 +14,7 @@ namespace AdminClient.Forms
         List<ComboCompVO> cbolist;
         List<CompanyVO> compList;
         List<CompanyDetailVO> detailList;
+        List<CompanyDetailVO> updateList = new List<CompanyDetailVO>();
 
         public CompanyInfo()
         {
@@ -54,6 +51,9 @@ namespace AdminClient.Forms
             cbo_State.Items.Add("전체");
             cbo_State.Items.Add("Y");
             cbo_State.Items.Add("N");
+            cbo_itemState.Items.Add("Y");
+            cbo_itemState.Items.Add("N");
+            cbo_itemState.SelectedIndex = 0;
 
             cbo_Auto.SelectedIndex = cbo_State.SelectedIndex = 0;
 
@@ -76,22 +76,29 @@ namespace AdminClient.Forms
 
             CommonUtil.SetInitGridView(dgv_detail);
             CommonUtil.AddGridTextColumn(dgv_detail, "Code", "Comp_Code", visibility: false);
-            CommonUtil.AddGridTextColumn(dgv_detail, "ProdCode", "Prod_Code");
+            CommonUtil.AddGridTextColumn(dgv_detail, "ProdCode", "Prod_Code", visibility : false);
             CommonUtil.AddGridTextColumn(dgv_detail, "물품명", "Prod_Name");
-            CommonUtil.AddGridTextColumn(dgv_detail, "거래단위", "Prod_UnitCount");
             CommonUtil.AddGridTextColumn(dgv_detail, "단위", "Prod_Unit");
+            CommonUtil.AddGridTextColumn(dgv_detail, "현재재고량", "totCount", 150);
+            CommonUtil.AddGridTextColumn(dgv_detail, "안전재고량", "Prod_SafetyStock", 150);
+            CommonUtil.AddGridTextColumn(dgv_detail, "최소주문량", "Prod_MinCount", 150);
             CommonUtil.AddGridTextColumn(dgv_detail, "단위당가격", "Prod_UnitPrice", 150);
             CommonUtil.AddGridTextColumn(dgv_detail, "이전가격", "Prod_OldUnitPrice");
-            CommonUtil.AddGridTextColumn(dgv_detail, "시작일", "Comp_StartDate");
-            CommonUtil.AddGridTextColumn(dgv_detail, "만료일", "Comp_EndDate");
-            CommonUtil.AddGridTextColumn(dgv_detail, "상태", "Item_State");
-            CommonUtil.AddGridTextColumn(dgv_detail, "구분", "Comp_Div");
+            CommonUtil.AddGridTextColumn(dgv_detail, "상태", "item_State");
+            CommonUtil.AddGridTextColumn(dgv_detail, "창고", "Prod_WhCode");
+            
+
 
 
             #endregion
 
             nu_limit.Enabled = false;
             gb_detail.Enabled = false;
+
+            CommonUtil.ControlAction<Panel, TextBox>(panel2, (txt) =>
+            {
+                txt.KeyPress += TextNoneKeyPress;
+            });
 
             #endregion
 
@@ -133,6 +140,7 @@ namespace AdminClient.Forms
             if(compList != null && compList.Count > 0)
             {
                 schCtrl.Getdata(dgv_CompList);
+                sortCtrl.Getdata(dgv_CompList);
                 gb_detail.Enabled = true;
             }
         }
@@ -155,7 +163,6 @@ namespace AdminClient.Forms
 
                     dgv_CompList.DataSource = null;
                     dgv_CompList.DataSource = compList;
-
                 }
             }
 
@@ -164,6 +171,26 @@ namespace AdminClient.Forms
 
         private void dgv_CompList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (updateList.Count > 0)
+            {
+                DialogResult dr = MessageBox.Show("현재 선택되어있는 회사 물품정보에 수정기록이 있습니다 적용하시겠습니까?", "확인메세지", MessageBoxButtons.YesNoCancel);
+
+                if(dr == DialogResult.Yes)
+                {
+                    btm_AllSet.PerformClick();
+                    updateList.Clear();
+                }
+                else if(dr == DialogResult.No)
+                {
+                    updateList.Clear();
+                }
+                else
+                {
+                    return;
+                }
+            }
+
+
             txt_CEO.Text = txt_Code.Text = txt_Name.Text = txt_Type.Text = string.Empty;
 
             if(e.RowIndex > -1)
@@ -226,6 +253,121 @@ namespace AdminClient.Forms
                     dgv_CompList.DataSource = null;
                     dgv_CompList.DataSource = compList;
                 }
+            }
+        }
+
+        private void btn_ProdAdd_Click(object sender, EventArgs e)
+        {
+            ProductSearch sch = new ProductSearch();
+            if(sch.ShowDialog() == DialogResult.OK)
+            {
+                List<ProductVO> addlist = sch.AddList;
+
+                CompanyService service = new CompanyService();
+                bool result = service.CompDetailAddProdList(addlist, txt_Code.Text);
+
+                if(result)
+                {
+                    foreach(ProductVO add in addlist)
+                    {
+                        bool flag = true;
+                        detailList.ForEach((ditem) =>
+                        {
+                            if (ditem.Prod_Code == add.Prod_Code)
+                                flag = false;
+                        });
+
+                        if(flag)
+                        {
+                            CompanyDetailVO dvo = new CompanyDetailVO
+                            {
+                                Comp_Code = txt_Code.Text,
+                                Prod_Code = add.Prod_Code,
+                                Prod_Name = add.Prod_Name,
+                                Prod_Unit = add.Prod_Unit,
+                                Prod_MinCount = 0,
+                                Prod_UnitPrice = 0,
+                                Prod_OldUnitPrice = 0,
+                                item_State = "Y",
+                                Prod_WhCode = add.Prod_WhCode,
+                                totCount = add.totcnt,
+                                Prod_SafetyStock = add.Prod_SafetyStock
+                            };
+
+                            detailList.Add(dvo);
+                        }
+                    }
+
+                    dgv_detail.DataSource = null;
+                    dgv_detail.DataSource = detailList;
+
+                }
+
+            }
+        }
+
+        private void dgv_detail_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex > -1)
+            {
+                txt_Prod_Code.Text = dgv_detail["Prod_Code", e.RowIndex].Value.ToString();
+                txt_Prod_Name.Text = dgv_detail["Prod_Name", e.RowIndex].Value.ToString();
+                txt_Prod_Unit.Text = dgv_detail["Prod_Unit", e.RowIndex].Value.ToString();
+                txt_totCount.Text = dgv_detail["totCount", e.RowIndex].Value.ToString();
+                txt_Prod_WhCode.Text = dgv_detail["Prod_WhCode", e.RowIndex].Value.ToString();
+                txt_Prod_SafetyStock.Text = dgv_detail["Prod_SafetyStock", e.RowIndex].Value.ToString();
+                txt_Prod_MinCount.Text = dgv_detail["Prod_MinCount", e.RowIndex].Value.ToString();
+                txt_Prod_UnitPrice.Text = dgv_detail["Prod_UnitPrice", e.RowIndex].Value.ToString();
+
+                if (dgv_detail["item_State", e.RowIndex].Value.ToString() == "Y")
+                    cbo_itemState.SelectedIndex = 0;
+                else
+                    cbo_itemState.SelectedIndex = 1;
+            }
+
+        }
+
+        private void btn_ProdUpdate_Click(object sender, EventArgs e)
+        {
+            detailList.ForEach((prod) =>
+            {
+                if (prod.Prod_Code == txt_Prod_Code.Text)
+                {
+                    prod.Prod_MinCount = decimal.Parse(txt_Prod_MinCount.Text);
+                    prod.Prod_OldUnitPrice = prod.Prod_UnitPrice;
+                    prod.Prod_UnitPrice = int.Parse(txt_Prod_UnitPrice.Text);
+                    prod.item_State = cbo_itemState.Text;
+
+                    bool flag = true;
+
+                    updateList.ForEach((udlist) =>
+                    {
+                        if (udlist.Prod_Code == prod.Prod_Code)
+                        {
+                            flag = false;
+                            udlist = prod;
+                        }
+                    });
+
+                    if (flag)
+                        updateList.Add(prod);
+                }
+
+            });
+
+            dgv_detail.DataSource = null;
+            dgv_detail.DataSource = detailList;
+        }
+
+        private void btm_AllSet_Click(object sender, EventArgs e)
+        {
+            CompanyService service = new CompanyService();
+            bool result = service.SetUpdateList(updateList);
+
+            if(result)
+            {
+                updateList.Clear();
+                MessageBox.Show("모든 회사물품 정보가 수정되었습니다.");
             }
         }
     }
