@@ -93,6 +93,99 @@ namespace AdminClientDAC
             }
         }
 
+        public bool SetUpdateList(List<CompanyDetailVO> updateList)
+        {
+            SqlTransaction trans = conn.BeginTransaction();
+
+            try
+            {
+                using(SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"update CompanyDetail 
+		                                                            set Prod_MinCount = @min, Prod_UnitPrice = @uprice, Prod_OldUnitPrice = @oldprice, Item_State = @state 
+		                                                            where Comp_Code = @code and Prod_Code = @pcode";
+
+                    cmd.Transaction = trans;
+
+                    try
+                    {
+                        for(int i = 0; i<updateList.Count; i++)
+                        {
+                            cmd.Parameters.Clear();
+                            cmd.Parameters.AddWithValue("@code", updateList[i].Comp_Code);
+                            cmd.Parameters.AddWithValue("@pcode", updateList[i].Prod_Code);
+                            cmd.Parameters.AddWithValue("@min", updateList[i].Prod_MinCount);
+                            cmd.Parameters.AddWithValue("@uprice", updateList[i].Prod_UnitPrice);
+                            cmd.Parameters.AddWithValue("@oldprice", updateList[i].Prod_OldUnitPrice);
+                            cmd.Parameters.AddWithValue("@state", updateList[i].item_State);
+
+                            cmd.ExecuteNonQuery();
+
+                        }
+
+                        trans.Commit();
+                        return true;
+                    }
+                    catch 
+                    {
+                        throw;
+                    }
+                }
+            }
+            catch(Exception err)
+            {
+                trans.Rollback();
+                Info.WriteError($"실행자:{Global.employees.Emp_Name} 물품 정보 변경목록들 수정중 오류 :" + err.Message, err);
+                return false;
+            }
+        }
+
+        public bool CompDetailAddProdList(List<ProductVO> addlist, string code)
+        {
+            SqlTransaction trans = conn.BeginTransaction();
+
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"SP_CompDetailAddProduct";
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    
+                    cmd.Transaction = trans;
+
+                    try
+                    {
+                        for (int i = 0; i < addlist.Count; i++)
+                        {
+                            cmd.Parameters.AddWithValue("@code", code);
+                            cmd.Parameters.AddWithValue("@pcode", addlist[i].Prod_Code);
+                            cmd.Parameters.AddWithValue("@unit", addlist[i].Prod_Unit);
+                            cmd.Parameters.AddWithValue("@empcode", Global.employees.Emp_Code);
+
+                            cmd.ExecuteNonQuery();
+
+                            cmd.Parameters.Clear();
+                        }
+                        trans.Commit();
+                        return true;
+
+                    }
+                    catch
+                    {
+                        throw;
+                    }
+                }
+            }
+            catch(Exception err)
+            {
+                trans.Rollback();
+                Info.WriteError($"실행자:{Global.employees.Emp_Name} 회사 디테일 물품 추가중 오류 :" + err.Message, err);
+                return false;
+            }
+        }
+
         /// <summary>
         /// 선택된 회사의 취급물품 정보를 가져옴
         /// </summary>
@@ -105,12 +198,13 @@ namespace AdminClientDAC
                 using(SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                     cmd.CommandText = @"select Comp_Code, cd.Prod_Code, pd.Prod_Name, Prod_UnitCount, cd.Prod_Unit, Prod_UnitPrice, Prod_OldUnitPrice, 
-		                                                                 	 Convert(varchar, Comp_StartDate, 23) as Comp_StartDate, Convert(varchar, Comp_EndDate, 23) as Comp_EndDate, 
-		                                                                	 Item_State, Comp_Div
-		                                                                from CompanyDetail as cd, Product as pd
-		                                                                where cd.Prod_Code = pd.Prod_Code
-		                                                                	 and cd.Comp_Code = @code";
+                     cmd.CommandText = @"select cd.Comp_Code, pd.Prod_Code, pd.Prod_Name, pd.Prod_Unit, cd.Prod_MinCount, 
+                                                                            cd.Prod_UnitPrice, cd.Prod_OldUnitPrice, cd.Item_State, pd.Prod_WhCode, pd.Prod_SafetyStock, 
+	                                                                		tot.totCount
+	                                                                from CompanyDetail as cd, Product as pd, (select Prod_Code, sum(wd.WH_Count) as totCount from WareHouseDetail as wd group by wd.Prod_Code) as tot
+	                                                                where cd.Prod_Code = pd.Prod_Code
+	                                                                	and cd.Prod_Code = tot.Prod_Code
+	                                                                	and cd.Comp_Code = @code";
 
                     cmd.Parameters.AddWithValue("@code", code);
 

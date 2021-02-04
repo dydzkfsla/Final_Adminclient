@@ -28,27 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.rd_descending = new System.Windows.Forms.RadioButton();
-            this.rd_ascending = new System.Windows.Forms.RadioButton();
-            this.customDataGridView1 = new AdminClient.CustomDataGridView();
-            this.customDataGridView2 = new AdminClient.CustomDataGridView();
+            this.dtp_end = new System.Windows.Forms.DateTimePicker();
+            this.dtp_start = new System.Windows.Forms.DateTimePicker();
+            this.dgv_Odlist = new AdminClient.CustomDataGridView();
+            this.dgv_oddList = new AdminClient.CustomDataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -60,6 +47,12 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.schCtrl = new AdminClient.SearchControl();
+            this.sortCtrl = new AdminClient.SortControl();
+            this.rb_Today = new System.Windows.Forms.RadioButton();
+            this.rb_OneWeek = new System.Windows.Forms.RadioButton();
+            this.rb_1Month = new System.Windows.Forms.RadioButton();
+            this.rb_3Month = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
@@ -79,8 +72,8 @@
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Odlist)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_oddList)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer3
@@ -88,7 +81,7 @@
             // 
             // splitContainer3.Panel1
             // 
-            this.splitContainer3.Panel1.Controls.Add(this.customDataGridView2);
+            this.splitContainer3.Panel1.Controls.Add(this.dgv_oddList);
             // 
             // splitContainer3.Panel2
             // 
@@ -103,21 +96,34 @@
             this.splitContainer3.Panel2.Controls.Add(this.label7);
             this.splitContainer3.Panel2.Controls.Add(this.label6);
             this.splitContainer3.Panel2.Controls.Add(this.label1);
-            this.splitContainer3.Size = new System.Drawing.Size(880, 359);
-            this.splitContainer3.SplitterDistance = 597;
+            this.splitContainer3.Size = new System.Drawing.Size(1149, 552);
+            this.splitContainer3.SplitterDistance = 779;
             // 
             // splitContainer2
             // 
             // 
             // splitContainer2.Panel1
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.customDataGridView1);
-            this.splitContainer2.Size = new System.Drawing.Size(880, 779);
-            this.splitContainer2.SplitterDistance = 414;
+            this.splitContainer2.Panel1.Controls.Add(this.dgv_Odlist);
+            this.splitContainer2.Size = new System.Drawing.Size(1149, 940);
+            this.splitContainer2.SplitterDistance = 382;
+            // 
+            // btn_add
+            // 
+            this.btn_add.Location = new System.Drawing.Point(1468, 9);
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
+            // 
+            // btn_Xls
+            // 
+            this.btn_Xls.Location = new System.Drawing.Point(1551, 9);
+            // 
+            // panel1
+            // 
+            this.panel1.Size = new System.Drawing.Size(1636, 64);
             // 
             // pnl_Main
             // 
-            this.pnl_Main.Size = new System.Drawing.Size(1267, 807);
+            this.pnl_Main.Size = new System.Drawing.Size(1654, 941);
             // 
             // gb_Sherch
             // 
@@ -130,50 +136,57 @@
             // 
             // gb_detail
             // 
-            this.gb_detail.Controls.Add(this.comboBox5);
-            this.gb_detail.Controls.Add(this.comboBox6);
-            this.gb_detail.Controls.Add(this.label3);
-            this.gb_detail.Controls.Add(this.button3);
-            this.gb_detail.Controls.Add(this.comboBox7);
-            this.gb_detail.Controls.Add(this.label5);
-            this.gb_detail.Controls.Add(this.label4);
-            this.gb_detail.Controls.Add(this.textBox1);
-            this.gb_detail.Controls.Add(this.button2);
-            this.gb_detail.Controls.Add(this.comboBox4);
-            this.gb_detail.Controls.Add(this.comboBox3);
-            this.gb_detail.Controls.Add(this.rd_descending);
-            this.gb_detail.Controls.Add(this.rd_ascending);
+            this.gb_detail.Controls.Add(this.sortCtrl);
+            this.gb_detail.Controls.Add(this.schCtrl);
             this.gb_detail.Location = new System.Drawing.Point(11, 188);
-            this.gb_detail.Size = new System.Drawing.Size(326, 321);
+            this.gb_detail.Size = new System.Drawing.Size(341, 321);
             // 
             // nu_limit
             // 
             this.nu_limit.Size = new System.Drawing.Size(134, 25);
             // 
+            // chk_limit
+            // 
+            this.chk_limit.CheckedChanged += new System.EventHandler(this.chk_limit_CheckedChanged);
+            // 
             // splitContainer1
             // 
-            this.splitContainer1.Size = new System.Drawing.Size(1267, 726);
+            this.splitContainer1.Size = new System.Drawing.Size(1654, 860);
+            this.splitContainer1.SplitterDistance = 468;
             // 
             // btn_folding
             // 
-            this.btn_folding.Location = new System.Drawing.Point(0, 409);
+            this.btn_folding.Location = new System.Drawing.Point(0, 476);
             // 
             // splitter1
             // 
-            this.splitter1.Size = new System.Drawing.Size(33, 726);
+            this.splitter1.Size = new System.Drawing.Size(33, 860);
             // 
-            // button1
+            // btn_search
             // 
             this.btn_search.Location = new System.Drawing.Point(238, 17);
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
+            // 
+            // Form_close
+            // 
+            this.Form_close.Location = new System.Drawing.Point(1633, 8);
+            // 
+            // TitleColor
+            // 
+            this.TitleColor.Size = new System.Drawing.Size(1744, 7);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.rb_3Month);
+            this.groupBox1.Controls.Add(this.rb_1Month);
+            this.groupBox1.Controls.Add(this.rb_OneWeek);
+            this.groupBox1.Controls.Add(this.rb_Today);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 99);
+            this.groupBox1.Controls.Add(this.dtp_end);
+            this.groupBox1.Controls.Add(this.dtp_start);
+            this.groupBox1.Location = new System.Drawing.Point(12, 87);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(262, 64);
+            this.groupBox1.Size = new System.Drawing.Size(300, 90);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "납기일";
@@ -181,197 +194,78 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(121, 30);
+            this.label2.Location = new System.Drawing.Point(136, 30);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(18, 17);
             this.label2.TabIndex = 5;
             this.label2.Text = "~";
             // 
-            // dateTimePicker2
+            // dtp_end
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(145, 24);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(108, 25);
-            this.dateTimePicker2.TabIndex = 4;
+            this.dtp_end.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_end.Location = new System.Drawing.Point(160, 24);
+            this.dtp_end.Name = "dtp_end";
+            this.dtp_end.Size = new System.Drawing.Size(108, 25);
+            this.dtp_end.TabIndex = 4;
             // 
-            // dateTimePicker1
+            // dtp_start
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(7, 24);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(108, 25);
-            this.dateTimePicker1.TabIndex = 3;
+            this.dtp_start.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_start.Location = new System.Drawing.Point(22, 24);
+            this.dtp_start.Name = "dtp_start";
+            this.dtp_start.Size = new System.Drawing.Size(108, 25);
+            this.dtp_start.TabIndex = 3;
             // 
-            // comboBox5
+            // dgv_Odlist
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(8, 199);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(192, 25);
-            this.comboBox5.TabIndex = 48;
+            this.dgv_Odlist.AllowUserToAddRows = false;
+            this.dgv_Odlist.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_Odlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Odlist.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgv_Odlist.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_Odlist.GridColor = System.Drawing.Color.Black;
+            this.dgv_Odlist.IsChkVisible = false;
+            this.dgv_Odlist.IsEditVisible = true;
+            this.dgv_Odlist.Location = new System.Drawing.Point(0, 0);
+            this.dgv_Odlist.Name = "dgv_Odlist";
+            this.dgv_Odlist.RowHeadersVisible = false;
+            this.dgv_Odlist.RowTemplate.Height = 23;
+            this.dgv_Odlist.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_Odlist.Size = new System.Drawing.Size(1149, 382);
+            this.dgv_Odlist.TabIndex = 0;
+            this.dgv_Odlist.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Odlist_CellClick);
+            this.dgv_Odlist.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Odlist_CellContentClick);
             // 
-            // comboBox6
+            // dgv_oddList
             // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(8, 42);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(214, 25);
-            this.comboBox6.TabIndex = 51;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 179);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 17);
-            this.label3.TabIndex = 47;
-            this.label3.Text = "사용여부";
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.Image = global::AdminClient.Properties.Resources.BelowAverage_32x32;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(238, 42);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(74, 87);
-            this.button3.TabIndex = 57;
-            this.button3.Text = "조건\r\n적용";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // comboBox7
-            // 
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(8, 151);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(192, 25);
-            this.comboBox7.TabIndex = 46;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 131);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 17);
-            this.label5.TabIndex = 45;
-            this.label5.Text = "창고용도";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 22);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 17);
-            this.label4.TabIndex = 49;
-            this.label4.Text = "검색조건";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(8, 104);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(214, 25);
-            this.textBox1.TabIndex = 50;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.Image = global::AdminClient.Properties.Resources.SortAsc_32x32;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(238, 237);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(74, 64);
-            this.button2.TabIndex = 56;
-            this.button2.Text = "정렬";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(8, 73);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(108, 25);
-            this.comboBox4.TabIndex = 52;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(11, 276);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(211, 25);
-            this.comboBox3.TabIndex = 53;
-            // 
-            // rd_descending
-            // 
-            this.rd_descending.AutoSize = true;
-            this.rd_descending.Location = new System.Drawing.Point(116, 237);
-            this.rd_descending.Name = "rd_descending";
-            this.rd_descending.Size = new System.Drawing.Size(106, 21);
-            this.rd_descending.TabIndex = 55;
-            this.rd_descending.TabStop = true;
-            this.rd_descending.Text = "Descending";
-            this.rd_descending.UseVisualStyleBackColor = true;
-            // 
-            // rd_ascending
-            // 
-            this.rd_ascending.AutoSize = true;
-            this.rd_ascending.Location = new System.Drawing.Point(12, 237);
-            this.rd_ascending.Name = "rd_ascending";
-            this.rd_ascending.Size = new System.Drawing.Size(98, 21);
-            this.rd_ascending.TabIndex = 54;
-            this.rd_ascending.TabStop = true;
-            this.rd_ascending.Text = "Ascending";
-            this.rd_ascending.UseVisualStyleBackColor = true;
-            // 
-            // customDataGridView1
-            // 
-            this.customDataGridView1.AllowUserToAddRows = false;
-            this.customDataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.customDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.customDataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.customDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.customDataGridView1.GridColor = System.Drawing.Color.Black;
-            this.customDataGridView1.IsChkVisible = false;
-            this.customDataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.customDataGridView1.Name = "customDataGridView1";
-            this.customDataGridView1.RowHeadersVisible = false;
-            this.customDataGridView1.RowTemplate.Height = 23;
-            this.customDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.customDataGridView1.Size = new System.Drawing.Size(880, 414);
-            this.customDataGridView1.TabIndex = 0;
-            // 
-            // customDataGridView2
-            // 
-            this.customDataGridView2.AllowUserToAddRows = false;
-            this.customDataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.customDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.customDataGridView2.DefaultCellStyle = dataGridViewCellStyle1;
-            this.customDataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.customDataGridView2.GridColor = System.Drawing.Color.Black;
-            this.customDataGridView2.IsChkVisible = false;
-            this.customDataGridView2.Location = new System.Drawing.Point(0, 0);
-            this.customDataGridView2.Name = "customDataGridView2";
-            this.customDataGridView2.RowHeadersVisible = false;
-            this.customDataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.customDataGridView2.Size = new System.Drawing.Size(597, 359);
-            this.customDataGridView2.TabIndex = 0;
+            this.dgv_oddList.AllowUserToAddRows = false;
+            this.dgv_oddList.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_oddList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_oddList.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_oddList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_oddList.GridColor = System.Drawing.Color.Black;
+            this.dgv_oddList.IsChkVisible = false;
+            this.dgv_oddList.IsEditVisible = false;
+            this.dgv_oddList.Location = new System.Drawing.Point(0, 0);
+            this.dgv_oddList.Name = "dgv_oddList";
+            this.dgv_oddList.RowHeadersVisible = false;
+            this.dgv_oddList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_oddList.Size = new System.Drawing.Size(779, 552);
+            this.dgv_oddList.TabIndex = 0;
             // 
             // label1
             // 
@@ -464,11 +358,80 @@
             this.button4.Text = "물품추가";
             this.button4.UseVisualStyleBackColor = true;
             // 
+            // schCtrl
+            // 
+            this.schCtrl.BackColor = System.Drawing.Color.Transparent;
+            this.schCtrl.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.schCtrl.Location = new System.Drawing.Point(6, 24);
+            this.schCtrl.Margin = new System.Windows.Forms.Padding(4);
+            this.schCtrl.Name = "schCtrl";
+            this.schCtrl.Size = new System.Drawing.Size(320, 75);
+            this.schCtrl.TabIndex = 0;
+            // 
+            // sortCtrl
+            // 
+            this.sortCtrl.BackColor = System.Drawing.Color.Transparent;
+            this.sortCtrl.Font = new System.Drawing.Font("나눔고딕", 11.25F);
+            this.sortCtrl.Location = new System.Drawing.Point(6, 107);
+            this.sortCtrl.Margin = new System.Windows.Forms.Padding(4);
+            this.sortCtrl.Name = "sortCtrl";
+            this.sortCtrl.Size = new System.Drawing.Size(325, 69);
+            this.sortCtrl.TabIndex = 1;
+            // 
+            // rb_Today
+            // 
+            this.rb_Today.AutoSize = true;
+            this.rb_Today.Location = new System.Drawing.Point(14, 63);
+            this.rb_Today.Name = "rb_Today";
+            this.rb_Today.Size = new System.Drawing.Size(54, 21);
+            this.rb_Today.TabIndex = 6;
+            this.rb_Today.TabStop = true;
+            this.rb_Today.Text = "당일";
+            this.rb_Today.UseVisualStyleBackColor = true;
+            this.rb_Today.CheckedChanged += new System.EventHandler(this.rb_CheckedChange);
+            // 
+            // rb_OneWeek
+            // 
+            this.rb_OneWeek.AutoSize = true;
+            this.rb_OneWeek.Location = new System.Drawing.Point(87, 63);
+            this.rb_OneWeek.Name = "rb_OneWeek";
+            this.rb_OneWeek.Size = new System.Drawing.Size(49, 21);
+            this.rb_OneWeek.TabIndex = 7;
+            this.rb_OneWeek.TabStop = true;
+            this.rb_OneWeek.Text = "1주";
+            this.rb_OneWeek.UseVisualStyleBackColor = true;
+            this.rb_OneWeek.CheckedChanged += new System.EventHandler(this.rb_CheckedChange);
+            // 
+            // rb_1Month
+            // 
+            this.rb_1Month.AutoSize = true;
+            this.rb_1Month.Location = new System.Drawing.Point(160, 63);
+            this.rb_1Month.Name = "rb_1Month";
+            this.rb_1Month.Size = new System.Drawing.Size(49, 21);
+            this.rb_1Month.TabIndex = 8;
+            this.rb_1Month.TabStop = true;
+            this.rb_1Month.Text = "1달";
+            this.rb_1Month.UseVisualStyleBackColor = true;
+            this.rb_1Month.CheckedChanged += new System.EventHandler(this.rb_CheckedChange);
+            // 
+            // rb_3Month
+            // 
+            this.rb_3Month.AutoSize = true;
+            this.rb_3Month.Location = new System.Drawing.Point(226, 63);
+            this.rb_3Month.Name = "rb_3Month";
+            this.rb_3Month.Size = new System.Drawing.Size(49, 21);
+            this.rb_3Month.TabIndex = 9;
+            this.rb_3Month.TabStop = true;
+            this.rb_3Month.Text = "3달";
+            this.rb_3Month.UseVisualStyleBackColor = true;
+            this.rb_3Month.CheckedChanged += new System.EventHandler(this.rb_CheckedChange);
+            // 
             // OrderInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
-            this.ClientSize = new System.Drawing.Size(1278, 891);
+            this.ClientSize = new System.Drawing.Size(1665, 1025);
             this.Name = "OrderInfo";
+            this.Load += new System.EventHandler(this.OrderInfo_Load);
             this.splitContainer3.Panel1.ResumeLayout(false);
             this.splitContainer3.Panel2.ResumeLayout(false);
             this.splitContainer3.Panel2.PerformLayout();
@@ -483,7 +446,6 @@
             this.gb_Sherch.ResumeLayout(false);
             this.gb_Sherch.PerformLayout();
             this.gb_detail.ResumeLayout(false);
-            this.gb_detail.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nu_limit)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -492,8 +454,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Odlist)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_oddList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -503,22 +465,9 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ComboBox comboBox7;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.RadioButton rd_descending;
-        private System.Windows.Forms.RadioButton rd_ascending;
-        private CustomDataGridView customDataGridView2;
+        private System.Windows.Forms.DateTimePicker dtp_end;
+        private System.Windows.Forms.DateTimePicker dtp_start;
+        private CustomDataGridView dgv_oddList;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
@@ -527,9 +476,15 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
-        private CustomDataGridView customDataGridView1;
+        private CustomDataGridView dgv_Odlist;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
+        private SortControl sortCtrl;
+        private SearchControl schCtrl;
+        private System.Windows.Forms.RadioButton rb_3Month;
+        private System.Windows.Forms.RadioButton rb_1Month;
+        private System.Windows.Forms.RadioButton rb_OneWeek;
+        private System.Windows.Forms.RadioButton rb_Today;
     }
 }

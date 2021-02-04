@@ -57,5 +57,21 @@ namespace AdminClient.Service
             dac.Dispose();
             return list;
         }
+
+        internal bool CompDetailAddProdList(List<ProductVO> addlist, string code)
+        {
+            CompanyDAC dac = new CompanyDAC();
+            bool result = dac.CompDetailAddProdList(addlist, code);
+            dac.Dispose();
+            return result;
+        }
+
+        internal bool SetUpdateList(List<CompanyDetailVO> updateList)
+        {
+            CompanyDAC dac = new CompanyDAC();
+            bool result = dac.SetUpdateList(updateList);
+            dac.Dispose();
+            return result;
+        }
     }
 }
