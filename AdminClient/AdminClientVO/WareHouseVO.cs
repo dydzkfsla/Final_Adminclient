@@ -12,6 +12,7 @@ namespace AdminClientVO
         public string WH_Type { get; set; }
         public string Common_Name { get; set; }
         public string WH_State { get; set; }
+        public string WH_Name { get; set; }
     }
 
     public class WhDetailVO

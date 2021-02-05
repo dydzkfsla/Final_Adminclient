@@ -199,12 +199,17 @@ namespace AdminClientDAC
                 {
                     cmd.Connection = conn;
                      cmd.CommandText = @"select cd.Comp_Code, pd.Prod_Code, pd.Prod_Name, pd.Prod_Unit, cd.Prod_MinCount, 
-                                                                            cd.Prod_UnitPrice, cd.Prod_OldUnitPrice, cd.Item_State, pd.Prod_WhCode, pd.Prod_SafetyStock, 
-	                                                                		tot.totCount
-	                                                                from CompanyDetail as cd, Product as pd, (select Prod_Code, sum(wd.WH_Count) as totCount from WareHouseDetail as wd group by wd.Prod_Code) as tot
-	                                                                where cd.Prod_Code = pd.Prod_Code
-	                                                                	and cd.Prod_Code = tot.Prod_Code
-	                                                                	and cd.Comp_Code = @code";
+                                                                             cd.Prod_UnitPrice, cd.Prod_OldUnitPrice, cd.Item_State, pd.Prod_WhCode, pd.Prod_SafetyStock, 
+	                                                                         tot.totCount, isnull(pc.Check_Point, '없음') as Check_Point
+	                                                                from CompanyDetail as cd
+	                                                                inner join Product as pd on cd.Prod_Code = pd.Prod_Code
+	                                                                inner join (select Prod_Code, sum(wd.WH_Count) as totCount 
+	                                                                						from WareHouseDetail as wd, WareHouse as wh
+                                                                                            where wd.WH_Code = wh.WH_Code
+								                                                                and wh.WH_Type <> 'WareH05'
+	                                                                						group by wd.Prod_Code) as tot on cd.Prod_Code = tot.Prod_Code
+	                                                                left outer join ProductCheck as pc on cd.Prod_Code = pc.Prod_Code
+	                                                                where cd.Comp_Code = @code";
 
                     cmd.Parameters.AddWithValue("@code", code);
 

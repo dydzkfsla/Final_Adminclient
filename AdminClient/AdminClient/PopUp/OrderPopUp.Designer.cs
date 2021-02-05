@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.button6 = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.btn_Order = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dtp_DueDate = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
@@ -42,7 +42,7 @@
             this.txt_check = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btn_Set = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.txt_ProdName = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -61,6 +61,9 @@
             this.dgv_AddList = new AdminClient.CustomDataGridView();
             this.dgv_Prod = new AdminClient.CustomDataGridView();
             this.dgv_Comp = new AdminClient.CustomDataGridView();
+            this.txt_Note = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.pnl_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).BeginInit();
             this.panel1.SuspendLayout();
@@ -71,6 +74,9 @@
             // 
             // pnl_Main
             // 
+            this.pnl_Main.Controls.Add(this.txt_Note);
+            this.pnl_Main.Controls.Add(this.label13);
+            this.pnl_Main.Controls.Add(this.label14);
             this.pnl_Main.Controls.Add(this.btn_Out);
             this.pnl_Main.Controls.Add(this.label7);
             this.pnl_Main.Controls.Add(this.btn_In);
@@ -86,7 +92,7 @@
             this.pnl_Main.Controls.Add(this.label12);
             this.pnl_Main.Controls.Add(this.label2);
             this.pnl_Main.Controls.Add(this.label9);
-            this.pnl_Main.Controls.Add(this.button6);
+            this.pnl_Main.Controls.Add(this.btn_Order);
             this.pnl_Main.Controls.Add(this.label8);
             this.pnl_Main.Controls.Add(this.txt_ProdName);
             this.pnl_Main.Controls.Add(this.label10);
@@ -94,8 +100,8 @@
             this.pnl_Main.Controls.Add(this.txt_check);
             this.pnl_Main.Controls.Add(this.label1);
             this.pnl_Main.Controls.Add(this.label4);
-            this.pnl_Main.Controls.Add(this.button5);
-            this.pnl_Main.Size = new System.Drawing.Size(1239, 512);
+            this.pnl_Main.Controls.Add(this.btn_Set);
+            this.pnl_Main.Size = new System.Drawing.Size(1269, 512);
             // 
             // lbl_Title
             // 
@@ -104,20 +110,21 @@
             // 
             // Form_close
             // 
-            this.Form_close.Location = new System.Drawing.Point(1213, 8);
+            this.Form_close.Location = new System.Drawing.Point(1243, 8);
             // 
             // TitleColor
             // 
-            this.TitleColor.Size = new System.Drawing.Size(1261, 7);
+            this.TitleColor.Size = new System.Drawing.Size(1291, 7);
             // 
-            // button6
+            // btn_Order
             // 
-            this.button6.Location = new System.Drawing.Point(345, 447);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(393, 53);
-            this.button6.TabIndex = 65;
-            this.button6.Text = "발주";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btn_Order.Location = new System.Drawing.Point(345, 447);
+            this.btn_Order.Name = "btn_Order";
+            this.btn_Order.Size = new System.Drawing.Size(393, 53);
+            this.btn_Order.TabIndex = 65;
+            this.btn_Order.Text = "발주";
+            this.btn_Order.UseVisualStyleBackColor = true;
+            this.btn_Order.Click += new System.EventHandler(this.btn_Order_Click);
             // 
             // panel1
             // 
@@ -200,7 +207,7 @@
             this.txt_check.Location = new System.Drawing.Point(878, 239);
             this.txt_check.Multiline = true;
             this.txt_check.Name = "txt_check";
-            this.txt_check.Size = new System.Drawing.Size(304, 163);
+            this.txt_check.Size = new System.Drawing.Size(304, 112);
             this.txt_check.TabIndex = 55;
             // 
             // label1
@@ -227,14 +234,15 @@
             this.label4.TabIndex = 53;
             this.label4.Text = "◆";
             // 
-            // button5
+            // btn_Set
             // 
-            this.button5.Location = new System.Drawing.Point(980, 430);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(67, 53);
-            this.button5.TabIndex = 64;
-            this.button5.Text = "수정";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btn_Set.Location = new System.Drawing.Point(1194, 149);
+            this.btn_Set.Name = "btn_Set";
+            this.btn_Set.Size = new System.Drawing.Size(67, 25);
+            this.btn_Set.TabIndex = 64;
+            this.btn_Set.Text = "적용";
+            this.btn_Set.UseVisualStyleBackColor = true;
+            this.btn_Set.Click += new System.EventHandler(this.btn_Set_Click);
             // 
             // label9
             // 
@@ -401,14 +409,14 @@
             // 
             this.dgv_AddList.BackgroundColor = System.Drawing.Color.White;
             this.dgv_AddList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_AddList.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_AddList.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_AddList.GridColor = System.Drawing.Color.Black;
             this.dgv_AddList.IsChkVisible = true;
             this.dgv_AddList.IsEditVisible = false;
@@ -417,19 +425,20 @@
             this.dgv_AddList.RowTemplate.Height = 23;
             this.dgv_AddList.Size = new System.Drawing.Size(234, 365);
             this.dgv_AddList.TabIndex = 76;
+            this.dgv_AddList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_AddList_CellClick);
             // 
             // dgv_Prod
             // 
             this.dgv_Prod.BackgroundColor = System.Drawing.Color.White;
             this.dgv_Prod.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Prod.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Prod.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgv_Prod.GridColor = System.Drawing.Color.Black;
             this.dgv_Prod.IsChkVisible = true;
             this.dgv_Prod.IsEditVisible = false;
@@ -443,14 +452,14 @@
             // 
             this.dgv_Comp.BackgroundColor = System.Drawing.Color.White;
             this.dgv_Comp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Comp.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Comp.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgv_Comp.GridColor = System.Drawing.Color.Black;
             this.dgv_Comp.IsChkVisible = false;
             this.dgv_Comp.IsEditVisible = false;
@@ -461,10 +470,42 @@
             this.dgv_Comp.TabIndex = 72;
             this.dgv_Comp.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Comp_CellClick);
             // 
+            // txt_Note
+            // 
+            this.txt_Note.Location = new System.Drawing.Point(878, 384);
+            this.txt_Note.Multiline = true;
+            this.txt_Note.Name = "txt_Note";
+            this.txt_Note.Size = new System.Drawing.Size(304, 112);
+            this.txt_Note.TabIndex = 83;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.White;
+            this.label13.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(898, 364);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(38, 17);
+            this.label13.TabIndex = 82;
+            this.label13.Text = "메모";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.White;
+            this.label14.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label14.ForeColor = System.Drawing.Color.Black;
+            this.label14.Location = new System.Drawing.Point(875, 364);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(23, 17);
+            this.label14.TabIndex = 81;
+            this.label14.Text = "◆";
+            // 
             // OrderPopUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
-            this.ClientSize = new System.Drawing.Size(1249, 570);
+            this.ClientSize = new System.Drawing.Size(1279, 570);
             this.Name = "OrderPopUp";
             this.Load += new System.EventHandler(this.OrderPopUp_Load);
             this.pnl_Main.ResumeLayout(false);
@@ -482,7 +523,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btn_Order;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txt_check;
         private System.Windows.Forms.Label label1;
@@ -492,7 +533,7 @@
         private System.Windows.Forms.TextBox txt_OrderCode;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btn_Set;
         private System.Windows.Forms.DateTimePicker dtp_DueDate;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txt_OrderCnt;
@@ -512,5 +553,8 @@
         private CustomDataGridView dgv_AddList;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btn_Out;
+        private System.Windows.Forms.TextBox txt_Note;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
     }
 }

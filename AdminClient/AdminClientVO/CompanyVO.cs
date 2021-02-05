@@ -36,6 +36,7 @@ namespace AdminClientVO
         public string Prod_WhCode { get; set; }
         public decimal totCount { get; set; }
         public decimal Prod_SafetyStock { get; set; }
+        public string Check_Point { get; set; }
 
     }
 

@@ -51,7 +51,7 @@ namespace AdminClientDAC
         private static bool ContainsColumn(IDataReader dataReader, string columnName)
         {
             try
-            {
+           {
                 return dataReader.GetOrdinal(columnName) >= 0;
             }
             catch (IndexOutOfRangeException)

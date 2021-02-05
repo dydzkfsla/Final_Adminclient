@@ -21,7 +21,11 @@ namespace AdminClient
 
         public static void TextBoxIsDigitAndOneDot(object sender, KeyPressEventArgs e)
         {
-            if(!(char.IsDigit(e.KeyChar) || e.KeyChar == '\b' || e.KeyChar == '.'))
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == '\b' || e.KeyChar == '.'))
+            {
+                e.Handled = true;
+            }
+            else if(e.KeyChar == '.' && ((TextBox)sender).Text.Length < 1)
             {
                 e.Handled = true;
             }
@@ -29,6 +33,7 @@ namespace AdminClient
             {
                 e.Handled = true;
             }
+            
         }
 
         public static void TextBoxNoIsDigit(object sender, KeyPressEventArgs e)

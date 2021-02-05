@@ -10,14 +10,6 @@ namespace AdminClient.Service
 {
     public class BORService
     {
-        internal List<ComboBORVO> GetComboBindingList()
-        {
-            BORDAC dac = new BORDAC();
-            List<ComboBORVO> list = dac.GetComboBindingList();
-            dac.Dispose();
-            return list;
-        }
-
         internal int AddBOR(BORVO vo)
         {
             BORDAC dac = new BORDAC();
@@ -48,6 +40,14 @@ namespace AdminClient.Service
             bool result = dac.DeleteBOR(code);
             dac.Dispose();
             return result;
+        }
+
+        internal List<CombBORVO> GetCboBindingList()
+        {
+            BORDAC dac = new BORDAC();
+            List<CombBORVO> list = dac.GetCboBindingList();
+            dac.Dispose();
+            return list;
         }
     }
 }
