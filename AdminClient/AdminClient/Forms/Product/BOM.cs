@@ -43,6 +43,12 @@ namespace AdminClient.Forms
 
         private void btn_Search_Click(object sender, EventArgs e)
         {
+            if(txt_Code.Text.Trim().Length < 1)
+            {
+                MessageBox.Show("품목코드를 입력해주세요");
+                return;
+            }
+
             BOMInfo info = new BOMInfo
             {
                 Date = dtp_date.Value,

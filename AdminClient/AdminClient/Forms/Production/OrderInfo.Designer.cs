@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rb_3Month = new System.Windows.Forms.RadioButton();
             this.rb_1Month = new System.Windows.Forms.RadioButton();
@@ -57,14 +57,14 @@
             this.gb_odMenu = new System.Windows.Forms.GroupBox();
             this.btn_OdMenu = new System.Windows.Forms.Button();
             this.pnl_Info = new System.Windows.Forms.Panel();
+            this.lbl_unit3 = new System.Windows.Forms.Label();
+            this.lbl_unit2 = new System.Windows.Forms.Label();
+            this.lbl_unit1 = new System.Windows.Forms.Label();
+            this.btn_ProdIN = new System.Windows.Forms.Button();
             this.btn_ProdAdd = new System.Windows.Forms.Button();
             this.cbo_State = new System.Windows.Forms.ComboBox();
             this.txt_OdCode = new System.Windows.Forms.TextBox();
             this.lblblblb = new System.Windows.Forms.Label();
-            this.btn_ProdIN = new System.Windows.Forms.Button();
-            this.lbl_unit1 = new System.Windows.Forms.Label();
-            this.lbl_unit2 = new System.Windows.Forms.Label();
-            this.lbl_unit3 = new System.Windows.Forms.Label();
             this.gb_ProdInfo = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
             this.splitContainer3.Panel1.SuspendLayout();
@@ -105,7 +105,7 @@
             this.splitContainer3.Panel2.Controls.Add(this.gb_odMenu);
             this.splitContainer3.Panel2.Controls.Add(this.gb_ProdInfo);
             this.splitContainer3.Size = new System.Drawing.Size(1255, 551);
-            this.splitContainer3.SplitterDistance = 921;
+            this.splitContainer3.SplitterDistance = 909;
             // 
             // splitContainer2
             // 
@@ -287,14 +287,14 @@
             this.dgv_Odlist.AllowUserToAddRows = false;
             this.dgv_Odlist.BackgroundColor = System.Drawing.Color.White;
             this.dgv_Odlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Odlist.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Odlist.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_Odlist.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_Odlist.GridColor = System.Drawing.Color.Black;
             this.dgv_Odlist.IsChkVisible = false;
@@ -314,14 +314,14 @@
             this.dgv_oddList.AllowUserToAddRows = false;
             this.dgv_oddList.BackgroundColor = System.Drawing.Color.White;
             this.dgv_oddList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_oddList.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_oddList.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_oddList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_oddList.GridColor = System.Drawing.Color.Black;
             this.dgv_oddList.IsChkVisible = false;
@@ -330,7 +330,7 @@
             this.dgv_oddList.Name = "dgv_oddList";
             this.dgv_oddList.RowHeadersVisible = false;
             this.dgv_oddList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_oddList.Size = new System.Drawing.Size(921, 551);
+            this.dgv_oddList.Size = new System.Drawing.Size(909, 551);
             this.dgv_oddList.TabIndex = 0;
             this.dgv_oddList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_oddList_CellClick);
             // 
@@ -482,6 +482,40 @@
             this.pnl_Info.Size = new System.Drawing.Size(303, 328);
             this.pnl_Info.TabIndex = 17;
             // 
+            // lbl_unit3
+            // 
+            this.lbl_unit3.AutoSize = true;
+            this.lbl_unit3.Location = new System.Drawing.Point(251, 106);
+            this.lbl_unit3.Name = "lbl_unit3";
+            this.lbl_unit3.Size = new System.Drawing.Size(0, 17);
+            this.lbl_unit3.TabIndex = 20;
+            // 
+            // lbl_unit2
+            // 
+            this.lbl_unit2.AutoSize = true;
+            this.lbl_unit2.Location = new System.Drawing.Point(251, 75);
+            this.lbl_unit2.Name = "lbl_unit2";
+            this.lbl_unit2.Size = new System.Drawing.Size(0, 17);
+            this.lbl_unit2.TabIndex = 19;
+            // 
+            // lbl_unit1
+            // 
+            this.lbl_unit1.AutoSize = true;
+            this.lbl_unit1.Location = new System.Drawing.Point(251, 44);
+            this.lbl_unit1.Name = "lbl_unit1";
+            this.lbl_unit1.Size = new System.Drawing.Size(0, 17);
+            this.lbl_unit1.TabIndex = 18;
+            // 
+            // btn_ProdIN
+            // 
+            this.btn_ProdIN.Location = new System.Drawing.Point(3, 285);
+            this.btn_ProdIN.Name = "btn_ProdIN";
+            this.btn_ProdIN.Size = new System.Drawing.Size(292, 39);
+            this.btn_ProdIN.TabIndex = 17;
+            this.btn_ProdIN.Text = "부분입고";
+            this.btn_ProdIN.UseVisualStyleBackColor = true;
+            this.btn_ProdIN.Click += new System.EventHandler(this.btn_ProdIN_Click);
+            // 
             // btn_ProdAdd
             // 
             this.btn_ProdAdd.Location = new System.Drawing.Point(3, 129);
@@ -520,40 +554,6 @@
             this.lblblblb.Size = new System.Drawing.Size(68, 17);
             this.lblblblb.TabIndex = 19;
             this.lblblblb.Text = "주문번호";
-            // 
-            // btn_ProdIN
-            // 
-            this.btn_ProdIN.Location = new System.Drawing.Point(3, 285);
-            this.btn_ProdIN.Name = "btn_ProdIN";
-            this.btn_ProdIN.Size = new System.Drawing.Size(292, 39);
-            this.btn_ProdIN.TabIndex = 17;
-            this.btn_ProdIN.Text = "부분입고";
-            this.btn_ProdIN.UseVisualStyleBackColor = true;
-            this.btn_ProdIN.Click += new System.EventHandler(this.btn_ProdIN_Click);
-            // 
-            // lbl_unit1
-            // 
-            this.lbl_unit1.AutoSize = true;
-            this.lbl_unit1.Location = new System.Drawing.Point(251, 44);
-            this.lbl_unit1.Name = "lbl_unit1";
-            this.lbl_unit1.Size = new System.Drawing.Size(0, 17);
-            this.lbl_unit1.TabIndex = 18;
-            // 
-            // lbl_unit2
-            // 
-            this.lbl_unit2.AutoSize = true;
-            this.lbl_unit2.Location = new System.Drawing.Point(251, 75);
-            this.lbl_unit2.Name = "lbl_unit2";
-            this.lbl_unit2.Size = new System.Drawing.Size(0, 17);
-            this.lbl_unit2.TabIndex = 19;
-            // 
-            // lbl_unit3
-            // 
-            this.lbl_unit3.AutoSize = true;
-            this.lbl_unit3.Location = new System.Drawing.Point(251, 106);
-            this.lbl_unit3.Name = "lbl_unit3";
-            this.lbl_unit3.Size = new System.Drawing.Size(0, 17);
-            this.lbl_unit3.TabIndex = 20;
             // 
             // gb_ProdInfo
             // 

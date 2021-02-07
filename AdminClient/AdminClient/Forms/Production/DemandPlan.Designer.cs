@@ -29,43 +29,21 @@ namespace AdminClient.Forms
 		/// </summary>
 		private void InitializeComponent()
 		{
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+            this.dtp_edate = new System.Windows.Forms.DateTimePicker();
+            this.dtp_sdate = new System.Windows.Forms.DateTimePicker();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.rd_descending = new System.Windows.Forms.RadioButton();
-            this.label10 = new System.Windows.Forms.Label();
-            this.rd_ascending = new System.Windows.Forms.RadioButton();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.customDataGridView1 = new AdminClient.CustomDataGridView();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_Demand = new AdminClient.CustomDataGridView();
+            this.schCtrl = new AdminClient.SearchControl();
+            this.sortCtrl = new AdminClient.SortControl();
             this.panel1.SuspendLayout();
             this.pnl_Main.SuspendLayout();
             this.gb_Sherch.SuspendLayout();
@@ -77,7 +55,7 @@ namespace AdminClient.Forms
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Demand)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_add
@@ -87,9 +65,6 @@ namespace AdminClient.Forms
             // btn_Xls
             // 
             this.btn_Xls.Location = new System.Drawing.Point(1470, 9);
-            // 
-            // btn_Update
-            // 
             // 
             // panel1
             // 
@@ -120,7 +95,7 @@ namespace AdminClient.Forms
             this.gb_Sherch.Controls.Add(this.label7);
             this.gb_Sherch.Controls.Add(this.label8);
             this.gb_Sherch.Controls.Add(this.groupBox1);
-            this.gb_Sherch.Size = new System.Drawing.Size(295, 228);
+            this.gb_Sherch.Size = new System.Drawing.Size(335, 228);
             this.gb_Sherch.Controls.SetChildIndex(this.groupBox1, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.chk_limit, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.nu_limit, 0);
@@ -132,21 +107,10 @@ namespace AdminClient.Forms
             // 
             // gb_detail
             // 
-            this.gb_detail.Controls.Add(this.comboBox5);
-            this.gb_detail.Controls.Add(this.button3);
-            this.gb_detail.Controls.Add(this.comboBox7);
-            this.gb_detail.Controls.Add(this.button4);
-            this.gb_detail.Controls.Add(this.label9);
-            this.gb_detail.Controls.Add(this.rd_descending);
-            this.gb_detail.Controls.Add(this.label10);
-            this.gb_detail.Controls.Add(this.rd_ascending);
-            this.gb_detail.Controls.Add(this.comboBox3);
-            this.gb_detail.Controls.Add(this.comboBox4);
-            this.gb_detail.Controls.Add(this.comboBox6);
-            this.gb_detail.Controls.Add(this.textBox4);
-            this.gb_detail.Controls.Add(this.label11);
+            this.gb_detail.Controls.Add(this.sortCtrl);
+            this.gb_detail.Controls.Add(this.schCtrl);
             this.gb_detail.Location = new System.Drawing.Point(11, 234);
-            this.gb_detail.Size = new System.Drawing.Size(295, 351);
+            this.gb_detail.Size = new System.Drawing.Size(335, 351);
             // 
             // splitContainer1
             // 
@@ -154,9 +118,9 @@ namespace AdminClient.Forms
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.customDataGridView1);
+            this.splitContainer1.Panel2.Controls.Add(this.dgv_Demand);
             this.splitContainer1.Size = new System.Drawing.Size(1565, 608);
-            this.splitContainer1.SplitterDistance = 317;
+            this.splitContainer1.SplitterDistance = 348;
             // 
             // btn_folding
             // 
@@ -165,6 +129,11 @@ namespace AdminClient.Forms
             // splitter1
             // 
             this.splitter1.Size = new System.Drawing.Size(33, 608);
+            // 
+            // btn_search
+            // 
+            this.btn_search.Location = new System.Drawing.Point(242, 18);
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // Form_close
             // 
@@ -177,8 +146,8 @@ namespace AdminClient.Forms
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.dateTimePicker3);
-            this.groupBox1.Controls.Add(this.dateTimePicker4);
+            this.groupBox1.Controls.Add(this.dtp_edate);
+            this.groupBox1.Controls.Add(this.dtp_sdate);
             this.groupBox1.Location = new System.Drawing.Point(5, 159);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(277, 64);
@@ -195,21 +164,21 @@ namespace AdminClient.Forms
             this.label6.TabIndex = 5;
             this.label6.Text = "~";
             // 
-            // dateTimePicker3
+            // dtp_edate
             // 
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(145, 24);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(108, 25);
-            this.dateTimePicker3.TabIndex = 4;
+            this.dtp_edate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_edate.Location = new System.Drawing.Point(145, 24);
+            this.dtp_edate.Name = "dtp_edate";
+            this.dtp_edate.Size = new System.Drawing.Size(108, 25);
+            this.dtp_edate.TabIndex = 4;
             // 
-            // dateTimePicker4
+            // dtp_sdate
             // 
-            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker4.Location = new System.Drawing.Point(7, 24);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(108, 25);
-            this.dateTimePicker4.TabIndex = 3;
+            this.dtp_sdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_sdate.Location = new System.Drawing.Point(7, 24);
+            this.dtp_sdate.Name = "dtp_sdate";
+            this.dtp_sdate.Size = new System.Drawing.Size(108, 25);
+            this.dtp_sdate.TabIndex = 3;
             // 
             // comboBox2
             // 
@@ -263,129 +232,6 @@ namespace AdminClient.Forms
             this.label4.TabIndex = 12;
             this.label4.Text = "수요코드";
             // 
-            // comboBox5
-            // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(14, 200);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(189, 25);
-            this.comboBox5.TabIndex = 48;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.Image = global::AdminClient.Properties.Resources.BelowAverage_32x32;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(209, 40);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(74, 56);
-            this.button3.TabIndex = 57;
-            this.button3.Text = "조건\r\n적용";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // comboBox7
-            // 
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(14, 150);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(189, 25);
-            this.comboBox7.TabIndex = 47;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.Image = global::AdminClient.Properties.Resources.SortAsc_32x32;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(209, 240);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(74, 59);
-            this.button4.TabIndex = 56;
-            this.button4.Text = "정렬";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(11, 178);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(36, 17);
-            this.label9.TabIndex = 46;
-            this.label9.Text = "품목";
-            // 
-            // rd_descending
-            // 
-            this.rd_descending.AutoSize = true;
-            this.rd_descending.Location = new System.Drawing.Point(108, 240);
-            this.rd_descending.Name = "rd_descending";
-            this.rd_descending.Size = new System.Drawing.Size(106, 21);
-            this.rd_descending.TabIndex = 55;
-            this.rd_descending.TabStop = true;
-            this.rd_descending.Text = "Descending";
-            this.rd_descending.UseVisualStyleBackColor = true;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(11, 130);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(36, 17);
-            this.label10.TabIndex = 45;
-            this.label10.Text = "업체";
-            // 
-            // rd_ascending
-            // 
-            this.rd_ascending.AutoSize = true;
-            this.rd_ascending.Location = new System.Drawing.Point(13, 240);
-            this.rd_ascending.Name = "rd_ascending";
-            this.rd_ascending.Size = new System.Drawing.Size(98, 21);
-            this.rd_ascending.TabIndex = 54;
-            this.rd_ascending.TabStop = true;
-            this.rd_ascending.Text = "Ascending";
-            this.rd_ascending.UseVisualStyleBackColor = true;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(14, 274);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(189, 25);
-            this.comboBox3.TabIndex = 53;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(11, 71);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(108, 25);
-            this.comboBox4.TabIndex = 52;
-            // 
-            // comboBox6
-            // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(11, 40);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(192, 25);
-            this.comboBox6.TabIndex = 51;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(11, 102);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(192, 25);
-            this.textBox4.TabIndex = 50;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(11, 20);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(64, 17);
-            this.label11.TabIndex = 49;
-            this.label11.Text = "검색조건";
-            // 
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -402,125 +248,78 @@ namespace AdminClient.Forms
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // customDataGridView1
+            // dgv_Demand
             // 
-            this.customDataGridView1.AllowUserToAddRows = false;
-            this.customDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgv_Demand.AllowUserToAddRows = false;
+            this.dgv_Demand.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.customDataGridView1.BackgroundColor = System.Drawing.Color.White;
-			this.customDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.customDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8,
-            this.Column9,
-            this.Column10,
-            this.Column11,
-            this.Column12,
-            this.Column13,
-            this.Column14});
-			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.IndianRed;
-			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.customDataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
-			this.customDataGridView1.GridColor = System.Drawing.Color.Black;
-			this.customDataGridView1.IsChkVisible = true;
-			this.customDataGridView1.IsEditVisible = false;
-			this.customDataGridView1.Location = new System.Drawing.Point(36, 3);
-			this.customDataGridView1.Name = "customDataGridView1";
-			this.customDataGridView1.RowHeadersVisible = false;
-			this.customDataGridView1.RowTemplate.Height = 23;
-			this.customDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.customDataGridView1.Size = new System.Drawing.Size(1198, 602);
-			this.customDataGridView1.TabIndex = 3;
-			// 
-			// Column4
-			// 
-			this.Column4.HeaderText = "수주코드";
-			this.Column4.Name = "Column4";
-			// 
-			// Column5
-			// 
-			this.Column5.HeaderText = "품목코드";
-			this.Column5.Name = "Column5";
-			// 
-			// Column6
-			// 
-			this.Column6.HeaderText = "품목명";
-			this.Column6.Name = "Column6";
-			// 
-			// Column7
-			// 
-			this.Column7.HeaderText = "01/19(Tue)";
-			this.Column7.Name = "Column7";
-			// 
-			// Column8
-			// 
-			this.Column8.HeaderText = "01/20(Wed)";
-			this.Column8.Name = "Column8";
-			// 
-			// Column9
-			// 
-			this.Column9.HeaderText = "01/21(Thu)";
-			this.Column9.Name = "Column9";
-			// 
-			// Column10
-			// 
-			this.Column10.HeaderText = "01/22(Fri)";
-			this.Column10.Name = "Column10";
-			// 
-			// Column11
-			// 
-			this.Column11.HeaderText = "01/23(Sat)";
-			this.Column11.Name = "Column11";
-			// 
-			// Column12
-			// 
-			this.Column12.HeaderText = "01/24(Sun)";
-			this.Column12.Name = "Column12";
-			// 
-			// Column13
-			// 
-			this.Column13.HeaderText = "01/25(Mon)";
-			this.Column13.Name = "Column13";
-			// 
-			// Column14
-			// 
-			this.Column14.HeaderText = "01/26(Tue)";
-			this.Column14.Name = "Column14";
-			// 
-			// DemandPlan
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1576, 789);
-			this.Name = "DemandPlan";
-			this.Text = "DemandPlan";
-			this.panel1.ResumeLayout(false);
-			this.panel1.PerformLayout();
-			this.pnl_Main.ResumeLayout(false);
-			this.gb_Sherch.ResumeLayout(false);
-			this.gb_Sherch.PerformLayout();
-			this.gb_detail.ResumeLayout(false);
-			this.gb_detail.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.nu_limit)).EndInit();
-			this.splitContainer1.Panel1.ResumeLayout(false);
-			this.splitContainer1.Panel2.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-			this.splitContainer1.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.Form_close)).EndInit();
-			this.groupBox1.ResumeLayout(false);
-			this.groupBox1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.customDataGridView1)).EndInit();
-			this.ResumeLayout(false);
-			this.PerformLayout();
+            this.dgv_Demand.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_Demand.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Demand.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_Demand.GridColor = System.Drawing.Color.Black;
+            this.dgv_Demand.IsChkVisible = true;
+            this.dgv_Demand.IsEditVisible = false;
+            this.dgv_Demand.Location = new System.Drawing.Point(36, 3);
+            this.dgv_Demand.Name = "dgv_Demand";
+            this.dgv_Demand.RowHeadersVisible = false;
+            this.dgv_Demand.RowTemplate.Height = 23;
+            this.dgv_Demand.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_Demand.Size = new System.Drawing.Size(1167, 602);
+            this.dgv_Demand.TabIndex = 3;
+            // 
+            // schCtrl
+            // 
+            this.schCtrl.BackColor = System.Drawing.Color.Transparent;
+            this.schCtrl.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.schCtrl.Location = new System.Drawing.Point(5, 27);
+            this.schCtrl.Margin = new System.Windows.Forms.Padding(4);
+            this.schCtrl.Name = "schCtrl";
+            this.schCtrl.Size = new System.Drawing.Size(320, 75);
+            this.schCtrl.TabIndex = 0;
+            // 
+            // sortCtrl
+            // 
+            this.sortCtrl.BackColor = System.Drawing.Color.Transparent;
+            this.sortCtrl.Font = new System.Drawing.Font("나눔고딕", 11.25F);
+            this.sortCtrl.Location = new System.Drawing.Point(1, 110);
+            this.sortCtrl.Margin = new System.Windows.Forms.Padding(4);
+            this.sortCtrl.Name = "sortCtrl";
+            this.sortCtrl.Size = new System.Drawing.Size(325, 69);
+            this.sortCtrl.TabIndex = 1;
+            // 
+            // DemandPlan
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1576, 789);
+            this.Name = "DemandPlan";
+            this.Text = "DemandPlan";
+            this.Load += new System.EventHandler(this.DemandPlan_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.pnl_Main.ResumeLayout(false);
+            this.gb_Sherch.ResumeLayout(false);
+            this.gb_Sherch.PerformLayout();
+            this.gb_detail.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nu_limit)).EndInit();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Form_close)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Demand)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
 		}
 
@@ -528,39 +327,17 @@ namespace AdminClient.Forms
 
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.DateTimePicker dateTimePicker3;
-		private System.Windows.Forms.DateTimePicker dateTimePicker4;
+		private System.Windows.Forms.DateTimePicker dtp_edate;
+		private System.Windows.Forms.DateTimePicker dtp_sdate;
 		private System.Windows.Forms.ComboBox comboBox2;
 		private System.Windows.Forms.ComboBox comboBox1;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.TextBox textBox2;
 		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.ComboBox comboBox5;
-		private System.Windows.Forms.Button button3;
-		private System.Windows.Forms.ComboBox comboBox7;
-		private System.Windows.Forms.Button button4;
-		private System.Windows.Forms.Label label9;
-		private System.Windows.Forms.RadioButton rd_descending;
-		private System.Windows.Forms.Label label10;
-		private System.Windows.Forms.RadioButton rd_ascending;
-		private System.Windows.Forms.ComboBox comboBox3;
-		private System.Windows.Forms.ComboBox comboBox4;
-		private System.Windows.Forms.ComboBox comboBox6;
-		private System.Windows.Forms.TextBox textBox4;
-		private System.Windows.Forms.Label label11;
 		protected System.Windows.Forms.Button button2;
-		private CustomDataGridView customDataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
+		private CustomDataGridView dgv_Demand;
+        private SortControl sortCtrl;
+        private SearchControl schCtrl;
     }
 }
