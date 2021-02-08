@@ -25,6 +25,10 @@ namespace AdminClientVO
 		public string Fac_Name { get; set; }
 		public string Fac_Enable { get; set; }
 		public string Fac_Outsourcing { get; set; }
+		public string Fac_ImgPath { get; set; }
+		public string Fac_MaterialWareHouse { get; set; }
+		public string Fac_GoodsWareHouse { get; set; }
+		public string Fac_FaultyWareHouse { get; set; }
 		public string Fac_Note { get; set; }
 		public string Fst_Writer { get; set; }
 		public DateTime Fst_WriteDate { get; set; }

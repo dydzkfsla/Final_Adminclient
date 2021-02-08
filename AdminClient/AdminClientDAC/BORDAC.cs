@@ -155,7 +155,8 @@ namespace AdminClientDAC
 	                                                                	and b.Prod_Code = isnull(@prod, b.Prod_Code)
 	                                                                	and b.Pcs_Code = isnull(@pcs, b.Pcs_Code)
 	                                                                	and	b.Fac_Code = isnull(@fac, b.Fac_Code)
-                                                                        and b.BOR_State = isnull(@state, b.BOR_State) ";
+                                                                        and b.BOR_State = isnull(@state, b.BOR_State)
+                                                                    order by b.Prod_Code, b.Bor_Priority";
 
                     cmd.Parameters.AddWithValue("@prod", string.IsNullOrEmpty(vo.Prod_Code)? DBNull.Value : (object)vo.Prod_Code);
                     cmd.Parameters.AddWithValue("@pcs", string.IsNullOrEmpty(vo.Pcs_Code) ? DBNull.Value : (object)vo.Pcs_Code);

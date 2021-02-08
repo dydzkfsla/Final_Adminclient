@@ -64,7 +64,7 @@ namespace AdminClient.Forms
                 dgv_bom.Columns.Clear();
                 dgv_bom.SetGridColumn();
                 CommonUtil.AddGridTextColumn(dgv_bom, "BOM코드", "BOM_Code");
-                CommonUtil.AddGridTextColumn(dgv_bom, "정보", "Info");
+                CommonUtil.AddGridTextColumn(dgv_bom, "정보", "Info", 300);
                 CommonUtil.AddGridTextColumn(dgv_bom, "카테고리", "Common_Name");
                 CommonUtil.AddGridTextColumn(dgv_bom, "물품코드", "Prod_Code");
                 CommonUtil.AddGridTextColumn(dgv_bom, "물품명", "childName");
@@ -89,13 +89,12 @@ namespace AdminClient.Forms
                 dgv_bom.DataSource = reverse;
             }
 
-            
-
         }
 
         private void btn_add_Click(object sender, EventArgs e)
         {
             BOMPopUp pop = new BOMPopUp();
+            pop.StartPosition = FormStartPosition.CenterParent;
 
             if(pop.ShowDialog() == DialogResult.OK)
             {

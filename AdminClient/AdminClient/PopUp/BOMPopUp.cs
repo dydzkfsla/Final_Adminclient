@@ -41,12 +41,11 @@ namespace AdminClient.PopUp
             if(frm.ShowDialog() == DialogResult.OK)
                 prodinfo = frm.AddList[0];
 
-
-            txt_ProdName.Text = prodinfo.Prod_Name;
-            txt_ProdName.Tag = prodinfo.Prod_Code;
-
             if(prodinfo != null)
             {
+                txt_ProdName.Text = prodinfo.Prod_Name;
+                txt_ProdName.Tag = prodinfo.Prod_Code;
+
                 BOMService service = new BOMService();
                 List<UpLevelList> upItemList = service.GetUpLevelItemList(prodinfo);
 
@@ -57,13 +56,14 @@ namespace AdminClient.PopUp
                 cbo_ProdP.ValueMember = "Prod_Code";
                 cbo_ProdP.DataSource = upItemList;
                 cbo_ProdP.Enabled = true;
+
+                //변경필요
+                if (prodinfo.Prod_Unit == "ea")
+                    txt_Count.KeyPress += UtilEvent.TextBoxIsDigit;
+                else
+                    txt_Count.KeyPress += UtilEvent.TextBoxIsDigitAndOneDot;
             }
 
-            //변경필요
-            if (prodinfo.Prod_Unit == "ea")
-                txt_Count.KeyPress += UtilEvent.TextBoxIsDigit;
-            else
-                txt_Count.KeyPress += UtilEvent.TextBoxIsDigitAndOneDot;
 
         }
 

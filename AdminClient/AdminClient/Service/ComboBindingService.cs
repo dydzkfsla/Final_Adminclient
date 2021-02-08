@@ -21,9 +21,29 @@ namespace AdminClient.Service
 			return dac.BindingCompName();
 		}
 
+		public List<ComboCompNameVO> BindingCompNameForContract()
+		{
+			return dac.BindingCompNameForContract();
+		}
+
 		public List<ComboProdNameVO> BindingProdName()
 		{
 			return dac.BindingProdName();
+		}
+
+		public List<ComboFgrpNameVO> BindingFgrpName()
+		{
+			return dac.BindingFgrpName();
+		}
+
+		public List<ComboWHNameVO> BindingWHName()
+		{
+			return dac.BindingWHName();
+		}
+
+		public List<ComboDestVO> BindingDestName()
+		{
+			return dac.BindingDestName();
 		}
 
 		public void Dispose()

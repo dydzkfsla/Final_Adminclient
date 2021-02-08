@@ -73,6 +73,8 @@ namespace AdminClient.Forms
             CommonUtil.AddGridTextColumn(dgv_ProdList, "물품명", "Prod_Name");
             CommonUtil.AddGridTextColumn(dgv_ProdList, "상태", "Prod_State");
             CommonUtil.AddGridTextColumn(dgv_ProdList, "저장창고", "Prod_WhCode");
+            CommonUtil.AddGridTextColumn(dgv_ProdList, "저장량", "totcnt");
+            CommonUtil.AddGridTextColumn(dgv_ProdList, "기준", "Prod_Unit");
             CommonUtil.AddGridTextColumn(dgv_ProdList, "최소", "Prod_SafetyStock");
             #endregion
 
@@ -124,6 +126,7 @@ namespace AdminClient.Forms
             //하나라도 검색된것이 있으면
             if(pdList.Count > 0)
             {
+                gb_detail.Enabled = true;
                 schCtrl.Getdata(dgv_ProdList); // 설명
                 sortCtrl.Getdata(dgv_ProdList);
             }

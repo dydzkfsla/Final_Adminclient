@@ -21,6 +21,11 @@ namespace AdminClient.Service
 			return dac.AddContract(userID, vo);
 		}
 
+		public List<ContractVO> GetContractsList(string limit, string confirm, string fin, string fdate, string tdate, string comp, string destination)
+		{
+			return dac.GetContractsList(limit, confirm, fin, fdate, tdate, comp, destination);
+		}
+
 		public void Dispose()
 		{
 			dac.Dispose();

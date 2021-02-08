@@ -173,6 +173,16 @@ namespace AdminClient.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap guns_34272_1280 {
+            get {
+                object obj = ResourceManager.GetObject("guns_34272_1280", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap pistol_596564_1280 {
             get {
                 object obj = ResourceManager.GetObject("pistol_596564_1280", resourceCulture);

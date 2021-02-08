@@ -17,4 +17,21 @@ namespace AdminClientVO
 		public string Prod_Code { get; set; }
 		public string Prod_Name { get; set; }
 	}
+
+	public class ComboFgrpNameVO
+	{
+		public string FacGrp_Code { get; set; }
+		public string FacGrp_Name { get; set; }
+	}
+
+	public class ComboWHNameVO
+	{
+		public string WH_Code { get; set; }
+		public string WH_Name { get; set; }
+	}
+
+	public class ComboDestVO
+	{
+		public string Contract_Destination { get; set; }
+	}
 }

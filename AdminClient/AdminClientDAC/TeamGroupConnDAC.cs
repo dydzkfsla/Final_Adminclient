@@ -64,7 +64,7 @@ namespace AdminClientDAC
 
                 sql.Parameters.AddWithValue("@Team_Code", Team_Code);
                 sql.Parameters.AddWithValue("@Grp_No", Grp_No);
-                sql.Parameters.AddWithValue("@Fst_Writer", Global.employees.Emp_Name);
+                sql.Parameters.AddWithValue("@Fst_Writer", Global.employees.Emp_Code);
 
                 bool Execut = sql.ExecuteNonQuery() > 0 ? true : false;
 

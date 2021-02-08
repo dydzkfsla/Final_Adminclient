@@ -118,6 +118,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Facility\FacilityInfo_NEW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Facility\FacilityInfo_NEW.Designer.cs">
+      <DependentUpon>FacilityInfo_NEW.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Production\ContractInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,12 +154,6 @@
     <Compile Include="Forms\Production\CompanyInfo.Designer.cs">
       <DependentUpon>CompanyInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Production\ContractInfo_old.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Production\ContractInfo_old.Designer.cs">
-      <DependentUpon>ContractInfo_old.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Production\DemandPlan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,12 +165,6 @@
     </Compile>
     <Compile Include="Forms\EmpGroup\EmpInfo.Designer.cs">
       <DependentUpon>EmpInfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Facility\FacilityGroupInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Facility\FacilityGroupInfo.Designer.cs">
-      <DependentUpon>FacilityGroupInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Facility\FacilityInfo.cs">
       <SubType>Form</SubType>
@@ -527,6 +521,9 @@
     <EmbeddedResource Include="CustomControl\CustomDataGridView.resx">
       <DependentUpon>CustomDataGridView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Facility\FacilityInfo_NEW.resx">
+      <DependentUpon>FacilityInfo_NEW.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Production\ContractInfo.resx">
       <DependentUpon>ContractInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -542,17 +539,11 @@
     <EmbeddedResource Include="Forms\Production\CompanyInfo.resx">
       <DependentUpon>CompanyInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Production\ContractInfo_old.resx">
-      <DependentUpon>ContractInfo_old.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Production\DemandPlan.resx">
       <DependentUpon>DemandPlan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmpGroup\EmpInfo.resx">
       <DependentUpon>EmpInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Facility\FacilityGroupInfo.resx">
-      <DependentUpon>FacilityGroupInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Facility\FacilityInfo.resx">
       <DependentUpon>FacilityInfo.cs</DependentUpon>
@@ -794,7 +785,11 @@
     <None Include="Resources\close-red.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Forms\Facility\FacImg\설비등록 테스트.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Edit_32x32.png" />
+    <None Include="Resources\guns-34272_1280.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

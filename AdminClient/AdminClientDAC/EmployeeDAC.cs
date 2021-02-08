@@ -41,26 +41,35 @@ namespace AdminClientDAC
 					cmd.Parameters.AddWithValue("@Emp_Code", id);
 					cmd.Parameters.AddWithValue("@Emp_Pwd", pwd);
 
-					SqlDataReader reader = cmd.ExecuteReader();
-					if (reader.Read())
-					{
-						EmployeesVO login = new EmployeesVO()
-						{
-							Emp_Code = reader["Emp_Code"].ToString(),
-							Emp_Name = reader["Emp_Name"].ToString(),
-							Emp_HireDate = Convert.ToDateTime(reader["Emp_HireDate"]),
-							Emp_RetireDate = Convert.ToDateTime(reader["Emp_RetireDate"]),
-							Emp_Phone = reader["Emp_Phone"].ToString(),
-							Emp_Email = reader["Emp_Email"].ToString(),
-							Emp_PostCode = Convert.ToInt32(reader["Emp_PostCode"]),
-							Emp_Addr = reader["Emp_Addr"].ToString(),
-							Emp_AddrDetail = reader["Emp_AddrDetail"].ToString(),
-							Emp_Pwd = reader["Emp_Pwd"].ToString()
-						};
-						return login;
-					}
-					else
-						return null;
+					List<EmployeesVO> login = Helper.DataReaderMapToList<EmployeesVO>(cmd.ExecuteReader());
+
+					return login[0];
+
+					//SqlDataReader reader = cmd.ExecuteReader();
+
+
+
+					//if (reader.Read())
+					//{
+					//	EmployeesVO login = new EmployeesVO()
+					//	{
+					//		Emp_Code = reader["Emp_Code"].ToString(),
+					//		Emp_Name = reader["Emp_Name"].ToString(),
+					//		Emp_HireDate = Convert.ToDateTime(reader["Emp_HireDate"]),
+					//		Emp_RetireDate = Convert.ToDateTime(reader["Emp_RetireDate"]),
+					//		Emp_Phone = reader["Emp_Phone"].ToString(),
+					//		Emp_Email = reader["Emp_Email"].ToString(),
+					//		Emp_PostCode = Convert.ToInt32(reader["Emp_PostCode"]),
+					//		Emp_Addr = reader["Emp_Addr"].ToString(),
+					//		Emp_AddrDetail = reader["Emp_AddrDetail"].ToString(),
+					//		Emp_Pwd = reader["Emp_Pwd"].ToString()
+					//	};
+					//	return login;
+					//}
+					//else
+					//	return null;
+					
+
 				}
 			}
 			catch
