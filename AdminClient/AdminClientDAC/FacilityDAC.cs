@@ -30,19 +30,16 @@ namespace AdminClientDAC
 		/// <param name="limit">검색제한수</param>
 		/// <param name="enable">설비군 사용여부</param>
 		/// <returns>성공 : 설비군목록 List, 실패 : null </returns>
-		public List<FacilityGroupVO> GetFacilityGroupList(string limit, string enable)
+		public List<FacilityGroupVO> GetFacilityGroupList()
 		{
 			try
 			{
 				using(SqlCommand cmd = new SqlCommand())
 				{
 					cmd.Connection = conn;
-					cmd.CommandText = @"select top(CONVERT(int, @limit)) FacGrp_Code, FacGrp_Name, FacGrp_Enable ,FacGrp_Description
-										  from FacilityGroup
-										 where FacGrp_Enable = isnull(@enable, FacGrp_Enable)";
-					cmd.Parameters.AddWithValue("@limit", string.IsNullOrEmpty(limit) ? 100000 : (object)limit);
-					cmd.Parameters.AddWithValue("@enable", string.IsNullOrEmpty(enable) ? DBNull.Value : (object)enable);
-
+					cmd.CommandText = @"select FacGrp_Code, FacGrp_Name, FacGrp_Enable ,FacGrp_Description
+										  from FacilityGroup ";
+					
 					List<FacilityGroupVO> list = Helper.DataReaderMapToList<FacilityGroupVO>(cmd.ExecuteReader());
 
 					return list;

@@ -172,12 +172,6 @@
     <Compile Include="Forms\EmpGroup\EmpInfo.Designer.cs">
       <DependentUpon>EmpInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Facility\FacilityGroupInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Facility\FacilityGroupInfo.Designer.cs">
-      <DependentUpon>FacilityGroupInfo.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Facility\FacilityInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -559,9 +553,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmpGroup\EmpInfo.resx">
       <DependentUpon>EmpInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Facility\FacilityGroupInfo.resx">
-      <DependentUpon>FacilityGroupInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Facility\FacilityInfo.resx">
       <DependentUpon>FacilityInfo.cs</DependentUpon>
