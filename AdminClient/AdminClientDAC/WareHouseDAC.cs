@@ -34,11 +34,11 @@ namespace AdminClientDAC
                 using(SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"select tot.WH_Code, tot.WH_Type, tot.Common_Name, tot.WH_State
-	                                                                from ( select ROW_NUMBER() over(order by wh.WH_Code) as rownum, wh.WH_Code, wh.WH_Type, cm.Common_Name, wh.WH_State 
+                    cmd.CommandText = @"select tot.WH_Code, tot.WH_Name, tot.WH_Type, tot.Common_Name, tot.WH_State
+	                                                                from ( select ROW_NUMBER() over(order by wh.WH_Code) as rownum, wh.WH_Code, wh.WH_Name, wh.WH_Type, cm.Common_Name, wh.WH_State 
 	                                                                				from WareHouse as wh, Common cm 
 	                                                                				where wh.WH_Type = cm.Common_Code) as tot
-	                                                                where tot.rownum <= isnull(@limit, 100000)
+	                                                                where tot.rownum <= isnull(@limit, 10000)
 	                                                                	and tot.WH_Type = isnull(@type, tot.WH_Type)
 	                                                                	and tot.WH_State = isnull(@state, tot.WH_State)";
 
@@ -116,9 +116,10 @@ namespace AdminClientDAC
                 {
                     cmd.Connection = conn;
                     cmd.CommandText = @"update WareHouse 
-                                                                    set WH_Type = @type, WH_State = @state, Lst_Writer = @id, Lst_WriteDate = getdate() 
+                                                                    set WH_Name = @name, WH_Type = @type, WH_State = @state, Lst_Writer = @id, Lst_WriteDate = getdate() 
                                                                     where WH_Code = @code";
 
+                    cmd.Parameters.AddWithValue("@name", vo.WH_Name);
                     cmd.Parameters.AddWithValue("@code", vo.WH_Code);
                     cmd.Parameters.AddWithValue("@type", vo.WH_Type);
                     cmd.Parameters.AddWithValue("@state", vo.WH_State);
@@ -145,6 +146,7 @@ namespace AdminClientDAC
                     cmd.CommandText = "SP_NewWareHouseAdd";
                     cmd.CommandType = CommandType.StoredProcedure;
 
+                    cmd.Parameters.AddWithValue("@name", vo.WH_Name);
                     cmd.Parameters.AddWithValue("@type", vo.WH_Type);
                     cmd.Parameters.AddWithValue("@state", vo.WH_State);
                     cmd.Parameters.AddWithValue("@empcode", Global.employees.Emp_Code);

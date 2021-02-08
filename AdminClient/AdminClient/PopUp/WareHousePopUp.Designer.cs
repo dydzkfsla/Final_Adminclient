@@ -41,6 +41,9 @@
             this.btn_Delete = new System.Windows.Forms.Button();
             this.btn_Update = new System.Windows.Forms.Button();
             this.btn_Add = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txt_Name = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.pnl_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).BeginInit();
             this.panel1.SuspendLayout();
@@ -52,7 +55,12 @@
             this.pnl_Main.Controls.Add(this.panel1);
             this.pnl_Main.Controls.Add(this.btn_Update);
             this.pnl_Main.Controls.Add(this.btn_Add);
-            this.pnl_Main.Size = new System.Drawing.Size(331, 186);
+            this.pnl_Main.Size = new System.Drawing.Size(331, 229);
+            // 
+            // lbl_Title
+            // 
+            this.lbl_Title.Size = new System.Drawing.Size(185, 43);
+            this.lbl_Title.Text = "FormBase";
             // 
             // Form_close
             // 
@@ -64,6 +72,9 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.txt_Name);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.cbo_State);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label8);
@@ -75,14 +86,14 @@
             this.panel1.Controls.Add(this.label20);
             this.panel1.Location = new System.Drawing.Point(0, 13);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(325, 106);
+            this.panel1.Size = new System.Drawing.Size(325, 145);
             this.panel1.TabIndex = 37;
             // 
             // cbo_State
             // 
             this.cbo_State.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_State.FormattingEnabled = true;
-            this.cbo_State.Location = new System.Drawing.Point(122, 65);
+            this.cbo_State.Location = new System.Drawing.Point(122, 98);
             this.cbo_State.Name = "cbo_State";
             this.cbo_State.Size = new System.Drawing.Size(188, 25);
             this.cbo_State.TabIndex = 42;
@@ -93,7 +104,7 @@
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(26, 68);
+            this.label2.Location = new System.Drawing.Point(26, 101);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 17);
             this.label2.TabIndex = 41;
@@ -105,7 +116,7 @@
             this.label8.BackColor = System.Drawing.Color.White;
             this.label8.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label8.Location = new System.Drawing.Point(3, 68);
+            this.label8.Location = new System.Drawing.Point(3, 101);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(23, 17);
             this.label8.TabIndex = 40;
@@ -115,7 +126,7 @@
             // 
             this.cbo_Type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_Type.FormattingEnabled = true;
-            this.cbo_Type.Location = new System.Drawing.Point(122, 34);
+            this.cbo_Type.Location = new System.Drawing.Point(122, 67);
             this.cbo_Type.Name = "cbo_Type";
             this.cbo_Type.Size = new System.Drawing.Size(188, 25);
             this.cbo_Type.TabIndex = 39;
@@ -126,7 +137,7 @@
             this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label7.Location = new System.Drawing.Point(26, 37);
+            this.label7.Location = new System.Drawing.Point(26, 70);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(68, 17);
             this.label7.TabIndex = 38;
@@ -138,7 +149,7 @@
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label6.Location = new System.Drawing.Point(3, 37);
+            this.label6.Location = new System.Drawing.Point(3, 70);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(23, 17);
             this.label6.TabIndex = 37;
@@ -177,7 +188,7 @@
             // 
             // btn_Delete
             // 
-            this.btn_Delete.Location = new System.Drawing.Point(164, 125);
+            this.btn_Delete.Location = new System.Drawing.Point(161, 164);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(74, 53);
             this.btn_Delete.TabIndex = 59;
@@ -187,7 +198,7 @@
             // 
             // btn_Update
             // 
-            this.btn_Update.Location = new System.Drawing.Point(91, 125);
+            this.btn_Update.Location = new System.Drawing.Point(88, 164);
             this.btn_Update.Name = "btn_Update";
             this.btn_Update.Size = new System.Drawing.Size(67, 53);
             this.btn_Update.TabIndex = 58;
@@ -197,7 +208,7 @@
             // 
             // btn_Add
             // 
-            this.btn_Add.Location = new System.Drawing.Point(9, 125);
+            this.btn_Add.Location = new System.Drawing.Point(6, 164);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(76, 53);
             this.btn_Add.TabIndex = 57;
@@ -205,10 +216,41 @@
             this.btn_Add.UseVisualStyleBackColor = true;
             this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(3, 39);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(23, 17);
+            this.label1.TabIndex = 45;
+            this.label1.Text = "◆";
+            // 
+            // txt_Name
+            // 
+            this.txt_Name.Location = new System.Drawing.Point(122, 36);
+            this.txt_Name.Name = "txt_Name";
+            this.txt_Name.Size = new System.Drawing.Size(188, 25);
+            this.txt_Name.TabIndex = 44;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label3.Location = new System.Drawing.Point(26, 39);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(68, 17);
+            this.label3.TabIndex = 43;
+            this.label3.Text = "창고이름";
+            // 
             // WareHousePopUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
-            this.ClientSize = new System.Drawing.Size(341, 244);
+            this.ClientSize = new System.Drawing.Size(341, 287);
             this.Name = "WareHousePopUp";
             this.Load += new System.EventHandler(this.WareHousePopUp_Load);
             this.pnl_Main.ResumeLayout(false);
@@ -235,5 +277,8 @@
         private System.Windows.Forms.Button btn_Delete;
         private System.Windows.Forms.Button btn_Update;
         private System.Windows.Forms.Button btn_Add;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txt_Name;
+        private System.Windows.Forms.Label label3;
     }
 }

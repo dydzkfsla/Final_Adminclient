@@ -14,8 +14,8 @@ namespace AdminClient.Forms
 {
     public partial class BOR : AdminClient.BaseForm.EmpFormNoSerchTemp
     {
-        List<ComboBORVO> comblist;
         List<BORVO> borlist = null;
+        List<CombBORVO> cboList;
 
         public BOR()
         {
@@ -25,23 +25,49 @@ namespace AdminClient.Forms
         private void BOR_Load(object sender, EventArgs e)
         {
             BORService service = new BORService();
-            comblist = service.GetComboBindingList();
+            cboList = service.GetCboBindingList();
 
-            var faclist = (from fac in comblist
-                           where string.IsNullOrEmpty(fac.Pcs_Code)
-                           select fac).ToList();
+            //var faclist = (from fac in comblist
+            //               where string.IsNullOrEmpty(fac.Pcs_Code)
+            //               select fac).ToList();
 
-            cbo_Fac.DisplayMember = "FacGrp_Name";
-            cbo_Fac.ValueMember = "FacGrp_Code";
-            cbo_Fac.DataSource = faclist;
+            //cbo_Fac.DisplayMember = "FacGrp_Name";
+            //cbo_Fac.ValueMember = "FacGrp_Code";
+            //cbo_Fac.DataSource = faclist;
 
-            var pcslist = (from pcs in comblist
-                           where string.IsNullOrEmpty(pcs.FacGrp_Code)
-                           select pcs).ToList();
+            //var pcslist = (from pcs in comblist
+            //               where string.IsNullOrEmpty(pcs.FacGrp_Code)
+            //               select pcs).ToList();
 
-            cbo_Pcs.DisplayMember = "Pcs_Name"; 
-            cbo_Pcs.ValueMember = "Pcs_Code";
-            cbo_Pcs.DataSource = pcslist;
+            //cbo_Pcs.DisplayMember = "Pcs_Name"; 
+            //cbo_Pcs.ValueMember = "Pcs_Code";
+            //cbo_Pcs.DataSource = pcslist;
+
+
+            if (cboList.Count > 0)
+            {
+                var faclist = (from fac in cboList
+                               where string.IsNullOrEmpty(fac.Pcs_Code)
+                               select fac).ToList();
+
+                faclist.Insert(0, new CombBORVO { Fac_Code = "0", Fac_Name = "전체" });
+
+                cbo_Fac.DisplayMember = "Fac_Name";
+                cbo_Fac.ValueMember = "Fac_Code";
+                cbo_Fac.DataSource = faclist;
+
+                var pcslist = (from pcs in cboList
+                               where string.IsNullOrEmpty(pcs.Fac_Code)
+                               select pcs).ToList();
+
+                pcslist.Insert(0, new CombBORVO { Pcs_Code = "0", Pcs_Name = "전체" });
+
+                cbo_Pcs.DisplayMember = "Pcs_Name";
+                cbo_Pcs.ValueMember = "Pcs_Code";
+                cbo_Pcs.DataSource = pcslist;
+
+            }
+
 
             cbo_state.Items.Add("Y");
             cbo_state.Items.Add("N");
@@ -54,7 +80,7 @@ namespace AdminClient.Forms
             CommonUtil.AddGridTextColumn(dgv_BOR, "공정코드", "Pcs_Code");
             CommonUtil.AddGridTextColumn(dgv_BOR, "공정명", "Pcs_Name");
             CommonUtil.AddGridTextColumn(dgv_BOR, "설비코드", "Fac_Code");
-            CommonUtil.AddGridTextColumn(dgv_BOR, "설비명", "FacGrp_Name");
+            CommonUtil.AddGridTextColumn(dgv_BOR, "설비명", "Fac_Name");
             CommonUtil.AddGridTextColumn(dgv_BOR, "소요시간", "Tact_Time");
             CommonUtil.AddGridTextColumn(dgv_BOR, "BOR순서", "BOR_Priority");
             CommonUtil.AddGridTextColumn(dgv_BOR, "선행일", "BOR_DelayTime");
@@ -65,7 +91,6 @@ namespace AdminClient.Forms
         private void btn_add_Click(object sender, EventArgs e)
         {
             BORPopUp pop = new BORPopUp();
-            pop.Comblist = comblist;
             pop.StartPosition = FormStartPosition.CenterParent;
 
             if(pop.ShowDialog() == DialogResult.OK)
@@ -90,10 +115,25 @@ namespace AdminClient.Forms
 
         private void btn_Search_Click(object sender, EventArgs e)
         {
+            if(txt_Prod.Text.Trim().Length < 1)
+            {
+                MessageBox.Show("물품 코드를 입력해주세요");
+                return;
+            }
+
+            string fac, pcs;
+            fac = pcs = string.Empty;
+
+            if (cbo_Fac.SelectedIndex > 0)
+                fac = cbo_Fac.SelectedValue.ToString();
+
+            if (cbo_Pcs.SelectedIndex > 0)
+                pcs = cbo_Pcs.SelectedValue.ToString();
+
             BORVO vo = new BORVO
             {
-                Pcs_Code = cbo_Pcs.SelectedValue.ToString(),
-                Fac_Code = cbo_Fac.SelectedValue.ToString(),
+                Pcs_Code = pcs,
+                Fac_Code = fac,
                 Prod_Code = txt_Prod.Text,
                 BOR_State = cbo_state.Text
             };
@@ -101,6 +141,8 @@ namespace AdminClient.Forms
             BORService service = new BORService();
 
             borlist = service.GetBORList(vo);
+
+            dgv_BOR.DataSource = borlist;
         }
 
         private void dgv_BOR_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -121,6 +163,7 @@ namespace AdminClient.Forms
 
                     BORPopUp pop = new BORPopUp();
                     pop.VO = vo;
+                    pop.ThisMode = BORPopUp.Mode.Old;
 
                     DialogResult dr = pop.ShowDialog();
 
@@ -128,7 +171,11 @@ namespace AdminClient.Forms
                     {
                         vo = pop.VO;
 
-                        borlist.Add(vo);
+                        borlist.ForEach((bor) =>
+                        {
+                            if (bor.BOR_Code == vo.BOR_Code)
+                                bor = vo;
+                        });
 
                         dgv_BOR.DataSource = null;
                         dgv_BOR.DataSource = borlist;
@@ -140,10 +187,8 @@ namespace AdminClient.Forms
                         borlist.ForEach((bor) =>
                         {
                             if (bor.BOR_Code == vo.BOR_Code)
-                                vo = bor;
+                                bor.BOR_State = "N";
                         });
-
-                        borlist.Remove(vo);
 
                         dgv_BOR.DataSource = null;
                         dgv_BOR.DataSource = borlist;

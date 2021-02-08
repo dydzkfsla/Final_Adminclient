@@ -59,6 +59,7 @@
     <Compile Include="CompanyDAC.cs" />
     <Compile Include="ConnDB.cs" />
     <Compile Include="ContractDAC.cs" />
+    <Compile Include="DemandDAC.cs" />
     <Compile Include="EmployeesDAC.cs" />
     <Compile Include="EmpTeamConnDAC.cs" />
     <Compile Include="FacilityDAC.cs" />
@@ -68,11 +69,12 @@
     <Compile Include="Global\Global.cs" />
     <Compile Include="GroupFormConnDAC.cs" />
     <Compile Include="GroupInfoDAC.cs" />
+    <Compile Include="InOutDAC.cs" />
     <Compile Include="OrderDAC.cs" />
     <Compile Include="ProductCheckDAC.cs" />
+    <Compile Include="ProductDAC.cs" />
     <Compile Include="StockInfoDAC.cs" />
     <Compile Include="Utils\Helper.cs" />
-    <Compile Include="ProductDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="EmployeeDAC.cs" />
     <Compile Include="TeamGroupConnDAC.cs" />

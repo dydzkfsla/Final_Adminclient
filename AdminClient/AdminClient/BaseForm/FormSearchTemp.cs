@@ -14,5 +14,10 @@ namespace AdminClient.BaseForm
         {
             InitializeComponent();
         }
+
+        private void FormSearchTemp_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

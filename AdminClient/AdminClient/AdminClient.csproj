@@ -463,6 +463,7 @@
     <Compile Include="Service\CommonService.cs" />
     <Compile Include="Service\CompanyService.cs" />
     <Compile Include="Service\ContractService.cs" />
+    <Compile Include="Service\DemandService.cs" />
     <Compile Include="Service\EmployeeService.cs" />
     <Compile Include="Service\EmployeesService.cs" />
     <Compile Include="Service\EmpTeamConnService.cs" />
@@ -471,6 +472,7 @@
     <Compile Include="Service\FormInfoService.cs" />
     <Compile Include="Service\GroupFormConnService.cs" />
     <Compile Include="Service\GroupInfoService.cs" />
+    <Compile Include="Service\InOutService.cs" />
     <Compile Include="Service\OrderService.cs" />
     <Compile Include="Service\ProductCheckService.cs" />
     <Compile Include="Service\ProductService.cs" />

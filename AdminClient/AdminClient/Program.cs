@@ -9,7 +9,6 @@ using AdminClient.Serch;
 using AdminClient.MDI;
 using AdminClient.PopUp;
 
-
 namespace AdminClient
 {
     static class Program
@@ -22,7 +21,7 @@ namespace AdminClient
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FacilityInfo_NEW());
+            Application.Run(new Login());
         }
     }
 }

@@ -50,7 +50,6 @@ namespace AdminClient.Forms
 			cbo_ContractFinish.Items.Add("Y");
 			cbo_ContractFinish.Items.Add("N");
 
-			cbo
 			#endregion
 		}
 
