@@ -32,4 +32,10 @@ namespace AdminClientVO
         public string Check_Standard    { get; set; }
     }
 
+    public class Imagedata
+    {
+        public byte[] image;
+        public string filename;
+    }
+
 }
