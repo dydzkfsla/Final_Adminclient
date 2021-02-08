@@ -55,9 +55,10 @@ namespace AdminClient.PopUp
             cbo_FacOutsourcing.Items.Add("Y");
             cbo_FacOutsourcing.Items.Add("N");
             cbo_FacEnable.SelectedIndex = cbo_FacOutsourcing.SelectedIndex = 0;
+            #endregion
 
-			#endregion
-		}
+            pb_FacPicture.SizeMode = PictureBoxSizeMode.Zoom;
+        }
 
 		private void FacilityPopUp_Load(object sender, EventArgs e)
         {
@@ -69,6 +70,24 @@ namespace AdminClient.PopUp
                 txt_FacCode.Enabled = false;
                 txt_FacCode.Text = "자동입력";
 
+
+            }
+			else
+			{
+                txt_FacCode.Enabled = false;
+
+                cbo_FgrpCode.SelectedValue = vo.FacGrp_Code;
+                txt_FacCode.Text = vo.Fac_Code;
+                txt_FacName.Text = vo.Fac_Name;
+                cbo_FacEnable.SelectedItem = vo.Fac_Enable;
+                cbo_FacOutsourcing.SelectedItem = vo.Fac_Outsourcing;
+                cbo_FacMWH.SelectedValue = vo.Fac_MaterialWareHouse;
+                cbo_FacGWH.SelectedValue = vo.Fac_GoodsWareHouse;
+                cbo_FacFWH.SelectedValue = vo.Fac_FaultyWareHouse;
+                txt_Note.Text = vo.Fac_Note;
+                txt_FilePath.Text = vo.Fac_ImgPath;
+                pb_FacPicture.Image = Image.FromFile(vo.Fac_ImgPath);
+                pb_FacPicture.Tag = txt_FilePath.Text;
             }
            
 
@@ -86,7 +105,6 @@ namespace AdminClient.PopUp
                 txt_FilePath.Text = dlg.FileName;
 
                 pb_FacPicture.Image = Image.FromFile(dlg.FileName);
-                pb_FacPicture.SizeMode = PictureBoxSizeMode.Zoom;
                 pb_FacPicture.Tag = dlg.FileName;
             }
         }
@@ -116,6 +134,9 @@ namespace AdminClient.PopUp
 
             File.Copy(localFile, destFileName, true);
 
+           
+
+            FacilityService service = new FacilityService();
             if (mode == Mode.Insert)
             {
                 vo = new FacilityVO
@@ -131,7 +152,6 @@ namespace AdminClient.PopUp
                     Fac_Note = txt_Note.Text
                 };
 
-                FacilityService service = new FacilityService();
                 if (service.AddFacility(userID, vo))
                 {
                     this.DialogResult = DialogResult.OK;
@@ -142,6 +162,34 @@ namespace AdminClient.PopUp
                     MessageBox.Show("설비 등록중 오류가 발생했습니다. 다시 시도하여 주십시오.");
                     return;
                 }
+            }
+			else
+			{
+                vo = new FacilityVO
+                {
+                    FacGrp_Code = cbo_FgrpCode.SelectedValue.ToString(),
+                    Fac_Code = txt_FacCode.Text,
+                    Fac_Name = txt_FacName.Text,
+                    Fac_Enable = cbo_FacEnable.SelectedItem.ToString(),
+                    Fac_Outsourcing = cbo_FacOutsourcing.SelectedItem.ToString(),
+                    Fac_ImgPath = destFileName,
+                    Fac_MaterialWareHouse = cbo_FacMWH.SelectedValue.ToString(),
+                    Fac_GoodsWareHouse = cbo_FacGWH.SelectedValue.ToString(),
+                    Fac_FaultyWareHouse = cbo_FacFWH.SelectedValue.ToString(),
+                    Fac_Note = txt_Note.Text
+                };
+
+                if (service.UpdateFacility(userID, vo))
+				{
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+				}
+                else
+                {
+                    MessageBox.Show("설비 수정중 오류가 발생했습니다. 다시 시도하여 주십시오.");
+                    return;
+                }
+
             }
         }
 

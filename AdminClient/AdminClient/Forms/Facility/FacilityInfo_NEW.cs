@@ -71,10 +71,10 @@ namespace AdminClient.Forms
 			dgv_FacList.SetGridColumn();
 			CommonUtil.AddGridTextColumn(dgv_FacList, "설비군코드", "FacGrp_Code", 10, false); //2
 			CommonUtil.AddGridTextColumn(dgv_FacList, "설비코드", "Fac_Code"); //3
-			CommonUtil.AddGridTextColumn(dgv_FacList, "설비군명", "Fac_Name"); //4
+			CommonUtil.AddGridTextColumn(dgv_FacList, "설비명", "Fac_Name"); //4
 			CommonUtil.AddGridTextColumn(dgv_FacList, "사용여부", "Fac_Enable"); //5
 			CommonUtil.AddGridTextColumn(dgv_FacList, "외부여부", "Fac_Outsourcing"); //6
-			CommonUtil.AddGridTextColumn(dgv_FacList, "사진경로", "Fac_ImgPath", 10, false); //7
+			CommonUtil.AddGridTextColumn(dgv_FacList, "사진경로", "Fac_ImgPath"); //7
 			CommonUtil.AddGridTextColumn(dgv_FacList, "소진창고", "Fac_MaterialWareHouse"); //8
 			CommonUtil.AddGridTextColumn(dgv_FacList, "양품창고", "Fac_GoodsWareHouse"); //9
 			CommonUtil.AddGridTextColumn(dgv_FacList, "불량창고", "Fac_FaultyWareHouse"); //10
@@ -190,5 +190,38 @@ namespace AdminClient.Forms
 
 		#endregion
 
+		private void dgv_FacList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+
+			if (e.RowIndex < 0)
+				return;
+
+			if(e.ColumnIndex == 1)
+			{
+				FacilityVO vo = new FacilityVO
+				{
+					FacGrp_Code = dgv_FacList["FacGrp_Code", e.RowIndex].Value.ToString(),
+					Fac_Code = dgv_FacList["Fac_Code", e.RowIndex].Value.ToString(),
+					Fac_Name = dgv_FacList["Fac_Name", e.RowIndex].Value.ToString(),
+					Fac_Enable = dgv_FacList["Fac_Enable", e.RowIndex].Value.ToString(),
+					Fac_Outsourcing = dgv_FacList["Fac_Outsourcing", e.RowIndex].Value.ToString(),
+					Fac_ImgPath = dgv_FacList["Fac_ImgPath", e.RowIndex].Value.ToString(),
+					Fac_MaterialWareHouse = dgv_FacList["Fac_MaterialWareHouse", e.RowIndex].Value.ToString(),
+					Fac_GoodsWareHouse = dgv_FacList["Fac_GoodsWareHouse", e.RowIndex].Value.ToString(),
+					Fac_FaultyWareHouse = dgv_FacList["Fac_FaultyWareHouse", e.RowIndex].Value.ToString(),
+					Fac_Note = dgv_FacList["Fac_Note", e.RowIndex].Value.ToString()
+				};
+
+				FacilityPopUp pop = new FacilityPopUp();
+				pop.ThisMode = FacilityPopUp.Mode.Update;
+				pop.VO = vo;
+				pop.StartPosition = FormStartPosition.CenterParent;
+
+				if (pop.ShowDialog() == DialogResult.OK)
+				{
+					MessageBox.Show("성공적으로 수정되었습니다.");
+				}
+			}
+		}
 	}
 }

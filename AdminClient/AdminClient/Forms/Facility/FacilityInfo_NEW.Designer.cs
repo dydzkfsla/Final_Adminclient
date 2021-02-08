@@ -339,13 +339,14 @@ namespace AdminClient.Forms
 			this.dgv_FacList.DefaultCellStyle = dataGridViewCellStyle1;
 			this.dgv_FacList.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dgv_FacList.GridColor = System.Drawing.Color.Black;
-			this.dgv_FacList.IsChkVisible = false;
-			this.dgv_FacList.IsEditVisible = false;
+			this.dgv_FacList.IsChkVisible = true;
+			this.dgv_FacList.IsEditVisible = true;
 			this.dgv_FacList.Location = new System.Drawing.Point(0, 0);
 			this.dgv_FacList.Name = "dgv_FacList";
 			this.dgv_FacList.RowTemplate.Height = 23;
 			this.dgv_FacList.Size = new System.Drawing.Size(1207, 475);
 			this.dgv_FacList.TabIndex = 0;
+			this.dgv_FacList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_FacList_CellContentClick);
 			// 
 			// btn_FacGrpAdd
 			// 
