@@ -41,7 +41,9 @@
             this.timerTime = new System.Windows.Forms.Timer(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabelTime = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel_EmpName = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel_Emp_code = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel_Btn_add = new System.Windows.Forms.ToolStripLabel();
@@ -49,10 +51,8 @@
             this.toolStripLabel_Btn_Update = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel_Btn_Delete = new System.Windows.Forms.ToolStripLabel();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.tabForms = new AdminClient.ucTabControl();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -187,11 +187,21 @@
             this.toolStripLabelTime.Size = new System.Drawing.Size(88, 22);
             this.toolStripLabelTime.Text = "toolStripLabel1";
             // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
+            // 
             // toolStripLabel_EmpName
             // 
             this.toolStripLabel_EmpName.Name = "toolStripLabel_EmpName";
             this.toolStripLabel_EmpName.Size = new System.Drawing.Size(88, 22);
             this.toolStripLabel_EmpName.Text = "toolStripLabel1";
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
             // 
             // toolStripLabel_Emp_code
             // 
@@ -232,16 +242,6 @@
             this.toolStripLabel_Btn_Delete.Size = new System.Drawing.Size(90, 22);
             this.toolStripLabel_Btn_Delete.Text = "삭제권한 : 없음";
             // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
-            // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
@@ -258,6 +258,7 @@
             this.tabForms.Size = new System.Drawing.Size(1665, 30);
             this.tabForms.TabIndex = 6;
             this.tabForms.SelectedIndexChanged += new System.EventHandler(this.tabForms_SelectedIndexChanged);
+            this.tabForms.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabForms_MouseDown);
             // 
             // MDI
             // 
