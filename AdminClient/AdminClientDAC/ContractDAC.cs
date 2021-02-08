@@ -29,36 +29,46 @@ namespace AdminClientDAC
 			conn.Dispose();
 		}
 
-		//public List<ContractVO> GetContractsList(string limit, string confirm, string fin, string fdate, string tdate, string contcode, string prodname, string comp, string destination)
-		//{
-		//	try
-		//	{
-		//		using(SqlCommand cmd = new SqlCommand())
-		//		{
-		//			cmd.Connection = conn;
-		//			cmd.CommandText = @"select top(CONVERT(int, 20)) C.Contract_Code, C.Comp_Code, CO.Comp_Name, C.Contract_Destination, CD.Prod_Code, P.Prod_Name, 
-		//															 C.Contract_DueDate, CD.Contract_Count, CD.Contract_ShippingCount, CD.Contract_CancelCount,
-		//															 C.Contract_Confirm, C.Contract_Finish
-		//								  from Contract C, ContractDetail CD, CompanyInfo CO, Product P
-		//								 where C.Contract_Code = CD.Contract_Code
-		//								   and C.Comp_Code = CO.Comp_Code
-		//								   and CD.Prod_Code = P.Prod_Code
-		//								   and C.Contract_Confirm = ISNULL(@Contract_Confirm, C.Contract_Confirm)
-		//								   and C.Contract_Finish = ISNULL(@Contract_Finish, C.Contract_Finish)
-		//								   and C.Contract_DueDate >= @fdate
-		//								   and C.Contract_DueDate <= @tdate
-		//								   and C.Contract_Code = ISNULL(@Contract_Code, C.Contract_Code)
-		//								   and P.Prod_Name = ISNULL(@Prod_Name, CD.Prod_Code)
-		//								   and C.Comp_Code = ISNULL(@Comp_Code, C.Comp_Code)
-		//								   and C.Contract_Destination = ISNULL(@Contract_Destination, C.Contract_Destination)";
-		//		}
-		//	}
-		//	catch(Exception err)
-		//	{
-		//		Info.WriteError($"실행자:{Global.employees.Emp_Name} 수주정보 검색중 오류 :" + err.Message, err);
-		//		return null;
-		//	}
-		//}
+		public List<ContractVO> GetContractsList(string limit, string confirm, string fin, string fdate, string tdate, string comp, string destination)
+		{
+			try
+			{
+				using (SqlCommand cmd = new SqlCommand())
+				{
+					cmd.Connection = conn;
+					cmd.CommandText = @"select top(CONVERT(int, @limit)) C.Contract_Code, C.Comp_Code, CO.Comp_Name, C.Contract_Destination, CD.Prod_Code, P.Prod_Name, 
+																	 C.Contract_DueDate, CD.Contract_Count, CD.Contract_ShippingCount, CD.Contract_CancelCount,
+																	 C.Contract_Confirm, C.Contract_Finish
+										  from Contract C, ContractDetail CD, CompanyInfo CO, Product P
+										 where C.Contract_Code = CD.Contract_Code
+										   and C.Comp_Code = CO.Comp_Code
+										   and CD.Prod_Code = P.Prod_Code
+										   and C.Contract_Confirm = ISNULL(@Contract_Confirm, C.Contract_Confirm)
+										   and C.Contract_Finish = ISNULL(@Contract_Finish, C.Contract_Finish)
+										   and C.Contract_DueDate >= @fdate
+										   and C.Contract_DueDate <= @tdate
+										   and C.Comp_Code = ISNULL(@Comp_Code, C.Comp_Code)
+										   and C.Contract_Destination = ISNULL(@Contract_Destination, C.Contract_Destination)";
+
+					cmd.Parameters.AddWithValue("@limit", string.IsNullOrEmpty(limit) ? 100000 : (object)limit);
+					cmd.Parameters.AddWithValue("@Contract_Confirm", string.IsNullOrEmpty(confirm) ? DBNull.Value : (object)confirm);
+					cmd.Parameters.AddWithValue("@Contract_Finish", string.IsNullOrEmpty(fin) ? DBNull.Value : (object)fin);
+					cmd.Parameters.AddWithValue("@fdate", string.IsNullOrEmpty(fdate) ? DBNull.Value : (object)fdate);
+					cmd.Parameters.AddWithValue("@tdate", string.IsNullOrEmpty(tdate) ? DBNull.Value : (object)tdate);
+					cmd.Parameters.AddWithValue("@Comp_Code", string.IsNullOrEmpty(comp) ? DBNull.Value : (object)comp);
+					cmd.Parameters.AddWithValue("@Contract_Destination", string.IsNullOrEmpty(destination) ? DBNull.Value : (object)destination);
+
+					List<ContractVO> list = Helper.DataReaderMapToList<ContractVO>(cmd.ExecuteReader());
+
+					return list;
+				}
+			}
+			catch (Exception err)
+			{
+				Info.WriteError($"실행자:{Global.employees.Emp_Name} 수주정보 검색중 오류 :" + err.Message, err);
+				return null;
+			}
+		}
 
 
 		/// <summary>

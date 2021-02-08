@@ -40,14 +40,10 @@ namespace AdminClient.Forms
 			this.label1 = new System.Windows.Forms.Label();
 			this.dtp_DueDateTo = new System.Windows.Forms.DateTimePicker();
 			this.dtp_DueDateFrom = new System.Windows.Forms.DateTimePicker();
-			this.label4 = new System.Windows.Forms.Label();
-			this.txt_ContractCode = new System.Windows.Forms.TextBox();
 			this.cbo_DeDestination = new System.Windows.Forms.ComboBox();
 			this.cbo_DeCompName = new System.Windows.Forms.ComboBox();
 			this.label7 = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
-			this.txt_ContDeCode = new System.Windows.Forms.TextBox();
-			this.label9 = new System.Windows.Forms.Label();
 			this.cbo_ContDFinish = new System.Windows.Forms.ComboBox();
 			this.cbo_ContDConfirm = new System.Windows.Forms.ComboBox();
 			this.label10 = new System.Windows.Forms.Label();
@@ -58,14 +54,10 @@ namespace AdminClient.Forms
 			this.label12 = new System.Windows.Forms.Label();
 			this.dtp_DeDueDateTo = new System.Windows.Forms.DateTimePicker();
 			this.dtp_DeDueDateFrom = new System.Windows.Forms.DateTimePicker();
-			this.txt_DeProdName = new System.Windows.Forms.TextBox();
-			this.label13 = new System.Windows.Forms.Label();
 			this.cbo_Destination = new System.Windows.Forms.ComboBox();
 			this.cbo_CompName = new System.Windows.Forms.ComboBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
-			this.txt_ProdName = new System.Windows.Forms.TextBox();
-			this.label14 = new System.Windows.Forms.Label();
 			this.panel1.SuspendLayout();
 			this.pnl_Main.SuspendLayout();
 			this.gb_Sherch.SuspendLayout();
@@ -110,21 +102,17 @@ namespace AdminClient.Forms
 			// 
 			// gb_Sherch
 			// 
-			this.gb_Sherch.Controls.Add(this.txt_ProdName);
-			this.gb_Sherch.Controls.Add(this.label14);
 			this.gb_Sherch.Controls.Add(this.cbo_Destination);
 			this.gb_Sherch.Controls.Add(this.cbo_CompName);
 			this.gb_Sherch.Controls.Add(this.label5);
 			this.gb_Sherch.Controls.Add(this.label6);
-			this.gb_Sherch.Controls.Add(this.txt_ContractCode);
-			this.gb_Sherch.Controls.Add(this.label4);
 			this.gb_Sherch.Controls.Add(this.cbo_ContractFinish);
 			this.gb_Sherch.Controls.Add(this.cbo_ContractConfirm);
 			this.gb_Sherch.Controls.Add(this.label3);
 			this.gb_Sherch.Controls.Add(this.label2);
 			this.gb_Sherch.Controls.Add(this.groupBox1);
 			this.gb_Sherch.Location = new System.Drawing.Point(12, 11);
-			this.gb_Sherch.Size = new System.Drawing.Size(344, 331);
+			this.gb_Sherch.Size = new System.Drawing.Size(344, 225);
 			this.gb_Sherch.Controls.SetChildIndex(this.chk_limit, 0);
 			this.gb_Sherch.Controls.SetChildIndex(this.nu_limit, 0);
 			this.gb_Sherch.Controls.SetChildIndex(this.btn_search, 0);
@@ -133,19 +121,13 @@ namespace AdminClient.Forms
 			this.gb_Sherch.Controls.SetChildIndex(this.label3, 0);
 			this.gb_Sherch.Controls.SetChildIndex(this.cbo_ContractConfirm, 0);
 			this.gb_Sherch.Controls.SetChildIndex(this.cbo_ContractFinish, 0);
-			this.gb_Sherch.Controls.SetChildIndex(this.label4, 0);
-			this.gb_Sherch.Controls.SetChildIndex(this.txt_ContractCode, 0);
 			this.gb_Sherch.Controls.SetChildIndex(this.label6, 0);
 			this.gb_Sherch.Controls.SetChildIndex(this.label5, 0);
 			this.gb_Sherch.Controls.SetChildIndex(this.cbo_CompName, 0);
 			this.gb_Sherch.Controls.SetChildIndex(this.cbo_Destination, 0);
-			this.gb_Sherch.Controls.SetChildIndex(this.label14, 0);
-			this.gb_Sherch.Controls.SetChildIndex(this.txt_ProdName, 0);
 			// 
 			// gb_detail
 			// 
-			this.gb_detail.Controls.Add(this.txt_DeProdName);
-			this.gb_detail.Controls.Add(this.label13);
 			this.gb_detail.Controls.Add(this.groupBox2);
 			this.gb_detail.Controls.Add(this.cbo_DeDestination);
 			this.gb_detail.Controls.Add(this.cbo_DeCompName);
@@ -153,14 +135,12 @@ namespace AdminClient.Forms
 			this.gb_detail.Controls.Add(this.label7);
 			this.gb_detail.Controls.Add(this.searchControl1);
 			this.gb_detail.Controls.Add(this.label8);
-			this.gb_detail.Controls.Add(this.txt_ContDeCode);
 			this.gb_detail.Controls.Add(this.label11);
-			this.gb_detail.Controls.Add(this.label9);
 			this.gb_detail.Controls.Add(this.label10);
 			this.gb_detail.Controls.Add(this.cbo_ContDFinish);
 			this.gb_detail.Controls.Add(this.cbo_ContDConfirm);
-			this.gb_detail.Location = new System.Drawing.Point(12, 346);
-			this.gb_detail.Size = new System.Drawing.Size(344, 495);
+			this.gb_detail.Location = new System.Drawing.Point(11, 240);
+			this.gb_detail.Size = new System.Drawing.Size(344, 355);
 			// 
 			// chk_limit
 			// 
@@ -205,13 +185,12 @@ namespace AdminClient.Forms
 			this.searchControl1.Name = "searchControl1";
 			this.searchControl1.Size = new System.Drawing.Size(325, 75);
 			this.searchControl1.TabIndex = 0;
-			this.searchControl1.Load += new System.EventHandler(this.searchControl1_Load);
 			// 
 			// sortControl1
 			// 
 			this.sortControl1.BackColor = System.Drawing.Color.Transparent;
 			this.sortControl1.Font = new System.Drawing.Font("나눔고딕", 11.25F);
-			this.sortControl1.Location = new System.Drawing.Point(8, 369);
+			this.sortControl1.Location = new System.Drawing.Point(11, 273);
 			this.sortControl1.Margin = new System.Windows.Forms.Padding(4);
 			this.sortControl1.Name = "sortControl1";
 			this.sortControl1.Size = new System.Drawing.Size(325, 75);
@@ -288,26 +267,10 @@ namespace AdminClient.Forms
 			this.dtp_DueDateFrom.Size = new System.Drawing.Size(119, 25);
 			this.dtp_DueDateFrom.TabIndex = 3;
 			// 
-			// label4
-			// 
-			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(9, 167);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(64, 17);
-			this.label4.TabIndex = 15;
-			this.label4.Text = "수주코드";
-			// 
-			// txt_ContractCode
-			// 
-			this.txt_ContractCode.Location = new System.Drawing.Point(12, 187);
-			this.txt_ContractCode.Name = "txt_ContractCode";
-			this.txt_ContractCode.Size = new System.Drawing.Size(200, 25);
-			this.txt_ContractCode.TabIndex = 16;
-			// 
 			// cbo_DeDestination
 			// 
 			this.cbo_DeDestination.FormattingEnabled = true;
-			this.cbo_DeDestination.Location = new System.Drawing.Point(167, 337);
+			this.cbo_DeDestination.Location = new System.Drawing.Point(170, 241);
 			this.cbo_DeDestination.Name = "cbo_DeDestination";
 			this.cbo_DeDestination.Size = new System.Drawing.Size(151, 25);
 			this.cbo_DeDestination.TabIndex = 33;
@@ -315,7 +278,7 @@ namespace AdminClient.Forms
 			// cbo_DeCompName
 			// 
 			this.cbo_DeCompName.FormattingEnabled = true;
-			this.cbo_DeCompName.Location = new System.Drawing.Point(9, 337);
+			this.cbo_DeCompName.Location = new System.Drawing.Point(12, 241);
 			this.cbo_DeCompName.Name = "cbo_DeCompName";
 			this.cbo_DeCompName.Size = new System.Drawing.Size(151, 25);
 			this.cbo_DeCompName.TabIndex = 32;
@@ -323,7 +286,7 @@ namespace AdminClient.Forms
 			// label7
 			// 
 			this.label7.AutoSize = true;
-			this.label7.Location = new System.Drawing.Point(164, 317);
+			this.label7.Location = new System.Drawing.Point(167, 221);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(50, 17);
 			this.label7.TabIndex = 31;
@@ -332,27 +295,11 @@ namespace AdminClient.Forms
 			// label8
 			// 
 			this.label8.AutoSize = true;
-			this.label8.Location = new System.Drawing.Point(7, 317);
+			this.label8.Location = new System.Drawing.Point(10, 221);
 			this.label8.Name = "label8";
 			this.label8.Size = new System.Drawing.Size(50, 17);
 			this.label8.TabIndex = 30;
 			this.label8.Text = "고객사";
-			// 
-			// txt_ContDeCode
-			// 
-			this.txt_ContDeCode.Location = new System.Drawing.Point(10, 241);
-			this.txt_ContDeCode.Name = "txt_ContDeCode";
-			this.txt_ContDeCode.Size = new System.Drawing.Size(200, 25);
-			this.txt_ContDeCode.TabIndex = 29;
-			// 
-			// label9
-			// 
-			this.label9.AutoSize = true;
-			this.label9.Location = new System.Drawing.Point(7, 221);
-			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(64, 17);
-			this.label9.TabIndex = 28;
-			this.label9.Text = "수주코드";
 			// 
 			// cbo_ContDFinish
 			// 
@@ -462,26 +409,10 @@ namespace AdminClient.Forms
 			this.dtp_DeDueDateFrom.Size = new System.Drawing.Size(119, 25);
 			this.dtp_DeDueDateFrom.TabIndex = 3;
 			// 
-			// txt_DeProdName
-			// 
-			this.txt_DeProdName.Location = new System.Drawing.Point(9, 289);
-			this.txt_DeProdName.Name = "txt_DeProdName";
-			this.txt_DeProdName.Size = new System.Drawing.Size(200, 25);
-			this.txt_DeProdName.TabIndex = 36;
-			// 
-			// label13
-			// 
-			this.label13.AutoSize = true;
-			this.label13.Location = new System.Drawing.Point(9, 269);
-			this.label13.Name = "label13";
-			this.label13.Size = new System.Drawing.Size(36, 17);
-			this.label13.TabIndex = 35;
-			this.label13.Text = "품목";
-			// 
 			// cbo_Destination
 			// 
 			this.cbo_Destination.FormattingEnabled = true;
-			this.cbo_Destination.Location = new System.Drawing.Point(169, 283);
+			this.cbo_Destination.Location = new System.Drawing.Point(169, 187);
 			this.cbo_Destination.Name = "cbo_Destination";
 			this.cbo_Destination.Size = new System.Drawing.Size(151, 25);
 			this.cbo_Destination.TabIndex = 37;
@@ -489,7 +420,7 @@ namespace AdminClient.Forms
 			// cbo_CompName
 			// 
 			this.cbo_CompName.FormattingEnabled = true;
-			this.cbo_CompName.Location = new System.Drawing.Point(12, 283);
+			this.cbo_CompName.Location = new System.Drawing.Point(12, 187);
 			this.cbo_CompName.Name = "cbo_CompName";
 			this.cbo_CompName.Size = new System.Drawing.Size(151, 25);
 			this.cbo_CompName.TabIndex = 36;
@@ -497,7 +428,7 @@ namespace AdminClient.Forms
 			// label5
 			// 
 			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(166, 263);
+			this.label5.Location = new System.Drawing.Point(166, 167);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(50, 17);
 			this.label5.TabIndex = 35;
@@ -506,27 +437,11 @@ namespace AdminClient.Forms
 			// label6
 			// 
 			this.label6.AutoSize = true;
-			this.label6.Location = new System.Drawing.Point(9, 263);
+			this.label6.Location = new System.Drawing.Point(9, 167);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(50, 17);
 			this.label6.TabIndex = 34;
 			this.label6.Text = "고객사";
-			// 
-			// txt_ProdName
-			// 
-			this.txt_ProdName.Location = new System.Drawing.Point(12, 235);
-			this.txt_ProdName.Name = "txt_ProdName";
-			this.txt_ProdName.Size = new System.Drawing.Size(200, 25);
-			this.txt_ProdName.TabIndex = 39;
-			// 
-			// label14
-			// 
-			this.label14.AutoSize = true;
-			this.label14.Location = new System.Drawing.Point(9, 215);
-			this.label14.Name = "label14";
-			this.label14.Size = new System.Drawing.Size(36, 17);
-			this.label14.TabIndex = 38;
-			this.label14.Text = "품목";
 			// 
 			// ContractInfo
 			// 
@@ -562,8 +477,6 @@ namespace AdminClient.Forms
 
 		private SearchControl searchControl1;
 		private SortControl sortControl1;
-		private System.Windows.Forms.TextBox txt_ContractCode;
-		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.ComboBox cbo_ContractFinish;
 		private System.Windows.Forms.ComboBox cbo_ContractConfirm;
 		private System.Windows.Forms.Label label3;
@@ -576,9 +489,7 @@ namespace AdminClient.Forms
 		private System.Windows.Forms.ComboBox cbo_DeCompName;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.Label label8;
-		private System.Windows.Forms.TextBox txt_ContDeCode;
 		private System.Windows.Forms.Label label11;
-		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.Label label10;
 		private System.Windows.Forms.ComboBox cbo_ContDFinish;
 		private System.Windows.Forms.ComboBox cbo_ContDConfirm;
@@ -588,13 +499,9 @@ namespace AdminClient.Forms
 		private System.Windows.Forms.Label label12;
 		private System.Windows.Forms.DateTimePicker dtp_DeDueDateTo;
 		private System.Windows.Forms.DateTimePicker dtp_DeDueDateFrom;
-		private System.Windows.Forms.TextBox txt_ProdName;
-		private System.Windows.Forms.Label label14;
 		private System.Windows.Forms.ComboBox cbo_Destination;
 		private System.Windows.Forms.ComboBox cbo_CompName;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.TextBox txt_DeProdName;
-		private System.Windows.Forms.Label label13;
 	}
 }

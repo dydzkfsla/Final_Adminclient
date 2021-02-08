@@ -81,6 +81,8 @@ namespace AdminClient.Forms
 			CommonUtil.AddGridTextColumn(dgv_FacList, "설명", "Fac_Note"); //11
 			#endregion
 			#endregion
+
+			GetFgrpList();
 		}
 
 		#region 이벤트
@@ -95,7 +97,7 @@ namespace AdminClient.Forms
 			}
 		}
 
-		private void btn_search_Click(object sender, EventArgs e)
+		private void btn_search_Click(object sender, EventArgs e) //검색버튼
 		{
 			string limit, fgrp, enable, outsourcing;
 			limit = enable = fgrp = outsourcing = string.Empty;
@@ -132,6 +134,7 @@ namespace AdminClient.Forms
 		}
 
 		#region 설비군 부분
+
 		private void btn_FacGrpAdd_Click(object sender, EventArgs e)
 		{
 			FacilityGroupPopUp pop = new FacilityGroupPopUp();
@@ -176,6 +179,16 @@ namespace AdminClient.Forms
 
 		#endregion
 
+		#region 메서드
+
+		private void GetFgrpList()
+		{
+			FacilityService service = new FacilityService();
+			FacGrpList = service.GetFacilityGroupList();
+			dgv_FacGrpList.DataSource = FacGrpList;
+		}
+
+		#endregion
 
 	}
 }

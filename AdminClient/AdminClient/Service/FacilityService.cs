@@ -16,9 +16,9 @@ namespace AdminClient.Service
 			dac = new FacilityDAC();
 		}
 
-		public List<FacilityGroupVO> GetFacilityGroupList(string limit, string enable)
+		public List<FacilityGroupVO> GetFacilityGroupList()
 		{
-			return dac.GetFacilityGroupList(limit, enable);
+			return dac.GetFacilityGroupList();
 		}
 
 		public List<FacilityVO> GetFacilityList(string limit, string fgrp, string enable, string outsourcing)
