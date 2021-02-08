@@ -60,12 +60,12 @@ namespace AdminClientDAC
                 SqlCommand sql = new SqlCommand
                 {
                     Connection = conn,
-                    CommandText = "insert into Form_Info(Form_Name, Form_Menu, Fst_Writer) values(@Form_Name, @Form_Menu, @Fst_Writer)"
+                    CommandText = "insert into Form_Info(Form_Name, Form_Menu, Fst_Writer, Fst_WriteDate) values(@Form_Name, @Form_Menu, @Fst_Writer, getdate())"
                 };
 
                 sql.Parameters.AddWithValue("@Form_Name", FromName);
                 sql.Parameters.AddWithValue("@Form_Menu", txtMenuName);
-                sql.Parameters.AddWithValue("@Fst_Writer", Global.employees.Emp_Name);
+                sql.Parameters.AddWithValue("@Fst_Writer", Global.employees.Emp_Code);
                 bool Execut = sql.ExecuteNonQuery() > 0 ? true : false;
 
                 if (Execut)

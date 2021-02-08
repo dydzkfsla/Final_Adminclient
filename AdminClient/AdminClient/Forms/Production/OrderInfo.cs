@@ -478,7 +478,7 @@ namespace AdminClient.Forms
             }
             #endregion
 
-            detail.Orders_ReceiveQuantity = decimal.Parse(txt_RqCnt.Text);
+            detail.Orders_ReceiveQuantity = decimal.Parse(txt_RqCnt.Text) - detail.Orders_ReceiveQuantity;
 
             OrderService service = new OrderService();
             bool result = service.ReceiveQnt(detail);

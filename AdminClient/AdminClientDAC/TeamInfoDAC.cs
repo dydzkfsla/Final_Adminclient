@@ -66,7 +66,7 @@ namespace AdminClientDAC
                 sql.Parameters.AddWithValue("@Team_Name", Team_Name);
                 sql.Parameters.AddWithValue("@Team_Chief", string.IsNullOrEmpty(Team_Chief) ? DBNull.Value: (object)Team_Chief);
                 sql.Parameters.AddWithValue("@Team_Part", string.IsNullOrEmpty(Team_Part) ? DBNull.Value : (object)Team_Part);
-                sql.Parameters.AddWithValue("@Fst_Writer", Global.employees.Emp_Name);
+                sql.Parameters.AddWithValue("@Fst_Writer", Global.employees.Emp_Code);
 
                 bool Execut = sql.ExecuteNonQuery() > 0 ? true : false;
 
@@ -101,14 +101,14 @@ namespace AdminClientDAC
 
                 if (Execut)
                 {
-                    Logging.WriteInfo($"실행자:{Global.employees.Emp_Name} 팀 삭제 | {Team_Code}");
+                    Logging.WriteInfo($"실행자:{Global.employees.Emp_Code} 팀 삭제 | {Team_Code}");
                 }
 
                 return Execut;
             }
             catch (Exception err)
             {
-                Logging.WriteError($"실행자:{Global.employees.Emp_Name} 팀 삭제중 오류" + err.Message, err);
+                Logging.WriteError($"실행자:{Global.employees.Emp_Code} 팀 삭제중 오류" + err.Message, err);
                 return false;
             }
         }
@@ -134,7 +134,7 @@ namespace AdminClientDAC
                 sql.Parameters.AddWithValue("@Team_Name", Team_Name);
                 sql.Parameters.AddWithValue("@Team_Chief", string.IsNullOrEmpty(Team_Chief) ? DBNull.Value : (object)Team_Chief);
                 sql.Parameters.AddWithValue("@Team_Part", string.IsNullOrEmpty(Team_Part) ? DBNull.Value : (object)Team_Part);
-                sql.Parameters.AddWithValue("@Lst_Writer", Global.employees.Emp_Name);
+                sql.Parameters.AddWithValue("@Lst_Writer", Global.employees.Emp_Code);
 
                 bool Execut = sql.ExecuteNonQuery() > 0 ? true : false;
 

@@ -34,7 +34,7 @@ namespace AdminClientDAC
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = "select Common_Name, Common_Category from Common where len(Common_Pcode) < 1";
+                    cmd.CommandText = "select Common_Name, Common_Category from Common where Common_Pcode is null";
 
                     List<ComboCommonVO> list = Helper.DataReaderMapToList<ComboCommonVO>(cmd.ExecuteReader());
                     return list;
@@ -147,8 +147,7 @@ namespace AdminClientDAC
                     cmd.Connection = conn;
                     cmd.CommandText = @"select top(@limit) Common_Code, Common_Name, Common_Category, Common_Pcode 
 	                                                            from Common 
-	                                                            where len(Common_Pcode) > 0 
-	                                                            	and  Common_Category = isnull(@cate, Common_Category);";
+	                                                            where Common_Category = isnull(@cate, Common_Category);";
 
                     cmd.Parameters.AddWithValue("@limit", string.IsNullOrEmpty(limit) ? 999 : (object)(int.Parse(limit)));
                     cmd.Parameters.AddWithValue("@cate", string.IsNullOrEmpty(category) ? DBNull.Value : (object)category);
