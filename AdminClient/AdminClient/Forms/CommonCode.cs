@@ -109,6 +109,8 @@ namespace AdminClient.Forms
 
                         commList.Remove(vo);
 
+                        CommonUtil.ControlAction<Panel, TextBox>(panel1, (txt) => { txt.Text = ""; });
+
                         dgv_CommList.DataSource = null;
                         dgv_CommList.DataSource = commList;
 
@@ -127,7 +129,9 @@ namespace AdminClient.Forms
                 txt_Code.Text = dgv_CommList["Common_Code", e.RowIndex].Value.ToString();
                 txt_Cate.Text = dgv_CommList["Common_Category", e.RowIndex].Value.ToString();
                 txt_Name.Text = dgv_CommList["Common_Name", e.RowIndex].Value.ToString();
-                txt_Pcode.Text = dgv_CommList["Common_Pcode", e.RowIndex].Value.ToString();
+
+                if(dgv_CommList["Common_Pcode", e.RowIndex].Value != null)
+                    txt_Pcode.Text = dgv_CommList["Common_Pcode", e.RowIndex].Value.ToString();
             }
         }
 
@@ -162,6 +166,7 @@ namespace AdminClient.Forms
         {
             CommonPopUp pop = new CommonPopUp();
             pop.ThisMode = CommonPopUp.Mode.New;
+            pop.StartPosition = FormStartPosition.CenterParent;
 
             if(pop.ShowDialog() == DialogResult.OK)
             {

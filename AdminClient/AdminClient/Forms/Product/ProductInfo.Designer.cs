@@ -35,19 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cbo_State = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.rd_descending = new System.Windows.Forms.RadioButton();
-            this.rd_ascending = new System.Windows.Forms.RadioButton();
-            this.comboBox9 = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.comboBox10 = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.comboBox11 = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.dgv_ProdList = new AdminClient.CustomDataGridView();
             this.txt_Wh = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -57,8 +45,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.txt_Code = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.btn_Clear = new System.Windows.Forms.Button();
-            this.btn_Delete = new System.Windows.Forms.Button();
             this.schCtrl = new AdminClient.SearchControl();
             this.sortCtrl = new AdminClient.SortControl();
             this.panel1.SuspendLayout();
@@ -85,8 +71,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btn_Delete);
-            this.panel1.Controls.Add(this.btn_Clear);
             this.panel1.Controls.Add(this.txt_Wh);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.txt_Cate);
@@ -106,8 +90,6 @@
             this.panel1.Controls.SetChildIndex(this.txt_Cate, 0);
             this.panel1.Controls.SetChildIndex(this.label11, 0);
             this.panel1.Controls.SetChildIndex(this.txt_Wh, 0);
-            this.panel1.Controls.SetChildIndex(this.btn_Clear, 0);
-            this.panel1.Controls.SetChildIndex(this.btn_Delete, 0);
             // 
             // pnl_Main
             // 
@@ -136,18 +118,6 @@
             // 
             this.gb_detail.Controls.Add(this.sortCtrl);
             this.gb_detail.Controls.Add(this.schCtrl);
-            this.gb_detail.Controls.Add(this.comboBox6);
-            this.gb_detail.Controls.Add(this.rd_descending);
-            this.gb_detail.Controls.Add(this.label5);
-            this.gb_detail.Controls.Add(this.rd_ascending);
-            this.gb_detail.Controls.Add(this.comboBox8);
-            this.gb_detail.Controls.Add(this.comboBox9);
-            this.gb_detail.Controls.Add(this.label6);
-            this.gb_detail.Controls.Add(this.button2);
-            this.gb_detail.Controls.Add(this.comboBox10);
-            this.gb_detail.Controls.Add(this.label8);
-            this.gb_detail.Controls.Add(this.comboBox11);
-            this.gb_detail.Controls.Add(this.label9);
             this.gb_detail.Controls.Add(this.label7);
             this.gb_detail.Location = new System.Drawing.Point(12, 228);
             this.gb_detail.Size = new System.Drawing.Size(375, 575);
@@ -244,49 +214,6 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "단종여부";
             // 
-            // rd_descending
-            // 
-            this.rd_descending.AutoSize = true;
-            this.rd_descending.Location = new System.Drawing.Point(111, 482);
-            this.rd_descending.Name = "rd_descending";
-            this.rd_descending.Size = new System.Drawing.Size(106, 21);
-            this.rd_descending.TabIndex = 46;
-            this.rd_descending.TabStop = true;
-            this.rd_descending.Text = "Descending";
-            this.rd_descending.UseVisualStyleBackColor = true;
-            // 
-            // rd_ascending
-            // 
-            this.rd_ascending.AutoSize = true;
-            this.rd_ascending.Location = new System.Drawing.Point(7, 482);
-            this.rd_ascending.Name = "rd_ascending";
-            this.rd_ascending.Size = new System.Drawing.Size(98, 21);
-            this.rd_ascending.TabIndex = 45;
-            this.rd_ascending.TabStop = true;
-            this.rd_ascending.Text = "Ascending";
-            this.rd_ascending.UseVisualStyleBackColor = true;
-            // 
-            // comboBox9
-            // 
-            this.comboBox9.FormattingEnabled = true;
-            this.comboBox9.Location = new System.Drawing.Point(7, 509);
-            this.comboBox9.Name = "comboBox9";
-            this.comboBox9.Size = new System.Drawing.Size(225, 25);
-            this.comboBox9.TabIndex = 44;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.Image = global::AdminClient.Properties.Resources.SortAsc_32x32;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(248, 470);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(84, 64);
-            this.button2.TabIndex = 43;
-            this.button2.Text = "정렬";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -295,74 +222,6 @@
             this.label7.Size = new System.Drawing.Size(64, 17);
             this.label7.TabIndex = 38;
             this.label7.Text = "검색조건";
-            // 
-            // comboBox6
-            // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(11, 450);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(225, 25);
-            this.comboBox6.TabIndex = 18;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 430);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 17);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "단종여부";
-            // 
-            // comboBox8
-            // 
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(11, 402);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(225, 25);
-            this.comboBox8.TabIndex = 16;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8, 382);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 17);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "검사여부";
-            // 
-            // comboBox10
-            // 
-            this.comboBox10.FormattingEnabled = true;
-            this.comboBox10.Location = new System.Drawing.Point(11, 354);
-            this.comboBox10.Name = "comboBox10";
-            this.comboBox10.Size = new System.Drawing.Size(225, 25);
-            this.comboBox10.TabIndex = 14;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(8, 334);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(36, 17);
-            this.label8.TabIndex = 13;
-            this.label8.Text = "단위";
-            // 
-            // comboBox11
-            // 
-            this.comboBox11.FormattingEnabled = true;
-            this.comboBox11.Location = new System.Drawing.Point(11, 306);
-            this.comboBox11.Name = "comboBox11";
-            this.comboBox11.Size = new System.Drawing.Size(225, 25);
-            this.comboBox11.TabIndex = 12;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(8, 286);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(64, 17);
-            this.label9.TabIndex = 11;
-            this.label9.Text = "카테고리";
             // 
             // dgv_ProdList
             // 
@@ -466,24 +325,6 @@
             this.label13.TabIndex = 14;
             this.label13.Text = "물품코드";
             // 
-            // btn_Clear
-            // 
-            this.btn_Clear.Location = new System.Drawing.Point(149, 24);
-            this.btn_Clear.Name = "btn_Clear";
-            this.btn_Clear.Size = new System.Drawing.Size(75, 23);
-            this.btn_Clear.TabIndex = 22;
-            this.btn_Clear.Text = "초기화";
-            this.btn_Clear.UseVisualStyleBackColor = true;
-            // 
-            // btn_Delete
-            // 
-            this.btn_Delete.Location = new System.Drawing.Point(38, 29);
-            this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Size = new System.Drawing.Size(75, 23);
-            this.btn_Delete.TabIndex = 23;
-            this.btn_Delete.Text = "삭제";
-            this.btn_Delete.UseVisualStyleBackColor = true;
-            // 
             // schCtrl
             // 
             this.schCtrl.BackColor = System.Drawing.Color.Transparent;
@@ -537,19 +378,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbo_Category;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RadioButton rd_descending;
-        private System.Windows.Forms.RadioButton rd_ascending;
-        private System.Windows.Forms.ComboBox comboBox9;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox8;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox10;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox11;
-        private System.Windows.Forms.Label label9;
         private CustomDataGridView dgv_ProdList;
         private System.Windows.Forms.TextBox txt_Wh;
         private System.Windows.Forms.Label label11;
@@ -559,8 +388,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txt_Code;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button btn_Clear;
-        private System.Windows.Forms.Button btn_Delete;
         private SearchControl schCtrl;
         private SortControl sortCtrl;
     }

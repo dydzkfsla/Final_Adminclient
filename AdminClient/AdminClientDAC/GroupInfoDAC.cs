@@ -65,7 +65,7 @@ namespace AdminClientDAC
                 };
                 sql.Parameters.AddWithValue("@Grp_No", GroupNo);
                 sql.Parameters.AddWithValue("@Grp_Name", GroupName);
-                sql.Parameters.AddWithValue("@Fst_Writer", Global.employees.Emp_Name);
+                sql.Parameters.AddWithValue("@Fst_Writer", Global.employees.Emp_Code);
 
                 bool Execut = sql.ExecuteNonQuery() > 0 ? true : false;
 
@@ -95,7 +95,7 @@ namespace AdminClientDAC
                     CommandText = "delete from Group_Info where Grp_No = @Grp_No"
                 };
                 sql.Parameters.AddWithValue("@Grp_No", GropNo);
-                sql.Parameters.AddWithValue("@Fst_Writer", Global.employees.Emp_Name);
+                sql.Parameters.AddWithValue("@Fst_Writer", Global.employees.Emp_Code);
 
                 bool Execut = sql.ExecuteNonQuery() > 0 ? true : false;
 
@@ -129,7 +129,7 @@ namespace AdminClientDAC
                 };
                 sql.Parameters.AddWithValue("@Grp_No", GropNo);
                 sql.Parameters.AddWithValue("@Grp_Name", GropName);
-                sql.Parameters.AddWithValue("@Lst_Writer", Global.employees.Emp_Name);
+                sql.Parameters.AddWithValue("@Lst_Writer", Global.employees.Emp_Code);
 
                 bool Execut = sql.ExecuteNonQuery() > 0 ? true : false;
 

@@ -206,7 +206,7 @@ namespace AdminClientDAC
 	                                                                inner join (select Prod_Code, sum(wd.WH_Count) as totCount 
 	                                                                						from WareHouseDetail as wd, WareHouse as wh
                                                                                             where wd.WH_Code = wh.WH_Code
-								                                                                and wh.WH_Type <> 'WareH05'
+								                                                                and wh.WH_Type not in ('WareH05', 'WareH06')
 	                                                                						group by wd.Prod_Code) as tot on cd.Prod_Code = tot.Prod_Code
 	                                                                left outer join ProductCheck as pc on cd.Prod_Code = pc.Prod_Code
 	                                                                where cd.Comp_Code = @code";

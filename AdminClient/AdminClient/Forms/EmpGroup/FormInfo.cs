@@ -59,7 +59,6 @@ namespace AdminClient.Forms
 
         private void Inited()
         {
-
             DgvDatSourceLoad();
             btn_add.Enabled = false;
             btn_Update.Enabled = false;
