@@ -34,7 +34,7 @@ namespace AdminClientDAC
 				using (SqlCommand cmd = new SqlCommand())
 				{
 					cmd.Connection = conn;
-					cmd.CommandText = @"select Emp_Code, Emp_Name, Emp_HireDate, Emp_RetireDate, Emp_Phone, Emp_Email, Emp_PostCode, Emp_Addr, Emp_AddrDetail, Emp_Pwd
+					cmd.CommandText = @"select Emp_Code, Emp_Name, Emp_HireDate, Emp_RetireDate, Emp_Phone, Emp_Email, Emp_PostCode, Emp_Addr, Emp_AddrDetail, Emp_Pwd, Emp_Addbutton, Emp_Updatebutton,Emp_Deletebutton
 									  from Employees
 									 where Emp_Code = @Emp_Code
 									   and Emp_Pwd = @Emp_Pwd";
