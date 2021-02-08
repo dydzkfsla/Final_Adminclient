@@ -154,12 +154,6 @@
     <Compile Include="Forms\Production\CompanyInfo.Designer.cs">
       <DependentUpon>CompanyInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Production\ContractInfo_old.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Production\ContractInfo_old.Designer.cs">
-      <DependentUpon>ContractInfo_old.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Production\DemandPlan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -544,9 +538,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Production\CompanyInfo.resx">
       <DependentUpon>CompanyInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Production\ContractInfo_old.resx">
-      <DependentUpon>ContractInfo_old.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Production\DemandPlan.resx">
       <DependentUpon>DemandPlan.cs</DependentUpon>

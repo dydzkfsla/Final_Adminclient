@@ -53,6 +53,30 @@ namespace AdminClientDAC
 			}
 		}
 
+		public List<ComboCompNameVO> BindingCompNameForContract()
+		{
+			try
+			{
+				using (SqlCommand cmd = new SqlCommand())
+				{
+					cmd.Connection = conn;
+					cmd.CommandText = @"select Comp_Code, Comp_Name from CompanyInfo
+										 where Comp_Type = 'Comp001' ";
+
+					using (SqlDataReader reader = cmd.ExecuteReader())
+					{
+						return Helper.DataReaderMapToList<ComboCompNameVO>(reader);
+					}
+				}
+
+			}
+			catch (Exception err)
+			{
+				Info.WriteError($"실행자:{Global.employees.Emp_Name} 콤보박스 바인딩(CompName) 목록 불러오기 오류 :" + err.Message, err);
+				return null;
+			}
+		}
+
 		/// <summary>
 		/// 콤보박스 바인딩을 위한 물품코드와 물품명 불러오기
 		/// </summary>
@@ -137,5 +161,28 @@ namespace AdminClientDAC
 			}
 		}
 
+		public List<ComboDestVO> BindingDestName()
+		{
+			try
+			{
+				using (SqlCommand cmd = new SqlCommand())
+				{
+					cmd.Connection = conn;
+					cmd.CommandText = @"select Contract_Destination from Contract group by Contract_Destination";
+
+					using (SqlDataReader reader = cmd.ExecuteReader())
+					{
+						return Helper.DataReaderMapToList<ComboDestVO>(reader);
+					}
+				}
+
+
+			}
+			catch (Exception err)
+			{
+				Info.WriteError($"실행자:{Global.employees.Emp_Name} 콤보박스 바인딩(ProdName) 목록 불러오기 오류 :" + err.Message, err);
+				return null;
+			}
+		}
 	}
 }

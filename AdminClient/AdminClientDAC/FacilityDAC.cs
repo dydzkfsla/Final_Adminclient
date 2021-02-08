@@ -74,9 +74,9 @@ namespace AdminClientDAC
 										   and Fac_Outsourcing = ISNULL(@outsourcing, Fac_Enable)";
 
 					cmd.Parameters.AddWithValue("@limit", string.IsNullOrEmpty(limit) ? 100000 : (object)limit);
-					cmd.Parameters.AddWithValue("@fgrp", string.IsNullOrEmpty(enable) ? DBNull.Value : (object)fgrp);
+					cmd.Parameters.AddWithValue("@fgrp", string.IsNullOrEmpty(fgrp) ? DBNull.Value : (object)fgrp);
 					cmd.Parameters.AddWithValue("@enable", string.IsNullOrEmpty(enable) ? DBNull.Value : (object)enable);
-					cmd.Parameters.AddWithValue("@outsourcing", string.IsNullOrEmpty(enable) ? DBNull.Value : (object)outsourcing);
+					cmd.Parameters.AddWithValue("@outsourcing", string.IsNullOrEmpty(outsourcing) ? DBNull.Value : (object)outsourcing);
 
 					List<FacilityVO> list = Helper.DataReaderMapToList<FacilityVO>(cmd.ExecuteReader());
 

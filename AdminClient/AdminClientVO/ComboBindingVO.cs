@@ -29,4 +29,9 @@ namespace AdminClientVO
 		public string WH_Code { get; set; }
 		public string WH_Name { get; set; }
 	}
+
+	public class ComboDestVO
+	{
+		public string Contract_Destination { get; set; }
+	}
 }
