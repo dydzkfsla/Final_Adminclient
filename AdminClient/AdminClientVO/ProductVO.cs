@@ -17,7 +17,7 @@ namespace AdminClientVO
         public string Prod_State { get; set; }
         public string Prod_WhCode { get; set; }
         public decimal Prod_SafetyStock { get; set; }
-
+        public decimal totcnt { get; set; }
     }
 
     public class ComboProductVO

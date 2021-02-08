@@ -83,7 +83,13 @@ namespace AdminClient.PopUp
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            if(cbo_Type.SelectedIndex < 1)
+            if (txt_Name.Text.Trim().Length < 1)
+            {
+                MessageBox.Show("창고 이름을 입력해주세요");
+                return;
+            }
+
+            if (cbo_Type.SelectedIndex < 1)
             {
                 MessageBox.Show("창고 타입을 선택해주세요");
                 return;
@@ -93,6 +99,7 @@ namespace AdminClient.PopUp
             {
                 WH_Code = txt_Code.Text, 
                 WH_Type = cbo_Type.SelectedValue.ToString(), 
+                WH_Name = txt_Name.Text, 
                 Common_Name = cbo_Type.Text, 
                 WH_State = cbo_State.SelectedItem.ToString()
             };
@@ -111,6 +118,12 @@ namespace AdminClient.PopUp
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
+            if(txt_Name.Text.Trim().Length < 1)
+            {
+                MessageBox.Show("창고 이름을 입력해주세요");
+                return;
+            }
+
             if (cbo_Type.SelectedIndex < 1)
             {
                 MessageBox.Show("창고 타입을 선택해주세요");
@@ -120,6 +133,7 @@ namespace AdminClient.PopUp
             vo = new WareHouseVO
             {
                 WH_Type = cbo_Type.SelectedValue.ToString(),
+                WH_Name = txt_Name.Text,
                 WH_State = cbo_State.SelectedItem.ToString(),
                 Common_Name = cbo_Type.Text
             };

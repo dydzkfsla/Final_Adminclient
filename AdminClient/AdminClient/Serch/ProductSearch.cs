@@ -71,6 +71,8 @@ namespace AdminClient.Serch
             CommonUtil.AddGridTextColumn(dgv_ProdList, "상태", "Prod_State");
             CommonUtil.AddGridTextColumn(dgv_ProdList, "저장창고", "Prod_WhCode");
             CommonUtil.AddGridTextColumn(dgv_ProdList, "최소재고량", "Prod_SafetyStock", 150);
+            CommonUtil.AddGridTextColumn(dgv_ProdList, "현재재고량", "totcnt", 150);
+
             #endregion
 
             #region dgv addlist
@@ -82,6 +84,7 @@ namespace AdminClient.Serch
             CommonUtil.AddGridTextColumn(dgv_AddList, "상태", "Prod_State");
             CommonUtil.AddGridTextColumn(dgv_AddList, "저장창고", "Prod_WhCode");
             CommonUtil.AddGridTextColumn(dgv_AddList, "최소재고량", "Prod_SafetyStock", 150);
+            CommonUtil.AddGridTextColumn(dgv_ProdList, "현재재고량", "totcnt", 150);
             #endregion
         }
 

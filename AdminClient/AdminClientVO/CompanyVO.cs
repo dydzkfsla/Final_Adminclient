@@ -28,14 +28,15 @@ namespace AdminClientVO
         public string Comp_Code { get; set; }
         public string Prod_Code { get; set; }
         public string Prod_Name { get; set; }
-        public decimal Prod_UnitCount { get; set; }
-        public string Prod_Unit { get; set; }
+        public string Prod_Unit{ get; set; }
+        public decimal Prod_MinCount { get; set; }
         public int Prod_UnitPrice { get; set; }
         public int Prod_OldUnitPrice { get; set; }
-        public string Comp_StartDate { get; set; }
-        public string Comp_EndDate { get; set; }
         public string item_State { get; set; }
-        public string Comp_Div { get; set; }
+        public string Prod_WhCode { get; set; }
+        public decimal totCount { get; set; }
+        public decimal Prod_SafetyStock { get; set; }
+        public string Check_Point { get; set; }
 
     }
 

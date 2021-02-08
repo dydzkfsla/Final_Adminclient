@@ -54,9 +54,12 @@
     <Compile Include="BOMDAC.cs" />
     <Compile Include="BORDAC.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="ComboBindingDAC.cs" />
     <Compile Include="CommonDAC.cs" />
     <Compile Include="CompanyDAC.cs" />
     <Compile Include="ConnDB.cs" />
+    <Compile Include="ContractDAC.cs" />
+    <Compile Include="DemandDAC.cs" />
     <Compile Include="EmployeesDAC.cs" />
     <Compile Include="EmpTeamConnDAC.cs" />
     <Compile Include="FacilityDAC.cs" />
@@ -66,6 +69,8 @@
     <Compile Include="Global\Global.cs" />
     <Compile Include="GroupFormConnDAC.cs" />
     <Compile Include="GroupInfoDAC.cs" />
+    <Compile Include="InOutDAC.cs" />
+    <Compile Include="OrderDAC.cs" />
     <Compile Include="ProductCheckDAC.cs" />
     <Compile Include="ProductDAC.cs" />
     <Compile Include="StockInfoDAC.cs" />

@@ -56,6 +56,28 @@ namespace AdminClientDAC
             }
         }
 
+        public List<CombBORVO> GetCboBindingList()
+        {
+            try
+            {
+                using(SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"select fc.Fac_Code, fc.Fac_Name, p.Pcs_Code, p.Pcs_Name
+	                                                                from Facility as fc
+	                                                                full outer join ProcessInfo as p on fc.Fac_Code = p.Pcs_Code";
+
+                    List<CombBORVO> list = Helper.DataReaderMapToList<CombBORVO>(cmd.ExecuteReader());
+
+                    return list;
+                }
+            }
+            catch(Exception err)
+            {
+                return null;
+            }
+        }
+
         public bool DeleteBOR(int code)
         {
             try
@@ -124,12 +146,12 @@ namespace AdminClientDAC
                 using(SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"select b.BOR_Code, b.Prod_Code, pd.Prod_Name, b.Pcs_Code, pcs.Pcs_Name, b.Fac_Code, fac.FacGrp_Name, 
+                    cmd.CommandText = @"select b.BOR_Code, b.Prod_Code, pd.Prod_Name, b.Pcs_Code, pcs.Pcs_Name, b.Fac_Code, fac.Fac_Name, 
                                                                             b.Tact_Time, b.BOR_Priority, b.BOR_DelayTime, b.BOR_State
-	                                                                from BOR as b, Product as pd, ProcessInfo as pcs, FacilityGroup as fac
+	                                                                from BOR as b, Product as pd, ProcessInfo as pcs, Facility as fac
 	                                                                where b.Prod_Code = pd.Prod_Code
 	                                                                	and b.Pcs_Code = pcs.Pcs_Code
-	                                                                	and b.Fac_Code = fac.FacGrp_Code
+	                                                                	and b.Fac_Code = fac.Fac_Code
 	                                                                	and b.Prod_Code = isnull(@prod, b.Prod_Code)
 	                                                                	and b.Pcs_Code = isnull(@pcs, b.Pcs_Code)
 	                                                                	and	b.Fac_Code = isnull(@fac, b.Fac_Code)
@@ -151,27 +173,6 @@ namespace AdminClientDAC
             }
         }
 
-        public List<ComboBORVO> GetComboBindingList()
-        {
-            try
-            {
-                using (SqlCommand cmd = new SqlCommand())
-                {
-                    cmd.Connection = conn;
-                    cmd.CommandText = @"select fg.FacGrp_Code, fg.FacGrp_Name, p.Pcs_Code, p.Pcs_Name
-	                                                                from FacilityGroup as fg 
-	                                                                full outer join ProcessInfo as p on fg.FacGrp_Code = p.Pcs_Code";
-
-                    List<ComboBORVO> list = Helper.DataReaderMapToList<ComboBORVO>(cmd.ExecuteReader());
-
-                    return list;
-                }
-            }
-            catch(Exception err)
-            {
-                return null;
-            }
-        }
 
         public void Dispose()
         {

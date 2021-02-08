@@ -45,6 +45,7 @@ namespace AdminClient.Forms
             #region dgv셋팅
             dgv_WhList.SetGridColumn();
             CommonUtil.AddGridTextColumn(dgv_WhList, "창고코드", "WH_Code", textAlign : DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dgv_WhList, "창고이름", "WH_Name");
             CommonUtil.AddGridTextColumn(dgv_WhList, "Type", "WH_Type", visibility: false);
             CommonUtil.AddGridTextColumn(dgv_WhList, "창고유형", "Common_Name", textAlign: DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dgv_WhList, "창고상태", "WH_State", textAlign: DataGridViewContentAlignment.MiddleCenter);
@@ -138,6 +139,7 @@ namespace AdminClient.Forms
                 WareHouseVO vo = new WareHouseVO
                 {
                     WH_Code = dgv_WhList["WH_Code", e.RowIndex].Value.ToString(),
+                    WH_Name = dgv_WhList["WH_Name", e.RowIndex].Value == null? "test": dgv_WhList["WH_Name", e.RowIndex].Value.ToString(),
                     WH_Type = dgv_WhList["WH_Type", e.RowIndex].Value.ToString(),
                     WH_State = dgv_WhList["WH_State", e.RowIndex].Value.ToString()
                 };
@@ -163,6 +165,7 @@ namespace AdminClient.Forms
                         if (wh.WH_Code == vo.WH_Code)
                         {
                             wh.WH_State = vo.WH_State;
+                            wh.WH_Name = vo.WH_Name;
                             wh.Common_Name = vo.Common_Name;
                             wh.WH_Type = vo.WH_Type;
                         }
@@ -178,11 +181,9 @@ namespace AdminClient.Forms
                     {
                         if (wh.WH_Code == txt_Code.Text)
                         {
-                            vo = wh;
+                            wh.WH_State = "N";
                         }
                     });
-
-                    WHList.Remove(vo);
 
                     dgv_WhList.DataSource = null;
                     dgv_WhList.DataSource = WHList;

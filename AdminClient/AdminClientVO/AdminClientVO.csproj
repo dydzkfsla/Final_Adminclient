@@ -48,8 +48,10 @@
   <ItemGroup>
     <Compile Include="BOMVO.cs" />
     <Compile Include="BORVO.cs" />
+    <Compile Include="ComboBindingVO.cs" />
     <Compile Include="CommonVO.cs" />
     <Compile Include="CompanyVO.cs" />
+    <Compile Include="ContractVO.cs" />
     <Compile Include="EmployeesVO.cs" />
     <Compile Include="EmpTeamConnVO.cs" />
     <Compile Include="FacilityVO.cs" />
@@ -57,6 +59,8 @@
     <Compile Include="FormInfoVO.cs" />
     <Compile Include="GroupFormConnVO.cs" />
     <Compile Include="GroupInfoVO.cs" />
+    <Compile Include="InOutVO.cs" />
+    <Compile Include="OrderVO.cs" />
     <Compile Include="ProductCheckVO.cs" />
     <Compile Include="ProductVO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

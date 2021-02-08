@@ -171,9 +171,11 @@ namespace AdminClientDAC
                 using(SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"select top(convert(int, @limit)) pd.Prod_Code, pd.Prod_Category, cm.Common_Name, pd.Prod_Name, pd.Prod_Unit, pd.Prod_State, pd.Prod_WhCode, pd.Prod_SafetyStock
-	                                                                from Product as pd, Common as cm
+                    cmd.CommandText = @"select top(convert(int, @limit)) pd.Prod_Code, pd.Prod_Category, cm.Common_Name, pd.Prod_Name, 
+                                                                            pd.Prod_Unit, pd.Prod_State, pd.Prod_WhCode, pd.Prod_SafetyStock, wd.totcnt
+	                                                                from Product as pd, Common as cm, (select Prod_Code, sum(WH_Count) as totcnt from WareHouseDetail group by Prod_Code) as wd
 	                                                                where pd.Prod_Category = cm.Common_Code
+																		and pd.Prod_Code = wd.Prod_Code
 	                                                                	and pd.Prod_Category = isnull(@cate, pd.Prod_Category)
 	                                                                	and pd.Prod_Unit = isnull(@unit, pd.Prod_Unit)
 	                                                                	and pd.Prod_State = isnull(@state, pd.Prod_State)";
