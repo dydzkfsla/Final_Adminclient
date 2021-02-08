@@ -28,7 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.searchControl1 = new AdminClient.SearchControl();
 			this.sortControl1 = new AdminClient.SortControl();
 			this.txt_FgrpName = new System.Windows.Forms.TextBox();
@@ -127,7 +127,7 @@
 			// 
 			this.splitter1.Size = new System.Drawing.Size(33, 608);
 			// 
-			// button1
+			// btn_search
 			// 
 			this.btn_search.Location = new System.Drawing.Point(254, 17);
 			this.btn_search.Click += new System.EventHandler(this.button1_Click);
@@ -142,6 +142,7 @@
 			// 
 			// searchControl1
 			// 
+			this.searchControl1.BackColor = System.Drawing.Color.Transparent;
 			this.searchControl1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
 			this.searchControl1.Location = new System.Drawing.Point(6, 24);
 			this.searchControl1.Margin = new System.Windows.Forms.Padding(4);
@@ -151,10 +152,12 @@
 			// 
 			// sortControl1
 			// 
+			this.sortControl1.BackColor = System.Drawing.Color.Transparent;
+			this.sortControl1.Font = new System.Drawing.Font("나눔고딕", 11.25F);
 			this.sortControl1.Location = new System.Drawing.Point(12, 161);
 			this.sortControl1.Margin = new System.Windows.Forms.Padding(28, 67, 28, 67);
 			this.sortControl1.Name = "sortControl1";
-			this.sortControl1.Size = new System.Drawing.Size(316, 103);
+			this.sortControl1.Size = new System.Drawing.Size(331, 81);
 			this.sortControl1.TabIndex = 4;
 			// 
 			// txt_FgrpName
@@ -234,14 +237,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.dgv_FacGrpList.BackgroundColor = System.Drawing.Color.White;
 			this.dgv_FacGrpList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.IndianRed;
-			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgv_FacGrpList.DefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.IndianRed;
+			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgv_FacGrpList.DefaultCellStyle = dataGridViewCellStyle1;
 			this.dgv_FacGrpList.GridColor = System.Drawing.Color.Black;
 			this.dgv_FacGrpList.IsChkVisible = true;
 			this.dgv_FacGrpList.IsEditVisible = true;

@@ -26,6 +26,16 @@ namespace AdminClient.Service
 			return dac.BindingProdName();
 		}
 
+		public List<ComboFgrpNameVO> BindingFgrpName()
+		{
+			return dac.BindingFgrpName();
+		}
+
+		public List<ComboWHNameVO> BindingWHName()
+		{
+			return dac.BindingWHName();
+		}
+
 		public void Dispose()
 		{
 			dac.Dispose();

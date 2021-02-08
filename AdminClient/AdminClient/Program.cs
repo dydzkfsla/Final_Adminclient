@@ -7,6 +7,8 @@ using AdminClient.BaseForm;
 using AdminClient.Forms;
 using AdminClient.Serch;
 using AdminClient.MDI;
+using AdminClient.PopUp;
+
 
 namespace AdminClient
 {
@@ -20,7 +22,7 @@ namespace AdminClient
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new EmpInfo());
+            Application.Run(new FacilityInfo_NEW());
         }
     }
 }
