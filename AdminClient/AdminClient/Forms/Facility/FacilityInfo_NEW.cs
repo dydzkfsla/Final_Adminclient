@@ -205,11 +205,11 @@ namespace AdminClient.Forms
 					Fac_Name = dgv_FacList["Fac_Name", e.RowIndex].Value.ToString(),
 					Fac_Enable = dgv_FacList["Fac_Enable", e.RowIndex].Value.ToString(),
 					Fac_Outsourcing = dgv_FacList["Fac_Outsourcing", e.RowIndex].Value.ToString(),
-					Fac_ImgPath = dgv_FacList["Fac_ImgPath", e.RowIndex].Value.ToString(),
-					Fac_MaterialWareHouse = dgv_FacList["Fac_MaterialWareHouse", e.RowIndex].Value.ToString(),
-					Fac_GoodsWareHouse = dgv_FacList["Fac_GoodsWareHouse", e.RowIndex].Value.ToString(),
-					Fac_FaultyWareHouse = dgv_FacList["Fac_FaultyWareHouse", e.RowIndex].Value.ToString(),
-					Fac_Note = dgv_FacList["Fac_Note", e.RowIndex].Value.ToString()
+					Fac_ImgPath = dgv_FacList["Fac_ImgPath", e.RowIndex].Value == null ?null : dgv_FacList["Fac_ImgPath", e.RowIndex].Value.ToString(),
+					Fac_MaterialWareHouse = dgv_FacList["Fac_MaterialWareHouse", e.RowIndex].Value == null ? null : dgv_FacList["Fac_MaterialWareHouse", e.RowIndex].Value.ToString(),
+					Fac_GoodsWareHouse = dgv_FacList["Fac_GoodsWareHouse", e.RowIndex].Value == null ? null : dgv_FacList["Fac_GoodsWareHouse", e.RowIndex].Value.ToString(),
+					Fac_FaultyWareHouse = dgv_FacList["Fac_FaultyWareHouse", e.RowIndex].Value == null ? null : dgv_FacList["Fac_FaultyWareHouse", e.RowIndex].Value.ToString(),
+					Fac_Note = dgv_FacList["Fac_Note", e.RowIndex].Value == null ? null : dgv_FacList["Fac_Note", e.RowIndex].Value.ToString()
 				};
 
 				FacilityPopUp pop = new FacilityPopUp();

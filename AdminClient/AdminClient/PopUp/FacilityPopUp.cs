@@ -81,12 +81,16 @@ namespace AdminClient.PopUp
                 txt_FacName.Text = vo.Fac_Name;
                 cbo_FacEnable.SelectedItem = vo.Fac_Enable;
                 cbo_FacOutsourcing.SelectedItem = vo.Fac_Outsourcing;
-                cbo_FacMWH.SelectedValue = vo.Fac_MaterialWareHouse;
-                cbo_FacGWH.SelectedValue = vo.Fac_GoodsWareHouse;
-                cbo_FacFWH.SelectedValue = vo.Fac_FaultyWareHouse;
+                if (vo.Fac_MaterialWareHouse != null)
+                    cbo_FacMWH.SelectedValue = vo.Fac_MaterialWareHouse;
+                if (vo.Fac_GoodsWareHouse != null)
+                    cbo_FacGWH.SelectedValue = vo.Fac_GoodsWareHouse;
+                if (vo.Fac_FaultyWareHouse != null)
+                    cbo_FacFWH.SelectedValue = vo.Fac_FaultyWareHouse;
                 txt_Note.Text = vo.Fac_Note;
                 txt_FilePath.Text = vo.Fac_ImgPath;
-                pb_FacPicture.Image = Image.FromFile(vo.Fac_ImgPath);
+                if(vo.Fac_ImgPath != null)
+                    pb_FacPicture.ImageLocation = "http://final6.azurewebsites.net/Images/" + vo.Fac_ImgPath;
                 pb_FacPicture.Tag = txt_FilePath.Text;
             }
            
@@ -167,7 +171,7 @@ namespace AdminClient.PopUp
                     Fac_Name = txt_FacName.Text,
                     Fac_Enable = cbo_FacEnable.SelectedItem.ToString(),
                     Fac_Outsourcing = cbo_FacOutsourcing.SelectedItem.ToString(),
-                    Fac_ImgPath = destFileName,
+                    Fac_ImgPath = newFileName,
                     Fac_MaterialWareHouse = cbo_FacMWH.SelectedValue.ToString(),
                     Fac_GoodsWareHouse = cbo_FacGWH.SelectedValue.ToString(),
                     Fac_FaultyWareHouse = cbo_FacFWH.SelectedValue.ToString(),
