@@ -69,7 +69,7 @@ namespace AdminClient.Forms
 			if (chk_limit.Checked)
 				limit = nu_limit.Value.ToString();
 
-			if(cbo_Enable.SelectedIndex > 0)
+			if (cbo_Enable.SelectedIndex > 0)
 			{
 				enable = cbo_Enable.SelectedItem.ToString();
 			}
@@ -105,24 +105,7 @@ namespace AdminClient.Forms
 
 		private void btn_add_Click(object sender, EventArgs e) //신규등록 버튼
 		{
-			FacilityGroupPopUp pop = new FacilityGroupPopUp();
-			pop.ThisMode = FacilityGroupPopUp.Mode.Insert;
-			pop.StartPosition = FormStartPosition.CenterParent;
-			FacilityGroupVO vo;
-
-			if(pop.ShowDialog() == DialogResult.OK)
-			{
-				MessageBox.Show("설비군 등록에 성공했습니다.");
-				vo = pop.VO;
-
-				if (FacGrpList.Count > 0)
-				{
-					FacGrpList.Add(vo);
-
-					dgv_FacGrpList.DataSource = null;
-					dgv_FacGrpList.DataSource = FacGrpList;
-				}
-			}
+			
 		}
 
 		private void dgv_FacGrpList_CellContentClick(object sender, DataGridViewCellEventArgs e) //수정을 위한 Edit셀컬럼 클릭

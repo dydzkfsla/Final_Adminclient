@@ -21,9 +21,19 @@ namespace AdminClient.Service
 			return dac.GetFacilityGroupList(limit, enable);
 		}
 
+		public List<FacilityVO> GetFacilityList(string limit, string fgrp, string enable, string outsourcing)
+		{
+			return dac.GetFacilityList(limit, fgrp, enable, outsourcing);
+		}
+
 		public bool AddFacilityGroup(string userID, FacilityGroupVO vo)
 		{
 			return dac.AddFacilityGroup(userID, vo);
+		}
+
+		public bool AddFacility(string userID, FacilityVO vo)
+		{
+			return dac.AddFacility(userID, vo);
 		}
 
 		public void Dispose()

@@ -76,7 +76,63 @@ namespace AdminClientDAC
 			}
 			catch (Exception err)
 			{
-				Info.WriteError($"실행자:{Global.employees.Emp_Name} 콤보박스 바인딩(CompName) 목록 불러오기 오류 :" + err.Message, err);
+				Info.WriteError($"실행자:{Global.employees.Emp_Name} 콤보박스 바인딩(ProdName) 목록 불러오기 오류 :" + err.Message, err);
+				return null;
+			}
+		}
+
+		/// <summary>
+		/// 콤보박스 바인딩을 위한 설비군코드와 설비군명 불러오기
+		/// </summary>
+		/// <returns>설비군코드, 설비군명 목록 List </returns>
+		public List<ComboFgrpNameVO> BindingFgrpName()
+		{
+			try
+			{
+				using (SqlCommand cmd = new SqlCommand())
+				{
+					cmd.Connection = conn;
+					cmd.CommandText = @"select FacGrp_Code, FacGrp_Name from FacilityGroup";
+
+					using (SqlDataReader reader = cmd.ExecuteReader())
+					{
+						return Helper.DataReaderMapToList<ComboFgrpNameVO>(reader);
+					}
+				}
+
+
+			}
+			catch (Exception err)
+			{
+				Info.WriteError($"실행자:{Global.employees.Emp_Name} 콤보박스 바인딩(FgrpName) 목록 불러오기 오류 :" + err.Message, err);
+				return null;
+			}
+		}
+
+		/// <summary>
+		/// 콤보박스 바인딩을 위한 창고코드와 창고명 불러오기
+		/// </summary>
+		/// <returns>창고코드, 창고명 목록 List </returns>
+		public List<ComboWHNameVO> BindingWHName()
+		{
+			try
+			{
+				using (SqlCommand cmd = new SqlCommand())
+				{
+					cmd.Connection = conn;
+					cmd.CommandText = @"select WH_Code, WH_Name from WareHouse;";
+
+					using (SqlDataReader reader = cmd.ExecuteReader())
+					{
+						return Helper.DataReaderMapToList<ComboWHNameVO>(reader);
+					}
+				}
+
+
+			}
+			catch (Exception err)
+			{
+				Info.WriteError($"실행자:{Global.employees.Emp_Name} 콤보박스 바인딩(WHName) 목록 불러오기 오류 :" + err.Message, err);
 				return null;
 			}
 		}

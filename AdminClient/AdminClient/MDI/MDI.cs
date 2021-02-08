@@ -281,5 +281,6 @@ namespace AdminClient.MDI
                 panel1.Width = 40;
             }
         }
+
     }
 }

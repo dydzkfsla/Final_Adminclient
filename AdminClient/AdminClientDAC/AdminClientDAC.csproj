@@ -72,9 +72,9 @@
     <Compile Include="InOutDAC.cs" />
     <Compile Include="OrderDAC.cs" />
     <Compile Include="ProductCheckDAC.cs" />
+    <Compile Include="ProductDAC.cs" />
     <Compile Include="StockInfoDAC.cs" />
     <Compile Include="Utils\Helper.cs" />
-    <Compile Include="ProductDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="EmployeeDAC.cs" />
     <Compile Include="TeamGroupConnDAC.cs" />

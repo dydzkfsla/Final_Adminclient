@@ -34,9 +34,10 @@
             // lbl_Title
             // 
             this.lbl_Title.AutoSize = true;
-            this.lbl_Title.Location = new System.Drawing.Point(15, 29);
+            this.lbl_Title.Font = new System.Drawing.Font("나눔고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbl_Title.Location = new System.Drawing.Point(3, 24);
             this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.Size = new System.Drawing.Size(56, 17);
+            this.lbl_Title.Size = new System.Drawing.Size(74, 24);
             this.lbl_Title.TabIndex = 0;
             this.lbl_Title.Text = "label1";
             // 
