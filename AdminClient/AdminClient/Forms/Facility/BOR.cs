@@ -115,14 +115,17 @@ namespace AdminClient.Forms
 
         private void btn_Search_Click(object sender, EventArgs e)
         {
-            if(txt_Prod.Text.Trim().Length < 1)
-            {
-                MessageBox.Show("물품 코드를 입력해주세요");
-                return;
-            }
+            //if(txt_Prod.Text.Trim().Length < 1)
+            //{
+            //    MessageBox.Show("물품 코드를 입력해주세요");
+            //    return;
+            //}
 
-            string fac, pcs;
-            fac = pcs = string.Empty;
+            string fac, pcs, prod;
+            fac = pcs = prod = string.Empty;
+
+            if (txt_Prod.Text.Trim().Length > 0)
+                prod = txt_Prod.Text.Trim();
 
             if (cbo_Fac.SelectedIndex > 0)
                 fac = cbo_Fac.SelectedValue.ToString();
@@ -134,7 +137,7 @@ namespace AdminClient.Forms
             {
                 Pcs_Code = pcs,
                 Fac_Code = fac,
-                Prod_Code = txt_Prod.Text,
+                Prod_Code = prod,
                 BOR_State = cbo_state.Text
             };
 

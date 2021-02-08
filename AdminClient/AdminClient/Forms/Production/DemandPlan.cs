@@ -32,7 +32,12 @@ namespace AdminClient.Forms
             DemandService service = new DemandService();
             string sdate = dtp_sdate.Value.ToString("yyyy-MM-dd"), edate = dtp_edate.Value.ToString("yyyy-MM-dd");
 
-
+            CommonUtil.AddGridCheckColumn(dgv_Demand, "", "", 30, textAlign : DataGridViewContentAlignment.MiddleCenter );
+            CommonUtil.AddGridTextColumn(dgv_Demand, "회사코드", "Comp_Code");
+            CommonUtil.AddGridTextColumn(dgv_Demand, "회사명", "Comp_Name");
+            CommonUtil.AddGridTextColumn(dgv_Demand, "회사타입", "Common_Name");
+            CommonUtil.AddGridTextColumn(dgv_Demand, "품목코드", "prod");
+            CommonUtil.AddGridTextColumn(dgv_Demand, "품목명", "Prod_Name");
             DataTable dt = service.GetDemandList(sdate, edate);
 
             dgv_Demand.DataSource = dt;
