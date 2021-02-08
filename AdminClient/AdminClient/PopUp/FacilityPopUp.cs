@@ -100,21 +100,16 @@ namespace AdminClient.PopUp
                 return;
             }
 
-            string sPath = @"C:\FP\Final_Adminclient\AdminClient\AdminClient\Forms\Facility\FacImg";
             string localFile = pb_FacPicture.Tag.ToString();
             string sExt = localFile.Substring(localFile.LastIndexOf("."));
             string newFileName = txt_FacName.Text + sExt;
-
-            string destFileName = Path.Combine(sPath, newFileName);
-
-            //반드시 카피전에 디렉토리를 확인하고 만들어줘야한다 ( 코딩으로 하자 )
-            DirectoryInfo dir = new DirectoryInfo(sPath);
-            if (!dir.Exists)
-            {
-                dir.Create();
-            }
-
-            File.Copy(localFile, destFileName, true);
+            Imagedata data = new Imagedata();
+            data.image = CommonUtil.ImageToByte(pb_FacPicture.Image);
+            data.filename = newFileName;
+            ServiceHelp serviceHelp = new ServiceHelp();
+            ApiMessage result = serviceHelp.PostApiCallerNone("Images/Upload", data);
+            if (result.ResultCode == "S")
+                MessageBox.Show("이미지 저장 성공");
 
             if (mode == Mode.Insert)
             {
@@ -124,7 +119,7 @@ namespace AdminClient.PopUp
                     Fac_Name = txt_FacName.Text,
                     Fac_Enable = cbo_FacEnable.SelectedItem.ToString(),
                     Fac_Outsourcing = cbo_FacOutsourcing.SelectedItem.ToString(),
-                    Fac_ImgPath = destFileName,
+                    Fac_ImgPath = newFileName,
                     Fac_MaterialWareHouse = cbo_FacMWH.SelectedValue.ToString(),
                     Fac_GoodsWareHouse = cbo_FacGWH.SelectedValue.ToString(),
                     Fac_FaultyWareHouse = cbo_FacFWH.SelectedValue.ToString(),

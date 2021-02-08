@@ -71,7 +71,7 @@ namespace AdminClientDAC
 										  from Facility
 										 where FacGrp_Code = ISNULL(@fgrp, FacGrp_Code)
 										   and Fac_Enable = ISNULL(@enable, Fac_Enable)
-										   and Fac_Outsourcing = ISNULL(@outsourcing, Fac_Enable)";
+										   and Fac_Outsourcing = ISNULL(@outsourcing, Fac_Outsourcing)";
 
 					cmd.Parameters.AddWithValue("@limit", string.IsNullOrEmpty(limit) ? 100000 : (object)limit);
 					cmd.Parameters.AddWithValue("@fgrp", string.IsNullOrEmpty(fgrp) ? DBNull.Value : (object)fgrp);
