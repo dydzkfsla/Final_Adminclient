@@ -56,7 +56,7 @@ namespace AdminClient.Forms
             txtNo.KeyPress += UtilEvent.tbx_Trim;
             txtName.KeyPress += UtilEvent.tbx_Trim;
             txtNo.KeyPress += UtilEvent.TextBoxIsDigit;
-            txtName.KeyPress += UtilEvent.isHangul_KeyPress;
+            //txtName.KeyPress += UtilEvent.isHangul_KeyPress;
         }
         #endregion
 

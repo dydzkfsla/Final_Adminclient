@@ -38,23 +38,23 @@ namespace AdminClient.Forms
             gb_ProdInfo.Enabled = gb_odMenu.Enabled = false;
 
             dgv_Odlist.SetGridColumn();
-            CommonUtil.AddGridTextColumn(dgv_Odlist, "주문번호", "Orders_Code");
-            CommonUtil.AddGridTextColumn(dgv_Odlist, "회사코드", "Comp_Code");
-            CommonUtil.AddGridTextColumn(dgv_Odlist, "회사명", "Comp_Name");
+            CommonUtil.AddGridTextColumn(dgv_Odlist, "발주코드", "Orders_Code");
+            CommonUtil.AddGridTextColumn(dgv_Odlist, "업체코드", "Comp_Code");
+            CommonUtil.AddGridTextColumn(dgv_Odlist, "업체명", "Comp_Name");
             CommonUtil.AddGridTextColumn(dgv_Odlist, "창고코드", "WH_Code");
             CommonUtil.AddGridTextColumn(dgv_Odlist, "납기일", "Orders_DueDate");
-            CommonUtil.AddGridTextColumn(dgv_Odlist, "주문상태", "Order_State_Comm");
+            CommonUtil.AddGridTextColumn(dgv_Odlist, "발주상태", "Order_State_Comm");
 
             dgv_oddList.SetGridColumn();
-            CommonUtil.AddGridTextColumn(dgv_oddList, "상세주문", "OrdersDetail_Code", textAlign : DataGridViewContentAlignment.MiddleRight);
-            CommonUtil.AddGridTextColumn(dgv_oddList, "물품코드", "Prod_Code", textAlign : DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dgv_oddList, "물품명", "Prod_Name");
+            CommonUtil.AddGridTextColumn(dgv_oddList, "발주상세코드", "OrdersDetail_Code", textAlign : DataGridViewContentAlignment.MiddleRight);
+            CommonUtil.AddGridTextColumn(dgv_oddList, "품목코드", "Prod_Code", textAlign : DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dgv_oddList, "품목명", "Prod_Name");
             CommonUtil.AddGridTextColumn(dgv_oddList, "단위", "Prod_Unit", 60, textAlign : DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dgv_oddList, "최소주문량", "Prod_MinCount", 105);
             CommonUtil.AddGridTextColumn(dgv_oddList, "주문수량", "Orders_Count");
-            CommonUtil.AddGridTextColumn(dgv_oddList, "부분입고", "Orders_ReceiveQuantity");
+            CommonUtil.AddGridTextColumn(dgv_oddList, "입고수량", "Orders_ReceiveQuantity");
             CommonUtil.AddGridTextColumn(dgv_oddList, "취소수량", "Orders_CancelQuantity");
-            CommonUtil.AddGridTextColumn(dgv_oddList, "부분상태", "Orders_State_Comm");
+            CommonUtil.AddGridTextColumn(dgv_oddList, "입고상태", "Orders_State_Comm");
         }
 
         private void chk_limit_CheckedChanged(object sender, EventArgs e) // 검색제한
@@ -163,7 +163,7 @@ namespace AdminClient.Forms
 
         }
 
-        //이미 추가되어있는 주문건에 대해 새로운 물품 추가
+        //이미 추가되어있는 주문건에 대해 새로운 품목 추가
         private void btn_ProdAdd_Click(object sender, EventArgs e)
         {
             List<ProductVO> prod = new List<ProductVO>();
@@ -226,7 +226,7 @@ namespace AdminClient.Forms
                         oddlist.Add(item);
                     });
 
-                    MessageBox.Show("물품이 추가되었습니다 주문수량을 반드시 수정해주세요");
+                    MessageBox.Show("품목이 추가되었습니다 주문수량을 반드시 수정해주세요");
                 }
 
                 dgv_oddList.DataSource = null;
@@ -235,7 +235,7 @@ namespace AdminClient.Forms
             }
         }
 
-        //이미 추가되어있는 주문건의 물품정보 수정
+        //이미 추가되어있는 주문건의 품목정보 수정
         private void btn_ProdUpdate_Click(object sender, EventArgs e)
         {
             OrderDetailVO temp = null;
@@ -369,14 +369,14 @@ namespace AdminClient.Forms
                 }
                 else
                 {
-                    MessageBox.Show("주문수량이 최수주문량보다 적은 제품이 있습니다. 수정해주세요");
+                    MessageBox.Show("주문수량이 최수주문량보다 적은 품목이 있습니다. 수정해주세요");
                     return;
                 }
 
             }
             else if (btn_OdMenu.Text == "입고확인")
             {
-                if (MessageBox.Show("모든 물품을 입고완료상태로 바꾸시겠습니까?", "확인메세지", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("모든 품목을 입고완료상태로 바꾸시겠습니까?", "확인메세지", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     int code = int.Parse(txt_OdCode.Text);
 
@@ -424,7 +424,7 @@ namespace AdminClient.Forms
 
         private void btn_ProdDelete_Click(object sender, EventArgs e)// 선택된 물품 주문건에서 삭제
         {
-            if (MessageBox.Show("선택한 물품을 주문목록에서 삭제하시겠습니까?", "삭제확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("선택한 품목을 주문목록에서 삭제하시겠습니까?", "삭제확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 int oddcode = 0;
                 bool result = false;

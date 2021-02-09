@@ -64,10 +64,10 @@ namespace AdminClient.Forms
 			CommonUtil.AddGridTextColumn(dgv_Stock, "Type", "WH_Type", visibility: false);
 			CommonUtil.AddGridTextColumn(dgv_Stock, "창고타입", "Common_Name");
 			CommonUtil.AddGridTextColumn(dgv_Stock, "ProdCatrgory", "Prod_Category", visibility : false);
-			CommonUtil.AddGridTextColumn(dgv_Stock, "물품타입", "ProdType");
+			CommonUtil.AddGridTextColumn(dgv_Stock, "품목타입", "ProdType");
 			CommonUtil.AddGridTextColumn(dgv_Stock, "단위", "Prod_Unit");
-			CommonUtil.AddGridTextColumn(dgv_Stock, "저장량", "WH_Count");
-			CommonUtil.AddGridTextColumn(dgv_Stock, "안전량", "Prod_SafetyStock");
+			CommonUtil.AddGridTextColumn(dgv_Stock, "재고량", "WH_Count");
+			CommonUtil.AddGridTextColumn(dgv_Stock, "안전재고량", "Prod_SafetyStock");
 
             #endregion
 

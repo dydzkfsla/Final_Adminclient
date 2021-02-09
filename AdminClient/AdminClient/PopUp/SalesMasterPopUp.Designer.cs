@@ -173,7 +173,7 @@ namespace AdminClient.PopUp
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(38, 17);
 			this.label1.TabIndex = 54;
-			this.label1.Text = "품목";
+			this.label1.Text = "물품";
 			// 
 			// label2
 			// 

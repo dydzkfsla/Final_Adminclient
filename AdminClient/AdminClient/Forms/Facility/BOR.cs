@@ -75,8 +75,8 @@ namespace AdminClient.Forms
 
             dgv_BOR.SetGridColumn();
             CommonUtil.AddGridTextColumn(dgv_BOR, "BOR코드", "BOR_Code");
-            CommonUtil.AddGridTextColumn(dgv_BOR, "물품코드", "Prod_Code");
-            CommonUtil.AddGridTextColumn(dgv_BOR, "물품명", "Prod_Name");
+            CommonUtil.AddGridTextColumn(dgv_BOR, "품목코드", "Prod_Code");
+            CommonUtil.AddGridTextColumn(dgv_BOR, "품목명", "Prod_Name");
             CommonUtil.AddGridTextColumn(dgv_BOR, "공정코드", "Pcs_Code");
             CommonUtil.AddGridTextColumn(dgv_BOR, "공정명", "Pcs_Name");
             CommonUtil.AddGridTextColumn(dgv_BOR, "설비코드", "Fac_Code");

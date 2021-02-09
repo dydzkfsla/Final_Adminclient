@@ -48,23 +48,23 @@ namespace AdminClient.PopUp
 
             dgv_Comp.SetGridColumn();
             CommonUtil.AddGridTextColumn(dgv_Comp, "Comp_Code", "Comp_Code", visibility: false);
-            CommonUtil.AddGridTextColumn(dgv_Comp, "회사명", "Comp_Name");
+            CommonUtil.AddGridTextColumn(dgv_Comp, "업체명", "Comp_Name");
 
             dgv_Prod.SetGridColumn();
-            CommonUtil.AddGridTextColumn(dgv_Prod, "물품코드", "Prod_Code", visibility : false);
-            CommonUtil.AddGridTextColumn(dgv_Prod, "물품명", "Prod_Name");
+            CommonUtil.AddGridTextColumn(dgv_Prod, "품목코드", "Prod_Code", visibility : false);
+            CommonUtil.AddGridTextColumn(dgv_Prod, "품목명", "Prod_Name");
             CommonUtil.AddGridTextColumn(dgv_Prod, "창고코드", "Prod_WhCode", visibility : false);
             CommonUtil.AddGridTextColumn(dgv_Prod, "최소", "Prod_MinCount", visibility: false);
-            CommonUtil.AddGridTextColumn(dgv_Prod, "안전", "Prod_SafetyStock", visibility: false);
-            CommonUtil.AddGridTextColumn(dgv_Prod, "총재고", "totCount", visibility: false);
+            CommonUtil.AddGridTextColumn(dgv_Prod, "안전재고량", "Prod_SafetyStock", visibility: false);
+            CommonUtil.AddGridTextColumn(dgv_Prod, "총재고량", "totCount", visibility: false);
 
             dgv_AddList.SetGridColumn();
-            CommonUtil.AddGridTextColumn(dgv_AddList, "물품코드", "Prod_Code", visibility: false);
-            CommonUtil.AddGridTextColumn(dgv_AddList, "물품명", "Prod_Name");
+            CommonUtil.AddGridTextColumn(dgv_AddList, "품목코드", "Prod_Code", visibility: false);
+            CommonUtil.AddGridTextColumn(dgv_AddList, "품목명", "Prod_Name");
             CommonUtil.AddGridTextColumn(dgv_AddList, "창고코드", "Prod_WhCode", visibility: false);
             CommonUtil.AddGridTextColumn(dgv_AddList, "최소", "Prod_MinCount", visibility: false);
-            CommonUtil.AddGridTextColumn(dgv_AddList, "안전", "Prod_SafetyStock", visibility: false);
-            CommonUtil.AddGridTextColumn(dgv_AddList, "총재고", "totCount", visibility: false);
+            CommonUtil.AddGridTextColumn(dgv_AddList, "안전재고량", "Prod_SafetyStock", visibility: false);
+            CommonUtil.AddGridTextColumn(dgv_AddList, "총재고량", "totCount", visibility: false);
             CommonUtil.AddGridTextColumn(dgv_AddList, "체크사항", "Check_Point", visibility: false);
 
             //CompanyDetailVO vo = new CompanyDetailVO();
@@ -221,7 +221,7 @@ namespace AdminClient.PopUp
         {
             if(odlist.Count < 1)
             {
-                MessageBox.Show("발주신청할 물품을 등록해주세요");
+                MessageBox.Show("발주신청할 품목을 등록해주세요");
                 return;
             }
 
@@ -248,7 +248,7 @@ namespace AdminClient.PopUp
             }
             else
             {
-                DialogResult dr = MessageBox.Show("주문수량이 0인 제품이 있습니다. 해당 제품들을 제외하고 신청하시겠습니까?", "정보확인", MessageBoxButtons.OKCancel);
+                DialogResult dr = MessageBox.Show("주문수량이 0인 제품이 있습니다. 해당 품목들을 제외하고 신청하시겠습니까?", "정보확인", MessageBoxButtons.OKCancel);
                 if (dr == DialogResult.OK)
                 {
                     List<OrderDetailVO> temp = new List<OrderDetailVO>();
