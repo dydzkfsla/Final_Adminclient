@@ -67,7 +67,7 @@ namespace AdminClient.Forms
             #region dgv 세팅
             dgv_CompList.SetGridColumn();
             CommonUtil.AddGridTextColumn(dgv_CompList, "Code", "Comp_Code", visibility: false);
-            CommonUtil.AddGridTextColumn(dgv_CompList, "회사명", "Comp_Name");
+            CommonUtil.AddGridTextColumn(dgv_CompList, "업체명", "Comp_Name");
             CommonUtil.AddGridTextColumn(dgv_CompList, "대표명", "Comp_CEO");
             CommonUtil.AddGridTextColumn(dgv_CompList, "업종", "Common_Name");
             CommonUtil.AddGridTextColumn(dgv_CompList, "자동출하", "Comp_Auto");
@@ -77,7 +77,7 @@ namespace AdminClient.Forms
             CommonUtil.SetInitGridView(dgv_detail);
             CommonUtil.AddGridTextColumn(dgv_detail, "Code", "Comp_Code", visibility: false);
             CommonUtil.AddGridTextColumn(dgv_detail, "ProdCode", "Prod_Code", visibility : false);
-            CommonUtil.AddGridTextColumn(dgv_detail, "물품명", "Prod_Name");
+            CommonUtil.AddGridTextColumn(dgv_detail, "품목명", "Prod_Name");
             CommonUtil.AddGridTextColumn(dgv_detail, "단위", "Prod_Unit");
             CommonUtil.AddGridTextColumn(dgv_detail, "현재재고량", "totCount", 150);
             CommonUtil.AddGridTextColumn(dgv_detail, "안전재고량", "Prod_SafetyStock", 150);
@@ -173,7 +173,7 @@ namespace AdminClient.Forms
         {
             if (updateList.Count > 0)
             {
-                DialogResult dr = MessageBox.Show("현재 선택되어있는 회사 물품정보에 수정기록이 있습니다 적용하시겠습니까?", "확인메세지", MessageBoxButtons.YesNoCancel);
+                DialogResult dr = MessageBox.Show("현재 선택되어있는 회사 품목정보에 수정기록이 있습니다 적용하시겠습니까?", "확인메세지", MessageBoxButtons.YesNoCancel);
 
                 if(dr == DialogResult.Yes)
                 {
@@ -367,7 +367,7 @@ namespace AdminClient.Forms
             if(result)
             {
                 updateList.Clear();
-                MessageBox.Show("모든 회사물품 정보가 수정되었습니다.");
+                MessageBox.Show("모든 회사품목 정보가 수정되었습니다.");
             }
         }
     }

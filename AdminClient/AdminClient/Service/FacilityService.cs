@@ -36,6 +36,11 @@ namespace AdminClient.Service
 			return dac.AddFacility(userID, vo);
 		}
 
+		public bool UpdateFacility(string userID, FacilityVO vo)
+		{
+			return dac.UpdateFacility(userID, vo);
+		}
+
 		public void Dispose()
 		{
 			dac.Dispose();

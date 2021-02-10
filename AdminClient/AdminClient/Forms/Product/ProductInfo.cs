@@ -70,12 +70,12 @@ namespace AdminClient.Forms
             CommonUtil.AddGridTextColumn(dgv_ProdList, "Code", "Prod_Code", visibility: false);
             CommonUtil.AddGridTextColumn(dgv_ProdList, "Category", "Prod_Category", visibility: false);
             CommonUtil.AddGridTextColumn(dgv_ProdList, "카테고리", "Common_Name");
-            CommonUtil.AddGridTextColumn(dgv_ProdList, "물품명", "Prod_Name");
+            CommonUtil.AddGridTextColumn(dgv_ProdList, "품목명", "Prod_Name");
             CommonUtil.AddGridTextColumn(dgv_ProdList, "상태", "Prod_State");
             CommonUtil.AddGridTextColumn(dgv_ProdList, "저장창고", "Prod_WhCode");
-            CommonUtil.AddGridTextColumn(dgv_ProdList, "저장량", "totcnt");
-            CommonUtil.AddGridTextColumn(dgv_ProdList, "기준", "Prod_Unit");
-            CommonUtil.AddGridTextColumn(dgv_ProdList, "최소", "Prod_SafetyStock");
+            CommonUtil.AddGridTextColumn(dgv_ProdList, "재고량", "totcnt");
+            CommonUtil.AddGridTextColumn(dgv_ProdList, "단위", "Prod_Unit");
+            CommonUtil.AddGridTextColumn(dgv_ProdList, "안전재고량", "Prod_SafetyStock");
             #endregion
 
             gb_detail.Enabled = false;
@@ -83,7 +83,7 @@ namespace AdminClient.Forms
             #endregion
         }
 
-        #region 물품 입력 불가
+        #region 품목 입력 불가
         private void NoneKeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;

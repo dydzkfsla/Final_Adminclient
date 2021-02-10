@@ -71,7 +71,7 @@ namespace AdminClientDAC
 										  from Facility
 										 where FacGrp_Code = ISNULL(@fgrp, FacGrp_Code)
 										   and Fac_Enable = ISNULL(@enable, Fac_Enable)
-										   and Fac_Outsourcing = ISNULL(@outsourcing, Fac_Enable)";
+										   and Fac_Outsourcing = ISNULL(@outsourcing, Fac_Outsourcing)";
 
 					cmd.Parameters.AddWithValue("@limit", string.IsNullOrEmpty(limit) ? 100000 : (object)limit);
 					cmd.Parameters.AddWithValue("@fgrp", string.IsNullOrEmpty(fgrp) ? DBNull.Value : (object)fgrp);
@@ -162,6 +162,53 @@ namespace AdminClientDAC
 			catch(Exception err)
 			{
 				Info.WriteError($"실행자: {Global.employees.Emp_Name} 설비 신규등록중 오류 : " + err.Message, err);
+				return false;
+			}
+		}
+
+		public bool UpdateFacility(string userID, FacilityVO vo)
+		{
+			try
+			{
+				using (SqlCommand cmd = new SqlCommand())
+				{
+					cmd.Connection = conn;
+					cmd.CommandText = @"update Facility 
+										   set Fac_Name = @name,
+											   Fac_Enable = @enable,
+											   Fac_Outsourcing = @outsourcing,
+											   Fac_ImgPath = @img,
+											   Fac_MaterialWareHouse = @mwh,
+											   Fac_GoodsWareHouse = @gwh,
+											   Fac_FaultyWareHouse = @fwh,
+											   Fac_Note = @note,
+											   Lst_Writer = @id,
+											   Lst_WriteDate = GETDATE()
+										 where FacGrp_Code = @fgrp
+										   and Fac_Code = @code; ";
+
+					cmd.Parameters.AddWithValue("@name", vo.Fac_Name);
+					cmd.Parameters.AddWithValue("@enable", vo.Fac_Enable);
+					cmd.Parameters.AddWithValue("@outsourcing", vo.Fac_Outsourcing);
+					cmd.Parameters.AddWithValue("@img", vo.Fac_ImgPath);
+					cmd.Parameters.AddWithValue("@mwh", vo.Fac_MaterialWareHouse);
+					cmd.Parameters.AddWithValue("@gwh", vo.Fac_GoodsWareHouse);
+					cmd.Parameters.AddWithValue("@fwh", vo.Fac_FaultyWareHouse);
+					cmd.Parameters.AddWithValue("@note", vo.Fac_Note);
+					cmd.Parameters.AddWithValue("@fgrp", vo.FacGrp_Code);
+					cmd.Parameters.AddWithValue("@code", vo.Fac_Code);
+					cmd.Parameters.AddWithValue("@id", userID);
+
+					int iRowAffected = cmd.ExecuteNonQuery();
+					if (iRowAffected > 0)
+						return true;
+					else
+						return false;
+				}
+			}
+			catch (Exception err)
+			{
+				Info.WriteError($"실행자: {Global.employees.Emp_Name} 설비 수정중 오류 : " + err.Message, err);
 				return false;
 			}
 		}

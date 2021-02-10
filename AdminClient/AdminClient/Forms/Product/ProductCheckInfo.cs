@@ -22,8 +22,8 @@ namespace AdminClient.Forms
         private void ProductCheckInfo_Load(object sender, EventArgs e)
         {
             dgv_Check.SetGridColumn();
-            CommonUtil.AddGridTextColumn(dgv_Check, "물품코드", "Prod_Code", 100);
-            CommonUtil.AddGridTextColumn(dgv_Check, "물품이름", "Prod_Name", 100);
+            CommonUtil.AddGridTextColumn(dgv_Check, "품목코드", "Prod_Code", 100);
+            CommonUtil.AddGridTextColumn(dgv_Check, "품목이름", "Prod_Name", 100);
             CommonUtil.AddGridTextColumn(dgv_Check, "검사 타입", "Check_Type", 100);
             CommonUtil.AddGridTextColumn(dgv_Check, "검사 장비", "Check_System", 100);
             CommonUtil.AddGridTextColumn(dgv_Check, "검사 위치", "Check_Point", 100);

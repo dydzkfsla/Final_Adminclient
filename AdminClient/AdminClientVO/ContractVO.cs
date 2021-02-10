@@ -9,6 +9,7 @@ namespace AdminClientVO
 	public class ContractVO
 	{
 		public string Contract_Code { get; set; }
+		public string Comp_Name { get; set; }
 		public string Comp_Code { get; set; }
 		public string Contract_Destination { get; set; }
 		public DateTime Contract_DueDate { get; set; }
@@ -16,6 +17,7 @@ namespace AdminClientVO
 		public string Contract_Finish { get; set; }
 		public string Contract_Note { get; set; }
 		public string Prod_Code { get; set; }
+		public string Prod_Name { get; set; }
 		public int Contract_Count { get; set; }
 		public int Contract_ShippingCount { get; set; }
 		public int Contract_CancelCount { get; set; }

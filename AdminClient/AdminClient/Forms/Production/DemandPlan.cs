@@ -34,9 +34,9 @@ namespace AdminClient.Forms
 
             dgv_Demand.Columns.Clear();
             CommonUtil.AddGridCheckColumn(dgv_Demand, "", "", 30, textAlign : DataGridViewContentAlignment.MiddleCenter );
-            CommonUtil.AddGridTextColumn(dgv_Demand, "회사코드", "Comp_Code");
-            CommonUtil.AddGridTextColumn(dgv_Demand, "회사명", "Comp_Name");
-            CommonUtil.AddGridTextColumn(dgv_Demand, "회사타입", "Common_Name");
+            CommonUtil.AddGridTextColumn(dgv_Demand, "업체코드", "Comp_Code");
+            CommonUtil.AddGridTextColumn(dgv_Demand, "업체명", "Comp_Name");
+            CommonUtil.AddGridTextColumn(dgv_Demand, "업체타입", "Common_Name");
             CommonUtil.AddGridTextColumn(dgv_Demand, "품목코드", "prod");
             CommonUtil.AddGridTextColumn(dgv_Demand, "품목명", "Prod_Name");
             DataTable dt = service.GetDemandList(sdate, edate);

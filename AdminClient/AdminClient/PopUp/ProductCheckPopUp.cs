@@ -53,7 +53,7 @@ namespace AdminClient.PopUp
         }
         #endregion
 
-        #region 물품검색
+        #region 품목검색
         private void button1_Click(object sender, EventArgs e)
         {
             ProductSearch productSearch = new ProductSearch();
