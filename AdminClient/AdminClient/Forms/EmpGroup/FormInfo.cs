@@ -39,7 +39,7 @@ namespace AdminClient.Forms
             }
 
             txt_ManuName.KeyPress += UtilEvent.tbx_Trim;
-            txt_ManuName.KeyPress += UtilEvent.isHangul_KeyPress;
+            //txt_ManuName.KeyPress += UtilEvent.isHangul_KeyPress;
 
             DgvSet();
             Inited(); //초기상태

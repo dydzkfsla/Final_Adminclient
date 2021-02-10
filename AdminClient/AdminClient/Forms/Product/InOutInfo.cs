@@ -44,7 +44,20 @@ namespace AdminClient.Forms
 
             cbo_Unit.DataSource = unit;
             cbo_Unit.DisplayMember = "Prod_Unit";
-            
+
+            dgv_List.SetGridColumn();
+            CommonUtil.AddGridTextColumn(dgv_List, "창고코드", "WH_Code");
+            CommonUtil.AddGridTextColumn(dgv_List, "WH_Type", "WH_Type", visibility: false);
+            CommonUtil.AddGridTextColumn(dgv_List, "창고유형", "WH_TypeName");
+            CommonUtil.AddGridTextColumn(dgv_List, "창고이름", "WH_Name");
+            CommonUtil.AddGridTextColumn(dgv_List, "품목코드", "Prod_Code");
+            CommonUtil.AddGridTextColumn(dgv_List, "품목명", "Prod_Name", 200);
+            CommonUtil.AddGridTextColumn(dgv_List, "품목유형", "Prod_Category");
+            CommonUtil.AddGridTextColumn(dgv_List, "Category_Code", "Category_Code", visibility : false);
+            CommonUtil.AddGridTextColumn(dgv_List, "기준", "Prod_Unit");
+            CommonUtil.AddGridTextColumn(dgv_List, "수량", "WHInOut_Count");
+            CommonUtil.AddGridTextColumn(dgv_List, "입출고", "WHInOut_Type");
+
         }
 
         private void chk_limit_CheckedChanged(object sender, EventArgs e)
