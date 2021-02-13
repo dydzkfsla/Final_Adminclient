@@ -15,9 +15,11 @@ namespace AdminClient.Forms
 {
 	public partial class ContractInfo : AdminClient.BaseForm.FormSerchListTemp
 	{
+		string userID = Global.Global.employees.Emp_Code;
 		List<ComboCompNameVO> compList;
 		List<ComboDestVO> destList;
 		List<ContractVO> ContList;
+		//ContractVO selectedCont;
 
 		public ContractInfo()
 		{
@@ -125,6 +127,7 @@ namespace AdminClient.Forms
 			if (ContList != null && ContList.Count > 0)
 			{
 				searchControl1.Getdata(dgv_ContractList);
+				sortControl1.Getdata(dgv_ContractList);
 				gb_detail.Enabled = true;
 			}
 
@@ -141,15 +144,71 @@ namespace AdminClient.Forms
 			{
 				MessageBox.Show("성공적으로 등록되었습니다.");
 				vo = pop.VO;
+				RefreshList();
 			}
 		}
 
+		private void dgv_ContractList_CellContentClick(object sender, DataGridViewCellEventArgs e) //수정버튼
+		{
+			if (e.RowIndex < 0)
+				return;
+
+			if (e.ColumnIndex == 1)
+			{
+				ContractVO vo = new ContractVO
+				{
+					Contract_Code = dgv_ContractList["Contract_Code", e.RowIndex].Value.ToString(),
+					Comp_Code = dgv_ContractList["Comp_Code", e.RowIndex].Value.ToString(),
+					Contract_Destination = dgv_ContractList["Contract_Destination", e.RowIndex].Value.ToString(),
+					Contract_DueDate = Convert.ToDateTime(dgv_ContractList["Contract_DueDate", e.RowIndex].Value),
+					Prod_Code = dgv_ContractList["Prod_Code", e.RowIndex].Value.ToString(),
+					Contract_Count = Convert.ToInt32(dgv_ContractList["Contract_Count", e.RowIndex].Value),
+					Contract_CancelCount = Convert.ToInt32(dgv_ContractList["Contract_CancelCount", e.RowIndex].Value)
+				};
+
+				ContractPopUp pop = new ContractPopUp();
+				pop.ThisMode = ContractPopUp.Mode.Update;
+				pop.VO = vo;
+				pop.StartPosition = FormStartPosition.CenterParent;
+
+				if (pop.ShowDialog() == DialogResult.OK)
+				{
+					MessageBox.Show("수정이 성공적으로 완료되었습니다.");
+					RefreshList();
+				}
+			}
+		}
+
+		private void btn_CreateProduction_Click(object sender, EventArgs e) //생산계획 생성버튼
+		{
+			DataGridViewRow row = dgv_ContractList.CurrentRow;
+			string contCode = dgv_ContractList["Contract_Code", row.Index].Value.ToString();
+
+			ContractService service = new ContractService();
+			if (service.CreateProduction(userID, contCode))
+			{
+				MessageBox.Show("수주 확정이 완료되었습니다.");
+				RefreshList();
+			}
+			else
+			{
+				MessageBox.Show("생산계획 생성중 오류가 발생했습니다. 다시 시도하여 주십시오.");
+				return;
+			}
+		}
 
 		#endregion
 
 		#region 메서드
 
-		//public List<ContractVO>
+		public void RefreshList() //수주목록 새로고침을 위한 메서드
+		{
+			ContractService service = new ContractService();
+			ContList = service.RefreshContractsList();
+			service.Dispose();
+
+			dgv_ContractList.DataSource = ContList;
+		}
 
 		#endregion
 

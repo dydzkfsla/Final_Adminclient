@@ -50,11 +50,12 @@
 			this.label11 = new System.Windows.Forms.Label();
 			this.label12 = new System.Windows.Forms.Label();
 			this.btn_Delete = new System.Windows.Forms.Button();
-			this.btn_Save = new System.Windows.Forms.Button();
+			this.btn_Add = new System.Windows.Forms.Button();
 			this.lbl_ContCancelCountMark = new System.Windows.Forms.Label();
 			this.lbl_ContCancelCount = new System.Windows.Forms.Label();
 			this.txt_ContCancelCount = new System.Windows.Forms.TextBox();
 			this.txt_ContNote = new System.Windows.Forms.TextBox();
+			this.btn_Update = new System.Windows.Forms.Button();
 			this.pnl_Main.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.Form_close)).BeginInit();
 			this.panel1.SuspendLayout();
@@ -62,12 +63,13 @@
 			// 
 			// pnl_Main
 			// 
+			this.pnl_Main.Controls.Add(this.btn_Update);
 			this.pnl_Main.Controls.Add(this.txt_ContCancelCount);
 			this.pnl_Main.Controls.Add(this.lbl_ContCancelCountMark);
 			this.pnl_Main.Controls.Add(this.lbl_ContCancelCount);
 			this.pnl_Main.Controls.Add(this.btn_Delete);
 			this.pnl_Main.Controls.Add(this.txt_ContNote);
-			this.pnl_Main.Controls.Add(this.btn_Save);
+			this.pnl_Main.Controls.Add(this.btn_Add);
 			this.pnl_Main.Controls.Add(this.label11);
 			this.pnl_Main.Controls.Add(this.label12);
 			this.pnl_Main.Controls.Add(this.panel1);
@@ -325,22 +327,23 @@
 			// 
 			// btn_Delete
 			// 
-			this.btn_Delete.Location = new System.Drawing.Point(185, 419);
+			this.btn_Delete.Location = new System.Drawing.Point(128, 419);
 			this.btn_Delete.Name = "btn_Delete";
-			this.btn_Delete.Size = new System.Drawing.Size(74, 53);
+			this.btn_Delete.Size = new System.Drawing.Size(67, 53);
 			this.btn_Delete.TabIndex = 56;
 			this.btn_Delete.Text = "삭제";
 			this.btn_Delete.UseVisualStyleBackColor = true;
+			this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
 			// 
-			// btn_Save
+			// btn_Add
 			// 
-			this.btn_Save.Location = new System.Drawing.Point(265, 419);
-			this.btn_Save.Name = "btn_Save";
-			this.btn_Save.Size = new System.Drawing.Size(76, 53);
-			this.btn_Save.TabIndex = 54;
-			this.btn_Save.Text = "저장";
-			this.btn_Save.UseVisualStyleBackColor = true;
-			this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
+			this.btn_Add.Location = new System.Drawing.Point(274, 419);
+			this.btn_Add.Name = "btn_Add";
+			this.btn_Add.Size = new System.Drawing.Size(67, 53);
+			this.btn_Add.TabIndex = 54;
+			this.btn_Add.Text = "추가";
+			this.btn_Add.UseVisualStyleBackColor = true;
+			this.btn_Add.Click += new System.EventHandler(this.btn_Save_Click);
 			// 
 			// lbl_ContCancelCountMark
 			// 
@@ -381,6 +384,16 @@
 			this.txt_ContNote.Size = new System.Drawing.Size(332, 160);
 			this.txt_ContNote.TabIndex = 53;
 			// 
+			// btn_Update
+			// 
+			this.btn_Update.Location = new System.Drawing.Point(201, 419);
+			this.btn_Update.Name = "btn_Update";
+			this.btn_Update.Size = new System.Drawing.Size(67, 53);
+			this.btn_Update.TabIndex = 61;
+			this.btn_Update.Text = "수정";
+			this.btn_Update.UseVisualStyleBackColor = true;
+			this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
+			// 
 			// ContractPopUp
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
@@ -414,7 +427,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btn_Delete;
-        private System.Windows.Forms.Button btn_Save;
+        private System.Windows.Forms.Button btn_Add;
 		private System.Windows.Forms.TextBox txt_ContCancelCount;
 		private System.Windows.Forms.Label lbl_ContCancelCountMark;
 		private System.Windows.Forms.Label lbl_ContCancelCount;
@@ -426,5 +439,6 @@
 		private System.Windows.Forms.Label label14;
 		private System.Windows.Forms.ComboBox cbo_CompName;
 		private System.Windows.Forms.TextBox txt_ContNote;
+		private System.Windows.Forms.Button btn_Update;
 	}
 }

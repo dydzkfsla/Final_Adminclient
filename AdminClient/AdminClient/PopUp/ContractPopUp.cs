@@ -19,12 +19,28 @@ namespace AdminClient.PopUp
 		List<ComboCompNameVO> compNameList;
 		List<ComboProdNameVO> prodNameList;
 
-		public Mode ThisMode { get; set; }
+		public Mode ThisMode { set { mode = value; } }
 		public ContractVO VO { get { return vo; } set { vo = value; } }
 
 		public ContractPopUp()
 		{
 			InitializeComponent();
+
+			#region 기본 콤보박스 셋팅
+			ComboBindingService service = new ComboBindingService();
+			compNameList = service.BindingCompName();
+			prodNameList = service.BindingProdName();
+			service.Dispose();
+
+			compNameList.Insert(0, new ComboCompNameVO { Comp_Name = "선택", Comp_Code = "" });
+			prodNameList.Insert(0, new ComboProdNameVO { Prod_Name = "선택", Prod_Code = "" });
+			cbo_CompName.DataSource = compNameList; //회사이름 바인딩
+			cbo_CompName.DisplayMember = "Comp_Name";
+			cbo_CompName.ValueMember = "Comp_Code";
+			cbo_ProdName.DataSource = prodNameList; //품목이름 바인딩
+			cbo_ProdName.DisplayMember = "Prod_Name";
+			cbo_ProdName.ValueMember = "Prod_Code";
+			#endregion
 		}
 
 		#region 이벤트
@@ -32,20 +48,6 @@ namespace AdminClient.PopUp
 		{
 			if (mode == Mode.Insert) //등록모드
 			{
-				#region 기본 콤보박스 셋팅
-				ComboBindingService service = new ComboBindingService();
-				compNameList = service.BindingCompName();
-				prodNameList = service.BindingProdName();
-				service.Dispose();
-
-				cbo_CompName.DataSource = compNameList; //회사이름 바인딩
-				cbo_CompName.DisplayMember = "Comp_Name";
-				cbo_CompName.ValueMember = "Comp_Code";
-				cbo_ProdName.DataSource = prodNameList; //품목이름 바인딩
-				cbo_ProdName.DisplayMember = "Prod_Name";
-				cbo_ProdName.ValueMember = "Prod_Code";
-				#endregion
-
 				#region 기초 셋팅
 				lbl_Title.Text = "수주등록";
 
@@ -57,11 +59,28 @@ namespace AdminClient.PopUp
 				txt_ContCount.KeyPress += UtilEvent.TextBoxIsDigit;
 
 				lbl_ContCancelCount.Visible = txt_ContCancelCount.Visible = lbl_ContCancelCountMark.Visible = false;
+				btn_Add.Enabled = true;
+				btn_Delete.Enabled = btn_Update.Enabled = false;
 				#endregion
+			}
+			else
+			{
+				lbl_Title.Text = "수주정보수정";
+				txt_ContCode.Enabled = false;
+				txt_ContCode.Text = vo.Contract_Code;
+				cbo_CompName.SelectedValue = vo.Comp_Code;
+				txt_ContDestination.Text = vo.Contract_Destination;
+				dtp_DueDate.Value = vo.Contract_DueDate;
+				cbo_ProdName.SelectedValue = vo.Prod_Code;
+				txt_ContCount.Text = vo.Contract_Count.ToString();
+				txt_ContCancelCount.Text = vo.Contract_CancelCount.ToString();
+
+				btn_Add.Enabled = false;
+				btn_Delete.Enabled = btn_Update.Enabled = true;
 			}
 		}
 
-		private void btn_Save_Click(object sender, EventArgs e) //저장 버튼
+		private void btn_Save_Click(object sender, EventArgs e) //추가 버튼
 		{
 			//유효성체크
 			if (!ChkTextBox())
@@ -76,7 +95,7 @@ namespace AdminClient.PopUp
 				{
 					Comp_Code = cbo_CompName.SelectedValue.ToString(),
 					Contract_Destination = txt_ContDestination.Text,
-					Contract_DueDate = dtp_DueDate.Value.Date,
+					Contract_DueDate = Convert.ToDateTime(dtp_DueDate.Value.ToString("yyyy-MM-dd")),
 					Contract_Note = txt_ContNote.Text,
 					Prod_Code = cbo_ProdName.SelectedValue.ToString(),
 					Contract_Count = Convert.ToInt32(txt_ContCount.Text)
@@ -95,6 +114,55 @@ namespace AdminClient.PopUp
 				}
 			}
 		}
+
+		private void btn_Update_Click(object sender, EventArgs e) //수정버튼
+		{
+			vo = new ContractVO
+			{
+				Contract_Code = txt_ContCode.Text,
+				Comp_Code = cbo_CompName.SelectedValue.ToString(),
+				Contract_Destination = txt_ContDestination.Text,
+				Contract_DueDate = Convert.ToDateTime(dtp_DueDate.Value.ToString("yyyy-MM-dd")),
+				Prod_Code = cbo_ProdName.SelectedValue.ToString(),
+				Contract_Count = Convert.ToInt32(txt_ContCount.Text),
+				Contract_CancelCount = Convert.ToInt32(txt_ContCancelCount.Text),
+				Contract_Note = txt_ContNote.Text
+			};
+
+			ContractService service = new ContractService();
+			if (service.UpdateContract(userID, vo))
+			{
+				this.DialogResult = DialogResult.OK;
+				this.Close();
+			}
+			else
+			{
+				MessageBox.Show("수주정보 수정중 오류가 발생했습니다. 다시 시도하여 주십시오.");
+				return;
+			}
+		}
+
+		private void btn_Delete_Click(object sender, EventArgs e) //삭제버튼
+		{
+			string contCode = txt_ContCode.Text;
+			string prodCode = cbo_ProdName.SelectedValue.ToString();
+
+			if (MessageBox.Show("정말로 삭제하시겠습니까?", "삭제확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
+			{
+				ContractService service = new ContractService();
+				if (service.DeleteContract(contCode, prodCode))
+				{
+					MessageBox.Show("삭제가 성공적으로 완료되었습니다.");
+					this.Close();
+				}
+				else
+				{
+					MessageBox.Show("수주정보 삭제중 오류가 발생했습니다. 다시 시도하여 주십시오.");
+					return;
+				}
+			}
+		}
+
 		#endregion
 
 		#region 메서드
@@ -113,8 +181,11 @@ namespace AdminClient.PopUp
 			});
 			return ChkTextBox;
 		}
+
 		#endregion
 
 		#endregion
+
+		
 	}
 }

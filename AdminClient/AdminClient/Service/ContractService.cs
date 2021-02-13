@@ -21,11 +21,30 @@ namespace AdminClient.Service
 			return dac.AddContract(userID, vo);
 		}
 
+		public bool UpdateContract(string userID, ContractVO vo)
+		{
+			return dac.UpdateContract(userID, vo);
+		}
+
+		public bool CreateProduction(string userID, string contcode)
+		{
+			return dac.CreateProduction(userID, contcode);
+		}
+
+		public bool DeleteContract(string contcode, string prodcode)
+		{
+			return dac.DeleteContract(contcode, prodcode);
+		}
+
 		public List<ContractVO> GetContractsList(string limit, string confirm, string fin, string fdate, string tdate, string comp, string destination)
 		{
 			return dac.GetContractsList(limit, confirm, fin, fdate, tdate, comp, destination);
 		}
 
+		public List<ContractVO> RefreshContractsList()
+		{
+			return dac.RefreshContractsList();
+		}
 		public void Dispose()
 		{
 			dac.Dispose();
