@@ -65,7 +65,7 @@ namespace AdminClientDAC
                 using(SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"select wd.WH_Code, cm.Common_Name, wd.Prod_Code, pd.Prod_Name, pd.Prod_Unit, wd.WH_Count, pd.Prod_SafetyStock
+                    cmd.CommandText = @"select wd.WH_Code, cm.Common_Name, wd.Prod_Code, pd.Prod_Name, pd.Prod_Unit, wd.WH_PsyCount, wd.WH_LogCount, pd.Prod_SafetyStock
 	                                                                from WareHouseDetail as wd, Product as pd , Common as cm
 	                                                                where wd.Prod_Code = pd.Prod_Code
 	                                                                	and pd.Prod_Category = cm.Common_Code

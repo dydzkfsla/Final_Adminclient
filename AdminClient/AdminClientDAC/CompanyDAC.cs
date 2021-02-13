@@ -203,7 +203,7 @@ namespace AdminClientDAC
 	                                                                         tot.totCount, isnull(pc.Check_Point, '없음') as Check_Point
 	                                                                from CompanyDetail as cd
 	                                                                inner join Product as pd on cd.Prod_Code = pd.Prod_Code
-	                                                                inner join (select Prod_Code, sum(wd.WH_Count) as totCount 
+	                                                                inner join (select Prod_Code, sum(wd.WH_PsyCount) as totCount 
 	                                                                						from WareHouseDetail as wd, WareHouse as wh
                                                                                             where wd.WH_Code = wh.WH_Code
 								                                                                and wh.WH_Type not in ('WareH05', 'WareH06')

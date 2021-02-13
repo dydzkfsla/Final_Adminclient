@@ -55,7 +55,8 @@ namespace AdminClient.Forms
             CommonUtil.AddGridTextColumn(dgv_WhDetailList, "품목코드", "Prod_Code");
             CommonUtil.AddGridTextColumn(dgv_WhDetailList, "품목이름", "Prod_Name", 150);
             CommonUtil.AddGridTextColumn(dgv_WhDetailList, "단위", "Prod_Unit");
-            CommonUtil.AddGridTextColumn(dgv_WhDetailList, "재고량", "WH_Count");
+            CommonUtil.AddGridTextColumn(dgv_WhDetailList, "재고량", "WH_PsyCount");
+            CommonUtil.AddGridTextColumn(dgv_WhDetailList, "예상재고량", "WH_LogCount", 150);
             CommonUtil.AddGridTextColumn(dgv_WhDetailList, "안전재고량", "Prod_SafetyStock");
             #endregion
 

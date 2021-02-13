@@ -230,7 +230,7 @@ namespace AdminClient.PopUp
             if (txt_Note.Text.Trim().Length > 0)
                 vo.BOM_Note = txt_Note.Text;
 
-            if (cbo_ProdP.Tag.ToString().Length > 0)
+            if (cbo_ProdP.Tag != null)
                 vo.BOM_P_ProdCode = cbo_ProdP.Tag.ToString();
             else
                 vo.BOM_P_ProdCode = cbo_ProdP.SelectedValue.ToString();

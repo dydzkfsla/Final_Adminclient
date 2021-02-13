@@ -41,7 +41,6 @@ namespace AdminClient.Forms
             CommonUtil.AddGridTextColumn(dgv_Odlist, "발주코드", "Orders_Code");
             CommonUtil.AddGridTextColumn(dgv_Odlist, "업체코드", "Comp_Code");
             CommonUtil.AddGridTextColumn(dgv_Odlist, "업체명", "Comp_Name");
-            CommonUtil.AddGridTextColumn(dgv_Odlist, "창고코드", "WH_Code");
             CommonUtil.AddGridTextColumn(dgv_Odlist, "납기일", "Orders_DueDate");
             CommonUtil.AddGridTextColumn(dgv_Odlist, "발주상태", "Order_State_Comm");
 
