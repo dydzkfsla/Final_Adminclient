@@ -122,17 +122,21 @@ namespace AdminClient.PopUp
                 return;
             }
 
-            string localFile = pb_FacPicture.Tag.ToString();
-            string sExt = localFile.Substring(localFile.LastIndexOf("."));
-            string newFileName = txt_FacName.Text + sExt;
-            Imagedata data = new Imagedata();
-            data.image = CommonUtil.ImageToByte(pb_FacPicture.Image);
-            data.filename = newFileName;
-            ServiceHelp serviceHelp = new ServiceHelp();
-            ApiMessage result = serviceHelp.PostApiCallerNone("Images/Upload", data);
-            if (result.ResultCode == "S")
-                MessageBox.Show("이미지 저장 성공");
+            string newFileName= null;
 
+            if (txt_FilePath.Text != "")
+            {
+                string localFile = pb_FacPicture.Tag.ToString();
+                string sExt = localFile.Substring(localFile.LastIndexOf("."));
+                newFileName = txt_FacName.Text + sExt;
+                Imagedata data = new Imagedata();
+                data.image = CommonUtil.ImageToByte(pb_FacPicture.Image);
+                data.filename = newFileName;
+                ServiceHelp serviceHelp = new ServiceHelp();
+                ApiMessage result = serviceHelp.PostApiCallerNone("Images/Upload", data);
+                if (result.ResultCode == "S")
+                    MessageBox.Show("이미지 저장 성공");
+            }
            
 
             FacilityService service = new FacilityService();

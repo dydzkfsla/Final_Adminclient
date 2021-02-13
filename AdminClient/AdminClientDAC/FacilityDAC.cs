@@ -190,7 +190,7 @@ namespace AdminClientDAC
 					cmd.Parameters.AddWithValue("@name", vo.Fac_Name);
 					cmd.Parameters.AddWithValue("@enable", vo.Fac_Enable);
 					cmd.Parameters.AddWithValue("@outsourcing", vo.Fac_Outsourcing);
-					cmd.Parameters.AddWithValue("@img", vo.Fac_ImgPath);
+					cmd.Parameters.AddWithValue("@img", string.IsNullOrEmpty(vo.Fac_ImgPath) ? DBNull.Value : (object)vo.Fac_ImgPath);
 					cmd.Parameters.AddWithValue("@mwh", vo.Fac_MaterialWareHouse);
 					cmd.Parameters.AddWithValue("@gwh", vo.Fac_GoodsWareHouse);
 					cmd.Parameters.AddWithValue("@fwh", vo.Fac_FaultyWareHouse);
