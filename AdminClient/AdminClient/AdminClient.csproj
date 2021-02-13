@@ -488,6 +488,7 @@
     <Compile Include="Service\InOutService.cs" />
     <Compile Include="Service\OrderService.cs" />
     <Compile Include="Service\ProductCheckService.cs" />
+    <Compile Include="Service\ProductionService.cs" />
     <Compile Include="Service\ProductService.cs" />
     <Compile Include="Service\StockInfoService.cs" />
     <Compile Include="Service\TeamGroupConnService.cs" />

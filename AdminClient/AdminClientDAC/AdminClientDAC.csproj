@@ -75,6 +75,7 @@
     <Compile Include="OrderDAC.cs" />
     <Compile Include="ProductCheckDAC.cs" />
     <Compile Include="ProductDAC.cs" />
+    <Compile Include="ProductionDAC.cs" />
     <Compile Include="StockInfoDAC.cs" />
     <Compile Include="Utils\Helper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

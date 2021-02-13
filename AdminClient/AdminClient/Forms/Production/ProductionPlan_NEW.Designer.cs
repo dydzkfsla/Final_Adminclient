@@ -33,6 +33,7 @@ namespace AdminClient.Forms
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.dgv_ConfirmedContract = new AdminClient.CustomDataGridView();
 			this.customDataGridView2 = new AdminClient.CustomDataGridView();
+			this.btn_CreateDemand = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
 			this.splitContainer2.Panel1.SuspendLayout();
 			this.splitContainer2.Panel2.SuspendLayout();
@@ -73,7 +74,11 @@ namespace AdminClient.Forms
 			// 
 			// panel1
 			// 
+			this.panel1.Controls.Add(this.btn_CreateDemand);
 			this.panel1.Size = new System.Drawing.Size(1636, 64);
+			this.panel1.Controls.SetChildIndex(this.btn_add, 0);
+			this.panel1.Controls.SetChildIndex(this.btn_Xls, 0);
+			this.panel1.Controls.SetChildIndex(this.btn_CreateDemand, 0);
 			// 
 			// pnl_Main
 			// 
@@ -144,6 +149,22 @@ namespace AdminClient.Forms
 			this.customDataGridView2.Size = new System.Drawing.Size(1288, 440);
 			this.customDataGridView2.TabIndex = 0;
 			// 
+			// btn_CreateDemand
+			// 
+			this.btn_CreateDemand.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btn_CreateDemand.BackColor = System.Drawing.Color.White;
+			this.btn_CreateDemand.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.btn_CreateDemand.Image = global::AdminClient.Properties.Resources.Edit_32x32;
+			this.btn_CreateDemand.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btn_CreateDemand.Location = new System.Drawing.Point(1386, 9);
+			this.btn_CreateDemand.Margin = new System.Windows.Forms.Padding(0);
+			this.btn_CreateDemand.Name = "btn_CreateDemand";
+			this.btn_CreateDemand.Size = new System.Drawing.Size(82, 47);
+			this.btn_CreateDemand.TabIndex = 18;
+			this.btn_CreateDemand.Text = "수요계획\r\n생성";
+			this.btn_CreateDemand.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btn_CreateDemand.UseVisualStyleBackColor = false;
+			// 
 			// ProductionPlan_NEW
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
@@ -151,6 +172,7 @@ namespace AdminClient.Forms
 			this.ClientSize = new System.Drawing.Size(1665, 1025);
 			this.Name = "ProductionPlan_NEW";
 			this.Text = "ProductionPlan_NEW";
+			this.Load += new System.EventHandler(this.ProductionPlan_NEW_Load);
 			this.splitContainer2.Panel1.ResumeLayout(false);
 			this.splitContainer2.Panel2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
@@ -176,5 +198,6 @@ namespace AdminClient.Forms
 
 		private CustomDataGridView dgv_ConfirmedContract;
 		private CustomDataGridView customDataGridView2;
+		protected System.Windows.Forms.Button btn_CreateDemand;
 	}
 }
