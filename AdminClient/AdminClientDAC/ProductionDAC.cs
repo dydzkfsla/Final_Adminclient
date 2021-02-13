@@ -28,7 +28,32 @@ namespace AdminClientDAC
 			conn.Dispose();
 		}
 
-		public List<ContractVO> GetConfirmedContractsList()
+		public List<ContractVO> GetQtyByDueDate()
+		{
+			try
+			{
+				using (SqlCommand cmd = new SqlCommand())
+				{
+					cmd.Connection = conn;
+					cmd.CommandText = @"select SUM(CD.Contract_Count) Contract_Count, C.Contract_DueDate
+										  from Contract C, ContractDetail CD
+										 where C.Contract_Code = CD.Contract_Code
+									       and C.Contract_Confirm = 'Y' 
+									  group by C.Contract_DueDate; ";
+
+					List<ContractVO> list = Helper.DataReaderMapToList<ContractVO>(cmd.ExecuteReader());
+
+					return list;
+				}
+			}
+			catch (Exception err)
+			{
+				Info.WriteError($"실행자:{Global.employees.Emp_Name} 총수량 목록 불러오기중 오류 :" + err.Message, err);
+				return null;
+			}
+		}
+
+		public List<ContractVO> GetConfirmedContractsList(string duedate)
 		{
 			try
 			{
@@ -41,7 +66,10 @@ namespace AdminClientDAC
 										 where C.Contract_Code = CD.Contract_Code
 										   and C.Comp_Code = CO.Comp_Code
 										   and CD.Prod_Code = P.Prod_Code
-									       and C.Contract_Confirm = 'Y'; ";
+									       and C.Contract_Confirm = 'Y'
+										   and C.Contract_DueDate = @duedate ; ";
+
+					cmd.Parameters.AddWithValue("@duedate", duedate);
 
 					List<ContractVO> list = Helper.DataReaderMapToList<ContractVO>(cmd.ExecuteReader());
 

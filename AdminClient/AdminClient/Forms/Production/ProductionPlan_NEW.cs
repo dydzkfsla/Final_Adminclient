@@ -15,6 +15,7 @@ namespace AdminClient.Forms
 	public partial class ProductionPlan_NEW : AdminClient.BaseForm.FormSerchListSplitTemp
 	{
 		string userID = Global.Global.employees.Emp_Code;
+		List<ContractVO> QtyList;
 		List<ContractVO> ContList;
 
 		public ProductionPlan_NEW()
@@ -25,6 +26,10 @@ namespace AdminClient.Forms
 		private void ProductionPlan_NEW_Load(object sender, EventArgs e)
 		{
 			#region 데이터그리드뷰 셋팅
+			dgv_ProductionCount.SetGridColumn();
+			CommonUtil.AddGridTextColumn(dgv_ProductionCount, "주문수량", "Contract_Count");
+			CommonUtil.AddGridTextColumn(dgv_ProductionCount, "납기일", "Contract_DueDate");
+
 			dgv_ConfirmedContract.SetGridColumn();
 			CommonUtil.AddGridTextColumn(dgv_ConfirmedContract, "수주코드", "Contract_Code");
 			CommonUtil.AddGridTextColumn(dgv_ConfirmedContract, "고객사코드", "Comp_Code");
@@ -38,7 +43,7 @@ namespace AdminClient.Forms
 			CommonUtil.AddGridTextColumn(dgv_ConfirmedContract, "취소수량", "Contract_CancelCount");
 			#endregion
 
-			GetContList();
+			GetQtyByDueDate();
 		}
 
 		#region 이벤트
@@ -46,14 +51,34 @@ namespace AdminClient.Forms
 
 		#region 메서드
 
-		public void GetContList()
+		public void GetQtyByDueDate()
 		{
 			ProductionService service = new ProductionService();
-			ContList = service.GetConfirmedContractsList();
+			QtyList = service.GetQtyByDueDate();
+			service.Dispose();
+
+			dgv_ProductionCount.DataSource = QtyList;
+		}
+
+		//public void GetContList()
+		//{
+		//	ProductionService service = new ProductionService();
+		//	ContList = service.GetConfirmedContractsList();
+		//	service.Dispose();
+
+		//	dgv_ConfirmedContract.DataSource = ContList;
+		//}
+		#endregion
+
+		private void dgv_ProductionCount_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+		{
+			string dueDate = Convert.ToDateTime(dgv_ProductionCount["Contract_DueDate", e.RowIndex].Value).ToString("yyyy-MM-dd");
+
+			ProductionService service = new ProductionService();
+			ContList = service.GetConfirmedContractsList(dueDate);
 			service.Dispose();
 
 			dgv_ConfirmedContract.DataSource = ContList;
 		}
-		#endregion
 	}
 }

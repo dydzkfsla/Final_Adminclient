@@ -20,9 +20,14 @@ namespace AdminClient.Service
 			dac.Dispose();
 		}
 
-		public List<ContractVO> GetConfirmedContractsList()
+		public List<ContractVO> GetQtyByDueDate()
 		{
-			return dac.GetConfirmedContractsList();
+			return dac.GetQtyByDueDate();
+		}
+
+		public List<ContractVO> GetConfirmedContractsList(string duedate)
+		{
+			return dac.GetConfirmedContractsList(duedate);
 		}
 	}
 }
