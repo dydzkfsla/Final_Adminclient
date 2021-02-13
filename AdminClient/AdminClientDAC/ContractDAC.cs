@@ -29,6 +29,17 @@ namespace AdminClientDAC
 			conn.Dispose();
 		}
 
+		/// <summary>
+		/// 검색조건에 따른 수주목록 불러오기
+		/// </summary>
+		/// <param name="limit"></param>
+		/// <param name="confirm"></param>
+		/// <param name="fin"></param>
+		/// <param name="fdate"></param>
+		/// <param name="tdate"></param>
+		/// <param name="comp"></param>
+		/// <param name="destination"></param>
+		/// <returns></returns>
 		public List<ContractVO> GetContractsList(string limit, string confirm, string fin, string fdate, string tdate, string comp, string destination)
 		{
 			try
@@ -71,6 +82,33 @@ namespace AdminClientDAC
 		}
 
 
+		public List<ContractVO> RefreshContractsList()
+		{
+			try
+			{
+				using (SqlCommand cmd = new SqlCommand())
+				{
+					cmd.Connection = conn;
+					cmd.CommandText = @"select C.Contract_Code, C.Comp_Code, CO.Comp_Name, C.Contract_Destination, CD.Prod_Code, P.Prod_Name, 
+											   C.Contract_DueDate, CD.Contract_Count, CD.Contract_ShippingCount, CD.Contract_CancelCount,
+											   C.Contract_Confirm, C.Contract_Finish
+										  from Contract C, ContractDetail CD, CompanyInfo CO, Product P
+										 where C.Contract_Code = CD.Contract_Code
+										   and C.Comp_Code = CO.Comp_Code
+									       and CD.Prod_Code = P.Prod_Code; ";
+
+					List<ContractVO> list = Helper.DataReaderMapToList<ContractVO>(cmd.ExecuteReader());
+
+					return list;
+				}
+			}
+			catch (Exception err)
+			{
+				Info.WriteError($"실행자:{Global.employees.Emp_Name} 수주목록 새로고침중 오류 :" + err.Message, err);
+				return null;
+			}
+		}
+
 		/// <summary>
 		/// 신규 수주정보 등록, 프로시져 이용
 		/// </summary>
@@ -110,6 +148,128 @@ namespace AdminClientDAC
 			}
 		}
 
+		/// <summary>
+		/// 수주정보 수정, 프로시져 이용
+		/// </summary>
+		/// <param name="userID"></param>
+		/// <param name="vo"></param>
+		/// <returns>성공 : true, 실패 : false </returns>
+		public bool UpdateContract(string userID, ContractVO vo)
+		{
+			try
+			{
+				using (SqlCommand cmd = new SqlCommand())
+				{
+					cmd.Connection = conn;
+					cmd.CommandText = "SP_UpdateContract";
+					cmd.CommandType = CommandType.StoredProcedure;
 
+					cmd.Parameters.AddWithValue("@contcode", vo.Contract_Code);
+					cmd.Parameters.AddWithValue("@uid", userID);
+					cmd.Parameters.AddWithValue("@compcode", vo.Comp_Code);
+					cmd.Parameters.AddWithValue("@destination", vo.Contract_Destination);
+					cmd.Parameters.AddWithValue("@duedate", vo.Contract_DueDate);
+					cmd.Parameters.AddWithValue("@note", vo.Contract_Note);
+					cmd.Parameters.AddWithValue("@prodcode", vo.Prod_Code);
+					cmd.Parameters.AddWithValue("@count", vo.Contract_Count);
+					cmd.Parameters.AddWithValue("@cancel", vo.Contract_CancelCount);
+
+					int iAffectedRow = cmd.ExecuteNonQuery();
+
+					if (iAffectedRow > 0)
+						return true;
+					else
+						throw new Exception();
+				}
+			}
+			catch (Exception err)
+			{
+				Info.WriteError($"실행자:{Global.employees.Emp_Name} 수주정보 수정중 오류 :" + err.Message, err);
+				return false;
+			}
+		}
+
+		/// <summary>
+		/// 수주정보 삭제
+		/// </summary>
+		/// <param name="contcode"></param>
+		/// <param name="prodcode"></param>
+		/// <returns>성공 : true, 실패 : false  </returns>
+		public bool DeleteContract(string contcode, string prodcode)
+		{
+			SqlTransaction tran = conn.BeginTransaction();
+			try
+			{
+				using (SqlCommand cmd = new SqlCommand())
+				{
+					cmd.Connection = conn;
+					cmd.Transaction = tran;
+
+					cmd.CommandText = @"delete from Contract 
+										 where Contract_Code = @contcode;
+
+										delete from ContractDetail 
+										 where Contract_Code = @contcode
+										   and Prod_Code = @prodcode; ";
+					cmd.Parameters.AddWithValue("@contcode", contcode);
+					cmd.Parameters.AddWithValue("@prodcode", prodcode);
+
+
+					int iAffectedRow = cmd.ExecuteNonQuery();
+
+					if (iAffectedRow > 0)
+					{
+						tran.Commit();
+						return true;
+					}
+					else
+						throw new Exception();
+				}
+			}
+			catch (Exception err)
+			{
+				Info.WriteError($"실행자:{Global.employees.Emp_Name} 수주정보 삭제중 오류 :" + err.Message, err);
+				tran.Rollback();
+				return false;
+			}
+		}
+
+		/// <summary>
+		/// 생산계획을 생성하기위해 수주확정여부를 업데이트
+		/// </summary>
+		/// <param name="userID"></param>
+		/// <param name="contcode"></param>
+		/// <returns> 성공 : true, 실패 : false </returns>
+		public bool CreateProduction(string userID, string contcode)
+		{
+			try
+			{
+				using (SqlCommand cmd = new SqlCommand())
+				{
+					cmd.Connection = conn;
+					cmd.CommandText = @"update Contract
+										   set Contract_Confirm = 'Y',
+											   Lst_Writer = @uid,
+											   Lst_WriteDate = GETDATE()
+										 where Contract_Code = @contcode; ";
+
+					cmd.Parameters.AddWithValue("@contcode", contcode);
+					cmd.Parameters.AddWithValue("@uid", userID);
+
+					int iAffectedRow = cmd.ExecuteNonQuery();
+
+					if (iAffectedRow > 0)
+						return true;
+					else
+						throw new Exception();
+				}
+			}
+			catch (Exception err)
+			{
+				Info.WriteError($"실행자:{Global.employees.Emp_Name} 수주확정여부 수정중 오류 :" + err.Message, err);
+
+				return false;
+			}
+		}
 	}
 }

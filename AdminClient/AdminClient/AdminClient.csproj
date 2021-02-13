@@ -149,6 +149,12 @@
     <Compile Include="Forms\Production\ContractInfo.Designer.cs">
       <DependentUpon>ContractInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Production\ProductionPlan_NEW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Production\ProductionPlan_NEW.Designer.cs">
+      <DependentUpon>ProductionPlan_NEW.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Product\BOM.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -546,6 +552,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Production\ContractInfo.resx">
       <DependentUpon>ContractInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Production\ProductionPlan_NEW.resx">
+      <DependentUpon>ProductionPlan_NEW.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Product\BOM.resx">
       <DependentUpon>BOM.cs</DependentUpon>
