@@ -66,6 +66,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_AddList)).BeginInit();
             this.SuspendLayout();
             // 
+            // btn_delete
+            // 
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
+            // 
             // btn_insert
             // 
             this.btn_insert.Click += new System.EventHandler(this.btn_insert_Click);
@@ -80,7 +84,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.dgv_AddList);
-            this.splitContainer2.Size = new System.Drawing.Size(905, 686);
+            this.splitContainer2.Size = new System.Drawing.Size(903, 686);
             this.splitContainer2.SplitterDistance = 361;
             this.splitContainer2.SplitterWidth = 6;
             // 
@@ -325,7 +329,7 @@
             this.dgv_ProdList.RowHeadersVisible = false;
             this.dgv_ProdList.RowTemplate.Height = 23;
             this.dgv_ProdList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_ProdList.Size = new System.Drawing.Size(904, 315);
+            this.dgv_ProdList.Size = new System.Drawing.Size(902, 315);
             this.dgv_ProdList.TabIndex = 1;
             // 
             // dgv_AddList
@@ -350,7 +354,7 @@
             this.dgv_AddList.RowHeadersVisible = false;
             this.dgv_AddList.RowTemplate.Height = 23;
             this.dgv_AddList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_AddList.Size = new System.Drawing.Size(905, 319);
+            this.dgv_AddList.Size = new System.Drawing.Size(903, 319);
             this.dgv_AddList.TabIndex = 2;
             // 
             // schCtrl

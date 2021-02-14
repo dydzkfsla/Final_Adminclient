@@ -43,7 +43,10 @@ namespace AdminClient.Forms
 			CommonUtil.AddGridTextColumn(dgv_ConfirmedContract, "취소수량", "Contract_CancelCount");
 			#endregion
 
-			GetQtyByDueDate();
+			gb_SetDate.Enabled = false;
+			nu_limit.Enabled = false;
+
+			//GetQtyByDueDate();
 		}
 
 		#region 이벤트
@@ -80,5 +83,33 @@ namespace AdminClient.Forms
 
 			dgv_ConfirmedContract.DataSource = ContList;
 		}
-	}
+
+        private void chk_SetDate_CheckedChanged(object sender, EventArgs e)
+        {
+			gb_SetDate.Enabled = chk_SetDate.Checked;
+        }
+
+        private void chk_limit_CheckedChanged(object sender, EventArgs e)
+        {
+			nu_limit.Enabled = chk_SetDate.Checked;
+        }
+
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+			string fromto, limit;
+			fromto = limit = string.Empty;
+
+			if (chk_limit.Checked)
+				limit = nu_limit.Value.ToString();
+
+			if(chk_SetDate.Checked)
+            {
+				DateTime from, to;
+
+				from = dtp_from.Value;
+				to = dtp_to.Value;
+            }
+
+        }
+    }
 }

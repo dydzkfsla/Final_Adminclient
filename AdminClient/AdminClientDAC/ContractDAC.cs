@@ -247,11 +247,8 @@ namespace AdminClientDAC
 				using (SqlCommand cmd = new SqlCommand())
 				{
 					cmd.Connection = conn;
-					cmd.CommandText = @"update Contract
-										   set Contract_Confirm = 'Y',
-											   Lst_Writer = @uid,
-											   Lst_WriteDate = GETDATE()
-										 where Contract_Code = @contcode; ";
+					cmd.CommandText = @"SP_SetContract";
+					cmd.CommandType = CommandType.StoredProcedure;
 
 					cmd.Parameters.AddWithValue("@contcode", contcode);
 					cmd.Parameters.AddWithValue("@uid", userID);
