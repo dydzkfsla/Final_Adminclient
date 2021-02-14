@@ -18,5 +18,7 @@ namespace AdminClient.Global
                 AdminClientDAC.Global.employees = value;
             }
         }
+
+        public static List<View_EmpFormVO> Emp_Form { get; set; }
     }
 }
