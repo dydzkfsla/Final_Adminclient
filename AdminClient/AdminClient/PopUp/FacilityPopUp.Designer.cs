@@ -29,6 +29,16 @@
         private void InitializeComponent()
         {
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.cbo_FgrpCode = new System.Windows.Forms.ComboBox();
+			this.cbo_FacFWH = new System.Windows.Forms.ComboBox();
+			this.label17 = new System.Windows.Forms.Label();
+			this.label18 = new System.Windows.Forms.Label();
+			this.cbo_FacGWH = new System.Windows.Forms.ComboBox();
+			this.label15 = new System.Windows.Forms.Label();
+			this.label16 = new System.Windows.Forms.Label();
+			this.cbo_FacMWH = new System.Windows.Forms.ComboBox();
+			this.label13 = new System.Windows.Forms.Label();
+			this.label14 = new System.Windows.Forms.Label();
 			this.txt_FacName = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
@@ -48,21 +58,11 @@
 			this.label10 = new System.Windows.Forms.Label();
 			this.btn_Delete = new System.Windows.Forms.Button();
 			this.btn_Save = new System.Windows.Forms.Button();
+			this.txt_FilePath = new System.Windows.Forms.TextBox();
+			this.btn_FileSearch = new System.Windows.Forms.Button();
+			this.pb_FacPicture = new System.Windows.Forms.PictureBox();
 			this.label11 = new System.Windows.Forms.Label();
 			this.label12 = new System.Windows.Forms.Label();
-			this.pb_FacPicture = new System.Windows.Forms.PictureBox();
-			this.cbo_FacMWH = new System.Windows.Forms.ComboBox();
-			this.label13 = new System.Windows.Forms.Label();
-			this.label14 = new System.Windows.Forms.Label();
-			this.cbo_FacGWH = new System.Windows.Forms.ComboBox();
-			this.label15 = new System.Windows.Forms.Label();
-			this.label16 = new System.Windows.Forms.Label();
-			this.cbo_FacFWH = new System.Windows.Forms.ComboBox();
-			this.label17 = new System.Windows.Forms.Label();
-			this.label18 = new System.Windows.Forms.Label();
-			this.btn_FileSearch = new System.Windows.Forms.Button();
-			this.txt_FilePath = new System.Windows.Forms.TextBox();
-			this.cbo_FgrpCode = new System.Windows.Forms.ComboBox();
 			this.pnl_Main.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.Form_close)).BeginInit();
 			this.panel1.SuspendLayout();
@@ -71,6 +71,11 @@
 			// 
 			// pnl_Main
 			// 
+			this.pnl_Main.Controls.Add(this.txt_FilePath);
+			this.pnl_Main.Controls.Add(this.btn_FileSearch);
+			this.pnl_Main.Controls.Add(this.pb_FacPicture);
+			this.pnl_Main.Controls.Add(this.label11);
+			this.pnl_Main.Controls.Add(this.label12);
 			this.pnl_Main.Controls.Add(this.btn_Delete);
 			this.pnl_Main.Controls.Add(this.txt_Note);
 			this.pnl_Main.Controls.Add(this.label9);
@@ -95,8 +100,6 @@
 			// panel1
 			// 
 			this.panel1.Controls.Add(this.cbo_FgrpCode);
-			this.panel1.Controls.Add(this.txt_FilePath);
-			this.panel1.Controls.Add(this.btn_FileSearch);
 			this.panel1.Controls.Add(this.cbo_FacFWH);
 			this.panel1.Controls.Add(this.label17);
 			this.panel1.Controls.Add(this.label18);
@@ -106,9 +109,6 @@
 			this.panel1.Controls.Add(this.cbo_FacMWH);
 			this.panel1.Controls.Add(this.label13);
 			this.panel1.Controls.Add(this.label14);
-			this.panel1.Controls.Add(this.pb_FacPicture);
-			this.panel1.Controls.Add(this.label11);
-			this.panel1.Controls.Add(this.label12);
 			this.panel1.Controls.Add(this.txt_FacName);
 			this.panel1.Controls.Add(this.label1);
 			this.panel1.Controls.Add(this.label4);
@@ -125,8 +125,112 @@
 			this.panel1.Controls.Add(this.label3);
 			this.panel1.Location = new System.Drawing.Point(6, 16);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(662, 258);
+			this.panel1.Size = new System.Drawing.Size(328, 258);
 			this.panel1.TabIndex = 36;
+			// 
+			// cbo_FgrpCode
+			// 
+			this.cbo_FgrpCode.FormattingEnabled = true;
+			this.cbo_FgrpCode.Location = new System.Drawing.Point(122, 2);
+			this.cbo_FgrpCode.Name = "cbo_FgrpCode";
+			this.cbo_FgrpCode.Size = new System.Drawing.Size(188, 25);
+			this.cbo_FgrpCode.TabIndex = 69;
+			// 
+			// cbo_FacFWH
+			// 
+			this.cbo_FacFWH.FormattingEnabled = true;
+			this.cbo_FacFWH.Location = new System.Drawing.Point(122, 223);
+			this.cbo_FacFWH.Name = "cbo_FacFWH";
+			this.cbo_FacFWH.Size = new System.Drawing.Size(188, 25);
+			this.cbo_FacFWH.TabIndex = 66;
+			// 
+			// label17
+			// 
+			this.label17.AutoSize = true;
+			this.label17.BackColor = System.Drawing.Color.White;
+			this.label17.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+			this.label17.Location = new System.Drawing.Point(26, 226);
+			this.label17.Name = "label17";
+			this.label17.Size = new System.Drawing.Size(68, 17);
+			this.label17.TabIndex = 65;
+			this.label17.Text = "불량창고";
+			// 
+			// label18
+			// 
+			this.label18.AutoSize = true;
+			this.label18.BackColor = System.Drawing.Color.White;
+			this.label18.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+			this.label18.Location = new System.Drawing.Point(3, 226);
+			this.label18.Name = "label18";
+			this.label18.Size = new System.Drawing.Size(23, 17);
+			this.label18.TabIndex = 64;
+			this.label18.Text = "◆";
+			// 
+			// cbo_FacGWH
+			// 
+			this.cbo_FacGWH.FormattingEnabled = true;
+			this.cbo_FacGWH.Location = new System.Drawing.Point(122, 191);
+			this.cbo_FacGWH.Name = "cbo_FacGWH";
+			this.cbo_FacGWH.Size = new System.Drawing.Size(188, 25);
+			this.cbo_FacGWH.TabIndex = 63;
+			// 
+			// label15
+			// 
+			this.label15.AutoSize = true;
+			this.label15.BackColor = System.Drawing.Color.White;
+			this.label15.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+			this.label15.Location = new System.Drawing.Point(26, 194);
+			this.label15.Name = "label15";
+			this.label15.Size = new System.Drawing.Size(68, 17);
+			this.label15.TabIndex = 62;
+			this.label15.Text = "양품창고";
+			// 
+			// label16
+			// 
+			this.label16.AutoSize = true;
+			this.label16.BackColor = System.Drawing.Color.White;
+			this.label16.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+			this.label16.Location = new System.Drawing.Point(3, 194);
+			this.label16.Name = "label16";
+			this.label16.Size = new System.Drawing.Size(23, 17);
+			this.label16.TabIndex = 61;
+			this.label16.Text = "◆";
+			// 
+			// cbo_FacMWH
+			// 
+			this.cbo_FacMWH.FormattingEnabled = true;
+			this.cbo_FacMWH.Location = new System.Drawing.Point(122, 157);
+			this.cbo_FacMWH.Name = "cbo_FacMWH";
+			this.cbo_FacMWH.Size = new System.Drawing.Size(188, 25);
+			this.cbo_FacMWH.TabIndex = 60;
+			// 
+			// label13
+			// 
+			this.label13.AutoSize = true;
+			this.label13.BackColor = System.Drawing.Color.White;
+			this.label13.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+			this.label13.Location = new System.Drawing.Point(26, 160);
+			this.label13.Name = "label13";
+			this.label13.Size = new System.Drawing.Size(68, 17);
+			this.label13.TabIndex = 59;
+			this.label13.Text = "소진창고";
+			// 
+			// label14
+			// 
+			this.label14.AutoSize = true;
+			this.label14.BackColor = System.Drawing.Color.White;
+			this.label14.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+			this.label14.Location = new System.Drawing.Point(3, 160);
+			this.label14.Name = "label14";
+			this.label14.Size = new System.Drawing.Size(23, 17);
+			this.label14.TabIndex = 58;
+			this.label14.Text = "◆";
 			// 
 			// txt_FacName
 			// 
@@ -329,16 +433,40 @@
 			this.btn_Save.UseVisualStyleBackColor = true;
 			this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
 			// 
+			// txt_FilePath
+			// 
+			this.txt_FilePath.Location = new System.Drawing.Point(373, 42);
+			this.txt_FilePath.Name = "txt_FilePath";
+			this.txt_FilePath.Size = new System.Drawing.Size(205, 25);
+			this.txt_FilePath.TabIndex = 73;
+			// 
+			// btn_FileSearch
+			// 
+			this.btn_FileSearch.Location = new System.Drawing.Point(578, 42);
+			this.btn_FileSearch.Name = "btn_FileSearch";
+			this.btn_FileSearch.Size = new System.Drawing.Size(73, 25);
+			this.btn_FileSearch.TabIndex = 72;
+			this.btn_FileSearch.Text = "파일찾기";
+			this.btn_FileSearch.UseVisualStyleBackColor = true;
+			// 
+			// pb_FacPicture
+			// 
+			this.pb_FacPicture.Location = new System.Drawing.Point(373, 71);
+			this.pb_FacPicture.Name = "pb_FacPicture";
+			this.pb_FacPicture.Size = new System.Drawing.Size(278, 191);
+			this.pb_FacPicture.TabIndex = 71;
+			this.pb_FacPicture.TabStop = false;
+			// 
 			// label11
 			// 
 			this.label11.AutoSize = true;
 			this.label11.BackColor = System.Drawing.Color.White;
 			this.label11.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-			this.label11.Location = new System.Drawing.Point(338, 5);
+			this.label11.ForeColor = System.Drawing.Color.Black;
+			this.label11.Location = new System.Drawing.Point(347, 21);
 			this.label11.Name = "label11";
 			this.label11.Size = new System.Drawing.Size(23, 17);
-			this.label11.TabIndex = 56;
+			this.label11.TabIndex = 70;
 			this.label11.Text = "◆";
 			// 
 			// label12
@@ -346,141 +474,12 @@
 			this.label12.AutoSize = true;
 			this.label12.BackColor = System.Drawing.Color.White;
 			this.label12.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-			this.label12.Location = new System.Drawing.Point(361, 5);
+			this.label12.ForeColor = System.Drawing.Color.Black;
+			this.label12.Location = new System.Drawing.Point(370, 21);
 			this.label12.Name = "label12";
 			this.label12.Size = new System.Drawing.Size(68, 17);
-			this.label12.TabIndex = 55;
+			this.label12.TabIndex = 69;
 			this.label12.Text = "사진등록";
-			// 
-			// pb_FacPicture
-			// 
-			this.pb_FacPicture.Location = new System.Drawing.Point(364, 55);
-			this.pb_FacPicture.Name = "pb_FacPicture";
-			this.pb_FacPicture.Size = new System.Drawing.Size(278, 191);
-			this.pb_FacPicture.TabIndex = 57;
-			this.pb_FacPicture.TabStop = false;
-			// 
-			// cbo_FacMWH
-			// 
-			this.cbo_FacMWH.FormattingEnabled = true;
-			this.cbo_FacMWH.Location = new System.Drawing.Point(122, 157);
-			this.cbo_FacMWH.Name = "cbo_FacMWH";
-			this.cbo_FacMWH.Size = new System.Drawing.Size(188, 25);
-			this.cbo_FacMWH.TabIndex = 60;
-			// 
-			// label13
-			// 
-			this.label13.AutoSize = true;
-			this.label13.BackColor = System.Drawing.Color.White;
-			this.label13.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-			this.label13.Location = new System.Drawing.Point(26, 160);
-			this.label13.Name = "label13";
-			this.label13.Size = new System.Drawing.Size(68, 17);
-			this.label13.TabIndex = 59;
-			this.label13.Text = "소진창고";
-			// 
-			// label14
-			// 
-			this.label14.AutoSize = true;
-			this.label14.BackColor = System.Drawing.Color.White;
-			this.label14.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-			this.label14.Location = new System.Drawing.Point(3, 160);
-			this.label14.Name = "label14";
-			this.label14.Size = new System.Drawing.Size(23, 17);
-			this.label14.TabIndex = 58;
-			this.label14.Text = "◆";
-			// 
-			// cbo_FacGWH
-			// 
-			this.cbo_FacGWH.FormattingEnabled = true;
-			this.cbo_FacGWH.Location = new System.Drawing.Point(122, 191);
-			this.cbo_FacGWH.Name = "cbo_FacGWH";
-			this.cbo_FacGWH.Size = new System.Drawing.Size(188, 25);
-			this.cbo_FacGWH.TabIndex = 63;
-			// 
-			// label15
-			// 
-			this.label15.AutoSize = true;
-			this.label15.BackColor = System.Drawing.Color.White;
-			this.label15.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-			this.label15.Location = new System.Drawing.Point(26, 194);
-			this.label15.Name = "label15";
-			this.label15.Size = new System.Drawing.Size(68, 17);
-			this.label15.TabIndex = 62;
-			this.label15.Text = "양품창고";
-			// 
-			// label16
-			// 
-			this.label16.AutoSize = true;
-			this.label16.BackColor = System.Drawing.Color.White;
-			this.label16.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-			this.label16.Location = new System.Drawing.Point(3, 194);
-			this.label16.Name = "label16";
-			this.label16.Size = new System.Drawing.Size(23, 17);
-			this.label16.TabIndex = 61;
-			this.label16.Text = "◆";
-			// 
-			// cbo_FacFWH
-			// 
-			this.cbo_FacFWH.FormattingEnabled = true;
-			this.cbo_FacFWH.Location = new System.Drawing.Point(122, 223);
-			this.cbo_FacFWH.Name = "cbo_FacFWH";
-			this.cbo_FacFWH.Size = new System.Drawing.Size(188, 25);
-			this.cbo_FacFWH.TabIndex = 66;
-			// 
-			// label17
-			// 
-			this.label17.AutoSize = true;
-			this.label17.BackColor = System.Drawing.Color.White;
-			this.label17.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-			this.label17.Location = new System.Drawing.Point(26, 226);
-			this.label17.Name = "label17";
-			this.label17.Size = new System.Drawing.Size(68, 17);
-			this.label17.TabIndex = 65;
-			this.label17.Text = "불량창고";
-			// 
-			// label18
-			// 
-			this.label18.AutoSize = true;
-			this.label18.BackColor = System.Drawing.Color.White;
-			this.label18.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-			this.label18.Location = new System.Drawing.Point(3, 226);
-			this.label18.Name = "label18";
-			this.label18.Size = new System.Drawing.Size(23, 17);
-			this.label18.TabIndex = 64;
-			this.label18.Text = "◆";
-			// 
-			// btn_FileSearch
-			// 
-			this.btn_FileSearch.Location = new System.Drawing.Point(569, 26);
-			this.btn_FileSearch.Name = "btn_FileSearch";
-			this.btn_FileSearch.Size = new System.Drawing.Size(73, 25);
-			this.btn_FileSearch.TabIndex = 67;
-			this.btn_FileSearch.Text = "파일찾기";
-			this.btn_FileSearch.UseVisualStyleBackColor = true;
-			this.btn_FileSearch.Click += new System.EventHandler(this.btn_FileSearch_Click);
-			// 
-			// txt_FilePath
-			// 
-			this.txt_FilePath.Location = new System.Drawing.Point(364, 26);
-			this.txt_FilePath.Name = "txt_FilePath";
-			this.txt_FilePath.Size = new System.Drawing.Size(205, 25);
-			this.txt_FilePath.TabIndex = 68;
-			// 
-			// cbo_FgrpCode
-			// 
-			this.cbo_FgrpCode.FormattingEnabled = true;
-			this.cbo_FgrpCode.Location = new System.Drawing.Point(122, 2);
-			this.cbo_FgrpCode.Name = "cbo_FgrpCode";
-			this.cbo_FgrpCode.Size = new System.Drawing.Size(188, 25);
-			this.cbo_FgrpCode.TabIndex = 69;
 			// 
 			// FacilityPopUp
 			// 
@@ -521,8 +520,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btn_Delete;
         private System.Windows.Forms.Button btn_Save;
-		private System.Windows.Forms.TextBox txt_FilePath;
-		private System.Windows.Forms.Button btn_FileSearch;
 		private System.Windows.Forms.ComboBox cbo_FacFWH;
 		private System.Windows.Forms.Label label17;
 		private System.Windows.Forms.Label label18;
@@ -532,9 +529,11 @@
 		private System.Windows.Forms.ComboBox cbo_FacMWH;
 		private System.Windows.Forms.Label label13;
 		private System.Windows.Forms.Label label14;
+		private System.Windows.Forms.ComboBox cbo_FgrpCode;
+		private System.Windows.Forms.TextBox txt_FilePath;
+		private System.Windows.Forms.Button btn_FileSearch;
 		private System.Windows.Forms.PictureBox pb_FacPicture;
 		private System.Windows.Forms.Label label11;
 		private System.Windows.Forms.Label label12;
-		private System.Windows.Forms.ComboBox cbo_FgrpCode;
 	}
 }
