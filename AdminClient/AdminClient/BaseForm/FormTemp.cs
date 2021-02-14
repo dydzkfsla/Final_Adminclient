@@ -110,21 +110,59 @@ namespace AdminClient.BaseForm
 
         private void SerchButton(Control.ControlCollection controls)
         {
-            foreach(Control control in controls)
+            if (Global.Global.Emp_Form == null)
+                return;
+            var List =  Global.Global.Emp_Form.FindAll(x => this.Name.Contains(x.Form_Name));
+            foreach (Control control in controls)
             {
                 if(control is Button)
                 {
+                    if (control.Name.ToLower().Contains("search"))
+                    {
+                        bool result = false;
+                        foreach (var item in List)
+                        {
+                            if (item.Form_Select)
+                            {
+                                result = true;
+                            }
+                        }
+                       ((Button)control).Enabled = result;
+                    }
                     if (control.Name.ToLower().Contains("add"))
                     {
-                        ((Button)control).Enabled = Global.Global.employees.Emp_Addbutton;
+                        bool result = false;
+                        foreach (var item in List) {
+                            if(item.Form_Insert)
+                            {
+                                result = true;
+                            }
+                        }
+                        ((Button)control).Enabled = result;
                     }
                     if (control.Name.ToLower().Contains("update"))
                     {
-                        ((Button)control).Enabled = Global.Global.employees.Emp_Updatebutton;
+                        bool result = false;
+                        foreach (var item in List)
+                        {
+                            if (item.Form_Update)
+                            {
+                                result = true;
+                            }
+                        }
+                        ((Button)control).Enabled = result;
                     }
                     if (control.Name.ToLower().Contains("delete"))
                     {
-                        ((Button)control).Enabled = Global.Global.employees.Emp_Deletebutton;
+                        bool result = false;
+                        foreach (var item in List)
+                        {
+                            if (item.Form_Delete)
+                            {
+                                result = true;
+                            }
+                        }
+                        ((Button)control).Enabled = result;
                     }
                 }
                 if(control.Controls.Count > 0)

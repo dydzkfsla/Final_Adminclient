@@ -25,6 +25,31 @@ namespace AdminClientDAC
             conn.Close();
         }
 
+        public List<View_FormConnGroupVO> View_FormConnGroup() 
+        {
+            try
+            {
+                SqlCommand sql = new SqlCommand
+                {
+                    Connection = conn,
+                    CommandText = "select Form_Menu, Form_Name, Grp_No from View_FormConnGroup"
+                };
+
+
+                using (SqlDataReader reader = sql.ExecuteReader())
+                {
+                    return Helper.DataReaderMapToList<View_FormConnGroupVO>(reader);
+                }
+            }
+            catch (Exception err)
+            {
+                Debug.WriteLine(err.Message);
+                return null;
+            }
+
+        }
+
+
         #region View_EmpForm
         public List<View_EmpFormVO> View_EmpForm(string Emp_Code)
         {
@@ -33,7 +58,7 @@ namespace AdminClientDAC
                 SqlCommand sql = new SqlCommand
                 {
                     Connection = conn,
-                    CommandText = "select Form_Name,Grp_Name,Emp_Code,Form_Menu from View_EmpForm where Emp_Code = @Emp_Code"
+                    CommandText = "select Form_Name,Grp_Name,Emp_Code,Form_Menu, Form_Insert, Form_Select, Form_Update, Form_Delete from View_EmpForm where Emp_Code = @Emp_Code"
                 };
 
                 sql.Parameters.AddWithValue("@Emp_Code", Emp_Code);
@@ -51,7 +76,6 @@ namespace AdminClientDAC
             }
         }
         #endregion
-
 
         #region View_Favorites
         public List<View_FavoritesVO> View_Favorites(string Emp_Code)
@@ -79,7 +103,6 @@ namespace AdminClientDAC
             }
         }
         #endregion
-
 
         #region View_EmpForm
         public List<View_ProductNameAndCheckVO> View_ProductNameAndCheck(string Code)

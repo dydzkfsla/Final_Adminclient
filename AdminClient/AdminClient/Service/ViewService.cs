@@ -33,5 +33,14 @@ namespace AdminClient.Service
                 return DAC.View_ProductNameAndCheck(Code);
             }
         }
+
+        public List<View_FormConnGroupVO> View_FormConnGroup()
+        {
+            using (ViewDAC DAC = new ViewDAC())
+            {
+                return DAC.View_FormConnGroup();
+            }
+        }
+
     }
 }

@@ -1,5 +1,6 @@
 ﻿using AdminClient.Forms;
 using AdminClient.Service;
+using AdminClient.Global;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +17,6 @@ namespace AdminClient.MDI
 {
     public partial class MDI : Form
     {
-        List<View_EmpFormVO> Forms = new List<View_EmpFormVO>();
         List<View_FavoritesVO> Favorites = new List<View_FavoritesVO>();
         public MDI()
         {
@@ -34,10 +34,10 @@ namespace AdminClient.MDI
         private void MDI_Load(object sender, EventArgs e)
         {
             ViewService service = new ViewService();        //권한에 따른 폼들가져옴
-            Forms = service.View_EmpForm(Global.Global.employees.Emp_Code);
-            if (Forms == null)
+            Global.Global.Emp_Form = service.View_EmpForm(Global.Global.employees.Emp_Code);
+            if (Global.Global.Emp_Form == null)
                 return;
-            var items = (from pa in Forms
+            var items = (from pa in Global.Global.Emp_Form
                          group pa by pa.Grp_Name into data
                          select new { Grp_Name = data.Key, vo = data }).ToList();
 
@@ -216,7 +216,7 @@ namespace AdminClient.MDI
             FavoritesService service = new FavoritesService();
             if (service.InserFavorites(Global.Global.employees.Emp_Code, this.ActiveMdiChild.GetType().Name))
             {
-                var item = Forms.Find(x => x.Form_Name == this.ActiveMdiChild.GetType().Name);
+                var item = Global.Global.Emp_Form.Find(x => x.Form_Name == this.ActiveMdiChild.GetType().Name);
 
                 AddFavorControl(item.Form_Name, item.Form_Menu);
 
@@ -232,7 +232,7 @@ namespace AdminClient.MDI
             FavoritesService service = new FavoritesService();
             if (service.DeleteFavorites(Global.Global.employees.Emp_Code, this.ActiveMdiChild.GetType().Name))
             {
-                var item = Forms.Find(x => x.Form_Name == this.ActiveMdiChild.GetType().Name);
+                var item = Global.Global.Emp_Form.Find(x => x.Form_Name == this.ActiveMdiChild.GetType().Name);
 
                 if (panel1.Controls.ContainsKey(item.Form_Name))
                 {
