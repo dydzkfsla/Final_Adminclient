@@ -2,6 +2,7 @@
 using log4net.Core;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -28,18 +29,40 @@ namespace AdminClientDAC
 			conn.Dispose();
 		}
 
-		public List<ContractVO> GetQtyByDueDate()
+		public List<ContractVO> GetQtyByDueDate(string from, string to, string limit)
 		{
 			try
 			{
 				using (SqlCommand cmd = new SqlCommand())
 				{
 					cmd.Connection = conn;
-					cmd.CommandText = @"select SUM(CD.Contract_Count) Contract_Count, C.Contract_DueDate
-										  from Contract C, ContractDetail CD
-										 where C.Contract_Code = CD.Contract_Code
-									       and C.Contract_Confirm = 'Y' 
-									  group by C.Contract_DueDate; ";
+					cmd.CommandText = @"SP_GetContGrpList";
+					cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+					string fromto = string.Empty;
+					if(!(string.IsNullOrEmpty(from) && string.IsNullOrEmpty(to)))
+                    {
+						DateTime dtfrom, dtto;
+
+						dtfrom = Convert.ToDateTime(from);
+						dtto = Convert.ToDateTime(to);
+
+
+						while (dtfrom.Date <= dtto.Date)
+						{
+							fromto += "'" + dtfrom.ToString("yyyy-MM-dd") + "'";
+
+							if(dtfrom.Date != dtto.Date)
+								fromto += ", ";
+
+							dtfrom = dtfrom.AddDays(1);
+						}
+                    }
+
+
+
+					cmd.Parameters.AddWithValue("@limit", string.IsNullOrEmpty(limit) ? 10000 : int.Parse(limit));
+					cmd.Parameters.AddWithValue("@datelist", string.IsNullOrEmpty(fromto) ? DBNull.Value : (object)fromto);
 
 					List<ContractVO> list = Helper.DataReaderMapToList<ContractVO>(cmd.ExecuteReader());
 
@@ -53,7 +76,33 @@ namespace AdminClientDAC
 			}
 		}
 
-		public List<ContractVO> GetConfirmedContractsList(string duedate)
+        public DataTable GetPlan(string from, string to)
+        {
+			try
+			{
+				string sql = "SP_GetPlan";
+				SqlConnection test = new SqlConnection(Connstring.conn);
+				using (SqlDataAdapter da = new SqlDataAdapter(sql, test))
+				{
+					da.SelectCommand.CommandType = CommandType.StoredProcedure;
+					da.SelectCommand.Parameters.AddWithValue("@fst", string.IsNullOrEmpty(from)? DBNull.Value : (object)from);
+					da.SelectCommand.Parameters.AddWithValue("@lst", string.IsNullOrEmpty(to) ? DBNull.Value : (object)to);
+
+					DataTable dt = new DataTable();
+					da.Fill(dt);
+
+					return dt;
+
+				}
+			}
+			catch (Exception err)
+			{
+				Info.WriteError($"실행자:{Global.employees.Emp_Name}  계획 불러오기중 오류 :" + err.Message, err);
+				return null;
+			}
+        }
+
+        public List<ContractVO> GetConfirmedContractsList(string duedate)
 		{
 			try
 			{

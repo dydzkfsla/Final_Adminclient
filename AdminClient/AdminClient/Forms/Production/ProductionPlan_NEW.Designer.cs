@@ -33,7 +33,7 @@ namespace AdminClient.Forms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_ConfirmedContract = new AdminClient.CustomDataGridView();
-            this.customDataGridView2 = new AdminClient.CustomDataGridView();
+            this.dgv_Plan = new AdminClient.CustomDataGridView();
             this.btn_CreateDemand = new System.Windows.Forms.Button();
             this.dgv_ProductionCount = new AdminClient.CustomDataGridView();
             this.label1 = new System.Windows.Forms.Label();
@@ -58,7 +58,7 @@ namespace AdminClient.Forms
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ConfirmedContract)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Plan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ProductionCount)).BeginInit();
             this.gb_SetDate.SuspendLayout();
             this.SuspendLayout();
@@ -76,7 +76,7 @@ namespace AdminClient.Forms
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.label3);
-            this.splitContainer2.Panel2.Controls.Add(this.customDataGridView2);
+            this.splitContainer2.Panel2.Controls.Add(this.dgv_Plan);
             this.splitContainer2.Size = new System.Drawing.Size(1288, 844);
             this.splitContainer2.SplitterDistance = 406;
             // 
@@ -102,12 +102,14 @@ namespace AdminClient.Forms
             // 
             // gb_Sherch
             // 
+            this.gb_Sherch.Controls.Add(this.chk_SetDate);
             this.gb_Sherch.Controls.Add(this.gb_SetDate);
             this.gb_Sherch.Size = new System.Drawing.Size(297, 186);
             this.gb_Sherch.Controls.SetChildIndex(this.chk_limit, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.nu_limit, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.btn_search, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.gb_SetDate, 0);
+            this.gb_Sherch.Controls.SetChildIndex(this.chk_SetDate, 0);
             // 
             // chk_limit
             // 
@@ -162,13 +164,13 @@ namespace AdminClient.Forms
             this.dgv_ConfirmedContract.Size = new System.Drawing.Size(862, 376);
             this.dgv_ConfirmedContract.TabIndex = 0;
             // 
-            // customDataGridView2
+            // dgv_Plan
             // 
-            this.customDataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgv_Plan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.customDataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.customDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Plan.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_Plan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -176,15 +178,16 @@ namespace AdminClient.Forms
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.IndianRed;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.customDataGridView2.DefaultCellStyle = dataGridViewCellStyle3;
-            this.customDataGridView2.GridColor = System.Drawing.Color.Black;
-            this.customDataGridView2.IsChkVisible = false;
-            this.customDataGridView2.IsEditVisible = false;
-            this.customDataGridView2.Location = new System.Drawing.Point(3, 25);
-            this.customDataGridView2.Name = "customDataGridView2";
-            this.customDataGridView2.RowTemplate.Height = 23;
-            this.customDataGridView2.Size = new System.Drawing.Size(1282, 406);
-            this.customDataGridView2.TabIndex = 0;
+            this.dgv_Plan.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_Plan.GridColor = System.Drawing.Color.Black;
+            this.dgv_Plan.IsChkVisible = false;
+            this.dgv_Plan.IsEditVisible = false;
+            this.dgv_Plan.Location = new System.Drawing.Point(3, 25);
+            this.dgv_Plan.Name = "dgv_Plan";
+            this.dgv_Plan.RowTemplate.Height = 23;
+            this.dgv_Plan.Size = new System.Drawing.Size(1282, 406);
+            this.dgv_Plan.TabIndex = 0;
+            this.dgv_Plan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Plan_CellClick);
             // 
             // btn_CreateDemand
             // 
@@ -201,6 +204,7 @@ namespace AdminClient.Forms
             this.btn_CreateDemand.Text = "수요계획\r\n생성";
             this.btn_CreateDemand.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_CreateDemand.UseVisualStyleBackColor = false;
+            this.btn_CreateDemand.Click += new System.EventHandler(this.btn_CreateDemand_Click);
             // 
             // dgv_ProductionCount
             // 
@@ -280,7 +284,6 @@ namespace AdminClient.Forms
             // 
             // gb_SetDate
             // 
-            this.gb_SetDate.Controls.Add(this.chk_SetDate);
             this.gb_SetDate.Controls.Add(this.label4);
             this.gb_SetDate.Controls.Add(this.dtp_to);
             this.gb_SetDate.Controls.Add(this.dtp_from);
@@ -294,7 +297,7 @@ namespace AdminClient.Forms
             // chk_SetDate
             // 
             this.chk_SetDate.AutoSize = true;
-            this.chk_SetDate.Location = new System.Drawing.Point(69, 2);
+            this.chk_SetDate.Location = new System.Drawing.Point(77, 103);
             this.chk_SetDate.Name = "chk_SetDate";
             this.chk_SetDate.Size = new System.Drawing.Size(15, 14);
             this.chk_SetDate.TabIndex = 7;
@@ -326,7 +329,7 @@ namespace AdminClient.Forms
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ConfirmedContract)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Plan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ProductionCount)).EndInit();
             this.gb_SetDate.ResumeLayout(false);
             this.gb_SetDate.PerformLayout();
@@ -338,7 +341,7 @@ namespace AdminClient.Forms
 		#endregion
 
 		private CustomDataGridView dgv_ConfirmedContract;
-		private CustomDataGridView customDataGridView2;
+		private CustomDataGridView dgv_Plan;
 		protected System.Windows.Forms.Button btn_CreateDemand;
 		private CustomDataGridView dgv_ProductionCount;
 		private System.Windows.Forms.Label label2;
