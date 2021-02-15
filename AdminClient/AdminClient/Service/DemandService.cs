@@ -17,5 +17,13 @@ namespace AdminClient.Service
             dac.Dispose();
             return dt;
         }
+
+        internal DataTable GetDemandPlan(string from, string to)
+        {
+            DemandDAC dac = new DemandDAC();
+            DataTable dt = dac.GetDemandPlan(from, to);
+            dac.Dispose();
+            return dt;
+        }
     }
 }

@@ -204,6 +204,7 @@ namespace AdminClient.Forms
             this.btn_CreateDemand.Text = "수요계획\r\n생성";
             this.btn_CreateDemand.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_CreateDemand.UseVisualStyleBackColor = false;
+            this.btn_CreateDemand.Visible = false;
             this.btn_CreateDemand.Click += new System.EventHandler(this.btn_CreateDemand_Click);
             // 
             // dgv_ProductionCount

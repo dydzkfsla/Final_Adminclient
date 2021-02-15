@@ -189,10 +189,10 @@ namespace AdminClient.Forms
             }
 
 			string contCode = dgv_ContractList["Contract_Code", row.Index].Value.ToString();
-			
+			string contDate = dgv_ContractList["Contract_DueDate", row.Index].Value.ToString();
 
 			ContractService service = new ContractService();
-			if (service.CreateProduction(userID, contCode))
+			if (service.CreateProduction(userID, contCode, contDate))
 			{
 				MessageBox.Show("수주 확정이 완료되었습니다.");
 				RefreshList();

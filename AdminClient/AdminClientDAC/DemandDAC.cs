@@ -46,6 +46,30 @@ namespace AdminClientDAC
             }
         }
 
+        public DataTable GetDemandPlan(string from, string to)
+        {
+            try
+            {
+				string sql = "SP_GetDemandPlanPivot";
+				using(SqlDataAdapter da = new SqlDataAdapter(sql, conn))
+                {
+					da.SelectCommand.CommandType = CommandType.StoredProcedure;
+					da.SelectCommand.Parameters.AddWithValue("@fromInfo", from);
+					da.SelectCommand.Parameters.AddWithValue("@toInfo", to);
+
+					DataTable dt = new DataTable();
+					da.Fill(dt);
+
+					return dt;
+
+				}
+            }
+			catch(Exception err)
+            {
+				return null;
+            }
+        }
+
         public void Dispose()
 		{
 			conn.Dispose();
