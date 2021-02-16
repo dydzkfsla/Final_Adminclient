@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace AdminClient.PopUp
 {
-    public partial class FacilityPopUp : AdminClient.BaseForm.EmpFormTemp
+    public partial class FacilityInfo_NEWPopUp : AdminClient.BaseForm.EmpFormTemp
     {
         public enum Mode { Insert, Update } // Insert : 등록, Update : 수정
         Mode mode;
@@ -25,7 +25,7 @@ namespace AdminClient.PopUp
         public FacilityVO VO { get { return vo; } set { vo = value; } }
         public Mode ThisMode { set { mode = value; } }
 
-        public FacilityPopUp()
+        public FacilityInfo_NEWPopUp()
         {
             InitializeComponent();
 

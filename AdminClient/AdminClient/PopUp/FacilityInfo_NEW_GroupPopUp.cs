@@ -10,7 +10,7 @@ using AdminClientVO;
 
 namespace AdminClient.PopUp
 {
-    public partial class FacilityGroupPopUp : AdminClient.BaseForm.EmpFormTemp
+    public partial class FacilityInfo_NEW_GroupPopUp : AdminClient.BaseForm.EmpFormTemp
     {
         public enum Mode { Insert, Update } // Insert : 등록, Update : 수정
         Mode mode;
@@ -20,7 +20,7 @@ namespace AdminClient.PopUp
 		public FacilityGroupVO VO { get { return vo; } set { vo = value; } }
 		public Mode ThisMode { set { mode = value; } }
 
-		public FacilityGroupPopUp()
+		public FacilityInfo_NEW_GroupPopUp()
         {
             InitializeComponent();
 		}

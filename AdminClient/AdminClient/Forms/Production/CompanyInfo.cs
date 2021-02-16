@@ -147,8 +147,8 @@ namespace AdminClient.Forms
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            ContractInfoPopUp pop = new ContractInfoPopUp();
-            pop.ThisMode = ContractInfoPopUp.Mode.New;
+            CompanyInfoPopUp pop = new CompanyInfoPopUp();
+            pop.ThisMode = CompanyInfoPopUp.Mode.New;
             pop.StartPosition = FormStartPosition.CenterParent;
             CompanyVO vo = null;
 
@@ -222,8 +222,8 @@ namespace AdminClient.Forms
 
                 string code = txt_Code.Text;
 
-                ContractInfoPopUp pop = new ContractInfoPopUp();
-                pop.ThisMode = ContractInfoPopUp.Mode.Old;
+                CompanyInfoPopUp pop = new CompanyInfoPopUp();
+                pop.ThisMode = CompanyInfoPopUp.Mode.Old;
                 pop.StartPosition = FormStartPosition.CenterParent;
                 CompanyVO vo = null;
 

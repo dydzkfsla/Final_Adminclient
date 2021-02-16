@@ -137,11 +137,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EmpGroup\TempInfo - 복사본.cs">
+    <Compile Include="Forms\EmpGroup\TempInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\EmpGroup\TempInfo - 복사본.Designer.cs">
-      <DependentUpon>TempInfo - 복사본.cs</DependentUpon>
+    <Compile Include="Forms\EmpGroup\TempInfo.Designer.cs">
+      <DependentUpon>TempInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Facility\FacilityInfo_NEW.cs">
       <SubType>Form</SubType>
@@ -203,12 +203,6 @@
     <Compile Include="Forms\EmpGroup\EmpInfo.Designer.cs">
       <DependentUpon>EmpInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Facility\FacilityInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Facility\FacilityInfo.Designer.cs">
-      <DependentUpon>FacilityInfo.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\EmpGroup\FormInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -269,12 +263,6 @@
     <Compile Include="Forms\Product\StockInfo.Designer.cs">
       <DependentUpon>StockInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EmpGroup\TempInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\EmpGroup\TempInfo.Designer.cs">
-      <DependentUpon>TempInfo.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Product\WareHouseInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -306,11 +294,17 @@
     <Compile Include="PopUp\BORPopUp.Designer.cs">
       <DependentUpon>BORPopUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUp\CommonPopUp.cs">
+    <Compile Include="PopUp\CommonCodePopUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopUp\CommonPopUp.Designer.cs">
-      <DependentUpon>CommonPopUp.cs</DependentUpon>
+    <Compile Include="PopUp\CommonCodePopUp.Designer.cs">
+      <DependentUpon>CommonCodePopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\CompanyInfoPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\CompanyInfoPopUp.Designer.cs">
+      <DependentUpon>CompanyInfoPopUp.cs</DependentUpon>
     </Compile>
     <Compile Include="PopUp\ContractInfoPopUp.cs">
       <SubType>Form</SubType>
@@ -318,41 +312,29 @@
     <Compile Include="PopUp\ContractInfoPopUp.Designer.cs">
       <DependentUpon>ContractInfoPopUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUp\ContractPopUp.cs">
+    <Compile Include="PopUp\EmpInfoPopUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopUp\ContractPopUp.Designer.cs">
-      <DependentUpon>ContractPopUp.cs</DependentUpon>
+    <Compile Include="PopUp\EmpInfoPopUp.Designer.cs">
+      <DependentUpon>EmpInfoPopUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUp\EmpPopUp.cs">
+    <Compile Include="PopUp\FacilityInfo_NEW_GroupPopUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopUp\EmpPopUp.Designer.cs">
-      <DependentUpon>EmpPopUp.cs</DependentUpon>
+    <Compile Include="PopUp\FacilityInfo_NEW_GroupPopUp.Designer.cs">
+      <DependentUpon>FacilityInfo_NEW_GroupPopUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUp\FacilityDetailPopUp.cs">
+    <Compile Include="PopUp\FacilityInfo_NEWPopUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopUp\FacilityDetailPopUp.Designer.cs">
-      <DependentUpon>FacilityDetailPopUp.cs</DependentUpon>
+    <Compile Include="PopUp\FacilityInfo_NEWPopUp.Designer.cs">
+      <DependentUpon>FacilityInfo_NEWPopUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUp\FacilityGroupPopUp.cs">
+    <Compile Include="PopUp\OrderInfoPopUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopUp\FacilityGroupPopUp.Designer.cs">
-      <DependentUpon>FacilityGroupPopUp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PopUp\FacilityPopUp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PopUp\FacilityPopUp.Designer.cs">
-      <DependentUpon>FacilityPopUp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PopUp\OrderPopUp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PopUp\OrderPopUp.Designer.cs">
-      <DependentUpon>OrderPopUp.cs</DependentUpon>
+    <Compile Include="PopUp\OrderInfoPopUp.Designer.cs">
+      <DependentUpon>OrderInfoPopUp.cs</DependentUpon>
     </Compile>
     <Compile Include="PopUp\ProcessInfo_Detail_PopUp.cs">
       <SubType>Form</SubType>
@@ -366,23 +348,17 @@
     <Compile Include="PopUp\ProductCheckInfoPopUp.Designer.cs">
       <DependentUpon>ProductCheckInfoPopUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUp\ProductPopUp.cs">
+    <Compile Include="PopUp\ProductInfoPopUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopUp\ProductPopUp.Designer.cs">
-      <DependentUpon>ProductPopUp.cs</DependentUpon>
+    <Compile Include="PopUp\ProductInfoPopUp.Designer.cs">
+      <DependentUpon>ProductInfoPopUp.cs</DependentUpon>
     </Compile>
     <Compile Include="PopUp\ProcessInfo_PopUp.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PopUp\ProcessInfo_PopUp.Designer.cs">
       <DependentUpon>ProcessInfo_PopUp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PopUp\SalesMasterPopUp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PopUp\SalesMasterPopUp.Designer.cs">
-      <DependentUpon>SalesMasterPopUp.cs</DependentUpon>
     </Compile>
     <Compile Include="PopUp\WareHouseInfoPopUp.cs">
       <SubType>Form</SubType>
@@ -490,8 +466,8 @@
     <EmbeddedResource Include="CustomControl\CustomDataGridView.resx">
       <DependentUpon>CustomDataGridView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EmpGroup\TempInfo - 복사본.resx">
-      <DependentUpon>TempInfo - 복사본.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\EmpGroup\TempInfo.resx">
+      <DependentUpon>TempInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Facility\FacilityInfo_NEW.resx">
       <DependentUpon>FacilityInfo_NEW.cs</DependentUpon>
@@ -523,9 +499,6 @@
     <EmbeddedResource Include="Forms\EmpGroup\EmpInfo.resx">
       <DependentUpon>EmpInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Facility\FacilityInfo.resx">
-      <DependentUpon>FacilityInfo.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmpGroup\FormInfo.resx">
       <DependentUpon>FormInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -556,9 +529,6 @@
     <EmbeddedResource Include="Forms\Product\StockInfo.resx">
       <DependentUpon>StockInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EmpGroup\TempInfo.resx">
-      <DependentUpon>TempInfo.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Product\WareHouseInfo.resx">
       <DependentUpon>WareHouseInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -574,29 +544,26 @@
     <EmbeddedResource Include="PopUp\BORPopUp.resx">
       <DependentUpon>BORPopUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\CommonPopUp.resx">
-      <DependentUpon>CommonPopUp.cs</DependentUpon>
+    <EmbeddedResource Include="PopUp\CommonCodePopUp.resx">
+      <DependentUpon>CommonCodePopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\CompanyInfoPopUp.resx">
+      <DependentUpon>CompanyInfoPopUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUp\ContractInfoPopUp.resx">
       <DependentUpon>ContractInfoPopUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\ContractPopUp.resx">
-      <DependentUpon>ContractPopUp.cs</DependentUpon>
+    <EmbeddedResource Include="PopUp\EmpInfoPopUp.resx">
+      <DependentUpon>EmpInfoPopUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\EmpPopUp.resx">
-      <DependentUpon>EmpPopUp.cs</DependentUpon>
+    <EmbeddedResource Include="PopUp\FacilityInfo_NEW_GroupPopUp.resx">
+      <DependentUpon>FacilityInfo_NEW_GroupPopUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\FacilityDetailPopUp.resx">
-      <DependentUpon>FacilityDetailPopUp.cs</DependentUpon>
+    <EmbeddedResource Include="PopUp\FacilityInfo_NEWPopUp.resx">
+      <DependentUpon>FacilityInfo_NEWPopUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\FacilityGroupPopUp.resx">
-      <DependentUpon>FacilityGroupPopUp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\FacilityPopUp.resx">
-      <DependentUpon>FacilityPopUp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\OrderPopUp.resx">
-      <DependentUpon>OrderPopUp.cs</DependentUpon>
+    <EmbeddedResource Include="PopUp\OrderInfoPopUp.resx">
+      <DependentUpon>OrderInfoPopUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUp\ProcessInfo_Detail_PopUp.resx">
       <DependentUpon>ProcessInfo_Detail_PopUp.cs</DependentUpon>
@@ -604,14 +571,11 @@
     <EmbeddedResource Include="PopUp\ProductCheckInfoPopUp.resx">
       <DependentUpon>ProductCheckInfoPopUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\ProductPopUp.resx">
-      <DependentUpon>ProductPopUp.cs</DependentUpon>
+    <EmbeddedResource Include="PopUp\ProductInfoPopUp.resx">
+      <DependentUpon>ProductInfoPopUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUp\ProcessInfo_PopUp.resx">
       <DependentUpon>ProcessInfo_PopUp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\SalesMasterPopUp.resx">
-      <DependentUpon>SalesMasterPopUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUp\WareHouseInfoPopUp.resx">
       <DependentUpon>WareHouseInfoPopUp.cs</DependentUpon>

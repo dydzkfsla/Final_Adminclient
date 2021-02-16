@@ -21,7 +21,7 @@ namespace AdminClient
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GroupInfo());
+            Application.Run(new Forms.LogIn.Login());
         }
     }
 }

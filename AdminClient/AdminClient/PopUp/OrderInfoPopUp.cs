@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace AdminClient.PopUp
 {
-    public partial class OrderPopUp : AdminClient.BaseForm.EmpFormTemp
+    public partial class OrderInfoPopUp : AdminClient.BaseForm.EmpFormTemp
     {
         List<CompanyVO> complist;
         List<CompanyDetailVO> detailList;
@@ -22,7 +22,7 @@ namespace AdminClient.PopUp
         public List<OrderVO> OrderInfo { get { return odVO; } set { odVO = value; } }
         public List<OrderDetailVO> DetailInfo { get { return odlist; } set { odlist = value; } }
 
-        public OrderPopUp()
+        public OrderInfoPopUp()
         {
             InitializeComponent();
         }

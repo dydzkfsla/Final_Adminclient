@@ -1,7 +1,7 @@
 ﻿
 namespace AdminClient.PopUp
 {
-    partial class CommonPopUp
+    partial class CommonCodePopUp
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -43,7 +43,7 @@ namespace AdminClient.PopUp
             this.label6 = new System.Windows.Forms.Label();
             this.btn_Delete = new System.Windows.Forms.Button();
             this.btn_Update = new System.Windows.Forms.Button();
-            this.btn_Add = new System.Windows.Forms.Button();
+            this.btn_add = new System.Windows.Forms.Button();
             this.pnl_common = new System.Windows.Forms.Panel();
             this.pnl_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).BeginInit();
@@ -55,7 +55,7 @@ namespace AdminClient.PopUp
             this.pnl_Main.Controls.Add(this.pnl_common);
             this.pnl_Main.Controls.Add(this.btn_Delete);
             this.pnl_Main.Controls.Add(this.btn_Update);
-            this.pnl_Main.Controls.Add(this.btn_Add);
+            this.pnl_Main.Controls.Add(this.btn_add);
             this.pnl_Main.Controls.Add(this.label5);
             this.pnl_Main.Controls.Add(this.txt_Pcode);
             this.pnl_Main.Controls.Add(this.label6);
@@ -220,15 +220,15 @@ namespace AdminClient.PopUp
             this.btn_Update.UseVisualStyleBackColor = true;
             this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
             // 
-            // btn_Add
+            // btn_add
             // 
-            this.btn_Add.Location = new System.Drawing.Point(21, 178);
-            this.btn_Add.Name = "btn_Add";
-            this.btn_Add.Size = new System.Drawing.Size(76, 53);
-            this.btn_Add.TabIndex = 71;
-            this.btn_Add.Text = "추가";
-            this.btn_Add.UseVisualStyleBackColor = true;
-            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
+            this.btn_add.Location = new System.Drawing.Point(21, 178);
+            this.btn_add.Name = "btn_add";
+            this.btn_add.Size = new System.Drawing.Size(76, 53);
+            this.btn_add.TabIndex = 71;
+            this.btn_add.Text = "추가";
+            this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
             // pnl_common
             // 
@@ -246,11 +246,11 @@ namespace AdminClient.PopUp
             this.pnl_common.Size = new System.Drawing.Size(336, 110);
             this.pnl_common.TabIndex = 74;
             // 
-            // CommonPopUp
+            // CommonCodePopUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.ClientSize = new System.Drawing.Size(406, 317);
-            this.Name = "CommonPopUp";
+            this.Name = "CommonCodePopUp";
             this.Load += new System.EventHandler(this.CommonPopUp_Load);
             this.pnl_Main.ResumeLayout(false);
             this.pnl_Main.PerformLayout();
@@ -278,7 +278,7 @@ namespace AdminClient.PopUp
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button btn_Delete;
         private System.Windows.Forms.Button btn_Update;
-        private System.Windows.Forms.Button btn_Add;
+        private System.Windows.Forms.Button btn_add;
         private System.Windows.Forms.Panel pnl_common;
     }
 }

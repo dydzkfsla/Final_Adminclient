@@ -15,26 +15,26 @@ using System.Xml;
 
 namespace AdminClient.PopUp
 {
-    public partial class EmpPopUp : AdminClient.BaseForm.EmpFormTemp
+    public partial class EmpInfoPopUp : AdminClient.BaseForm.EmpFormTemp
     {
 
         public List<EmployeesTeamVO> Employees = null;
         List<TeamInfoVO> Team = null;
         //List<EmpTeamConnVO>   EmpTeamConn = null;
 
-        public EmpPopUp()
+        public EmpInfoPopUp()
         {
             InitializeComponent();
         }
 
-        public EmpPopUp(List<TeamInfoVO> team) : this()
+        public EmpInfoPopUp(List<TeamInfoVO> team) : this()
         {
             Team = team;
             btn_AllUpdate.Enabled = false;
             btn_AllDelete.Enabled = false;
         }
 
-        public EmpPopUp(List<TeamInfoVO> team,  List<EmployeesTeamVO> employees) : this(team)
+        public EmpInfoPopUp(List<TeamInfoVO> team,  List<EmployeesTeamVO> employees) : this(team)
         {
             Team = team;
             Employees = employees;

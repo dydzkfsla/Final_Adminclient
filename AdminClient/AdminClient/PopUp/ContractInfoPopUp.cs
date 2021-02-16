@@ -10,193 +10,182 @@ using System.Windows.Forms;
 
 namespace AdminClient.PopUp
 {
-    public partial class ContractInfoPopUp : AdminClient.BaseForm.EmpFormTemp
-    {
-        public enum Mode { New, Old}  // New : 등록모드(등록버튼만 활성화), Old : 수정모드(수정, 삭제버튼만 활성화)
-        List<CompanyPopUpVO> typeList;
-        Mode mode;
-        CompanyVO vo;
-        string userID = Global.Global.employees.Emp_Code;
+	public partial class ContractInfoPopUp : AdminClient.BaseForm.EmpFormTemp
+	{
+		public enum Mode { Insert, Update } // Insert : 등록, Update : 수정
+		Mode mode;
+		ContractVO vo;
+		string userID = Global.Global.employees.Emp_Code;
+		List<ComboCompNameVO> compNameList;
+		List<ComboProdNameVO> prodNameList;
 
-        public Mode ThisMode { set { mode = value; } }
+		public Mode ThisMode { set { mode = value; } }
+		public ContractVO VO { get { return vo; } set { vo = value; } }
 
-        public CompanyVO VO { get { return vo; } set { vo = value; } }
+		public ContractInfoPopUp()
+		{
+			InitializeComponent();
 
-        public ContractInfoPopUp()
-        {
-            InitializeComponent();
-        }
+			#region 기본 콤보박스 셋팅
+			ComboBindingService service = new ComboBindingService();
+			compNameList = service.BindingCompName();
+			prodNameList = service.BindingProdName();
+			service.Dispose();
 
-        private void CompanyPopUp_Load(object sender, EventArgs e)
-        {
-            if(mode == Mode.New)
-            {
-                #region 등록 기초세팅
-                btn_Update.Enabled = btn_Delete.Enabled = false;
-                txt_Code.Text = "자동입력";
-                txt_Code.KeyPress += Txt_Code_KeyPress;
+			compNameList.Insert(0, new ComboCompNameVO { Comp_Name = "선택", Comp_Code = "" });
+			prodNameList.Insert(0, new ComboProdNameVO { Prod_Name = "선택", Prod_Code = "" });
+			cbo_CompName.DataSource = compNameList; //회사이름 바인딩
+			cbo_CompName.DisplayMember = "Comp_Name";
+			cbo_CompName.ValueMember = "Comp_Code";
+			cbo_ProdName.DataSource = prodNameList; //품목이름 바인딩
+			cbo_ProdName.DisplayMember = "Prod_Name";
+			cbo_ProdName.ValueMember = "Prod_Code";
+			#endregion
+		}
 
-                cbo_Auto.Items.Add("Y");
-                cbo_Auto.Items.Add("N");
-                cbo_State.Items.Add("Y");
-                cbo_State.Items.Add("N");
-                cbo_Auto.SelectedIndex = cbo_State.SelectedIndex = 0;
+		#region 이벤트
+		private void ContractPopUp_Load(object sender, EventArgs e) //로드 이벤트
+		{
+			if (mode == Mode.Insert) //등록모드
+			{
+				#region 기초 셋팅
+				lbl_Title.Text = "수주등록";
 
-                CompanyService service = new CompanyService();
-                typeList = service.GetCompanyTypeList_Popup();
+				txt_ContCode.Enabled = false;
+				txt_ContCode.Text = "자동입력";
 
-                cbo_Type.DataSource = typeList;
-                cbo_Type.DisplayMember = "Common_Name";
-                cbo_Type.ValueMember = "Common_Code";
-                #endregion
-            }
-            else
-            {
-                #region 수정 기초세팅
+				dtp_DueDate.Value = DateTime.Now;
 
-                CompanyService service = new CompanyService();
-                typeList = service.GetCompanyTypeList_Popup();
+				txt_ContCount.KeyPress += UtilEvent.TextBoxIsDigit;
 
-                cbo_Type.DataSource = typeList;
-                cbo_Type.DisplayMember = "Common_Name";
-                cbo_Type.ValueMember = "Common_Code";
+				lbl_ContCancelCount.Visible = txt_ContCancelCount.Visible = lbl_ContCancelCountMark.Visible = false;
+				btn_Add.Enabled = true;
+				btn_Delete.Enabled = btn_Update.Enabled = false;
+				#endregion
+			}
+			else
+			{
+				lbl_Title.Text = "수주정보수정";
+				txt_ContCode.Enabled = false;
+				txt_ContCode.Text = vo.Contract_Code;
+				cbo_CompName.SelectedValue = vo.Comp_Code;
+				txt_ContDestination.Text = vo.Contract_Destination;
+				dtp_DueDate.Value = vo.Contract_DueDate;
+				cbo_ProdName.SelectedValue = vo.Prod_Code;
+				txt_ContCount.Text = vo.Contract_Count.ToString();
+				txt_ContCancelCount.Text = vo.Contract_CancelCount.ToString();
 
-                cbo_Auto.Items.Add("Y");
-                cbo_Auto.Items.Add("N");
-                cbo_State.Items.Add("Y");
-                cbo_State.Items.Add("N");
+				btn_Add.Enabled = false;
+				btn_Delete.Enabled = btn_Update.Enabled = true;
+			}
+		}
 
-                txt_Code.KeyPress += Txt_Code_KeyPress;
+		private void btn_Save_Click(object sender, EventArgs e) //추가 버튼
+		{
+			//유효성체크
+			if (!ChkTextBox())
+			{
+				MessageBox.Show("노란색 항목은 필수입력 입니다.");
+				return;
+			}
 
-                txt_Code.Text = vo.Comp_Code;
-                txt_Name.Text = vo.Comp_Name;
-                txt_CEO.Text = vo.Comp_CEO;
+			if (mode == Mode.Insert)
+			{
+				vo = new ContractVO
+				{
+					Comp_Code = cbo_CompName.SelectedValue.ToString(),
+					Contract_Destination = txt_ContDestination.Text,
+					Contract_DueDate = Convert.ToDateTime(dtp_DueDate.Value.ToString("yyyy-MM-dd")),
+					Contract_Note = txt_ContNote.Text,
+					Prod_Code = cbo_ProdName.SelectedValue.ToString(),
+					Contract_Count = Convert.ToInt32(txt_ContCount.Text)
+				};
 
-                //기존정보에 해당하는 값으로 콤보박스 인덱스 설정
-                int index = 0;
+				ContractService service = new ContractService();
+				if (service.AddContract(userID, vo))
+				{
+					this.DialogResult = DialogResult.OK;
+					this.Close();
+				}
+				else
+				{
+					MessageBox.Show("수주정보 등록중 오류가 발생했습니다. 다시 시도하여 주십시오.");
+					return;
+				}
+			}
+		}
 
-                foreach(var idx in cbo_Auto.Items)
-                {
-                    if (idx.ToString() == vo.Comp_Auto)
-                        break;
+		private void btn_Update_Click(object sender, EventArgs e) //수정버튼
+		{
+			vo = new ContractVO
+			{
+				Contract_Code = txt_ContCode.Text,
+				Comp_Code = cbo_CompName.SelectedValue.ToString(),
+				Contract_Destination = txt_ContDestination.Text,
+				Contract_DueDate = Convert.ToDateTime(dtp_DueDate.Value.ToString("yyyy-MM-dd")),
+				Prod_Code = cbo_ProdName.SelectedValue.ToString(),
+				Contract_Count = Convert.ToInt32(txt_ContCount.Text),
+				Contract_CancelCount = Convert.ToInt32(txt_ContCancelCount.Text),
+				Contract_Note = txt_ContNote.Text
+			};
 
-                    index += 1;
-                }
+			ContractService service = new ContractService();
+			if (service.UpdateContract(userID, vo))
+			{
+				this.DialogResult = DialogResult.OK;
+				this.Close();
+			}
+			else
+			{
+				MessageBox.Show("수주정보 수정중 오류가 발생했습니다. 다시 시도하여 주십시오.");
+				return;
+			}
+		}
 
-                cbo_Auto.SelectedIndex = index;
+		private void btn_Delete_Click(object sender, EventArgs e) //삭제버튼
+		{
+			string contCode = txt_ContCode.Text;
+			string prodCode = cbo_ProdName.SelectedValue.ToString();
 
-                index = 0;
+			if (MessageBox.Show("정말로 삭제하시겠습니까?", "삭제확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
+			{
+				ContractService service = new ContractService();
+				if (service.DeleteContract(contCode, prodCode))
+				{
+					MessageBox.Show("삭제가 성공적으로 완료되었습니다.");
+					this.Close();
+				}
+				else
+				{
+					MessageBox.Show("수주정보 삭제중 오류가 발생했습니다. 다시 시도하여 주십시오.");
+					return;
+				}
+			}
+		}
 
-                foreach(var idx in cbo_State.Items)
-                {
-                    if (idx.ToString() == vo.Comp_State)
-                        break;
+		#endregion
 
-                    index += 1;
-                }
+		#region 메서드
 
-                cbo_State.SelectedIndex = index;
+		#region 텍스트박스 유효성체크
+		private bool ChkTextBox()
+		{
+			bool ChkTextBox = true;
 
-                index = 0;
+			CommonUtil.ControlAction<Panel, TextBox>(panel1, (x) =>
+			{
+				if (string.IsNullOrWhiteSpace(x.Text.Trim()))
+				{
+					ChkTextBox = false;
+				}
+			});
+			return ChkTextBox;
+		}
 
+		#endregion
 
-                for(int i = 0; i<cbo_Type.Items.Count - 1; i++)
-                {
-                    cbo_Type.SelectedIndex = i;
-                    if (cbo_Type.SelectedValue.ToString() == vo.Comp_Type)
-                        break;
-                }
+		#endregion
 
-                #endregion
-                btn_Add.Enabled = false;
-            }
-
-        }
-
-        private void Txt_Code_KeyPress(object sender, KeyPressEventArgs e)  // 키입력 불가
-        {
-            e.Handled = true;
-        }
-
-        private void btn_Add_Click(object sender, EventArgs e)
-        {
-            bool check = true;
-
-            //유효성체크 (텍스트박스 길이 1미만일경우 x, 콤보박스는 값 무조건 들어가있기때문에 검사x)
-            if (txt_Name.Text.Trim().Length < 1)
-                check = false;
-
-            
-
-            if(check)
-            {
-                vo = new CompanyVO
-                {
-                    Comp_Auto = cbo_Auto.SelectedItem.ToString(),
-                    Comp_Type = cbo_Type.SelectedValue.ToString(),
-                    Comp_Name = txt_Name.Text,
-                    Comp_CEO = txt_CEO.Text,
-                    Comp_State = cbo_State.SelectedItem.ToString()
-                };
-
-                CompanyService service = new CompanyService();
-                bool result = service.AddCompany(userID, vo);
-
-                if(result)
-                {
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
-                }
-                else
-                    MessageBox.Show("추가중 오류가 발생했습니다.");
-
-            }
-            else
-                MessageBox.Show("주황색 표시는 필수 입력 사항입니다.");
-
-        }
-
-        private void btn_Update_Click(object sender, EventArgs e)
-        {
-            bool check = true;
-            if (txt_Name.Text.Trim().Length < 1)
-                check = false;
-
-            if(check)
-            {
-                vo = new CompanyVO
-                {
-                    Comp_Code = txt_Code.Text,
-                    Comp_Name = txt_Name.Text,
-                    Comp_Auto = cbo_Auto.SelectedItem.ToString(),
-                    Comp_State = cbo_State.SelectedItem.ToString(),
-                    Comp_Type = cbo_Type.SelectedValue.ToString(), 
-                    Comp_CEO = txt_CEO.Text
-                };
-
-                CompanyService service = new CompanyService();
-                bool result = service.UpdateCompany(userID, vo);
-
-                if (result)
-                {
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
-                }
-                else
-                    MessageBox.Show("수정중 오류가 발생했습니다.");
-            }
-            else
-                MessageBox.Show("주황색 표시는 필수 입력 사항입니다.");
-        }
-
-        private void Form_close_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Cancel;
-        }
-
-        private void btn_Delete_Click(object sender, EventArgs e)
-        {
-
-        }
-    }
+		
+	}
 }

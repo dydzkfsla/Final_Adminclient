@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace AdminClient.PopUp
 {
-    public partial class ProductPopUp : AdminClient.BaseForm.EmpFormTemp
+    public partial class ProductInfoPopUp : AdminClient.BaseForm.EmpFormTemp
     {
         public enum Mode { New, Old }  // New : 등록모드(등록버튼만 활성화), Old : 수정모드(수정, 삭제버튼만 활성화)
         Mode mode;
@@ -23,7 +23,7 @@ namespace AdminClient.PopUp
         public Mode ThisMode { set { mode = value; } }
         public List<ComboProductVO> CombVO { set { cbolist = value; } }
 
-        public ProductPopUp()
+        public ProductInfoPopUp()
         {
             InitializeComponent();
         }

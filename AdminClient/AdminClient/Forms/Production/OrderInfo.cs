@@ -139,7 +139,7 @@ namespace AdminClient.Forms
 
         private void btn_add_Click(object sender, EventArgs e) // 등록버튼
         {
-            OrderPopUp pop = new OrderPopUp();
+            OrderInfoPopUp pop = new OrderInfoPopUp();
             pop.StartPosition = FormStartPosition.CenterParent;
             DialogResult dr = pop.ShowDialog();
 
