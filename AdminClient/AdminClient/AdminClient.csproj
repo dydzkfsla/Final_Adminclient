@@ -36,6 +36,9 @@
     <Reference Include="log4net, Version=2.0.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.12\lib\net45\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="MySql.Data, Version=8.0.20.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -397,14 +400,13 @@
       <DependentUpon>OrderPopUp.cs</DependentUpon>
     </Compile>
     <Compile Include="PopUp\ProductCheckInfoPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PopUp\ProcessInfo_Detail_PopUp.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PopUp\ProcessInfo_Detail_PopUp.Designer.cs">
       <DependentUpon>ProcessInfo_Detail_PopUp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PopUp\ProductCheckPopUp.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="PopUp\ProductCheckInfoPopUp.Designer.cs">
       <DependentUpon>ProductCheckInfoPopUp.cs</DependentUpon>
@@ -534,6 +536,7 @@
     <Compile Include="UseControl\SortControl.Designer.cs">
       <DependentUpon>SortControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils\CommonExcel.cs" />
     <Compile Include="Utils\CommonUtil.cs" />
     <Compile Include="Utils\CuttedGroup.cs" />
     <Compile Include="Utils\DateTimeFormatter.cs" />
@@ -701,8 +704,6 @@
     <EmbeddedResource Include="PopUp\ProcessInfo_Detail_PopUp.resx">
       <DependentUpon>ProcessInfo_Detail_PopUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\ProductCheckPopUp.resx">
-      <DependentUpon>ProductCheckPopUp.cs</DependentUpon>
     <EmbeddedResource Include="PopUp\ProductCheckInfoPopUp.resx">
       <DependentUpon>ProductCheckInfoPopUp.cs</DependentUpon>
     </EmbeddedResource>
