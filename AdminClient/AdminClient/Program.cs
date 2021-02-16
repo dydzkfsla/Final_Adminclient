@@ -21,7 +21,7 @@ namespace AdminClient
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TempInfo());
+            Application.Run(new ProductCheckInfo());
         }
     }
 }
