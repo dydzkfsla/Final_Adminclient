@@ -128,6 +128,15 @@ namespace AdminClient.Forms
         }
         #endregion
 
+        private void chk_limit_CheckedChanged(object sender, EventArgs e)
+        {
+            nu_limit.Enabled = chk_limit.Checked;
+
+            if (!chk_limit.Checked)
+            {
+                nu_limit.Value = 0;
+            }
+        }
         private void btn_Xls_Click(object sender, EventArgs e)
         {
             if (dgv_Check.DataSource == null)
@@ -155,15 +164,5 @@ namespace AdminClient.Forms
                 MessageBox.Show("엑셀파일에 저장하였습니다.");
             }
         }
-
-		private void chk_limit_CheckedChanged(object sender, EventArgs e)
-		{
-            nu_limit.Enabled = chk_limit.Checked;
-
-            if (!chk_limit.Checked)
-            {
-                nu_limit.Value = 0;
-            }
-        }
-	}
+    }
 }
