@@ -137,8 +137,8 @@ namespace AdminClient.Forms
 
 		private void btn_FacGrpAdd_Click(object sender, EventArgs e)
 		{
-			FacilityGroupPopUp pop = new FacilityGroupPopUp();
-			pop.ThisMode = FacilityGroupPopUp.Mode.Insert;
+			FacilityInfo_NEW_GroupPopUp pop = new FacilityInfo_NEW_GroupPopUp();
+			pop.ThisMode = FacilityInfo_NEW_GroupPopUp.Mode.Insert;
 			pop.StartPosition = FormStartPosition.CenterParent;
 			FacilityGroupVO vo;
 
@@ -163,8 +163,8 @@ namespace AdminClient.Forms
 
 		private void btn_add_Click(object sender, EventArgs e)
 		{
-			FacilityPopUp pop = new FacilityPopUp();
-			pop.ThisMode = FacilityPopUp.Mode.Insert;
+			FacilityInfo_NEWPopUp pop = new FacilityInfo_NEWPopUp();
+			pop.ThisMode = FacilityInfo_NEWPopUp.Mode.Insert;
 			pop.StartPosition = FormStartPosition.CenterParent;
 			FacilityVO vo;
 
@@ -212,8 +212,8 @@ namespace AdminClient.Forms
 					Fac_Note = dgv_FacList["Fac_Note", e.RowIndex].Value == null ? null : dgv_FacList["Fac_Note", e.RowIndex].Value.ToString()
 				};
 
-				FacilityPopUp pop = new FacilityPopUp();
-				pop.ThisMode = FacilityPopUp.Mode.Update;
+				FacilityInfo_NEWPopUp pop = new FacilityInfo_NEWPopUp();
+				pop.ThisMode = FacilityInfo_NEWPopUp.Mode.Update;
 				pop.VO = vo;
 				pop.StartPosition = FormStartPosition.CenterParent;
 

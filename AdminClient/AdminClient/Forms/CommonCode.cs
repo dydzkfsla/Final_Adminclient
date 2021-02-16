@@ -64,8 +64,8 @@ namespace AdminClient.Forms
             {
                 if(e.RowIndex > -1)
                 {
-                    CommonPopUp pop = new CommonPopUp();
-                    pop.ThisMode = CommonPopUp.Mode.Old;
+                    CommonCodePopUp pop = new CommonCodePopUp();
+                    pop.ThisMode = CommonCodePopUp.Mode.Old;
                     CommonVO vo = new CommonVO
                     {
                         Common_Code = txt_Code.Text, 
@@ -164,8 +164,8 @@ namespace AdminClient.Forms
 
         private void btn_add_Click(object sender, EventArgs e) // 추가버튼
         {
-            CommonPopUp pop = new CommonPopUp();
-            pop.ThisMode = CommonPopUp.Mode.New;
+            CommonCodePopUp pop = new CommonCodePopUp();
+            pop.ThisMode = CommonCodePopUp.Mode.New;
             pop.StartPosition = FormStartPosition.CenterParent;
 
             if(pop.ShowDialog() == DialogResult.OK)

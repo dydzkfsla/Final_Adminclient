@@ -153,7 +153,7 @@ namespace AdminClient.Forms
             if (dgv_Emp.Columns[e.ColumnIndex].Name == "Edit")
             {
                 string EmpCode = dgv_Emp["Emp_Code", e.RowIndex].Value.ToString();
-                EmpPopUp empPop = new EmpPopUp(Team, EmpTeam.Where(x => x.Emp_Code == EmpCode).ToList());
+                EmpInfoPopUp empPop = new EmpInfoPopUp(Team, EmpTeam.Where(x => x.Emp_Code == EmpCode).ToList());
                 DialogResult result = empPop.ShowDialog();
                 if (result == DialogResult.Yes)
                 {
@@ -186,7 +186,7 @@ namespace AdminClient.Forms
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            EmpPopUp empPop = new EmpPopUp(Team);
+            EmpInfoPopUp empPop = new EmpInfoPopUp(Team);
             DialogResult result = empPop.ShowDialog();
             if (result == DialogResult.Yes)
             {

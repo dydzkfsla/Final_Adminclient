@@ -135,8 +135,8 @@ namespace AdminClient.Forms
 
 		private void btn_add_Click(object sender, EventArgs e)
 		{
-			ContractPopUp pop = new ContractPopUp();
-			pop.ThisMode = ContractPopUp.Mode.Insert;
+			ContractInfoPopUp pop = new ContractInfoPopUp();
+			pop.ThisMode = ContractInfoPopUp.Mode.Insert;
 			pop.StartPosition = FormStartPosition.CenterParent;
 			ContractVO vo;
 
@@ -166,8 +166,8 @@ namespace AdminClient.Forms
 					Contract_CancelCount = Convert.ToInt32(dgv_ContractList["Contract_CancelCount", e.RowIndex].Value)
 				};
 
-				ContractPopUp pop = new ContractPopUp();
-				pop.ThisMode = ContractPopUp.Mode.Update;
+				ContractInfoPopUp pop = new ContractInfoPopUp();
+				pop.ThisMode = ContractInfoPopUp.Mode.Update;
 				pop.VO = vo;
 				pop.StartPosition = FormStartPosition.CenterParent;
 

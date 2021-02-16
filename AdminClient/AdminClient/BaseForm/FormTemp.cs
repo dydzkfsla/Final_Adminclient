@@ -118,7 +118,7 @@ namespace AdminClient.BaseForm
             var List = Global.Global.Emp_Form.FindAll(x => this.GetType().FullName.Contains(x.Form_Name));
             foreach (Control control in controls)
             {
-                if(control is Button)
+                if (control is Button)
                 {
                     if (control.Name.ToLower().Contains("search"))
                     {
@@ -135,8 +135,9 @@ namespace AdminClient.BaseForm
                     if (control.Name.ToLower().Contains("add"))
                     {
                         bool result = false;
-                        foreach (var item in List) {
-                            if(item.Form_Insert)
+                        foreach (var item in List)
+                        {
+                            if (item.Form_Insert)
                             {
                                 result = true;
                             }
@@ -168,7 +169,7 @@ namespace AdminClient.BaseForm
                         ((Button)control).Enabled = result;
                     }
                 }
-                if(control.Controls.Count > 0)
+                if (control.Controls.Count > 0)
                 {
                     SerchButton(control.Controls);
                 }

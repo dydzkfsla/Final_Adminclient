@@ -11,14 +11,16 @@ using System.Windows.Forms;
 
 namespace AdminClient.Forms
 {
-    public partial class TempInfo1 : AdminClient.BaseForm.EmpFormTemp
+    public partial class TempInfo : AdminClient.BaseForm.EmpFormTemp
     {
         List<TeamGroupConnVO> TeamGroupConn = null;
         List<TeamInfoVO> Team = null;
         List<GroupInfoVO> Group = null;
+        List<View_FormConnGroupVO> FormConnGroup = null;
+        List<TeamForFormVO> TeamForForms = null;
         string code = string.Empty;
         bool enabled = false;
-        public TempInfo1()
+        public TempInfo()
         {
             InitializeComponent();
 
@@ -28,6 +30,7 @@ namespace AdminClient.Forms
         {
             DgvSet();
             TextBoxSet();
+            GetData();
             TeamGroupConnSelectAll();
             TeamInfoSelectAll();
             Groupference();
@@ -36,18 +39,12 @@ namespace AdminClient.Forms
         #region private 메서드
         #region dgv설정
         private void DgvSet()
-        {   
-            dgv_addGroup.SetGridColumn();
-            CommonUtil.AddGridTextColumn(dgv_addGroup, "그룹번호", "Grp_No", 130);
-            CommonUtil.AddGridTextColumn(dgv_addGroup, "그룹이름", "Grp_Name", 120);
+        {
             dgv_Temp.SetGridColumn();
             CommonUtil.AddGridTextColumn(dgv_Temp, "팀코드", "Team_Code", 90);
             CommonUtil.AddGridTextColumn(dgv_Temp, "팀이름", "Team_Name", 150);
             CommonUtil.AddGridTextColumn(dgv_Temp, "그룹번호", "Team_Chief", 130, visibility: false);
             CommonUtil.AddGridTextColumn(dgv_Temp, "그룹이름", "Team_Part", 120, visibility: false);
-            dgv_Group.SetGridColumn();
-            CommonUtil.AddGridTextColumn(dgv_Group, "그룹번호", "Grp_No", 130);
-            CommonUtil.AddGridTextColumn(dgv_Group, "그룹이름", "Grp_Name", 120);
         }
         #endregion
 
@@ -79,16 +76,57 @@ namespace AdminClient.Forms
         }
         #endregion
 
+        public void GetData()
+        {
+            ViewService service = new ViewService();
+            FormConnGroup = service.View_FormConnGroup();
+
+            TeamForFormServer Tservice = new TeamForFormServer();
+            TeamForForms = Tservice.GetAllTeamForForm();
+        }
+
         #region 그룹 목록 가져옴
         private void Groupference()
         {
             GroupInfoService infoService = new GroupInfoService();
             Group = infoService.AllGroupInfoVO();
-            dgv_Group.DataSource = Group;
             if (code != string.Empty)
                 SetAuthority(code);
+            Group.ForEach(x =>
+            {
+                var menu = FormConnGroup.FindAll(y => y.Grp_No == x.Grp_No);
+                treeView1.Nodes.Add(x.Grp_No.ToString(), x.Grp_Name.ToString());
+                foreach (var item in menu)
+                {
+                    TreeNode tree = new TreeNode()
+                    {
+                        Name = item.Form_Name,
+                        Text = item.Form_Menu
+                    };
+                    treeView1.Nodes[x.Grp_No.ToString()].Nodes.Add(tree);
+
+                    tree.Nodes.Add("Form_Select", "Select");
+                    tree.Nodes.Add("Form_Insert", "Insert");
+                    tree.Nodes.Add("Form_Update", "Update");
+                    tree.Nodes.Add("Form_Delete", "Delete");
+                }
+            });
+            treeView1.ExpandAll();
         }
         #endregion
+
+        private void NodeCheckedfalse(TreeNodeCollection nodes)
+        {
+            foreach(TreeNode node in nodes)
+            {
+                node.Checked = false;
+                if(nodes.Count > 0)
+                {
+                    NodeCheckedfalse(node.Nodes);
+                }
+            }
+        }
+
 
         #region 선택한 팀에따른 그룹과 할당된 그룹 확인
         private void SetAuthority(string code)
@@ -101,31 +139,35 @@ namespace AdminClient.Forms
             //복사
             var temp = Group.ToList();
 
-            //삭제해야할 그룹저장장소
-            List<GroupInfoVO> Deleteds = new List<GroupInfoVO>();
 
-            //권한 그룹에 있는 폼들을 가져옴
-            Group.ForEach((from) =>
+
+            NodeCheckedfalse(treeView1.Nodes);
+
+            List.ForEach(x =>
             {
-                List.ForEach((item) =>
+                TreeNode node = treeView1.Nodes[x.Grp_No.ToString()];
+                node.Checked = true;
+
+                foreach(TreeNode item in node.Nodes)
                 {
-                    if (from.Grp_No == item.Grp_No)
+                    var vo = TeamForForms.Find(y => y.Team_Code == code && y.Form_Name == item.Name);
+                    if (vo != null)
                     {
-                        Deleteds.Add(from);
+                        item.Nodes["Form_Delete"].Checked = vo.Form_Delete;
+                        item.Nodes["Form_Insert"].Checked = vo.Form_Insert;
+                        item.Nodes["Form_Select"].Checked = vo.Form_Select;
+                        item.Nodes["Form_Update"].Checked = vo.Form_Update;
                     }
-                });
+                    else
+                    {
+                        item.Nodes["Form_Delete"].Checked = false;
+                        item.Nodes["Form_Insert"].Checked = false;
+                        item.Nodes["Form_Select"].Checked = false;
+                        item.Nodes["Form_Update"].Checked = false;
+                    }
+                }
             });
 
-            //권한그룹에 있는 폼을 삭제
-            Deleteds.ForEach((item) =>
-            {
-                temp.Remove(item);
-            });
-
-            //삭제함으로써 해당 권한그룹에 할당안된 폼만 가져와 바인딩
-            dgv_Group.DataSource = temp;
-            //해당 그룹 권한 폼 가져옴
-            dgv_addGroup.DataSource = Deleteds;
         }
         #endregion
 
@@ -210,39 +252,6 @@ namespace AdminClient.Forms
         }
         #endregion
 
-        private void btn_GroupAdd_Click(object sender, EventArgs e)
-        {
-            if (dgv_Group.SelectedRows != null || dgv_Group.SelectedRows[0].Index != -1)
-            {
-                int index = dgv_Group.SelectedRows[0].Index;
-                TeamGroupConnService service = new TeamGroupConnService();
-                if (service.InsertTeamGroupConn(code, Convert.ToInt32(dgv_Group["Grp_No", index].Value))) //추가가 되면
-                {
-                    TeamGroupConn.Add(new TeamGroupConnVO //리스트에 추가
-                    {
-                        Team_Code = code,
-                        Grp_No = Convert.ToInt32(dgv_Group["Grp_No", index].Value)
-                    });
-                    SetAuthority(code); //재 조회
-                }
-            }
-        }
-
-        private void btn_GroupDelete_Click(object sender, EventArgs e)
-        {
-            if (dgv_Group.SelectedRows != null || dgv_Group.SelectedRows[0].Index != -1)
-            {
-                int index = dgv_addGroup.SelectedRows[0].Index;
-                TeamGroupConnService service = new TeamGroupConnService();
-                if (service.DeleteTeamGroupConn(code,Convert.ToInt32(dgv_addGroup["Grp_No", index].Value))) //삭제가되면
-                {
-                    TeamGroupConnVO temp = TeamGroupConn.Find(x => x.Grp_No == Convert.ToInt32(dgv_addGroup["Grp_No", index].Value)
-                                                                   && x.Team_Code == code);
-                    TeamGroupConn.Remove(temp); //삭제
-                    SetAuthority(code);           //재 조회
-                }
-            }
-        }
         #endregion
 
         #endregion
@@ -262,7 +271,82 @@ namespace AdminClient.Forms
             if (!enabled)   //한번도 누른적없으면
             {
                 enabled = true;
-                btn_GroupAdd.Enabled = btn_Delete.Enabled = btn_Upadte.Enabled = btn_GroupDelete.Enabled = enabled; //버튼을 선택할수 있게함
+            }
+        }
+
+        private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            if (code == string.Empty)
+                return;
+
+            if (e.Node.Level == 0)
+            {
+                TeamAddGroup(e.Node.Name, e.Node.Checked);
+            }
+            if (e.Node.Level == 2)
+            {
+                TeamAddMenu(code, e.Node.Parent.Name, e.Node.Name, e.Node.Checked);
+            }
+        }
+
+        private void TeamAddMenu(string TeamCode, string Form_Name, string UpdateColum, bool Chcked )
+        {
+            TeamForFormServer Server = new TeamForFormServer();
+            if(Server.UpdateTeamForForm(TeamCode, Form_Name, Chcked, UpdateColum))
+            {
+                var item = TeamForForms.Find(x => x.Team_Code == TeamCode && x.Form_Name == Form_Name);
+                if(item == null)
+                {
+                    item = new TeamForFormVO
+                    {
+
+                        Team_Code = TeamCode,
+                        Form_Name = Form_Name,
+                        Form_Delete = false,
+                        Form_Insert = false,
+                        Form_Select = false,
+                        Form_Update = false
+                    };
+                    TeamForForms.Add(item);
+                }
+
+                Type type = item.GetType();
+                type.GetProperty(UpdateColum).SetValue(item, Chcked);
+            }
+        }
+
+        private void TeamAddGroup(string GroupNo, bool Checked)
+        {
+            if (Checked)
+            {
+                int index = Convert.ToInt32(GroupNo);
+                if (TeamGroupConn.FindAll(x => x.Grp_No == index && x.Team_Code == code).Count != 0) //이미 추가가 되어있으면
+                    return;
+
+                TeamGroupConnService service = new TeamGroupConnService();
+                if (service.InsertTeamGroupConn(code, index)) //추가가 되면
+                {
+                    TeamGroupConn.Add(new TeamGroupConnVO //리스트에 추가
+                    {
+                        Team_Code = code,
+                        Grp_No = index
+                    });
+                    SetAuthority(code); //재 조회
+                }
+            }
+            else
+            {
+                int index = Convert.ToInt32(GroupNo);
+                if (TeamGroupConn.FindAll(x => x.Grp_No == index && x.Team_Code == code).Count == 0) //이미 항목이 없으면
+                    return;
+                TeamGroupConnService service = new TeamGroupConnService();
+                if (service.DeleteTeamGroupConn(code, index)) //삭제가되면
+                {
+                    TeamGroupConnVO temp = TeamGroupConn.Find(x => x.Grp_No == index
+                                                                   && x.Team_Code == code);
+                    TeamGroupConn.Remove(temp); //삭제
+                    SetAuthority(code);           //재 조회
+                }
             }
         }
     }
