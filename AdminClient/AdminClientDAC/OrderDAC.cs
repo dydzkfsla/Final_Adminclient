@@ -348,6 +348,16 @@ namespace AdminClientDAC
                             cmd.Parameters.AddWithValue("@empcode", Global.employees.Emp_Code);
 
                             cmd.ExecuteNonQuery();
+
+                            cmd.CommandText = "SP_UpdateDemandPlan";
+
+                            cmd.Parameters.Clear();
+                            cmd.Parameters.AddWithValue("@odpCode", temp[i].Prod_Code);
+                            cmd.Parameters.AddWithValue("@odCnt", temp[i].Orders_ReceiveQuantity);
+                            cmd.Parameters.AddWithValue("odDate", DateTime.Now.ToString("yyyy-MM-dd"));
+
+                            cmd.ExecuteNonQuery();
+
                         }
 
                         trans.Commit();

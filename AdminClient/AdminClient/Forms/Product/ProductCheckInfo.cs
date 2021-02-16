@@ -59,7 +59,7 @@ namespace AdminClient.Forms
         #region 등록 버튼
         private void btn_add_Click(object sender, EventArgs e)
         {
-            ProductCheckPopUp ProductCheckPopUp = new ProductCheckPopUp();
+            ProductCheckInfoPopUp ProductCheckPopUp = new ProductCheckInfoPopUp();
             if(ProductCheckPopUp.ShowDialog() == DialogResult.OK)
             {
                 if(dgv_Check.DataSource is List<View_ProductNameAndCheckVO>)
@@ -81,7 +81,7 @@ namespace AdminClient.Forms
             if (dgv_Check.Columns[e.ColumnIndex].Name == "Edit")
             {
                 var item = (View_ProductNameAndCheckVO)dgv_Check.Rows[e.RowIndex].DataBoundItem;
-                ProductCheckPopUp ProductCheckPopUp = new ProductCheckPopUp(item);
+                ProductCheckInfoPopUp ProductCheckPopUp = new ProductCheckInfoPopUp(item);
                 DialogResult result = ProductCheckPopUp.ShowDialog();
                 if (result == DialogResult.OK)  //추가
                 {

@@ -41,7 +41,7 @@ namespace AdminClient.Forms
             CommonUtil.AddGridTextColumn(dgv_Odlist, "발주코드", "Orders_Code");
             CommonUtil.AddGridTextColumn(dgv_Odlist, "업체코드", "Comp_Code");
             CommonUtil.AddGridTextColumn(dgv_Odlist, "업체명", "Comp_Name");
-            CommonUtil.AddGridTextColumn(dgv_Odlist, "납기일", "Orders_DueDate");
+            CommonUtil.AddGridTextColumn(dgv_Odlist, "납기일", "Orders_DueDate", Format : "yyyy-MM-dd");
             CommonUtil.AddGridTextColumn(dgv_Odlist, "발주상태", "Common_Name");
 
             dgv_oddList.SetGridColumn();
@@ -334,7 +334,7 @@ namespace AdminClient.Forms
 
         private void btn_OdMenu_Click(object sender, EventArgs e) //선택된 주문건의 상태수정버튼
         {
-            if (btn_OdMenu.Text == "주문확정")
+            if (btn_OdMenu.Text == "발주확정")
             {
                 bool flag = true;
                 oddlist.ForEach((item) =>
@@ -549,7 +549,7 @@ namespace AdminClient.Forms
 
                 gb_ProdInfo.Enabled = gb_odMenu.Enabled = true;
 
-                if(dgv_Odlist["Common_Name", e.RowIndex].Value.ToString() == "발주신청대기")
+                if(dgv_Odlist["Common_Name", e.RowIndex].Value.ToString().Trim() == "발주신청대기")
                 {
                     btn_OdMenu.Text = "발주확정";
                     btn_ProdUpdate.Text = "발주수량 수정";

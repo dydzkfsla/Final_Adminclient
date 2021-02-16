@@ -1,6 +1,6 @@
 ﻿namespace AdminClient.PopUp
 {
-    partial class WareHousePopUp
+    partial class WareHouseInfoPopUp
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txt_Name = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.cbo_State = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -41,9 +44,6 @@
             this.btn_Delete = new System.Windows.Forms.Button();
             this.btn_Update = new System.Windows.Forms.Button();
             this.btn_Add = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txt_Name = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.pnl_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).BeginInit();
             this.panel1.SuspendLayout();
@@ -59,8 +59,8 @@
             // 
             // lbl_Title
             // 
-            this.lbl_Title.Size = new System.Drawing.Size(185, 43);
-            this.lbl_Title.Text = "FormBase";
+            this.lbl_Title.Size = new System.Drawing.Size(159, 43);
+            this.lbl_Title.Text = "창고정보";
             // 
             // Form_close
             // 
@@ -88,6 +88,37 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(325, 145);
             this.panel1.TabIndex = 37;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(3, 39);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(23, 17);
+            this.label1.TabIndex = 45;
+            this.label1.Text = "◆";
+            // 
+            // txt_Name
+            // 
+            this.txt_Name.Location = new System.Drawing.Point(122, 36);
+            this.txt_Name.Name = "txt_Name";
+            this.txt_Name.Size = new System.Drawing.Size(188, 25);
+            this.txt_Name.TabIndex = 44;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label3.Location = new System.Drawing.Point(26, 39);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(68, 17);
+            this.label3.TabIndex = 43;
+            this.label3.Text = "창고이름";
             // 
             // cbo_State
             // 
@@ -216,42 +247,11 @@
             this.btn_Add.UseVisualStyleBackColor = true;
             this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(3, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(23, 17);
-            this.label1.TabIndex = 45;
-            this.label1.Text = "◆";
-            // 
-            // txt_Name
-            // 
-            this.txt_Name.Location = new System.Drawing.Point(122, 36);
-            this.txt_Name.Name = "txt_Name";
-            this.txt_Name.Size = new System.Drawing.Size(188, 25);
-            this.txt_Name.TabIndex = 44;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(26, 39);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 17);
-            this.label3.TabIndex = 43;
-            this.label3.Text = "창고이름";
-            // 
-            // WareHousePopUp
+            // WareHouseInfoPopUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.ClientSize = new System.Drawing.Size(341, 287);
-            this.Name = "WareHousePopUp";
+            this.Name = "WareHouseInfoPopUp";
             this.Load += new System.EventHandler(this.WareHousePopUp_Load);
             this.pnl_Main.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).EndInit();

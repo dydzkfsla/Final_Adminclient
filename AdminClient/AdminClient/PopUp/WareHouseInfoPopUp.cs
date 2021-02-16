@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace AdminClient.PopUp
 {
-    public partial class WareHousePopUp : AdminClient.BaseForm.EmpFormTemp
+    public partial class WareHouseInfoPopUp : AdminClient.BaseForm.EmpFormTemp
     {
         public enum Mode { New, Old }  // New : 등록모드(등록버튼만 활성화), Old : 수정모드(수정, 삭제버튼만 활성화)
         Mode mode;
@@ -24,7 +24,7 @@ namespace AdminClient.PopUp
         public WareHouseVO VO { get { return vo; } set { vo = value; } }
         public List<ComboWhVO> CombList { set { typeList = value; } }
 
-        public WareHousePopUp()
+        public WareHouseInfoPopUp()
         {
             InitializeComponent();
         }

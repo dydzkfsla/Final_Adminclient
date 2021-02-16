@@ -390,11 +390,11 @@
     <Compile Include="PopUp\OrderPopUp.Designer.cs">
       <DependentUpon>OrderPopUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUp\ProductCheckPopUp.cs">
+    <Compile Include="PopUp\ProductCheckInfoPopUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopUp\ProductCheckPopUp.Designer.cs">
-      <DependentUpon>ProductCheckPopUp.cs</DependentUpon>
+    <Compile Include="PopUp\ProductCheckInfoPopUp.Designer.cs">
+      <DependentUpon>ProductCheckInfoPopUp.cs</DependentUpon>
     </Compile>
     <Compile Include="PopUp\ProductPopUp.cs">
       <SubType>Form</SubType>
@@ -414,11 +414,11 @@
     <Compile Include="PopUp\SalesMasterPopUp.Designer.cs">
       <DependentUpon>SalesMasterPopUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUp\WareHousePopUp.cs">
+    <Compile Include="PopUp\WareHouseInfoPopUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopUp\WareHousePopUp.Designer.cs">
-      <DependentUpon>WareHousePopUp.cs</DependentUpon>
+    <Compile Include="PopUp\WareHouseInfoPopUp.Designer.cs">
+      <DependentUpon>WareHouseInfoPopUp.cs</DependentUpon>
     </Compile>
     <Compile Include="PopUp\WorkPlanDetailPopUp.cs">
       <SubType>Form</SubType>
@@ -681,8 +681,8 @@
     <EmbeddedResource Include="PopUp\OrderPopUp.resx">
       <DependentUpon>OrderPopUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\ProductCheckPopUp.resx">
-      <DependentUpon>ProductCheckPopUp.cs</DependentUpon>
+    <EmbeddedResource Include="PopUp\ProductCheckInfoPopUp.resx">
+      <DependentUpon>ProductCheckInfoPopUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUp\ProductPopUp.resx">
       <DependentUpon>ProductPopUp.cs</DependentUpon>
@@ -693,8 +693,8 @@
     <EmbeddedResource Include="PopUp\SalesMasterPopUp.resx">
       <DependentUpon>SalesMasterPopUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\WareHousePopUp.resx">
-      <DependentUpon>WareHousePopUp.cs</DependentUpon>
+    <EmbeddedResource Include="PopUp\WareHouseInfoPopUp.resx">
+      <DependentUpon>WareHouseInfoPopUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUp\WorkPlanDetailPopUp.resx">
       <DependentUpon>WorkPlanDetailPopUp.cs</DependentUpon>

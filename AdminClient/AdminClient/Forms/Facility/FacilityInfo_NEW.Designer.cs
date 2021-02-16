@@ -181,6 +181,9 @@ namespace AdminClient.Forms
             // 
             // cbo_OutSourcing
             // 
+            this.cbo_OutSourcing.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbo_OutSourcing.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_OutSourcing.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbo_OutSourcing.FormattingEnabled = true;
             this.cbo_OutSourcing.Location = new System.Drawing.Point(12, 169);
             this.cbo_OutSourcing.Name = "cbo_OutSourcing";
@@ -198,6 +201,9 @@ namespace AdminClient.Forms
             // 
             // cbo_Enable
             // 
+            this.cbo_Enable.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbo_Enable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_Enable.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbo_Enable.FormattingEnabled = true;
             this.cbo_Enable.Location = new System.Drawing.Point(12, 121);
             this.cbo_Enable.Name = "cbo_Enable";
@@ -371,6 +377,9 @@ namespace AdminClient.Forms
             // 
             // cbo_Fgrp
             // 
+            this.cbo_Fgrp.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbo_Fgrp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_Fgrp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbo_Fgrp.FormattingEnabled = true;
             this.cbo_Fgrp.Location = new System.Drawing.Point(12, 73);
             this.cbo_Fgrp.Name = "cbo_Fgrp";
