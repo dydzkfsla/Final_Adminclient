@@ -42,7 +42,7 @@ namespace AdminClient.Forms
             CommonUtil.AddGridTextColumn(dgv_Odlist, "업체코드", "Comp_Code");
             CommonUtil.AddGridTextColumn(dgv_Odlist, "업체명", "Comp_Name");
             CommonUtil.AddGridTextColumn(dgv_Odlist, "납기일", "Orders_DueDate");
-            CommonUtil.AddGridTextColumn(dgv_Odlist, "발주상태", "Order_State_Comm");
+            CommonUtil.AddGridTextColumn(dgv_Odlist, "발주상태", "Common_Name");
 
             dgv_oddList.SetGridColumn();
             CommonUtil.AddGridTextColumn(dgv_oddList, "발주상세코드", "OrdersDetail_Code", textAlign : DataGridViewContentAlignment.MiddleRight);
@@ -53,7 +53,7 @@ namespace AdminClient.Forms
             CommonUtil.AddGridTextColumn(dgv_oddList, "주문수량", "Orders_Count");
             CommonUtil.AddGridTextColumn(dgv_oddList, "입고수량", "Orders_ReceiveQuantity");
             CommonUtil.AddGridTextColumn(dgv_oddList, "취소수량", "Orders_CancelQuantity");
-            CommonUtil.AddGridTextColumn(dgv_oddList, "입고상태", "Orders_State_Comm");
+            CommonUtil.AddGridTextColumn(dgv_oddList, "발주상태", "Common_Name");
         }
 
         private void chk_limit_CheckedChanged(object sender, EventArgs e) // 검색제한
@@ -202,7 +202,7 @@ namespace AdminClient.Forms
                         Orders_Count = 0,
                         Orders_ReceiveQuantity = 0,
                         Orders_CancelQuantity = 0,
-                        Orders_State_Comm = "OState1"
+                        Common_Name = "발주신청대기"
                     });
                 });
 
@@ -250,7 +250,7 @@ namespace AdminClient.Forms
                 return;
             }
 
-            if(temp.Orders_State_Comm == "OState1") // 발주신청전 일경우 주문수량수정
+            if(temp.Common_Name == "발주신청대기") // 발주신청전 일경우 주문수량수정
             {
                 if (txt_OrderCnt.Text.Length < 1)
                 {
@@ -301,10 +301,17 @@ namespace AdminClient.Forms
                     return;
                 }
             }
-            else if(temp.Orders_State_Comm == "OState2") //발주신청후일경우에는 취소수량입력
+            else if(temp.Common_Name == "발주신청완료") //발주신청후일경우에는 취소수량입력
             {
                 decimal cancel = decimal.Parse(txt_CqCnt.Text);
                 int odcode = temp.OrdersDetail_Code;
+
+                if(temp.Prod_MinCount > temp.Orders_Count - decimal.Parse(txt_CqCnt.Text))
+                {
+                    txt_CqCnt.Text = "0";
+                    MessageBox.Show("최소수량보다 적게 설정할 수 없습니다.");
+                    return;
+                }
 
                 OrderService service = new OrderService();
                 bool result = service.CancelCountUpdate(odcode, cancel);
@@ -347,12 +354,12 @@ namespace AdminClient.Forms
                         odlist.ForEach((od) =>
                         {
                             if (od.Orders_Code == int.Parse(txt_OdCode.Text))
-                                od.Order_State_Comm = "발주신청완료";
+                                od.Common_Name = "발주신청완료";
                         });
 
                         oddlist.ForEach((odd) =>
                         {
-                            odd.Orders_State_Comm = "발주신청완료";
+                            odd.Common_Name = "발주신청완료";
                         });
 
                         dgv_Odlist.DataSource = null;
@@ -394,12 +401,12 @@ namespace AdminClient.Forms
                         odlist.ForEach((od) =>
                         {
                             if (od.Orders_Code == code)
-                                od.Order_State_Comm = "OState3";
+                                od.Common_Name = "입고완료";
                         });
 
                         oddlist.ForEach((odd) =>
                         {
-                            odd.Orders_State_Comm = "OState3";
+                            odd.Common_Name = "입고완료";
                             odd.Orders_ReceiveQuantity = odd.Orders_Count;
                         });
 
@@ -491,7 +498,7 @@ namespace AdminClient.Forms
                         item.Orders_ReceiveQuantity = detail.Orders_ReceiveQuantity;
 
                         if(item.Orders_Count == item.Orders_ReceiveQuantity)
-                            item.Orders_State_Comm = "OState3";
+                            item.Common_Name = "입고완료";
                     }
                         
                 });
@@ -500,7 +507,7 @@ namespace AdminClient.Forms
 
                 oddlist.ForEach((item) =>
                 {
-                    if (item.Orders_State_Comm == "OState3")
+                    if (item.Common_Name == "입고완료")
                         cnt += 1;
                 });
 
@@ -509,7 +516,7 @@ namespace AdminClient.Forms
                     odlist.ForEach((od) =>
                     {
                         if (od.Orders_Code == detail.Orders_Code)
-                            od.Order_State_Comm = "OState3";
+                            od.Common_Name = "입고완료";
                     });
                 }
 
@@ -542,12 +549,12 @@ namespace AdminClient.Forms
 
                 gb_ProdInfo.Enabled = gb_odMenu.Enabled = true;
 
-                if(dgv_Odlist["Order_State_Comm", e.RowIndex].Value.ToString() == "OState1")
+                if(dgv_Odlist["Common_Name", e.RowIndex].Value.ToString() == "발주신청대기")
                 {
-                    btn_OdMenu.Text = "주문확정";
-                    btn_ProdUpdate.Text = "주문수량 수정";
+                    btn_OdMenu.Text = "발주확정";
+                    btn_ProdUpdate.Text = "발주수량 수정";
                 }
-                else if(dgv_Odlist["Order_State_Comm", e.RowIndex].Value.ToString() == "OState2")
+                else if(dgv_Odlist["Common_Name", e.RowIndex].Value.ToString() == "발주신청완료")
                 {
                     btn_OdMenu.Text = "입고확인";
                     btn_ProdUpdate.Text = "취소수량 입력";
@@ -581,7 +588,7 @@ namespace AdminClient.Forms
 
                 txt_ProdCode.KeyPress += NoneKeyPress;
 
-                if (dgv_oddList["Orders_State_Comm", e.RowIndex].Value.ToString() == "OState1")
+                if (dgv_oddList["Common_Name", e.RowIndex].Value.ToString() == "발주신청대기")
                 {
                     txt_OrderCnt.KeyPress += UtilEvent.TextBoxIsDigitAndOneDot;
                     txt_RqCnt.KeyPress += NoneKeyPress;
@@ -589,7 +596,7 @@ namespace AdminClient.Forms
                     btn_ProdAdd.Enabled = btn_ProdUpdate.Enabled = btn_ProdDelete.Enabled = true;
                     btn_ProdIN.Enabled = false;
                 }
-                else if(dgv_oddList["Orders_State_Comm", e.RowIndex].Value.ToString() == "OState2")
+                else if(dgv_oddList["Common_Name", e.RowIndex].Value.ToString() == "발주신청완료")
                 {
                     txt_OrderCnt.KeyPress += NoneKeyPress;
                     txt_RqCnt.KeyPress += UtilEvent.TextBoxIsDigitAndOneDot;

@@ -14,7 +14,7 @@ namespace AdminClientVO
         public string Prod_Category { get; set; }
         public string ProdType { get; set; }
         public string Prod_Unit { get; set; }
-        public decimal WH_Count { get; set; }
+        public decimal WH_PsyCount { get; set; }
         public decimal Prod_SafetyStock { get; set; }
     }
 

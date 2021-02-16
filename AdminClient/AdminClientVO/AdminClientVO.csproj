@@ -67,6 +67,7 @@
     <Compile Include="ProductVO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StockInfoVO.cs" />
+    <Compile Include="TeamForFormVO.cs" />
     <Compile Include="TeamGroupConnVO.cs" />
     <Compile Include="TeamInfoVO.cs" />
     <Compile Include="ViewVO.cs" />

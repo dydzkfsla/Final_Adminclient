@@ -26,9 +26,9 @@ namespace AdminClient.Service
 			return dac.UpdateContract(userID, vo);
 		}
 
-		public bool CreateProduction(string userID, string contcode)
+		public bool CreateProduction(string userID, string contcode, string contDate)
 		{
-			return dac.CreateProduction(userID, contcode);
+			return dac.CreateProduction(userID, contcode, contDate);
 		}
 
 		public bool DeleteContract(string contcode, string prodcode)

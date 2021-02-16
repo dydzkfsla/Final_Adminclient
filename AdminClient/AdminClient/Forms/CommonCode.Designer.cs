@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_CommList = new AdminClient.CustomDataGridView();
             this.cbo_catagory = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -57,12 +57,12 @@
             // 
             // btn_add
             // 
-            this.btn_add.Location = new System.Drawing.Point(1472, 30);
+            this.btn_add.Location = new System.Drawing.Point(1461, 10);
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // btn_Xls
             // 
-            this.btn_Xls.Location = new System.Drawing.Point(1555, 30);
+            this.btn_Xls.Location = new System.Drawing.Point(1544, 10);
             // 
             // panel1
             // 
@@ -75,7 +75,7 @@
             this.panel1.Controls.Add(this.txt_Code);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(11, 14);
-            this.panel1.Size = new System.Drawing.Size(1653, 111);
+            this.panel1.Size = new System.Drawing.Size(1642, 66);
             this.panel1.Controls.SetChildIndex(this.btn_add, 0);
             this.panel1.Controls.SetChildIndex(this.btn_Xls, 0);
             this.panel1.Controls.SetChildIndex(this.label3, 0);
@@ -95,13 +95,13 @@
             // pnl_Main
             // 
             this.pnl_Main.Margin = new System.Windows.Forms.Padding(1);
-            this.pnl_Main.Size = new System.Drawing.Size(1666, 865);
+            this.pnl_Main.Size = new System.Drawing.Size(1655, 926);
             // 
             // gb_Sherch
             // 
             this.gb_Sherch.Controls.Add(this.label1);
             this.gb_Sherch.Controls.Add(this.cbo_catagory);
-            this.gb_Sherch.Size = new System.Drawing.Size(330, 104);
+            this.gb_Sherch.Size = new System.Drawing.Size(347, 104);
             this.gb_Sherch.Controls.SetChildIndex(this.btn_search, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.chk_limit, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.nu_limit, 0);
@@ -125,21 +125,21 @@
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Location = new System.Drawing.Point(0, 130);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 85);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgv_CommList);
-            this.splitContainer1.Size = new System.Drawing.Size(1324, 733);
-            this.splitContainer1.SplitterDistance = 364;
+            this.splitContainer1.Size = new System.Drawing.Size(1655, 839);
+            this.splitContainer1.SplitterDistance = 366;
             // 
             // btn_folding
             // 
-            this.btn_folding.Location = new System.Drawing.Point(0, 323);
+            this.btn_folding.Location = new System.Drawing.Point(0, 376);
             // 
             // splitter1
             // 
-            this.splitter1.Size = new System.Drawing.Size(34, 733);
+            this.splitter1.Size = new System.Drawing.Size(34, 839);
             // 
             // btn_search
             // 
@@ -149,11 +149,11 @@
             // 
             // Form_close
             // 
-            this.Form_close.Location = new System.Drawing.Point(1634, 9);
+            this.Form_close.Location = new System.Drawing.Point(1623, 9);
             // 
             // TitleColor
             // 
-            this.TitleColor.Size = new System.Drawing.Size(1755, 7);
+            this.TitleColor.Size = new System.Drawing.Size(1744, 7);
             // 
             // dgv_CommList
             // 
@@ -163,14 +163,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_CommList.BackgroundColor = System.Drawing.Color.White;
             this.dgv_CommList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_CommList.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_CommList.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_CommList.GridColor = System.Drawing.Color.Black;
             this.dgv_CommList.IsChkVisible = false;
             this.dgv_CommList.IsEditVisible = true;
@@ -178,7 +178,7 @@
             this.dgv_CommList.Name = "dgv_CommList";
             this.dgv_CommList.RowHeadersVisible = false;
             this.dgv_CommList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_CommList.Size = new System.Drawing.Size(917, 727);
+            this.dgv_CommList.Size = new System.Drawing.Size(1246, 833);
             this.dgv_CommList.TabIndex = 3;
             this.dgv_CommList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CommList_CellClick);
             this.dgv_CommList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CommList_CellContentClick);
@@ -210,6 +210,7 @@
             this.label3.Size = new System.Drawing.Size(36, 17);
             this.label3.TabIndex = 4;
             this.label3.Text = "코드";
+            this.label3.Visible = false;
             // 
             // txt_Code
             // 
@@ -218,6 +219,7 @@
             this.txt_Code.Name = "txt_Code";
             this.txt_Code.Size = new System.Drawing.Size(123, 25);
             this.txt_Code.TabIndex = 5;
+            this.txt_Code.Visible = false;
             // 
             // txt_Name
             // 
@@ -225,6 +227,7 @@
             this.txt_Name.Name = "txt_Name";
             this.txt_Name.Size = new System.Drawing.Size(123, 25);
             this.txt_Name.TabIndex = 7;
+            this.txt_Name.Visible = false;
             // 
             // label4
             // 
@@ -235,6 +238,7 @@
             this.label4.Size = new System.Drawing.Size(36, 17);
             this.label4.TabIndex = 6;
             this.label4.Text = "이름";
+            this.label4.Visible = false;
             // 
             // txt_Cate
             // 
@@ -243,6 +247,7 @@
             this.txt_Cate.Name = "txt_Cate";
             this.txt_Cate.Size = new System.Drawing.Size(128, 25);
             this.txt_Cate.TabIndex = 9;
+            this.txt_Cate.Visible = false;
             // 
             // label5
             // 
@@ -253,6 +258,7 @@
             this.label5.Size = new System.Drawing.Size(64, 17);
             this.label5.TabIndex = 8;
             this.label5.Text = "카테고리";
+            this.label5.Visible = false;
             // 
             // txt_Pcode
             // 
@@ -261,6 +267,7 @@
             this.txt_Pcode.Name = "txt_Pcode";
             this.txt_Pcode.Size = new System.Drawing.Size(128, 25);
             this.txt_Pcode.TabIndex = 11;
+            this.txt_Pcode.Visible = false;
             // 
             // label6
             // 
@@ -271,6 +278,7 @@
             this.label6.Size = new System.Drawing.Size(64, 17);
             this.label6.TabIndex = 10;
             this.label6.Text = "부모코드";
+            this.label6.Visible = false;
             // 
             // schCtrl
             // 
@@ -295,7 +303,7 @@
             // CommandCode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
-            this.ClientSize = new System.Drawing.Size(1676, 964);
+            this.ClientSize = new System.Drawing.Size(1665, 1025);
             this.Name = "CommandCode";
             this.Load += new System.EventHandler(this.CommandCode_Load);
             this.panel1.ResumeLayout(false);

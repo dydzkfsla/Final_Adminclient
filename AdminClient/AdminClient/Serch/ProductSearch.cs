@@ -177,5 +177,33 @@ namespace AdminClient.Serch
             }
 
         }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            List<ProductVO> templist = new List<ProductVO>();
+
+            foreach(DataGridViewRow dr in dgv_AddList.Rows)
+            {
+                if (Convert.ToBoolean(dr.Cells[0].Value))
+                {
+                    addList.ForEach((add) =>
+                    {
+                        if (add.Prod_Code == dr.Cells["Prod_Code"].Value.ToString())
+                        {
+                            templist.Add(add);
+                        }
+                    });
+                }
+            }
+
+            templist.ForEach((de) =>
+            {
+                addList.Remove(de);
+            });
+
+            dgv_AddList.DataSource = null;
+            dgv_AddList.DataSource = addList;
+
+        }
     }
 }

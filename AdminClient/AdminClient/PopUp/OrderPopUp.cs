@@ -128,8 +128,8 @@ namespace AdminClient.PopUp
                                     Prod_Unit = item.Prod_Unit, 
                                     Orders_Count = 0, 
                                     Orders_ReceiveQuantity = 0,
-                                    Orders_CancelQuantity = 0, 
-                                    Orders_State_Comm = "OState1"
+                                    Orders_CancelQuantity = 0,
+                                    Common_Name = "OState1"
                                 });
                             }
                         }

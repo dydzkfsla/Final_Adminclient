@@ -240,32 +240,41 @@ namespace AdminClientDAC
 		/// <param name="userID"></param>
 		/// <param name="contcode"></param>
 		/// <returns> 성공 : true, 실패 : false </returns>
-		public bool CreateProduction(string userID, string contcode)
+		public bool CreateProduction(string userID, string contcode, string contDate)
 		{
+			SqlTransaction trans = conn.BeginTransaction();
 			try
 			{
 				using (SqlCommand cmd = new SqlCommand())
 				{
 					cmd.Connection = conn;
-					cmd.CommandText = @"update Contract
-										   set Contract_Confirm = 'Y',
-											   Lst_Writer = @uid,
-											   Lst_WriteDate = GETDATE()
-										 where Contract_Code = @contcode; ";
-
+					cmd.CommandText = @"SP_SetContract";
+					cmd.CommandType = CommandType.StoredProcedure;
+					
 					cmd.Parameters.AddWithValue("@contcode", contcode);
 					cmd.Parameters.AddWithValue("@uid", userID);
+
+					cmd.Transaction = trans;
 
 					int iAffectedRow = cmd.ExecuteNonQuery();
 
 					if (iAffectedRow > 0)
-						return true;
-					else
-						throw new Exception();
+					{
+						cmd.Parameters.Clear();
+						cmd.CommandText = "SP_SetBalance";
+						cmd.Parameters.AddWithValue("@setDate", contDate);
+
+						cmd.ExecuteNonQuery();
+					}
+
+					trans.Commit();
+					return true;
 				}
 			}
 			catch (Exception err)
 			{
+				trans.Rollback();
+
 				Info.WriteError($"실행자:{Global.employees.Emp_Name} 수주확정여부 수정중 오류 :" + err.Message, err);
 
 				return false;

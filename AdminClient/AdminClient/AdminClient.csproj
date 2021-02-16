@@ -137,6 +137,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EmpGroup\TempInfo - 복사본.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EmpGroup\TempInfo - 복사본.Designer.cs">
+      <DependentUpon>TempInfo - 복사본.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Facility\FacilityInfo_NEW.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -504,6 +510,7 @@
     <Compile Include="Service\ProductionService.cs" />
     <Compile Include="Service\ProductService.cs" />
     <Compile Include="Service\StockInfoService.cs" />
+    <Compile Include="Service\TeamForFormServer.cs" />
     <Compile Include="Service\TeamGroupConnService.cs" />
     <Compile Include="Service\TeamInfoService.cs" />
     <Compile Include="Service\ViewService.cs" />
@@ -560,6 +567,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControl\CustomDataGridView.resx">
       <DependentUpon>CustomDataGridView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmpGroup\TempInfo - 복사본.resx">
+      <DependentUpon>TempInfo - 복사본.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Facility\FacilityInfo_NEW.resx">
       <DependentUpon>FacilityInfo_NEW.cs</DependentUpon>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,14 +21,25 @@ namespace AdminClient.Service
 			dac.Dispose();
 		}
 
-		public List<ContractVO> GetQtyByDueDate()
+		public List<ContractVO> GetQtyByDueDate(string from, string to, string limit)
 		{
-			return dac.GetQtyByDueDate();
+			List<ContractVO> list = dac.GetQtyByDueDate(from, to, limit);
+			dac.Dispose();
+			return list;
 		}
 
 		public List<ContractVO> GetConfirmedContractsList(string duedate)
 		{
-			return dac.GetConfirmedContractsList(duedate);
+			List<ContractVO> list = dac.GetConfirmedContractsList(duedate);
+			dac.Dispose();
+			return list;
 		}
-	}
+
+        internal DataTable GetPlan(string from, string to)
+        {
+			DataTable dt = dac.GetPlan(from, to);
+			dac.Dispose();
+			return dt;
+        }
+    }
 }

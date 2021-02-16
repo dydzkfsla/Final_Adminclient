@@ -41,9 +41,18 @@ namespace AdminClient.Forms
 			CommonUtil.AddGridTextColumn(dgv_ConfirmedContract, "주문수량", "Contract_Count");
 			CommonUtil.AddGridTextColumn(dgv_ConfirmedContract, "출고수량", "Contract_ShippingCount");
 			CommonUtil.AddGridTextColumn(dgv_ConfirmedContract, "취소수량", "Contract_CancelCount");
+
+			CommonUtil.AddGridTextColumn(dgv_Plan, "설비코드", "Fac_Code");
+			CommonUtil.AddGridTextColumn(dgv_Plan, "설비명", "Fac_Name");
+			CommonUtil.AddGridTextColumn(dgv_Plan, "품목코드", "Prod_Code");
+			CommonUtil.AddGridTextColumn(dgv_Plan, "품목명", "Prod_Name");
+			CommonUtil.AddGridTextColumn(dgv_Plan, "단위", "Prod_Unit");
 			#endregion
 
-			GetQtyByDueDate();
+			gb_SetDate.Enabled = false;
+			nu_limit.Enabled = false;
+
+			//GetQtyByDueDate();
 		}
 
 		#region 이벤트
@@ -51,14 +60,14 @@ namespace AdminClient.Forms
 
 		#region 메서드
 
-		public void GetQtyByDueDate()
-		{
-			ProductionService service = new ProductionService();
-			QtyList = service.GetQtyByDueDate();
-			service.Dispose();
+		//public void GetQtyByDueDate()
+		//{
+		//	ProductionService service = new ProductionService();
+		//	QtyList = service.GetQtyByDueDate();
+		//	service.Dispose();
 
-			dgv_ProductionCount.DataSource = QtyList;
-		}
+		//	dgv_ProductionCount.DataSource = QtyList;
+		//}
 
 		//public void GetContList()
 		//{
@@ -80,5 +89,48 @@ namespace AdminClient.Forms
 
 			dgv_ConfirmedContract.DataSource = ContList;
 		}
-	}
+
+        private void chk_SetDate_CheckedChanged(object sender, EventArgs e)
+        {
+			gb_SetDate.Enabled = chk_SetDate.Checked;
+        }
+
+        private void chk_limit_CheckedChanged(object sender, EventArgs e)
+        {
+			nu_limit.Enabled = chk_limit.Checked;
+        }
+
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+			string from, to, limit;
+			from = to = limit = string.Empty;
+
+			if (chk_limit.Checked)
+				limit = nu_limit.Value.ToString();
+
+			if(chk_SetDate.Checked)
+            {
+				from = dtp_from.Value.ToString("yyyy-MM-dd");
+				to = dtp_to.Value.ToString("yyyy-MM-dd");
+			}
+
+			ProductionService service = new ProductionService();
+			QtyList = service.GetQtyByDueDate(from, to, limit);
+
+			dgv_ProductionCount.DataSource = null;
+			dgv_ProductionCount.DataSource = QtyList;
+
+			DataTable dt = service.GetPlan(from, to);
+
+			dgv_Plan.DataSource = null;
+			dgv_Plan.DataSource = dt;
+
+		}
+
+        private void dgv_Plan_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+			if (e.RowIndex < 0)
+				return;
+        }
+    }
 }
