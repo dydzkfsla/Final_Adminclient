@@ -96,7 +96,7 @@ namespace AdminClient
             {
                 e.PaintBackground(e.ClipBounds, false);
 
-
+                string name = this.Columns[e.ColumnIndex].Name;
                 Point pt = e.CellBounds.Location;
 
                 int nChkBoxWidth = 15;

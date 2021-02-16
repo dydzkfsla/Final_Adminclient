@@ -42,7 +42,7 @@
             this.TitleColor.Location = new System.Drawing.Point(-7, 0);
             this.TitleColor.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.TitleColor.Name = "TitleColor";
-            this.TitleColor.Size = new System.Drawing.Size(814, 7);
+            this.TitleColor.Size = new System.Drawing.Size(798, 7);
             this.TitleColor.TabIndex = 3;
             // 
             // Form_close
@@ -50,7 +50,7 @@
             this.Form_close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Form_close.BackColor = System.Drawing.Color.Transparent;
             this.Form_close.Image = ((System.Drawing.Image)(resources.GetObject("Form_close.Image")));
-            this.Form_close.Location = new System.Drawing.Point(766, 8);
+            this.Form_close.Location = new System.Drawing.Point(750, 8);
             this.Form_close.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.Form_close.Name = "Form_close";
             this.Form_close.Size = new System.Drawing.Size(32, 32);
@@ -64,7 +64,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(802, 552);
+            this.ClientSize = new System.Drawing.Size(786, 552);
             this.ControlBox = false;
             this.Controls.Add(this.TitleColor);
             this.Controls.Add(this.Form_close);

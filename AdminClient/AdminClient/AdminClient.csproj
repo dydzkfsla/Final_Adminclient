@@ -312,11 +312,11 @@
     <Compile Include="PopUp\CommonPopUp.Designer.cs">
       <DependentUpon>CommonPopUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUp\CompanyPopUp.cs">
+    <Compile Include="PopUp\ContractInfoPopUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopUp\CompanyPopUp.Designer.cs">
-      <DependentUpon>CompanyPopUp.cs</DependentUpon>
+    <Compile Include="PopUp\ContractInfoPopUp.Designer.cs">
+      <DependentUpon>ContractInfoPopUp.cs</DependentUpon>
     </Compile>
     <Compile Include="PopUp\ContractPopUp.cs">
       <SubType>Form</SubType>
@@ -577,8 +577,8 @@
     <EmbeddedResource Include="PopUp\CommonPopUp.resx">
       <DependentUpon>CommonPopUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\CompanyPopUp.resx">
-      <DependentUpon>CompanyPopUp.cs</DependentUpon>
+    <EmbeddedResource Include="PopUp\ContractInfoPopUp.resx">
+      <DependentUpon>ContractInfoPopUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUp\ContractPopUp.resx">
       <DependentUpon>ContractPopUp.cs</DependentUpon>
