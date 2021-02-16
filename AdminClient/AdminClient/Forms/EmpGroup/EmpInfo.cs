@@ -20,6 +20,7 @@ namespace AdminClient.Forms
         public EmpInfo()
         {
             InitializeComponent();
+            splitContainer1.SplitterDistance = 365;
         }
 
         private void EmpInfo_Load(object sender, EventArgs e)

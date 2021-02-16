@@ -46,5 +46,15 @@ namespace AdminClient.Forms
 		{
 
 		}
+
+		private void chk_limit_CheckedChanged(object sender, EventArgs e)
+		{
+			nu_limit.Enabled = chk_limit.Checked;
+
+			if (!chk_limit.Checked)
+			{
+				nu_limit.Value = 0;
+			}
+		}
 	}
 }

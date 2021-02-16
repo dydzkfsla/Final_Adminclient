@@ -25,7 +25,6 @@ namespace AdminClient.Forms
         private void WareHouseInfo_Load(object sender, EventArgs e)
         {
             splitContainer1.SplitterDistance = 365;
-            splitContainer1.SplitterDistance = 879;
             gb_detail.Enabled = gb_detailItem.Enabled = false;
             nu_limit.Enabled = false;
 
@@ -103,6 +102,11 @@ namespace AdminClient.Forms
         private void chk_limit_CheckedChanged(object sender, EventArgs e)
         {
             nu_limit.Enabled = chk_limit.Checked;
+
+            if (!chk_limit.Checked)
+            {
+                nu_limit.Value = 0;
+            }
         }
 
         private void dgv_WhList_CellClick(object sender, DataGridViewCellEventArgs e)
