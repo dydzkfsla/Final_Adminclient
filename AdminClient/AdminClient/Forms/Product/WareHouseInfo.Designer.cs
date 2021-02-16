@@ -81,7 +81,7 @@
             // 
             this.splitContainer3.Panel2.Controls.Add(this.gb_detailItem);
             this.splitContainer3.Size = new System.Drawing.Size(1238, 452);
-            this.splitContainer3.SplitterDistance = 818;
+            this.splitContainer3.SplitterDistance = 1197;
             // 
             // splitContainer2
             // 
@@ -100,6 +100,7 @@
             // btn_Xls
             // 
             this.btn_Xls.Location = new System.Drawing.Point(1551, 9);
+            this.btn_Xls.Click += new System.EventHandler(this.btn_Xls_Click);
             // 
             // panel1
             // 
@@ -247,7 +248,7 @@
             this.dgv_WhDetailList.Location = new System.Drawing.Point(0, 0);
             this.dgv_WhDetailList.Name = "dgv_WhDetailList";
             this.dgv_WhDetailList.RowTemplate.Height = 23;
-            this.dgv_WhDetailList.Size = new System.Drawing.Size(818, 452);
+            this.dgv_WhDetailList.Size = new System.Drawing.Size(1197, 452);
             this.dgv_WhDetailList.TabIndex = 0;
             // 
             // label1

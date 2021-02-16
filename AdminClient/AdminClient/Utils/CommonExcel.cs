@@ -174,6 +174,70 @@ namespace AdminClient
             }
         }
 
+        public bool ExportDataToExcel(List<DataTable> dt, string fileName, List<string> tooltip)
+        {
+            Cursor currentCursor = null;
+            if (this.Cursor != null)
+                currentCursor = this.Cursor;
+            try
+            {
+                if (this.Cursor != null)
+                    this.Cursor = Cursors.WaitCursor;
+                //파일 Export 저장
+
+                Excel.Application xlApp = new Excel.Application();
+                Excel.Workbook xlWorkBook = xlApp.Workbooks.Add();
+                Excel.Worksheet xlSheet = null;
+                for (int i = 0; i < dt.Count; i++) {
+                    xlSheet = (Excel.Worksheet)xlWorkBook.Sheets.Add();
+                    xlSheet.Name = dt[i].TableName;
+
+                    //엑셀파일 내용에 대한 설명
+                    xlSheet.Cells[1, 1] = tooltip[i];
+                    xlSheet.Range[xlSheet.Cells[1, 1], xlSheet.Cells[1, 5]].Merge();
+                    ((Excel.Range)xlSheet.Cells[1, 1]).EntireRow.RowHeight = 200;
+
+                    //타이틀
+                    for (int j = 0; j < dt[i].Columns.Count; j++)
+                    {
+                        xlSheet.Cells[2, i + 1] = dt[i].Columns[j].ColumnName;
+                        ((Excel.Range)xlSheet.Cells[2, j + 1]).Interior.Color = Excel.XlRgbColor.rgbGhostWhite;
+                    }
+
+                    //데이터
+                    for (int r = 0; r < dt[i].Rows.Count; r++)
+                    {
+                        for (int y = 0; y < dt[i].Columns.Count; y++)
+                        {
+                            string data = dt[i].Rows[r][y].ToString();
+                            xlSheet.Cells[r + 3, y + 1] = data;
+                        }
+                    }
+                    xlSheet.Columns.AutoFit();
+                }
+                //컬럼의 너비가 데이터길이에 따라서 자동조정
+
+                xlWorkBook.SaveAs(fileName, Excel.XlFileFormat.xlWorkbookNormal);
+                xlWorkBook.Close();
+                xlApp.Quit();
+
+                releaseObject(xlSheet);
+                releaseObject(xlWorkBook);
+                releaseObject(xlApp);
+                if (Cursor != null)
+                    this.Cursor = currentCursor;
+                return true;
+            }
+            catch (Exception err)
+            {
+                if (Cursor != null)
+                    this.Cursor = currentCursor;
+
+                MessageBox.Show(err.Message);
+                return false;
+            }
+        }
+
         private void releaseObject(object obj)
         {
             try

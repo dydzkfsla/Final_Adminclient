@@ -49,9 +49,6 @@ namespace AdminClient.PopUp
             txt_empPassworad.Text = Employees[0].Emp_Pwd;
             dtp_RetireDate.Value = Employees[0].Emp_RetireDate;
             dtp_HireDate.Value = Employees[0].Emp_HireDate;
-            chk_Add.Checked = Employees[0].Emp_Addbutton;
-            chk_Delete.Checked = Employees[0].Emp_Deletebutton;
-            chk_Update.Checked = Employees[0].Emp_Updatebutton;
 
             btn_AllUpdate.Enabled = true;
             btn_AllDelete.Enabled = true;
@@ -248,9 +245,9 @@ namespace AdminClient.PopUp
                 Emp_Addr = txt_Address.Text,
                 Emp_AddrDetail = txt_AddressDetail.Text,
                 Emp_HireDate = dtp_HireDate.Value,
-                Emp_Addbutton = chk_Add.Checked,
-                Emp_Updatebutton = chk_Update.Checked,
-                Emp_Deletebutton = chk_Delete.Checked
+                Emp_Addbutton = false,
+                Emp_Updatebutton = false,
+                Emp_Deletebutton = false
             };
             if (dtp_RetireDate.Enabled)
                 employees.Emp_RetireDate = dtp_RetireDate.Value;
@@ -330,9 +327,6 @@ namespace AdminClient.PopUp
                 Emp_Addr = txt_Address.Text,
                 Emp_AddrDetail = txt_AddressDetail.Text,
                 Emp_HireDate = dtp_HireDate.Value,
-                Emp_Addbutton = chk_Add.Checked,
-                Emp_Updatebutton = chk_Update.Checked,
-                Emp_Deletebutton = chk_Delete.Checked
             };
             if (dtp_RetireDate.Enabled)
                 employees.Emp_RetireDate = dtp_RetireDate.Value;
@@ -373,10 +367,7 @@ namespace AdminClient.PopUp
                             Emp_HireDate = dtp_HireDate.Value,
                             Emp_RetireDate = dtp_RetireDate.Enabled ? dtp_RetireDate.Value : new DateTime(9998, 12, 30),
                             Emp_Phone = string.IsNullOrWhiteSpace(txt_Number.Text) ? null : txt_Number.Text,
-                            Team_Code = x,
-                            Emp_Addbutton = chk_Add.Checked,
-                            Emp_Updatebutton = chk_Update.Checked,
-                            Emp_Deletebutton = chk_Delete.Checked
+                            Team_Code = x
                         });
                 });
 

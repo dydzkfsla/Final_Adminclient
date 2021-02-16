@@ -126,5 +126,33 @@ namespace AdminClient.Forms
             }
         }
         #endregion
+
+        private void btn_Xls_Click(object sender, EventArgs e)
+        {
+            if (dgv_Check.DataSource == null)
+                return;
+            SaveFileDialog dlg = new SaveFileDialog();
+            CommonExcel excel = new CommonExcel();
+            excel.Cursor = this.Cursor;
+            dlg.Filter = "Excel File(*.xls)|*.xls";
+            dlg.Title = "엑셀파일로 내보내기";
+            if (dlg.ShowDialog() != DialogResult.OK)
+                return;
+            DataTable dt = null;
+            dt = ((List<View_ProductNameAndCheckVO>)dgv_Check.DataSource).ConvertToDataTable();
+
+            dt.TableName = this.Name;
+            string toltip = $@"Prod_Code: 품목코드
+                            {System.Environment.NewLine}Prod_Name: 품목이름
+                            {System.Environment.NewLine}Check_Type:  검사 타입 
+                            {System.Environment.NewLine}Check_System: 검사 장비 
+                            {System.Environment.NewLine}Check_Point: 검사 위치 
+                            {System.Environment.NewLine}Check_Item: 검사 항목 
+                            {System.Environment.NewLine}Check_Standard: 검사 규격";
+            if (excel.ExportDataToExcel(dt, dlg.FileName, toltip))
+            {
+                MessageBox.Show("엑셀파일에 저장하였습니다.");
+            }
+        }
     }
 }

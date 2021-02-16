@@ -35,9 +35,10 @@ namespace AdminClient.MDI
         {
             ViewService service = new ViewService();        //권한에 따른 폼들가져옴
             Global.Global.Emp_Form = service.View_EmpForm(Global.Global.employees.Emp_Code);
+            var List = Global.Global.Emp_Form.Distinct(new View_EmpFormVOComparer());
             if (Global.Global.Emp_Form == null)
                 return;
-            var items = (from pa in Global.Global.Emp_Form
+            var items = (from pa in List
                          group pa by pa.Grp_Name into data
                          select new { Grp_Name = data.Key, vo = data }).ToList();
 
