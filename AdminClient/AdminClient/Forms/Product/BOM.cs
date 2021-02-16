@@ -190,7 +190,7 @@ namespace AdminClient.Forms
             //                {System.Environment.NewLine}category:  어느 그룹에 속하는지
             //                {System.Environment.NewLine}pcode: 상위 부모가 있을경우 부모 code";
             //if (excel.ExportDataToE
-            xcel(dt, dlg.FileName, toltip))
+            //xcel(dt, dlg.FileName, toltip))
             //{
             //    MessageBox.Show("엑셀파일에 저장하였습니다.");
             //}
