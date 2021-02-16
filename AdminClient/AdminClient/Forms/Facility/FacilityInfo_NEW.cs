@@ -160,8 +160,8 @@ namespace AdminClient.Forms
 					FacGrp_Description = dgv_FacGrpList["FacGrp_Description", e.RowIndex].Value.ToString()
 				};
 
-				FacilityGroupPopUp pop = new FacilityGroupPopUp();
-				pop.ThisMode = FacilityGroupPopUp.Mode.Update;
+				FacilityInfo_NEW_GroupPopUp pop = new FacilityInfo_NEW_GroupPopUp();
+				pop.ThisMode = FacilityInfo_NEW_GroupPopUp.Mode.Update;
 				pop.VO = vo;
 				pop.StartPosition = FormStartPosition.CenterParent;
 
@@ -264,7 +264,7 @@ namespace AdminClient.Forms
 		}
 
 
-		#endregion
+		#endregion  
 
 		
 	}
