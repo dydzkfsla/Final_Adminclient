@@ -165,6 +165,19 @@ namespace AdminClient.Forms
                         item.Nodes["Form_Select"].Checked = false;
                         item.Nodes["Form_Update"].Checked = false;
                     }
+
+                    if (item.Nodes["Form_Delete"].Checked == true &&
+                        item.Nodes["Form_Insert"].Checked == true &&
+                        item.Nodes["Form_Select"].Checked == true &&
+                        item.Nodes["Form_Update"].Checked == true)
+                    {
+                        item.Checked = true;
+                    }
+                    else
+                    {
+                        item.Checked = false;
+                    }
+
                 }
             });
 
@@ -283,10 +296,19 @@ namespace AdminClient.Forms
             {
                 TeamAddGroup(e.Node.Name, e.Node.Checked);
             }
+            if (e.Node.Level == 1)
+            {
+                    foreach (TreeNode node in e.Node.Nodes)
+                    {
+                        TeamAddMenu(code, e.Node.Name, node.Name, e.Node.Checked);
+                        node.Checked = e.Node.Checked;
+                    }
+            }
             if (e.Node.Level == 2)
             {
                 TeamAddMenu(code, e.Node.Parent.Name, e.Node.Name, e.Node.Checked);
             }
+            SetAuthority(code);
         }
 
         private void TeamAddMenu(string TeamCode, string Form_Name, string UpdateColum, bool Chcked )
