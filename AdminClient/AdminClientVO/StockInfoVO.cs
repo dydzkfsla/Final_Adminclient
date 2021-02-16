@@ -8,6 +8,9 @@ namespace AdminClientVO
 {
     public class StockInfoVO
     {
+        public string Prod_Code { get; set; }
+        public string Prod_Name { get; set; }
+
         public string WH_Code { get; set; }
         public string WH_Type { get; set; }
         public string Common_Name { get; set; }

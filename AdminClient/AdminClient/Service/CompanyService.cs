@@ -34,10 +34,10 @@ namespace AdminClient.Service
             return list;
         }
 
-        internal bool AddCompany(string userID, CompanyVO vo)
+        internal string AddCompany(string userID, CompanyVO vo)
         {
             CompanyDAC dac = new CompanyDAC();
-            bool result = dac.AddCompany(userID, vo);
+            string result = dac.AddCompany(userID, vo);
             dac.Dispose();
             return result;
         }

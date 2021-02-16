@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label3 = new System.Windows.Forms.Label();
             this.cbo_Auto = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,7 +44,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txt_Type = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.dgv_detail = new AdminClient.CustomDataGridView();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -71,6 +70,7 @@
             this.btm_AllSet = new System.Windows.Forms.Button();
             this.pnl_AllInfo = new System.Windows.Forms.Panel();
             this.cbo_itemState = new System.Windows.Forms.ComboBox();
+            this.dgv_detail = new AdminClient.CustomDataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
@@ -89,10 +89,10 @@
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_detail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_CompList)).BeginInit();
             this.panel2.SuspendLayout();
             this.pnl_AllInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_detail)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer3
@@ -109,7 +109,7 @@
             this.splitContainer3.Panel2.Controls.Add(this.btn_ProdUpdate);
             this.splitContainer3.Panel2.Controls.Add(this.btn_ProdAdd);
             this.splitContainer3.Size = new System.Drawing.Size(1222, 469);
-            this.splitContainer3.SplitterDistance = 855;
+            this.splitContainer3.SplitterDistance = 862;
             this.splitContainer3.SplitterWidth = 8;
             // 
             // splitContainer2
@@ -123,12 +123,13 @@
             // 
             // btn_add
             // 
-            this.btn_add.Location = new System.Drawing.Point(1429, 9);
+            this.btn_add.Location = new System.Drawing.Point(1439, 9);
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // btn_Xls
             // 
-            this.btn_Xls.Location = new System.Drawing.Point(1512, 9);
+            this.btn_Xls.Location = new System.Drawing.Point(1536, 9);
+            this.btn_Xls.Click += new System.EventHandler(this.btn_Xls_Click);
             // 
             // panel1
             // 
@@ -164,7 +165,7 @@
             this.gb_Sherch.Controls.Add(this.cbo_State);
             this.gb_Sherch.Controls.Add(this.label3);
             this.gb_Sherch.Controls.Add(this.cbo_Auto);
-            this.gb_Sherch.Size = new System.Drawing.Size(368, 211);
+            this.gb_Sherch.Size = new System.Drawing.Size(348, 211);
             this.gb_Sherch.Controls.SetChildIndex(this.cbo_Auto, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.label3, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.cbo_State, 0);
@@ -180,7 +181,7 @@
             this.gb_detail.Controls.Add(this.sortCtrl);
             this.gb_detail.Controls.Add(this.schCtrl);
             this.gb_detail.Location = new System.Drawing.Point(12, 217);
-            this.gb_detail.Size = new System.Drawing.Size(367, 462);
+            this.gb_detail.Size = new System.Drawing.Size(348, 462);
             // 
             // nu_limit
             // 
@@ -205,7 +206,7 @@
             // 
             // btn_search
             // 
-            this.btn_search.Location = new System.Drawing.Point(289, 17);
+            this.btn_search.Location = new System.Drawing.Point(269, 18);
             this.btn_search.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form_close
@@ -233,7 +234,7 @@
             this.cbo_Auto.FormattingEnabled = true;
             this.cbo_Auto.Location = new System.Drawing.Point(9, 68);
             this.cbo_Auto.Name = "cbo_Auto";
-            this.cbo_Auto.Size = new System.Drawing.Size(255, 25);
+            this.cbo_Auto.Size = new System.Drawing.Size(234, 25);
             this.cbo_Auto.TabIndex = 9;
             // 
             // label1
@@ -253,7 +254,7 @@
             this.cbo_State.FormattingEnabled = true;
             this.cbo_State.Location = new System.Drawing.Point(9, 116);
             this.cbo_State.Name = "cbo_State";
-            this.cbo_State.Size = new System.Drawing.Size(255, 25);
+            this.cbo_State.Size = new System.Drawing.Size(234, 25);
             this.cbo_State.TabIndex = 11;
             // 
             // label2
@@ -273,7 +274,7 @@
             this.cbo_Type.FormattingEnabled = true;
             this.cbo_Type.Location = new System.Drawing.Point(9, 164);
             this.cbo_Type.Name = "cbo_Type";
-            this.cbo_Type.Size = new System.Drawing.Size(255, 25);
+            this.cbo_Type.Size = new System.Drawing.Size(234, 25);
             this.cbo_Type.TabIndex = 13;
             // 
             // txt_Code
@@ -363,31 +364,6 @@
             this.label11.TabIndex = 12;
             this.label11.Text = "업종";
             this.label11.Visible = false;
-            // 
-            // dgv_detail
-            // 
-            this.dgv_detail.AllowUserToAddRows = false;
-            this.dgv_detail.BackgroundColor = System.Drawing.Color.White;
-            this.dgv_detail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.BlueViolet;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_detail.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv_detail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_detail.GridColor = System.Drawing.Color.Black;
-            this.dgv_detail.IsChkVisible = false;
-            this.dgv_detail.IsEditVisible = true;
-            this.dgv_detail.Location = new System.Drawing.Point(0, 0);
-            this.dgv_detail.Name = "dgv_detail";
-            this.dgv_detail.RowHeadersVisible = false;
-            this.dgv_detail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_detail.Size = new System.Drawing.Size(855, 469);
-            this.dgv_detail.TabIndex = 0;
-            this.dgv_detail.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_detail_CellClick);
             // 
             // label12
             // 
@@ -490,14 +466,14 @@
             // 
             this.dgv_CompList.BackgroundColor = System.Drawing.Color.White;
             this.dgv_CompList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_CompList.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_CompList.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgv_CompList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_CompList.GridColor = System.Drawing.Color.Black;
             this.dgv_CompList.IsChkVisible = true;
@@ -650,6 +626,29 @@
             this.cbo_itemState.Size = new System.Drawing.Size(196, 25);
             this.cbo_itemState.TabIndex = 15;
             // 
+            // dgv_detail
+            // 
+            this.dgv_detail.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_detail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_detail.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dgv_detail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_detail.GridColor = System.Drawing.Color.Black;
+            this.dgv_detail.IsChkVisible = false;
+            this.dgv_detail.IsEditVisible = false;
+            this.dgv_detail.Location = new System.Drawing.Point(0, 0);
+            this.dgv_detail.Name = "dgv_detail";
+            this.dgv_detail.RowTemplate.Height = 23;
+            this.dgv_detail.Size = new System.Drawing.Size(862, 469);
+            this.dgv_detail.TabIndex = 0;
+            this.dgv_detail.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_detail_CellClick);
+            // 
             // CompanyInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
@@ -676,12 +675,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_detail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_CompList)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.pnl_AllInfo.ResumeLayout(false);
             this.pnl_AllInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_detail)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -702,7 +701,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txt_Code;
         private System.Windows.Forms.Label label8;
-        private CustomDataGridView dgv_detail;
         private System.Windows.Forms.TextBox txt_Prod_MinCount;
         private System.Windows.Forms.TextBox txt_Prod_SafetyStock;
         private System.Windows.Forms.TextBox txt_Prod_Name;
@@ -729,5 +727,6 @@
         private System.Windows.Forms.Button btm_AllSet;
         private System.Windows.Forms.Panel pnl_AllInfo;
         private System.Windows.Forms.ComboBox cbo_itemState;
+        private CustomDataGridView dgv_detail;
     }
 }

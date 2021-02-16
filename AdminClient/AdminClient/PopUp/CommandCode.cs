@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace AdminClient.PopUp
 {
-    public partial class CommonCodePopUp : AdminClient.BaseForm.EmpFormTemp
+    public partial class CommandCode : AdminClient.BaseForm.EmpFormTemp
     {
         CommonVO vo;
 
@@ -19,18 +19,21 @@ namespace AdminClient.PopUp
         public Mode ThisMode { set { mode = value; } }
         public CommonVO VO { get { return vo; } set { vo = value; } }
 
-        public CommonCodePopUp()
+        public CommandCode()
         {
             InitializeComponent();
         }
         private void CommonPopUp_Load(object sender, EventArgs e)
         {
-            if(mode == Mode.New)
+            
+            if (mode == Mode.New)
             {
                 btn_Update.Enabled = btn_Delete.Enabled = false;
+                lbl_Title.Text = "공통코드등록";
             }
             else
             {
+                lbl_Title.Text = "공통코드수정";
                 txt_Code.KeyPress += NoneKeyPress;
                 txt_Code.Text = vo.Common_Code;
                 txt_Name.Text = vo.Common_Name;

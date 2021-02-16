@@ -335,11 +335,12 @@
             this.btn_add.UseVisualStyleBackColor = false;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
-            // ProductCheckPopUp
+            // ProductCheckInfoPopUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.ClientSize = new System.Drawing.Size(431, 368);
-            this.Name = "ProductCheckPopUp";
+            this.Name = "ProductCheckInfoPopUp";
+            this.Load += new System.EventHandler(this.ProductCheckInfoPopUp_Load);
             this.pnl_Main.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).EndInit();
             this.panel1.ResumeLayout(false);

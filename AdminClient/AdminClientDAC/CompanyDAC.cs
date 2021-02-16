@@ -258,7 +258,7 @@ namespace AdminClientDAC
         /// <param name="userID">입력자</param>
         /// <param name="vo">회사정보</param>
         /// <returns></returns>
-        public bool AddCompany(string userID, CompanyVO vo)
+        public string AddCompany(string userID, CompanyVO vo)
         {
             try
             {
@@ -274,20 +274,25 @@ namespace AdminClientDAC
                     cmd.Parameters.AddWithValue("@state", vo.Comp_State);
                     cmd.Parameters.AddWithValue("@auto", vo.Comp_Auto);
                     cmd.Parameters.AddWithValue("@ceo", vo.Comp_CEO);
+                    cmd.Parameters.Add("@result", SqlDbType.VarChar, 7);
+                    cmd.Parameters["@result"].Direction = ParameterDirection.Output;
 
-                    int cnt = cmd.ExecuteNonQuery();
+                    cmd.ExecuteNonQuery();
 
-                    if (cnt > 0)
-                        return true;
+                    string result = "";
+                    result = cmd.Parameters["@result"].Value.ToString();
+
+                    if (result.Length > 0)
+                        return result;
                     else
-                        return false;
+                        return null;
 
                 }
             }
             catch(Exception err)
             {
                 Info.WriteError($"실행자:{Global.employees.Emp_Name} 새 회사정보 입력중 오류 :" + err.Message, err);
-                return false;
+                return null;
             }
         }
 

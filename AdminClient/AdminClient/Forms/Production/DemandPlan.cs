@@ -15,6 +15,7 @@ namespace AdminClient.Forms
 {
 	public partial class DemandPlan : AdminClient.BaseForm.FormSerchListTemp
 	{
+        DataTable dt;
 		public DemandPlan()
 		{
 			InitializeComponent();
@@ -22,7 +23,7 @@ namespace AdminClient.Forms
 
         private void DemandPlan_Load(object sender, EventArgs e)
         {
-            
+            splitContainer1.SplitterDistance = 365;
         }
 
         private void btn_search_Click(object sender, EventArgs e)
@@ -39,7 +40,7 @@ namespace AdminClient.Forms
             CommonUtil.AddGridTextColumn(dgv_Demand, "업체타입", "Common_Name");
             CommonUtil.AddGridTextColumn(dgv_Demand, "품목코드", "prod");
             CommonUtil.AddGridTextColumn(dgv_Demand, "품목명", "Prod_Name");
-            DataTable dt = service.GetDemandList(sdate, edate);
+            dt = service.GetDemandList(sdate, edate);
 
             dgv_Demand.DataSource = dt;
 
@@ -70,6 +71,32 @@ namespace AdminClient.Forms
             if(dtp_sdate.Value > dtp_edate.Value)
             {
                 dtp_sdate.Value = dtp_edate.Value.AddDays(-1);
+            }
+        }
+
+        private void btn_Xls_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dlg = new SaveFileDialog();
+            CommonExcel excel = new CommonExcel();
+            excel.Cursor = this.Cursor;
+            dlg.Filter = "Excel File(*.xls)|*.xls";
+            dlg.Title = "엑셀파일로 내보내기";
+            if (dlg.ShowDialog() != DialogResult.OK)
+                return;
+            
+            if (dt != null)
+            {
+                dt.TableName = this.Name;
+                string toltip = $@"Comp_Code: 업체코드
+                            {System.Environment.NewLine}Comp_Name : 업체명
+                            {System.Environment.NewLine}Common_Name : 업체타입명
+                            {System.Environment.NewLine}Common_Name : 업체타입코드
+                            {System.Environment.NewLine}prod : 품목코드
+                            {System.Environment.NewLine}Prod_Name : 품목명";
+                if (excel.ExportDataToExcel(dt, dlg.FileName, toltip))
+                {
+                    MessageBox.Show("엑셀파일에 저장하였습니다.");
+                }
             }
         }
     }

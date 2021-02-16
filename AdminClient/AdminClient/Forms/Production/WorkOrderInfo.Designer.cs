@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.customDataGridView1 = new AdminClient.CustomDataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -85,7 +86,7 @@
             this.gb_Sherch.Controls.Add(this.comboBox1);
             this.gb_Sherch.Controls.Add(this.label1);
             this.gb_Sherch.Location = new System.Drawing.Point(11, 3);
-            this.gb_Sherch.Size = new System.Drawing.Size(340, 233);
+            this.gb_Sherch.Size = new System.Drawing.Size(348, 233);
             this.gb_Sherch.Controls.SetChildIndex(this.chk_limit, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.nu_limit, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.btn_search, 0);
@@ -110,7 +111,7 @@
             this.gb_detail.Controls.Add(this.rd_descending);
             this.gb_detail.Controls.Add(this.rd_ascending);
             this.gb_detail.Location = new System.Drawing.Point(11, 240);
-            this.gb_detail.Size = new System.Drawing.Size(340, 417);
+            this.gb_detail.Size = new System.Drawing.Size(348, 417);
             // 
             // nu_limit
             // 
@@ -133,9 +134,9 @@
             // 
             this.splitter1.Size = new System.Drawing.Size(33, 745);
             // 
-            // button1
+            // btn_search
             // 
-            this.btn_search.Location = new System.Drawing.Point(251, 17);
+            this.btn_search.Location = new System.Drawing.Point(269, 17);
             // 
             // customDataGridView1
             // 
@@ -143,7 +144,19 @@
             this.customDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.customDataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.customDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.customDataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.customDataGridView1.GridColor = System.Drawing.Color.Black;
+            this.customDataGridView1.IsChkVisible = false;
+            this.customDataGridView1.IsEditVisible = false;
             this.customDataGridView1.Location = new System.Drawing.Point(36, 3);
             this.customDataGridView1.Name = "customDataGridView1";
             this.customDataGridView1.RowHeadersVisible = false;
@@ -428,6 +441,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.ClientSize = new System.Drawing.Size(1223, 845);
             this.Name = "WorkOrderInfo";
+            this.Load += new System.EventHandler(this.WorkOrderInfo_Load);
             this.pnl_Main.ResumeLayout(false);
             this.gb_Sherch.ResumeLayout(false);
             this.gb_Sherch.PerformLayout();

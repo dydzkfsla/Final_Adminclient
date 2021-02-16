@@ -30,6 +30,7 @@ namespace AdminClient.PopUp
             #region 기초 셋팅
             if (mode == Mode.Insert)
             {
+                lbl_Title.Text = "설비군 등록";
                 txt_FgrpCode.Enabled = cbo_FgrpEnable.Enabled = false;
                 txt_FgrpCode.Text = "자동입력";
 

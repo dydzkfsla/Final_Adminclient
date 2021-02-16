@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_code = new System.Windows.Forms.Label();
             this.btn_UpItemSch = new System.Windows.Forms.Button();
             this.btn_ProdSearch = new System.Windows.Forms.Button();
             this.dtp_End = new System.Windows.Forms.DateTimePicker();
@@ -58,7 +59,6 @@
             this.txt_Note = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.lbl_code = new System.Windows.Forms.Label();
             this.pnl_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).BeginInit();
             this.panel1.SuspendLayout();
@@ -74,6 +74,11 @@
             this.pnl_Main.Controls.Add(this.label14);
             this.pnl_Main.Controls.Add(this.panel1);
             this.pnl_Main.Size = new System.Drawing.Size(659, 447);
+            // 
+            // lbl_Title
+            // 
+            this.lbl_Title.Size = new System.Drawing.Size(176, 43);
+            this.lbl_Title.Text = "BOM관리";
             // 
             // Form_close
             // 
@@ -113,6 +118,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(637, 129);
             this.panel1.TabIndex = 35;
+            // 
+            // lbl_code
+            // 
+            this.lbl_code.AutoSize = true;
+            this.lbl_code.Location = new System.Drawing.Point(462, 10);
+            this.lbl_code.Name = "lbl_code";
+            this.lbl_code.Size = new System.Drawing.Size(0, 17);
+            this.lbl_code.TabIndex = 7;
             // 
             // btn_UpItemSch
             // 
@@ -424,14 +437,6 @@
             this.label14.Size = new System.Drawing.Size(23, 17);
             this.label14.TabIndex = 49;
             this.label14.Text = "◆";
-            // 
-            // lbl_code
-            // 
-            this.lbl_code.AutoSize = true;
-            this.lbl_code.Location = new System.Drawing.Point(462, 10);
-            this.lbl_code.Name = "lbl_code";
-            this.lbl_code.Size = new System.Drawing.Size(0, 17);
-            this.lbl_code.TabIndex = 7;
             // 
             // BOMPopUp
             // 

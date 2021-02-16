@@ -1,7 +1,7 @@
 ﻿
 namespace AdminClient.PopUp
 {
-    partial class CommonCodePopUp
+    partial class CommandCode
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.

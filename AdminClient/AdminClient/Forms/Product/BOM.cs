@@ -73,8 +73,8 @@ namespace AdminClient.Forms
                 CommonUtil.AddGridTextColumn(dgv_bom, "소요량", "BOM_Count");
                 CommonUtil.AddGridTextColumn(dgv_bom, "레벨", "level");
                 CommonUtil.AddGridTextColumn(dgv_bom, "정리", "sortOrder");
-                CommonUtil.AddGridTextColumn(dgv_bom, "시작일", "BOM_StartDate");
-                CommonUtil.AddGridTextColumn(dgv_bom, "종료일", "BOM_EndDate");
+                CommonUtil.AddGridTextColumn(dgv_bom, "시작일", "BOM_StartDate", Format: "yyyy-MM-dd");
+                CommonUtil.AddGridTextColumn(dgv_bom, "종료일", "BOM_EndDate", Format: "yyyy-MM-dd");
                 CommonUtil.AddGridTextColumn(dgv_bom, "사용여부", "BOM_State");
                 CommonUtil.AddGridTextColumn(dgv_bom, "자동차감", "BOM_AutoDecrease");
 
@@ -84,6 +84,18 @@ namespace AdminClient.Forms
             }
             else if(cbo_choice.Text == "역전개")
             {
+                ReverseBOM bm = new ReverseBOM();
+
+                dgv_bom.Columns.Clear();
+                dgv_bom.SetGridColumn();
+                CommonUtil.AddGridTextColumn(dgv_bom, "BOM코드", "BOM_Code");
+                CommonUtil.AddGridTextColumn(dgv_bom, "상위품목코드", "parentCode", 200);
+                CommonUtil.AddGridTextColumn(dgv_bom, "상위품목명", "parentName", 150);
+                CommonUtil.AddGridTextColumn(dgv_bom, "소요량", "BOM_Count");
+                CommonUtil.AddGridTextColumn(dgv_bom, "사용여부", "BOM_State");
+                CommonUtil.AddGridTextColumn(dgv_bom, "시작일", "BOM_StartDate", Format : "yyyy-MM-dd");
+                CommonUtil.AddGridTextColumn(dgv_bom, "종료일", "BOM_EndDate", Format: "yyyy-MM-dd");
+
                 forward = null;
                 reverse = service.GetReverseList(info);
                 dgv_bom.DataSource = reverse;
@@ -202,6 +214,8 @@ namespace AdminClient.Forms
             {
                 MessageBox.Show("엑셀파일에 저장하였습니다.");
             }
+
+
         }
     }
 }

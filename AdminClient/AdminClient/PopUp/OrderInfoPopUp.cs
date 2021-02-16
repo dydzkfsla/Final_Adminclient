@@ -38,6 +38,7 @@ namespace AdminClient.PopUp
 
         private void OrderPopUp_Load(object sender, EventArgs e)
         {
+            lbl_Title.Text = "발주신청목록 등록";
             txt_OrderCnt.KeyPress += UtilEvent.TextBoxIsDigitAndOneDot;
             txt_OrderCode.KeyPress += NoneKeyPress;
             txt_ProdName.KeyPress += NoneKeyPress;

@@ -29,8 +29,8 @@ namespace AdminClient.Forms
 		/// </summary>
 		private void InitializeComponent()
 		{
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cbo_OutSourcing = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cbo_Enable = new System.Windows.Forms.ComboBox();
@@ -50,9 +50,6 @@ namespace AdminClient.Forms
             this.btn_FacGrpAdd = new System.Windows.Forms.Button();
             this.cbo_Fgrp = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
-            this.splitContainer3.Panel1.SuspendLayout();
-            this.splitContainer3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
@@ -71,22 +68,17 @@ namespace AdminClient.Forms
             ((System.ComponentModel.ISupportInitialize)(this.dgv_FacList)).BeginInit();
             this.SuspendLayout();
             // 
-            // splitContainer3
-            // 
-            // 
-            // splitContainer3.Panel1
-            // 
-            this.splitContainer3.Panel1.Controls.Add(this.dgv_FacList);
-            this.splitContainer3.Size = new System.Drawing.Size(1249, 475);
-            this.splitContainer3.SplitterDistance = 1207;
-            // 
             // splitContainer2
             // 
             // 
             // splitContainer2.Panel1
             // 
             this.splitContainer2.Panel1.Controls.Add(this.dgv_FacGrpList);
-            this.splitContainer2.Size = new System.Drawing.Size(1249, 860);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.dgv_FacList);
+            this.splitContainer2.Size = new System.Drawing.Size(1252, 860);
             this.splitContainer2.SplitterDistance = 379;
             // 
             // btn_add
@@ -156,7 +148,7 @@ namespace AdminClient.Forms
             // splitContainer1
             // 
             this.splitContainer1.Size = new System.Drawing.Size(1654, 860);
-            this.splitContainer1.SplitterDistance = 368;
+            this.splitContainer1.SplitterDistance = 365;
             // 
             // btn_folding
             // 
@@ -317,28 +309,6 @@ namespace AdminClient.Forms
             // 
             this.dgv_FacGrpList.BackgroundColor = System.Drawing.Color.White;
             this.dgv_FacGrpList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_FacGrpList.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_FacGrpList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_FacGrpList.GridColor = System.Drawing.Color.Black;
-            this.dgv_FacGrpList.IsChkVisible = false;
-            this.dgv_FacGrpList.IsEditVisible = false;
-            this.dgv_FacGrpList.Location = new System.Drawing.Point(0, 0);
-            this.dgv_FacGrpList.Name = "dgv_FacGrpList";
-            this.dgv_FacGrpList.RowTemplate.Height = 23;
-            this.dgv_FacGrpList.Size = new System.Drawing.Size(1249, 379);
-            this.dgv_FacGrpList.TabIndex = 0;
-            // 
-            // dgv_FacList
-            // 
-            this.dgv_FacList.BackgroundColor = System.Drawing.Color.White;
-            this.dgv_FacList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -346,7 +316,29 @@ namespace AdminClient.Forms
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.IndianRed;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_FacList.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_FacGrpList.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_FacGrpList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_FacGrpList.GridColor = System.Drawing.Color.Black;
+            this.dgv_FacGrpList.IsChkVisible = false;
+            this.dgv_FacGrpList.IsEditVisible = false;
+            this.dgv_FacGrpList.Location = new System.Drawing.Point(0, 0);
+            this.dgv_FacGrpList.Name = "dgv_FacGrpList";
+            this.dgv_FacGrpList.RowTemplate.Height = 23;
+            this.dgv_FacGrpList.Size = new System.Drawing.Size(1252, 379);
+            this.dgv_FacGrpList.TabIndex = 0;
+            // 
+            // dgv_FacList
+            // 
+            this.dgv_FacList.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_FacList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_FacList.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_FacList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_FacList.GridColor = System.Drawing.Color.Black;
             this.dgv_FacList.IsChkVisible = true;
@@ -354,7 +346,7 @@ namespace AdminClient.Forms
             this.dgv_FacList.Location = new System.Drawing.Point(0, 0);
             this.dgv_FacList.Name = "dgv_FacList";
             this.dgv_FacList.RowTemplate.Height = 23;
-            this.dgv_FacList.Size = new System.Drawing.Size(1207, 475);
+            this.dgv_FacList.Size = new System.Drawing.Size(1252, 477);
             this.dgv_FacList.TabIndex = 0;
             this.dgv_FacList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_FacList_CellContentClick);
             // 
@@ -403,9 +395,6 @@ namespace AdminClient.Forms
             this.Name = "FacilityInfo_NEW";
             this.Text = "FacilityInfo_NEW";
             this.Load += new System.EventHandler(this.FacilityInfo_NEW_Load);
-            this.splitContainer3.Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
-            this.splitContainer3.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();

@@ -24,6 +24,8 @@ namespace AdminClient.Forms
         #region 초기설정
         private void OrderInfo_Load(object sender, EventArgs e) //폼로드
         {
+            splitContainer1.SplitterDistance = 365;
+            splitContainer3.SplitterDistance = 905;
             txt_OdCode.KeyPress += NoneKeyPress;
             nu_limit.Enabled = gb_detail.Enabled = false;
             dtp_end.Value = DateTime.Now.AddDays(1);
@@ -590,7 +592,10 @@ namespace AdminClient.Forms
 
                 if (dgv_oddList["Common_Name", e.RowIndex].Value.ToString() == "발주신청대기")
                 {
+                    txt_OrderCnt.KeyPress -= NoneKeyPress;
                     txt_OrderCnt.KeyPress += UtilEvent.TextBoxIsDigitAndOneDot;
+                    txt_RqCnt.KeyPress -= UtilEvent.TextBoxIsDigitAndOneDot;
+                    txt_CqCnt.KeyPress -= UtilEvent.TextBoxIsDigitAndOneDot;
                     txt_RqCnt.KeyPress += NoneKeyPress;
                     txt_CqCnt.KeyPress += NoneKeyPress;
                     btn_ProdAdd.Enabled = btn_ProdUpdate.Enabled = btn_ProdDelete.Enabled = true;
@@ -598,7 +603,10 @@ namespace AdminClient.Forms
                 }
                 else if(dgv_oddList["Common_Name", e.RowIndex].Value.ToString() == "발주신청완료")
                 {
+                    txt_OrderCnt.KeyPress -= UtilEvent.TextBoxIsDigitAndOneDot;
                     txt_OrderCnt.KeyPress += NoneKeyPress;
+                    txt_RqCnt.KeyPress -= NoneKeyPress;
+                    txt_CqCnt.KeyPress -= NoneKeyPress;
                     txt_RqCnt.KeyPress += UtilEvent.TextBoxIsDigitAndOneDot;
                     txt_CqCnt.KeyPress += UtilEvent.TextBoxIsDigitAndOneDot;
                     btn_ProdAdd.Enabled = btn_ProdDelete.Enabled = false;
@@ -621,5 +629,38 @@ namespace AdminClient.Forms
 
         #endregion
 
+        private void btn_Xls_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dlg = new SaveFileDialog();
+            CommonExcel excel = new CommonExcel();
+            excel.Cursor = this.Cursor;
+            dlg.Filter = "Excel File(*.xls)|*.xls";
+            dlg.Title = "엑셀파일로 내보내기";
+            if (dlg.ShowDialog() != DialogResult.OK)
+                return;
+            DataTable dt = null;
+
+            if (dgv_Odlist.DataSource is List<OrderVO>)
+            {
+                dt = ((List<OrderVO>)dgv_Odlist.DataSource).ConvertToDataTable();
+            }
+
+            if (dt != null)
+            {
+                dt.TableName = this.Name;
+                string toltip = $@"Orders_Code: 주문번호
+                            {System.Environment.NewLine}Comp_Code : 업체코드
+                            {System.Environment.NewLine}Comp_Name : 업체명
+                            {System.Environment.NewLine}WH_Code : 창고코드
+                            {System.Environment.NewLine}Orders_DueDate : 납기일
+                            {System.Environment.NewLine}Common_Name : 발주상태
+                            {System.Environment.NewLine}Orders_Note : 발주노트";
+                if (excel.ExportDataToExcel(dt, dlg.FileName, toltip))
+                {
+                    MessageBox.Show("엑셀파일에 저장하였습니다.");
+                }
+            }
+
+        }
     }
 }

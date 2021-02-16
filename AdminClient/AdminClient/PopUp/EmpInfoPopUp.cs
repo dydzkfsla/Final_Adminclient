@@ -57,6 +57,7 @@ namespace AdminClient.PopUp
 
         private void EmpPopUp_Load(object sender, EventArgs e)
         {
+            lbl_Title.Text = "팀정보관리";
             dgv_EmpGroup.SetGridColumn();
             dgv_Group.SetGridColumn();
 

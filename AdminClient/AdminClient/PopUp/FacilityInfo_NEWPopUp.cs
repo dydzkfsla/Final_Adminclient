@@ -74,6 +74,7 @@ namespace AdminClient.PopUp
             }
 			else
 			{
+                lbl_Title.Text = "설비정보수정";
                 txt_FacCode.Enabled = false;
 
                 cbo_FgrpCode.SelectedValue = vo.FacGrp_Code;

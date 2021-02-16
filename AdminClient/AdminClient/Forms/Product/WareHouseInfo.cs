@@ -24,7 +24,9 @@ namespace AdminClient.Forms
 
         private void WareHouseInfo_Load(object sender, EventArgs e)
         {
-			gb_detail.Enabled = gb_detailItem.Enabled = false;
+            splitContainer1.SplitterDistance = 365;
+            splitContainer1.SplitterDistance = 879;
+            gb_detail.Enabled = gb_detailItem.Enabled = false;
             nu_limit.Enabled = false;
 
             #region 콤보박스 세팅

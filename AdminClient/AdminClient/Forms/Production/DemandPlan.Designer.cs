@@ -29,7 +29,7 @@ namespace AdminClient.Forms
 		/// </summary>
 		private void InitializeComponent()
 		{
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dtp_edate = new System.Windows.Forms.DateTimePicker();
@@ -58,6 +58,7 @@ namespace AdminClient.Forms
             // btn_Xls
             // 
             this.btn_Xls.Location = new System.Drawing.Point(1559, 9);
+            this.btn_Xls.Click += new System.EventHandler(this.btn_Xls_Click);
             // 
             // panel1
             // 
@@ -84,7 +85,7 @@ namespace AdminClient.Forms
             // gb_Sherch
             // 
             this.gb_Sherch.Controls.Add(this.groupBox1);
-            this.gb_Sherch.Size = new System.Drawing.Size(335, 167);
+            this.gb_Sherch.Size = new System.Drawing.Size(348, 129);
             this.gb_Sherch.Controls.SetChildIndex(this.groupBox1, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.chk_limit, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.nu_limit, 0);
@@ -92,8 +93,8 @@ namespace AdminClient.Forms
             // 
             // gb_detail
             // 
-            this.gb_detail.Location = new System.Drawing.Point(11, 174);
-            this.gb_detail.Size = new System.Drawing.Size(335, 305);
+            this.gb_detail.Location = new System.Drawing.Point(11, 137);
+            this.gb_detail.Size = new System.Drawing.Size(348, 305);
             this.gb_detail.Visible = false;
             // 
             // splitContainer1
@@ -104,7 +105,7 @@ namespace AdminClient.Forms
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgv_Demand);
             this.splitContainer1.Size = new System.Drawing.Size(1654, 844);
-            this.splitContainer1.SplitterDistance = 356;
+            this.splitContainer1.SplitterDistance = 394;
             // 
             // btn_folding
             // 
@@ -116,7 +117,7 @@ namespace AdminClient.Forms
             // 
             // btn_search
             // 
-            this.btn_search.Location = new System.Drawing.Point(242, 18);
+            this.btn_search.Location = new System.Drawing.Point(269, 18);
             this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // Form_close
@@ -132,7 +133,7 @@ namespace AdminClient.Forms
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.dtp_edate);
             this.groupBox1.Controls.Add(this.dtp_sdate);
-            this.groupBox1.Location = new System.Drawing.Point(12, 88);
+            this.groupBox1.Location = new System.Drawing.Point(5, 46);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(259, 64);
             this.groupBox1.TabIndex = 8;
@@ -210,14 +211,14 @@ namespace AdminClient.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_Demand.BackgroundColor = System.Drawing.Color.White;
             this.dgv_Demand.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Demand.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Demand.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_Demand.GridColor = System.Drawing.Color.Black;
             this.dgv_Demand.IsChkVisible = true;
             this.dgv_Demand.IsEditVisible = false;
@@ -226,7 +227,7 @@ namespace AdminClient.Forms
             this.dgv_Demand.RowHeadersVisible = false;
             this.dgv_Demand.RowTemplate.Height = 23;
             this.dgv_Demand.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Demand.Size = new System.Drawing.Size(1248, 838);
+            this.dgv_Demand.Size = new System.Drawing.Size(1210, 838);
             this.dgv_Demand.TabIndex = 3;
             // 
             // DemandPlan
