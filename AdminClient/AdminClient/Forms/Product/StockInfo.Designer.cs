@@ -55,7 +55,7 @@
             // 
             // pnl_Main
             // 
-            this.pnl_Main.Size = new System.Drawing.Size(1243, 764);
+            this.pnl_Main.Size = new System.Drawing.Size(1654, 925);
             // 
             // gb_Sherch
             // 
@@ -93,16 +93,16 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgv_Stock);
-            this.splitContainer1.Size = new System.Drawing.Size(1243, 764);
-            this.splitContainer1.SplitterDistance = 344;
+            this.splitContainer1.Size = new System.Drawing.Size(1654, 925);
+            this.splitContainer1.SplitterDistance = 457;
             // 
             // btn_folding
             // 
-            this.btn_folding.Location = new System.Drawing.Point(0, 339);
+            this.btn_folding.Location = new System.Drawing.Point(0, 419);
             // 
             // splitter1
             // 
-            this.splitter1.Size = new System.Drawing.Size(33, 764);
+            this.splitter1.Size = new System.Drawing.Size(33, 925);
             // 
             // btn_search
             // 
@@ -111,11 +111,11 @@
             // 
             // Form_close
             // 
-            this.Form_close.Location = new System.Drawing.Point(1222, 8);
+            this.Form_close.Location = new System.Drawing.Point(1633, 8);
             // 
             // TitleColor
             // 
-            this.TitleColor.Size = new System.Drawing.Size(1333, 7);
+            this.TitleColor.Size = new System.Drawing.Size(1744, 7);
             // 
             // dgv_Stock
             // 
@@ -133,12 +133,12 @@
             this.dgv_Stock.GridColor = System.Drawing.Color.Black;
             this.dgv_Stock.IsChkVisible = true;
             this.dgv_Stock.IsEditVisible = false;
-            this.dgv_Stock.Location = new System.Drawing.Point(36, 0);
+            this.dgv_Stock.Location = new System.Drawing.Point(36, 3);
             this.dgv_Stock.Name = "dgv_Stock";
             this.dgv_Stock.RowHeadersVisible = false;
             this.dgv_Stock.RowTemplate.Height = 23;
             this.dgv_Stock.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Stock.Size = new System.Drawing.Size(859, 761);
+            this.dgv_Stock.Size = new System.Drawing.Size(1154, 919);
             this.dgv_Stock.TabIndex = 3;
             // 
             // label1
@@ -179,6 +179,7 @@
             // 
             // schCtrl
             // 
+            this.schCtrl.BackColor = System.Drawing.Color.Transparent;
             this.schCtrl.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.schCtrl.Location = new System.Drawing.Point(9, 24);
             this.schCtrl.Margin = new System.Windows.Forms.Padding(4);
@@ -188,6 +189,8 @@
             // 
             // sortCtrl
             // 
+            this.sortCtrl.BackColor = System.Drawing.Color.Transparent;
+            this.sortCtrl.Font = new System.Drawing.Font("나눔고딕", 11.25F);
             this.sortCtrl.Location = new System.Drawing.Point(15, 218);
             this.sortCtrl.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.sortCtrl.Name = "sortCtrl";
@@ -197,7 +200,7 @@
             // StockInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
-            this.ClientSize = new System.Drawing.Size(1254, 864);
+            this.ClientSize = new System.Drawing.Size(1665, 1025);
             this.Name = "StockInfo";
             this.Load += new System.EventHandler(this.StockInfo_Load);
             this.pnl_Main.ResumeLayout(false);

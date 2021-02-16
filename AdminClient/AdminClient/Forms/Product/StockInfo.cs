@@ -66,7 +66,7 @@ namespace AdminClient.Forms
 			CommonUtil.AddGridTextColumn(dgv_Stock, "ProdCatrgory", "Prod_Category", visibility : false);
 			CommonUtil.AddGridTextColumn(dgv_Stock, "품목타입", "ProdType");
 			CommonUtil.AddGridTextColumn(dgv_Stock, "단위", "Prod_Unit");
-			CommonUtil.AddGridTextColumn(dgv_Stock, "재고량", "WH_Count");
+			CommonUtil.AddGridTextColumn(dgv_Stock, "재고량", "WH_PsyCount");
 			CommonUtil.AddGridTextColumn(dgv_Stock, "안전재고량", "Prod_SafetyStock");
 
             #endregion
@@ -97,7 +97,7 @@ namespace AdminClient.Forms
 
 			dgv_Stock.DataSource = stocklist;
 
-			if(stocklist.Count > 0)
+			if(stocklist != null && stocklist.Count > 0)
             {
 				gb_detail.Enabled = true;
 				schCtrl.Getdata(dgv_Stock);

@@ -127,11 +127,6 @@ namespace AdminClient.Forms
 
 		}
 
-        private void btn_CreateDemand_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void dgv_Plan_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 			if (e.RowIndex < 0)

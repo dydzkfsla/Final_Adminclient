@@ -105,7 +105,7 @@
             this.splitContainer3.Panel2.Controls.Add(this.gb_odMenu);
             this.splitContainer3.Panel2.Controls.Add(this.gb_ProdInfo);
             this.splitContainer3.Size = new System.Drawing.Size(1255, 551);
-            this.splitContainer3.SplitterDistance = 886;
+            this.splitContainer3.SplitterDistance = 921;
             // 
             // splitContainer2
             // 
@@ -330,7 +330,7 @@
             this.dgv_oddList.Name = "dgv_oddList";
             this.dgv_oddList.RowHeadersVisible = false;
             this.dgv_oddList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_oddList.Size = new System.Drawing.Size(886, 551);
+            this.dgv_oddList.Size = new System.Drawing.Size(921, 551);
             this.dgv_oddList.TabIndex = 0;
             this.dgv_oddList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_oddList_CellClick);
             // 
@@ -543,6 +543,7 @@
             this.txt_OdCode.Name = "txt_OdCode";
             this.txt_OdCode.Size = new System.Drawing.Size(192, 25);
             this.txt_OdCode.TabIndex = 20;
+            this.txt_OdCode.Visible = false;
             // 
             // lblblblb
             // 
@@ -554,6 +555,7 @@
             this.lblblblb.Size = new System.Drawing.Size(68, 17);
             this.lblblblb.TabIndex = 19;
             this.lblblblb.Text = "발주번호";
+            this.lblblblb.Visible = false;
             // 
             // gb_ProdInfo
             // 

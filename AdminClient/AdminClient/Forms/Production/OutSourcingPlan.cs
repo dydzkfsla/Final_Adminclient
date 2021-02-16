@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Reflection;
 
 namespace AdminClient.Forms
 {
@@ -31,6 +32,28 @@ namespace AdminClient.Forms
 
 			dgv_Plan.DataSource = dt;
 
+			if(dgv_Plan.Rows.Count > 0)
+            {
+				bool dgvCol = false;
+
+				foreach(DataGridViewRow dr in dgv_Plan.Rows)
+                {
+					if (dr.Cells["Category"].Value.ToString() == "소요량")
+						dgvCol = !dgvCol;
+
+					if (dgvCol)
+						dr.DefaultCellStyle.BackColor = Color.PowderBlue;
+					else
+						dr.DefaultCellStyle.BackColor = Color.White;
+
+					
+				}
+
+				
+
+            }
+
         }
+
     }
 }

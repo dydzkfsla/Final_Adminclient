@@ -29,12 +29,12 @@ namespace AdminClient.Forms
 		/// </summary>
 		private void InitializeComponent()
 		{
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_ConfirmedContract = new AdminClient.CustomDataGridView();
             this.dgv_Plan = new AdminClient.CustomDataGridView();
-            this.btn_CreateDemand = new System.Windows.Forms.Button();
+            this.btn_CreateWorkOrder = new System.Windows.Forms.Button();
             this.dgv_ProductionCount = new AdminClient.CustomDataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -90,11 +90,11 @@ namespace AdminClient.Forms
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btn_CreateDemand);
+            this.panel1.Controls.Add(this.btn_CreateWorkOrder);
             this.panel1.Size = new System.Drawing.Size(1636, 64);
             this.panel1.Controls.SetChildIndex(this.btn_add, 0);
             this.panel1.Controls.SetChildIndex(this.btn_Xls, 0);
-            this.panel1.Controls.SetChildIndex(this.btn_CreateDemand, 0);
+            this.panel1.Controls.SetChildIndex(this.btn_CreateWorkOrder, 0);
             // 
             // pnl_Main
             // 
@@ -147,14 +147,14 @@ namespace AdminClient.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_ConfirmedContract.BackgroundColor = System.Drawing.Color.White;
             this.dgv_ConfirmedContract.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_ConfirmedContract.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_ConfirmedContract.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_ConfirmedContract.GridColor = System.Drawing.Color.Black;
             this.dgv_ConfirmedContract.IsChkVisible = false;
             this.dgv_ConfirmedContract.IsEditVisible = false;
@@ -171,14 +171,14 @@ namespace AdminClient.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_Plan.BackgroundColor = System.Drawing.Color.White;
             this.dgv_Plan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Plan.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Plan.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_Plan.GridColor = System.Drawing.Color.Black;
             this.dgv_Plan.IsChkVisible = false;
             this.dgv_Plan.IsEditVisible = false;
@@ -189,23 +189,21 @@ namespace AdminClient.Forms
             this.dgv_Plan.TabIndex = 0;
             this.dgv_Plan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Plan_CellClick);
             // 
-            // btn_CreateDemand
+            // btn_CreateWorkOrder
             // 
-            this.btn_CreateDemand.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_CreateDemand.BackColor = System.Drawing.Color.White;
-            this.btn_CreateDemand.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btn_CreateDemand.Image = global::AdminClient.Properties.Resources.Edit_32x32;
-            this.btn_CreateDemand.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_CreateDemand.Location = new System.Drawing.Point(1386, 9);
-            this.btn_CreateDemand.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_CreateDemand.Name = "btn_CreateDemand";
-            this.btn_CreateDemand.Size = new System.Drawing.Size(82, 47);
-            this.btn_CreateDemand.TabIndex = 18;
-            this.btn_CreateDemand.Text = "수요계획\r\n생성";
-            this.btn_CreateDemand.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_CreateDemand.UseVisualStyleBackColor = false;
-            this.btn_CreateDemand.Visible = false;
-            this.btn_CreateDemand.Click += new System.EventHandler(this.btn_CreateDemand_Click);
+            this.btn_CreateWorkOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_CreateWorkOrder.BackColor = System.Drawing.Color.White;
+            this.btn_CreateWorkOrder.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_CreateWorkOrder.Image = global::AdminClient.Properties.Resources.Edit_32x32;
+            this.btn_CreateWorkOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_CreateWorkOrder.Location = new System.Drawing.Point(1386, 9);
+            this.btn_CreateWorkOrder.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_CreateWorkOrder.Name = "btn_CreateWorkOrder";
+            this.btn_CreateWorkOrder.Size = new System.Drawing.Size(82, 47);
+            this.btn_CreateWorkOrder.TabIndex = 18;
+            this.btn_CreateWorkOrder.Text = "작업지시\r\n생성";
+            this.btn_CreateWorkOrder.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_CreateWorkOrder.UseVisualStyleBackColor = false;
             // 
             // dgv_ProductionCount
             // 
@@ -213,14 +211,14 @@ namespace AdminClient.Forms
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dgv_ProductionCount.BackgroundColor = System.Drawing.Color.White;
             this.dgv_ProductionCount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_ProductionCount.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_ProductionCount.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_ProductionCount.GridColor = System.Drawing.Color.Black;
             this.dgv_ProductionCount.IsChkVisible = false;
             this.dgv_ProductionCount.IsEditVisible = false;
@@ -343,7 +341,7 @@ namespace AdminClient.Forms
 
 		private CustomDataGridView dgv_ConfirmedContract;
 		private CustomDataGridView dgv_Plan;
-		protected System.Windows.Forms.Button btn_CreateDemand;
+		protected System.Windows.Forms.Button btn_CreateWorkOrder;
 		private CustomDataGridView dgv_ProductionCount;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label1;

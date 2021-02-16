@@ -113,7 +113,7 @@ namespace AdminClient
 
                 int whith = this.Location.X;
 
-                if (e.CellBounds.X >= 80)
+                if (e.CellBounds.Width >= 20)
                 {
                     if (!IsADDChk)
                     {

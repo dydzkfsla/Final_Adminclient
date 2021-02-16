@@ -50,16 +50,16 @@ namespace AdminClient.Forms
             // 
             // btn_add
             // 
-            this.btn_add.Location = new System.Drawing.Point(1387, 9);
+            this.btn_add.Location = new System.Drawing.Point(1476, 9);
             // 
             // btn_Xls
             // 
-            this.btn_Xls.Location = new System.Drawing.Point(1470, 9);
+            this.btn_Xls.Location = new System.Drawing.Point(1559, 9);
             // 
             // panel1
             // 
             this.panel1.Location = new System.Drawing.Point(7, 6);
-            this.panel1.Size = new System.Drawing.Size(1555, 69);
+            this.panel1.Size = new System.Drawing.Size(1644, 69);
             // 
             // lbl_Title
             // 
@@ -68,7 +68,7 @@ namespace AdminClient.Forms
             // 
             // pnl_Main
             // 
-            this.pnl_Main.Size = new System.Drawing.Size(1565, 638);
+            this.pnl_Main.Size = new System.Drawing.Size(1654, 925);
             // 
             // gb_Sherch
             // 
@@ -99,16 +99,16 @@ namespace AdminClient.Forms
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgv_Plan);
-            this.splitContainer1.Size = new System.Drawing.Size(1558, 557);
-            this.splitContainer1.SplitterDistance = 315;
+            this.splitContainer1.Size = new System.Drawing.Size(1647, 844);
+            this.splitContainer1.SplitterDistance = 332;
             // 
             // btn_folding
             // 
-            this.btn_folding.Location = new System.Drawing.Point(0, 235);
+            this.btn_folding.Location = new System.Drawing.Point(0, 379);
             // 
             // splitter1
             // 
-            this.splitter1.Size = new System.Drawing.Size(33, 557);
+            this.splitter1.Size = new System.Drawing.Size(33, 844);
             // 
             // btn_search
             // 
@@ -116,15 +116,18 @@ namespace AdminClient.Forms
             // 
             // Form_close
             // 
-            this.Form_close.Location = new System.Drawing.Point(1544, 8);
+            this.Form_close.Location = new System.Drawing.Point(1633, 8);
             // 
             // TitleColor
             // 
-            this.TitleColor.Size = new System.Drawing.Size(1655, 7);
+            this.TitleColor.Size = new System.Drawing.Size(1744, 7);
             // 
             // dgv_Plan
             // 
             this.dgv_Plan.AllowUserToAddRows = false;
+            this.dgv_Plan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_Plan.BackgroundColor = System.Drawing.Color.White;
             this.dgv_Plan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -143,7 +146,7 @@ namespace AdminClient.Forms
             this.dgv_Plan.RowHeadersVisible = false;
             this.dgv_Plan.RowTemplate.Height = 23;
             this.dgv_Plan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Plan.Size = new System.Drawing.Size(1198, 551);
+            this.dgv_Plan.Size = new System.Drawing.Size(1269, 838);
             this.dgv_Plan.TabIndex = 5;
             // 
             // groupBox1
@@ -187,7 +190,7 @@ namespace AdminClient.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1576, 738);
+            this.ClientSize = new System.Drawing.Size(1665, 1025);
             this.Name = "OutSourcingPlan";
             this.Text = "OutSourcingPlan";
             this.panel1.ResumeLayout(false);
