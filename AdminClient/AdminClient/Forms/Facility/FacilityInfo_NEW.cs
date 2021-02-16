@@ -46,24 +46,17 @@ namespace AdminClient.Forms
 			cbo_OutSourcing.Items.Add("Y");
 			cbo_OutSourcing.Items.Add("N");
 
-			cbo_DetailEnable.Items.Add("전체");
-			cbo_DetailEnable.Items.Add("Y");
-			cbo_DetailEnable.Items.Add("N");
-			cbo_DetailOutSourcing.Items.Add("전체");
-			cbo_DetailOutSourcing.Items.Add("Y");
-			cbo_DetailOutSourcing.Items.Add("N");
-
-			cbo_Enable.SelectedIndex = cbo_DetailEnable.SelectedIndex = cbo_OutSourcing.SelectedIndex = cbo_DetailOutSourcing.SelectedIndex = 0;
+			cbo_Fgrp.SelectedIndex = cbo_Enable.SelectedIndex = cbo_OutSourcing.SelectedIndex = 0;
 			#endregion
 			#endregion
 
 			#region 설비군 부분
 			#region 데이터그리드뷰 셋팅
 			dgv_FacGrpList.SetGridColumn();
-			CommonUtil.AddGridTextColumn(dgv_FacGrpList, "설비군코드", "FacGrp_Code", 150);
+			CommonUtil.AddGridTextColumn(dgv_FacGrpList, "설비군코드", "FacGrp_Code", 102);
 			CommonUtil.AddGridTextColumn(dgv_FacGrpList, "설비군명", "FacGrp_Name");
-			CommonUtil.AddGridTextColumn(dgv_FacGrpList, "사용여부", "FacGrp_Enable");
-			CommonUtil.AddGridTextColumn(dgv_FacGrpList, "설명", "FacGrp_Description");
+			CommonUtil.AddGridTextColumn(dgv_FacGrpList, "사용여부", "FacGrp_Enable", 87, true, DataGridViewContentAlignment.MiddleCenter);
+			CommonUtil.AddGridTextColumn(dgv_FacGrpList, "설명", "FacGrp_Description", 300);
 			#endregion
 			#endregion
 
@@ -71,15 +64,15 @@ namespace AdminClient.Forms
 			#region 데이터그리드뷰 셋팅
 			dgv_FacList.SetGridColumn();
 			CommonUtil.AddGridTextColumn(dgv_FacList, "설비군코드", "FacGrp_Code", 10, false); //2
-			CommonUtil.AddGridTextColumn(dgv_FacList, "설비코드", "Fac_Code"); //3
-			CommonUtil.AddGridTextColumn(dgv_FacList, "설비명", "Fac_Name"); //4
-			CommonUtil.AddGridTextColumn(dgv_FacList, "사용여부", "Fac_Enable"); //5
-			CommonUtil.AddGridTextColumn(dgv_FacList, "외부여부", "Fac_Outsourcing"); //6
-			CommonUtil.AddGridTextColumn(dgv_FacList, "사진경로", "Fac_ImgPath"); //7
+			CommonUtil.AddGridTextColumn(dgv_FacList, "설비코드", "Fac_Code", 90); //3
+			CommonUtil.AddGridTextColumn(dgv_FacList, "설비명", "Fac_Name", 160); //4
+			CommonUtil.AddGridTextColumn(dgv_FacList, "사용여부", "Fac_Enable", 87, true, DataGridViewContentAlignment.MiddleCenter); //5
+			CommonUtil.AddGridTextColumn(dgv_FacList, "외부여부", "Fac_Outsourcing", 87, true, DataGridViewContentAlignment.MiddleCenter); //6
+			CommonUtil.AddGridTextColumn(dgv_FacList, "사진경로", "Fac_ImgPath", 200); //7
 			CommonUtil.AddGridTextColumn(dgv_FacList, "소진창고", "Fac_MaterialWareHouse"); //8
 			CommonUtil.AddGridTextColumn(dgv_FacList, "양품창고", "Fac_GoodsWareHouse"); //9
 			CommonUtil.AddGridTextColumn(dgv_FacList, "불량창고", "Fac_FaultyWareHouse"); //10
-			CommonUtil.AddGridTextColumn(dgv_FacList, "설명", "Fac_Note"); //11
+			CommonUtil.AddGridTextColumn(dgv_FacList, "설명", "Fac_Note", 200); //11
 			#endregion
 			#endregion
 
@@ -130,6 +123,7 @@ namespace AdminClient.Forms
 			if (FacList != null && FacList.Count > 0)
 			{
 				searchControl1.Getdata(dgv_FacList);
+				sortControl1.Getdata(dgv_FacList);
 				gb_detail.Enabled = true;
 			}
 		}
@@ -147,17 +141,54 @@ namespace AdminClient.Forms
 			{
 				MessageBox.Show("설비군 등록에 성공했습니다.");
 				vo = pop.VO;
+				GetFgrpList();
+				
+			}
+		}
+		private void dgv_FacGrpList_CellContentClick(object sender, DataGridViewCellEventArgs e) //수정버튼
+		{
+			if (e.RowIndex < 0)
+				return;
 
-				if (FacGrpList.Count > 0)
+			if (e.ColumnIndex == 1)
+			{
+				FacilityGroupVO vo = new FacilityGroupVO
 				{
-					FacGrpList.Add(vo);
+					FacGrp_Code = dgv_FacGrpList["FacGrp_Code", e.RowIndex].Value.ToString(),
+					FacGrp_Name = dgv_FacGrpList["FacGrp_Name", e.RowIndex].Value.ToString(),
+					FacGrp_Enable = dgv_FacGrpList["FacGrp_Enable", e.RowIndex].Value.ToString(),
+					FacGrp_Description = dgv_FacGrpList["FacGrp_Description", e.RowIndex].Value.ToString()
+				};
 
-					dgv_FacGrpList.DataSource = null;
-					dgv_FacGrpList.DataSource = FacGrpList;
+				FacilityGroupPopUp pop = new FacilityGroupPopUp();
+				pop.ThisMode = FacilityGroupPopUp.Mode.Update;
+				pop.VO = vo;
+				pop.StartPosition = FormStartPosition.CenterParent;
+
+				if (pop.ShowDialog() == DialogResult.OK)
+				{
+					MessageBox.Show("성공적으로 수정되었습니다.");
+					GetFgrpList();
+				}
+				else
+				{
+					GetFgrpList();
 				}
 			}
 		}
+		private void dgv_FacGrpList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+		{
+			if (e.RowIndex < 0)
+				return;
 
+			string fgrpCode = dgv_FacGrpList["FacGrp_Code", e.RowIndex].Value.ToString();
+
+			FacilityService service = new FacilityService();
+			FacList = service.GetFacilityList(fgrpCode);
+			service.Dispose();
+
+			dgv_FacList.DataSource = FacList;
+		}
 		#endregion
 
 		#region 설비 부분
@@ -175,29 +206,12 @@ namespace AdminClient.Forms
 				vo = pop.VO;
 			}
 		}
-
-		#endregion
-
-		#endregion
-
-		#region 메서드
-
-		private void GetFgrpList()
-		{
-			FacilityService service = new FacilityService();
-			FacGrpList = service.GetFacilityGroupList();
-			dgv_FacGrpList.DataSource = FacGrpList;
-		}
-
-		#endregion
-
 		private void dgv_FacList_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
-
 			if (e.RowIndex < 0)
 				return;
 
-			if(e.ColumnIndex == 1)
+			if (e.ColumnIndex == 1)
 			{
 				FacilityVO vo = new FacilityVO
 				{
@@ -206,7 +220,7 @@ namespace AdminClient.Forms
 					Fac_Name = dgv_FacList["Fac_Name", e.RowIndex].Value.ToString(),
 					Fac_Enable = dgv_FacList["Fac_Enable", e.RowIndex].Value.ToString(),
 					Fac_Outsourcing = dgv_FacList["Fac_Outsourcing", e.RowIndex].Value.ToString(),
-					Fac_ImgPath = dgv_FacList["Fac_ImgPath", e.RowIndex].Value == null ?null : dgv_FacList["Fac_ImgPath", e.RowIndex].Value.ToString(),
+					Fac_ImgPath = dgv_FacList["Fac_ImgPath", e.RowIndex].Value == null ? null : dgv_FacList["Fac_ImgPath", e.RowIndex].Value.ToString(),
 					Fac_MaterialWareHouse = dgv_FacList["Fac_MaterialWareHouse", e.RowIndex].Value == null ? null : dgv_FacList["Fac_MaterialWareHouse", e.RowIndex].Value.ToString(),
 					Fac_GoodsWareHouse = dgv_FacList["Fac_GoodsWareHouse", e.RowIndex].Value == null ? null : dgv_FacList["Fac_GoodsWareHouse", e.RowIndex].Value.ToString(),
 					Fac_FaultyWareHouse = dgv_FacList["Fac_FaultyWareHouse", e.RowIndex].Value == null ? null : dgv_FacList["Fac_FaultyWareHouse", e.RowIndex].Value.ToString(),
@@ -221,8 +235,37 @@ namespace AdminClient.Forms
 				if (pop.ShowDialog() == DialogResult.OK)
 				{
 					MessageBox.Show("성공적으로 수정되었습니다.");
+					RefreshFacList();
+				}
+				else
+				{
+					RefreshFacList();
 				}
 			}
 		}
+		#endregion
+
+		#endregion
+
+		#region 메서드
+
+		private void GetFgrpList()
+		{
+			FacilityService service = new FacilityService();
+			FacGrpList = service.GetFacilityGroupList();
+			dgv_FacGrpList.DataSource = FacGrpList;
+		}
+
+		private void RefreshFacList()
+		{
+			FacilityService service = new FacilityService();
+			FacList = service.GetFacilityList();
+			dgv_FacList.DataSource = FacList;
+		}
+
+
+		#endregion
+
+		
 	}
 }

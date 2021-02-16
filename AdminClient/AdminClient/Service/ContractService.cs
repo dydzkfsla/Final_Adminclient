@@ -15,7 +15,11 @@ namespace AdminClient.Service
 		{
 			dac = new ContractDAC();
 		}
-
+		public void Dispose()
+		{
+			dac.Dispose();
+		}
+		#region 수주관리 (ContractInfo)
 		public bool AddContract(string userID, ContractVO vo)
 		{
 			return dac.AddContract(userID, vo);
@@ -45,9 +49,13 @@ namespace AdminClient.Service
 		{
 			return dac.RefreshContractsList();
 		}
-		public void Dispose()
+		#endregion
+
+		#region 출하지시 (Shipment)
+		public List<ShipmentVO> GetShipList(string limit, string fdate, string tdate, string comp)
 		{
-			dac.Dispose();
+			return dac.GetShipList(limit, fdate, tdate, comp);
 		}
+		#endregion
 	}
 }

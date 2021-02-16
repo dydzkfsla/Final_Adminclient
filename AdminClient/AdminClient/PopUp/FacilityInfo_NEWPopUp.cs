@@ -196,7 +196,27 @@ namespace AdminClient.PopUp
 
             }
         }
+        private void btn_Delete_Click(object sender, EventArgs e)
+        {
+            string fgrpCode = cbo_FgrpCode.SelectedValue.ToString();
+            string facCode = txt_FacCode.Text;
 
+            if (MessageBox.Show("정말로 삭제하시겠습니까?", "삭제확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                FacilityService service = new FacilityService();
+                if (service.DeleteFacility(userID, fgrpCode, facCode))
+                {
+                    MessageBox.Show("삭제가 성공적으로 완료되었습니다.");
+                    this.DialogResult = DialogResult.Yes;
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("설비정보 삭제중 오류가 발생했습니다. 다시 시도하여 주십시오.");
+                    return;
+                }
+            }
+        }
         #region 메서드
 
         #region 텍스트박스 유효성체크
@@ -216,5 +236,7 @@ namespace AdminClient.PopUp
 		#endregion
 
 		#endregion
+
+		
 	}
 }
