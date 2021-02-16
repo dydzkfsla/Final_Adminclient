@@ -138,7 +138,5 @@ namespace AdminClient.Forms
 			if (e.RowIndex < 0)
 				return;
         }
-
-
 	}
 }

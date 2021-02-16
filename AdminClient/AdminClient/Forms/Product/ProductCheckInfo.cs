@@ -22,6 +22,9 @@ namespace AdminClient.Forms
         private void ProductCheckInfo_Load(object sender, EventArgs e)
         {
             splitContainer1.SplitterDistance = 365;
+            nu_limit.Enabled = false;
+            gb_detail.Enabled = false;
+
             dgv_Check.SetGridColumn();
             CommonUtil.AddGridTextColumn(dgv_Check, "품목코드", "Prod_Code", 100);
             CommonUtil.AddGridTextColumn(dgv_Check, "품목이름", "Prod_Name", 100);
@@ -61,7 +64,8 @@ namespace AdminClient.Forms
         private void btn_add_Click(object sender, EventArgs e)
         {
             ProductCheckInfoPopUp ProductCheckPopUp = new ProductCheckInfoPopUp();
-            if(ProductCheckPopUp.ShowDialog() == DialogResult.OK)
+            ProductCheckPopUp.StartPosition = FormStartPosition.CenterParent;
+            if (ProductCheckPopUp.ShowDialog() == DialogResult.OK)
             {
                 if(dgv_Check.DataSource is List<View_ProductNameAndCheckVO>)
                 {
@@ -164,5 +168,15 @@ namespace AdminClient.Forms
                 MessageBox.Show("엑셀파일에 저장하였습니다.");
             }
         }
-    }
+
+		private void chk_limit_CheckedChanged_1(object sender, EventArgs e)
+		{
+            nu_limit.Enabled = chk_limit.Checked;
+
+            if (!chk_limit.Checked)
+            {
+                nu_limit.Value = 0;
+            }
+        }
+	}
 }

@@ -21,6 +21,8 @@ namespace AdminClient.Forms
         {
             InitializeComponent();
             splitContainer1.SplitterDistance = 365;
+            nu_limit.Enabled = false;
+            gb_detail.Enabled = false;
         }
 
         private void EmpInfo_Load(object sender, EventArgs e)
