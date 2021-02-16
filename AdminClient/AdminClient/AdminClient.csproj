@@ -227,10 +227,10 @@
     <Compile Include="Forms\Product\InOutInfo.Designer.cs">
       <DependentUpon>InOutInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Login.cs">
+    <Compile Include="Login\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Login.Designer.cs">
+    <Compile Include="Login\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Production\OrderInfo.cs">
@@ -257,47 +257,11 @@
     <Compile Include="Forms\Product\ProductInfo.Designer.cs">
       <DependentUpon>ProductInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Production\ProductionPlan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Production\ProductionPlan.Designer.cs">
-      <DependentUpon>ProductionPlan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Facility\ProgressInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Facility\ProgressInfo.Designer.cs">
-      <DependentUpon>ProgressInfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Facility\ProgressMoveInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Facility\ProgressMoveInfo.Designer.cs">
-      <DependentUpon>ProgressMoveInfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Sales\SalesByCompany.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Sales\SalesByCompany.Designer.cs">
-      <DependentUpon>SalesByCompany.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Sales\SalesDeadLine.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Sales\SalesDeadLine.Designer.cs">
-      <DependentUpon>SalesDeadLine.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Sales\Shipment.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Sales\Shipment.Designer.cs">
       <DependentUpon>Shipment.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Sales\StockByOrder.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Sales\StockByOrder.Designer.cs">
-      <DependentUpon>StockByOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Product\StockInfo.cs">
       <SubType>Form</SubType>
@@ -322,12 +286,6 @@
     </Compile>
     <Compile Include="Forms\Production\WorkOrderInfo.Designer.cs">
       <DependentUpon>WorkOrderInfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Production\WorkPlanInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Production\WorkPlanInfo.Designer.cs">
-      <DependentUpon>WorkPlanInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Global\Global.cs" />
     <Compile Include="MDI\MDI.cs">
@@ -396,14 +354,13 @@
     <Compile Include="PopUp\OrderPopUp.Designer.cs">
       <DependentUpon>OrderPopUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUp\ProductCheckInfoPopUp.cs">
     <Compile Include="PopUp\ProcessInfo_Detail_PopUp.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PopUp\ProcessInfo_Detail_PopUp.Designer.cs">
       <DependentUpon>ProcessInfo_Detail_PopUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUp\ProductCheckPopUp.cs">
+    <Compile Include="PopUp\ProductCheckInfoPopUp.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PopUp\ProductCheckInfoPopUp.Designer.cs">
@@ -447,47 +404,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Serch\CompanySearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Serch\CompanySearch.Designer.cs">
-      <DependentUpon>CompanySearch.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Serch\FacilityGroupSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Serch\FacilityGroupSearch.Designer.cs">
-      <DependentUpon>FacilityGroupSearch.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Serch\FacilitySearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Serch\FacilitySearch.Designer.cs">
-      <DependentUpon>FacilitySearch.cs</DependentUpon>
-    </Compile>
     <Compile Include="Serch\ProductSearch.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Serch\ProductSearch.Designer.cs">
       <DependentUpon>ProductSearch.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Serch\SalesMasterSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Serch\SalesMasterSearch.Designer.cs">
-      <DependentUpon>SalesMasterSearch.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Serch\WareHouseSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Serch\WareHouseSearch.Designer.cs">
-      <DependentUpon>WareHouseSearch.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Serch\WorkPlanDetailSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Serch\WorkPlanDetailSearch.Designer.cs">
-      <DependentUpon>WorkPlanDetailSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="Service\BOMService.cs" />
     <Compile Include="Service\BORService.cs" />
@@ -614,7 +535,7 @@
     <EmbeddedResource Include="Forms\Product\InOutInfo.resx">
       <DependentUpon>InOutInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Login.resx">
+    <EmbeddedResource Include="Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Production\OrderInfo.resx">
@@ -629,26 +550,8 @@
     <EmbeddedResource Include="Forms\Product\ProductInfo.resx">
       <DependentUpon>ProductInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Production\ProductionPlan.resx">
-      <DependentUpon>ProductionPlan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Facility\ProgressInfo.resx">
-      <DependentUpon>ProgressInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Facility\ProgressMoveInfo.resx">
-      <DependentUpon>ProgressMoveInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Sales\SalesByCompany.resx">
-      <DependentUpon>SalesByCompany.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Sales\SalesDeadLine.resx">
-      <DependentUpon>SalesDeadLine.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Sales\Shipment.resx">
       <DependentUpon>Shipment.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Sales\StockByOrder.resx">
-      <DependentUpon>StockByOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Product\StockInfo.resx">
       <DependentUpon>StockInfo.cs</DependentUpon>
@@ -661,9 +564,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Production\WorkOrderInfo.resx">
       <DependentUpon>WorkOrderInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Production\WorkPlanInfo.resx">
-      <DependentUpon>WorkPlanInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MDI\MDI.resx">
       <DependentUpon>MDI.cs</DependentUpon>
@@ -701,8 +601,6 @@
     <EmbeddedResource Include="PopUp\ProcessInfo_Detail_PopUp.resx">
       <DependentUpon>ProcessInfo_Detail_PopUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\ProductCheckPopUp.resx">
-      <DependentUpon>ProductCheckPopUp.cs</DependentUpon>
     <EmbeddedResource Include="PopUp\ProductCheckInfoPopUp.resx">
       <DependentUpon>ProductCheckInfoPopUp.cs</DependentUpon>
     </EmbeddedResource>
@@ -730,26 +628,8 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Serch\CompanySearch.resx">
-      <DependentUpon>CompanySearch.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Serch\FacilityGroupSearch.resx">
-      <DependentUpon>FacilityGroupSearch.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Serch\FacilitySearch.resx">
-      <DependentUpon>FacilitySearch.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Serch\ProductSearch.resx">
       <DependentUpon>ProductSearch.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Serch\SalesMasterSearch.resx">
-      <DependentUpon>SalesMasterSearch.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Serch\WareHouseSearch.resx">
-      <DependentUpon>WareHouseSearch.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Serch\WorkPlanDetailSearch.resx">
-      <DependentUpon>WorkPlanDetailSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UseControl\FavoritesControl.resx">
       <DependentUpon>FavoritesControl.cs</DependentUpon>

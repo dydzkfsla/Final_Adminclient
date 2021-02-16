@@ -1,4 +1,4 @@
-﻿namespace AdminClient.Forms
+﻿namespace AdminClient.Forms.LogIn
 {
     partial class Login
     {

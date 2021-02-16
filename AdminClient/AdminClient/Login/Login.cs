@@ -7,7 +7,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace AdminClient.Forms
+namespace AdminClient.Forms.LogIn
 {
     public partial class Login : AdminClient.BaseForm.FormTemp
     {
