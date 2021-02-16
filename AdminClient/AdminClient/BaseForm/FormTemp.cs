@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -115,7 +116,13 @@ namespace AdminClient.BaseForm
             if (this.GetType().FullName.Contains("AdminClient.Serch"))
                 return;
 
-            var List = Global.Global.Emp_Form.FindAll(x => this.GetType().FullName.Contains(x.Form_Name));
+            var List = Global.Global.Emp_Form.FindAll(x => 
+            {
+                Debug.WriteLine(this.GetType().FullName);
+                Debug.WriteLine(x.Form_Name);
+                return this.GetType().FullName.Contains(x.Form_Name);
+                
+            });
             foreach (Control control in controls)
             {
                 if (control is Button)

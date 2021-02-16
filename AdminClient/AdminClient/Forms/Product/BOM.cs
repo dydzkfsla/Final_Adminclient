@@ -176,24 +176,32 @@ namespace AdminClient.Forms
 
         private void btn_Xls_Click(object sender, EventArgs e)
         {
-            //SaveFileDialog dlg = new SaveFileDialog();
-            //CommonExcel excel = new CommonExcel();
-            //excel.Cursor = this.Cursor;
-            //dlg.Filter = "Excel File(*.xls)|*.xls";
-            //dlg.Title = "엑셀파일로 내보내기";
-            //if (dlg.ShowDialog() != DialogResult.OK)
-            //    return;
-            // dgv_bom.DataSource;
-            //dt.TableName = "code";
-            //string toltip = $@"code: 저장될 code값
-            //                {System.Environment.NewLine}name: 코드의 표현 값
-            //                {System.Environment.NewLine}category:  어느 그룹에 속하는지
-            //                {System.Environment.NewLine}pcode: 상위 부모가 있을경우 부모 code";
-            //if (excel.ExportDataToE
-            //xcel(dt, dlg.FileName, toltip))
-            //{
-            //    MessageBox.Show("엑셀파일에 저장하였습니다.");
-            //}
+            SaveFileDialog dlg = new SaveFileDialog();
+            CommonExcel excel = new CommonExcel();
+            excel.Cursor = this.Cursor;
+            dlg.Filter = "Excel File(*.xls)|*.xls";
+            dlg.Title = "엑셀파일로 내보내기";
+            if (dlg.ShowDialog() != DialogResult.OK)
+                return;
+            DataTable dt = null;
+            if (dgv_bom.DataSource is List<ForwardBOM>)
+            {
+                dt = ((List<ForwardBOM>)dgv_bom.DataSource).ConvertToDataTable();
+            }
+            else
+            {
+                dt = ((List<ReverseBOM>)dgv_bom.DataSource).ConvertToDataTable();
+            }
+           
+            dt.TableName = this.Name;
+            string toltip = $@"code: 저장될 code값
+                            {System.Environment.NewLine}name: 코드의 표현 값
+                            {System.Environment.NewLine}category:  어느 그룹에 속하는지
+                            {System.Environment.NewLine}pcode: 상위 부모가 있을경우 부모 code";
+            if (excel.ExportDataToExcel(dt, dlg.FileName, toltip))
+            {
+                MessageBox.Show("엑셀파일에 저장하였습니다.");
+            }
         }
     }
 }
