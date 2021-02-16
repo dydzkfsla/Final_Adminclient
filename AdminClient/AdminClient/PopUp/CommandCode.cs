@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace AdminClient.PopUp
 {
-    public partial class CommonCodePopUp : AdminClient.BaseForm.EmpFormTemp
+    public partial class CommandCode : AdminClient.BaseForm.EmpFormTemp
     {
         CommonVO vo;
 
@@ -19,7 +19,7 @@ namespace AdminClient.PopUp
         public Mode ThisMode { set { mode = value; } }
         public CommonVO VO { get { return vo; } set { vo = value; } }
 
-        public CommonCodePopUp()
+        public CommandCode()
         {
             InitializeComponent();
         }

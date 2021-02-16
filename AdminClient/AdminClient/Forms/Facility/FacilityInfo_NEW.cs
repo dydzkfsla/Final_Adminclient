@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace AdminClient.Forms
 {
-	public partial class FacilityInfo_NEW : BaseForm.FormSerchListThreeSplitTemp
+	public partial class FacilityInfo_NEW : BaseForm.FormSerchListSplitTemp
 	{
 		List<ComboFgrpNameVO> FgrpNameList;
 		List<FacilityGroupVO> FacGrpList;
