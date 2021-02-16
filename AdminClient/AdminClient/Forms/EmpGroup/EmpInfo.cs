@@ -199,14 +199,33 @@ namespace AdminClient.Forms
             }
         }
 
-		private void chk_limit_CheckedChanged(object sender, EventArgs e)
-		{
-            nu_limit.Enabled = chk_limit.Checked;
+        private void btn_Xls_Click(object sender, EventArgs e)
+        {
+            if (dgv_Emp.DataSource == null)
+                return;
+            SaveFileDialog dlg = new SaveFileDialog();
+            CommonExcel excel = new CommonExcel();
+            excel.Cursor = this.Cursor;
+            dlg.Filter = "Excel File(*.xls)|*.xls";
+            dlg.Title = "엑셀파일로 내보내기";
+            if (dlg.ShowDialog() != DialogResult.OK)
+                return;
+            DataTable dt = null;
+            dt = ((List<EmployeesTeamVO>)dgv_Emp.DataSource).ConvertToDataTable();
 
-            if (!chk_limit.Checked)
+            dt.TableName = this.Name;
+            string toltip = $@"Emp_Code: 직원 코드
+                            {System.Environment.NewLine}Emp_Name: 직원 이름
+                            {System.Environment.NewLine}Emp_HireDate:  직원 입사일
+                            {System.Environment.NewLine}Emp_RetireDate: 직원 퇴사일
+                            {System.Environment.NewLine}Emp_Phone: 직원 연락처
+                            {System.Environment.NewLine}Emp_Email: 직원 이메일
+                            {System.Environment.NewLine}Emp_PostCode: 직원 우편번호
+                            {System.Environment.NewLine}Emp_AddrDetail: 직원 주소상세";
+            if (excel.ExportDataToExcel(dt, dlg.FileName, toltip))
             {
-                nu_limit.Value = 0;
+                MessageBox.Show("엑셀파일에 저장하였습니다.");
             }
         }
-	}
+    }
 }

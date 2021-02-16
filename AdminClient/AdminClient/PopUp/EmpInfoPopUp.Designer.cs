@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_EmpName = new System.Windows.Forms.TextBox();
             this.txt_EmpEmail = new System.Windows.Forms.TextBox();
@@ -46,17 +46,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txt_Number = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txt_Post = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txt_Address = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.txt_AddressDetail = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btn_SerchAddress = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.txt_empPassworad = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
@@ -76,23 +65,28 @@
             this.dgv_AddrSearch = new AdminClient.CustomDataGridView();
             this.label23 = new System.Windows.Forms.Label();
             this.chk_cheal = new System.Windows.Forms.CheckBox();
-            this.chk_Add = new System.Windows.Forms.CheckBox();
-            this.chk_Update = new System.Windows.Forms.CheckBox();
-            this.chk_Delete = new System.Windows.Forms.CheckBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txt_Post = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txt_Address = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txt_AddressDetail = new System.Windows.Forms.TextBox();
+            this.btn_SerchAddress = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pnl_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_EmpGroup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Group)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_AddrSearch)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_Main
             // 
-            this.pnl_Main.Controls.Add(this.chk_Delete);
-            this.pnl_Main.Controls.Add(this.chk_Update);
-            this.pnl_Main.Controls.Add(this.chk_Add);
             this.pnl_Main.Controls.Add(this.dgv_AddrSearch);
             this.pnl_Main.Controls.Add(this.chk_cheal);
             this.pnl_Main.Controls.Add(this.label23);
@@ -114,6 +108,11 @@
             this.pnl_Main.Controls.Add(this.label9);
             this.pnl_Main.Controls.Add(this.label10);
             this.pnl_Main.Size = new System.Drawing.Size(1155, 933);
+            // 
+            // lbl_Title
+            // 
+            this.lbl_Title.Size = new System.Drawing.Size(185, 43);
+            this.lbl_Title.Text = "FormBase";
             // 
             // Form_close
             // 
@@ -285,137 +284,6 @@
             this.txt_Number.TabIndex = 16;
             this.txt_Number.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.White;
-            this.label11.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label11.Location = new System.Drawing.Point(6, 27);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(23, 17);
-            this.label11.TabIndex = 19;
-            this.label11.Text = "◆";
-            // 
-            // txt_Post
-            // 
-            this.txt_Post.Location = new System.Drawing.Point(401, 24);
-            this.txt_Post.MaxLength = 5;
-            this.txt_Post.Name = "txt_Post";
-            this.txt_Post.Size = new System.Drawing.Size(189, 25);
-            this.txt_Post.TabIndex = 18;
-            this.txt_Post.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.White;
-            this.label12.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label12.Location = new System.Drawing.Point(27, 32);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(98, 17);
-            this.label12.TabIndex = 17;
-            this.label12.Text = "직원우편번호";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.White;
-            this.label13.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label13.Location = new System.Drawing.Point(6, 58);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(23, 17);
-            this.label13.TabIndex = 22;
-            this.label13.Text = "◆";
-            // 
-            // txt_Address
-            // 
-            this.txt_Address.Location = new System.Drawing.Point(130, 55);
-            this.txt_Address.MaxLength = 300;
-            this.txt_Address.Name = "txt_Address";
-            this.txt_Address.Size = new System.Drawing.Size(460, 25);
-            this.txt_Address.TabIndex = 21;
-            this.txt_Address.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.White;
-            this.label14.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label14.Location = new System.Drawing.Point(28, 59);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(68, 17);
-            this.label14.TabIndex = 20;
-            this.label14.Text = "직원주소";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.White;
-            this.label15.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label15.Location = new System.Drawing.Point(6, 89);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(23, 17);
-            this.label15.TabIndex = 25;
-            this.label15.Text = "◆";
-            // 
-            // txt_AddressDetail
-            // 
-            this.txt_AddressDetail.Location = new System.Drawing.Point(130, 86);
-            this.txt_AddressDetail.MaxLength = 300;
-            this.txt_AddressDetail.Name = "txt_AddressDetail";
-            this.txt_AddressDetail.Size = new System.Drawing.Size(460, 25);
-            this.txt_AddressDetail.TabIndex = 24;
-            this.txt_AddressDetail.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.White;
-            this.label16.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label16.Location = new System.Drawing.Point(28, 90);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(98, 17);
-            this.label16.TabIndex = 23;
-            this.label16.Text = "직원주소상세";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btn_SerchAddress);
-            this.groupBox1.Controls.Add(this.txt_AddressDetail);
-            this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.label16);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.txt_Address);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.txt_Post);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.groupBox1.Location = new System.Drawing.Point(7, 298);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(676, 123);
-            this.groupBox1.TabIndex = 26;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "주소입력";
-            // 
-            // btn_SerchAddress
-            // 
-            this.btn_SerchAddress.BackColor = System.Drawing.Color.White;
-            this.btn_SerchAddress.Location = new System.Drawing.Point(596, 23);
-            this.btn_SerchAddress.Name = "btn_SerchAddress";
-            this.btn_SerchAddress.Size = new System.Drawing.Size(55, 87);
-            this.btn_SerchAddress.TabIndex = 26;
-            this.btn_SerchAddress.Text = "검색";
-            this.btn_SerchAddress.UseVisualStyleBackColor = false;
-            this.btn_SerchAddress.Click += new System.EventHandler(this.btn_SerchAddress_Click);
-            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -581,14 +449,14 @@
             // 
             this.dgv_EmpGroup.BackgroundColor = System.Drawing.Color.White;
             this.dgv_EmpGroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_EmpGroup.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_EmpGroup.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_EmpGroup.GridColor = System.Drawing.Color.Black;
             this.dgv_EmpGroup.IsChkVisible = false;
             this.dgv_EmpGroup.IsEditVisible = false;
@@ -602,14 +470,14 @@
             // 
             this.dgv_Group.BackgroundColor = System.Drawing.Color.White;
             this.dgv_Group.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Group.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Group.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_Group.GridColor = System.Drawing.Color.Black;
             this.dgv_Group.IsChkVisible = false;
             this.dgv_Group.IsEditVisible = false;
@@ -623,14 +491,14 @@
             // 
             this.dgv_AddrSearch.BackgroundColor = System.Drawing.Color.White;
             this.dgv_AddrSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_AddrSearch.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_AddrSearch.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_AddrSearch.GridColor = System.Drawing.Color.Black;
             this.dgv_AddrSearch.IsChkVisible = false;
             this.dgv_AddrSearch.IsEditVisible = false;
@@ -661,53 +529,153 @@
             this.chk_cheal.UseVisualStyleBackColor = true;
             this.chk_cheal.CheckedChanged += new System.EventHandler(this.chk_cheal_CheckedChanged);
             // 
-            // chk_Add
+            // label12
             // 
-            this.chk_Add.AutoSize = true;
-            this.chk_Add.Location = new System.Drawing.Point(332, 209);
-            this.chk_Add.Name = "chk_Add";
-            this.chk_Add.Size = new System.Drawing.Size(83, 21);
-            this.chk_Add.TabIndex = 49;
-            this.chk_Add.Text = "추가권한";
-            this.chk_Add.UseVisualStyleBackColor = true;
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.White;
+            this.label12.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label12.Location = new System.Drawing.Point(27, 32);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(98, 17);
+            this.label12.TabIndex = 17;
+            this.label12.Text = "직원우편번호";
             // 
-            // chk_Update
+            // txt_Post
             // 
-            this.chk_Update.AutoSize = true;
-            this.chk_Update.Location = new System.Drawing.Point(332, 240);
-            this.chk_Update.Name = "chk_Update";
-            this.chk_Update.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.chk_Update.Size = new System.Drawing.Size(83, 21);
-            this.chk_Update.TabIndex = 50;
-            this.chk_Update.Text = "수정권한";
-            this.chk_Update.UseVisualStyleBackColor = true;
+            this.txt_Post.Location = new System.Drawing.Point(401, 24);
+            this.txt_Post.MaxLength = 5;
+            this.txt_Post.Name = "txt_Post";
+            this.txt_Post.Size = new System.Drawing.Size(189, 25);
+            this.txt_Post.TabIndex = 18;
+            this.txt_Post.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // chk_Delete
+            // label14
             // 
-            this.chk_Delete.AutoSize = true;
-            this.chk_Delete.Location = new System.Drawing.Point(332, 267);
-            this.chk_Delete.Name = "chk_Delete";
-            this.chk_Delete.Size = new System.Drawing.Size(83, 21);
-            this.chk_Delete.TabIndex = 51;
-            this.chk_Delete.Text = "삭제권한";
-            this.chk_Delete.UseVisualStyleBackColor = true;
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.White;
+            this.label14.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label14.Location = new System.Drawing.Point(28, 59);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(68, 17);
+            this.label14.TabIndex = 20;
+            this.label14.Text = "직원주소";
             // 
-            // EmpPopUp
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.White;
+            this.label11.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label11.Location = new System.Drawing.Point(6, 27);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(23, 17);
+            this.label11.TabIndex = 19;
+            this.label11.Text = "◆";
+            // 
+            // txt_Address
+            // 
+            this.txt_Address.Location = new System.Drawing.Point(130, 55);
+            this.txt_Address.MaxLength = 300;
+            this.txt_Address.Name = "txt_Address";
+            this.txt_Address.Size = new System.Drawing.Size(460, 25);
+            this.txt_Address.TabIndex = 21;
+            this.txt_Address.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.White;
+            this.label13.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label13.Location = new System.Drawing.Point(6, 58);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(23, 17);
+            this.label13.TabIndex = 22;
+            this.label13.Text = "◆";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.White;
+            this.label16.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label16.Location = new System.Drawing.Point(28, 90);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(98, 17);
+            this.label16.TabIndex = 23;
+            this.label16.Text = "직원주소상세";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.White;
+            this.label15.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label15.Location = new System.Drawing.Point(6, 89);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(23, 17);
+            this.label15.TabIndex = 25;
+            this.label15.Text = "◆";
+            // 
+            // txt_AddressDetail
+            // 
+            this.txt_AddressDetail.Location = new System.Drawing.Point(130, 86);
+            this.txt_AddressDetail.MaxLength = 300;
+            this.txt_AddressDetail.Name = "txt_AddressDetail";
+            this.txt_AddressDetail.Size = new System.Drawing.Size(460, 25);
+            this.txt_AddressDetail.TabIndex = 24;
+            this.txt_AddressDetail.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // btn_SerchAddress
+            // 
+            this.btn_SerchAddress.BackColor = System.Drawing.Color.White;
+            this.btn_SerchAddress.Location = new System.Drawing.Point(596, 23);
+            this.btn_SerchAddress.Name = "btn_SerchAddress";
+            this.btn_SerchAddress.Size = new System.Drawing.Size(55, 87);
+            this.btn_SerchAddress.TabIndex = 26;
+            this.btn_SerchAddress.Text = "검색";
+            this.btn_SerchAddress.UseVisualStyleBackColor = false;
+            this.btn_SerchAddress.Click += new System.EventHandler(this.btn_SerchAddress_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btn_SerchAddress);
+            this.groupBox1.Controls.Add(this.txt_AddressDetail);
+            this.groupBox1.Controls.Add(this.label15);
+            this.groupBox1.Controls.Add(this.label16);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.txt_Address);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.txt_Post);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.groupBox1.Location = new System.Drawing.Point(7, 298);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(676, 123);
+            this.groupBox1.TabIndex = 26;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "주소입력";
+            // 
+            // EmpInfoPopUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.ClientSize = new System.Drawing.Size(1165, 1000);
-            this.Name = "EmpPopUp";
+            this.Name = "EmpInfoPopUp";
             this.Load += new System.EventHandler(this.EmpPopUp_Load);
             this.pnl_Main.ResumeLayout(false);
             this.pnl_Main.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_EmpGroup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Group)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_AddrSearch)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -724,17 +692,6 @@
         private System.Windows.Forms.TextBox txt_EmpName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btn_SerchAddress;
-        private System.Windows.Forms.TextBox txt_AddressDetail;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txt_Address;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txt_Post;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txt_EmpCode;
         private System.Windows.Forms.Label label20;
@@ -760,8 +717,16 @@
         private CustomDataGridView dgv_AddrSearch;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.CheckBox chk_cheal;
-        private System.Windows.Forms.CheckBox chk_Delete;
-        private System.Windows.Forms.CheckBox chk_Update;
-        private System.Windows.Forms.CheckBox chk_Add;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btn_SerchAddress;
+        private System.Windows.Forms.TextBox txt_AddressDetail;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txt_Address;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txt_Post;
+        private System.Windows.Forms.Label label12;
     }
 }

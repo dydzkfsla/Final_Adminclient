@@ -28,117 +28,117 @@
         /// </summary>
         private void InitializeComponent()
         {
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-			this.dgv_Emp = new AdminClient.CustomDataGridView();
-			this.dtp_HireDateFrom = new System.Windows.Forms.DateTimePicker();
-			this.dtp_HireDateTo = new System.Windows.Forms.DateTimePicker();
-			this.gb_HireDate = new System.Windows.Forms.GroupBox();
-			this.label1 = new System.Windows.Forms.Label();
-			this.gb_RetireDate = new System.Windows.Forms.GroupBox();
-			this.label2 = new System.Windows.Forms.Label();
-			this.dtp_RetireDateTo = new System.Windows.Forms.DateTimePicker();
-			this.dtp_RetireDateFrom = new System.Windows.Forms.DateTimePicker();
-			this.cbo_Temp = new System.Windows.Forms.ComboBox();
-			this.label3 = new System.Windows.Forms.Label();
-			this.label6 = new System.Windows.Forms.Label();
-			this.txt_EmpName = new System.Windows.Forms.TextBox();
-			this.label8 = new System.Windows.Forms.Label();
-			this.dtp_HireDate = new System.Windows.Forms.DateTimePicker();
-			this.txt_Email = new System.Windows.Forms.TextBox();
-			this.label10 = new System.Windows.Forms.Label();
-			this.txt_PostCode = new System.Windows.Forms.TextBox();
-			this.label11 = new System.Windows.Forms.Label();
-			this.txt_Phone = new System.Windows.Forms.TextBox();
-			this.label13 = new System.Windows.Forms.Label();
-			this.sortControl = new AdminClient.SortControl();
-			this.searchControl = new AdminClient.SearchControl();
-			this.chk_HireDate = new System.Windows.Forms.CheckBox();
-			this.chk_RetireDate = new System.Windows.Forms.CheckBox();
-			this.panel1.SuspendLayout();
-			this.pnl_Main.SuspendLayout();
-			this.gb_Sherch.SuspendLayout();
-			this.gb_detail.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.nu_limit)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-			this.splitContainer1.Panel1.SuspendLayout();
-			this.splitContainer1.Panel2.SuspendLayout();
-			this.splitContainer1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.Form_close)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.dgv_Emp)).BeginInit();
-			this.gb_HireDate.SuspendLayout();
-			this.gb_RetireDate.SuspendLayout();
-			this.SuspendLayout();
-			// 
-			// btn_add
-			// 
-			this.btn_add.Location = new System.Drawing.Point(1518, 23);
-			this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
-			// 
-			// btn_Xls
-			// 
-			this.btn_Xls.Location = new System.Drawing.Point(1601, 23);
-			// 
-			// panel1
-			// 
-			this.panel1.Controls.Add(this.txt_Phone);
-			this.panel1.Controls.Add(this.label13);
-			this.panel1.Controls.Add(this.txt_PostCode);
-			this.panel1.Controls.Add(this.label11);
-			this.panel1.Controls.Add(this.txt_Email);
-			this.panel1.Controls.Add(this.label10);
-			this.panel1.Controls.Add(this.dtp_HireDate);
-			this.panel1.Controls.Add(this.label8);
-			this.panel1.Controls.Add(this.txt_EmpName);
-			this.panel1.Controls.Add(this.label6);
-			this.panel1.Size = new System.Drawing.Size(1691, 91);
-			this.panel1.Controls.SetChildIndex(this.btn_add, 0);
-			this.panel1.Controls.SetChildIndex(this.btn_Xls, 0);
-			this.panel1.Controls.SetChildIndex(this.label6, 0);
-			this.panel1.Controls.SetChildIndex(this.txt_EmpName, 0);
-			this.panel1.Controls.SetChildIndex(this.label8, 0);
-			this.panel1.Controls.SetChildIndex(this.dtp_HireDate, 0);
-			this.panel1.Controls.SetChildIndex(this.label10, 0);
-			this.panel1.Controls.SetChildIndex(this.txt_Email, 0);
-			this.panel1.Controls.SetChildIndex(this.label11, 0);
-			this.panel1.Controls.SetChildIndex(this.txt_PostCode, 0);
-			this.panel1.Controls.SetChildIndex(this.label13, 0);
-			this.panel1.Controls.SetChildIndex(this.txt_Phone, 0);
-			// 
-			// pnl_Main
-			// 
-			this.pnl_Main.Size = new System.Drawing.Size(1709, 768);
-			// 
-			// gb_Sherch
-			// 
-			this.gb_Sherch.Controls.Add(this.chk_RetireDate);
-			this.gb_Sherch.Controls.Add(this.chk_HireDate);
-			this.gb_Sherch.Controls.Add(this.label3);
-			this.gb_Sherch.Controls.Add(this.cbo_Temp);
-			this.gb_Sherch.Controls.Add(this.gb_RetireDate);
-			this.gb_Sherch.Controls.Add(this.gb_HireDate);
-			this.gb_Sherch.Location = new System.Drawing.Point(11, 11);
-			this.gb_Sherch.Size = new System.Drawing.Size(337, 251);
-			this.gb_Sherch.Controls.SetChildIndex(this.btn_search, 0);
-			this.gb_Sherch.Controls.SetChildIndex(this.chk_limit, 0);
-			this.gb_Sherch.Controls.SetChildIndex(this.nu_limit, 0);
-			this.gb_Sherch.Controls.SetChildIndex(this.gb_HireDate, 0);
-			this.gb_Sherch.Controls.SetChildIndex(this.gb_RetireDate, 0);
-			this.gb_Sherch.Controls.SetChildIndex(this.cbo_Temp, 0);
-			this.gb_Sherch.Controls.SetChildIndex(this.label3, 0);
-			this.gb_Sherch.Controls.SetChildIndex(this.chk_HireDate, 0);
-			this.gb_Sherch.Controls.SetChildIndex(this.chk_RetireDate, 0);
-			// 
-			// gb_detail
-			// 
-			this.gb_detail.Controls.Add(this.searchControl);
-			this.gb_detail.Controls.Add(this.sortControl);
-			this.gb_detail.Enabled = false;
-			this.gb_detail.Location = new System.Drawing.Point(12, 266);
-			this.gb_detail.Size = new System.Drawing.Size(336, 192);
-			// 
-			// nu_limit
-			// 
-			this.nu_limit.Minimum = new decimal(new int[] {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.dgv_Emp = new AdminClient.CustomDataGridView();
+            this.dtp_HireDateFrom = new System.Windows.Forms.DateTimePicker();
+            this.dtp_HireDateTo = new System.Windows.Forms.DateTimePicker();
+            this.gb_HireDate = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.gb_RetireDate = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dtp_RetireDateTo = new System.Windows.Forms.DateTimePicker();
+            this.dtp_RetireDateFrom = new System.Windows.Forms.DateTimePicker();
+            this.cbo_Temp = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txt_EmpName = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.dtp_HireDate = new System.Windows.Forms.DateTimePicker();
+            this.txt_Email = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txt_PostCode = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txt_Phone = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.sortControl = new AdminClient.SortControl();
+            this.searchControl = new AdminClient.SearchControl();
+            this.chk_HireDate = new System.Windows.Forms.CheckBox();
+            this.chk_RetireDate = new System.Windows.Forms.CheckBox();
+            this.panel1.SuspendLayout();
+            this.pnl_Main.SuspendLayout();
+            this.gb_Sherch.SuspendLayout();
+            this.gb_detail.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nu_limit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Form_close)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Emp)).BeginInit();
+            this.gb_HireDate.SuspendLayout();
+            this.gb_RetireDate.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // btn_add
+            // 
+            this.btn_add.Location = new System.Drawing.Point(1518, 23);
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
+            // 
+            // btn_Xls
+            // 
+            this.btn_Xls.Location = new System.Drawing.Point(1601, 23);
+            this.btn_Xls.Click += new System.EventHandler(this.btn_Xls_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.txt_Phone);
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.txt_PostCode);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.txt_Email);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.dtp_HireDate);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.txt_EmpName);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Size = new System.Drawing.Size(1691, 91);
+            this.panel1.Controls.SetChildIndex(this.btn_add, 0);
+            this.panel1.Controls.SetChildIndex(this.btn_Xls, 0);
+            this.panel1.Controls.SetChildIndex(this.label6, 0);
+            this.panel1.Controls.SetChildIndex(this.txt_EmpName, 0);
+            this.panel1.Controls.SetChildIndex(this.label8, 0);
+            this.panel1.Controls.SetChildIndex(this.dtp_HireDate, 0);
+            this.panel1.Controls.SetChildIndex(this.label10, 0);
+            this.panel1.Controls.SetChildIndex(this.txt_Email, 0);
+            this.panel1.Controls.SetChildIndex(this.label11, 0);
+            this.panel1.Controls.SetChildIndex(this.txt_PostCode, 0);
+            this.panel1.Controls.SetChildIndex(this.label13, 0);
+            this.panel1.Controls.SetChildIndex(this.txt_Phone, 0);
+            // 
+            // pnl_Main
+            // 
+            this.pnl_Main.Size = new System.Drawing.Size(1709, 768);
+            // 
+            // gb_Sherch
+            // 
+            this.gb_Sherch.Controls.Add(this.chk_RetireDate);
+            this.gb_Sherch.Controls.Add(this.chk_HireDate);
+            this.gb_Sherch.Controls.Add(this.label3);
+            this.gb_Sherch.Controls.Add(this.cbo_Temp);
+            this.gb_Sherch.Controls.Add(this.gb_RetireDate);
+            this.gb_Sherch.Controls.Add(this.gb_HireDate);
+            this.gb_Sherch.Size = new System.Drawing.Size(365, 251);
+            this.gb_Sherch.Controls.SetChildIndex(this.btn_search, 0);
+            this.gb_Sherch.Controls.SetChildIndex(this.chk_limit, 0);
+            this.gb_Sherch.Controls.SetChildIndex(this.nu_limit, 0);
+            this.gb_Sherch.Controls.SetChildIndex(this.gb_HireDate, 0);
+            this.gb_Sherch.Controls.SetChildIndex(this.gb_RetireDate, 0);
+            this.gb_Sherch.Controls.SetChildIndex(this.cbo_Temp, 0);
+            this.gb_Sherch.Controls.SetChildIndex(this.label3, 0);
+            this.gb_Sherch.Controls.SetChildIndex(this.chk_HireDate, 0);
+            this.gb_Sherch.Controls.SetChildIndex(this.chk_RetireDate, 0);
+            // 
+            // gb_detail
+            // 
+            this.gb_detail.Controls.Add(this.searchControl);
+            this.gb_detail.Controls.Add(this.sortControl);
+            this.gb_detail.Enabled = false;
+            this.gb_detail.Location = new System.Drawing.Point(11, 257);
+            this.gb_detail.Size = new System.Drawing.Size(365, 192);
+            // 
+            // nu_limit
+            // 
+            this.nu_limit.Minimum = new decimal(new int[] {
             1,
             0,
             0,

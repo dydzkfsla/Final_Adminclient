@@ -28,6 +28,100 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.customDataGridView1 = new AdminClient.CustomDataGridView();
+            this.searchControl = new AdminClient.SearchControl();
+            this.sortControl = new AdminClient.SortControl();
+            this.dgv_Check = new AdminClient.CustomDataGridView();
+            this.panel1.SuspendLayout();
+            this.pnl_Main.SuspendLayout();
+            this.gb_Sherch.SuspendLayout();
+            this.gb_detail.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nu_limit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Form_close)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Check)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // btn_add
+            // 
+            this.btn_add.Location = new System.Drawing.Point(1468, 9);
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
+            // 
+            // btn_Xls
+            // 
+            this.btn_Xls.Location = new System.Drawing.Point(1551, 9);
+            this.btn_Xls.Click += new System.EventHandler(this.btn_Xls_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Size = new System.Drawing.Size(1636, 64);
+            // 
+            // lbl_Title
+            // 
+            this.lbl_Title.Location = new System.Drawing.Point(15, 28);
+            // 
+            // pnl_Main
+            // 
+            this.pnl_Main.Location = new System.Drawing.Point(0, 73);
+            this.pnl_Main.Size = new System.Drawing.Size(1654, 941);
+            // 
+            // gb_Sherch
+            // 
+            this.gb_Sherch.Size = new System.Drawing.Size(348, 98);
+            // 
+            // gb_detail
+            // 
+            this.gb_detail.Controls.Add(this.sortControl);
+            this.gb_detail.Controls.Add(this.searchControl);
+            this.gb_detail.Enabled = false;
+            this.gb_detail.Location = new System.Drawing.Point(12, 113);
+            this.gb_detail.Size = new System.Drawing.Size(348, 211);
+            // 
+            // nu_limit
+            // 
+            this.nu_limit.Size = new System.Drawing.Size(159, 25);
+            // 
+            // splitContainer1
+            // 
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.dgv_Check);
+            this.splitContainer1.Panel2.Controls.Add(this.customDataGridView1);
+            this.splitContainer1.Size = new System.Drawing.Size(1654, 860);
+            this.splitContainer1.SplitterDistance = 365;
+            // 
+            // btn_folding
+            // 
+            this.btn_folding.Location = new System.Drawing.Point(0, 386);
+            // 
+            // splitter1
+            // 
+            this.splitter1.Size = new System.Drawing.Size(33, 860);
+            // 
+            // btn_search
+            // 
+            this.btn_search.Location = new System.Drawing.Point(263, 17);
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
+            // 
+            // Form_close
+            // 
+            this.Form_close.Location = new System.Drawing.Point(1633, 8);
+            // 
+            // TitleColor
+            // 
+            this.TitleColor.Size = new System.Drawing.Size(1744, 7);
+            // 
+            // customDataGridView1
+            // 
+            this.customDataGridView1.AllowUserToAddRows = false;
+            this.customDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.customDataGridView1 = new AdminClient.CustomDataGridView();

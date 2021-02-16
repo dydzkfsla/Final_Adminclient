@@ -227,5 +227,30 @@ namespace AdminClient.Forms
 
             }
         }
+
+        private void btn_Xls_Click(object sender, EventArgs e)
+        {
+            if (dgv_ProdList.DataSource == null)
+                return;
+            SaveFileDialog dlg = new SaveFileDialog();
+            CommonExcel excel = new CommonExcel();
+            excel.Cursor = this.Cursor;
+            dlg.Filter = "Excel File(*.xls)|*.xls";
+            dlg.Title = "엑셀파일로 내보내기";
+            if (dlg.ShowDialog() != DialogResult.OK)
+                return;
+            DataTable dt = null;
+            dt = ((List<ProductVO>)dgv_ProdList.DataSource).ConvertToDataTable();
+
+            dt.TableName = this.Name;
+            string toltip = $@"Prod_Code: 품목 코드값
+                            {System.Environment.NewLine}Prod_Category: 품목 카테고리
+                            {System.Environment.NewLine}Prod_Name:  품목명
+                            {System.Environment.NewLine}Prod_WhCode: 해당품목의 주 저장 창고";
+            if (excel.ExportDataToExcel(dt, dlg.FileName, toltip))
+            {
+                MessageBox.Show("엑셀파일에 저장하였습니다.");
+            }
+        }
     }
 }

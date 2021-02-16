@@ -215,5 +215,45 @@ namespace AdminClient.Forms
                 dgv_WhList.DataSource = WHList;
             }
         }
+
+        private void btn_Xls_Click(object sender, EventArgs e)
+        {
+            List<DataTable> dt = new List<DataTable>();
+            if (dgv_WhList.DataSource == null)
+                return;
+            if (dgv_WhDetailList.DataSource == null)
+                return;
+            SaveFileDialog dlg = new SaveFileDialog();
+            CommonExcel excel = new CommonExcel();
+            excel.Cursor = this.Cursor;
+            dlg.Filter = "Excel File(*.xls)|*.xls";
+            dlg.Title = "엑셀파일로 내보내기";
+            if (dlg.ShowDialog() != DialogResult.OK)
+                return;
+
+            DataTable temp = ((List<WareHouseVO>)dgv_WhList.DataSource).ConvertToDataTable();
+            dt.Add(temp);
+            temp.TableName = "asdasd";
+            temp = ((List<WhDetailVO>)dgv_WhDetailList.DataSource).ConvertToDataTable();
+            dt.Add(temp);
+            temp.TableName = "aaaaaa";
+            List<string> toltip = new List<string>();
+            toltip.Add($@"WH_Code: 창고코드
+                            {System.Environment.NewLine}WH_Name: 창고이름
+                            {System.Environment.NewLine}WH_Type:  Type
+                            {System.Environment.NewLine}Common_Name: 창고유형
+                            {System.Environment.NewLine}WH_State: 창고상태");
+            toltip.Add($@"Common_Name: 품목카테고리
+                            {System.Environment.NewLine}Prod_Code: 품목코드
+                            {System.Environment.NewLine}Prod_Name:  품목이름
+                            {System.Environment.NewLine}Prod_Unit: 단위
+                            {System.Environment.NewLine}WH_PsyCount: 재고량
+                            {System.Environment.NewLine}WH_LogCount: 예상재고량
+                            {System.Environment.NewLine}Prod_SafetyStock: 안전재고량");
+            if (excel.ExportDataToExcel(dt, dlg.FileName, toltip))
+            {
+                MessageBox.Show("엑셀파일에 저장하였습니다.");
+            }
+        }
     }
 }
