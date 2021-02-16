@@ -416,6 +416,7 @@
     <Compile Include="Service\TeamInfoService.cs" />
     <Compile Include="Service\ViewService.cs" />
     <Compile Include="Service\WareHouseService.cs" />
+    <Compile Include="Service\WorkOrderService.cs" />
     <Compile Include="UseControl\FavoritesControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

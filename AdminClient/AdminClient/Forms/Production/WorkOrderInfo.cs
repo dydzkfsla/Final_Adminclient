@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AdminClient.Service;
+using AdminClientVO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,6 +12,7 @@ namespace AdminClient.Forms
 {
     public partial class WorkOrderInfo : AdminClient.BaseForm.FormListTemp
     {
+        List<WorkOrderVO> wolist;
         public WorkOrderInfo()
         {
             InitializeComponent();
@@ -17,7 +20,11 @@ namespace AdminClient.Forms
 
         private void WorkOrderInfo_Load(object sender, EventArgs e)
         {
+            lbl_Title.Text = "작업지시목록";
             splitContainer1.SplitterDistance = 365;
+            gb_work.Enabled = false;
+            gb_due.Enabled = false;
+            nu_limit.Enabled = false;
         }
 
 		private void chk_limit_CheckedChanged(object sender, EventArgs e)
@@ -29,5 +36,48 @@ namespace AdminClient.Forms
                 nu_limit.Value = 0;
             }
         }
-	}
+
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+            string limit, wfrom, wto, dfrom, dto;
+            limit = wfrom = wto = dfrom = dto = string.Empty;
+
+            if (chk_limit.Checked)
+                limit = nu_limit.Value.ToString();
+
+            if(chk_Work.Checked)
+            {
+                wfrom = dtp_wfrom.Value.ToString("yyyy-MM-dd");
+                wto = dtp_wto.Value.ToString("yyyy-MM-dd");
+            }
+
+            if(chk_Due.Checked)
+            {
+                dfrom = dtp_dfrom.Value.ToString("yyyy-MM-dd");
+                dto = dtp_dto.Value.ToString("yyyy-MM-dd");
+            }
+
+            WorkOrderService service = new WorkOrderService();
+            wolist = service.GetWorkOrder(limit, wfrom, wto, dfrom, dto);
+
+            dgv_woList.DataSource = null;
+            dgv_woList.DataSource = wolist;
+
+            if(wolist != null && wolist.Count > 0)
+            {
+                schCtrl.Getdata(dgv_woList);
+                sortCtrl.Getdata(dgv_woList);
+            }
+        }
+
+        private void chk_Work_CheckedChanged(object sender, EventArgs e)
+        {
+            gb_work.Enabled = chk_Work.Checked;
+        }
+
+        private void chk_Due_CheckedChanged(object sender, EventArgs e)
+        {
+            gb_due.Enabled = chk_Due.Checked;
+        }
+    }
 }

@@ -87,6 +87,7 @@
     <Compile Include="Utils\LoggingUtility.cs" />
     <Compile Include="ViewDAC.cs" />
     <Compile Include="WareHouseDAC.cs" />
+    <Compile Include="WorkOrderDAC.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DB_XML.xml">

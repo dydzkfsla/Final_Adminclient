@@ -138,5 +138,16 @@ namespace AdminClient.Forms
 			if (e.RowIndex < 0)
 				return;
         }
-	}
+
+        private void btn_CreateWorkOrder_Click(object sender, EventArgs e)
+        {
+			ProductionService service = new ProductionService();
+			bool result = service.SetWorkOrder();
+
+			if(result)
+                MessageBox.Show("작업지시목록이 생성되었습니다. 작업지시 메뉴에서 확인해주세요");
+			else
+                MessageBox.Show("작업지시목록 생성중 오류가 발생했습니다.");
+        }
+    }
 }

@@ -72,6 +72,7 @@
     <Compile Include="TeamInfoVO.cs" />
     <Compile Include="ViewVO.cs" />
     <Compile Include="WareHouseVO.cs" />
+    <Compile Include="WorkOrderVO.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

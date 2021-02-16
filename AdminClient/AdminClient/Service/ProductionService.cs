@@ -41,5 +41,12 @@ namespace AdminClient.Service
 			dac.Dispose();
 			return dt;
         }
+
+        internal bool SetWorkOrder()
+        {
+			bool result = dac.SetWorkOrder();
+			dac.Dispose();
+			return result;
+        }
     }
 }

@@ -76,6 +76,31 @@ namespace AdminClientDAC
 			}
 		}
 
+        public bool SetWorkOrder()
+        {
+            try
+            {
+				using(SqlCommand cmd = new SqlCommand())
+                {
+					cmd.Connection = conn;
+					cmd.CommandText = "SP_SetWorkOrder";
+					cmd.CommandType = CommandType.StoredProcedure;
+
+					cmd.Parameters.AddWithValue("@empcode", Global.employees.Emp_Code);
+
+					int cnt = cmd.ExecuteNonQuery();
+
+					return cnt > 0 ? true : false;
+                }
+
+            }
+			catch(Exception err)
+            {
+				Info.WriteError($"실행자:{Global.employees.Emp_Name} 작업지시생성중 오류 :" + err.Message, err);
+				return false;
+            }
+        }
+
         public DataTable GetPlan(string from, string to)
         {
 			try
