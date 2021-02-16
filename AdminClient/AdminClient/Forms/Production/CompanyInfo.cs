@@ -110,6 +110,11 @@ namespace AdminClient.Forms
         private void chk_limit_CheckedChanged(object sender, EventArgs e)
         {
             nu_limit.Enabled = chk_limit.Checked;
+
+            if (!chk_limit.Checked)
+            {
+                nu_limit.Value = 0;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e) // search

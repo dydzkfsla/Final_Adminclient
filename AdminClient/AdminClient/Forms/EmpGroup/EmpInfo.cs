@@ -20,6 +20,7 @@ namespace AdminClient.Forms
         public EmpInfo()
         {
             InitializeComponent();
+            splitContainer1.SplitterDistance = 365;
         }
 
         private void EmpInfo_Load(object sender, EventArgs e)
@@ -197,5 +198,15 @@ namespace AdminClient.Forms
                 dgv_Emp.DataSource = temp;
             }
         }
-    }
+
+		private void chk_limit_CheckedChanged(object sender, EventArgs e)
+		{
+            nu_limit.Enabled = chk_limit.Checked;
+
+            if (!chk_limit.Checked)
+            {
+                nu_limit.Value = 0;
+            }
+        }
+	}
 }

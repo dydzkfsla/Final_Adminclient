@@ -79,6 +79,9 @@ namespace AdminClient.PopUp
         #region 선택한 그룹에 따른 폼과 할당된 폼 확인
         private void SetAuthority()
         {
+            if (Employees == null)
+                return;
+
             var List = (from item in Employees
                         select new EmpTeamConnVO { Team_Code = item.Team_Code, Emp_Code = item .Emp_Code}).ToList(); //선택한 권한 그룹폼만 가져옴
 

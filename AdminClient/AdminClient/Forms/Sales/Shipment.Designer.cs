@@ -108,6 +108,10 @@ namespace AdminClient.Forms
 			this.gb_detail.Location = new System.Drawing.Point(4, 180);
 			this.gb_detail.Size = new System.Drawing.Size(349, 210);
 			// 
+			// chk_limit
+			// 
+			this.chk_limit.CheckedChanged += new System.EventHandler(this.chk_limit_CheckedChanged);
+			// 
 			// splitContainer1
 			// 
 			this.splitContainer1.Location = new System.Drawing.Point(7, 80);

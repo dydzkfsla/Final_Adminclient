@@ -157,6 +157,9 @@ namespace AdminClient.Forms
 			// 
 			// cbo_OutSourcing
 			// 
+			this.cbo_OutSourcing.BackColor = System.Drawing.Color.WhiteSmoke;
+			this.cbo_OutSourcing.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbo_OutSourcing.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.cbo_OutSourcing.FormattingEnabled = true;
 			this.cbo_OutSourcing.Location = new System.Drawing.Point(12, 169);
 			this.cbo_OutSourcing.Name = "cbo_OutSourcing";
@@ -174,6 +177,9 @@ namespace AdminClient.Forms
 			// 
 			// cbo_Enable
 			// 
+			this.cbo_Enable.BackColor = System.Drawing.Color.WhiteSmoke;
+			this.cbo_Enable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbo_Enable.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.cbo_Enable.FormattingEnabled = true;
 			this.cbo_Enable.Location = new System.Drawing.Point(12, 121);
 			this.cbo_Enable.Name = "cbo_Enable";
@@ -211,6 +217,9 @@ namespace AdminClient.Forms
 			// 
 			// dgv_FacGrpList
 			// 
+			this.dgv_FacGrpList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.dgv_FacGrpList.BackgroundColor = System.Drawing.Color.White;
 			this.dgv_FacGrpList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -227,13 +236,16 @@ namespace AdminClient.Forms
 			this.dgv_FacGrpList.Location = new System.Drawing.Point(0, 25);
 			this.dgv_FacGrpList.Name = "dgv_FacGrpList";
 			this.dgv_FacGrpList.RowTemplate.Height = 23;
-			this.dgv_FacGrpList.Size = new System.Drawing.Size(1249, 354);
+			this.dgv_FacGrpList.Size = new System.Drawing.Size(1246, 354);
 			this.dgv_FacGrpList.TabIndex = 0;
 			this.dgv_FacGrpList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_FacGrpList_CellContentClick);
 			this.dgv_FacGrpList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_FacGrpList_CellDoubleClick);
 			// 
 			// dgv_FacList
 			// 
+			this.dgv_FacList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.dgv_FacList.BackgroundColor = System.Drawing.Color.White;
 			this.dgv_FacList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -250,7 +262,7 @@ namespace AdminClient.Forms
 			this.dgv_FacList.Location = new System.Drawing.Point(1, 26);
 			this.dgv_FacList.Name = "dgv_FacList";
 			this.dgv_FacList.RowTemplate.Height = 23;
-			this.dgv_FacList.Size = new System.Drawing.Size(1248, 443);
+			this.dgv_FacList.Size = new System.Drawing.Size(1245, 443);
 			this.dgv_FacList.TabIndex = 0;
 			this.dgv_FacList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_FacList_CellContentClick);
 			// 
@@ -273,6 +285,9 @@ namespace AdminClient.Forms
 			// 
 			// cbo_Fgrp
 			// 
+			this.cbo_Fgrp.BackColor = System.Drawing.Color.WhiteSmoke;
+			this.cbo_Fgrp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbo_Fgrp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.cbo_Fgrp.FormattingEnabled = true;
 			this.cbo_Fgrp.Location = new System.Drawing.Point(12, 73);
 			this.cbo_Fgrp.Name = "cbo_Fgrp";

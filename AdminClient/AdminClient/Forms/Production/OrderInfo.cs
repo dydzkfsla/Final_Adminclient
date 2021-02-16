@@ -61,6 +61,11 @@ namespace AdminClient.Forms
         private void chk_limit_CheckedChanged(object sender, EventArgs e) // 검색제한
         {
             nu_limit.Enabled = chk_limit.Checked;
+
+            if (!chk_limit.Checked)
+            {
+                nu_limit.Value = 0;
+            }
         }
 
         #region 날짜설정
