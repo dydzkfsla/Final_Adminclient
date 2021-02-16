@@ -125,5 +125,10 @@ namespace AdminClient.PopUp
             }
         }
         #endregion
+
+        private void ProductCheckInfoPopUp_Load(object sender, EventArgs e)
+        {
+            lbl_Title.Text = "검사기준정보 등록";
+        }
     }
 }

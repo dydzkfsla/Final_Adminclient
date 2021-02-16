@@ -25,12 +25,15 @@ namespace AdminClient.PopUp
         }
         private void CommonPopUp_Load(object sender, EventArgs e)
         {
-            if(mode == Mode.New)
+            
+            if (mode == Mode.New)
             {
                 btn_Update.Enabled = btn_Delete.Enabled = false;
+                lbl_Title.Text = "공통코드등록";
             }
             else
             {
+                lbl_Title.Text = "공통코드수정";
                 txt_Code.KeyPress += NoneKeyPress;
                 txt_Code.Text = vo.Common_Code;
                 txt_Name.Text = vo.Common_Name;

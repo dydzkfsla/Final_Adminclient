@@ -103,7 +103,7 @@
             this.gb_Sherch.Controls.Add(this.label2);
             this.gb_Sherch.Controls.Add(this.cbo_Category);
             this.gb_Sherch.Controls.Add(this.label1);
-            this.gb_Sherch.Size = new System.Drawing.Size(376, 213);
+            this.gb_Sherch.Size = new System.Drawing.Size(348, 213);
             this.gb_Sherch.Controls.SetChildIndex(this.chk_limit, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.nu_limit, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.btn_search, 0);
@@ -120,7 +120,7 @@
             this.gb_detail.Controls.Add(this.schCtrl);
             this.gb_detail.Controls.Add(this.label7);
             this.gb_detail.Location = new System.Drawing.Point(12, 228);
-            this.gb_detail.Size = new System.Drawing.Size(375, 575);
+            this.gb_detail.Size = new System.Drawing.Size(348, 231);
             // 
             // nu_limit
             // 
@@ -149,7 +149,7 @@
             // 
             // btn_search
             // 
-            this.btn_search.Location = new System.Drawing.Point(297, 18);
+            this.btn_search.Location = new System.Drawing.Point(260, 17);
             this.btn_search.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form_close

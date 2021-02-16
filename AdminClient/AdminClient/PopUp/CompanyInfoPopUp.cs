@@ -29,8 +29,11 @@ namespace AdminClient.PopUp
 
         private void CompanyPopUp_Load(object sender, EventArgs e)
         {
-            if(mode == Mode.New)
+            
+            
+            if (mode == Mode.New)
             {
+                lbl_Title.Text = "업체정보등록";
                 #region 등록 기초세팅
                 btn_Update.Enabled = btn_Delete.Enabled = false;
                 txt_Code.Text = "자동입력";
@@ -52,6 +55,7 @@ namespace AdminClient.PopUp
             }
             else
             {
+                lbl_Title.Text = "업체정보수정";
                 #region 수정 기초세팅
 
                 CompanyService service = new CompanyService();
@@ -133,16 +137,20 @@ namespace AdminClient.PopUp
                 vo = new CompanyVO
                 {
                     Comp_Auto = cbo_Auto.SelectedItem.ToString(),
-                    Comp_Type = cbo_Type.SelectedValue.ToString(),
+                    Comp_Type = cbo_Type.SelectedValue.ToString(), 
+                    Common_Name = cbo_Type.Text, 
                     Comp_Name = txt_Name.Text,
                     Comp_CEO = txt_CEO.Text,
                     Comp_State = cbo_State.SelectedItem.ToString()
                 };
 
-                CompanyService service = new CompanyService();
-                bool result = service.AddCompany(userID, vo);
 
-                if(result)
+                CompanyService service = new CompanyService();
+                string result = service.AddCompany(userID, vo);
+
+                vo.Comp_Code = result;
+
+                if(result != null)
                 {
                     this.DialogResult = DialogResult.OK;
                     this.Close();

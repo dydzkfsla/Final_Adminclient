@@ -81,7 +81,7 @@
             // 
             this.splitContainer3.Panel2.Controls.Add(this.gb_detailItem);
             this.splitContainer3.Size = new System.Drawing.Size(1238, 452);
-            this.splitContainer3.SplitterDistance = 818;
+            this.splitContainer3.SplitterDistance = 879;
             // 
             // splitContainer2
             // 
@@ -134,7 +134,7 @@
             this.gb_Sherch.Controls.Add(this.cbo_Type);
             this.gb_Sherch.Controls.Add(this.label2);
             this.gb_Sherch.Controls.Add(this.label1);
-            this.gb_Sherch.Size = new System.Drawing.Size(361, 186);
+            this.gb_Sherch.Size = new System.Drawing.Size(348, 186);
             this.gb_Sherch.Controls.SetChildIndex(this.chk_limit, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.nu_limit, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.btn_search, 0);
@@ -147,7 +147,7 @@
             // 
             this.gb_detail.Controls.Add(this.sortCtrl);
             this.gb_detail.Controls.Add(this.schCtrl);
-            this.gb_detail.Size = new System.Drawing.Size(361, 274);
+            this.gb_detail.Size = new System.Drawing.Size(348, 274);
             // 
             // nu_limit
             // 
@@ -173,7 +173,7 @@
             // 
             // btn_search
             // 
-            this.btn_search.Location = new System.Drawing.Point(276, 17);
+            this.btn_search.Location = new System.Drawing.Point(269, 17);
             this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // Form_close
@@ -247,7 +247,7 @@
             this.dgv_WhDetailList.Location = new System.Drawing.Point(0, 0);
             this.dgv_WhDetailList.Name = "dgv_WhDetailList";
             this.dgv_WhDetailList.RowTemplate.Height = 23;
-            this.dgv_WhDetailList.Size = new System.Drawing.Size(818, 452);
+            this.dgv_WhDetailList.Size = new System.Drawing.Size(879, 452);
             this.dgv_WhDetailList.TabIndex = 0;
             // 
             // label1
@@ -364,9 +364,9 @@
             // 
             this.gb_detailItem.Controls.Add(this.schCtrlDetail);
             this.gb_detailItem.Controls.Add(this.sortCtrlDetail);
-            this.gb_detailItem.Location = new System.Drawing.Point(23, 17);
+            this.gb_detailItem.Location = new System.Drawing.Point(10, 12);
             this.gb_detailItem.Name = "gb_detailItem";
-            this.gb_detailItem.Size = new System.Drawing.Size(363, 246);
+            this.gb_detailItem.Size = new System.Drawing.Size(337, 246);
             this.gb_detailItem.TabIndex = 2;
             this.gb_detailItem.TabStop = false;
             this.gb_detailItem.Text = "디테일 세부검색";

@@ -25,6 +25,7 @@ namespace AdminClient.Forms
 
 		private void ProductionPlan_NEW_Load(object sender, EventArgs e)
 		{
+			splitContainer1.SplitterDistance = 365;
 			#region 데이터그리드뷰 셋팅
 			dgv_ProductionCount.SetGridColumn();
 			CommonUtil.AddGridTextColumn(dgv_ProductionCount, "주문수량", "Contract_Count");
@@ -32,7 +33,7 @@ namespace AdminClient.Forms
 
 			dgv_ConfirmedContract.SetGridColumn();
 			CommonUtil.AddGridTextColumn(dgv_ConfirmedContract, "수주코드", "Contract_Code");
-			CommonUtil.AddGridTextColumn(dgv_ConfirmedContract, "고객사코드", "Comp_Code");
+			CommonUtil.AddGridTextColumn(dgv_ConfirmedContract, "고객사코드", "Comp_Code", 150);
 			CommonUtil.AddGridTextColumn(dgv_ConfirmedContract, "고객사명", "Comp_Name");
 			CommonUtil.AddGridTextColumn(dgv_ConfirmedContract, "도착지", "Contract_Destination");
 			CommonUtil.AddGridTextColumn(dgv_ConfirmedContract, "품목코드", "Prod_Code");

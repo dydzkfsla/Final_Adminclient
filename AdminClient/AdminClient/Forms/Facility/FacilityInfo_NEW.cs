@@ -28,6 +28,7 @@ namespace AdminClient.Forms
 		private void FacilityInfo_NEW_Load(object sender, EventArgs e)
 		{
 			#region 기초셋팅
+			splitContainer1.SplitterDistance = 365;
 			nu_limit.Enabled = false;
 			gb_detail.Enabled = false;
 
@@ -59,7 +60,7 @@ namespace AdminClient.Forms
 			#region 설비군 부분
 			#region 데이터그리드뷰 셋팅
 			dgv_FacGrpList.SetGridColumn();
-			CommonUtil.AddGridTextColumn(dgv_FacGrpList, "설비군코드", "FacGrp_Code");
+			CommonUtil.AddGridTextColumn(dgv_FacGrpList, "설비군코드", "FacGrp_Code", 150);
 			CommonUtil.AddGridTextColumn(dgv_FacGrpList, "설비군명", "FacGrp_Name");
 			CommonUtil.AddGridTextColumn(dgv_FacGrpList, "사용여부", "FacGrp_Enable");
 			CommonUtil.AddGridTextColumn(dgv_FacGrpList, "설명", "FacGrp_Description");

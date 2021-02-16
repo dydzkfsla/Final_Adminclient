@@ -25,7 +25,7 @@ namespace AdminClient.Forms
         {
 			gb_detail.Enabled = false;
 			nu_limit.Enabled = false;
-
+			splitContainer1.SplitterDistance = 365;
 			#region 콤보박스 바인딩
 			StockInfoService service = new StockInfoService();
 			comblist = service.GetComboBindingList();
@@ -65,9 +65,11 @@ namespace AdminClient.Forms
 			CommonUtil.AddGridTextColumn(dgv_Stock, "창고타입", "Common_Name");
 			CommonUtil.AddGridTextColumn(dgv_Stock, "ProdCatrgory", "Prod_Category", visibility : false);
 			CommonUtil.AddGridTextColumn(dgv_Stock, "품목타입", "ProdType");
+			CommonUtil.AddGridTextColumn(dgv_Stock, "품목코드", "Prod_Code");
+			CommonUtil.AddGridTextColumn(dgv_Stock, "품목명", "Prod_Name");
 			CommonUtil.AddGridTextColumn(dgv_Stock, "단위", "Prod_Unit");
 			CommonUtil.AddGridTextColumn(dgv_Stock, "재고량", "WH_PsyCount");
-			CommonUtil.AddGridTextColumn(dgv_Stock, "안전재고량", "Prod_SafetyStock");
+			CommonUtil.AddGridTextColumn(dgv_Stock, "안전재고량", "Prod_SafetyStock", 150);
 
             #endregion
 

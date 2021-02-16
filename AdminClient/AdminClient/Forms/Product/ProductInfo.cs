@@ -24,6 +24,7 @@ namespace AdminClient.Forms
         private void ProductInfo_Load(object sender, EventArgs e)
         {
             #region 초기세팅
+            splitContainer1.SplitterDistance = 365;
             nu_limit.Enabled = false;
             txt_Code.KeyPress += NoneKeyPress;
             txt_Cate.KeyPress += NoneKeyPress;

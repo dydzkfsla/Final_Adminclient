@@ -101,7 +101,7 @@
             // 
             this.gb_Sherch.Controls.Add(this.label1);
             this.gb_Sherch.Controls.Add(this.cbo_catagory);
-            this.gb_Sherch.Size = new System.Drawing.Size(347, 104);
+            this.gb_Sherch.Size = new System.Drawing.Size(348, 104);
             this.gb_Sherch.Controls.SetChildIndex(this.btn_search, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.chk_limit, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.nu_limit, 0);
@@ -113,7 +113,7 @@
             this.gb_detail.Controls.Add(this.sortCtrl);
             this.gb_detail.Controls.Add(this.schCtrl);
             this.gb_detail.Location = new System.Drawing.Point(10, 110);
-            this.gb_detail.Size = new System.Drawing.Size(348, 478);
+            this.gb_detail.Size = new System.Drawing.Size(348, 185);
             // 
             // nu_limit
             // 
@@ -131,7 +131,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgv_CommList);
             this.splitContainer1.Size = new System.Drawing.Size(1655, 839);
-            this.splitContainer1.SplitterDistance = 366;
+            this.splitContainer1.SplitterDistance = 370;
             // 
             // btn_folding
             // 
@@ -178,7 +178,7 @@
             this.dgv_CommList.Name = "dgv_CommList";
             this.dgv_CommList.RowHeadersVisible = false;
             this.dgv_CommList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_CommList.Size = new System.Drawing.Size(1246, 833);
+            this.dgv_CommList.Size = new System.Drawing.Size(1242, 833);
             this.dgv_CommList.TabIndex = 3;
             this.dgv_CommList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CommList_CellClick);
             this.dgv_CommList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CommList_CellContentClick);

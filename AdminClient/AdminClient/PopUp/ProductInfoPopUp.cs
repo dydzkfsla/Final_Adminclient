@@ -60,6 +60,7 @@ namespace AdminClient.PopUp
 
             if (mode == Mode.Old)
             {
+                lbl_Title.Text = "품목정보 수정";
                 btn_Add.Enabled = false;
                 txt_Code.Text = vo.Prod_Code;
                 txt_Name.Text = vo.Prod_Name;
@@ -87,6 +88,7 @@ namespace AdminClient.PopUp
             }
             else
             {
+                lbl_Title.Text = "신규 품목 등록";
                 btn_Update.Enabled = btn_Delete.Enabled = false;
                 txt_Code.Text = "자동입력";
             }

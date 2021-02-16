@@ -42,10 +42,16 @@ namespace AdminClient.PopUp
             cbo_Type.DisplayMember = "Common_Name";
 
             if (mode == Mode.New)
+            {
+                lbl_Title.Text = "신규창고 등록";
                 btn_Update.Enabled = btn_Delete.Enabled = false;
+            }
             else
+            {
+                lbl_Title.Text = "기존창고 정보 수정";
                 btn_Add.Enabled = false;
-
+            }
+            
             txt_Code.Text = "자동추가";
 
             #region old모드일경우

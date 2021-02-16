@@ -72,7 +72,7 @@
             // 
             // gb_Sherch
             // 
-            this.gb_Sherch.Size = new System.Drawing.Size(351, 98);
+            this.gb_Sherch.Size = new System.Drawing.Size(348, 98);
             // 
             // gb_detail
             // 
@@ -80,7 +80,7 @@
             this.gb_detail.Controls.Add(this.searchControl);
             this.gb_detail.Enabled = false;
             this.gb_detail.Location = new System.Drawing.Point(12, 113);
-            this.gb_detail.Size = new System.Drawing.Size(351, 211);
+            this.gb_detail.Size = new System.Drawing.Size(348, 211);
             // 
             // nu_limit
             // 
@@ -94,7 +94,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.dgv_Check);
             this.splitContainer1.Panel2.Controls.Add(this.customDataGridView1);
             this.splitContainer1.Size = new System.Drawing.Size(1654, 860);
-            this.splitContainer1.SplitterDistance = 372;
+            this.splitContainer1.SplitterDistance = 365;
             // 
             // btn_folding
             // 
@@ -141,7 +141,7 @@
             this.customDataGridView1.RowHeadersVisible = false;
             this.customDataGridView1.RowTemplate.Height = 23;
             this.customDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.customDataGridView1.Size = new System.Drawing.Size(1241, 856);
+            this.customDataGridView1.Size = new System.Drawing.Size(1248, 856);
             this.customDataGridView1.TabIndex = 3;
             // 
             // searchControl
@@ -185,7 +185,7 @@
             this.dgv_Check.Location = new System.Drawing.Point(36, 3);
             this.dgv_Check.Name = "dgv_Check";
             this.dgv_Check.RowTemplate.Height = 23;
-            this.dgv_Check.Size = new System.Drawing.Size(1239, 854);
+            this.dgv_Check.Size = new System.Drawing.Size(1246, 854);
             this.dgv_Check.TabIndex = 4;
             this.dgv_Check.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Check_CellContentClick);
             // 

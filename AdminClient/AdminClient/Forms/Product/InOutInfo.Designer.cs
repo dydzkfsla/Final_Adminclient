@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cbo_Unit = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cbo_Category = new System.Windows.Forms.ComboBox();
@@ -71,7 +71,7 @@
             this.gb_Sherch.Controls.Add(this.label2);
             this.gb_Sherch.Controls.Add(this.cbo_Category);
             this.gb_Sherch.Controls.Add(this.label1);
-            this.gb_Sherch.Size = new System.Drawing.Size(330, 279);
+            this.gb_Sherch.Size = new System.Drawing.Size(348, 279);
             this.gb_Sherch.Controls.SetChildIndex(this.chk_limit, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.nu_limit, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.btn_search, 0);
@@ -89,7 +89,7 @@
             this.gb_detail.Controls.Add(this.sort_Ctrl);
             this.gb_detail.Controls.Add(this.sch_Ctrl);
             this.gb_detail.Location = new System.Drawing.Point(3, 296);
-            this.gb_detail.Size = new System.Drawing.Size(330, 339);
+            this.gb_detail.Size = new System.Drawing.Size(348, 197);
             // 
             // nu_limit
             // 
@@ -106,7 +106,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgv_List);
             this.splitContainer1.Size = new System.Drawing.Size(1654, 925);
-            this.splitContainer1.SplitterDistance = 340;
+            this.splitContainer1.SplitterDistance = 365;
             // 
             // btn_folding
             // 
@@ -118,7 +118,7 @@
             // 
             // btn_search
             // 
-            this.btn_search.Location = new System.Drawing.Point(251, 18);
+            this.btn_search.Location = new System.Drawing.Point(269, 18);
             this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // Form_close
@@ -177,14 +177,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_List.BackgroundColor = System.Drawing.Color.White;
             this.dgv_List.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_List.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_List.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_List.GridColor = System.Drawing.Color.Black;
             this.dgv_List.IsChkVisible = false;
             this.dgv_List.IsEditVisible = false;
@@ -193,7 +193,7 @@
             this.dgv_List.RowHeadersVisible = false;
             this.dgv_List.RowTemplate.Height = 23;
             this.dgv_List.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_List.Size = new System.Drawing.Size(1271, 919);
+            this.dgv_List.Size = new System.Drawing.Size(1246, 919);
             this.dgv_List.TabIndex = 3;
             // 
             // sch_Ctrl

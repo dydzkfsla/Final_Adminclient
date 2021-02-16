@@ -29,6 +29,7 @@ namespace AdminClient.Forms
 		private void ContractInfo_Load(object sender, EventArgs e)
 		{
 			#region 기초셋팅
+			splitContainer1.SplitterDistance = 365;
 			nu_limit.Enabled = false;
 			gb_detail.Enabled = false;
 			dtp_DueDateFrom.Value = DateTime.Now;
@@ -217,8 +218,51 @@ namespace AdminClient.Forms
 			dgv_ContractList.DataSource = ContList;
 		}
 
-		#endregion
 
+        #endregion
 
-	}
+        private void btn_Xls_Click(object sender, EventArgs e)
+        {
+			SaveFileDialog dlg = new SaveFileDialog();
+			CommonExcel excel = new CommonExcel();
+			excel.Cursor = this.Cursor;
+			dlg.Filter = "Excel File(*.xls)|*.xls";
+			dlg.Title = "엑셀파일로 내보내기";
+			if (dlg.ShowDialog() != DialogResult.OK)
+				return;
+			DataTable dt = null;
+
+			if (dgv_ContractList.DataSource is List<ContractVO>)
+			{
+				dt = ((List<ContractVO>)dgv_ContractList.DataSource).ConvertToDataTable();
+			}
+
+			if (dt != null)
+			{
+				dt.TableName = this.Name;
+				string toltip = $@"Contract_Code: 수주코드
+                            {System.Environment.NewLine}Comp_Name : 업체명
+                            {System.Environment.NewLine}Comp_Code : 업체코드
+                            {System.Environment.NewLine}Contract_Destination : 도착지
+                            {System.Environment.NewLine}Contract_DueDate : 납기일
+                            {System.Environment.NewLine}Contract_Confirm : 수주확정여부
+                            {System.Environment.NewLine}Contract_Finish : 수주완료여부
+                            {System.Environment.NewLine}Contract_Note : 수주메모
+                            {System.Environment.NewLine}Prod_Code : 품목코드
+                            {System.Environment.NewLine}Prod_Name : 품목명
+                            {System.Environment.NewLine}Contract_Count : 수주갯수
+                            {System.Environment.NewLine}Contract_ShippingCount : 배송갯수
+                            {System.Environment.NewLine}Contract_CancelCount : 취소갯수
+                            {System.Environment.NewLine}Fst_Writer : 첫작성자
+                            {System.Environment.NewLine}Fst_WriteDate : 첫작성일자
+                            {System.Environment.NewLine}Lst_Writer : 마지막수정자
+                            {System.Environment.NewLine}Lst_WriteDate : 마지막수정일자";
+				if (excel.ExportDataToExcel(dt, dlg.FileName, toltip))
+				{
+					MessageBox.Show("엑셀파일에 저장하였습니다.");
+				}
+			}
+
+		}
+    }
 }

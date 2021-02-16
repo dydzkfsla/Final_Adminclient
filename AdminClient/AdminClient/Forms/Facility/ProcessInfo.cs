@@ -23,6 +23,7 @@ namespace AdminClient.Forms
 			InitializeComponent();
 
 			#region 기초셋팅
+			splitContainer1.SplitterDistance = 365;
 			nu_limit.Enabled = false;
 			gb_detail.Enabled = false;
 			#endregion

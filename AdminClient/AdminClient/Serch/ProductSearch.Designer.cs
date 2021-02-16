@@ -28,22 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cbo_State = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cbo_Unit = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cbo_Category = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.comboBox10 = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.comboBox11 = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.dgv_ProdList = new AdminClient.CustomDataGridView();
             this.dgv_AddList = new AdminClient.CustomDataGridView();
             this.schCtrl = new AdminClient.SearchControl();
@@ -84,13 +76,13 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.dgv_AddList);
-            this.splitContainer2.Size = new System.Drawing.Size(903, 686);
+            this.splitContainer2.Size = new System.Drawing.Size(901, 686);
             this.splitContainer2.SplitterDistance = 361;
             this.splitContainer2.SplitterWidth = 6;
             // 
             // btn_add
             // 
-            this.btn_add.Location = new System.Drawing.Point(1163, 9);
+            this.btn_add.Location = new System.Drawing.Point(1246, 9);
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // btn_Xls
@@ -134,16 +126,8 @@
             // 
             this.gb_detail.Controls.Add(this.sortCtrl);
             this.gb_detail.Controls.Add(this.schCtrl);
-            this.gb_detail.Controls.Add(this.comboBox6);
-            this.gb_detail.Controls.Add(this.label5);
-            this.gb_detail.Controls.Add(this.comboBox8);
-            this.gb_detail.Controls.Add(this.label6);
-            this.gb_detail.Controls.Add(this.comboBox10);
-            this.gb_detail.Controls.Add(this.label8);
-            this.gb_detail.Controls.Add(this.comboBox11);
-            this.gb_detail.Controls.Add(this.label9);
             this.gb_detail.Location = new System.Drawing.Point(11, 266);
-            this.gb_detail.Size = new System.Drawing.Size(356, 418);
+            this.gb_detail.Size = new System.Drawing.Size(356, 207);
             // 
             // chk_limit
             // 
@@ -236,74 +220,6 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "카테고리";
             // 
-            // comboBox6
-            // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(23, 372);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(225, 25);
-            this.comboBox6.TabIndex = 54;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(20, 352);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 17);
-            this.label5.TabIndex = 53;
-            this.label5.Text = "단종여부";
-            // 
-            // comboBox8
-            // 
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(23, 324);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(225, 25);
-            this.comboBox8.TabIndex = 52;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(20, 304);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 17);
-            this.label6.TabIndex = 51;
-            this.label6.Text = "검사여부";
-            // 
-            // comboBox10
-            // 
-            this.comboBox10.FormattingEnabled = true;
-            this.comboBox10.Location = new System.Drawing.Point(23, 276);
-            this.comboBox10.Name = "comboBox10";
-            this.comboBox10.Size = new System.Drawing.Size(225, 25);
-            this.comboBox10.TabIndex = 50;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(20, 256);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(36, 17);
-            this.label8.TabIndex = 49;
-            this.label8.Text = "단위";
-            // 
-            // comboBox11
-            // 
-            this.comboBox11.FormattingEnabled = true;
-            this.comboBox11.Location = new System.Drawing.Point(23, 228);
-            this.comboBox11.Name = "comboBox11";
-            this.comboBox11.Size = new System.Drawing.Size(225, 25);
-            this.comboBox11.TabIndex = 48;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(20, 208);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(64, 17);
-            this.label9.TabIndex = 47;
-            this.label9.Text = "카테고리";
-            // 
             // dgv_ProdList
             // 
             this.dgv_ProdList.AllowUserToAddRows = false;
@@ -312,14 +228,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_ProdList.BackgroundColor = System.Drawing.Color.White;
             this.dgv_ProdList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_ProdList.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_ProdList.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_ProdList.GridColor = System.Drawing.Color.Black;
             this.dgv_ProdList.IsChkVisible = true;
             this.dgv_ProdList.IsEditVisible = false;
@@ -329,7 +245,7 @@
             this.dgv_ProdList.RowHeadersVisible = false;
             this.dgv_ProdList.RowTemplate.Height = 23;
             this.dgv_ProdList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_ProdList.Size = new System.Drawing.Size(902, 315);
+            this.dgv_ProdList.Size = new System.Drawing.Size(900, 315);
             this.dgv_ProdList.TabIndex = 1;
             // 
             // dgv_AddList
@@ -337,14 +253,14 @@
             this.dgv_AddList.AllowUserToAddRows = false;
             this.dgv_AddList.BackgroundColor = System.Drawing.Color.White;
             this.dgv_AddList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_AddList.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_AddList.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_AddList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_AddList.GridColor = System.Drawing.Color.Black;
             this.dgv_AddList.IsChkVisible = true;
@@ -354,7 +270,7 @@
             this.dgv_AddList.RowHeadersVisible = false;
             this.dgv_AddList.RowTemplate.Height = 23;
             this.dgv_AddList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_AddList.Size = new System.Drawing.Size(903, 319);
+            this.dgv_AddList.Size = new System.Drawing.Size(901, 319);
             this.dgv_AddList.TabIndex = 2;
             // 
             // schCtrl
@@ -392,7 +308,6 @@
             this.gb_Sherch.ResumeLayout(false);
             this.gb_Sherch.PerformLayout();
             this.gb_detail.ResumeLayout(false);
-            this.gb_detail.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nu_limit)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -415,14 +330,6 @@
         private System.Windows.Forms.ComboBox cbo_Category;
         private System.Windows.Forms.Label label1;
         private CustomDataGridView dgv_ProdList;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox8;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox10;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox11;
-        private System.Windows.Forms.Label label9;
         private CustomDataGridView dgv_AddList;
         private SortControl sortCtrl;
         private SearchControl schCtrl;

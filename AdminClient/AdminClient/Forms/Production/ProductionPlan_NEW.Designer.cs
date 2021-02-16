@@ -29,9 +29,9 @@ namespace AdminClient.Forms
 		/// </summary>
 		private void InitializeComponent()
 		{
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_ConfirmedContract = new AdminClient.CustomDataGridView();
             this.dgv_Plan = new AdminClient.CustomDataGridView();
             this.btn_CreateWorkOrder = new System.Windows.Forms.Button();
@@ -77,16 +77,17 @@ namespace AdminClient.Forms
             // 
             this.splitContainer2.Panel2.Controls.Add(this.label3);
             this.splitContainer2.Panel2.Controls.Add(this.dgv_Plan);
-            this.splitContainer2.Size = new System.Drawing.Size(1288, 844);
+            this.splitContainer2.Size = new System.Drawing.Size(1250, 844);
             this.splitContainer2.SplitterDistance = 406;
             // 
             // btn_add
             // 
-            this.btn_add.Location = new System.Drawing.Point(1468, 9);
+            this.btn_add.Location = new System.Drawing.Point(1551, 9);
             // 
             // btn_Xls
             // 
             this.btn_Xls.Location = new System.Drawing.Point(1551, 9);
+            this.btn_Xls.Visible = false;
             // 
             // panel1
             // 
@@ -104,12 +105,17 @@ namespace AdminClient.Forms
             // 
             this.gb_Sherch.Controls.Add(this.chk_SetDate);
             this.gb_Sherch.Controls.Add(this.gb_SetDate);
-            this.gb_Sherch.Size = new System.Drawing.Size(297, 186);
+            this.gb_Sherch.Size = new System.Drawing.Size(348, 186);
             this.gb_Sherch.Controls.SetChildIndex(this.chk_limit, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.nu_limit, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.btn_search, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.gb_SetDate, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.chk_SetDate, 0);
+            // 
+            // gb_detail
+            // 
+            this.gb_detail.Size = new System.Drawing.Size(348, 194);
+            this.gb_detail.Visible = false;
             // 
             // chk_limit
             // 
@@ -118,7 +124,7 @@ namespace AdminClient.Forms
             // splitContainer1
             // 
             this.splitContainer1.Size = new System.Drawing.Size(1654, 844);
-            this.splitContainer1.SplitterDistance = 329;
+            this.splitContainer1.SplitterDistance = 367;
             // 
             // btn_folding
             // 
@@ -130,6 +136,7 @@ namespace AdminClient.Forms
             // 
             // btn_search
             // 
+            this.btn_search.Location = new System.Drawing.Point(269, 17);
             this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // Form_close
@@ -147,21 +154,21 @@ namespace AdminClient.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_ConfirmedContract.BackgroundColor = System.Drawing.Color.White;
             this.dgv_ConfirmedContract.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_ConfirmedContract.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_ConfirmedContract.DefaultCellStyle = dataGridViewCellStyle11;
             this.dgv_ConfirmedContract.GridColor = System.Drawing.Color.Black;
             this.dgv_ConfirmedContract.IsChkVisible = false;
             this.dgv_ConfirmedContract.IsEditVisible = false;
             this.dgv_ConfirmedContract.Location = new System.Drawing.Point(423, 24);
             this.dgv_ConfirmedContract.Name = "dgv_ConfirmedContract";
             this.dgv_ConfirmedContract.RowTemplate.Height = 23;
-            this.dgv_ConfirmedContract.Size = new System.Drawing.Size(862, 376);
+            this.dgv_ConfirmedContract.Size = new System.Drawing.Size(824, 376);
             this.dgv_ConfirmedContract.TabIndex = 0;
             // 
             // dgv_Plan
@@ -171,21 +178,21 @@ namespace AdminClient.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_Plan.BackgroundColor = System.Drawing.Color.White;
             this.dgv_Plan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Plan.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Plan.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgv_Plan.GridColor = System.Drawing.Color.Black;
             this.dgv_Plan.IsChkVisible = false;
             this.dgv_Plan.IsEditVisible = false;
             this.dgv_Plan.Location = new System.Drawing.Point(3, 25);
             this.dgv_Plan.Name = "dgv_Plan";
             this.dgv_Plan.RowTemplate.Height = 23;
-            this.dgv_Plan.Size = new System.Drawing.Size(1282, 406);
+            this.dgv_Plan.Size = new System.Drawing.Size(1244, 406);
             this.dgv_Plan.TabIndex = 0;
             this.dgv_Plan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Plan_CellClick);
             // 
@@ -196,7 +203,7 @@ namespace AdminClient.Forms
             this.btn_CreateWorkOrder.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btn_CreateWorkOrder.Image = global::AdminClient.Properties.Resources.Edit_32x32;
             this.btn_CreateWorkOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_CreateWorkOrder.Location = new System.Drawing.Point(1386, 9);
+            this.btn_CreateWorkOrder.Location = new System.Drawing.Point(1469, 9);
             this.btn_CreateWorkOrder.Margin = new System.Windows.Forms.Padding(0);
             this.btn_CreateWorkOrder.Name = "btn_CreateWorkOrder";
             this.btn_CreateWorkOrder.Size = new System.Drawing.Size(82, 47);
@@ -211,14 +218,14 @@ namespace AdminClient.Forms
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dgv_ProductionCount.BackgroundColor = System.Drawing.Color.White;
             this.dgv_ProductionCount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_ProductionCount.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_ProductionCount.DefaultCellStyle = dataGridViewCellStyle10;
             this.dgv_ProductionCount.GridColor = System.Drawing.Color.Black;
             this.dgv_ProductionCount.IsChkVisible = false;
             this.dgv_ProductionCount.IsEditVisible = false;

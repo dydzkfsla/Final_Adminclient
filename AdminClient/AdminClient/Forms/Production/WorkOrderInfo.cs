@@ -14,5 +14,10 @@ namespace AdminClient.Forms
         {
             InitializeComponent();
         }
+
+        private void WorkOrderInfo_Load(object sender, EventArgs e)
+        {
+            splitContainer1.SplitterDistance = 365;
+        }
     }
 }

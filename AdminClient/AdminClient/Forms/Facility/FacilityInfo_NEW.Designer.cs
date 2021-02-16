@@ -78,7 +78,7 @@ namespace AdminClient.Forms
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.dgv_FacList);
-            this.splitContainer2.Size = new System.Drawing.Size(1249, 860);
+            this.splitContainer2.Size = new System.Drawing.Size(1252, 860);
             this.splitContainer2.SplitterDistance = 379;
             // 
             // btn_add
@@ -148,7 +148,7 @@ namespace AdminClient.Forms
             // splitContainer1
             // 
             this.splitContainer1.Size = new System.Drawing.Size(1654, 860);
-            this.splitContainer1.SplitterDistance = 368;
+            this.splitContainer1.SplitterDistance = 365;
             // 
             // btn_folding
             // 
@@ -324,7 +324,7 @@ namespace AdminClient.Forms
             this.dgv_FacGrpList.Location = new System.Drawing.Point(0, 0);
             this.dgv_FacGrpList.Name = "dgv_FacGrpList";
             this.dgv_FacGrpList.RowTemplate.Height = 23;
-            this.dgv_FacGrpList.Size = new System.Drawing.Size(1249, 379);
+            this.dgv_FacGrpList.Size = new System.Drawing.Size(1252, 379);
             this.dgv_FacGrpList.TabIndex = 0;
             // 
             // dgv_FacList
@@ -346,7 +346,7 @@ namespace AdminClient.Forms
             this.dgv_FacList.Location = new System.Drawing.Point(0, 0);
             this.dgv_FacList.Name = "dgv_FacList";
             this.dgv_FacList.RowTemplate.Height = 23;
-            this.dgv_FacList.Size = new System.Drawing.Size(1249, 477);
+            this.dgv_FacList.Size = new System.Drawing.Size(1252, 477);
             this.dgv_FacList.TabIndex = 0;
             this.dgv_FacList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_FacList_CellContentClick);
             // 

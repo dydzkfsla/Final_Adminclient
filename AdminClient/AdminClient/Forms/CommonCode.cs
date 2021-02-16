@@ -21,6 +21,7 @@ namespace AdminClient.Forms
 
         private void CommandCode_Load(object sender, EventArgs e)
         {
+            splitContainer1.SplitterDistance = 370;
             #region 초기셋팅
             gb_detail.Enabled = nu_limit.Enabled = false;
             
