@@ -8,6 +8,7 @@ using AdminClient.Forms;
 using AdminClient.Serch;
 using AdminClient.MDI;
 using AdminClient.PopUp;
+using AdminClient.Forms.LogIn;
 
 namespace AdminClient
 {
@@ -21,7 +22,7 @@ namespace AdminClient
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TempInfo());
+            Application.Run(new Login());
         }
     }
 }
