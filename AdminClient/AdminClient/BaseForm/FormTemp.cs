@@ -114,8 +114,8 @@ namespace AdminClient.BaseForm
                 return;
             if (this.GetType().FullName.Contains("AdminClient.Serch"))
                 return;
-            
-            var List =  Global.Global.Emp_Form.FindAll(x => this.GetType().FullName.Contains(x.Form_Name));
+
+            var List = Global.Global.Emp_Form.FindAll(x => this.GetType().FullName.Contains(x.Form_Name));
             foreach (Control control in controls)
             {
                 if(control is Button)

@@ -145,8 +145,8 @@ namespace AdminClient.Forms
                     WH_State = dgv_WhList["WH_State", e.RowIndex].Value.ToString()
                 };
 
-                WareHousePopUp pop = new WareHousePopUp();
-                pop.ThisMode = WareHousePopUp.Mode.Old;
+                WareHouseInfoPopUp pop = new WareHouseInfoPopUp();
+                pop.ThisMode = WareHouseInfoPopUp.Mode.Old;
                 pop.CombList = cbolist;
                 pop.VO = vo;
                 pop.StartPosition = FormStartPosition.CenterParent;
@@ -195,7 +195,7 @@ namespace AdminClient.Forms
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            WareHousePopUp pop = new WareHousePopUp();
+            WareHouseInfoPopUp pop = new WareHouseInfoPopUp();
             pop.CombList = cbolist;
             pop.StartPosition = FormStartPosition.CenterParent;
 

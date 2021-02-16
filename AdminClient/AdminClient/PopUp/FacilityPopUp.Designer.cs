@@ -448,6 +448,7 @@
 			this.btn_FileSearch.TabIndex = 72;
 			this.btn_FileSearch.Text = "파일찾기";
 			this.btn_FileSearch.UseVisualStyleBackColor = true;
+			this.btn_FileSearch.Click += new System.EventHandler(this.btn_FileSearch_Click);
 			// 
 			// pb_FacPicture
 			// 

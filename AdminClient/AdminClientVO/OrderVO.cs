@@ -20,7 +20,7 @@ namespace AdminClientVO
         public string Comp_Name { get; set; }
         public string WH_Code { get; set; }
         public DateTime Orders_DueDate { get; set; }
-        public string Order_State_Comm { get; set; }
+        public string Common_Name { get; set; }
         public string Orders_Note { get; set; }
     }
 
@@ -36,6 +36,6 @@ namespace AdminClientVO
         public decimal Orders_Count  { get; set; }
         public decimal Orders_ReceiveQuantity { get; set; }
         public decimal Orders_CancelQuantity { get; set; }
-        public string Orders_State_Comm { get; set; }
+        public string Common_Name { get; set; }
     }
 }

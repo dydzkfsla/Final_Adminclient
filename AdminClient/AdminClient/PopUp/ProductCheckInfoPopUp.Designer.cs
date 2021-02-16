@@ -1,6 +1,6 @@
 ﻿namespace AdminClient.PopUp
 {
-    partial class ProductCheckPopUp
+    partial class ProductCheckInfoPopUp
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.

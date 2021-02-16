@@ -41,12 +41,13 @@ namespace AdminClientDAC
                 {
                     cmd.Connection = conn;
                     cmd.CommandText = @"select od.Comp_Code, od.Orders_Code, odd.OrdersDetail_Code, odd.Prod_Code, pd.Prod_Name, pd.Prod_Unit, odd.Orders_Count, cd.Prod_MinCount, 
-                                                                            odd.Orders_ReceiveQuantity, odd.Orders_CancelQuantity, odd.Orders_State_Comm
-	                                                                from Orders as od, CompanyDetail as cd, OrderDetail as odd, Product as pd
+                                                                            odd.Orders_ReceiveQuantity, odd.Orders_CancelQuantity, cm.Common_Name
+	                                                                from Orders as od, CompanyDetail as cd, OrderDetail as odd, Product as pd, Common as cm
 	                                                                where od.Comp_Code = cd.Comp_Code
 	                                                                	and od.Orders_Code = odd.Orders_Code
 	                                                                	and odd.Prod_Code = cd.Prod_Code
 	                                                                	and odd.Prod_Code = pd.Prod_Code
+																		and odd.Orders_State_Comm = cm.Common_Code
 	                                                                	and od.Orders_Code = @code";
 
                     cmd.Parameters.AddWithValue("@code", code);
@@ -105,9 +106,10 @@ namespace AdminClientDAC
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"select top(convert(int, @limit)) od.Orders_Code, ci.Comp_Code, ci.Comp_Name, WH_Code, Orders_DueDate, Order_State_Comm, Orders_Note
-	                                                                from Orders as od, CompanyInfo as ci
+                    cmd.CommandText = @"select top(convert(int, @limit)) od.Orders_Code, ci.Comp_Code, ci.Comp_Name, WH_Code, Orders_DueDate, Common_Name, Orders_Note
+	                                                                from Orders as od, CompanyInfo as ci, Common as cm
 	                                                                where od.Comp_Code = ci.Comp_Code
+                                                                        and od.Order_State_Comm = cm.Common_Code
 	                                                                	and od.Orders_DueDate >= @sdate
 	                                                                	and od.Orders_DueDate <= @edate
                                                                         and od.Order_State_Comm = isnull(@state, od.Order_State_Comm)";
@@ -163,7 +165,7 @@ namespace AdminClientDAC
                             cmd.Parameters.AddWithValue("@ocnt", temp[i].Orders_Count);
                             cmd.Parameters.AddWithValue("@rqcnt", temp[i].Orders_ReceiveQuantity);
                             cmd.Parameters.AddWithValue("@cqcnt", temp[i].Orders_CancelQuantity);
-                            cmd.Parameters.AddWithValue("@state", temp[i].Orders_State_Comm);
+                            cmd.Parameters.AddWithValue("@state", temp[i].Common_Name);
                             cmd.Parameters.AddWithValue("@empcode", Global.employees.Emp_Code);
 
                             int odcode = Convert.ToInt32(cmd.ExecuteScalar());
@@ -242,7 +244,7 @@ namespace AdminClientDAC
                                         cmd.Parameters.AddWithValue("@cnt", detail.Orders_Count);
                                         cmd.Parameters.AddWithValue("@rqcnt", detail.Orders_ReceiveQuantity);
                                         cmd.Parameters.AddWithValue("@cqcnt", detail.Orders_CancelQuantity);
-                                        cmd.Parameters.AddWithValue("@state", detail.Orders_State_Comm);
+                                        cmd.Parameters.AddWithValue("@state", "OState1");
                                         cmd.Parameters.AddWithValue("@empcode", Global.employees.Emp_Code);
 
                                         cmd.ExecuteNonQuery();
@@ -346,6 +348,16 @@ namespace AdminClientDAC
                             cmd.Parameters.AddWithValue("@empcode", Global.employees.Emp_Code);
 
                             cmd.ExecuteNonQuery();
+
+                            cmd.CommandText = "SP_UpdateDemandPlan";
+
+                            cmd.Parameters.Clear();
+                            cmd.Parameters.AddWithValue("@odpCode", temp[i].Prod_Code);
+                            cmd.Parameters.AddWithValue("@odCnt", temp[i].Orders_ReceiveQuantity);
+                            cmd.Parameters.AddWithValue("odDate", DateTime.Now.ToString("yyyy-MM-dd"));
+
+                            cmd.ExecuteNonQuery();
+
                         }
 
                         trans.Commit();
@@ -442,8 +454,8 @@ namespace AdminClientDAC
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"update Orders set Order_State_Comm = 'OState2' where Orders_Code = @code;
-                                                                update OrderDetail set Orders_State_Comm = 'OState2' where Orders_Code = @code;";
+                    cmd.CommandText = @"SP_OrderApply";
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                     cmd.Parameters.AddWithValue("@code", code);
 

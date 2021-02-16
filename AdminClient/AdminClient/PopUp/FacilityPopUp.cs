@@ -212,8 +212,8 @@ namespace AdminClient.PopUp
             });
             return ChkTextBox;
         }
-        #endregion
+		#endregion
 
-        #endregion
-    }
+		#endregion
+	}
 }

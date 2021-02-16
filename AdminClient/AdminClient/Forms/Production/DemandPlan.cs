@@ -56,5 +56,21 @@ namespace AdminClient.Forms
             //        MessageBox.Show("Test");
             //}
         }
+
+        private void dtp_sdate_ValueChanged(object sender, EventArgs e)
+        {
+            if(dtp_edate.Value < dtp_sdate.Value)
+            {
+                dtp_edate.Value = dtp_sdate.Value.AddDays(1);
+            }
+        }
+
+        private void dtp_edate_ValueChanged(object sender, EventArgs e)
+        {
+            if(dtp_sdate.Value > dtp_edate.Value)
+            {
+                dtp_sdate.Value = dtp_edate.Value.AddDays(-1);
+            }
+        }
     }
 }

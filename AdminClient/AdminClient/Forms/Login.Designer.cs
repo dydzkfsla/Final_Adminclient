@@ -74,6 +74,7 @@
             this.txt_EmpID.Font = new System.Drawing.Font("나눔고딕", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txt_EmpID.Location = new System.Drawing.Point(213, 421);
             this.txt_EmpID.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_EmpID.MaxLength = 7;
             this.txt_EmpID.Name = "txt_EmpID";
             this.txt_EmpID.Size = new System.Drawing.Size(210, 32);
             this.txt_EmpID.TabIndex = 6;

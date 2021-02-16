@@ -62,6 +62,7 @@
     <Compile Include="GroupInfoVO.cs" />
     <Compile Include="InOutVO.cs" />
     <Compile Include="OrderVO.cs" />
+    <Compile Include="ProcessVO.cs" />
     <Compile Include="ProductCheckVO.cs" />
     <Compile Include="ProductVO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

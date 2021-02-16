@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace AdminClient.PopUp
 {
-    public partial class ProductCheckPopUp : AdminClient.BaseForm.EmpFormTemp
+    public partial class ProductCheckInfoPopUp : AdminClient.BaseForm.EmpFormTemp
     {
         string selectProductName = string.Empty;
         public View_ProductNameAndCheckVO vo = new View_ProductNameAndCheckVO();
-        public ProductCheckPopUp()
+        public ProductCheckInfoPopUp()
         {
             InitializeComponent();
 
@@ -28,7 +28,7 @@ namespace AdminClient.PopUp
         }
 
 
-        public ProductCheckPopUp(View_ProductNameAndCheckVO vo) : this()
+        public ProductCheckInfoPopUp(View_ProductNameAndCheckVO vo) : this()
         {
             txt_ProdCode.Text = vo.Prod_Code;
             txt_CheckItem.Text = vo.Check_Item;

@@ -182,10 +182,17 @@ namespace AdminClient.Forms
 		private void btn_CreateProduction_Click(object sender, EventArgs e) //생산계획 생성버튼
 		{
 			DataGridViewRow row = dgv_ContractList.CurrentRow;
+			if (dgv_ContractList["Contract_Confirm", row.Index].Value.ToString() == "Y")
+			{
+                MessageBox.Show("이미 확정된 수주입니다.");
+				return;
+            }
+
 			string contCode = dgv_ContractList["Contract_Code", row.Index].Value.ToString();
+			string contDate = dgv_ContractList["Contract_DueDate", row.Index].Value.ToString();
 
 			ContractService service = new ContractService();
-			if (service.CreateProduction(userID, contCode))
+			if (service.CreateProduction(userID, contCode, contDate))
 			{
 				MessageBox.Show("수주 확정이 완료되었습니다.");
 				RefreshList();
