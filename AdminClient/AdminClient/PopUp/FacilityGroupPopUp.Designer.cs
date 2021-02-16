@@ -41,8 +41,9 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
 			this.txt_FgrpDescrip = new System.Windows.Forms.TextBox();
-			this.button6 = new System.Windows.Forms.Button();
-			this.btn_Save = new System.Windows.Forms.Button();
+			this.btn_Delete = new System.Windows.Forms.Button();
+			this.btn_Add = new System.Windows.Forms.Button();
+			this.btn_Update = new System.Windows.Forms.Button();
 			this.pnl_Main.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.Form_close)).BeginInit();
 			this.panel1.SuspendLayout();
@@ -50,9 +51,10 @@
 			// 
 			// pnl_Main
 			// 
-			this.pnl_Main.Controls.Add(this.button6);
+			this.pnl_Main.Controls.Add(this.btn_Update);
+			this.pnl_Main.Controls.Add(this.btn_Delete);
 			this.pnl_Main.Controls.Add(this.txt_FgrpDescrip);
-			this.pnl_Main.Controls.Add(this.btn_Save);
+			this.pnl_Main.Controls.Add(this.btn_Add);
 			this.pnl_Main.Controls.Add(this.panel1);
 			this.pnl_Main.Controls.Add(this.label2);
 			this.pnl_Main.Controls.Add(this.label8);
@@ -215,24 +217,35 @@
 			this.txt_FgrpDescrip.Size = new System.Drawing.Size(304, 177);
 			this.txt_FgrpDescrip.TabIndex = 44;
 			// 
-			// button6
+			// btn_Delete
 			// 
-			this.button6.Location = new System.Drawing.Point(166, 313);
-			this.button6.Name = "button6";
-			this.button6.Size = new System.Drawing.Size(74, 53);
-			this.button6.TabIndex = 56;
-			this.button6.Text = "삭제";
-			this.button6.UseVisualStyleBackColor = true;
+			this.btn_Delete.Location = new System.Drawing.Point(78, 313);
+			this.btn_Delete.Name = "btn_Delete";
+			this.btn_Delete.Size = new System.Drawing.Size(74, 53);
+			this.btn_Delete.TabIndex = 56;
+			this.btn_Delete.Text = "삭제";
+			this.btn_Delete.UseVisualStyleBackColor = true;
+			this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
 			// 
-			// btn_Save
+			// btn_Add
 			// 
-			this.btn_Save.Location = new System.Drawing.Point(240, 313);
-			this.btn_Save.Name = "btn_Save";
-			this.btn_Save.Size = new System.Drawing.Size(76, 53);
-			this.btn_Save.TabIndex = 54;
-			this.btn_Save.Text = "저장";
-			this.btn_Save.UseVisualStyleBackColor = true;
-			this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
+			this.btn_Add.Location = new System.Drawing.Point(240, 313);
+			this.btn_Add.Name = "btn_Add";
+			this.btn_Add.Size = new System.Drawing.Size(76, 53);
+			this.btn_Add.TabIndex = 54;
+			this.btn_Add.Text = "저장";
+			this.btn_Add.UseVisualStyleBackColor = true;
+			this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
+			// 
+			// btn_Update
+			// 
+			this.btn_Update.Location = new System.Drawing.Point(158, 313);
+			this.btn_Update.Name = "btn_Update";
+			this.btn_Update.Size = new System.Drawing.Size(76, 53);
+			this.btn_Update.TabIndex = 57;
+			this.btn_Update.Text = "수정";
+			this.btn_Update.UseVisualStyleBackColor = true;
+			this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
 			// 
 			// FacilityGroupPopUp
 			// 
@@ -265,7 +278,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_FgrpName;
         private System.Windows.Forms.TextBox txt_FgrpDescrip;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button btn_Save;
-    }
+        private System.Windows.Forms.Button btn_Delete;
+        private System.Windows.Forms.Button btn_Add;
+		private System.Windows.Forms.Button btn_Update;
+	}
 }

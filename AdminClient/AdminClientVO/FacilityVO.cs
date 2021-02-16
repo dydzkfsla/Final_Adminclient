@@ -35,19 +35,4 @@ namespace AdminClientVO
 		public string Lst_Writer { get; set; }
 		public DateTime Lst_WriteDate { get; set; }
 	}
-
-	public class FacilityDetailVO
-	{
-		public string Fac_Code { get; set; }
-		public string FacD_Code { get; set; }
-		public string Prod_Code { get; set; }
-		public string FacD_MaterialWareHouse { get; set; }
-		public string FacD_GoodsWareHouse { get; set; }
-		public string FacD_FaultyWareHouse { get; set; }
-		public string Fst_Writer { get; set; }
-		public DateTime Fst_WriteDate { get; set; }
-		public string Lst_Writer { get; set; }
-		public DateTime Lst_WriteDate { get; set; }
-
-	}
 }

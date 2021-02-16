@@ -29,6 +29,7 @@ namespace AdminClientDAC
 			conn.Dispose();
 		}
 
+		#region 수주관리 (ContractInfo)
 		/// <summary>
 		/// 검색조건에 따른 수주목록 불러오기
 		/// </summary>
@@ -280,5 +281,47 @@ namespace AdminClientDAC
 				return false;
 			}
 		}
+		#endregion
+
+		#region 출하지시 (Shipment)
+		public List<ShipmentVO> GetShipList(string limit, string fdate, string tdate, string comp)
+		{
+			try
+			{
+				using (SqlCommand cmd = new SqlCommand())
+				{
+					cmd.Connection = conn;
+					cmd.CommandText = @"select top(CONVERT(int, @limit)) C.Contract_Code, C.Contract_DueDate, C.Comp_Code, CO.Comp_Name, C.Contract_Destination, 
+																		 CD.Prod_Code, P.Prod_Name, WH.WH_PsyCount, 
+																		 CD.Contract_Count, CD.Contract_ShippingCount, CD.Contract_CancelCount,
+																		 C.Contract_Confirm, C.Contract_Finish
+										  from Contract C, ContractDetail CD, CompanyInfo CO, Product P, WareHouseDetail WH
+										 where C.Contract_Code = CD.Contract_Code
+										   and C.Comp_Code = CO.Comp_Code
+										   and CD.Prod_Code = P.Prod_Code 
+										   and P.Prod_Code = WH.Prod_Code
+										   and C.Contract_Confirm = 'Y'
+										   and C.Contract_Finish = 'N'
+										   and C.Contract_DueDate >= @fdate
+										   and C.Contract_DueDate <= @tdate
+										   and C.Comp_Code = ISNULL(@Comp_Code, C.Comp_Code); ";
+
+					cmd.Parameters.AddWithValue("@limit", string.IsNullOrEmpty(limit) ? 100000 : (object)limit);
+					cmd.Parameters.AddWithValue("@fdate", string.IsNullOrEmpty(fdate) ? DBNull.Value : (object)fdate);
+					cmd.Parameters.AddWithValue("@tdate", string.IsNullOrEmpty(tdate) ? DBNull.Value : (object)tdate);
+					cmd.Parameters.AddWithValue("@Comp_Code", string.IsNullOrEmpty(comp) ? DBNull.Value : (object)comp);
+
+					List<ShipmentVO> list = Helper.DataReaderMapToList<ShipmentVO>(cmd.ExecuteReader());
+
+					return list;
+				}
+			}
+			catch (Exception err)
+			{
+				Info.WriteError($"실행자:{Global.employees.Emp_Name} 출하수주목록 검색중 오류 :" + err.Message, err);
+				return null;
+			}
+		}
+		#endregion
 	}
 }
