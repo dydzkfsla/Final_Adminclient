@@ -65,10 +65,12 @@ namespace AdminClient.PopUp
 
             if (mode == Mode.New)
             {
+                lbl_Title.Text = "BOR등록";
                 btn_Update.Enabled = btn_Delete.Enabled = false;
             }
             else if (mode == Mode.Old)
             {
+                lbl_Title.Text = "BOR수정";
                 btn_prodSearch.Enabled = btn_Add.Enabled = false;
                 txt_Prod.Tag = vo.Prod_Code;
                 txt_Prod.Text = vo.Prod_Name;

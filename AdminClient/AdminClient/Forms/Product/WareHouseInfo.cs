@@ -24,7 +24,9 @@ namespace AdminClient.Forms
 
         private void WareHouseInfo_Load(object sender, EventArgs e)
         {
-			gb_detail.Enabled = gb_detailItem.Enabled = false;
+            splitContainer1.SplitterDistance = 365;
+            splitContainer1.SplitterDistance = 879;
+            gb_detail.Enabled = gb_detailItem.Enabled = false;
             nu_limit.Enabled = false;
 
             #region 콤보박스 세팅
@@ -145,8 +147,8 @@ namespace AdminClient.Forms
                     WH_State = dgv_WhList["WH_State", e.RowIndex].Value.ToString()
                 };
 
-                WareHousePopUp pop = new WareHousePopUp();
-                pop.ThisMode = WareHousePopUp.Mode.Old;
+                WareHouseInfoPopUp pop = new WareHouseInfoPopUp();
+                pop.ThisMode = WareHouseInfoPopUp.Mode.Old;
                 pop.CombList = cbolist;
                 pop.VO = vo;
                 pop.StartPosition = FormStartPosition.CenterParent;
@@ -195,7 +197,7 @@ namespace AdminClient.Forms
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            WareHousePopUp pop = new WareHousePopUp();
+            WareHouseInfoPopUp pop = new WareHouseInfoPopUp();
             pop.CombList = cbolist;
             pop.StartPosition = FormStartPosition.CenterParent;
 

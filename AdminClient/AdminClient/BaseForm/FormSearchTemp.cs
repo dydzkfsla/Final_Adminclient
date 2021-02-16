@@ -17,7 +17,7 @@ namespace AdminClient.BaseForm
 
         private void FormSearchTemp_Load(object sender, EventArgs e)
         {
-
+            splitContainer1.SplitterDistance = 370;
         }
     }
 }

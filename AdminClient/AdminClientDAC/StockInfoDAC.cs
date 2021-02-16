@@ -68,8 +68,8 @@ namespace AdminClientDAC
                 {
                     cmd.Connection = conn;
                     cmd.CommandText = @"select * from (
-                                                                    select row_number() over(order by w.WH_Code) as rownum, w.WH_Code, w.WH_Type, c.Common_Name, w.Prod_Category, w.Common_Name as ProdType, w.Prod_Unit, w.WH_PsyCount, w.Prod_SafetyStock 
-                                                                    	from (select wh.WH_Code, wh.WH_Type, pd.Prod_Code, pd.Prod_Category, cm.Common_Name, pd.Prod_Unit, wd.WH_PsyCount, pd.Prod_SafetyStock
+                                                                    select row_number() over(order by w.WH_Code) as rownum, w.WH_Code, w.WH_Type, c.Common_Name, w.Prod_Category, w.Common_Name as ProdType, w.Prod_Unit, w.WH_PsyCount, w.Prod_SafetyStock, w.Prod_Code, w.Prod_Name 
+                                                                    	from (select wh.WH_Code, wh.WH_Type, pd.Prod_Code, pd.Prod_Category, cm.Common_Name, pd.Prod_Unit, wd.WH_PsyCount, pd.Prod_SafetyStock, pd.Prod_Name
                                                                     					from WareHouse as wh, WareHouseDetail as wd, Product as pd, Common as cm
                                                                     					where wh.WH_Code = wd.WH_Code
                                                                     						and wd.Prod_Code = pd.Prod_Code

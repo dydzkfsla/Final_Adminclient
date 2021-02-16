@@ -24,6 +24,7 @@ namespace AdminClient.Forms
         private void ProductInfo_Load(object sender, EventArgs e)
         {
             #region 초기세팅
+            splitContainer1.SplitterDistance = 365;
             nu_limit.Enabled = false;
             txt_Code.KeyPress += NoneKeyPress;
             txt_Cate.KeyPress += NoneKeyPress;
@@ -146,10 +147,10 @@ namespace AdminClient.Forms
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            ProductPopUp pop = new ProductPopUp();
+            ProductInfoPopUp pop = new ProductInfoPopUp();
             pop.StartPosition = FormStartPosition.CenterParent;
             pop.CombVO = cbolist;
-            pop.ThisMode = ProductPopUp.Mode.New;
+            pop.ThisMode = ProductInfoPopUp.Mode.New;
 
             if(pop.ShowDialog() == DialogResult.OK)
             {
@@ -176,11 +177,11 @@ namespace AdminClient.Forms
                     }
                 });
 
-                ProductPopUp pop = new ProductPopUp();
+                ProductInfoPopUp pop = new ProductInfoPopUp();
                 pop.VO = vo;
                 pop.StartPosition = FormStartPosition.CenterParent;
                 pop.CombVO = cbolist;
-                pop.ThisMode = ProductPopUp.Mode.Old;
+                pop.ThisMode = ProductInfoPopUp.Mode.Old;
 
                 DialogResult popbool = pop.ShowDialog();
 

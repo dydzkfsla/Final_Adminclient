@@ -63,7 +63,7 @@
             this.gb_Sherch.Controls.Add(this.label2);
             this.gb_Sherch.Controls.Add(this.cbo_Type);
             this.gb_Sherch.Controls.Add(this.label1);
-            this.gb_Sherch.Size = new System.Drawing.Size(338, 249);
+            this.gb_Sherch.Size = new System.Drawing.Size(348, 249);
             this.gb_Sherch.Controls.SetChildIndex(this.chk_limit, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.nu_limit, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.btn_search, 0);
@@ -77,7 +77,7 @@
             this.gb_detail.Controls.Add(this.sortCtrl);
             this.gb_detail.Controls.Add(this.schCtrl);
             this.gb_detail.Location = new System.Drawing.Point(2, 255);
-            this.gb_detail.Size = new System.Drawing.Size(339, 495);
+            this.gb_detail.Size = new System.Drawing.Size(348, 495);
             // 
             // nu_limit
             // 
@@ -106,7 +106,7 @@
             // 
             // btn_search
             // 
-            this.btn_search.Location = new System.Drawing.Point(259, 17);
+            this.btn_search.Location = new System.Drawing.Point(269, 17);
             this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // Form_close
@@ -120,6 +120,9 @@
             // dgv_Stock
             // 
             this.dgv_Stock.AllowUserToAddRows = false;
+            this.dgv_Stock.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_Stock.BackgroundColor = System.Drawing.Color.White;
             this.dgv_Stock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;

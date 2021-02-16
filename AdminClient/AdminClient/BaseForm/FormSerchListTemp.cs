@@ -14,5 +14,10 @@ namespace AdminClient.BaseForm
         {
             InitializeComponent();
         }
+
+        private void FormSerchListTemp_Load(object sender, EventArgs e)
+        {
+            splitContainer1.SplitterDistance = 365;
+        }
     }
 }

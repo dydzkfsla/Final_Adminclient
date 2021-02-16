@@ -42,14 +42,10 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lbl_Title
-            // 
-            this.lbl_Title.BackColor = System.Drawing.Color.Transparent;
-            // 
             // pnl_Main
             // 
             this.pnl_Main.Controls.Add(this.panel1);
-            this.pnl_Main.Size = new System.Drawing.Size(1238, 620);
+            this.pnl_Main.Size = new System.Drawing.Size(1654, 925);
             this.pnl_Main.Controls.SetChildIndex(this.splitContainer1, 0);
             this.pnl_Main.Controls.SetChildIndex(this.panel1, 0);
             // 
@@ -68,24 +64,24 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.None;
             this.splitContainer1.Location = new System.Drawing.Point(0, 81);
-            this.splitContainer1.Size = new System.Drawing.Size(1238, 539);
-            this.splitContainer1.SplitterDistance = 343;
+            this.splitContainer1.Size = new System.Drawing.Size(1654, 844);
+            this.splitContainer1.SplitterDistance = 365;
             // 
             // btn_folding
             // 
-            this.btn_folding.Location = new System.Drawing.Point(0, 226);
+            this.btn_folding.Location = new System.Drawing.Point(0, 379);
             // 
             // splitter1
             // 
-            this.splitter1.Size = new System.Drawing.Size(33, 539);
+            this.splitter1.Size = new System.Drawing.Size(33, 844);
             // 
             // Form_close
             // 
-            this.Form_close.Location = new System.Drawing.Point(1217, 8);
+            this.Form_close.Location = new System.Drawing.Point(1633, 8);
             // 
             // TitleColor
             // 
-            this.TitleColor.Size = new System.Drawing.Size(1328, 7);
+            this.TitleColor.Size = new System.Drawing.Size(1744, 7);
             // 
             // btn_add
             // 
@@ -93,7 +89,7 @@
             this.btn_add.BackColor = System.Drawing.Color.White;
             this.btn_add.Image = global::AdminClient.Properties.Resources.EditName_32x32;
             this.btn_add.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_add.Location = new System.Drawing.Point(1052, 9);
+            this.btn_add.Location = new System.Drawing.Point(1468, 9);
             this.btn_add.Margin = new System.Windows.Forms.Padding(0);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(82, 47);
@@ -108,7 +104,7 @@
             this.btn_Xls.BackColor = System.Drawing.Color.White;
             this.btn_Xls.Image = global::AdminClient.Properties.Resources.ExportToXLS_32x32;
             this.btn_Xls.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Xls.Location = new System.Drawing.Point(1135, 9);
+            this.btn_Xls.Location = new System.Drawing.Point(1551, 9);
             this.btn_Xls.Margin = new System.Windows.Forms.Padding(0);
             this.btn_Xls.Name = "btn_Xls";
             this.btn_Xls.Size = new System.Drawing.Size(82, 47);
@@ -126,14 +122,15 @@
             this.panel1.Controls.Add(this.btn_add);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1220, 64);
+            this.panel1.Size = new System.Drawing.Size(1636, 64);
             this.panel1.TabIndex = 4;
             // 
             // FormSerchListTemp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
-            this.ClientSize = new System.Drawing.Size(1249, 720);
+            this.ClientSize = new System.Drawing.Size(1665, 1025);
             this.Name = "FormSerchListTemp";
+            this.Load += new System.EventHandler(this.FormSerchListTemp_Load);
             this.pnl_Main.ResumeLayout(false);
             this.gb_Sherch.ResumeLayout(false);
             this.gb_Sherch.PerformLayout();

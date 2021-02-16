@@ -52,59 +52,55 @@
             // splitContainer2.Panel1
             // 
             this.splitContainer2.Panel1.Controls.Add(this.panel2);
-            this.splitContainer2.Size = new System.Drawing.Size(871, 655);
-            this.splitContainer2.SplitterDistance = 375;
+            this.splitContainer2.Size = new System.Drawing.Size(1252, 844);
+            this.splitContainer2.SplitterDistance = 483;
             // 
             // btn_add
             // 
-            this.btn_add.Location = new System.Drawing.Point(1070, 9);
+            this.btn_add.Location = new System.Drawing.Point(1470, 9);
             // 
             // btn_Xls
             // 
-            this.btn_Xls.Location = new System.Drawing.Point(1151, 9);
+            this.btn_Xls.Location = new System.Drawing.Point(1551, 9);
             this.btn_Xls.Visible = false;
             // 
             // panel1
             // 
-            this.panel1.Size = new System.Drawing.Size(1236, 64);
-            // 
-            // lbl_Title
-            // 
-            this.lbl_Title.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Size = new System.Drawing.Size(1636, 64);
             // 
             // pnl_Main
             // 
-            this.pnl_Main.Size = new System.Drawing.Size(1254, 736);
+            this.pnl_Main.Size = new System.Drawing.Size(1654, 925);
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Size = new System.Drawing.Size(1254, 655);
-            this.splitContainer1.SplitterDistance = 346;
+            this.splitContainer1.Size = new System.Drawing.Size(1654, 844);
+            this.splitContainer1.SplitterDistance = 365;
             // 
             // btn_folding
             // 
-            this.btn_folding.Location = new System.Drawing.Point(0, 284);
+            this.btn_folding.Location = new System.Drawing.Point(0, 379);
             // 
             // splitter1
             // 
-            this.splitter1.Size = new System.Drawing.Size(33, 655);
+            this.splitter1.Size = new System.Drawing.Size(33, 844);
             // 
             // Form_close
             // 
-            this.Form_close.Location = new System.Drawing.Point(1233, 8);
+            this.Form_close.Location = new System.Drawing.Point(1633, 8);
             // 
             // TitleColor
             // 
-            this.TitleColor.Size = new System.Drawing.Size(1344, 7);
+            this.TitleColor.Size = new System.Drawing.Size(1744, 7);
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.btn_delete);
             this.panel2.Controls.Add(this.btn_insert);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 332);
+            this.panel2.Location = new System.Drawing.Point(0, 440);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(871, 43);
+            this.panel2.Size = new System.Drawing.Size(1252, 43);
             this.panel2.TabIndex = 0;
             // 
             // btn_delete
@@ -128,7 +124,7 @@
             // FormSearchTemp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
-            this.ClientSize = new System.Drawing.Size(1265, 836);
+            this.ClientSize = new System.Drawing.Size(1665, 1025);
             this.Name = "FormSearchTemp";
             this.splitContainer2.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();

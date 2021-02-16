@@ -55,6 +55,7 @@ namespace AdminClient.Forms
             // btn_Xls
             // 
             this.btn_Xls.Location = new System.Drawing.Point(1559, 9);
+            this.btn_Xls.Click += new System.EventHandler(this.btn_Xls_Click);
             // 
             // panel1
             // 
@@ -73,7 +74,7 @@ namespace AdminClient.Forms
             // gb_Sherch
             // 
             this.gb_Sherch.Controls.Add(this.groupBox1);
-            this.gb_Sherch.Size = new System.Drawing.Size(295, 228);
+            this.gb_Sherch.Size = new System.Drawing.Size(348, 130);
             this.gb_Sherch.Controls.SetChildIndex(this.chk_limit, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.nu_limit, 0);
             this.gb_Sherch.Controls.SetChildIndex(this.btn_search, 0);
@@ -82,7 +83,8 @@ namespace AdminClient.Forms
             // gb_detail
             // 
             this.gb_detail.Location = new System.Drawing.Point(11, 234);
-            this.gb_detail.Size = new System.Drawing.Size(295, 230);
+            this.gb_detail.Size = new System.Drawing.Size(348, 230);
+            this.gb_detail.Visible = false;
             // 
             // nu_limit
             // 
@@ -100,7 +102,7 @@ namespace AdminClient.Forms
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgv_Plan);
             this.splitContainer1.Size = new System.Drawing.Size(1647, 844);
-            this.splitContainer1.SplitterDistance = 332;
+            this.splitContainer1.SplitterDistance = 381;
             // 
             // btn_folding
             // 
@@ -112,6 +114,7 @@ namespace AdminClient.Forms
             // 
             // btn_search
             // 
+            this.btn_search.Location = new System.Drawing.Point(269, 17);
             this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // Form_close
@@ -146,7 +149,7 @@ namespace AdminClient.Forms
             this.dgv_Plan.RowHeadersVisible = false;
             this.dgv_Plan.RowTemplate.Height = 23;
             this.dgv_Plan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Plan.Size = new System.Drawing.Size(1269, 838);
+            this.dgv_Plan.Size = new System.Drawing.Size(1220, 838);
             this.dgv_Plan.TabIndex = 5;
             // 
             // groupBox1
@@ -154,9 +157,9 @@ namespace AdminClient.Forms
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.dtp_to);
             this.groupBox1.Controls.Add(this.dtp_from);
-            this.groupBox1.Location = new System.Drawing.Point(9, 100);
+            this.groupBox1.Location = new System.Drawing.Point(5, 46);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(277, 64);
+            this.groupBox1.Size = new System.Drawing.Size(265, 64);
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "날짜";
@@ -193,6 +196,7 @@ namespace AdminClient.Forms
             this.ClientSize = new System.Drawing.Size(1665, 1025);
             this.Name = "OutSourcingPlan";
             this.Text = "OutSourcingPlan";
+            this.Load += new System.EventHandler(this.OutSourcingPlan_Load);
             this.panel1.ResumeLayout(false);
             this.pnl_Main.ResumeLayout(false);
             this.gb_Sherch.ResumeLayout(false);

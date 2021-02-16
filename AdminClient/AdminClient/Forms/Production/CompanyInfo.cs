@@ -4,6 +4,7 @@ using AdminClient.Service;
 using AdminClientVO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Windows.Forms;
 
 namespace AdminClient.Forms
@@ -19,19 +20,15 @@ namespace AdminClient.Forms
         public CompanyInfo()
         {
             InitializeComponent();
-            //temp.Add(("text", "text"));
-            //temp.Add(("text", "text"));
-            //temp.Add(("text", "text"));
-            //temp.Add(("text", "text"));
-            //temp.Add(("text", "text"));
-
-            //customDataGridView1.DataSource = temp;
-            //customDataGridView2.DataSource = temp;
         }
 
         private void CompanyInfo_Load(object sender, EventArgs e)
         {
             #region 기초세팅
+            splitContainer1.SplitterDistance = 365;
+            splitContainer3.SplitterDistance = 862;
+
+            this.Name = "업체관리";
 
             //키입력 불가
             txt_Code.KeyPress += TextNoneKeyPress;
@@ -147,8 +144,8 @@ namespace AdminClient.Forms
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            CompanyPopUp pop = new CompanyPopUp();
-            pop.ThisMode = CompanyPopUp.Mode.New;
+            CompanyInfoPopUp pop = new CompanyInfoPopUp();
+            pop.ThisMode = CompanyInfoPopUp.Mode.New;
             pop.StartPosition = FormStartPosition.CenterParent;
             CompanyVO vo = null;
 
@@ -222,8 +219,8 @@ namespace AdminClient.Forms
 
                 string code = txt_Code.Text;
 
-                CompanyPopUp pop = new CompanyPopUp();
-                pop.ThisMode = CompanyPopUp.Mode.Old;
+                CompanyInfoPopUp pop = new CompanyInfoPopUp();
+                pop.ThisMode = CompanyInfoPopUp.Mode.Old;
                 pop.StartPosition = FormStartPosition.CenterParent;
                 CompanyVO vo = null;
 
@@ -308,7 +305,7 @@ namespace AdminClient.Forms
 
         private void dgv_detail_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex > -1)
+            if (e.RowIndex > -1)
             {
                 txt_Prod_Code.Text = dgv_detail["Prod_Code", e.RowIndex].Value.ToString();
                 txt_Prod_Name.Text = dgv_detail["Prod_Name", e.RowIndex].Value.ToString();
@@ -369,6 +366,40 @@ namespace AdminClient.Forms
                 updateList.Clear();
                 MessageBox.Show("모든 회사품목 정보가 수정되었습니다.");
             }
+        }
+
+        private void btn_Xls_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dlg = new SaveFileDialog();
+            CommonExcel excel = new CommonExcel();
+            excel.Cursor = this.Cursor;
+            dlg.Filter = "Excel File(*.xls)|*.xls";
+            dlg.Title = "엑셀파일로 내보내기";
+            if (dlg.ShowDialog() != DialogResult.OK)
+                return;
+            DataTable dt = null;
+
+            if (dgv_CompList.DataSource is List<CompanyVO>)
+            {
+                dt = ((List<CompanyVO>)dgv_CompList.DataSource).ConvertToDataTable();
+            }
+
+            if(dt != null)
+            {
+                dt.TableName = this.Name;
+                string toltip = $@"Comp_Code: 업체코드
+                            {System.Environment.NewLine}Comp_Name : 업체명
+                            {System.Environment.NewLine}Comp_CEO : 업체대표
+                            {System.Environment.NewLine}Common_Name : 업체타입명
+                            {System.Environment.NewLine}Comp_Type : 업체타입코드
+                            {System.Environment.NewLine}Comp_Auto : 자동출하여부
+                            {System.Environment.NewLine}Comp_State : 업체사용여부";
+                if (excel.ExportDataToExcel(dt, dlg.FileName, toltip))
+                {
+                    MessageBox.Show("엑셀파일에 저장하였습니다.");
+                }
+            }
+
         }
     }
 }

@@ -22,6 +22,7 @@ namespace AdminClient.Forms
 
         private void InOutInfo_Load(object sender, EventArgs e)
         {
+            splitContainer1.SplitterDistance = 365;
             nu_limit.Enabled = false;
             txt_Keyword.KeyPress += UtilEvent.tbx_Trim;
 

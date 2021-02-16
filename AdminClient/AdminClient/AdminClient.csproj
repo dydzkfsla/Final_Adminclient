@@ -36,6 +36,9 @@
     <Reference Include="log4net, Version=2.0.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.12\lib\net45\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="MySql.Data, Version=8.0.20.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -137,11 +140,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EmpGroup\TempInfo - 복사본.cs">
+    <Compile Include="Forms\EmpGroup\TempInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\EmpGroup\TempInfo - 복사본.Designer.cs">
-      <DependentUpon>TempInfo - 복사본.cs</DependentUpon>
+    <Compile Include="Forms\EmpGroup\TempInfo.Designer.cs">
+      <DependentUpon>TempInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Facility\FacilityInfo_NEW.cs">
       <SubType>Form</SubType>
@@ -203,12 +206,6 @@
     <Compile Include="Forms\EmpGroup\EmpInfo.Designer.cs">
       <DependentUpon>EmpInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Facility\FacilityInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Facility\FacilityInfo.Designer.cs">
-      <DependentUpon>FacilityInfo.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\EmpGroup\FormInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,10 +224,10 @@
     <Compile Include="Forms\Product\InOutInfo.Designer.cs">
       <DependentUpon>InOutInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Login.cs">
+    <Compile Include="Login\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Login.Designer.cs">
+    <Compile Include="Login\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Production\OrderInfo.cs">
@@ -257,59 +254,17 @@
     <Compile Include="Forms\Product\ProductInfo.Designer.cs">
       <DependentUpon>ProductInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Production\ProductionPlan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Production\ProductionPlan.Designer.cs">
-      <DependentUpon>ProductionPlan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Facility\ProgressInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Facility\ProgressInfo.Designer.cs">
-      <DependentUpon>ProgressInfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Facility\ProgressMoveInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Facility\ProgressMoveInfo.Designer.cs">
-      <DependentUpon>ProgressMoveInfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Sales\SalesByCompany.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Sales\SalesByCompany.Designer.cs">
-      <DependentUpon>SalesByCompany.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Sales\SalesDeadLine.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Sales\SalesDeadLine.Designer.cs">
-      <DependentUpon>SalesDeadLine.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Sales\Shipment.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Sales\Shipment.Designer.cs">
       <DependentUpon>Shipment.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Sales\StockByOrder.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Sales\StockByOrder.Designer.cs">
-      <DependentUpon>StockByOrder.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Product\StockInfo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Product\StockInfo.Designer.cs">
       <DependentUpon>StockInfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\EmpGroup\TempInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\EmpGroup\TempInfo.Designer.cs">
-      <DependentUpon>TempInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Product\WareHouseInfo.cs">
       <SubType>Form</SubType>
@@ -322,12 +277,6 @@
     </Compile>
     <Compile Include="Forms\Production\WorkOrderInfo.Designer.cs">
       <DependentUpon>WorkOrderInfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Production\WorkPlanInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Production\WorkPlanInfo.Designer.cs">
-      <DependentUpon>WorkPlanInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Global\Global.cs" />
     <Compile Include="MDI\MDI.cs">
@@ -348,53 +297,47 @@
     <Compile Include="PopUp\BORPopUp.Designer.cs">
       <DependentUpon>BORPopUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUp\CommonPopUp.cs">
+    <Compile Include="PopUp\CommandCode.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopUp\CommonPopUp.Designer.cs">
-      <DependentUpon>CommonPopUp.cs</DependentUpon>
+    <Compile Include="PopUp\CommandCode.Designer.cs">
+      <DependentUpon>CommandCode.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUp\CompanyPopUp.cs">
+    <Compile Include="PopUp\CompanyInfoPopUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopUp\CompanyPopUp.Designer.cs">
-      <DependentUpon>CompanyPopUp.cs</DependentUpon>
+    <Compile Include="PopUp\CompanyInfoPopUp.Designer.cs">
+      <DependentUpon>CompanyInfoPopUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUp\ContractPopUp.cs">
+    <Compile Include="PopUp\ContractInfoPopUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopUp\ContractPopUp.Designer.cs">
-      <DependentUpon>ContractPopUp.cs</DependentUpon>
+    <Compile Include="PopUp\ContractInfoPopUp.Designer.cs">
+      <DependentUpon>ContractInfoPopUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUp\EmpPopUp.cs">
+    <Compile Include="PopUp\EmpInfoPopUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopUp\EmpPopUp.Designer.cs">
-      <DependentUpon>EmpPopUp.cs</DependentUpon>
+    <Compile Include="PopUp\EmpInfoPopUp.Designer.cs">
+      <DependentUpon>EmpInfoPopUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUp\FacilityDetailPopUp.cs">
+    <Compile Include="PopUp\FacilityInfo_NEW_GroupPopUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopUp\FacilityDetailPopUp.Designer.cs">
-      <DependentUpon>FacilityDetailPopUp.cs</DependentUpon>
+    <Compile Include="PopUp\FacilityInfo_NEW_GroupPopUp.Designer.cs">
+      <DependentUpon>FacilityInfo_NEW_GroupPopUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUp\FacilityGroupPopUp.cs">
+    <Compile Include="PopUp\FacilityInfo_NEWPopUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopUp\FacilityGroupPopUp.Designer.cs">
-      <DependentUpon>FacilityGroupPopUp.cs</DependentUpon>
+    <Compile Include="PopUp\FacilityInfo_NEWPopUp.Designer.cs">
+      <DependentUpon>FacilityInfo_NEWPopUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUp\FacilityPopUp.cs">
+    <Compile Include="PopUp\OrderInfoPopUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopUp\FacilityPopUp.Designer.cs">
-      <DependentUpon>FacilityPopUp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PopUp\OrderPopUp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PopUp\OrderPopUp.Designer.cs">
-      <DependentUpon>OrderPopUp.cs</DependentUpon>
+    <Compile Include="PopUp\OrderInfoPopUp.Designer.cs">
+      <DependentUpon>OrderInfoPopUp.cs</DependentUpon>
     </Compile>
     <Compile Include="PopUp\ProcessInfo_Detail_PopUp.cs">
       <SubType>Form</SubType>
@@ -402,17 +345,17 @@
     <Compile Include="PopUp\ProcessInfo_Detail_PopUp.Designer.cs">
       <DependentUpon>ProcessInfo_Detail_PopUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUp\ProductCheckPopUp.cs">
+    <Compile Include="PopUp\ProductCheckInfoPopUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopUp\ProductCheckPopUp.Designer.cs">
-      <DependentUpon>ProductCheckPopUp.cs</DependentUpon>
+    <Compile Include="PopUp\ProductCheckInfoPopUp.Designer.cs">
+      <DependentUpon>ProductCheckInfoPopUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUp\ProductPopUp.cs">
+    <Compile Include="PopUp\ProductInfoPopUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopUp\ProductPopUp.Designer.cs">
-      <DependentUpon>ProductPopUp.cs</DependentUpon>
+    <Compile Include="PopUp\ProductInfoPopUp.Designer.cs">
+      <DependentUpon>ProductInfoPopUp.cs</DependentUpon>
     </Compile>
     <Compile Include="PopUp\ProcessInfo_PopUp.cs">
       <SubType>Form</SubType>
@@ -420,17 +363,11 @@
     <Compile Include="PopUp\ProcessInfo_PopUp.Designer.cs">
       <DependentUpon>ProcessInfo_PopUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUp\SalesMasterPopUp.cs">
+    <Compile Include="PopUp\WareHouseInfoPopUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopUp\SalesMasterPopUp.Designer.cs">
-      <DependentUpon>SalesMasterPopUp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PopUp\WareHousePopUp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PopUp\WareHousePopUp.Designer.cs">
-      <DependentUpon>WareHousePopUp.cs</DependentUpon>
+    <Compile Include="PopUp\WareHouseInfoPopUp.Designer.cs">
+      <DependentUpon>WareHouseInfoPopUp.cs</DependentUpon>
     </Compile>
     <Compile Include="PopUp\WorkPlanDetailPopUp.cs">
       <SubType>Form</SubType>
@@ -446,47 +383,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Serch\CompanySearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Serch\CompanySearch.Designer.cs">
-      <DependentUpon>CompanySearch.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Serch\FacilityGroupSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Serch\FacilityGroupSearch.Designer.cs">
-      <DependentUpon>FacilityGroupSearch.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Serch\FacilitySearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Serch\FacilitySearch.Designer.cs">
-      <DependentUpon>FacilitySearch.cs</DependentUpon>
-    </Compile>
     <Compile Include="Serch\ProductSearch.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Serch\ProductSearch.Designer.cs">
       <DependentUpon>ProductSearch.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Serch\SalesMasterSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Serch\SalesMasterSearch.Designer.cs">
-      <DependentUpon>SalesMasterSearch.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Serch\WareHouseSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Serch\WareHouseSearch.Designer.cs">
-      <DependentUpon>WareHouseSearch.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Serch\WorkPlanDetailSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Serch\WorkPlanDetailSearch.Designer.cs">
-      <DependentUpon>WorkPlanDetailSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="Service\BOMService.cs" />
     <Compile Include="Service\BORService.cs" />
@@ -533,6 +434,7 @@
     <Compile Include="UseControl\SortControl.Designer.cs">
       <DependentUpon>SortControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils\CommonExcel.cs" />
     <Compile Include="Utils\CommonUtil.cs" />
     <Compile Include="Utils\CuttedGroup.cs" />
     <Compile Include="Utils\DateTimeFormatter.cs" />
@@ -568,8 +470,8 @@
     <EmbeddedResource Include="CustomControl\CustomDataGridView.resx">
       <DependentUpon>CustomDataGridView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EmpGroup\TempInfo - 복사본.resx">
-      <DependentUpon>TempInfo - 복사본.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\EmpGroup\TempInfo.resx">
+      <DependentUpon>TempInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Facility\FacilityInfo_NEW.resx">
       <DependentUpon>FacilityInfo_NEW.cs</DependentUpon>
@@ -601,9 +503,6 @@
     <EmbeddedResource Include="Forms\EmpGroup\EmpInfo.resx">
       <DependentUpon>EmpInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Facility\FacilityInfo.resx">
-      <DependentUpon>FacilityInfo.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmpGroup\FormInfo.resx">
       <DependentUpon>FormInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -613,7 +512,7 @@
     <EmbeddedResource Include="Forms\Product\InOutInfo.resx">
       <DependentUpon>InOutInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Login.resx">
+    <EmbeddedResource Include="Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Production\OrderInfo.resx">
@@ -628,41 +527,17 @@
     <EmbeddedResource Include="Forms\Product\ProductInfo.resx">
       <DependentUpon>ProductInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Production\ProductionPlan.resx">
-      <DependentUpon>ProductionPlan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Facility\ProgressInfo.resx">
-      <DependentUpon>ProgressInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Facility\ProgressMoveInfo.resx">
-      <DependentUpon>ProgressMoveInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Sales\SalesByCompany.resx">
-      <DependentUpon>SalesByCompany.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Sales\SalesDeadLine.resx">
-      <DependentUpon>SalesDeadLine.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Sales\Shipment.resx">
       <DependentUpon>Shipment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Sales\StockByOrder.resx">
-      <DependentUpon>StockByOrder.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Product\StockInfo.resx">
       <DependentUpon>StockInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EmpGroup\TempInfo.resx">
-      <DependentUpon>TempInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Product\WareHouseInfo.resx">
       <DependentUpon>WareHouseInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Production\WorkOrderInfo.resx">
       <DependentUpon>WorkOrderInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Production\WorkPlanInfo.resx">
-      <DependentUpon>WorkPlanInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MDI\MDI.resx">
       <DependentUpon>MDI.cs</DependentUpon>
@@ -673,47 +548,41 @@
     <EmbeddedResource Include="PopUp\BORPopUp.resx">
       <DependentUpon>BORPopUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\CommonPopUp.resx">
-      <DependentUpon>CommonPopUp.cs</DependentUpon>
+    <EmbeddedResource Include="PopUp\CommandCode.resx">
+      <DependentUpon>CommandCode.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\CompanyPopUp.resx">
-      <DependentUpon>CompanyPopUp.cs</DependentUpon>
+    <EmbeddedResource Include="PopUp\CompanyInfoPopUp.resx">
+      <DependentUpon>CompanyInfoPopUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\ContractPopUp.resx">
-      <DependentUpon>ContractPopUp.cs</DependentUpon>
+    <EmbeddedResource Include="PopUp\ContractInfoPopUp.resx">
+      <DependentUpon>ContractInfoPopUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\EmpPopUp.resx">
-      <DependentUpon>EmpPopUp.cs</DependentUpon>
+    <EmbeddedResource Include="PopUp\EmpInfoPopUp.resx">
+      <DependentUpon>EmpInfoPopUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\FacilityDetailPopUp.resx">
-      <DependentUpon>FacilityDetailPopUp.cs</DependentUpon>
+    <EmbeddedResource Include="PopUp\FacilityInfo_NEW_GroupPopUp.resx">
+      <DependentUpon>FacilityInfo_NEW_GroupPopUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\FacilityGroupPopUp.resx">
-      <DependentUpon>FacilityGroupPopUp.cs</DependentUpon>
+    <EmbeddedResource Include="PopUp\FacilityInfo_NEWPopUp.resx">
+      <DependentUpon>FacilityInfo_NEWPopUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\FacilityPopUp.resx">
-      <DependentUpon>FacilityPopUp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\OrderPopUp.resx">
-      <DependentUpon>OrderPopUp.cs</DependentUpon>
+    <EmbeddedResource Include="PopUp\OrderInfoPopUp.resx">
+      <DependentUpon>OrderInfoPopUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUp\ProcessInfo_Detail_PopUp.resx">
       <DependentUpon>ProcessInfo_Detail_PopUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\ProductCheckPopUp.resx">
-      <DependentUpon>ProductCheckPopUp.cs</DependentUpon>
+    <EmbeddedResource Include="PopUp\ProductCheckInfoPopUp.resx">
+      <DependentUpon>ProductCheckInfoPopUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\ProductPopUp.resx">
-      <DependentUpon>ProductPopUp.cs</DependentUpon>
+    <EmbeddedResource Include="PopUp\ProductInfoPopUp.resx">
+      <DependentUpon>ProductInfoPopUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUp\ProcessInfo_PopUp.resx">
       <DependentUpon>ProcessInfo_PopUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\SalesMasterPopUp.resx">
-      <DependentUpon>SalesMasterPopUp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\WareHousePopUp.resx">
-      <DependentUpon>WareHousePopUp.cs</DependentUpon>
+    <EmbeddedResource Include="PopUp\WareHouseInfoPopUp.resx">
+      <DependentUpon>WareHouseInfoPopUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUp\WorkPlanDetailPopUp.resx">
       <DependentUpon>WorkPlanDetailPopUp.cs</DependentUpon>
@@ -727,26 +596,8 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Serch\CompanySearch.resx">
-      <DependentUpon>CompanySearch.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Serch\FacilityGroupSearch.resx">
-      <DependentUpon>FacilityGroupSearch.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Serch\FacilitySearch.resx">
-      <DependentUpon>FacilitySearch.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Serch\ProductSearch.resx">
       <DependentUpon>ProductSearch.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Serch\SalesMasterSearch.resx">
-      <DependentUpon>SalesMasterSearch.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Serch\WareHouseSearch.resx">
-      <DependentUpon>WareHouseSearch.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Serch\WorkPlanDetailSearch.resx">
-      <DependentUpon>WorkPlanDetailSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UseControl\FavoritesControl.resx">
       <DependentUpon>FavoritesControl.cs</DependentUpon>

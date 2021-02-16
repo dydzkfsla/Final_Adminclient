@@ -69,6 +69,7 @@ namespace AdminClient.PopUp
 
         private void BOMPopUp_Load(object sender, EventArgs e)
         {
+            
             lbl_code.Visible = false;
             cbo_State.Items.Add("Y");
             cbo_State.Items.Add("N");
@@ -79,6 +80,7 @@ namespace AdminClient.PopUp
 
             if (mode == Mode.New)  // 신규BOM추가
             {
+                lbl_Title.Text = "BOM등록";
                 btn_UpItemSch.Enabled = false;
                 btn_Update.Enabled = btn_Delete.Enabled = false;
 
@@ -88,6 +90,7 @@ namespace AdminClient.PopUp
             }
             else
             {
+                lbl_Title.Text = "BOM수정";
                 btn_UpItemSch.Enabled = true;
                 btn_Add.Enabled = false;
 

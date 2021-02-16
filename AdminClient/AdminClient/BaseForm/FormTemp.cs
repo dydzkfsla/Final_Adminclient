@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -112,10 +113,19 @@ namespace AdminClient.BaseForm
         {
             if (Global.Global.Emp_Form == null)
                 return;
-            var List =  Global.Global.Emp_Form.FindAll(x => this.Name.Contains(x.Form_Name));
+            if (this.GetType().FullName.Contains("AdminClient.Serch"))
+                return;
+
+            var List = Global.Global.Emp_Form.FindAll(x => 
+            {
+                Debug.WriteLine(this.GetType().FullName);
+                Debug.WriteLine(x.Form_Name);
+                return this.GetType().FullName.Contains(x.Form_Name);
+                
+            });
             foreach (Control control in controls)
             {
-                if(control is Button)
+                if (control is Button)
                 {
                     if (control.Name.ToLower().Contains("search"))
                     {
@@ -132,8 +142,9 @@ namespace AdminClient.BaseForm
                     if (control.Name.ToLower().Contains("add"))
                     {
                         bool result = false;
-                        foreach (var item in List) {
-                            if(item.Form_Insert)
+                        foreach (var item in List)
+                        {
+                            if (item.Form_Insert)
                             {
                                 result = true;
                             }
@@ -165,7 +176,7 @@ namespace AdminClient.BaseForm
                         ((Button)control).Enabled = result;
                     }
                 }
-                if(control.Controls.Count > 0)
+                if (control.Controls.Count > 0)
                 {
                     SerchButton(control.Controls);
                 }

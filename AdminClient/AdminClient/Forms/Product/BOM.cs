@@ -73,8 +73,8 @@ namespace AdminClient.Forms
                 CommonUtil.AddGridTextColumn(dgv_bom, "소요량", "BOM_Count");
                 CommonUtil.AddGridTextColumn(dgv_bom, "레벨", "level");
                 CommonUtil.AddGridTextColumn(dgv_bom, "정리", "sortOrder");
-                CommonUtil.AddGridTextColumn(dgv_bom, "시작일", "BOM_StartDate");
-                CommonUtil.AddGridTextColumn(dgv_bom, "종료일", "BOM_EndDate");
+                CommonUtil.AddGridTextColumn(dgv_bom, "시작일", "BOM_StartDate", Format: "yyyy-MM-dd");
+                CommonUtil.AddGridTextColumn(dgv_bom, "종료일", "BOM_EndDate", Format: "yyyy-MM-dd");
                 CommonUtil.AddGridTextColumn(dgv_bom, "사용여부", "BOM_State");
                 CommonUtil.AddGridTextColumn(dgv_bom, "자동차감", "BOM_AutoDecrease");
 
@@ -84,6 +84,18 @@ namespace AdminClient.Forms
             }
             else if(cbo_choice.Text == "역전개")
             {
+                ReverseBOM bm = new ReverseBOM();
+
+                dgv_bom.Columns.Clear();
+                dgv_bom.SetGridColumn();
+                CommonUtil.AddGridTextColumn(dgv_bom, "BOM코드", "BOM_Code");
+                CommonUtil.AddGridTextColumn(dgv_bom, "상위품목코드", "parentCode", 200);
+                CommonUtil.AddGridTextColumn(dgv_bom, "상위품목명", "parentName", 150);
+                CommonUtil.AddGridTextColumn(dgv_bom, "소요량", "BOM_Count");
+                CommonUtil.AddGridTextColumn(dgv_bom, "사용여부", "BOM_State");
+                CommonUtil.AddGridTextColumn(dgv_bom, "시작일", "BOM_StartDate", Format : "yyyy-MM-dd");
+                CommonUtil.AddGridTextColumn(dgv_bom, "종료일", "BOM_EndDate", Format: "yyyy-MM-dd");
+
                 forward = null;
                 reverse = service.GetReverseList(info);
                 dgv_bom.DataSource = reverse;
@@ -171,6 +183,38 @@ namespace AdminClient.Forms
 
                 }
             }
+
+        }
+
+        private void btn_Xls_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dlg = new SaveFileDialog();
+            CommonExcel excel = new CommonExcel();
+            excel.Cursor = this.Cursor;
+            dlg.Filter = "Excel File(*.xls)|*.xls";
+            dlg.Title = "엑셀파일로 내보내기";
+            if (dlg.ShowDialog() != DialogResult.OK)
+                return;
+            DataTable dt = null;
+            if (dgv_bom.DataSource is List<ForwardBOM>)
+            {
+                dt = ((List<ForwardBOM>)dgv_bom.DataSource).ConvertToDataTable();
+            }
+            else
+            {
+                dt = ((List<ReverseBOM>)dgv_bom.DataSource).ConvertToDataTable();
+            }
+           
+            dt.TableName = this.Name;
+            string toltip = $@"code: 저장될 code값
+                            {System.Environment.NewLine}name: 코드의 표현 값
+                            {System.Environment.NewLine}category:  어느 그룹에 속하는지
+                            {System.Environment.NewLine}pcode: 상위 부모가 있을경우 부모 code";
+            if (excel.ExportDataToExcel(dt, dlg.FileName, toltip))
+            {
+                MessageBox.Show("엑셀파일에 저장하였습니다.");
+            }
+
 
         }
     }
