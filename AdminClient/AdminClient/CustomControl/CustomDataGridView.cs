@@ -96,7 +96,7 @@ namespace AdminClient
             {
                 e.PaintBackground(e.ClipBounds, false);
 
-
+                string name = this.Columns[e.ColumnIndex].Name;
                 Point pt = e.CellBounds.Location;
 
                 int nChkBoxWidth = 15;
@@ -113,7 +113,7 @@ namespace AdminClient
 
                 int whith = this.Location.X;
 
-                if (e.CellBounds.X >= 80)
+                if (e.CellBounds.Width >= 20)
                 {
                     if (!IsADDChk)
                     {

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace AdminClient.PopUp
 {
-    public partial class CompanyPopUp : AdminClient.BaseForm.EmpFormTemp
+    public partial class ContractInfoPopUp : AdminClient.BaseForm.EmpFormTemp
     {
         public enum Mode { New, Old}  // New : 등록모드(등록버튼만 활성화), Old : 수정모드(수정, 삭제버튼만 활성화)
         List<CompanyPopUpVO> typeList;
@@ -22,7 +22,7 @@ namespace AdminClient.PopUp
 
         public CompanyVO VO { get { return vo; } set { vo = value; } }
 
-        public CompanyPopUp()
+        public ContractInfoPopUp()
         {
             InitializeComponent();
         }
