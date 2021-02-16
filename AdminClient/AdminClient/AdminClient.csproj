@@ -143,6 +143,12 @@
     <Compile Include="Forms\Facility\FacilityInfo_NEW.Designer.cs">
       <DependentUpon>FacilityInfo_NEW.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Facility\ProcessInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Facility\ProcessInfo.Designer.cs">
+      <DependentUpon>ProcessInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Production\ContractInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -384,6 +390,12 @@
     <Compile Include="PopUp\OrderPopUp.Designer.cs">
       <DependentUpon>OrderPopUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopUp\ProcessInfo_Detail_PopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\ProcessInfo_Detail_PopUp.Designer.cs">
+      <DependentUpon>ProcessInfo_Detail_PopUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="PopUp\ProductCheckPopUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -396,11 +408,11 @@
     <Compile Include="PopUp\ProductPopUp.Designer.cs">
       <DependentUpon>ProductPopUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUp\ProgressPopUp.cs">
+    <Compile Include="PopUp\ProcessInfo_PopUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopUp\ProgressPopUp.Designer.cs">
-      <DependentUpon>ProgressPopUp.cs</DependentUpon>
+    <Compile Include="PopUp\ProcessInfo_PopUp.Designer.cs">
+      <DependentUpon>ProcessInfo_PopUp.cs</DependentUpon>
     </Compile>
     <Compile Include="PopUp\SalesMasterPopUp.cs">
       <SubType>Form</SubType>
@@ -487,6 +499,7 @@
     <Compile Include="Service\GroupInfoService.cs" />
     <Compile Include="Service\InOutService.cs" />
     <Compile Include="Service\OrderService.cs" />
+    <Compile Include="Service\ProcessService.cs" />
     <Compile Include="Service\ProductCheckService.cs" />
     <Compile Include="Service\ProductionService.cs" />
     <Compile Include="Service\ProductService.cs" />
@@ -550,6 +563,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Facility\FacilityInfo_NEW.resx">
       <DependentUpon>FacilityInfo_NEW.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Facility\ProcessInfo.resx">
+      <DependentUpon>ProcessInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Production\ContractInfo.resx">
       <DependentUpon>ContractInfo.cs</DependentUpon>
@@ -671,14 +687,17 @@
     <EmbeddedResource Include="PopUp\OrderPopUp.resx">
       <DependentUpon>OrderPopUp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\ProcessInfo_Detail_PopUp.resx">
+      <DependentUpon>ProcessInfo_Detail_PopUp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PopUp\ProductCheckPopUp.resx">
       <DependentUpon>ProductCheckPopUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUp\ProductPopUp.resx">
       <DependentUpon>ProductPopUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\ProgressPopUp.resx">
-      <DependentUpon>ProgressPopUp.cs</DependentUpon>
+    <EmbeddedResource Include="PopUp\ProcessInfo_PopUp.resx">
+      <DependentUpon>ProcessInfo_PopUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUp\SalesMasterPopUp.resx">
       <DependentUpon>SalesMasterPopUp.cs</DependentUpon>
