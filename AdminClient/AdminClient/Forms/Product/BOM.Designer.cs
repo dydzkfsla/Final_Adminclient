@@ -125,6 +125,7 @@
             this.dgv_bom.Size = new System.Drawing.Size(1625, 856);
             this.dgv_bom.TabIndex = 6;
             this.dgv_bom.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_bom_CellContentClick);
+            this.dgv_bom.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgv_BOMList_DataBindingComplete);
             // 
             // label1
             // 
