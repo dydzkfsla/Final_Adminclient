@@ -29,6 +29,7 @@ namespace AdminClient.Forms
             txt_OdCode.KeyPress += NoneKeyPress;
             nu_limit.Enabled = gb_detail.Enabled = false;
             dtp_end.Value = DateTime.Now.AddDays(1);
+            btn_ProdAdd.Visible = false;
 
             OrderService service = new OrderService();
             List<CombOrderVO> comblist = service.GetComboBindingList();
@@ -47,6 +48,8 @@ namespace AdminClient.Forms
             CommonUtil.AddGridTextColumn(dgv_Odlist, "발주상태", "Common_Name");
 
             dgv_oddList.SetGridColumn();
+            CommonUtil.AddGridTextColumn(dgv_oddList, "cCode", "Comp_Code", visibility: false);
+            CommonUtil.AddGridTextColumn(dgv_oddList, "oCode", "Orders_Code", visibility: false);
             CommonUtil.AddGridTextColumn(dgv_oddList, "발주상세코드", "OrdersDetail_Code", textAlign : DataGridViewContentAlignment.MiddleRight);
             CommonUtil.AddGridTextColumn(dgv_oddList, "품목코드", "Prod_Code", textAlign : DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dgv_oddList, "품목명", "Prod_Name");
@@ -154,6 +157,9 @@ namespace AdminClient.Forms
             {
                 List<OrderVO> order = pop.OrderInfo;
 
+                if (order.Count < 1)
+                    return;
+
                 order.ForEach((popinfo) =>
                 {
                     if (odlist == null)
@@ -165,6 +171,8 @@ namespace AdminClient.Forms
                 dgv_oddList.DataSource = null;
                 dgv_Odlist.DataSource = null;
                 dgv_Odlist.DataSource = odlist;
+
+                btn_search.PerformClick();
             }
 
         }
@@ -175,6 +183,7 @@ namespace AdminClient.Forms
             List<ProductVO> prod = new List<ProductVO>();
 
             ProductSearch sch = new ProductSearch();
+            sch.ThisMode = ProductSearch.Mode.Multi;
             sch.StartPosition = FormStartPosition.CenterParent;
             if (sch.ShowDialog() == DialogResult.OK)
             {
@@ -312,6 +321,7 @@ namespace AdminClient.Forms
             {
                 decimal cancel = decimal.Parse(txt_CqCnt.Text);
                 int odcode = temp.OrdersDetail_Code;
+                int code = temp.Orders_Code;
 
                 if(temp.Prod_MinCount > temp.Orders_Count - decimal.Parse(txt_CqCnt.Text))
                 {
@@ -321,7 +331,7 @@ namespace AdminClient.Forms
                 }
 
                 OrderService service = new OrderService();
-                bool result = service.CancelCountUpdate(odcode, cancel);
+                bool result = service.CancelCountUpdate(code, odcode, cancel);
 
                 if(result)
                 {
@@ -329,10 +339,34 @@ namespace AdminClient.Forms
                     {
                         if (item.Prod_Code == txt_ProdCode.Text)
                             item.Orders_CancelQuantity = cancel;
+
+                        if (item.Orders_Count == item.Orders_ReceiveQuantity + item.Orders_CancelQuantity)
+                            item.Common_Name = "입고완료";
                     });
+
+                    int odcnt = oddlist.Count;
+                    int chkcnt = 0;
+
+                    oddlist.ForEach((info) =>
+                    {
+                        if (info.Common_Name == "입고완료")
+                            chkcnt += 1;
+                    });
+
+                    if(odcnt == chkcnt)
+                    {
+                        odlist.ForEach((odinfo) =>
+                        {
+                            if (odinfo.Orders_Code == temp.Orders_Code)
+                                odinfo.Common_Name = "입고완료";
+                        });
+                    }
 
                     dgv_oddList.DataSource = null;
                     dgv_oddList.DataSource = oddlist;
+                    dgv_Odlist.DataSource = null;
+                    dgv_Odlist.DataSource = odlist;
+
                 }
 
             }
@@ -491,7 +525,7 @@ namespace AdminClient.Forms
             }
             #endregion
 
-            detail.Orders_ReceiveQuantity = decimal.Parse(txt_RqCnt.Text) - detail.Orders_ReceiveQuantity;
+            detail.Orders_ReceiveQuantity = decimal.Parse(txt_RqCnt.Text);
 
             OrderService service = new OrderService();
             bool result = service.ReceiveQnt(detail);
@@ -502,7 +536,7 @@ namespace AdminClient.Forms
                 {
                     if (item.Prod_Code == detail.Prod_Code)
                     {
-                        item.Orders_ReceiveQuantity = detail.Orders_ReceiveQuantity;
+                        item.Orders_ReceiveQuantity = detail.Orders_ReceiveQuantity + item.Orders_CancelQuantity;
 
                         if(item.Orders_Count == item.Orders_ReceiveQuantity)
                             item.Common_Name = "입고완료";
@@ -587,6 +621,22 @@ namespace AdminClient.Forms
         {
             if (e.RowIndex > -1)
             {
+                if (dgv_oddList["Common_Name", e.RowIndex].Value.ToString().Trim() == "발주신청대기")
+                {
+                    gb_ProdInfo.Enabled = gb_odMenu.Enabled = true;
+                    btn_OdMenu.Text = "발주확정";
+                    btn_ProdUpdate.Text = "발주수량 수정";
+                }
+                else if (dgv_oddList["Common_Name", e.RowIndex].Value.ToString() == "발주신청완료")
+                {
+                    gb_ProdInfo.Enabled = gb_odMenu.Enabled = true;
+                    btn_OdMenu.Text = "입고확인";
+                    btn_ProdUpdate.Text = "취소수량 입력";
+                }
+                else
+                    gb_ProdInfo.Enabled = gb_odMenu.Enabled = false;
+                    
+
                 txt_ProdCode.Text = dgv_oddList["Prod_Code", e.RowIndex].Value.ToString();
                 txt_OrderCnt.Text = dgv_oddList["Orders_Count", e.RowIndex].Value.ToString();
                 txt_RqCnt.Text = dgv_oddList["Orders_ReceiveQuantity", e.RowIndex].Value.ToString();

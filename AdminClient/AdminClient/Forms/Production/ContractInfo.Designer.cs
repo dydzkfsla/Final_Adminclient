@@ -41,7 +41,7 @@ namespace AdminClient.Forms
             this.dtp_DueDateTo = new System.Windows.Forms.DateTimePicker();
             this.dtp_DueDateFrom = new System.Windows.Forms.DateTimePicker();
             this.dgv_ContractList = new AdminClient.CustomDataGridView();
-            this.btn_CreateProduction = new System.Windows.Forms.Button();
+            this.btn_CreateProductionAdd = new System.Windows.Forms.Button();
             this.cbo_Destination = new System.Windows.Forms.ComboBox();
             this.cbo_CompName = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -62,31 +62,24 @@ namespace AdminClient.Forms
             // 
             // btn_add
             // 
-            this.btn_add.Location = new System.Drawing.Point(1468, 9);
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // btn_Xls
             // 
-            this.btn_Xls.Location = new System.Drawing.Point(1551, 9);
             this.btn_Xls.Click += new System.EventHandler(this.btn_Xls_Click);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btn_CreateProduction);
+            this.panel1.Controls.Add(this.btn_CreateProductionAdd);
             this.panel1.Location = new System.Drawing.Point(12, 9);
-            this.panel1.Size = new System.Drawing.Size(1636, 64);
             this.panel1.Controls.SetChildIndex(this.btn_add, 0);
             this.panel1.Controls.SetChildIndex(this.btn_Xls, 0);
-            this.panel1.Controls.SetChildIndex(this.btn_CreateProduction, 0);
+            this.panel1.Controls.SetChildIndex(this.btn_CreateProductionAdd, 0);
             // 
             // lbl_Title
             // 
             this.lbl_Title.Size = new System.Drawing.Size(159, 43);
             this.lbl_Title.Text = "수주관리";
-            // 
-            // pnl_Main
-            // 
-            this.pnl_Main.Size = new System.Drawing.Size(1654, 925);
             // 
             // gb_Sherch
             // 
@@ -131,29 +124,11 @@ namespace AdminClient.Forms
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgv_ContractList);
-            this.splitContainer1.Size = new System.Drawing.Size(1654, 844);
-            this.splitContainer1.SplitterDistance = 365;
-            // 
-            // btn_folding
-            // 
-            this.btn_folding.Location = new System.Drawing.Point(0, 379);
-            // 
-            // splitter1
-            // 
-            this.splitter1.Size = new System.Drawing.Size(33, 844);
             // 
             // btn_search
             // 
             this.btn_search.Location = new System.Drawing.Point(265, 17);
             this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
-            // 
-            // Form_close
-            // 
-            this.Form_close.Location = new System.Drawing.Point(1633, 8);
-            // 
-            // TitleColor
-            // 
-            this.TitleColor.Size = new System.Drawing.Size(1744, 7);
             // 
             // searchControl1
             // 
@@ -277,22 +252,22 @@ namespace AdminClient.Forms
             this.dgv_ContractList.TabIndex = 3;
             this.dgv_ContractList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ContractList_CellContentClick);
             // 
-            // btn_CreateProduction
+            // btn_CreateProductionAdd
             // 
-            this.btn_CreateProduction.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_CreateProduction.BackColor = System.Drawing.Color.White;
-            this.btn_CreateProduction.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btn_CreateProduction.Image = global::AdminClient.Properties.Resources.Edit_32x32;
-            this.btn_CreateProduction.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_CreateProduction.Location = new System.Drawing.Point(1386, 9);
-            this.btn_CreateProduction.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_CreateProduction.Name = "btn_CreateProduction";
-            this.btn_CreateProduction.Size = new System.Drawing.Size(82, 47);
-            this.btn_CreateProduction.TabIndex = 17;
-            this.btn_CreateProduction.Text = "생산계획\r\n생성";
-            this.btn_CreateProduction.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_CreateProduction.UseVisualStyleBackColor = false;
-            this.btn_CreateProduction.Click += new System.EventHandler(this.btn_CreateProduction_Click);
+            this.btn_CreateProductionAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_CreateProductionAdd.BackColor = System.Drawing.Color.White;
+            this.btn_CreateProductionAdd.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_CreateProductionAdd.Image = global::AdminClient.Properties.Resources.Edit_32x32;
+            this.btn_CreateProductionAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_CreateProductionAdd.Location = new System.Drawing.Point(1386, 9);
+            this.btn_CreateProductionAdd.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_CreateProductionAdd.Name = "btn_CreateProductionAdd";
+            this.btn_CreateProductionAdd.Size = new System.Drawing.Size(82, 47);
+            this.btn_CreateProductionAdd.TabIndex = 17;
+            this.btn_CreateProductionAdd.Text = "생산계획\r\n생성";
+            this.btn_CreateProductionAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_CreateProductionAdd.UseVisualStyleBackColor = false;
+            this.btn_CreateProductionAdd.Click += new System.EventHandler(this.btn_CreateProduction_Click);
             // 
             // cbo_Destination
             // 
@@ -374,7 +349,7 @@ namespace AdminClient.Forms
 		private System.Windows.Forms.DateTimePicker dtp_DueDateTo;
 		private System.Windows.Forms.DateTimePicker dtp_DueDateFrom;
 		private CustomDataGridView dgv_ContractList;
-		protected System.Windows.Forms.Button btn_CreateProduction;
+		protected System.Windows.Forms.Button btn_CreateProductionAdd;
 		private System.Windows.Forms.ComboBox cbo_Destination;
 		private System.Windows.Forms.ComboBox cbo_CompName;
 		private System.Windows.Forms.Label label5;

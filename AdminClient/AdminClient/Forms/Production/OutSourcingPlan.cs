@@ -32,6 +32,7 @@ namespace AdminClient.Forms
 			DemandService service = new DemandService();
 			dt = service.GetDemandPlan(from, to);
 
+			dgv_Plan.DataSource = null;
 			dgv_Plan.DataSource = dt;
 
 			if(dgv_Plan.Rows.Count > 0)

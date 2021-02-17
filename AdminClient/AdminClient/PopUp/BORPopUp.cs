@@ -154,6 +154,7 @@ namespace AdminClient.PopUp
         private void btn_prodSearch_Click(object sender, EventArgs e)
         {
             ProductSearch sch = new ProductSearch();
+            sch.ThisMode = ProductSearch.Mode.One;
             sch.StartPosition = FormStartPosition.CenterParent;
 
             ProductVO vo = null;

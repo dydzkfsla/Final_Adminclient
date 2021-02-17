@@ -93,6 +93,60 @@ namespace AdminClientDAC
             }
         }
 
+        public bool CompInfoDel(string compcode)
+        {
+            try
+            {
+                using(SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = "update CompanyInfo set Comp_State = 'N' where Comp_Code = @code";
+
+                    cmd.Parameters.AddWithValue("@code", compcode);
+
+                    return cmd.ExecuteNonQuery() > 0 ? true : false;
+
+                }
+            }
+            catch(Exception err)
+            {
+                Info.WriteError($"실행자:{Global.employees.Emp_Name} 회사정보 비활성화 작업중 오류 :" + err.Message, err);
+                return false;
+            }
+        }
+
+        public bool UpdateCompInfo(CompanyDetailVO cpinfo)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"update CompanyDetail 
+	                                                                set Prod_MinCount = @min, Prod_OldUnitPrice = Prod_UnitPrice, 
+	                                                                	   Prod_UnitPrice = @price, Item_State = @state, 
+	                                                                	   Lst_Writer = @empcode, Lst_WriteDate = getdate()
+	                                                                where Comp_Code = @code 
+	                                                                	and Prod_Code = @pdcode";
+
+                    cmd.Parameters.AddWithValue("@min", cpinfo.Prod_MinCount);
+                    cmd.Parameters.AddWithValue("@price", cpinfo.Prod_UnitPrice);
+                    cmd.Parameters.AddWithValue("@state", cpinfo.item_State);
+                    cmd.Parameters.AddWithValue("@empcode", Global.employees.Emp_Code);
+                    cmd.Parameters.AddWithValue("@code", cpinfo.Comp_Code);
+                    cmd.Parameters.AddWithValue("@pdcode", cpinfo.Prod_Code);
+
+                    return cmd.ExecuteNonQuery() > 0 ? true : false;
+
+                }
+            }
+            catch(Exception err)
+            {
+                Info.WriteError($"실행자:{Global.employees.Emp_Name} 회사 물품 정보수정중 오류 :" + err.Message, err);
+                return false;
+            }
+        }
+
         public bool SetUpdateList(List<CompanyDetailVO> updateList)
         {
             SqlTransaction trans = conn.BeginTransaction();

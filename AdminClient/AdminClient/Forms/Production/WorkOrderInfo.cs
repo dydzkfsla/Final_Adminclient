@@ -20,11 +20,26 @@ namespace AdminClient.Forms
 
         private void WorkOrderInfo_Load(object sender, EventArgs e)
         {
-            lbl_Title.Text = "작업지시목록";
+            lbl_Title.Text = "작업지시현황";
             splitContainer1.SplitterDistance = 365;
             gb_work.Enabled = false;
             gb_due.Enabled = false;
             nu_limit.Enabled = false;
+
+            dgv_woList.SetGridColumn();
+            CommonUtil.AddGridTextColumn(dgv_woList, "작업번호", "WO_Code", 200);
+            CommonUtil.AddGridTextColumn(dgv_woList, "품목번호", "Prod_Code");
+            CommonUtil.AddGridTextColumn(dgv_woList, "품목명", "Prod_Name", 200);
+            CommonUtil.AddGridTextColumn(dgv_woList, "작업상태", "WO_State");
+            CommonUtil.AddGridTextColumn(dgv_woList, "설비번호", "Fac_Code");
+            CommonUtil.AddGridTextColumn(dgv_woList, "설비명", "Fac_Name", 150);
+            CommonUtil.AddGridTextColumn(dgv_woList, "작업팀코드", "Team_Code", 150);
+            CommonUtil.AddGridTextColumn(dgv_woList, "작업팀명", "Team_Name", 150);
+            CommonUtil.AddGridTextColumn(dgv_woList, "지시수량", "WO_EstimatedQuantity", 150);
+            CommonUtil.AddGridTextColumn(dgv_woList, "목표수량", "WO_OrderQuantity", 150);
+            CommonUtil.AddGridTextColumn(dgv_woList, "지시일", "makeDate", 150);
+            
+
         }
 
 		private void chk_limit_CheckedChanged(object sender, EventArgs e)

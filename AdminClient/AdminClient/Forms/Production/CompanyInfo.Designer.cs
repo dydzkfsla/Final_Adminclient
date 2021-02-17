@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label3 = new System.Windows.Forms.Label();
             this.cbo_Auto = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -67,7 +67,6 @@
             this.txt_Prod_UnitPrice = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btm_AllSet = new System.Windows.Forms.Button();
             this.pnl_AllInfo = new System.Windows.Forms.Panel();
             this.cbo_itemState = new System.Windows.Forms.ComboBox();
             this.dgv_detail = new AdminClient.CustomDataGridView();
@@ -105,11 +104,10 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.pnl_AllInfo);
-            this.splitContainer3.Panel2.Controls.Add(this.btm_AllSet);
             this.splitContainer3.Panel2.Controls.Add(this.btn_ProdUpdate);
             this.splitContainer3.Panel2.Controls.Add(this.btn_ProdAdd);
-            this.splitContainer3.Size = new System.Drawing.Size(1222, 469);
-            this.splitContainer3.SplitterDistance = 862;
+            this.splitContainer3.Size = new System.Drawing.Size(1268, 441);
+            this.splitContainer3.SplitterDistance = 900;
             this.splitContainer3.SplitterWidth = 8;
             // 
             // splitContainer2
@@ -118,17 +116,17 @@
             // splitContainer2.Panel1
             // 
             this.splitContainer2.Panel1.Controls.Add(this.dgv_CompList);
-            this.splitContainer2.Size = new System.Drawing.Size(1222, 857);
-            this.splitContainer2.SplitterDistance = 382;
+            this.splitContainer2.Size = new System.Drawing.Size(1268, 857);
+            this.splitContainer2.SplitterDistance = 410;
             // 
             // btn_add
             // 
-            this.btn_add.Location = new System.Drawing.Point(1439, 9);
+            this.btn_add.Location = new System.Drawing.Point(1499, 9);
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // btn_Xls
             // 
-            this.btn_Xls.Location = new System.Drawing.Point(1536, 9);
+            this.btn_Xls.Location = new System.Drawing.Point(1596, 9);
             this.btn_Xls.Click += new System.EventHandler(this.btn_Xls_Click);
             // 
             // panel1
@@ -141,7 +139,7 @@
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.txt_Code);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Size = new System.Drawing.Size(1638, 64);
+            this.panel1.Size = new System.Drawing.Size(1698, 64);
             this.panel1.Controls.SetChildIndex(this.btn_add, 0);
             this.panel1.Controls.SetChildIndex(this.btn_Xls, 0);
             this.panel1.Controls.SetChildIndex(this.label8, 0);
@@ -155,7 +153,7 @@
             // 
             // pnl_Main
             // 
-            this.pnl_Main.Size = new System.Drawing.Size(1654, 941);
+            this.pnl_Main.Size = new System.Drawing.Size(1714, 941);
             // 
             // gb_Sherch
             // 
@@ -193,8 +191,8 @@
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Size = new System.Drawing.Size(1650, 860);
-            this.splitContainer1.SplitterDistance = 398;
+            this.splitContainer1.Size = new System.Drawing.Size(1710, 860);
+            this.splitContainer1.SplitterDistance = 412;
             // 
             // btn_folding
             // 
@@ -211,11 +209,11 @@
             // 
             // Form_close
             // 
-            this.Form_close.Location = new System.Drawing.Point(1633, 8);
+            this.Form_close.Location = new System.Drawing.Point(1693, 8);
             // 
             // TitleColor
             // 
-            this.TitleColor.Size = new System.Drawing.Size(1744, 7);
+            this.TitleColor.Size = new System.Drawing.Size(1804, 7);
             // 
             // label3
             // 
@@ -280,7 +278,7 @@
             // txt_Code
             // 
             this.txt_Code.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_Code.Location = new System.Drawing.Point(433, 21);
+            this.txt_Code.Location = new System.Drawing.Point(493, 21);
             this.txt_Code.Name = "txt_Code";
             this.txt_Code.Size = new System.Drawing.Size(145, 25);
             this.txt_Code.TabIndex = 7;
@@ -292,7 +290,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(368, 24);
+            this.label8.Location = new System.Drawing.Point(428, 24);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(68, 17);
             this.label8.TabIndex = 6;
@@ -302,7 +300,7 @@
             // txt_Name
             // 
             this.txt_Name.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_Name.Location = new System.Drawing.Point(670, 21);
+            this.txt_Name.Location = new System.Drawing.Point(730, 21);
             this.txt_Name.Name = "txt_Name";
             this.txt_Name.Size = new System.Drawing.Size(145, 25);
             this.txt_Name.TabIndex = 9;
@@ -314,7 +312,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(611, 24);
+            this.label9.Location = new System.Drawing.Point(671, 24);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(53, 17);
             this.label9.TabIndex = 8;
@@ -324,7 +322,7 @@
             // txt_CEO
             // 
             this.txt_CEO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_CEO.Location = new System.Drawing.Point(912, 21);
+            this.txt_CEO.Location = new System.Drawing.Point(972, 21);
             this.txt_CEO.Name = "txt_CEO";
             this.txt_CEO.Size = new System.Drawing.Size(145, 25);
             this.txt_CEO.TabIndex = 11;
@@ -336,7 +334,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(853, 24);
+            this.label10.Location = new System.Drawing.Point(913, 24);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(53, 17);
             this.label10.TabIndex = 10;
@@ -346,7 +344,7 @@
             // txt_Type
             // 
             this.txt_Type.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_Type.Location = new System.Drawing.Point(1142, 21);
+            this.txt_Type.Location = new System.Drawing.Point(1202, 21);
             this.txt_Type.Name = "txt_Type";
             this.txt_Type.Size = new System.Drawing.Size(145, 25);
             this.txt_Type.TabIndex = 13;
@@ -358,7 +356,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(1098, 24);
+            this.label11.Location = new System.Drawing.Point(1158, 24);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(38, 17);
             this.label11.TabIndex = 12;
@@ -466,14 +464,14 @@
             // 
             this.dgv_CompList.BackgroundColor = System.Drawing.Color.White;
             this.dgv_CompList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_CompList.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_CompList.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_CompList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_CompList.GridColor = System.Drawing.Color.Black;
             this.dgv_CompList.IsChkVisible = true;
@@ -481,7 +479,7 @@
             this.dgv_CompList.Location = new System.Drawing.Point(0, 0);
             this.dgv_CompList.Name = "dgv_CompList";
             this.dgv_CompList.RowTemplate.Height = 23;
-            this.dgv_CompList.Size = new System.Drawing.Size(1222, 382);
+            this.dgv_CompList.Size = new System.Drawing.Size(1268, 410);
             this.dgv_CompList.TabIndex = 0;
             this.dgv_CompList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CompList_CellClick);
             this.dgv_CompList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CompList_CellContentClick);
@@ -591,16 +589,6 @@
             this.panel2.Size = new System.Drawing.Size(296, 207);
             this.panel2.TabIndex = 28;
             // 
-            // btm_AllSet
-            // 
-            this.btm_AllSet.Location = new System.Drawing.Point(69, 407);
-            this.btm_AllSet.Name = "btm_AllSet";
-            this.btm_AllSet.Size = new System.Drawing.Size(223, 39);
-            this.btm_AllSet.TabIndex = 29;
-            this.btm_AllSet.Text = "변경내용 저장";
-            this.btm_AllSet.UseVisualStyleBackColor = true;
-            this.btm_AllSet.Click += new System.EventHandler(this.btm_AllSet_Click);
-            // 
             // pnl_AllInfo
             // 
             this.pnl_AllInfo.Controls.Add(this.panel2);
@@ -630,14 +618,14 @@
             // 
             this.dgv_detail.BackgroundColor = System.Drawing.Color.White;
             this.dgv_detail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_detail.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_detail.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_detail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_detail.GridColor = System.Drawing.Color.Black;
             this.dgv_detail.IsChkVisible = false;
@@ -645,14 +633,14 @@
             this.dgv_detail.Location = new System.Drawing.Point(0, 0);
             this.dgv_detail.Name = "dgv_detail";
             this.dgv_detail.RowTemplate.Height = 23;
-            this.dgv_detail.Size = new System.Drawing.Size(862, 469);
+            this.dgv_detail.Size = new System.Drawing.Size(900, 441);
             this.dgv_detail.TabIndex = 0;
             this.dgv_detail.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_detail_CellClick);
             // 
             // CompanyInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
-            this.ClientSize = new System.Drawing.Size(1665, 1025);
+            this.ClientSize = new System.Drawing.Size(1725, 1025);
             this.Name = "CompanyInfo";
             this.Load += new System.EventHandler(this.CompanyInfo_Load);
             this.splitContainer3.Panel1.ResumeLayout(false);
@@ -724,7 +712,6 @@
         private System.Windows.Forms.Button btn_ProdUpdate;
         private System.Windows.Forms.TextBox txt_Prod_Unit;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btm_AllSet;
         private System.Windows.Forms.Panel pnl_AllInfo;
         private System.Windows.Forms.ComboBox cbo_itemState;
         private CustomDataGridView dgv_detail;

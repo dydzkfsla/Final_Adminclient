@@ -64,10 +64,9 @@ namespace AdminClient.Forms
             #region dgv 세팅
             dgv_CompList.SetGridColumn();
             CommonUtil.AddGridTextColumn(dgv_CompList, "Code", "Comp_Code", visibility: false);
-            CommonUtil.AddGridTextColumn(dgv_CompList, "업체명", "Comp_Name");
-            CommonUtil.AddGridTextColumn(dgv_CompList, "대표명", "Comp_CEO");
+            CommonUtil.AddGridTextColumn(dgv_CompList, "업체명", "Comp_Name", 300);
+            CommonUtil.AddGridTextColumn(dgv_CompList, "대표명", "Comp_CEO", 300);
             CommonUtil.AddGridTextColumn(dgv_CompList, "업종", "Common_Name");
-            CommonUtil.AddGridTextColumn(dgv_CompList, "자동출하", "Comp_Auto");
             CommonUtil.AddGridTextColumn(dgv_CompList, "상태", "Comp_State");
             CommonUtil.AddGridTextColumn(dgv_CompList, "Type", "Comp_Type", visibility: false);
 
@@ -173,24 +172,24 @@ namespace AdminClient.Forms
 
         private void dgv_CompList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (updateList.Count > 0)
-            {
-                DialogResult dr = MessageBox.Show("현재 선택되어있는 회사 품목정보에 수정기록이 있습니다 적용하시겠습니까?", "확인메세지", MessageBoxButtons.YesNoCancel);
+            //if (updateList.Count > 0)
+            //{
+            //    DialogResult dr = MessageBox.Show("현재 선택되어있는 회사 품목정보에 수정기록이 있습니다 적용하시겠습니까?", "확인메세지", MessageBoxButtons.YesNoCancel);
 
-                if(dr == DialogResult.Yes)
-                {
-                    btm_AllSet.PerformClick();
-                    updateList.Clear();
-                }
-                else if(dr == DialogResult.No)
-                {
-                    updateList.Clear();
-                }
-                else
-                {
-                    return;
-                }
-            }
+            //    if(dr == DialogResult.Yes)
+            //    {
+            //        btm_AllSet.PerformClick();
+            //        updateList.Clear();
+            //    }
+            //    else if(dr == DialogResult.No)
+            //    {
+            //        updateList.Clear();
+            //    }
+            //    else
+            //    {
+            //        return;
+            //    }
+            //}
 
 
             txt_CEO.Text = txt_Code.Text = txt_Name.Text = txt_Type.Text = string.Empty;
@@ -239,7 +238,9 @@ namespace AdminClient.Forms
 
                 pop.VO = vo; // 기존정보 전달
 
-                if (pop.ShowDialog() == DialogResult.OK)
+                DialogResult dr = pop.ShowDialog();
+
+                if (dr == DialogResult.OK)
                 {
                     MessageBox.Show("수정에 성공했습니다.");
                     vo = pop.VO; // 바뀐정보 받아옴
@@ -255,12 +256,29 @@ namespace AdminClient.Forms
                     dgv_CompList.DataSource = null;
                     dgv_CompList.DataSource = compList;
                 }
+                else if(dr == DialogResult.None)
+                {
+                    MessageBox.Show("해당 회사를 비활성화하였습니다.");
+
+                    compList.ForEach((comp) =>
+                    {
+                        if (comp.Comp_Code == code)
+                        {
+                            comp.Comp_State = "N";
+                        }
+                    });
+
+                    dgv_CompList.DataSource = null;
+                    dgv_CompList.DataSource = compList;
+
+                }
             }
         }
 
         private void btn_ProdAdd_Click(object sender, EventArgs e)
         {
             ProductSearch sch = new ProductSearch();
+            sch.ThisMode = ProductSearch.Mode.Multi;
             if(sch.ShowDialog() == DialogResult.OK)
             {
                 List<ProductVO> addlist = sch.AddList;
@@ -331,6 +349,8 @@ namespace AdminClient.Forms
 
         private void btn_ProdUpdate_Click(object sender, EventArgs e)
         {
+            CompanyDetailVO cpinfo = null;
+
             detailList.ForEach((prod) =>
             {
                 if (prod.Prod_Code == txt_Prod_Code.Text)
@@ -353,24 +373,22 @@ namespace AdminClient.Forms
 
                     if (flag)
                         updateList.Add(prod);
+
+                    cpinfo = prod;
+
                 }
 
             });
 
+            if(cpinfo != null)
+            {
+                CompanyService service = new CompanyService();
+                bool result = service.UpdateCompInfo(cpinfo);
+            }
+            
+
             dgv_detail.DataSource = null;
             dgv_detail.DataSource = detailList;
-        }
-
-        private void btm_AllSet_Click(object sender, EventArgs e)
-        {
-            CompanyService service = new CompanyService();
-            bool result = service.SetUpdateList(updateList);
-
-            if(result)
-            {
-                updateList.Clear();
-                MessageBox.Show("모든 회사품목 정보가 수정되었습니다.");
-            }
         }
 
         private void btn_Xls_Click(object sender, EventArgs e)
