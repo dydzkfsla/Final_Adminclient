@@ -45,13 +45,14 @@
             this.toolStripLabel_EmpName = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel_Emp_code = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel_Btn_Select = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel_Btn_add = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel_Btn_Update = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel_Btn_Delete = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.tabForms = new AdminClient.ucTabControl();
             this.로그아웃ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,8 +67,8 @@
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.menuStrip1.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.로그아웃ToolStripMenuItem,
-            this.즐겨찾기ToolStripMenuItem});
+            this.즐겨찾기ToolStripMenuItem,
+            this.로그아웃ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 3, 0, 3);
@@ -170,13 +171,14 @@
             this.toolStripLabel_EmpName,
             this.toolStripSeparator5,
             this.toolStripLabel_Emp_code,
+            this.toolStripSeparator6,
+            this.toolStripLabel_Btn_Select,
             this.toolStripSeparator1,
             this.toolStripLabel_Btn_add,
             this.toolStripSeparator2,
             this.toolStripLabel_Btn_Update,
             this.toolStripSeparator3,
-            this.toolStripLabel_Btn_Delete,
-            this.toolStripSeparator6});
+            this.toolStripLabel_Btn_Delete});
             this.toolStrip1.Location = new System.Drawing.Point(275, 1016);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1665, 25);
@@ -212,6 +214,17 @@
             this.toolStripLabel_Emp_code.Size = new System.Drawing.Size(88, 22);
             this.toolStripLabel_Emp_code.Text = "toolStripLabel1";
             // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripLabel_Btn_Select
+            // 
+            this.toolStripLabel_Btn_Select.Name = "toolStripLabel_Btn_Select";
+            this.toolStripLabel_Btn_Select.Size = new System.Drawing.Size(73, 22);
+            this.toolStripLabel_Btn_Select.Text = "조회권한 : Y";
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
@@ -220,8 +233,8 @@
             // toolStripLabel_Btn_add
             // 
             this.toolStripLabel_Btn_add.Name = "toolStripLabel_Btn_add";
-            this.toolStripLabel_Btn_add.Size = new System.Drawing.Size(90, 22);
-            this.toolStripLabel_Btn_add.Text = "추가권한 : 없음";
+            this.toolStripLabel_Btn_add.Size = new System.Drawing.Size(73, 22);
+            this.toolStripLabel_Btn_add.Text = "추가권한 : Y";
             // 
             // toolStripSeparator2
             // 
@@ -231,8 +244,8 @@
             // toolStripLabel_Btn_Update
             // 
             this.toolStripLabel_Btn_Update.Name = "toolStripLabel_Btn_Update";
-            this.toolStripLabel_Btn_Update.Size = new System.Drawing.Size(90, 22);
-            this.toolStripLabel_Btn_Update.Text = "수정권한 : 없음";
+            this.toolStripLabel_Btn_Update.Size = new System.Drawing.Size(73, 22);
+            this.toolStripLabel_Btn_Update.Text = "수정권한 : Y";
             // 
             // toolStripSeparator3
             // 
@@ -242,13 +255,8 @@
             // toolStripLabel_Btn_Delete
             // 
             this.toolStripLabel_Btn_Delete.Name = "toolStripLabel_Btn_Delete";
-            this.toolStripLabel_Btn_Delete.Size = new System.Drawing.Size(90, 22);
-            this.toolStripLabel_Btn_Delete.Text = "삭제권한 : 없음";
-            // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 25);
+            this.toolStripLabel_Btn_Delete.Size = new System.Drawing.Size(73, 22);
+            this.toolStripLabel_Btn_Delete.Text = "삭제권한 : Y";
             // 
             // tabForms
             // 
@@ -327,6 +335,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel_Btn_Select;
         private System.Windows.Forms.ToolStripMenuItem 로그아웃ToolStripMenuItem;
     }
 }
