@@ -32,24 +32,15 @@ namespace AdminClient.Forms
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.label6 = new System.Windows.Forms.Label();
-			this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-			this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-			this.comboBox1 = new System.Windows.Forms.ComboBox();
+			this.dtp_DueDateTo = new System.Windows.Forms.DateTimePicker();
+			this.dtp_DueDateFrom = new System.Windows.Forms.DateTimePicker();
+			this.cbo_CompName = new System.Windows.Forms.ComboBox();
 			this.label8 = new System.Windows.Forms.Label();
 			this.dgv_ShipList = new AdminClient.CustomDataGridView();
-			this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.searchControl1 = new AdminClient.SearchControl();
 			this.sortControl1 = new AdminClient.SortControl();
+			this.cbo_ContractFinish = new System.Windows.Forms.ComboBox();
+			this.label1 = new System.Windows.Forms.Label();
 			this.panel1.SuspendLayout();
 			this.pnl_Main.SuspendLayout();
 			this.gb_Sherch.SuspendLayout();
@@ -68,10 +59,12 @@ namespace AdminClient.Forms
 			// 
 			this.btn_add.Location = new System.Drawing.Point(1461, 9);
 			this.btn_add.Text = "출하\r\n처리";
+			this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
 			// 
 			// btn_Xls
 			// 
 			this.btn_Xls.Location = new System.Drawing.Point(1379, 9);
+			this.btn_Xls.Visible = false;
 			// 
 			// panel1
 			// 
@@ -89,23 +82,27 @@ namespace AdminClient.Forms
 			// 
 			// gb_Sherch
 			// 
-			this.gb_Sherch.Controls.Add(this.comboBox1);
+			this.gb_Sherch.Controls.Add(this.cbo_ContractFinish);
+			this.gb_Sherch.Controls.Add(this.label1);
+			this.gb_Sherch.Controls.Add(this.cbo_CompName);
 			this.gb_Sherch.Controls.Add(this.label8);
 			this.gb_Sherch.Controls.Add(this.groupBox1);
 			this.gb_Sherch.Location = new System.Drawing.Point(5, 2);
-			this.gb_Sherch.Size = new System.Drawing.Size(348, 174);
+			this.gb_Sherch.Size = new System.Drawing.Size(348, 232);
 			this.gb_Sherch.Controls.SetChildIndex(this.chk_limit, 0);
 			this.gb_Sherch.Controls.SetChildIndex(this.nu_limit, 0);
 			this.gb_Sherch.Controls.SetChildIndex(this.btn_search, 0);
 			this.gb_Sherch.Controls.SetChildIndex(this.groupBox1, 0);
 			this.gb_Sherch.Controls.SetChildIndex(this.label8, 0);
-			this.gb_Sherch.Controls.SetChildIndex(this.comboBox1, 0);
+			this.gb_Sherch.Controls.SetChildIndex(this.cbo_CompName, 0);
+			this.gb_Sherch.Controls.SetChildIndex(this.label1, 0);
+			this.gb_Sherch.Controls.SetChildIndex(this.cbo_ContractFinish, 0);
 			// 
 			// gb_detail
 			// 
 			this.gb_detail.Controls.Add(this.sortControl1);
 			this.gb_detail.Controls.Add(this.searchControl1);
-			this.gb_detail.Location = new System.Drawing.Point(4, 180);
+			this.gb_detail.Location = new System.Drawing.Point(5, 238);
 			this.gb_detail.Size = new System.Drawing.Size(349, 210);
 			// 
 			// chk_limit
@@ -133,6 +130,7 @@ namespace AdminClient.Forms
 			// btn_search
 			// 
 			this.btn_search.Location = new System.Drawing.Point(252, 18);
+			this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
 			// 
 			// Form_close
 			// 
@@ -145,9 +143,9 @@ namespace AdminClient.Forms
 			// groupBox1
 			// 
 			this.groupBox1.Controls.Add(this.label6);
-			this.groupBox1.Controls.Add(this.dateTimePicker3);
-			this.groupBox1.Controls.Add(this.dateTimePicker4);
-			this.groupBox1.Location = new System.Drawing.Point(5, 93);
+			this.groupBox1.Controls.Add(this.dtp_DueDateTo);
+			this.groupBox1.Controls.Add(this.dtp_DueDateFrom);
+			this.groupBox1.Location = new System.Drawing.Point(5, 141);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Size = new System.Drawing.Size(277, 64);
 			this.groupBox1.TabIndex = 9;
@@ -163,29 +161,32 @@ namespace AdminClient.Forms
 			this.label6.TabIndex = 5;
 			this.label6.Text = "~";
 			// 
-			// dateTimePicker3
+			// dtp_DueDateTo
 			// 
-			this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.dateTimePicker3.Location = new System.Drawing.Point(145, 24);
-			this.dateTimePicker3.Name = "dateTimePicker3";
-			this.dateTimePicker3.Size = new System.Drawing.Size(108, 25);
-			this.dateTimePicker3.TabIndex = 4;
+			this.dtp_DueDateTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+			this.dtp_DueDateTo.Location = new System.Drawing.Point(145, 24);
+			this.dtp_DueDateTo.Name = "dtp_DueDateTo";
+			this.dtp_DueDateTo.Size = new System.Drawing.Size(108, 25);
+			this.dtp_DueDateTo.TabIndex = 4;
 			// 
-			// dateTimePicker4
+			// dtp_DueDateFrom
 			// 
-			this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.dateTimePicker4.Location = new System.Drawing.Point(7, 24);
-			this.dateTimePicker4.Name = "dateTimePicker4";
-			this.dateTimePicker4.Size = new System.Drawing.Size(108, 25);
-			this.dateTimePicker4.TabIndex = 3;
+			this.dtp_DueDateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+			this.dtp_DueDateFrom.Location = new System.Drawing.Point(7, 24);
+			this.dtp_DueDateFrom.Name = "dtp_DueDateFrom";
+			this.dtp_DueDateFrom.Size = new System.Drawing.Size(108, 25);
+			this.dtp_DueDateFrom.TabIndex = 3;
 			// 
-			// comboBox1
+			// cbo_CompName
 			// 
-			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Location = new System.Drawing.Point(12, 62);
-			this.comboBox1.Name = "comboBox1";
-			this.comboBox1.Size = new System.Drawing.Size(189, 25);
-			this.comboBox1.TabIndex = 20;
+			this.cbo_CompName.BackColor = System.Drawing.Color.WhiteSmoke;
+			this.cbo_CompName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbo_CompName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.cbo_CompName.FormattingEnabled = true;
+			this.cbo_CompName.Location = new System.Drawing.Point(12, 62);
+			this.cbo_CompName.Name = "cbo_CompName";
+			this.cbo_CompName.Size = new System.Drawing.Size(189, 25);
+			this.cbo_CompName.TabIndex = 20;
 			// 
 			// label8
 			// 
@@ -204,18 +205,6 @@ namespace AdminClient.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.dgv_ShipList.BackgroundColor = System.Drawing.Color.White;
 			this.dgv_ShipList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dgv_ShipList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8,
-            this.Column9,
-            this.Column10,
-            this.Column11});
 			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
 			dataGridViewCellStyle1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -234,61 +223,6 @@ namespace AdminClient.Forms
 			this.dgv_ShipList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgv_ShipList.Size = new System.Drawing.Size(1155, 661);
 			this.dgv_ShipList.TabIndex = 4;
-			// 
-			// Column1
-			// 
-			this.Column1.HeaderText = "No.";
-			this.Column1.Name = "Column1";
-			// 
-			// Column2
-			// 
-			this.Column2.HeaderText = "수주코드";
-			this.Column2.Name = "Column2";
-			// 
-			// Column3
-			// 
-			this.Column3.HeaderText = "납기일";
-			this.Column3.Name = "Column3";
-			// 
-			// Column4
-			// 
-			this.Column4.HeaderText = "고객사코드";
-			this.Column4.Name = "Column4";
-			// 
-			// Column5
-			// 
-			this.Column5.HeaderText = "고객사명";
-			this.Column5.Name = "Column5";
-			// 
-			// Column6
-			// 
-			this.Column6.HeaderText = "도착지코드";
-			this.Column6.Name = "Column6";
-			// 
-			// Column7
-			// 
-			this.Column7.HeaderText = "도착지명";
-			this.Column7.Name = "Column7";
-			// 
-			// Column8
-			// 
-			this.Column8.HeaderText = "품목코드";
-			this.Column8.Name = "Column8";
-			// 
-			// Column9
-			// 
-			this.Column9.HeaderText = "품목명";
-			this.Column9.Name = "Column9";
-			// 
-			// Column10
-			// 
-			this.Column10.HeaderText = "주문수량";
-			this.Column10.Name = "Column10";
-			// 
-			// Column11
-			// 
-			this.Column11.HeaderText = "출하된수량";
-			this.Column11.Name = "Column11";
 			// 
 			// searchControl1
 			// 
@@ -309,6 +243,26 @@ namespace AdminClient.Forms
 			this.sortControl1.Name = "sortControl1";
 			this.sortControl1.Size = new System.Drawing.Size(321, 69);
 			this.sortControl1.TabIndex = 1;
+			// 
+			// cbo_ContractFinish
+			// 
+			this.cbo_ContractFinish.BackColor = System.Drawing.Color.WhiteSmoke;
+			this.cbo_ContractFinish.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbo_ContractFinish.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.cbo_ContractFinish.FormattingEnabled = true;
+			this.cbo_ContractFinish.Location = new System.Drawing.Point(12, 110);
+			this.cbo_ContractFinish.Name = "cbo_ContractFinish";
+			this.cbo_ContractFinish.Size = new System.Drawing.Size(108, 25);
+			this.cbo_ContractFinish.TabIndex = 22;
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(9, 90);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(92, 17);
+			this.label1.TabIndex = 21;
+			this.label1.Text = "출하완료여부";
 			// 
 			// Shipment
 			// 
@@ -340,23 +294,14 @@ namespace AdminClient.Forms
 		#endregion
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.DateTimePicker dateTimePicker3;
-		private System.Windows.Forms.DateTimePicker dateTimePicker4;
-		private System.Windows.Forms.ComboBox comboBox1;
+		private System.Windows.Forms.DateTimePicker dtp_DueDateTo;
+		private System.Windows.Forms.DateTimePicker dtp_DueDateFrom;
+		private System.Windows.Forms.ComboBox cbo_CompName;
 		private System.Windows.Forms.Label label8;
 		private CustomDataGridView dgv_ShipList;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
 		private SortControl sortControl1;
 		private SearchControl searchControl1;
+		private System.Windows.Forms.ComboBox cbo_ContractFinish;
+		private System.Windows.Forms.Label label1;
 	}
 }

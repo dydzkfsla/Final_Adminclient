@@ -39,7 +39,7 @@ namespace AdminClient.Forms
 			this.sortControl1 = new AdminClient.SortControl();
 			this.dgv_FacGrpList = new AdminClient.CustomDataGridView();
 			this.dgv_FacList = new AdminClient.CustomDataGridView();
-			this.btn_FacGrpAdd = new System.Windows.Forms.Button();
+			this.btn_AddFacGrp = new System.Windows.Forms.Button();
 			this.cbo_Fgrp = new System.Windows.Forms.ComboBox();
 			this.label7 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
@@ -89,11 +89,11 @@ namespace AdminClient.Forms
 			// 
 			// panel1
 			// 
-			this.panel1.Controls.Add(this.btn_FacGrpAdd);
+			this.panel1.Controls.Add(this.btn_AddFacGrp);
 			this.panel1.Size = new System.Drawing.Size(1636, 64);
 			this.panel1.Controls.SetChildIndex(this.btn_add, 0);
 			this.panel1.Controls.SetChildIndex(this.btn_Xls, 0);
-			this.panel1.Controls.SetChildIndex(this.btn_FacGrpAdd, 0);
+			this.panel1.Controls.SetChildIndex(this.btn_AddFacGrp, 0);
 			// 
 			// pnl_Main
 			// 
@@ -266,22 +266,22 @@ namespace AdminClient.Forms
 			this.dgv_FacList.TabIndex = 0;
 			this.dgv_FacList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_FacList_CellContentClick);
 			// 
-			// btn_FacGrpAdd
+			// btn_AddFacGrp
 			// 
-			this.btn_FacGrpAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.btn_FacGrpAdd.BackColor = System.Drawing.Color.White;
-			this.btn_FacGrpAdd.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.btn_FacGrpAdd.Image = global::AdminClient.Properties.Resources.EditName_32x32;
-			this.btn_FacGrpAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btn_FacGrpAdd.Location = new System.Drawing.Point(1386, 9);
-			this.btn_FacGrpAdd.Margin = new System.Windows.Forms.Padding(0);
-			this.btn_FacGrpAdd.Name = "btn_FacGrpAdd";
-			this.btn_FacGrpAdd.Size = new System.Drawing.Size(82, 47);
-			this.btn_FacGrpAdd.TabIndex = 61;
-			this.btn_FacGrpAdd.Text = "설비군\r\n 등록";
-			this.btn_FacGrpAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btn_FacGrpAdd.UseVisualStyleBackColor = false;
-			this.btn_FacGrpAdd.Click += new System.EventHandler(this.btn_FacGrpAdd_Click);
+			this.btn_AddFacGrp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btn_AddFacGrp.BackColor = System.Drawing.Color.White;
+			this.btn_AddFacGrp.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.btn_AddFacGrp.Image = global::AdminClient.Properties.Resources.EditName_32x32;
+			this.btn_AddFacGrp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btn_AddFacGrp.Location = new System.Drawing.Point(1386, 9);
+			this.btn_AddFacGrp.Margin = new System.Windows.Forms.Padding(0);
+			this.btn_AddFacGrp.Name = "btn_AddFacGrp";
+			this.btn_AddFacGrp.Size = new System.Drawing.Size(82, 47);
+			this.btn_AddFacGrp.TabIndex = 61;
+			this.btn_AddFacGrp.Text = "설비군\r\n 등록";
+			this.btn_AddFacGrp.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btn_AddFacGrp.UseVisualStyleBackColor = false;
+			this.btn_AddFacGrp.Click += new System.EventHandler(this.btn_FacGrpAdd_Click);
 			// 
 			// cbo_Fgrp
 			// 
@@ -363,7 +363,7 @@ namespace AdminClient.Forms
 		private SortControl sortControl1;
 		private CustomDataGridView dgv_FacGrpList;
 		private CustomDataGridView dgv_FacList;
-		protected System.Windows.Forms.Button btn_FacGrpAdd;
+		protected System.Windows.Forms.Button btn_AddFacGrp;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.ComboBox cbo_Fgrp;
 		private System.Windows.Forms.Label label3;

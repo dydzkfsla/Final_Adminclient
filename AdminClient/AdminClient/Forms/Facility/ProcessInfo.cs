@@ -31,13 +31,13 @@ namespace AdminClient.Forms
 			#region 데이터그리드뷰 셋팅
 			dgv_Process.SetGridColumn();
 			CommonUtil.AddGridTextColumn(dgv_Process, "공정코드", "Pcs_Code");
-			CommonUtil.AddGridTextColumn(dgv_Process, "공정이름", "Pcs_Name");
+			CommonUtil.AddGridTextColumn(dgv_Process, "공정명", "Pcs_Name");
 			CommonUtil.AddGridTextColumn(dgv_Process, "사용여부", "Pcs_State");
 
 			dgv_ProcessDetail.SetGridColumn();
 			CommonUtil.AddGridTextColumn(dgv_ProcessDetail, "공정코드", "Pcs_Code");
-			CommonUtil.AddGridTextColumn(dgv_ProcessDetail, "세부공정코드", "PcsD_Code");
-			CommonUtil.AddGridTextColumn(dgv_ProcessDetail, "세부공정이름", "PcsD_Name");
+			CommonUtil.AddGridTextColumn(dgv_ProcessDetail, "세부공정코드", "PcsD_Code", 118);
+			CommonUtil.AddGridTextColumn(dgv_ProcessDetail, "세부공정명", "PcsD_Name", 103);
 			CommonUtil.AddGridTextColumn(dgv_ProcessDetail, "사용여부", "PcsD_State");
 			#endregion
 
@@ -67,7 +67,7 @@ namespace AdminClient.Forms
 
 			if (chk_limit.Checked)
 				limit = nu_limit.Value.ToString();
-			if(cbo_State.SelectedIndex > 0)
+			if (cbo_State.SelectedIndex > 0)
 			{
 				state = cbo_State.SelectedItem.ToString();
 			}
@@ -91,7 +91,7 @@ namespace AdminClient.Forms
 			pop.StartPosition = FormStartPosition.CenterParent;
 			ProcessVO vo;
 
-			if(pop.ShowDialog() == DialogResult.OK)
+			if (pop.ShowDialog() == DialogResult.OK)
 			{
 				MessageBox.Show("성공적으로 등록되었습니다.");
 				vo = pop.VO;
@@ -110,7 +110,7 @@ namespace AdminClient.Forms
 					Pcs_Code = dgv_Process["Pcs_Code", e.RowIndex].Value.ToString(),
 					Pcs_Name = dgv_Process["Pcs_Name", e.RowIndex].Value.ToString(),
 					Pcs_State = dgv_Process["Pcs_State", e.RowIndex].Value.ToString(),
-					
+
 				};
 
 				ProcessInfo_PopUp pop = new ProcessInfo_PopUp();
@@ -123,6 +123,8 @@ namespace AdminClient.Forms
 					MessageBox.Show("수정이 성공적으로 완료되었습니다.");
 					RefreshPcsList();
 				}
+				else
+					RefreshPcsList();
 			}
 		}
 		private void dgv_Process_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -138,6 +140,45 @@ namespace AdminClient.Forms
 
 			dgv_ProcessDetail.DataSource = PDlist;
 		}
+		private void dgv_ProcessDetail_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+			if (e.RowIndex < 0)
+				return;
+
+			if (e.ColumnIndex == 1)
+			{
+				ProcessDetailVO vo = new ProcessDetailVO
+				{
+					Pcs_Code = dgv_ProcessDetail["Pcs_Code", e.RowIndex].Value.ToString(),
+					PcsD_Code = dgv_ProcessDetail["PcsD_Code", e.RowIndex].Value.ToString(),
+					PcsD_Name = dgv_ProcessDetail["PcsD_Name", e.RowIndex].Value.ToString(),
+					PcsD_State = dgv_ProcessDetail["PcsD_State", e.RowIndex].Value.ToString()
+				};
+
+				ProcessInfo_Detail_PopUp pop = new ProcessInfo_Detail_PopUp();
+				pop.ThisMode = ProcessInfo_Detail_PopUp.Mode.Update;
+				pop.VO = vo;
+				pop.StartPosition = FormStartPosition.CenterParent;
+				ProcessService service = new ProcessService();
+
+				if (pop.ShowDialog() == DialogResult.OK)
+				{
+					MessageBox.Show("수정이 성공적으로 완료되었습니다.");
+					PDlist = service.GetPDList(vo.Pcs_Code);
+					service.Dispose();
+
+					dgv_ProcessDetail.DataSource = PDlist;
+
+				}
+				else
+				{
+					PDlist = service.GetPDList(vo.Pcs_Code);
+					service.Dispose();
+
+					dgv_ProcessDetail.DataSource = PDlist;
+				}
+			}
+		}
 		#endregion
 
 		#region 메서드
@@ -151,7 +192,52 @@ namespace AdminClient.Forms
 		}
 
 
+
 		#endregion
+
+		private void btn_Xls_Click(object sender, EventArgs e)
+		{
+			if (dgv_Process.DataSource == null || dgv_ProcessDetail.DataSource == null)
+			{
+				MessageBox.Show("공정과 세부공정 중 비어있는 데이터가 있습니다. ");
+				return;
+			}
+
+			SaveFileDialog dlg = new SaveFileDialog();
+			CommonExcel excel = new CommonExcel();
+			excel.Cursor = this.Cursor;
+			dlg.Filter = "Excel File(*.xls)|*.xls";
+			dlg.Title = "엑셀파일로 내보내기";
+			if (dlg.ShowDialog() != DialogResult.OK)
+				return;
+			List<DataTable> dt = new List<DataTable>();
+
+			DataTable temp = ((List<ProcessDetailVO>)dgv_ProcessDetail.DataSource).ConvertToDataTable();
+			dt.Add(temp);
+			temp.TableName = "세부공정";
+			 temp = ((List<ProcessVO>)dgv_Process.DataSource).ConvertToDataTable();
+			dt.Add(temp);
+			temp.TableName = "공정";
+			
+			List<string> tooltip = new List<string>();
+
+			if (dt != null)
+			{
+
+				tooltip.Add($@"Pcs_Code: 공정코드
+                            {System.Environment.NewLine}Pcs_Name : 공정명
+                            {System.Environment.NewLine}Pcs_State : 사용여부
+                            ");
+				tooltip.Add($@"PcsD_Code: 세부공정코드
+                            {System.Environment.NewLine}PcsD_Name : 새부공정명
+                            {System.Environment.NewLine}PcsD_State : 사용여부
+                            ");
+				if (excel.ExportDataToExcel(dt, dlg.FileName, tooltip))
+				{
+					MessageBox.Show("엑셀파일에 저장하였습니다.");
+				}
+			}
+		}
 
 		
 	}

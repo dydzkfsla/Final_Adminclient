@@ -25,7 +25,8 @@ namespace AdminClient.Forms
         private void OrderInfo_Load(object sender, EventArgs e) //폼로드
         {
             splitContainer1.SplitterDistance = 365;
-            splitContainer3.SplitterDistance = 905;
+            splitContainer2.SplitterDistance = 310;
+            splitContainer3.SplitterDistance = 900;
             txt_OdCode.KeyPress += NoneKeyPress;
             nu_limit.Enabled = gb_detail.Enabled = false;
             dtp_end.Value = DateTime.Now.AddDays(1);

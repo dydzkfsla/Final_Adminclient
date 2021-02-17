@@ -157,7 +157,7 @@ namespace AdminClient.Forms
 					FacGrp_Code = dgv_FacGrpList["FacGrp_Code", e.RowIndex].Value.ToString(),
 					FacGrp_Name = dgv_FacGrpList["FacGrp_Name", e.RowIndex].Value.ToString(),
 					FacGrp_Enable = dgv_FacGrpList["FacGrp_Enable", e.RowIndex].Value.ToString(),
-					FacGrp_Description = dgv_FacGrpList["FacGrp_Description", e.RowIndex].Value.ToString()
+					//FacGrp_Description = (dgv_FacGrpList["FacGrp_Description", e.RowIndex].Value.ToString() == null) ? "" : dgv_FacGrpList["FacGrp_Description", e.RowIndex].Value.ToString()
 				};
 
 				FacilityInfo_NEW_GroupPopUp pop = new FacilityInfo_NEW_GroupPopUp();

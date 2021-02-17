@@ -79,6 +79,7 @@ namespace AdminClient.PopUp
 			this.btn_Delete.TabIndex = 63;
 			this.btn_Delete.Text = "삭제";
 			this.btn_Delete.UseVisualStyleBackColor = true;
+			this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
 			// 
 			// panel1
 			// 
@@ -232,6 +233,7 @@ namespace AdminClient.PopUp
 			this.btn_Update.TabIndex = 62;
 			this.btn_Update.Text = "수정";
 			this.btn_Update.UseVisualStyleBackColor = true;
+			this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
 			// 
 			// btn_Add
 			// 

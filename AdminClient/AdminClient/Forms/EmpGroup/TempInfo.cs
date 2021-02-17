@@ -146,6 +146,8 @@ namespace AdminClient.Forms
             List.ForEach(x =>
             {
                 TreeNode node = treeView1.Nodes[x.Grp_No.ToString()];
+                if (node == null)
+                    return;
                 node.Checked = true;
 
                 foreach(TreeNode item in node.Nodes)
