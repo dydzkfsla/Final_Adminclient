@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -32,6 +33,7 @@ namespace AdminClient.Forms
             cbo_state.Items.Add("Y");
             cbo_state.Items.Add("N");
             cbo_state.SelectedIndex = 0;
+            dgv_bom.CellContentClick += dgv_BOMList_CellContentClick;
         }
 
         private void ProdCodeInput(object sender, KeyPressEventArgs e)
@@ -64,6 +66,7 @@ namespace AdminClient.Forms
 
                 dgv_bom.Columns.Clear();
                 dgv_bom.SetGridColumn();
+                CommonUtil.AddGridLinkColumn(dgv_bom, "전개", "전개");
                 CommonUtil.AddGridTextColumn(dgv_bom, "BOM코드", "BOM_Code");
                 CommonUtil.AddGridTextColumn(dgv_bom, "정보", "Info", 300);
                 CommonUtil.AddGridTextColumn(dgv_bom, "카테고리", "Common_Name");
@@ -104,6 +107,9 @@ namespace AdminClient.Forms
 
         }
 
+       
+
+
         private void btn_add_Click(object sender, EventArgs e)
         {
             BOMPopUp pop = new BOMPopUp();
@@ -140,6 +146,80 @@ namespace AdminClient.Forms
                     MessageBox.Show("BOM이 등록되었습니다 조회를 통해 확인해 주세요");
                 }
 
+            }
+        }
+
+        private void dgv_BOMList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgv_bom.DataSource is List<ForwardBOM> list)
+            {
+                if (dgv_bom[e.ColumnIndex, e.RowIndex].Value.ToString() == "접기")
+                {
+                    string ProducetID = dgv_bom["Prod_Code", e.RowIndex].Value.ToString();
+                    dgv_bom.DataSource = list.Where(item =>
+                    {
+                        var Orders = item.sortOrder.Split('>');
+                        var Last = Orders.Last();
+                        if (Orders.Contains(ProducetID.ToString()) && Last != ProducetID.ToString())
+                        {
+                            return false;
+                        }
+                        return true;
+                    }).ToList();
+                    //dgv_BOMList.RefreshGridView();
+                }
+                else if (dgv_bom[e.ColumnIndex, e.RowIndex].Value.ToString() == "펼치기")
+                {
+                    string ProducetID = dgv_bom["Prod_Code", e.RowIndex].Value.ToString();
+                    list = (List<ForwardBOM>)dgv_bom.DataSource;
+                    var AddList = forward.Where(item =>
+                    {
+                        var Orders = item.sortOrder.Split('>');
+                        var Last = Orders.Last();
+                        if (Orders.Contains(ProducetID.ToString()) && Last != ProducetID.ToString())
+                        {
+                            return true;
+                        }
+                        return false;
+                    }).ToList();
+
+                    AddList.ForEach(item =>
+                    {
+                        list.Add(item);
+                    });
+
+                    dgv_bom.DataSource = list.OrderBy(item => item.sortOrder).ToList();
+                    //dgv_BOMList.RefreshGridView();
+                }
+            }
+        }
+
+        private void dgv_BOMList_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            if (dgv_bom.DataSource  is List<ForwardBOM> list)
+            {
+                foreach (DataGridViewRow row in dgv_bom.Rows)
+                {
+                    var ProductID = row.Cells["Prod_Code"].Value.ToString();
+                    //현재 list에 자식인 것이 있으면
+                    int count = list.Where(item => item.BOM_P_ProdCode == row.Cells["Prod_Code"].Value.ToString()).Count();
+                    if (count > 0)
+                    {
+                        row.Cells["전개"].Value = "접기";
+                        continue;
+                    }
+                    foreach (var item in forward)
+                    {
+                        var Orders = item.sortOrder.Split('>');
+                        var Last = Orders.Last();
+                        if (Orders.Contains(ProductID) && Last != ProductID)
+                        {
+                            row.Cells["전개"].Value = "펼치기";
+                            continue;
+                        }
+                    }
+
+                }
             }
         }
 
