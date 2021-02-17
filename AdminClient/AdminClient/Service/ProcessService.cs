@@ -47,9 +47,13 @@ namespace AdminClient.Service
 		{
 			return dac.UpdateProcessDetail(userID, vo);
 		}
-		public bool DeleteProcess(string code)
+		public bool DeleteProcess(string userID, string code)
 		{
-			return dac.DeleteProcess(code);
+			return dac.DeleteProcess(userID, code);
+		}
+		public bool DeleteProcessDetail(string userID, string code)
+		{
+			return dac.DeleteProcessDetail(userID, code);
 		}
 	}
 }

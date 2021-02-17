@@ -242,6 +242,7 @@ namespace AdminClient.Forms
 			this.dgv_ProcessDetail.RowTemplate.Height = 23;
 			this.dgv_ProcessDetail.Size = new System.Drawing.Size(1580, 524);
 			this.dgv_ProcessDetail.TabIndex = 0;
+			this.dgv_ProcessDetail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ProcessDetail_CellContentClick);
 			// 
 			// label3
 			// 

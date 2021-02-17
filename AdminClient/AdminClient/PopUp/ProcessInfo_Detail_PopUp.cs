@@ -94,6 +94,48 @@ namespace AdminClient.PopUp
 				}
 			}
 		}
+		private void btn_Update_Click(object sender, EventArgs e)
+		{
+			vo = new ProcessDetailVO
+			{
+				Pcs_Code = txt_PcsCode.Text,
+				PcsD_Code = txt_PDCode.Text,
+				PcsD_Name = txt_PDName.Text,
+				PcsD_State = cbo_State.SelectedItem.ToString()
+			};
+
+			ProcessService service = new ProcessService();
+			if (service.UpdateProcessDetail(userID, vo))
+			{
+				this.DialogResult = DialogResult.OK;
+				this.Close();
+			}
+			else
+			{
+				MessageBox.Show("세부공정정보 수정중 오류가 발생했습니다. 다시 시도하여 주십시오.");
+				return;
+			}
+		}
+		private void btn_Delete_Click(object sender, EventArgs e)
+		{
+			string code = txt_PDCode.Text;
+
+			if (MessageBox.Show("정말로 삭제하시겠습니까?", "삭제확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
+			{
+				ProcessService service = new ProcessService();
+				if (service.DeleteProcessDetail(userID, code))
+				{
+					MessageBox.Show("삭제가 성공적으로 완료되었습니다.");
+					this.DialogResult = DialogResult.Yes;
+					this.Close();
+				}
+				else
+				{
+					MessageBox.Show("세부공정정보 삭제중 오류가 발생했습니다. 다시 시도하여 주십시오.");
+					return;
+				}
+			}
+		}
 
 		#region 메서드
 
@@ -111,8 +153,11 @@ namespace AdminClient.PopUp
 			});
 			return ChkTextBox;
 		}
+
 		#endregion
 
 		#endregion
+
+		
 	}
 }

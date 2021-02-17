@@ -123,6 +123,8 @@ namespace AdminClient.Forms
 					MessageBox.Show("수정이 성공적으로 완료되었습니다.");
 					RefreshPcsList();
 				}
+				else
+					RefreshPcsList();
 			}
 		}
 		private void dgv_Process_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -137,6 +139,45 @@ namespace AdminClient.Forms
 			service.Dispose();
 
 			dgv_ProcessDetail.DataSource = PDlist;
+		}
+		private void dgv_ProcessDetail_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+			if (e.RowIndex < 0)
+				return;
+
+			if (e.ColumnIndex == 1)
+			{
+				ProcessDetailVO vo = new ProcessDetailVO
+				{
+					Pcs_Code = dgv_ProcessDetail["Pcs_Code", e.RowIndex].Value.ToString(),
+					PcsD_Code = dgv_ProcessDetail["PcsD_Code", e.RowIndex].Value.ToString(),
+					PcsD_Name = dgv_ProcessDetail["PcsD_Name", e.RowIndex].Value.ToString(),
+					PcsD_State = dgv_ProcessDetail["PcsD_State", e.RowIndex].Value.ToString()
+				};
+
+				ProcessInfo_Detail_PopUp pop = new ProcessInfo_Detail_PopUp();
+				pop.ThisMode = ProcessInfo_Detail_PopUp.Mode.Update;
+				pop.VO = vo;
+				pop.StartPosition = FormStartPosition.CenterParent;
+				ProcessService service = new ProcessService();
+
+				if (pop.ShowDialog() == DialogResult.OK)
+				{
+					MessageBox.Show("수정이 성공적으로 완료되었습니다.");
+					PDlist = service.GetPDList(vo.Pcs_Code);
+					service.Dispose();
+
+					dgv_ProcessDetail.DataSource = PDlist;
+
+				}
+				else
+				{
+					PDlist = service.GetPDList(vo.Pcs_Code);
+					service.Dispose();
+
+					dgv_ProcessDetail.DataSource = PDlist;
+				}
+			}
 		}
 		#endregion
 
@@ -197,5 +238,7 @@ namespace AdminClient.Forms
 				}
 			}
 		}
+
+		
 	}
 }
