@@ -91,7 +91,7 @@ namespace AdminClient
             DataList = dgv.DataSource;
             foreach (DataGridViewColumn dc in dgv.Columns)
             {
-                if (dc is DataGridViewTextBoxColumn)
+                if (dc is DataGridViewTextBoxColumn && dc.Visible)
                 {
                     Type type = DataList[0].GetType();
                     Type addType = null;
@@ -139,7 +139,7 @@ namespace AdminClient
                 string search = txt_keyword.Text.Trim();//검색 값
                 foreach (PropertyInfo prop in type.GetProperties()) //선택한 prop값에따라
                 {
-                    if (prop.Name == cbo_key.SelectedValue.ToString())
+                    if (prop.Name == ((BaindingKey)cbo_key.SelectedItem).Value)
                     {
                         value = prop.GetValue(item).ToString();
                     }
