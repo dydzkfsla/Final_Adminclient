@@ -119,9 +119,10 @@ namespace AdminClient.PopUp
             if (MessageBox.Show("정말로 삭제하시겠습니까?", "삭제확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 ProcessService service = new ProcessService();
-                if (service.DeleteProcess(code))
+                if (service.DeleteProcess(userID, code))
                 {
                     MessageBox.Show("삭제가 성공적으로 완료되었습니다.");
+                    this.DialogResult = DialogResult.Yes;
                     this.Close();
                 }
                 else

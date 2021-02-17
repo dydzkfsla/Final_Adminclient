@@ -363,6 +363,12 @@
     <Compile Include="PopUp\ProcessInfo_PopUp.Designer.cs">
       <DependentUpon>ProcessInfo_PopUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopUp\Shipment_PopUP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\Shipment_PopUP.Designer.cs">
+      <DependentUpon>Shipment_PopUP.cs</DependentUpon>
+    </Compile>
     <Compile Include="PopUp\WareHouseInfoPopUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -581,6 +587,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PopUp\ProcessInfo_PopUp.resx">
       <DependentUpon>ProcessInfo_PopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\Shipment_PopUP.resx">
+      <DependentUpon>Shipment_PopUP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUp\WareHouseInfoPopUp.resx">
       <DependentUpon>WareHouseInfoPopUp.cs</DependentUpon>

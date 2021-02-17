@@ -33,7 +33,7 @@ namespace AdminClient.Forms
 			nu_limit.Enabled = false;
 			gb_detail.Enabled = false;
 			dtp_DueDateFrom.Value = DateTime.Now;
-			dtp_DueDateTo.Value = dtp_DueDateFrom.Value.AddDays(7);
+			dtp_DueDateTo.Value = dtp_DueDateFrom.Value.AddDays(14);
 			#endregion
 
 			#region 데이터그리드뷰 셋팅

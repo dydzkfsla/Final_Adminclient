@@ -196,7 +196,9 @@ namespace AdminClientDAC
 					cmd.Connection = conn;
 					cmd.CommandText = @"update ProcessDetail
 										   set PcsD_Name = @name,
-											   PscD_State = @state
+											   PscD_State = @state,
+											   Lst_Writer = @uid,
+											   Lst_WriteDate = GETDATE()
 										 where Pcs_Code = @pcscode
 										   and PcsD_Code = @pdcode; ";
 
@@ -220,18 +222,64 @@ namespace AdminClientDAC
 				return false;
 			}
 		}
-		public bool DeleteProcess(string code)
+		public bool DeleteProcess(string userID, string code)
+		{
+			SqlTransaction tran = conn.BeginTransaction();
+			try
+			{
+				using (SqlCommand cmd = new SqlCommand())
+				{
+					cmd.Connection = conn;
+					cmd.Transaction = tran;
+					cmd.CommandText = @" update ProcessInfo
+										    set Pcs_State = 'N',
+												Lst_Writer = @uid,
+											    Lst_WriteDate = GETDATE()
+										  where Pcs_Code = @pcscode
+										
+										 update ProcessDetail
+										    set PscD_State = 'N',
+												Lst_Writer = @uid,
+											    Lst_WriteDate = GETDATE()
+										  where Pcs_Code = @pcscode; ";
+
+					cmd.Parameters.AddWithValue("@uid", userID);
+					cmd.Parameters.AddWithValue("@pcscode", code);
+					
+					int iAffectedRow = cmd.ExecuteNonQuery();
+
+					if (iAffectedRow > 0)
+					{
+						tran.Commit();
+						return true;
+					}
+					else
+						throw new Exception();
+				}
+			}
+			catch (Exception err)
+			{
+				Info.WriteError($"실행자:{Global.employees.Emp_Name} 공정정보 삭제중 오류 :" + err.Message, err);
+				tran.Rollback();
+				return false;
+			}
+		}
+		public bool DeleteProcessDetail(string userID, string code)
 		{
 			try
 			{
 				using (SqlCommand cmd = new SqlCommand())
 				{
 					cmd.Connection = conn;
-					cmd.CommandText = @" delete from ProcessInfo
-										  where Pcs_Code = @code; ";
+					cmd.CommandText = @" update ProcessDetail
+										    set PscD_State = 'N',
+												Lst_Writer = @uid,
+											    Lst_WriteDate = GETDATE()
+										  where PcsD_Code = @code; ";
 
+					cmd.Parameters.AddWithValue("@uid", userID);
 					cmd.Parameters.AddWithValue("@code", code);
-					
+
 					int iAffectedRow = cmd.ExecuteNonQuery();
 
 					if (iAffectedRow > 0)
@@ -244,7 +292,7 @@ namespace AdminClientDAC
 			}
 			catch (Exception err)
 			{
-				Info.WriteError($"실행자:{Global.employees.Emp_Name} 수주정보 삭제중 오류 :" + err.Message, err);
+				Info.WriteError($"실행자:{Global.employees.Emp_Name} 세부공정정보 삭제중 오류 :" + err.Message, err);
 				return false;
 			}
 		}
