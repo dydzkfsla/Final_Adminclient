@@ -268,6 +268,7 @@ namespace AdminClient.Forms
 			this.btn_Add_PD.Text = "세부공정\r\n    등록";
 			this.btn_Add_PD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btn_Add_PD.UseVisualStyleBackColor = false;
+			this.btn_Add_PD.Click += new System.EventHandler(this.btn_Add_PD_Click);
 			// 
 			// ProcessInfo
 			// 

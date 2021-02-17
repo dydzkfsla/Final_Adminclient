@@ -127,7 +127,7 @@
 			this.customDataGridView1.RowHeadersVisible = false;
 			this.customDataGridView1.RowTemplate.Height = 23;
 			this.customDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.customDataGridView1.Size = new System.Drawing.Size(1248, 888);
+			this.customDataGridView1.Size = new System.Drawing.Size(1248, 904);
 			this.customDataGridView1.TabIndex = 3;
 			// 
 			// searchControl

@@ -51,10 +51,10 @@ namespace AdminClient.Forms
             dgv_oddList.SetGridColumn();
             CommonUtil.AddGridTextColumn(dgv_oddList, "cCode", "Comp_Code", visibility: false);
             CommonUtil.AddGridTextColumn(dgv_oddList, "oCode", "Orders_Code", visibility: false);
-            CommonUtil.AddGridTextColumn(dgv_oddList, "발주상세코드", "OrdersDetail_Code", textAlign : DataGridViewContentAlignment.MiddleRight);
+            CommonUtil.AddGridTextColumn(dgv_oddList, "발주상세코드", "OrdersDetail_Code", 118, textAlign : DataGridViewContentAlignment.MiddleRight);
             CommonUtil.AddGridTextColumn(dgv_oddList, "품목코드", "Prod_Code", textAlign : DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dgv_oddList, "품목명", "Prod_Name");
-            CommonUtil.AddGridTextColumn(dgv_oddList, "단위", "Prod_Unit", 60, textAlign : DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dgv_oddList, "단위", "Prod_Unit", 70, textAlign : DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dgv_oddList, "최소주문량", "Prod_MinCount", 105);
             CommonUtil.AddGridTextColumn(dgv_oddList, "주문수량", "Orders_Count");
             CommonUtil.AddGridTextColumn(dgv_oddList, "입고수량", "Orders_ReceiveQuantity");
