@@ -76,19 +76,6 @@ namespace AdminClient.MDI
 
             toolStripLabel_EmpName.Text = Global.Global.employees.Emp_Name;
             toolStripLabel_Emp_code.Text = Global.Global.employees.Emp_Code;
-
-            if (Global.Global.employees.Emp_Addbutton)
-            {
-                toolStripLabel_Btn_add.Text = "추가권한 : 있음";
-            }
-            if (Global.Global.employees.Emp_Updatebutton)
-            {
-                toolStripLabel_Btn_Update.Text = "수정권한 : 있음";
-            }
-            if (Global.Global.employees.Emp_Addbutton)
-            {
-                toolStripLabel_Btn_Delete.Text = "삭제권한 : 있음";
-            }
             btn_Down.Location = new Point(0, panel1.Height - btn_Down.Height);
         }
 

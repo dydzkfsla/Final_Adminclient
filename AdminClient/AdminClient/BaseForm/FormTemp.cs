@@ -116,12 +116,10 @@ namespace AdminClient.BaseForm
             if (this.GetType().FullName.Contains("AdminClient.Serch"))
                 return;
 
-            var List = Global.Global.Emp_Form.FindAll(x => 
+            var List = Global.Global.Emp_Form.FindAll(x =>
             {
-                Debug.WriteLine(this.GetType().FullName);
-                Debug.WriteLine(x.Form_Name);
                 return this.GetType().FullName.Contains(x.Form_Name);
-                
+
             });
             foreach (Control control in controls)
             {
@@ -180,6 +178,36 @@ namespace AdminClient.BaseForm
                 {
                     SerchButton(control.Controls);
                 }
+            }
+        }
+
+        private void FormTemp_Activated(object sender, EventArgs e)
+        {
+            if (this.MdiParent == null)
+            {
+                return;
+            }
+            ToolStripItem Addcontrols = null;
+            ToolStripItem Selectcontrols = null;
+            ToolStripItem Updatecontrols = null;
+            ToolStripItem Deletecontrols = null;
+            var List = Global.Global.Emp_Form.FindAll(x =>
+            {
+                return this.GetType().FullName.Contains(x.Form_Name);
+
+            });
+            Addcontrols = ((ToolStrip)this.MdiParent.Controls["toolStrip1"]).Items.Find("toolStripLabel_Btn_add", true)[0];
+            Selectcontrols = ((ToolStrip)this.MdiParent.Controls["toolStrip1"]).Items.Find("toolStripLabel_Btn_Select", true)[0];
+            Updatecontrols = ((ToolStrip)this.MdiParent.Controls["toolStrip1"]).Items.Find("toolStripLabel_Btn_Update", true)[0];
+            Deletecontrols = ((ToolStrip)this.MdiParent.Controls["toolStrip1"]).Items.Find("toolStripLabel_Btn_Delete", true)[0];
+            
+
+            foreach (var item in List)
+            {
+                Selectcontrols.Text = "조회권한 : " + (item.Form_Select == true ? "Y" : "N");
+                Addcontrols.Text = "추가권한 : " + (item.Form_Insert == true ? "Y" : "N");
+                Updatecontrols.Text = "수정권한 : " + (item.Form_Update == true ? "Y" : "N");
+                Deletecontrols.Text = "삭제권한 : " + (item.Form_Delete == true ? "Y" : "N");
             }
         }
     }
