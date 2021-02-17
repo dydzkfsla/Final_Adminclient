@@ -204,6 +204,19 @@ namespace AdminClient.PopUp
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("회사 상태를 비활성화 시키겠습니까?", "삭제확인", MessageBoxButtons.YesNo) == DialogResult.No)
+                return;
+
+            CompanyService service = new CompanyService();
+            bool result = service.CompInfoDel(txt_Code.Text);
+
+            if(result)
+            {
+                this.DialogResult = DialogResult.None;
+                this.Close();
+            }
+            else
+                MessageBox.Show("비활성화 작업중 오류가 발생했습니다.");
 
         }
     }

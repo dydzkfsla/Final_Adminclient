@@ -25,6 +25,7 @@ namespace AdminClient.Forms
         private void WareHouseInfo_Load(object sender, EventArgs e)
         {
             splitContainer1.SplitterDistance = 365;
+            splitContainer3.SplitterDistance = 875;
             gb_detail.Enabled = gb_detailItem.Enabled = false;
             nu_limit.Enabled = false;
 
@@ -52,13 +53,13 @@ namespace AdminClient.Forms
             CommonUtil.AddGridTextColumn(dgv_WhList, "창고상태", "WH_State", textAlign: DataGridViewContentAlignment.MiddleCenter);
 
             dgv_WhDetailList.SetGridColumn();
-            CommonUtil.AddGridTextColumn(dgv_WhDetailList, "품목카테고리", "Common_Name", 150, textAlign: DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dgv_WhDetailList, "품목카테고리", "Common_Name", 118, textAlign: DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dgv_WhDetailList, "품목코드", "Prod_Code");
-            CommonUtil.AddGridTextColumn(dgv_WhDetailList, "품목이름", "Prod_Name", 150);
+            CommonUtil.AddGridTextColumn(dgv_WhDetailList, "품목이름", "Prod_Name", 110);
             CommonUtil.AddGridTextColumn(dgv_WhDetailList, "단위", "Prod_Unit");
             CommonUtil.AddGridTextColumn(dgv_WhDetailList, "재고량", "WH_PsyCount");
-            CommonUtil.AddGridTextColumn(dgv_WhDetailList, "예상재고량", "WH_LogCount", 150);
-            CommonUtil.AddGridTextColumn(dgv_WhDetailList, "안전재고량", "Prod_SafetyStock");
+            CommonUtil.AddGridTextColumn(dgv_WhDetailList, "예상재고량", "WH_LogCount", 103);
+            CommonUtil.AddGridTextColumn(dgv_WhDetailList, "안전재고량", "Prod_SafetyStock", 103);
             #endregion
 
             txt_Code.KeyPress += NoneKeyPress;

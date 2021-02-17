@@ -28,18 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cbo_State = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cbo_Unit = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cbo_Category = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgv_ProdList = new AdminClient.CustomDataGridView();
             this.dgv_AddList = new AdminClient.CustomDataGridView();
             this.schCtrl = new AdminClient.SearchControl();
             this.sortCtrl = new AdminClient.SortControl();
+            this.dgv_ProdList = new AdminClient.CustomDataGridView();
+            this.dgv_main = new AdminClient.CustomDataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
@@ -54,8 +56,9 @@
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_ProdList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_AddList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ProdList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_main)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_delete
@@ -76,8 +79,8 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.dgv_AddList);
-            this.splitContainer2.Size = new System.Drawing.Size(901, 686);
-            this.splitContainer2.SplitterDistance = 361;
+            this.splitContainer2.Size = new System.Drawing.Size(897, 686);
+            this.splitContainer2.SplitterDistance = 353;
             this.splitContainer2.SplitterWidth = 6;
             // 
             // btn_add
@@ -87,7 +90,7 @@
             // 
             // btn_Xls
             // 
-            this.btn_Xls.Location = new System.Drawing.Point(1246, 9);
+            this.btn_Xls.Location = new System.Drawing.Point(1152, 9);
             // 
             // panel1
             // 
@@ -135,6 +138,10 @@
             // 
             // splitContainer1
             // 
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.dgv_main);
             this.splitContainer1.Size = new System.Drawing.Size(1349, 686);
             this.splitContainer1.SplitterDistance = 393;
             this.splitContainer1.SplitterWidth = 6;
@@ -220,47 +227,19 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "카테고리";
             // 
-            // dgv_ProdList
-            // 
-            this.dgv_ProdList.AllowUserToAddRows = false;
-            this.dgv_ProdList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgv_ProdList.BackgroundColor = System.Drawing.Color.White;
-            this.dgv_ProdList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_ProdList.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgv_ProdList.GridColor = System.Drawing.Color.Black;
-            this.dgv_ProdList.IsChkVisible = true;
-            this.dgv_ProdList.IsEditVisible = false;
-            this.dgv_ProdList.Location = new System.Drawing.Point(0, 0);
-            this.dgv_ProdList.Margin = new System.Windows.Forms.Padding(0);
-            this.dgv_ProdList.Name = "dgv_ProdList";
-            this.dgv_ProdList.RowHeadersVisible = false;
-            this.dgv_ProdList.RowTemplate.Height = 23;
-            this.dgv_ProdList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_ProdList.Size = new System.Drawing.Size(900, 315);
-            this.dgv_ProdList.TabIndex = 1;
-            // 
             // dgv_AddList
             // 
             this.dgv_AddList.AllowUserToAddRows = false;
             this.dgv_AddList.BackgroundColor = System.Drawing.Color.White;
             this.dgv_AddList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_AddList.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_AddList.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_AddList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_AddList.GridColor = System.Drawing.Color.Black;
             this.dgv_AddList.IsChkVisible = true;
@@ -270,7 +249,7 @@
             this.dgv_AddList.RowHeadersVisible = false;
             this.dgv_AddList.RowTemplate.Height = 23;
             this.dgv_AddList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_AddList.Size = new System.Drawing.Size(901, 319);
+            this.dgv_AddList.Size = new System.Drawing.Size(897, 327);
             this.dgv_AddList.TabIndex = 2;
             // 
             // schCtrl
@@ -293,6 +272,59 @@
             this.sortCtrl.Size = new System.Drawing.Size(325, 69);
             this.sortCtrl.TabIndex = 56;
             // 
+            // dgv_ProdList
+            // 
+            this.dgv_ProdList.AllowUserToAddRows = false;
+            this.dgv_ProdList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_ProdList.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_ProdList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_ProdList.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_ProdList.GridColor = System.Drawing.Color.Black;
+            this.dgv_ProdList.IsChkVisible = true;
+            this.dgv_ProdList.IsEditVisible = false;
+            this.dgv_ProdList.Location = new System.Drawing.Point(0, 0);
+            this.dgv_ProdList.Margin = new System.Windows.Forms.Padding(0);
+            this.dgv_ProdList.Name = "dgv_ProdList";
+            this.dgv_ProdList.RowHeadersVisible = false;
+            this.dgv_ProdList.RowTemplate.Height = 23;
+            this.dgv_ProdList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_ProdList.Size = new System.Drawing.Size(896, 307);
+            this.dgv_ProdList.TabIndex = 1;
+            // 
+            // dgv_main
+            // 
+            this.dgv_main.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_main.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_main.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_main.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_main.GridColor = System.Drawing.Color.Black;
+            this.dgv_main.IsChkVisible = true;
+            this.dgv_main.IsEditVisible = false;
+            this.dgv_main.Location = new System.Drawing.Point(33, 0);
+            this.dgv_main.Name = "dgv_main";
+            this.dgv_main.RowTemplate.Height = 23;
+            this.dgv_main.Size = new System.Drawing.Size(911, 683);
+            this.dgv_main.TabIndex = 4;
+            this.dgv_main.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_main_CellContentClick);
+            // 
             // ProductSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
@@ -314,8 +346,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_ProdList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_AddList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ProdList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_main)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -329,9 +362,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbo_Category;
         private System.Windows.Forms.Label label1;
-        private CustomDataGridView dgv_ProdList;
         private CustomDataGridView dgv_AddList;
         private SortControl sortCtrl;
         private SearchControl schCtrl;
+        private CustomDataGridView dgv_ProdList;
+        private CustomDataGridView dgv_main;
     }
 }

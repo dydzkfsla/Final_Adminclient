@@ -71,7 +71,7 @@ namespace AdminClient.Forms
 			this.splitContainer2.Panel2.Controls.Add(this.label3);
 			this.splitContainer2.Panel2.Controls.Add(this.dgv_ProcessDetail);
 			this.splitContainer2.Size = new System.Drawing.Size(1586, 1106);
-			this.splitContainer2.SplitterDistance = 553;
+			this.splitContainer2.SplitterDistance = 400;
 			// 
 			// btn_add
 			// 
@@ -205,7 +205,7 @@ namespace AdminClient.Forms
 			this.dgv_Process.Location = new System.Drawing.Point(3, 25);
 			this.dgv_Process.Name = "dgv_Process";
 			this.dgv_Process.RowTemplate.Height = 23;
-			this.dgv_Process.Size = new System.Drawing.Size(1580, 525);
+			this.dgv_Process.Size = new System.Drawing.Size(1095, 372);
 			this.dgv_Process.TabIndex = 0;
 			this.dgv_Process.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Process_CellContentClick);
 			this.dgv_Process.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Process_CellDoubleClick);
@@ -240,7 +240,7 @@ namespace AdminClient.Forms
 			this.dgv_ProcessDetail.Location = new System.Drawing.Point(3, 22);
 			this.dgv_ProcessDetail.Name = "dgv_ProcessDetail";
 			this.dgv_ProcessDetail.RowTemplate.Height = 23;
-			this.dgv_ProcessDetail.Size = new System.Drawing.Size(1580, 524);
+			this.dgv_ProcessDetail.Size = new System.Drawing.Size(1095, 415);
 			this.dgv_ProcessDetail.TabIndex = 0;
 			this.dgv_ProcessDetail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ProcessDetail_CellContentClick);
 			// 

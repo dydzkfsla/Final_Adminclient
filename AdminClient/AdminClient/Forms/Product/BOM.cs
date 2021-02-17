@@ -1,4 +1,5 @@
 ﻿using AdminClient.PopUp;
+using AdminClient.Serch;
 using AdminClient.Service;
 using AdminClientVO;
 using System;
@@ -295,7 +296,19 @@ namespace AdminClient.Forms
                 MessageBox.Show("엑셀파일에 저장하였습니다.");
             }
 
+        }
 
+        private void btn_ProdSearch_Click(object sender, EventArgs e)
+        {
+            ProductSearch pop = new ProductSearch();
+            pop.ThisMode = ProductSearch.Mode.One;
+
+            if(pop.ShowDialog() == DialogResult.OK)
+            {
+                txt_Code.Text = pop.AddList[0].Prod_Code;
+            }
+
+            
         }
     }
 }

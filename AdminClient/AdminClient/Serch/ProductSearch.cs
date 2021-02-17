@@ -17,6 +17,10 @@ namespace AdminClient.Serch
         List<ProductVO> pdList;
         List<ComboProductVO> cbolist;
         List<ProductVO> addList = new List<ProductVO>();
+        public enum Mode { One, Multi }  // New : 등록모드(등록버튼만 활성화), Old : 수정모드(수정, 삭제버튼만 활성화)
+        Mode mode;
+
+        public Mode ThisMode { get { return mode; } set { mode = value; } }
 
         public List<ProductVO> AddList { get { return addList; } }
 
@@ -28,6 +32,52 @@ namespace AdminClient.Serch
         private void ProductSearch_Load(object sender, EventArgs e)
         {
             gb_detail.Enabled = nu_limit.Enabled = false;
+
+            if(mode == Mode.One)
+            {
+                dgv_ProdList.Visible = false;
+                dgv_AddList.Visible = false;
+                btn_insert.Visible = false;
+                btn_delete.Visible = false;
+
+                dgv_main.BringToFront();
+                dgv_main.SetGridColumn();
+                CommonUtil.AddGridTextColumn(dgv_main, "Code", "Prod_Code", visibility: false);
+                CommonUtil.AddGridTextColumn(dgv_main, "Category", "Prod_Category", visibility: false);
+                CommonUtil.AddGridTextColumn(dgv_main, "카테고리", "Common_Name");
+                CommonUtil.AddGridTextColumn(dgv_main, "물품명", "Prod_Name");
+                CommonUtil.AddGridTextColumn(dgv_main, "상태", "Prod_State");
+                CommonUtil.AddGridTextColumn(dgv_main, "저장창고", "Prod_WhCode");
+                CommonUtil.AddGridTextColumn(dgv_main, "최소재고량", "Prod_SafetyStock", 150);
+                CommonUtil.AddGridTextColumn(dgv_main, "현재재고량", "totcnt", 150);
+            }
+            else
+            {
+                dgv_main.Visible = false;
+                #region dgv prodlist
+                dgv_ProdList.SetGridColumn();
+                CommonUtil.AddGridTextColumn(dgv_ProdList, "Code", "Prod_Code", visibility: false);
+                CommonUtil.AddGridTextColumn(dgv_ProdList, "Category", "Prod_Category", visibility: false);
+                CommonUtil.AddGridTextColumn(dgv_ProdList, "카테고리", "Common_Name");
+                CommonUtil.AddGridTextColumn(dgv_ProdList, "물품명", "Prod_Name");
+                CommonUtil.AddGridTextColumn(dgv_ProdList, "상태", "Prod_State");
+                CommonUtil.AddGridTextColumn(dgv_ProdList, "저장창고", "Prod_WhCode");
+                CommonUtil.AddGridTextColumn(dgv_ProdList, "최소재고량", "Prod_SafetyStock", 150);
+                CommonUtil.AddGridTextColumn(dgv_ProdList, "현재재고량", "totcnt", 150);
+
+                #endregion
+
+                #region dgv addlist
+                dgv_AddList.SetGridColumn();
+                CommonUtil.AddGridTextColumn(dgv_AddList, "Code", "Prod_Code", visibility: false);
+                CommonUtil.AddGridTextColumn(dgv_AddList, "Category", "Prod_Category", visibility: false);
+                CommonUtil.AddGridTextColumn(dgv_AddList, "카테고리", "Common_Name");
+                CommonUtil.AddGridTextColumn(dgv_AddList, "물품명", "Prod_Name");
+                CommonUtil.AddGridTextColumn(dgv_AddList, "상태", "Prod_State");
+                CommonUtil.AddGridTextColumn(dgv_AddList, "저장창고", "Prod_WhCode");
+                CommonUtil.AddGridTextColumn(dgv_AddList, "최소재고량", "Prod_SafetyStock", 150);
+                #endregion
+            }
 
             #region 콤보박스 바인딩
             ProductService service = new ProductService();
@@ -62,6 +112,7 @@ namespace AdminClient.Serch
 
             #endregion
 
+            
             #region dgv prodlist
             dgv_ProdList.SetGridColumn();
             CommonUtil.AddGridTextColumn(dgv_ProdList, "Code", "Prod_Code", visibility: false);
@@ -84,7 +135,6 @@ namespace AdminClient.Serch
             CommonUtil.AddGridTextColumn(dgv_AddList, "상태", "Prod_State");
             CommonUtil.AddGridTextColumn(dgv_AddList, "저장창고", "Prod_WhCode");
             CommonUtil.AddGridTextColumn(dgv_AddList, "최소재고량", "Prod_SafetyStock", 150);
-            CommonUtil.AddGridTextColumn(dgv_ProdList, "현재재고량", "totcnt", 150);
             #endregion
         }
 
@@ -109,14 +159,28 @@ namespace AdminClient.Serch
             ProductService service = new ProductService();
             pdList = service.GetProdList(cate, unit, state, limit);
 
-            dgv_ProdList.DataSource = pdList;
+            if (mode == Mode.Multi)
+                dgv_ProdList.DataSource = pdList;
+            else
+                dgv_main.DataSource = pdList;
 
-            if (pdList.Count > 0)
+            if (pdList != null && pdList.Count > 0)
             {
                 gb_detail.Enabled = true;
-                schCtrl.Getdata(dgv_ProdList);
-                sortCtrl.Getdata(dgv_ProdList);
+
+                if(mode == Mode.Multi)
+                {
+                    schCtrl.Getdata(dgv_ProdList);
+                    sortCtrl.Getdata(dgv_ProdList);
+                }else
+                {
+                    schCtrl.Getdata(dgv_main);
+                    sortCtrl.Getdata(dgv_main);
+                }
+
+                
             }
+
         }
 
         private void btn_insert_Click(object sender, EventArgs e)
@@ -160,21 +224,43 @@ namespace AdminClient.Serch
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            if(addList.Count < 1)
+            if(mode == Mode.Multi)
             {
-                DialogResult dRes = MessageBox.Show("등록된 물품이 없습니다. 추가 없이 종료하시겠습니까?", "안내 메세지", MessageBoxButtons.YesNo);
-
-                if (dRes == DialogResult.Yes)
+                if (addList.Count < 1)
                 {
-                    this.DialogResult = DialogResult.Cancel;
+                    DialogResult dRes = MessageBox.Show("등록된 물품이 없습니다. 추가 없이 종료하시겠습니까?", "안내 메세지", MessageBoxButtons.YesNo);
+
+                    if (dRes == DialogResult.Yes)
+                    {
+                        this.DialogResult = DialogResult.Cancel;
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
-            }
-            else
+            }else
             {
+                foreach(DataGridViewRow dr in dgv_main.Rows)
+                {
+                    if(Convert.ToBoolean(dr.Cells[0].Value))
+                    {
+                        pdList.ForEach((item) =>
+                        {
+                            if (item.Prod_Code == dr.Cells["Prod_Code"].Value.ToString())
+                                addList.Add(item);
+                        });
+                    }
+                }
+
+
                 this.DialogResult = DialogResult.OK;
                 this.Close();
+
             }
+            
 
         }
 
@@ -204,6 +290,25 @@ namespace AdminClient.Serch
             dgv_AddList.DataSource = null;
             dgv_AddList.DataSource = addList;
 
+        }
+
+        private void dgv_main_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex > -1)
+            {
+                if(e.ColumnIndex == 0)
+                {
+                    string prodCode = dgv_main["Prod_Code", e.RowIndex].Value.ToString();
+
+                    foreach(DataGridViewRow dr in dgv_main.Rows)
+                    {
+                        if (dr.Cells["Prod_Code"].Value.ToString() != prodCode)
+                            dr.Cells[0].Value = false;
+                    }
+
+
+                }
+            }
         }
     }
 }

@@ -270,5 +270,14 @@ namespace AdminClient.MDI
             }
         }
 
+        private void 로그아웃ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach(Control ct in this.Owner.Controls)
+            {
+                if (ct is TextBox txt)
+                    txt.Text = "";
+            }
+            this.Close();
+        }
     }
 }

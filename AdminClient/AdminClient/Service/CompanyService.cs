@@ -73,5 +73,21 @@ namespace AdminClient.Service
             dac.Dispose();
             return result;
         }
+
+        internal bool UpdateCompInfo(CompanyDetailVO cpinfo)
+        {
+            CompanyDAC dac = new CompanyDAC();
+            bool result = dac.UpdateCompInfo(cpinfo);
+            dac.Dispose();
+            return result;
+        }
+
+        internal bool CompInfoDel(string compcode)
+        {
+            CompanyDAC dac = new CompanyDAC();
+            bool result = dac.CompInfoDel(compcode);
+            dac.Dispose();
+            return result;
+        }
     }
 }

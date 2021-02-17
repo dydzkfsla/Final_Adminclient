@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rb_3Month = new System.Windows.Forms.RadioButton();
             this.rb_1Month = new System.Windows.Forms.RadioButton();
@@ -104,8 +104,8 @@
             // 
             this.splitContainer3.Panel2.Controls.Add(this.gb_odMenu);
             this.splitContainer3.Panel2.Controls.Add(this.gb_ProdInfo);
-            this.splitContainer3.Size = new System.Drawing.Size(1243, 551);
-            this.splitContainer3.SplitterDistance = 905;
+            this.splitContainer3.Size = new System.Drawing.Size(1244, 548);
+            this.splitContainer3.SplitterDistance = 883;
             // 
             // splitContainer2
             // 
@@ -113,8 +113,8 @@
             // splitContainer2.Panel1
             // 
             this.splitContainer2.Panel1.Controls.Add(this.dgv_Odlist);
-            this.splitContainer2.Size = new System.Drawing.Size(1243, 940);
-            this.splitContainer2.SplitterDistance = 383;
+            this.splitContainer2.Size = new System.Drawing.Size(1244, 857);
+            this.splitContainer2.SplitterDistance = 303;
             // 
             // btn_add
             // 
@@ -169,7 +169,7 @@
             // splitContainer1
             // 
             this.splitContainer1.Size = new System.Drawing.Size(1654, 860);
-            this.splitContainer1.SplitterDistance = 374;
+            this.splitContainer1.SplitterDistance = 373;
             // 
             // btn_folding
             // 
@@ -288,14 +288,14 @@
             this.dgv_Odlist.AllowUserToAddRows = false;
             this.dgv_Odlist.BackgroundColor = System.Drawing.Color.White;
             this.dgv_Odlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Odlist.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Odlist.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_Odlist.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_Odlist.GridColor = System.Drawing.Color.Black;
             this.dgv_Odlist.IsChkVisible = false;
@@ -305,7 +305,7 @@
             this.dgv_Odlist.RowHeadersVisible = false;
             this.dgv_Odlist.RowTemplate.Height = 23;
             this.dgv_Odlist.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Odlist.Size = new System.Drawing.Size(1243, 383);
+            this.dgv_Odlist.Size = new System.Drawing.Size(1244, 303);
             this.dgv_Odlist.TabIndex = 0;
             this.dgv_Odlist.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Odlist_CellClick);
             this.dgv_Odlist.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Odlist_CellContentClick);
@@ -315,14 +315,14 @@
             this.dgv_oddList.AllowUserToAddRows = false;
             this.dgv_oddList.BackgroundColor = System.Drawing.Color.White;
             this.dgv_oddList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_oddList.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_oddList.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_oddList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_oddList.GridColor = System.Drawing.Color.Black;
             this.dgv_oddList.IsChkVisible = false;
@@ -331,7 +331,7 @@
             this.dgv_oddList.Name = "dgv_oddList";
             this.dgv_oddList.RowHeadersVisible = false;
             this.dgv_oddList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_oddList.Size = new System.Drawing.Size(905, 551);
+            this.dgv_oddList.Size = new System.Drawing.Size(883, 548);
             this.dgv_oddList.TabIndex = 0;
             this.dgv_oddList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_oddList_CellClick);
             // 

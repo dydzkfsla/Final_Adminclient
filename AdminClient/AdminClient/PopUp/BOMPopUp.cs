@@ -38,6 +38,7 @@ namespace AdminClient.PopUp
         private void btn_ProdSearch_Click(object sender, EventArgs e)
         {
             ProductSearch frm = new ProductSearch();
+            frm.ThisMode = ProductSearch.Mode.One;
             if(frm.ShowDialog() == DialogResult.OK)
                 prodinfo = frm.AddList[0];
 

@@ -57,6 +57,7 @@ namespace AdminClient.PopUp
         private void button1_Click(object sender, EventArgs e)
         {
             ProductSearch productSearch = new ProductSearch();
+            productSearch.ThisMode = ProductSearch.Mode.One;
             if(productSearch.ShowDialog() == DialogResult.OK)
             {
                 txt_ProdCode.Text = productSearch.AddList[0].Prod_Code;

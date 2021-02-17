@@ -286,17 +286,17 @@ namespace AdminClientDAC
         /// <param name="odcode"></param>
         /// <param name="cancel"></param>
         /// <returns></returns>
-        public bool CancelCountUpdate(int odcode, decimal cancel)
+        public bool CancelCountUpdate(int code, int odcode, decimal cancel)
         {
             try
             {
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"update OrderDetail 
-                                                                    set Orders_CancelQuantity = @cancel, Lst_Writer = @empcode, Lst_WriteDate = getdate()
-                                                                    where OrdersDetail_Code = @odcode";
+                    cmd.CommandText = @"SP_OrderCancel";
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
+                    cmd.Parameters.AddWithValue("@code", code);
                     cmd.Parameters.AddWithValue("@cancel", cancel);
                     cmd.Parameters.AddWithValue("@odcode", odcode);
                     cmd.Parameters.AddWithValue("@empcode", Global.employees.Emp_Code);
@@ -397,7 +397,23 @@ namespace AdminClientDAC
                     cmd.Parameters.AddWithValue("@odcode", detail.OrdersDetail_Code);
                     cmd.Parameters.AddWithValue("@empcode", Global.employees.Emp_Code);
 
-                    return cmd.ExecuteNonQuery() > 0 ? true : false;
+                    bool result = cmd.ExecuteNonQuery() > 0 ? true : false;
+
+                    if (result)
+                    {
+                        cmd.CommandText = "SP_UpdateDemandPlan";
+
+                        cmd.Parameters.Clear();
+                        cmd.Parameters.AddWithValue("@odpCode", detail.Prod_Code);
+                        cmd.Parameters.AddWithValue("@odCnt", detail.Orders_ReceiveQuantity);
+                        cmd.Parameters.AddWithValue("odDate", DateTime.Now.ToString("yyyy-MM-dd"));
+
+                        return cmd.ExecuteNonQuery() > 0 ? true : false;
+
+
+                    }
+                    else
+                        return false;
 
                 }
             }

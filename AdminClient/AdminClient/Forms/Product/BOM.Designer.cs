@@ -39,6 +39,7 @@
             this.cbo_state = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btn_Search = new System.Windows.Forms.Button();
+            this.btn_ProdSearch = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnl_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Form_close)).BeginInit();
@@ -47,6 +48,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btn_ProdSearch);
             this.panel1.Controls.Add(this.btn_Search);
             this.panel1.Controls.Add(this.cbo_state);
             this.panel1.Controls.Add(this.label3);
@@ -68,6 +70,7 @@
             this.panel1.Controls.SetChildIndex(this.label3, 0);
             this.panel1.Controls.SetChildIndex(this.cbo_state, 0);
             this.panel1.Controls.SetChildIndex(this.btn_Search, 0);
+            this.panel1.Controls.SetChildIndex(this.btn_ProdSearch, 0);
             // 
             // btn_Xls
             // 
@@ -162,7 +165,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(415, 24);
+            this.label4.Location = new System.Drawing.Point(522, 24);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 17);
             this.label4.TabIndex = 10;
@@ -174,7 +177,7 @@
             this.cbo_choice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_choice.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbo_choice.FormattingEnabled = true;
-            this.cbo_choice.Location = new System.Drawing.Point(489, 20);
+            this.cbo_choice.Location = new System.Drawing.Point(596, 20);
             this.cbo_choice.Name = "cbo_choice";
             this.cbo_choice.Size = new System.Drawing.Size(121, 25);
             this.cbo_choice.TabIndex = 11;
@@ -193,7 +196,7 @@
             this.cbo_state.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_state.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbo_state.FormattingEnabled = true;
-            this.cbo_state.Location = new System.Drawing.Point(702, 20);
+            this.cbo_state.Location = new System.Drawing.Point(809, 20);
             this.cbo_state.Name = "cbo_state";
             this.cbo_state.Size = new System.Drawing.Size(60, 25);
             this.cbo_state.TabIndex = 14;
@@ -203,7 +206,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(628, 24);
+            this.label3.Location = new System.Drawing.Point(735, 24);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 17);
             this.label3.TabIndex = 13;
@@ -223,6 +226,18 @@
             this.btn_Search.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Search.UseVisualStyleBackColor = false;
             this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
+            // 
+            // btn_ProdSearch
+            // 
+            this.btn_ProdSearch.BackColor = System.Drawing.Color.White;
+            this.btn_ProdSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_ProdSearch.Location = new System.Drawing.Point(415, 20);
+            this.btn_ProdSearch.Name = "btn_ProdSearch";
+            this.btn_ProdSearch.Size = new System.Drawing.Size(75, 25);
+            this.btn_ProdSearch.TabIndex = 16;
+            this.btn_ProdSearch.Text = "검색";
+            this.btn_ProdSearch.UseVisualStyleBackColor = false;
+            this.btn_ProdSearch.Click += new System.EventHandler(this.btn_ProdSearch_Click);
             // 
             // BOM
             // 
@@ -252,5 +267,6 @@
         private System.Windows.Forms.ComboBox cbo_state;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dtp_date;
+        private System.Windows.Forms.Button btn_ProdSearch;
     }
 }

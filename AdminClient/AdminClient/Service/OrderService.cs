@@ -90,10 +90,10 @@ namespace AdminClient.Service
             return result;
         }
 
-        internal bool CancelCountUpdate(int odcode, decimal cancel)
+        internal bool CancelCountUpdate(int code, int odcode, decimal cancel)
         {
             OrderDAC dac = new OrderDAC();
-            bool result = dac.CancelCountUpdate(odcode, cancel);
+            bool result = dac.CancelCountUpdate(code, odcode, cancel);
             dac.Dispose();
             return result;
         }

@@ -39,6 +39,8 @@ namespace AdminClient.Forms
 			this.dgv_ShipList = new AdminClient.CustomDataGridView();
 			this.searchControl1 = new AdminClient.SearchControl();
 			this.sortControl1 = new AdminClient.SortControl();
+			this.cbo_ContractFinish = new System.Windows.Forms.ComboBox();
+			this.label1 = new System.Windows.Forms.Label();
 			this.panel1.SuspendLayout();
 			this.pnl_Main.SuspendLayout();
 			this.gb_Sherch.SuspendLayout();
@@ -57,6 +59,7 @@ namespace AdminClient.Forms
 			// 
 			this.btn_add.Location = new System.Drawing.Point(1461, 9);
 			this.btn_add.Text = "출하\r\n처리";
+			this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
 			// 
 			// btn_Xls
 			// 
@@ -79,23 +82,27 @@ namespace AdminClient.Forms
 			// 
 			// gb_Sherch
 			// 
+			this.gb_Sherch.Controls.Add(this.cbo_ContractFinish);
+			this.gb_Sherch.Controls.Add(this.label1);
 			this.gb_Sherch.Controls.Add(this.cbo_CompName);
 			this.gb_Sherch.Controls.Add(this.label8);
 			this.gb_Sherch.Controls.Add(this.groupBox1);
 			this.gb_Sherch.Location = new System.Drawing.Point(5, 2);
-			this.gb_Sherch.Size = new System.Drawing.Size(348, 174);
+			this.gb_Sherch.Size = new System.Drawing.Size(348, 232);
 			this.gb_Sherch.Controls.SetChildIndex(this.chk_limit, 0);
 			this.gb_Sherch.Controls.SetChildIndex(this.nu_limit, 0);
 			this.gb_Sherch.Controls.SetChildIndex(this.btn_search, 0);
 			this.gb_Sherch.Controls.SetChildIndex(this.groupBox1, 0);
 			this.gb_Sherch.Controls.SetChildIndex(this.label8, 0);
 			this.gb_Sherch.Controls.SetChildIndex(this.cbo_CompName, 0);
+			this.gb_Sherch.Controls.SetChildIndex(this.label1, 0);
+			this.gb_Sherch.Controls.SetChildIndex(this.cbo_ContractFinish, 0);
 			// 
 			// gb_detail
 			// 
 			this.gb_detail.Controls.Add(this.sortControl1);
 			this.gb_detail.Controls.Add(this.searchControl1);
-			this.gb_detail.Location = new System.Drawing.Point(4, 180);
+			this.gb_detail.Location = new System.Drawing.Point(5, 238);
 			this.gb_detail.Size = new System.Drawing.Size(349, 210);
 			// 
 			// chk_limit
@@ -138,7 +145,7 @@ namespace AdminClient.Forms
 			this.groupBox1.Controls.Add(this.label6);
 			this.groupBox1.Controls.Add(this.dtp_DueDateTo);
 			this.groupBox1.Controls.Add(this.dtp_DueDateFrom);
-			this.groupBox1.Location = new System.Drawing.Point(5, 93);
+			this.groupBox1.Location = new System.Drawing.Point(5, 141);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Size = new System.Drawing.Size(277, 64);
 			this.groupBox1.TabIndex = 9;
@@ -172,6 +179,9 @@ namespace AdminClient.Forms
 			// 
 			// cbo_CompName
 			// 
+			this.cbo_CompName.BackColor = System.Drawing.Color.WhiteSmoke;
+			this.cbo_CompName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbo_CompName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.cbo_CompName.FormattingEnabled = true;
 			this.cbo_CompName.Location = new System.Drawing.Point(12, 62);
 			this.cbo_CompName.Name = "cbo_CompName";
@@ -204,7 +214,7 @@ namespace AdminClient.Forms
 			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
 			this.dgv_ShipList.DefaultCellStyle = dataGridViewCellStyle1;
 			this.dgv_ShipList.GridColor = System.Drawing.Color.Black;
-			this.dgv_ShipList.IsChkVisible = true;
+			this.dgv_ShipList.IsChkVisible = false;
 			this.dgv_ShipList.IsEditVisible = false;
 			this.dgv_ShipList.Location = new System.Drawing.Point(36, 3);
 			this.dgv_ShipList.Name = "dgv_ShipList";
@@ -233,6 +243,26 @@ namespace AdminClient.Forms
 			this.sortControl1.Name = "sortControl1";
 			this.sortControl1.Size = new System.Drawing.Size(321, 69);
 			this.sortControl1.TabIndex = 1;
+			// 
+			// cbo_ContractFinish
+			// 
+			this.cbo_ContractFinish.BackColor = System.Drawing.Color.WhiteSmoke;
+			this.cbo_ContractFinish.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbo_ContractFinish.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.cbo_ContractFinish.FormattingEnabled = true;
+			this.cbo_ContractFinish.Location = new System.Drawing.Point(12, 110);
+			this.cbo_ContractFinish.Name = "cbo_ContractFinish";
+			this.cbo_ContractFinish.Size = new System.Drawing.Size(108, 25);
+			this.cbo_ContractFinish.TabIndex = 22;
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(9, 90);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(92, 17);
+			this.label1.TabIndex = 21;
+			this.label1.Text = "출하완료여부";
 			// 
 			// Shipment
 			// 
@@ -271,5 +301,7 @@ namespace AdminClient.Forms
 		private CustomDataGridView dgv_ShipList;
 		private SortControl sortControl1;
 		private SearchControl searchControl1;
+		private System.Windows.Forms.ComboBox cbo_ContractFinish;
+		private System.Windows.Forms.Label label1;
 	}
 }

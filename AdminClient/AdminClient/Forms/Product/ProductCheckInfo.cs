@@ -27,12 +27,12 @@ namespace AdminClient.Forms
 
             dgv_Check.SetGridColumn();
             CommonUtil.AddGridTextColumn(dgv_Check, "품목코드", "Prod_Code", 100);
-            CommonUtil.AddGridTextColumn(dgv_Check, "품목이름", "Prod_Name", 100);
+            CommonUtil.AddGridTextColumn(dgv_Check, "품목이름", "Prod_Name", 200);
             CommonUtil.AddGridTextColumn(dgv_Check, "검사 타입", "Check_Type", 100);
             CommonUtil.AddGridTextColumn(dgv_Check, "검사 장비", "Check_System", 100);
             CommonUtil.AddGridTextColumn(dgv_Check, "검사 위치", "Check_Point", 100);
             CommonUtil.AddGridTextColumn(dgv_Check, "검사 항목", "Check_Item", 100);
-            CommonUtil.AddGridTextColumn(dgv_Check, "검사 규격", "Check_Standard", 2100);
+            CommonUtil.AddGridTextColumn(dgv_Check, "검사 규격", "Check_Standard", 200);
         }
 
         #region 버튼 검색
