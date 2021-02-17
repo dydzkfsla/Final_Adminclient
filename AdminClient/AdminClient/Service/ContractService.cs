@@ -52,9 +52,17 @@ namespace AdminClient.Service
 		#endregion
 
 		#region 출하지시 (Shipment)
-		public List<ShipmentVO> GetShipList(string limit, string fdate, string tdate, string comp)
+		public List<ShipmentVO> RefreshShipList()
 		{
-			return dac.GetShipList(limit, fdate, tdate, comp);
+			return dac.RefreshShipList();
+		}
+		public List<ShipmentVO> GetShipList(string limit, string fdate, string tdate, string comp, string finish)
+		{
+			return dac.GetShipList(limit, fdate, tdate, comp, finish);
+		}
+		public bool Shipping(string userID, ShipmentVO vo)
+		{
+			return dac.Shipping(userID, vo);
 		}
 		#endregion
 	}

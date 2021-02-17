@@ -28,8 +28,8 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.schCtrl = new AdminClient.SearchControl();
 			this.schCtrlDetail = new AdminClient.SearchControl();
 			this.dgv_WhList = new AdminClient.CustomDataGridView();
@@ -47,6 +47,8 @@
 			this.label13 = new System.Windows.Forms.Label();
 			this.sortCtrlDetail = new AdminClient.SortControl();
 			this.gb_detailItem = new System.Windows.Forms.GroupBox();
+			this.label3 = new System.Windows.Forms.Label();
+			this.label4 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
 			this.splitContainer3.Panel1.SuspendLayout();
 			this.splitContainer3.Panel2.SuspendLayout();
@@ -75,6 +77,7 @@
 			// 
 			// splitContainer3.Panel1
 			// 
+			this.splitContainer3.Panel1.Controls.Add(this.label4);
 			this.splitContainer3.Panel1.Controls.Add(this.dgv_WhDetailList);
 			// 
 			// splitContainer3.Panel2
@@ -88,6 +91,7 @@
 			// 
 			// splitContainer2.Panel1
 			// 
+			this.splitContainer2.Panel1.Controls.Add(this.label3);
 			this.splitContainer2.Panel1.Controls.Add(this.dgv_WhList);
 			this.splitContainer2.Size = new System.Drawing.Size(1238, 860);
 			this.splitContainer2.SplitterDistance = 402;
@@ -207,48 +211,52 @@
 			// 
 			// dgv_WhList
 			// 
+			this.dgv_WhList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.dgv_WhList.BackgroundColor = System.Drawing.Color.White;
 			this.dgv_WhList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle4.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.IndianRed;
-			dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgv_WhList.DefaultCellStyle = dataGridViewCellStyle4;
-			this.dgv_WhList.Dock = System.Windows.Forms.DockStyle.Fill;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.IndianRed;
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgv_WhList.DefaultCellStyle = dataGridViewCellStyle2;
 			this.dgv_WhList.GridColor = System.Drawing.Color.Black;
 			this.dgv_WhList.IsChkVisible = true;
 			this.dgv_WhList.IsEditVisible = true;
-			this.dgv_WhList.Location = new System.Drawing.Point(0, 0);
+			this.dgv_WhList.Location = new System.Drawing.Point(0, 20);
 			this.dgv_WhList.Name = "dgv_WhList";
 			this.dgv_WhList.RowTemplate.Height = 23;
-			this.dgv_WhList.Size = new System.Drawing.Size(1238, 402);
+			this.dgv_WhList.Size = new System.Drawing.Size(1238, 382);
 			this.dgv_WhList.TabIndex = 0;
 			this.dgv_WhList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_WhList_CellClick);
 			this.dgv_WhList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_WhList_CellContentClick);
 			// 
 			// dgv_WhDetailList
 			// 
+			this.dgv_WhDetailList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.dgv_WhDetailList.BackgroundColor = System.Drawing.Color.White;
 			this.dgv_WhDetailList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle3.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.IndianRed;
-			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgv_WhDetailList.DefaultCellStyle = dataGridViewCellStyle3;
-			this.dgv_WhDetailList.Dock = System.Windows.Forms.DockStyle.Fill;
+			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle1.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.IndianRed;
+			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgv_WhDetailList.DefaultCellStyle = dataGridViewCellStyle1;
 			this.dgv_WhDetailList.GridColor = System.Drawing.Color.Black;
 			this.dgv_WhDetailList.IsChkVisible = false;
 			this.dgv_WhDetailList.IsEditVisible = false;
-			this.dgv_WhDetailList.Location = new System.Drawing.Point(0, 0);
+			this.dgv_WhDetailList.Location = new System.Drawing.Point(0, 22);
 			this.dgv_WhDetailList.Name = "dgv_WhDetailList";
 			this.dgv_WhDetailList.RowTemplate.Height = 23;
-			this.dgv_WhDetailList.Size = new System.Drawing.Size(1196, 452);
+			this.dgv_WhDetailList.Size = new System.Drawing.Size(1193, 427);
 			this.dgv_WhDetailList.TabIndex = 0;
 			// 
 			// label1
@@ -372,6 +380,24 @@
 			this.gb_detailItem.TabStop = false;
 			this.gb_detailItem.Text = "디테일 세부검색";
 			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Location = new System.Drawing.Point(14, 2);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(64, 17);
+			this.label3.TabIndex = 1;
+			this.label3.Text = "창고목록";
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Location = new System.Drawing.Point(14, 2);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(82, 17);
+			this.label4.TabIndex = 2;
+			this.label4.Text = "창고별 재고";
+			// 
 			// WareHouseInfo
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
@@ -379,10 +405,12 @@
 			this.Name = "WareHouseInfo";
 			this.Load += new System.EventHandler(this.WareHouseInfo_Load);
 			this.splitContainer3.Panel1.ResumeLayout(false);
+			this.splitContainer3.Panel1.PerformLayout();
 			this.splitContainer3.Panel2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
 			this.splitContainer3.ResumeLayout(false);
 			this.splitContainer2.Panel1.ResumeLayout(false);
+			this.splitContainer2.Panel1.PerformLayout();
 			this.splitContainer2.Panel2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
 			this.splitContainer2.ResumeLayout(false);
@@ -425,5 +453,7 @@
         private System.Windows.Forms.Label label13;
         private SortControl sortCtrlDetail;
         private System.Windows.Forms.GroupBox gb_detailItem;
-    }
+		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.Label label3;
+	}
 }

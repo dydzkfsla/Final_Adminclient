@@ -36,8 +36,8 @@ namespace AdminClient.Forms
 
 			dgv_ProcessDetail.SetGridColumn();
 			CommonUtil.AddGridTextColumn(dgv_ProcessDetail, "공정코드", "Pcs_Code");
-			CommonUtil.AddGridTextColumn(dgv_ProcessDetail, "세부공정코드", "PcsD_Code");
-			CommonUtil.AddGridTextColumn(dgv_ProcessDetail, "세부공정명", "PcsD_Name");
+			CommonUtil.AddGridTextColumn(dgv_ProcessDetail, "세부공정코드", "PcsD_Code", 118);
+			CommonUtil.AddGridTextColumn(dgv_ProcessDetail, "세부공정명", "PcsD_Name", 103);
 			CommonUtil.AddGridTextColumn(dgv_ProcessDetail, "사용여부", "PcsD_State");
 			#endregion
 

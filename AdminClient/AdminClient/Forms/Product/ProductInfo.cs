@@ -76,7 +76,7 @@ namespace AdminClient.Forms
             CommonUtil.AddGridTextColumn(dgv_ProdList, "저장창고", "Prod_WhCode");
             CommonUtil.AddGridTextColumn(dgv_ProdList, "재고량", "totcnt");
             CommonUtil.AddGridTextColumn(dgv_ProdList, "단위", "Prod_Unit");
-            CommonUtil.AddGridTextColumn(dgv_ProdList, "안전재고량", "Prod_SafetyStock");
+            CommonUtil.AddGridTextColumn(dgv_ProdList, "안전재고량", "Prod_SafetyStock", 103);
             #endregion
 
             gb_detail.Enabled = false;

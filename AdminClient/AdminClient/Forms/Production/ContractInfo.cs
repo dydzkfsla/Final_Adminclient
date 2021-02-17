@@ -38,8 +38,8 @@ namespace AdminClient.Forms
 
 			#region 데이터그리드뷰 셋팅
 			dgv_ContractList.SetGridColumn();
-			CommonUtil.AddGridTextColumn(dgv_ContractList, "수주코드", "Contract_Code");
-			CommonUtil.AddGridTextColumn(dgv_ContractList, "고객사코드", "Comp_Code");
+			CommonUtil.AddGridTextColumn(dgv_ContractList, "수주코드", "Contract_Code", 200);
+			CommonUtil.AddGridTextColumn(dgv_ContractList, "고객사코드", "Comp_Code", 103);
 			CommonUtil.AddGridTextColumn(dgv_ContractList, "고객사명", "Comp_Name");
 			CommonUtil.AddGridTextColumn(dgv_ContractList, "도착지", "Contract_Destination");
 			CommonUtil.AddGridTextColumn(dgv_ContractList, "품목코드", "Prod_Code");

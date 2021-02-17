@@ -44,27 +44,37 @@ namespace AdminClient.PopUp
 		#region 이벤트
 		private void btn_Add_Click(object sender, EventArgs e)
 		{
-			////유효성체크
-			//if (!ChkTextBox())
-			//{
-			//	MessageBox.Show("출고수량을 입력해주세요.");
-			//	return;
-			//}
+			//유효성체크
+			if (!ChkTextBox())
+			{
+				MessageBox.Show("출고수량을 입력해주세요.");
+				return;
+			}
+			if (!ChkCount())
+			{
+				MessageBox.Show("남은 출고수량보다 큰 수량을 출하 할 수 없습니다. 다시 시도하여 주십시오.");
+				return;
+			}
+				
 
+			vo = new ShipmentVO
+			{
+				Contract_ShippingCount = Convert.ToInt32(txt_NowShipping.Text),
+				Contract_Code = lbl_ContCode.Text,
+				Prod_Code = lbl_ProdCode.Text
+			};
 
-			//int shipCount = Convert.ToInt32(txt_NowShipping.Text);
-
-			//ContractService service = new ContractService();
-			//if (service.AddContract(userID, vo))
-			//{
-			//	this.DialogResult = DialogResult.OK;
-			//	this.Close();
-			//}
-			//else
-			//{
-			//	MessageBox.Show("수주정보 등록중 오류가 발생했습니다. 다시 시도하여 주십시오.");
-			//	return;
-			//}
+			ContractService service = new ContractService();
+			if (service.Shipping(userID, vo))
+			{
+				this.DialogResult = DialogResult.OK;
+				this.Close();
+			}
+			else
+			{
+				MessageBox.Show("출하 지시중 오류가 발생했습니다. 다시 시도하여 주십시오.");
+				return;
+			}
 
 		}
 		#endregion
@@ -84,6 +94,21 @@ namespace AdminClient.PopUp
 				}
 			});
 			return ChkTextBox;
+		}
+
+		private bool ChkCount()
+		{
+			bool flag = true;
+			int count = Convert.ToInt32(lbl_Count.Text);
+			int cancel = Convert.ToInt32(lbl_Cancel.Text);
+			int shipped = Convert.ToInt32(lbl_Shipping.Text);
+			int nowShip = Convert.ToInt32(txt_NowShipping.Text);
+
+			int left = count - (cancel + shipped);
+			if (nowShip > left)
+				flag = false;
+
+			return flag;
 		}
 
 		#endregion

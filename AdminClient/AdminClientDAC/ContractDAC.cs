@@ -284,7 +284,36 @@ namespace AdminClientDAC
 		#endregion
 
 		#region 출하지시 (Shipment)
-		public List<ShipmentVO> GetShipList(string limit, string fdate, string tdate, string comp)
+		public List<ShipmentVO> RefreshShipList()
+		{
+			try
+			{
+				using (SqlCommand cmd = new SqlCommand())
+				{
+					cmd.Connection = conn;
+					cmd.CommandText = @"select C.Contract_Code, C.Contract_DueDate, C.Comp_Code, CO.Comp_Name, C.Contract_Destination, 
+											   CD.Prod_Code, P.Prod_Name, WH.WH_PsyCount, 
+											   CD.Contract_Count, CD.Contract_ShippingCount, CD.Contract_CancelCount,
+											   C.Contract_Confirm, C.Contract_Finish
+										  from Contract C, ContractDetail CD, CompanyInfo CO, Product P, WareHouseDetail WH
+										 where C.Contract_Code = CD.Contract_Code
+										   and C.Comp_Code = CO.Comp_Code
+										   and CD.Prod_Code = P.Prod_Code 
+										   and P.Prod_Code = WH.Prod_Code
+										   and C.Contract_Confirm = 'Y'; ";
+
+					List<ShipmentVO> list = Helper.DataReaderMapToList<ShipmentVO>(cmd.ExecuteReader());
+
+					return list;
+				}
+			}
+			catch (Exception err)
+			{
+				Info.WriteError($"실행자:{Global.employees.Emp_Name} 출하수주목록 새로고침중 오류 :" + err.Message, err);
+				return null;
+			}
+		}
+		public List<ShipmentVO> GetShipList(string limit, string fdate, string tdate, string comp, string finish)
 		{
 			try
 			{
@@ -301,15 +330,16 @@ namespace AdminClientDAC
 										   and CD.Prod_Code = P.Prod_Code 
 										   and P.Prod_Code = WH.Prod_Code
 										   and C.Contract_Confirm = 'Y'
-										   and C.Contract_Finish = 'N'
 										   and C.Contract_DueDate >= @fdate
 										   and C.Contract_DueDate <= @tdate
-										   and C.Comp_Code = ISNULL(@Comp_Code, C.Comp_Code); ";
+										   and C.Comp_Code = ISNULL(@Comp_Code, C.Comp_Code)
+										   and C.Contract_Finish = ISNULL(@Contract_Finish, C.Contract_Finish); ";
 
 					cmd.Parameters.AddWithValue("@limit", string.IsNullOrEmpty(limit) ? 100000 : (object)limit);
 					cmd.Parameters.AddWithValue("@fdate", string.IsNullOrEmpty(fdate) ? DBNull.Value : (object)fdate);
 					cmd.Parameters.AddWithValue("@tdate", string.IsNullOrEmpty(tdate) ? DBNull.Value : (object)tdate);
 					cmd.Parameters.AddWithValue("@Comp_Code", string.IsNullOrEmpty(comp) ? DBNull.Value : (object)comp);
+					cmd.Parameters.AddWithValue("@Contract_Finish", string.IsNullOrEmpty(finish) ? DBNull.Value : (object)finish);
 
 					List<ShipmentVO> list = Helper.DataReaderMapToList<ShipmentVO>(cmd.ExecuteReader());
 
@@ -320,6 +350,36 @@ namespace AdminClientDAC
 			{
 				Info.WriteError($"실행자:{Global.employees.Emp_Name} 출하수주목록 검색중 오류 :" + err.Message, err);
 				return null;
+			}
+		}
+
+		public bool Shipping(string userID, ShipmentVO vo)
+		{
+			try
+			{
+				using (SqlCommand cmd = new SqlCommand())
+				{
+					cmd.Connection = conn;
+					cmd.CommandText = "SP_Shipping";
+					cmd.CommandType = CommandType.StoredProcedure;
+
+					cmd.Parameters.AddWithValue("@count", vo.Contract_ShippingCount);
+					cmd.Parameters.AddWithValue("@contcode", vo.Contract_Code);
+					cmd.Parameters.AddWithValue("@prodcode", vo.Prod_Code);
+					cmd.Parameters.AddWithValue("@uid", userID);
+
+					int iAffectedRow = cmd.ExecuteNonQuery();
+
+					if (iAffectedRow > 0)
+						return true;
+					else
+						throw new Exception();
+				}
+			}
+			catch (Exception err)
+			{
+				Info.WriteError($"실행자:{Global.employees.Emp_Name} 출하 지시중 오류 :" + err.Message, err);
+				return false;
 			}
 		}
 		#endregion
