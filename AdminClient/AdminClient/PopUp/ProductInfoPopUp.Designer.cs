@@ -80,7 +80,8 @@
 			// 
 			// lbl_Title
 			// 
-			this.lbl_Title.Size = new System.Drawing.Size(185, 43);
+			this.lbl_Title.Font = new System.Drawing.Font("나눔고딕", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+			this.lbl_Title.Size = new System.Drawing.Size(136, 31);
 			this.lbl_Title.Text = "FormBase";
 			// 
 			// Form_close
@@ -360,11 +361,11 @@
 			this.txt_Unit.Size = new System.Drawing.Size(188, 25);
 			this.txt_Unit.TabIndex = 49;
 			// 
-			// ProductPopUp
+			// ProductInfoPopUp
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
 			this.ClientSize = new System.Drawing.Size(357, 384);
-			this.Name = "ProductPopUp";
+			this.Name = "ProductInfoPopUp";
 			this.Load += new System.EventHandler(this.ProductPopUp_Load);
 			this.pnl_Main.ResumeLayout(false);
 			this.pnl_Main.PerformLayout();

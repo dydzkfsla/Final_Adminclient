@@ -239,6 +239,9 @@ namespace AdminClient.Forms
 			}
 		}
 
-		
+		private void btn_Add_PD_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

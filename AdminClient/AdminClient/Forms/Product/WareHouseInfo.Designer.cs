@@ -253,10 +253,10 @@
 			this.dgv_WhDetailList.GridColor = System.Drawing.Color.Black;
 			this.dgv_WhDetailList.IsChkVisible = false;
 			this.dgv_WhDetailList.IsEditVisible = false;
-			this.dgv_WhDetailList.Location = new System.Drawing.Point(0, 22);
+			this.dgv_WhDetailList.Location = new System.Drawing.Point(3, 22);
 			this.dgv_WhDetailList.Name = "dgv_WhDetailList";
 			this.dgv_WhDetailList.RowTemplate.Height = 23;
-			this.dgv_WhDetailList.Size = new System.Drawing.Size(1193, 427);
+			this.dgv_WhDetailList.Size = new System.Drawing.Size(1190, 427);
 			this.dgv_WhDetailList.TabIndex = 0;
 			// 
 			// label1
@@ -311,6 +311,7 @@
 			this.txt_State.Name = "txt_State";
 			this.txt_State.Size = new System.Drawing.Size(145, 25);
 			this.txt_State.TabIndex = 27;
+			this.txt_State.Visible = false;
 			// 
 			// label10
 			// 
@@ -322,6 +323,7 @@
 			this.label10.Size = new System.Drawing.Size(38, 17);
 			this.label10.TabIndex = 26;
 			this.label10.Text = "상태";
+			this.label10.Visible = false;
 			// 
 			// txt_Type
 			// 
@@ -329,6 +331,7 @@
 			this.txt_Type.Name = "txt_Type";
 			this.txt_Type.Size = new System.Drawing.Size(145, 25);
 			this.txt_Type.TabIndex = 25;
+			this.txt_Type.Visible = false;
 			// 
 			// label12
 			// 
@@ -340,6 +343,7 @@
 			this.label12.Size = new System.Drawing.Size(68, 17);
 			this.label12.TabIndex = 24;
 			this.label12.Text = "창고종류";
+			this.label12.Visible = false;
 			// 
 			// txt_Code
 			// 
@@ -347,6 +351,7 @@
 			this.txt_Code.Name = "txt_Code";
 			this.txt_Code.Size = new System.Drawing.Size(145, 25);
 			this.txt_Code.TabIndex = 23;
+			this.txt_Code.Visible = false;
 			// 
 			// label13
 			// 
@@ -358,6 +363,7 @@
 			this.label13.Size = new System.Drawing.Size(68, 17);
 			this.label13.TabIndex = 22;
 			this.label13.Text = "창고코드";
+			this.label13.Visible = false;
 			// 
 			// sortCtrlDetail
 			// 

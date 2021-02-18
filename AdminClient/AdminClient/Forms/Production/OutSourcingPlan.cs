@@ -19,6 +19,8 @@ namespace AdminClient.Forms
         public OutSourcingPlan()
 		{
 			InitializeComponent();
+
+			dtp_to.Value = DateTime.Now.AddDays(15);
 		}
 
         private void btn_search_Click(object sender, EventArgs e)

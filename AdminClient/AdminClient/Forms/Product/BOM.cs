@@ -73,7 +73,7 @@ namespace AdminClient.Forms
                 CommonUtil.AddGridTextColumn(dgv_bom, "품목코드", "Prod_Code");
                 CommonUtil.AddGridTextColumn(dgv_bom, "품목명", "childName");
                 CommonUtil.AddGridTextColumn(dgv_bom, "상위품목", "BOM_P_ProdCode");
-                CommonUtil.AddGridTextColumn(dgv_bom, "상위품목명", "parentName");
+                CommonUtil.AddGridTextColumn(dgv_bom, "상위품목명", "parentName", 150);
                 CommonUtil.AddGridTextColumn(dgv_bom, "소요량", "BOM_Count");
                 CommonUtil.AddGridTextColumn(dgv_bom, "레벨", "level");
                 CommonUtil.AddGridTextColumn(dgv_bom, "정리", "sortOrder");
