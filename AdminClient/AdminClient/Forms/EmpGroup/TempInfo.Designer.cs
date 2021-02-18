@@ -75,7 +75,7 @@
 			this.pnl_Main.Controls.Add(this.btn_Update);
 			this.pnl_Main.Controls.Add(this.btn_Add);
 			this.pnl_Main.Controls.Add(this.label1);
-			this.pnl_Main.Size = new System.Drawing.Size(1279, 687);
+			this.pnl_Main.Size = new System.Drawing.Size(1655, 967);
 			// 
 			// lbl_Title
 			// 
@@ -84,11 +84,11 @@
 			// 
 			// Form_close
 			// 
-			this.Form_close.Location = new System.Drawing.Point(1253, 8);
+			this.Form_close.Location = new System.Drawing.Point(1629, 8);
 			// 
 			// TitleColor
 			// 
-			this.TitleColor.Size = new System.Drawing.Size(1301, 7);
+			this.TitleColor.Size = new System.Drawing.Size(1677, 7);
 			// 
 			// label1
 			// 
@@ -331,7 +331,7 @@
 			// TempInfo
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
-			this.ClientSize = new System.Drawing.Size(1289, 745);
+			this.ClientSize = new System.Drawing.Size(1665, 1025);
 			this.Name = "TempInfo";
 			this.Load += new System.EventHandler(this.TempInfo_Load);
 			this.pnl_Main.ResumeLayout(false);
