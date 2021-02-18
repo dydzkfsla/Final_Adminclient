@@ -605,7 +605,6 @@
 			this.btm_AllSet.TabIndex = 29;
 			this.btm_AllSet.Text = "변경내용 저장";
 			this.btm_AllSet.UseVisualStyleBackColor = true;
-			this.btm_AllSet.Click += new System.EventHandler(this.btm_AllSet_Click);
 			// 
 			// pnl_AllInfo
 			// 
