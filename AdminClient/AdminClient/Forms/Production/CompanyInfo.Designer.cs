@@ -110,7 +110,7 @@
             this.splitContainer3.Panel2.Controls.Add(this.btn_ProdUpdate);
             this.splitContainer3.Panel2.Controls.Add(this.btn_ProdAdd);
             this.splitContainer3.Size = new System.Drawing.Size(1222, 469);
-            this.splitContainer3.SplitterDistance = 870;
+            this.splitContainer3.SplitterDistance = 999;
             this.splitContainer3.SplitterWidth = 8;
             // 
             // splitContainer2
@@ -638,10 +638,10 @@
             this.dgv_detail.GridColor = System.Drawing.Color.Black;
             this.dgv_detail.IsChkVisible = false;
             this.dgv_detail.IsEditVisible = false;
-            this.dgv_detail.Location = new System.Drawing.Point(0, 26);
+            this.dgv_detail.Location = new System.Drawing.Point(3, 26);
             this.dgv_detail.Name = "dgv_detail";
             this.dgv_detail.RowTemplate.Height = 23;
-            this.dgv_detail.Size = new System.Drawing.Size(907, 702);
+            this.dgv_detail.Size = new System.Drawing.Size(984, 440);
             this.dgv_detail.TabIndex = 0;
             this.dgv_detail.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_detail_CellClick);
             // 

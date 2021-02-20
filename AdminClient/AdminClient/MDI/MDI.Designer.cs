@@ -45,16 +45,17 @@
             this.toolStripLabel_EmpName = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel_Emp_code = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel_Btn_Select = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel_Btn_add = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel_Btn_Update = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel_Btn_Delete = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.tabForms = new AdminClient.ucTabControl();
-            this.toolStripLabel_Btn_Select = new System.Windows.Forms.ToolStripLabel();
+            this.로그아웃ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -66,6 +67,7 @@
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.menuStrip1.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.로그아웃ToolStripMenuItem,
             this.즐겨찾기ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -212,6 +214,17 @@
             this.toolStripLabel_Emp_code.Size = new System.Drawing.Size(88, 22);
             this.toolStripLabel_Emp_code.Text = "toolStripLabel1";
             // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripLabel_Btn_Select
+            // 
+            this.toolStripLabel_Btn_Select.Name = "toolStripLabel_Btn_Select";
+            this.toolStripLabel_Btn_Select.Size = new System.Drawing.Size(73, 22);
+            this.toolStripLabel_Btn_Select.Text = "조회권한 : Y";
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
@@ -245,11 +258,6 @@
             this.toolStripLabel_Btn_Delete.Size = new System.Drawing.Size(73, 22);
             this.toolStripLabel_Btn_Delete.Text = "삭제권한 : Y";
             // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 25);
-            // 
             // tabForms
             // 
             this.tabForms.Dock = System.Windows.Forms.DockStyle.Top;
@@ -264,11 +272,13 @@
             this.tabForms.SelectedIndexChanged += new System.EventHandler(this.tabForms_SelectedIndexChanged);
             this.tabForms.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabForms_MouseDown);
             // 
-            // toolStripLabel_Btn_Select
+            // 로그아웃ToolStripMenuItem
             // 
-            this.toolStripLabel_Btn_Select.Name = "toolStripLabel_Btn_Select";
-            this.toolStripLabel_Btn_Select.Size = new System.Drawing.Size(73, 22);
-            this.toolStripLabel_Btn_Select.Text = "조회권한 : Y";
+            this.로그아웃ToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.로그아웃ToolStripMenuItem.Name = "로그아웃ToolStripMenuItem";
+            this.로그아웃ToolStripMenuItem.Size = new System.Drawing.Size(123, 36);
+            this.로그아웃ToolStripMenuItem.Text = "로그아웃";
+            this.로그아웃ToolStripMenuItem.Click += new System.EventHandler(this.로그아웃ToolStripMenuItem_Click);
             // 
             // MDI
             // 
@@ -326,5 +336,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripLabel toolStripLabel_Btn_Select;
+        private System.Windows.Forms.ToolStripMenuItem 로그아웃ToolStripMenuItem;
     }
 }
