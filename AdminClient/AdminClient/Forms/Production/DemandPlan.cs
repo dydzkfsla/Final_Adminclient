@@ -24,6 +24,7 @@ namespace AdminClient.Forms
         private void DemandPlan_Load(object sender, EventArgs e)
         {
             splitContainer1.SplitterDistance = 365;
+            dtp_edate.Value = DateTime.Now.AddDays(15);
         }
 
         private void btn_search_Click(object sender, EventArgs e)

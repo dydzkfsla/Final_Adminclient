@@ -26,6 +26,7 @@ namespace AdminClient.Forms
 		private void ProductionPlan_NEW_Load(object sender, EventArgs e)
 		{
 			splitContainer1.SplitterDistance = 365;
+			splitContainer2.SplitterDistance = 300;
 			#region 데이터그리드뷰 셋팅
 			dgv_ProductionCount.SetGridColumn();
 			CommonUtil.AddGridTextColumn(dgv_ProductionCount, "주문수량", "Contract_Count");

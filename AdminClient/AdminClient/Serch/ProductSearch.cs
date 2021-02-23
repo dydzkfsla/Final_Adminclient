@@ -35,6 +35,7 @@ namespace AdminClient.Serch
 
             if(mode == Mode.One)
             {
+                lbl_Title.Text = "품목 추가";
                 dgv_ProdList.Visible = false;
                 dgv_AddList.Visible = false;
                 btn_insert.Visible = false;
@@ -45,7 +46,7 @@ namespace AdminClient.Serch
                 CommonUtil.AddGridTextColumn(dgv_main, "Code", "Prod_Code", visibility: false);
                 CommonUtil.AddGridTextColumn(dgv_main, "Category", "Prod_Category", visibility: false);
                 CommonUtil.AddGridTextColumn(dgv_main, "카테고리", "Common_Name");
-                CommonUtil.AddGridTextColumn(dgv_main, "물품명", "Prod_Name");
+                CommonUtil.AddGridTextColumn(dgv_main, "품목명", "Prod_Name");
                 CommonUtil.AddGridTextColumn(dgv_main, "상태", "Prod_State");
                 CommonUtil.AddGridTextColumn(dgv_main, "저장창고", "Prod_WhCode");
                 CommonUtil.AddGridTextColumn(dgv_main, "최소재고량", "Prod_SafetyStock", 150);
@@ -53,13 +54,14 @@ namespace AdminClient.Serch
             }
             else
             {
+                lbl_Title.Text = "품목 추가";
                 dgv_main.Visible = false;
                 #region dgv prodlist
                 dgv_ProdList.SetGridColumn();
                 CommonUtil.AddGridTextColumn(dgv_ProdList, "Code", "Prod_Code", visibility: false);
                 CommonUtil.AddGridTextColumn(dgv_ProdList, "Category", "Prod_Category", visibility: false);
                 CommonUtil.AddGridTextColumn(dgv_ProdList, "카테고리", "Common_Name");
-                CommonUtil.AddGridTextColumn(dgv_ProdList, "물품명", "Prod_Name");
+                CommonUtil.AddGridTextColumn(dgv_ProdList, "품목명", "Prod_Name");
                 CommonUtil.AddGridTextColumn(dgv_ProdList, "상태", "Prod_State");
                 CommonUtil.AddGridTextColumn(dgv_ProdList, "저장창고", "Prod_WhCode");
                 CommonUtil.AddGridTextColumn(dgv_ProdList, "최소재고량", "Prod_SafetyStock", 150);
@@ -72,7 +74,7 @@ namespace AdminClient.Serch
                 CommonUtil.AddGridTextColumn(dgv_AddList, "Code", "Prod_Code", visibility: false);
                 CommonUtil.AddGridTextColumn(dgv_AddList, "Category", "Prod_Category", visibility: false);
                 CommonUtil.AddGridTextColumn(dgv_AddList, "카테고리", "Common_Name");
-                CommonUtil.AddGridTextColumn(dgv_AddList, "물품명", "Prod_Name");
+                CommonUtil.AddGridTextColumn(dgv_AddList, "품목명", "Prod_Name");
                 CommonUtil.AddGridTextColumn(dgv_AddList, "상태", "Prod_State");
                 CommonUtil.AddGridTextColumn(dgv_AddList, "저장창고", "Prod_WhCode");
                 CommonUtil.AddGridTextColumn(dgv_AddList, "최소재고량", "Prod_SafetyStock", 150);
@@ -113,29 +115,29 @@ namespace AdminClient.Serch
             #endregion
 
             
-            #region dgv prodlist
-            dgv_ProdList.SetGridColumn();
-            CommonUtil.AddGridTextColumn(dgv_ProdList, "Code", "Prod_Code", visibility: false);
-            CommonUtil.AddGridTextColumn(dgv_ProdList, "Category", "Prod_Category", visibility: false);
-            CommonUtil.AddGridTextColumn(dgv_ProdList, "카테고리", "Common_Name");
-            CommonUtil.AddGridTextColumn(dgv_ProdList, "물품명", "Prod_Name");
-            CommonUtil.AddGridTextColumn(dgv_ProdList, "상태", "Prod_State");
-            CommonUtil.AddGridTextColumn(dgv_ProdList, "저장창고", "Prod_WhCode");
-            CommonUtil.AddGridTextColumn(dgv_ProdList, "최소재고량", "Prod_SafetyStock", 150);
-            CommonUtil.AddGridTextColumn(dgv_ProdList, "현재재고량", "totcnt", 150);
+            //#region dgv prodlist
+            //dgv_ProdList.SetGridColumn();
+            //CommonUtil.AddGridTextColumn(dgv_ProdList, "Code", "Prod_Code", visibility: false);
+            //CommonUtil.AddGridTextColumn(dgv_ProdList, "Category", "Prod_Category", visibility: false);
+            //CommonUtil.AddGridTextColumn(dgv_ProdList, "카테고리", "Common_Name");
+            //CommonUtil.AddGridTextColumn(dgv_ProdList, "품목명", "Prod_Name");
+            //CommonUtil.AddGridTextColumn(dgv_ProdList, "상태", "Prod_State");
+            //CommonUtil.AddGridTextColumn(dgv_ProdList, "저장창고", "Prod_WhCode");
+            //CommonUtil.AddGridTextColumn(dgv_ProdList, "최소재고량", "Prod_SafetyStock", 150);
+            //CommonUtil.AddGridTextColumn(dgv_ProdList, "현재재고량", "totcnt", 150);
 
-            #endregion
+            //#endregion
 
-            #region dgv addlist
-            dgv_AddList.SetGridColumn();
-            CommonUtil.AddGridTextColumn(dgv_AddList, "Code", "Prod_Code", visibility: false);
-            CommonUtil.AddGridTextColumn(dgv_AddList, "Category", "Prod_Category", visibility: false);
-            CommonUtil.AddGridTextColumn(dgv_AddList, "카테고리", "Common_Name");
-            CommonUtil.AddGridTextColumn(dgv_AddList, "물품명", "Prod_Name");
-            CommonUtil.AddGridTextColumn(dgv_AddList, "상태", "Prod_State");
-            CommonUtil.AddGridTextColumn(dgv_AddList, "저장창고", "Prod_WhCode");
-            CommonUtil.AddGridTextColumn(dgv_AddList, "최소재고량", "Prod_SafetyStock", 150);
-            #endregion
+            //#region dgv addlist
+            //dgv_AddList.SetGridColumn();
+            //CommonUtil.AddGridTextColumn(dgv_AddList, "Code", "Prod_Code", visibility: false);
+            //CommonUtil.AddGridTextColumn(dgv_AddList, "Category", "Prod_Category", visibility: false);
+            //CommonUtil.AddGridTextColumn(dgv_AddList, "카테고리", "Common_Name");
+            //CommonUtil.AddGridTextColumn(dgv_AddList, "품목명", "Prod_Name");
+            //CommonUtil.AddGridTextColumn(dgv_AddList, "상태", "Prod_State");
+            //CommonUtil.AddGridTextColumn(dgv_AddList, "저장창고", "Prod_WhCode");
+            //CommonUtil.AddGridTextColumn(dgv_AddList, "최소재고량", "Prod_SafetyStock", 150);
+            //#endregion
         }
 
         private void btn_search_Click(object sender, EventArgs e)
@@ -228,7 +230,7 @@ namespace AdminClient.Serch
             {
                 if (addList.Count < 1)
                 {
-                    DialogResult dRes = MessageBox.Show("등록된 물품이 없습니다. 추가 없이 종료하시겠습니까?", "안내 메세지", MessageBoxButtons.YesNo);
+                    DialogResult dRes = MessageBox.Show("등록된 품목이 없습니다. 추가 없이 종료하시겠습니까?", "안내 메세지", MessageBoxButtons.YesNo);
 
                     if (dRes == DialogResult.Yes)
                     {

@@ -203,17 +203,30 @@ namespace AdminClient.PopUp
 
         private void btn_Set_Click(object sender, EventArgs e)
         {
-            if(txt_OrderCnt.Text.Length < 1)
+            if (txt_OrderCnt.Text.Length < 1)
             {
                 MessageBox.Show("숫자를 입력해주세요");
                 return;
-            }    
+            }
 
             odlist.ForEach((item) =>
             {
                 if (item.Prod_Code == txt_ProdName.Tag.ToString())
                 {
-                    item.Orders_Count = decimal.Parse(txt_OrderCnt.Text);
+                    bool flag = true;
+
+                    detailList.ForEach((ditem) =>
+                    {
+                        if (ditem.Prod_MinCount > decimal.Parse(txt_OrderCnt.Text))
+                        {
+                            MessageBox.Show("최소주문수량보다 적은 수량은 입력할 수 없습니다.");
+                            flag = false;
+                        }
+
+                    });
+
+                    if (flag)
+                        item.Orders_Count = decimal.Parse(txt_OrderCnt.Text);
                 }
             });
         }
