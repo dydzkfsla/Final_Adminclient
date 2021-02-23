@@ -93,7 +93,7 @@ namespace AdminClient
             {
                 if (dc is DataGridViewTextBoxColumn && dc.Visible)
                 {
-                    Type type = DataList[0].GetType();
+                    Type type = DataList[0].GetType(); //vo
                     Type addType = null;
                     foreach (PropertyInfo prop in type.GetProperties()) //선택한 prop값에따라
                     {
@@ -130,9 +130,9 @@ namespace AdminClient
         private void SelectStringToSearch()
         {
             Type type1 = DataList.GetType();
-            temp = Activator.CreateInstance(type1);
+            temp = Activator.CreateInstance(type1); //list<vo>
 
-            foreach (dynamic item in DataList)
+            foreach(dynamic item in DataList)
             {
                 Type type = item.GetType();
                 string value = string.Empty;            //선택한 값
@@ -164,7 +164,7 @@ namespace AdminClient
                 int IntTo = Convert.ToInt32(txt_IntTo.Text.Trim());
                 foreach (PropertyInfo prop in type.GetProperties()) //선택한 prop값에따라
                 {
-                    if (prop.Name == cbo_key.SelectedValue.ToString())
+                    if (prop.Name == ((BaindingKey)cbo_key.SelectedItem).Value)
                     {
                         value = Convert.ToInt32(prop.GetValue(item));
                     }
@@ -189,7 +189,7 @@ namespace AdminClient
                 DateTime IntTo = dtp_to.Value;
                 foreach (PropertyInfo prop in type.GetProperties()) //선택한 prop값에따라
                 {
-                    if (prop.Name == cbo_key.SelectedValue.ToString())
+                    if (prop.Name == ((BaindingKey)cbo_key.SelectedItem).Value)
                     {
                         value = Convert.ToDateTime(prop.GetValue(item));
                     }
